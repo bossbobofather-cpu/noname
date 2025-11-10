@@ -87,12 +87,27 @@
         <article data-uid="">
 <h1 id="introduction">Introduction</h1>
 
+<p>Noname Defense Prototype은 브릭브레이커 감성의 턴제 디펜스 게임 시제품입니다.<br>
+포탑(Player)이 성벽을 지키고, 상단에서 내려오는 적을 제거해 웨이브를 버티는 플레이 루프를 중심으로 설계됐습니다.</p>
+<h2 id="게임-루프">게임 루프</h2>
 <ul>
-<li>화면 하단부의 일정 수준의 HP를 가진 ‘성벽’을 적의 공격으로부터 파괴되는 것을 ‘포탑’(Player)이 지킵니다.</li>
-<li>포탑(Player)은 좌우로 이동이 가능하며, 화면 상단으로부터 내려오는 적을 포탄을 이용해 제거합니다.</li>
-<li>포탑(Player)은 개체별로 서로 다른 스탯과 능력을 가지며, 적을 제거하면서 얻는 경험치로 레벨업할 수 있습니다.</li>
-<li>레벨업 시 스탯/능력에 추가 효과를 부여하는 ‘증강’ 스텝이 진행되며, 3종 중 하나를 선택해 강화하고 웨이브를 버티는 것이 목표입니다.</li>
-<li>적은 제거 시 일정 수준의 골드와 경험치를 드랍하며, 일정 드랍률로 추가 증강 스텝을 얻거나 낮은 확률로 장비를 획득할 수 있습니다.</li>
+<li>화면 하단의 포탑이 좌우로 이동하며 공격 각도를 조준합니다.</li>
+<li>발사 이후 모든 포탄이 회수될 때까지는 이동이 제한되고, 몬스터 턴이 진행됩니다.</li>
+<li>적은 성벽에 도달하거나 포탄에 맞으면 각각 피해/제거 처리되며, 경험치·골드·증강 드롭을 남깁니다.</li>
+<li>경험치를 모아 레벨업하면 3종 증강 중 하나를 선택하여 포탑 능력을 강화합니다.</li>
+</ul>
+<h2 id="아키텍처-하이라이트">아키텍처 하이라이트</h2>
+<ul>
+<li><strong>Clean Architecture</strong>: Core / Application / Infrastructure / Presentation 계층으로 분리해 도메인 모델을 보호했습니다.</li>
+<li><strong>Definition Importer</strong>: Excel의 <code>[enemyInfo]</code>, <code>[playerInfo]</code> 섹션을 JSON과 ScriptableObject로 변환하는 Editor 툴.</li>
+<li><strong>DocFX + GitHub Pages</strong>: XML 주석을 자동 문서화하고 Pages에 배포하여 항상 최신 API를 열람할 수 있습니다.</li>
+</ul>
+<h2 id="문서-탐색-가이드">문서 탐색 가이드</h2>
+<ul>
+<li>빠른 요약과 테이블: <a href="getting-started.html">Getting Started</a></li>
+<li>계층별 세부 설명: <a href="layers/index.html">Layers</a> (Core/Application/Infrastructure/Presentation)</li>
+<li>API Reference: <code>api/</code> 경로에서 클래스별 XML 주석 기반 설명 확인</li>
+<li>저장소 및 워크플로 개요는 <a href="../index.html">홈페이지</a>에서 보실 수 있습니다.</li>
 </ul>
 
 </article>
