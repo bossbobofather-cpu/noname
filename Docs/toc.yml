@@ -2,3 +2,14 @@
   href: introduction.md
 - name: Getting Started
   href: getting-started.md
+- name: Layers
+  href: layers/index.md
+  items:
+    - name: Core
+      href: layers/core.md
+    - name: Application
+      href: layers/application.md
+    - name: Infrastructure
+      href: layers/infrastructure.md
+    - name: Presentation
+      href: layers/presentation.md
