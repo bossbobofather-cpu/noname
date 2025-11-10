@@ -2,21 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Getting Started | mysite </title>
+      <title>Infrastructure Layer | mysite </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Getting Started | mysite ">
+      <meta name="title" content="Infrastructure Layer | mysite ">
       
       
-      <link rel="icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../public/docfx.min.css">
-      <link rel="stylesheet" href="../public/main.css">
-      <meta name="docfx:navrel" content="../toc.html">
-      <meta name="docfx:tocrel" content="toc.html">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
       
-      <meta name="docfx:rel" content="../">
+      <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Docs/getting-started.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Docs/layers/infrastructure.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -30,7 +30,7 @@
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
 
-      <script type="module" src="./../public/docfx.min.js"></script>
+      <script type="module" src="./../../public/docfx.min.js"></script>
 
       <script>
         const theme = localStorage.getItem('theme') || 'auto'
@@ -43,8 +43,8 @@
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="mysite">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="mysite">
             mysite
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,63 +85,28 @@
         </div>
 
         <article data-uid="">
-<h1 id="getting-started">Getting Started</h1>
+<h1 id="infrastructure-layer">Infrastructure Layer</h1>
 
-<p>이 문서는 프로젝트 구조를 빠르게 이해하기 위한 요약입니다.</p>
-<h2 id="계층-개요">계층 개요</h2>
-<table>
-<thead>
-<tr>
-<th>계층</th>
-<th>핵심 책임</th>
-<th>주요 요소</th>
-<th>상호작용</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Core</strong></td>
-<td>게임 규칙, 도메인 모델</td>
-<td><code>PlayerEntity</code>, <code>EnemyEntity</code>, <code>GameplayAbilityDefinition</code></td>
-<td>다른 계층에서 Core 타입을 직접 사용(불변 법칙)</td>
-</tr>
-<tr>
-<td><strong>Application</strong></td>
-<td>UseCase, 서비스, 포트</td>
-<td><code>StartGameUseCase</code>, <code>MovePlayerUseCase</code>, <code>DefenseSimulationService</code>, <code>IGameInputReader</code></td>
-<td>Core 엔티티를 조작하며, 외부 입력/출력을 포트로 추상화</td>
-</tr>
-<tr>
-<td><strong>Infrastructure</strong></td>
-<td>Adapter, 데이터 접근 및 입력</td>
-<td><code>DefenseInputAdapter</code>, <code>InMemoryGameStateRepository</code>, Definition Importer 툴</td>
-<td>Application 포트를 구현, Excel→JSON→SO 파이프라인 포함</td>
-</tr>
-<tr>
-<td><strong>Presentation</strong></td>
-<td>UI-ViewModel-View</td>
-<td><code>GameViewModel</code>, <code>DefenseGameBootstrapper</code>, <code>PlayerView</code>, UI/FX/Sound 매니저</td>
-<td>Application을 호출해 게임을 구동하고 사용자와 상호작용</td>
-</tr>
-</tbody>
-</table>
-<h2 id="개발빌드-흐름">개발/빌드 흐름</h2>
-<ol>
-<li><strong>Unity 실행</strong>: <code>Assets/Scripts</code> 하위 레이어 구조 그대로 유지하면서 작업합니다.</li>
-<li><strong>DocFX 문서 빌드</strong>
-<pre><code class="lang-powershell">dotnet build
-./PrepareDocfx.ps1
-docfx metadata
-docfx build
-</code></pre>
-</li>
-<li><strong>GitHub Pages 배포</strong>: GitHub Actions <code>Deploy DocFX Site</code> 워크플로가 <code>_site</code> 출력을 <code>gh-pages</code>로 자동 배포합니다.</li>
-</ol>
+<p>입력/저장소/툴 등 Unity 구성 요소가 Application/Core 계층과 상호작용하도록 중계합니다.</p>
+<h2 id="input">Input</h2>
+<ul>
+<li><code>DefenseInputAdapter</code>: 최신 Input System으로 좌우 이동과 폭격 포인터를 읽어 <code>IGameInputReader</code>에 전달.</li>
+</ul>
+<h2 id="repositories--tools">Repositories &amp; Tools</h2>
+<ul>
+<li><code>InMemoryGameStateRepository</code>: 단일 GameState 인스턴스를 보관.</li>
+<li>Definition Importer 툴: Excel <code>[enemyInfo]/[playerInfo]</code> → JSON → ScriptableObject 파이프라인.</li>
+</ul>
+<h2 id="unity-helpers">Unity Helpers</h2>
+<ul>
+<li><code>Float2UnityExtensions</code>: <code>Float2</code>와 <code>UnityEngine.Vector2/Vector3</code> 간 변환.</li>
+</ul>
+<p>이 계층에서 Application 포트를 구현하고, 외부 데이터(Excel, JSON, SO)를 연결합니다.</p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Docs/getting-started.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Docs/layers/infrastructure.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

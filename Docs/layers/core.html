@@ -2,21 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Getting Started | mysite </title>
+      <title>Core Layer | mysite </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Getting Started | mysite ">
+      <meta name="title" content="Core Layer | mysite ">
       
       
-      <link rel="icon" href="../favicon.ico">
-      <link rel="stylesheet" href="../public/docfx.min.css">
-      <link rel="stylesheet" href="../public/main.css">
-      <meta name="docfx:navrel" content="../toc.html">
-      <meta name="docfx:tocrel" content="toc.html">
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
       
-      <meta name="docfx:rel" content="../">
+      <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Docs/getting-started.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Docs/layers/core.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -30,7 +30,7 @@
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
 
-      <script type="module" src="./../public/docfx.min.js"></script>
+      <script type="module" src="./../../public/docfx.min.js"></script>
 
       <script>
         const theme = localStorage.getItem('theme') || 'auto'
@@ -43,8 +43,8 @@
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
-          <a class="navbar-brand" href="../index.html">
-            <img id="logo" class="svg" src="../logo.svg" alt="mysite">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="mysite">
             mysite
           </a>
           <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,63 +85,38 @@
         </div>
 
         <article data-uid="">
-<h1 id="getting-started">Getting Started</h1>
+<h1 id="core-layer">Core Layer</h1>
 
-<p>이 문서는 프로젝트 구조를 빠르게 이해하기 위한 요약입니다.</p>
-<h2 id="계층-개요">계층 개요</h2>
-<table>
-<thead>
-<tr>
-<th>계층</th>
-<th>핵심 책임</th>
-<th>주요 요소</th>
-<th>상호작용</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Core</strong></td>
-<td>게임 규칙, 도메인 모델</td>
-<td><code>PlayerEntity</code>, <code>EnemyEntity</code>, <code>GameplayAbilityDefinition</code></td>
-<td>다른 계층에서 Core 타입을 직접 사용(불변 법칙)</td>
-</tr>
-<tr>
-<td><strong>Application</strong></td>
-<td>UseCase, 서비스, 포트</td>
-<td><code>StartGameUseCase</code>, <code>MovePlayerUseCase</code>, <code>DefenseSimulationService</code>, <code>IGameInputReader</code></td>
-<td>Core 엔티티를 조작하며, 외부 입력/출력을 포트로 추상화</td>
-</tr>
-<tr>
-<td><strong>Infrastructure</strong></td>
-<td>Adapter, 데이터 접근 및 입력</td>
-<td><code>DefenseInputAdapter</code>, <code>InMemoryGameStateRepository</code>, Definition Importer 툴</td>
-<td>Application 포트를 구현, Excel→JSON→SO 파이프라인 포함</td>
-</tr>
-<tr>
-<td><strong>Presentation</strong></td>
-<td>UI-ViewModel-View</td>
-<td><code>GameViewModel</code>, <code>DefenseGameBootstrapper</code>, <code>PlayerView</code>, UI/FX/Sound 매니저</td>
-<td>Application을 호출해 게임을 구동하고 사용자와 상호작용</td>
-</tr>
-</tbody>
-</table>
-<h2 id="개발빌드-흐름">개발/빌드 흐름</h2>
-<ol>
-<li><strong>Unity 실행</strong>: <code>Assets/Scripts</code> 하위 레이어 구조 그대로 유지하면서 작업합니다.</li>
-<li><strong>DocFX 문서 빌드</strong>
-<pre><code class="lang-powershell">dotnet build
-./PrepareDocfx.ps1
-docfx metadata
-docfx build
-</code></pre>
-</li>
-<li><strong>GitHub Pages 배포</strong>: GitHub Actions <code>Deploy DocFX Site</code> 워크플로가 <code>_site</code> 출력을 <code>gh-pages</code>로 자동 배포합니다.</li>
-</ol>
+<p>Unity 엔진 구현과 분리된 순수 게임 규칙·도메인 모델을 담는 계층입니다.</p>
+<h2 id="entities">Entities</h2>
+<ul>
+<li><code>PlayerEntity</code>: 위치, 이동/공격 스탯, 경험치·레벨·체력·럭·골드, 어빌리티/드롭 효과 적용.</li>
+<li><code>FortressEntity</code>: 성벽의 최대/현재 체력을 추적하고 피해·회복·리셋 처리.</li>
+<li><code>EnemyEntity</code>: 적 이동 속도, 체력, 공격력, 역할(근접/원거리), 드롭 테이블.</li>
+<li><code>ProjectileEntity</code>: 투사체 위치·속도·폭발 반경·목표 좌표.</li>
+<li><code>ResourceDropEntity</code>: 드롭 ID/종류/양/지연 시간.</li>
+<li><code>GameState</code>: 플레이어/거점/적/투사체/드롭 컬렉션, 스폰 영역, 경과 시간, 폭격 지점 등 전체 상태.</li>
+</ul>
+<h2 id="primitives">Primitives</h2>
+<ul>
+<li><code>Float2</code>: Core 전용 경량 2D 벡터.</li>
+</ul>
+<h2 id="enums">Enums</h2>
+<ul>
+<li><code>EnemyCombatRole</code>, <code>ProjectileFaction</code> 등 도메인 상수.</li>
+</ul>
+<h2 id="value-objects">Value Objects</h2>
+<ul>
+<li><code>DefenseGameSettings</code>: 플레이어 기본 스탯, 경험치 성장, 성벽/스폰/어빌리티 설정.</li>
+<li><code>EnemyDefinition</code>, <code>EnemySpawnEntry</code>: ScriptableObject 기반 적 정의와 스폰 가중치.</li>
+<li><code>GameplayAbilityDefinition</code>, <code>GameplayEffectDefinition</code>: Ability/Modifier 구성을 담당.</li>
+</ul>
+<p>Application·Infrastructure·Presentation 계층은 이 Core 모델을 기반으로 동작합니다.</p>
 
 </article>
 
         <div class="contribution d-print-none">
-          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Docs/getting-started.md/#L1" class="edit-link">Edit this page</a>
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Docs/layers/core.md/#L1" class="edit-link">Edit this page</a>
         </div>
 
         <div class="next-article d-print-none border-top" id="nextArticle"></div>

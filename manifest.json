@@ -81,6 +81,56 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "Docs/layers/application.md",
+      "output": {
+        ".html": {
+          "relative_path": "Docs/layers/application.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Docs/layers/core.md",
+      "output": {
+        ".html": {
+          "relative_path": "Docs/layers/core.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Docs/layers/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Docs/layers/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Docs/layers/infrastructure.md",
+      "output": {
+        ".html": {
+          "relative_path": "Docs/layers/infrastructure.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Docs/layers/presentation.md",
+      "output": {
+        ".html": {
+          "relative_path": "Docs/layers/presentation.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "Docs/toc.yml",
       "output": {
