@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09f0d629db8a99f49aac6cfad0a23891, type: 3}
+  m_Name: GPA_10003
+  m_EditorClassIdentifier: Assembly-CSharp::Noname.Core.ValueObjects.GameplayAbilityDefinition
+  abilityId: 6e80a08c-2066-4f5a-8462-e909f4f22b00
+  title: "\uACF5\uACA9 \uC0AC\uAC70\uB9AC \uC99D\uAC00"
+  description: "\uC0AC\uAC70\uB9AC 1 \uC99D"
+  effects:
+  - {fileID: 11400000, guid: 7cb2655e1d36534499ab9cfb2cefae06, type: 2}

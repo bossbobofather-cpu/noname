@@ -1,0 +1,22 @@
+{
+    "entries": [
+        {
+            "playerCode": "10001",
+            "moveSpeed": 8.0,
+            "attackDamage": 25.0,
+            "attackRange": 5.0,
+            "attackCooldown": 0.30000001192092898,
+            "maxHealth": 100.0,
+            "luck": 10.0
+        },
+        {
+            "playerCode": "10002",
+            "moveSpeed": 5.0,
+            "attackDamage": 10.0,
+            "attackRange": 10.0,
+            "attackCooldown": 0.5,
+            "maxHealth": 100.0,
+            "luck": 100.0
+        }
+    ]
+}

@@ -1,0 +1,94 @@
+{
+    "entries": [
+        {
+            "enemyCode": "10001",
+            "role": "Melee",
+            "moveSpeed": 3.0,
+            "maxHealth": 50.0,
+            "attackDamage": 5.0,
+            "attackRange": 1.5,
+            "attackCooldown": 0.5,
+            "preferredDistance": 0.0,
+            "dropTable": [
+                {
+                    "type": "Experience",
+                    "amount": 10.0,
+                    "probability": 1.0,
+                    "guaranteed": true
+                },
+                {
+                    "type": "Gold",
+                    "amount": 5.0,
+                    "probability": 1.0,
+                    "guaranteed": true
+                },
+                {
+                    "type": "Health",
+                    "amount": 5.0,
+                    "probability": 0.10000000149011612,
+                    "guaranteed": false
+                },
+                {
+                    "type": "Ability",
+                    "amount": 1.0,
+                    "probability": 0.05000000074505806,
+                    "guaranteed": false
+                }
+            ]
+        },
+        {
+            "enemyCode": "10002",
+            "role": "Melee",
+            "moveSpeed": 3.0,
+            "maxHealth": 50.0,
+            "attackDamage": 5.0,
+            "attackRange": 1.5,
+            "attackCooldown": 1.0,
+            "preferredDistance": 0.0,
+            "dropTable": [
+                {
+                    "type": "Ability",
+                    "amount": 1.0,
+                    "probability": 1.0,
+                    "guaranteed": false
+                }
+            ]
+        },
+        {
+            "enemyCode": "20001",
+            "role": "Ranged",
+            "moveSpeed": 2.0,
+            "maxHealth": 50.0,
+            "attackDamage": 5.0,
+            "attackRange": 1.5,
+            "attackCooldown": 1.0,
+            "preferredDistance": 0.0,
+            "dropTable": [
+                {
+                    "type": "Experience",
+                    "amount": 10.0,
+                    "probability": 1.0,
+                    "guaranteed": true
+                },
+                {
+                    "type": "Gold",
+                    "amount": 5.0,
+                    "probability": 1.0,
+                    "guaranteed": true
+                },
+                {
+                    "type": "Health",
+                    "amount": 5.0,
+                    "probability": 0.10000000149011612,
+                    "guaranteed": false
+                },
+                {
+                    "type": "Ability",
+                    "amount": 1.0,
+                    "probability": 0.05000000074505806,
+                    "guaranteed": false
+                }
+            ]
+        }
+    ]
+}

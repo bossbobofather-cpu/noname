@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6503432087462420858
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8297314278962851657}
+  - component: {fileID: 8642240288784154807}
+  - component: {fileID: 5777701321947711702}
+  m_Layer: 0
+  m_Name: DefenseGameMode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8297314278962851657
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6503432087462420858}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8642240288784154807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6503432087462420858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eb74dc5ab24d9f4faea1520837ad75d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Noname.Infrastructure.Input.DefenseInputAdapter
+  targetCamera: {fileID: 0}
+  bombardmentPlaneZ: 0
+--- !u!114 &5777701321947711702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6503432087462420858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 064a2a7f01268dc47a76b2c759f0ccc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Noname.Presentation.Views.DefenseGameBootstrapper
+  inputAdapter: {fileID: 8642240288784154807}
+  playerViewPrefab: {fileID: 9156576574499509118, guid: 28be4632e1388124f9dfe49ab52a66d5, type: 3}
+  playerParent: {fileID: 0}
+  fortressViewPrefab: {fileID: 5797901734077132143, guid: f41dcb7074a773044a353db3b7300d94, type: 3}
+  fortressParent: {fileID: 0}
+  meleeEnemyViewPrefab: {fileID: 8722522840604913263, guid: 4927001b0280d3c498bb91bc80802bb2, type: 3}
+  rangedEnemyViewPrefab: {fileID: 2452914863523587261, guid: 68c42045b7e88b742b6019466c69d8f1, type: 3}
+  enemyContainer: {fileID: 0}
+  playerProjectilePrefab: {fileID: -1227093640386715278, guid: 447908faf583fc1468942e56511a2757, type: 3}
+  enemyProjectilePrefab: {fileID: -2281446704895773421, guid: 0e2aa4492874adf4a9d914238da382e3, type: 3}
+  projectileParent: {fileID: 0}
+  augmentSelectionViewPrefab: {fileID: 906844372190199174, guid: b7fc0046998da2743a2a4f73ff558a1e, type: 3}
+  augmentSelectionParent: {fileID: 0}
+  settings:
+    playerSpawnPosition:
+      x: 0
+      y: -3
+    playerMoveSpeed: 8
+    playerAttackDamage: 25
+    playerAttackRange: 5
+    playerAttackCooldown: 0.75
+    movementMinX: -6
+    movementMaxX: 6
+    playerProjectileSpeed: 15
+    playerExplosionRadius: 1.5
+    baseExperienceToLevel: 100
+    experienceGrowthFactor: 1.25
+    experiencePickupDelay: 1
+    augmentChoicesPerLevel: 3
+    abilityPool:
+    - {fileID: 11400000, guid: 4ca8fe354a745b748993b1cfec6107a4, type: 2}
+    - {fileID: 11400000, guid: 1177777689c16e047a0e706f778a93bd, type: 2}
+    - {fileID: 11400000, guid: 3b12c67f635731a40a6e5315df0a1e89, type: 2}
+    fortressPosition:
+      x: 0
+      y: -3.5
+    fortressHalfExtents:
+      x: 1.5
+      y: 0.75
+    fortressMaxHealth: 500
+    enemySpawnMin:
+      x: -4.5
+      y: 6
+    enemySpawnMax:
+      x: 4.5
+      y: 6
+    initialSpawnDelay: 1.5
+    spawnInterval: 2.5
+    enemyArchetypes:
+    - role: 0
+      moveSpeed: 1
+      maxHealth: 1
+      attackDamage: 5
+      attackRange: 0.3
+      attackCooldown: 1
+      preferredDistance: 0
+      experienceReward: 5
+    - role: 1
+      moveSpeed: 1
+      maxHealth: 1
+      attackDamage: 5
+      attackRange: 1
+      attackCooldown: 1
+      preferredDistance: 3
+      experienceReward: 5
+    enemyProjectileSpeed: 8
