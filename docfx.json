@@ -1,10 +1,10 @@
 {
   "$schema": "https://raw.githubusercontent.com/dotnet/docfx/main/schemas/docfx.schema.json",
   "metadata": [
-      {
-    "src": [{ "files": ["Temp/bin/Debug/Assembly-CSharp.dll"] }],
-    "dest": "api"
-  }
+    {
+      "src": [{ "files": ["DocfxArtifacts/Assembly-CSharp.dll"] }],
+      "dest": "api"
+    }
   ],
   "build": {
     "content": [

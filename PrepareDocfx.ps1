@@ -2,7 +2,7 @@ param(
     [switch]$BuildSolution,
     [string]$SolutionPath = "noname.sln",
     [string]$XmlSource = "Docs/Assembly-CSharp.xml",
-    [string]$BuildOutput = "Temp/bin/Debug",
+    [string]$OutputDirectory = "DocfxArtifacts",
     [string]$XmlFileName = "Assembly-CSharp.xml"
 )
 
@@ -20,7 +20,7 @@ if (-not (Test-Path $XmlSource))
     throw "XML documentation file '$XmlSource'이(가) 존재하지 않습니다. 먼저 Unity에서 빌드하거나 dotnet build를 실행하세요."
 }
 
-$destinationDir = Join-Path -Path $PSScriptRoot -ChildPath $BuildOutput
+$destinationDir = Join-Path -Path $PSScriptRoot -ChildPath $OutputDirectory
 if (-not (Test-Path $destinationDir))
 {
     New-Item -ItemType Directory -Path $destinationDir -Force | Out-Null

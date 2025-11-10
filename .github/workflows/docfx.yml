@@ -26,11 +26,11 @@ jobs:
         run: echo "$env:USERPROFILE\.dotnet\tools" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
         shell: pwsh
 
-      - name: Build Unity solution
-        run: dotnet build noname.sln
-
-      - name: Prepare XML docs for DocFX
-        run: pwsh ./PrepareDocfx.ps1
+      - name: Prepare DocFX artifacts
+        shell: pwsh
+        run: |
+          Set-ExecutionPolicy Bypass -Scope Process
+          ./PrepareDocfx.ps1
 
       - name: Generate DocFX metadata
         run: docfx metadata
