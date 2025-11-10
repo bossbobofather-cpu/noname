@@ -32,7 +32,7 @@
   "Docs/introduction.html": {
     "href": "Docs/introduction.html",
     "title": "Introduction | mysite",
-    "summary": "Introduction"
+    "summary": "Introduction 화면 하단부의 일정 수준의 HP를 가진 ‘성벽’을 적의 공격으로부터 파괴되는 것을 ‘포탑’(Player)이 지킵니다. 포탑(Player)은 좌우로 이동이 가능하며, 화면 상단으로부터 내려오는 적을 포탄을 이용해 제거합니다. 포탑(Player)은 개체별로 서로 다른 스탯과 능력을 가지며, 적을 제거하면서 얻는 경험치로 레벨업할 수 있습니다. 레벨업 시 스탯/능력에 추가 효과를 부여하는 ‘증강’ 스텝이 진행되며, 3종 중 하나를 선택해 강화하고 웨이브를 버티는 것이 목표입니다. 적은 제거 시 일정 수준의 골드와 경험치를 드랍하며, 일정 드랍률로 추가 증강 스텝을 얻거나 낮은 확률로 장비를 획득할 수 있습니다."
   },
   "README.html": {
     "href": "README.html",
