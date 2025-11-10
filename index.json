@@ -401,7 +401,7 @@
   },
   "index.html": {
     "href": "index.html",
-    "title": "This is the HOMEPAGE. | mysite",
-    "summary": "This is the HOMEPAGE. Refer to Markdown for how to write markdown files. Quick Start Notes: Add images to the images folder if the file is referencing an image."
+    "title": "Noname Defense Prototype | mysite",
+    "summary": "Noname Defense Prototype 브릭브레이커 감성의 턴제 디펜스 게임 시제품입니다. 화면 하단의 포탑(Player)이 성벽을 지키고, 상단에서 내려오는 적을 제거해 웨이브를 버티는 것이 목표입니다. 주요 특징 Clean Architecture 기반(Core/Application/Infrastructure/Presentation) Excel → JSON → ScriptableObject 파이프라인(Definition Importer) 증강 시스템, 자원 드롭, 다중 어빌리티 선택 흐름 DocFX로 자동 생성되는 API/아키텍처 문서 + GitHub Pages 배포 빠른 시작 Introduction Getting Started Layers Overview API Reference 저장소 GitHub: bossbobofather-cpu/noname"
   }
 }
