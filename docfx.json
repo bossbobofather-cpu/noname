@@ -4,6 +4,10 @@
     {
       "src": [{ "files": ["DocfxArtifacts/Assembly-CSharp.dll"] }],
       "dest": "api"
+    },
+    {
+      "src": [{ "files": ["DocfxArtifacts/Assembly-CSharp-Editor.dll"] }],
+      "dest": "api-editor"
     }
   ],
   "build": {

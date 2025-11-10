@@ -12,8 +12,14 @@ using Noname.Core.ValueObjects;
 using UnityEditor;
 using UnityEngine;
 
+/// <summary>
+/// Excel 데이터를 JSON/ScriptableObject로 변환하는 Unity Editor 전용 도구입니다.
+/// </summary>
 public sealed class DefinitionImporterWindow : EditorWindow
 {
+    /// <summary>
+    /// 변환 대상 정의 종류.
+    /// </summary>
     private enum DefinitionKind
     {
         Enemy,
@@ -25,12 +31,18 @@ public sealed class DefinitionImporterWindow : EditorWindow
     private string _outputJsonPath = "enemyDefinitions.json";
     private string _jsonInputPath = "enemyDefinitions.json";
 
+    /// <summary>
+    /// Unity 메뉴에서 툴 창을 연다.
+    /// </summary>
     [MenuItem("Tools/Definition Importer")]
     public static void Open()
     {
         GetWindow<DefinitionImporterWindow>("Definition Importer");
     }
 
+    /// <summary>
+    /// 툴 UI를 그립니다.
+    /// </summary>
     private void OnGUI()
     {
         EditorGUILayout.LabelField("Excel to JSON Converter", EditorStyles.boldLabel);
@@ -131,6 +143,9 @@ public sealed class DefinitionImporterWindow : EditorWindow
         }
     }
 
+    /// <summary>
+    /// 지정된 XLSX를 Definition JSON으로 변환한다.
+    /// </summary>
     private static void ConvertXlsxToJson(DefinitionKind kind, string xlsxPath, string jsonPath)
     {
         if (!File.Exists(xlsxPath))
@@ -149,6 +164,9 @@ public sealed class DefinitionImporterWindow : EditorWindow
         File.WriteAllText(jsonPath, json);
     }
 
+    /// <summary>
+    /// JSON 정의를 읽어 ScriptableObject로 생성/업데이트한다.
+    /// </summary>
     private static void ImportJsonToScriptableObjects(DefinitionKind kind, string jsonPath)
     {
         if (!File.Exists(jsonPath))

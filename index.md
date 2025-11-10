@@ -17,6 +17,7 @@ _layout: landing
 - [Getting Started](Docs/getting-started.html)
 - [Layers Overview](Docs/layers/index.html)
 - [API Reference](api/index.html)
+- [Tools (Definition Importer)](Docs/tools/definition-importer.html)
 
 ## 저장소
 - GitHub: [bossbobofather-cpu/noname](https://github.com/bossbobofather-cpu/noname)

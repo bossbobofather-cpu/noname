@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>Assembly-CSharp-Editor</name>
+  </assembly>
+  <members>
+    <member name="T:DefinitionImporterWindow">
+      <summary>
+        Excel 데이터를 JSON/ScriptableObject로 변환하는 Unity Editor 전용 도구입니다.
+      </summary>
+    </member>
+    <member name="M:DefinitionImporterWindow.Open">
+      <summary>
+        Unity 메뉴에서 Definition Importer 창을 엽니다.
+      </summary>
+    </member>
+  </members>
+</doc>
