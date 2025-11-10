@@ -125,18 +125,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="개발빌드-흐름">개발/빌드 흐름</h2>
-<ol>
-<li><strong>Unity 실행</strong>: <code>Assets/Scripts</code> 하위 레이어 구조 그대로 유지하면서 작업합니다.</li>
-<li><strong>DocFX 문서 빌드</strong>
-<pre><code class="lang-powershell">dotnet build
-./PrepareDocfx.ps1
-docfx metadata
-docfx build
-</code></pre>
-</li>
-<li><strong>GitHub Pages 배포</strong>: GitHub Actions <code>Deploy DocFX Site</code> 워크플로가 <code>_site</code> 출력을 <code>gh-pages</code>로 자동 배포합니다.</li>
-</ol>
 
 </article>
 
