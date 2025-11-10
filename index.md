@@ -2,16 +2,10 @@
 _layout: landing
 ---
 
-# Noname Defense Prototype
-
-브릭브레이커 감성의 턴제 디펜스 게임 시제품입니다.  
-화면 하단의 포탑(Player)이 성벽을 지키고, 상단에서 내려오는 적을 제거해 웨이브를 버티는 것을 목표로 합니다.
-
 ## 주요 특징
 - Clean Architecture 기반(Core / Application / Infrastructure / Presentation)
 - Excel → JSON → ScriptableObject Definition Importer 파이프라인
 - 증강 시스템, 자원 드롭, 다중 어빌리티 선택 흐름
-- DocFX + GitHub Pages 자동 문서 배포
 
 ## 왜 클린 아키텍처인가?
 - Unity/Unreal 등 다른 엔진에서도 핵심 로직을 재사용하고 싶은 요구가 있었습니다.
