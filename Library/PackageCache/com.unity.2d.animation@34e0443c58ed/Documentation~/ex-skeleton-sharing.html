@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Skeleton Sharing | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Skeleton Sharing | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/ex-skeleton-sharing.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="skeleton-sharing">Skeleton Sharing</h1>
+
+<p>This sample demonstrates how Skeleton sharing can be set up and leverages on the <a href="Examples.html">other samples</a> before this. Note that the following requires the <a href="https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest">PSD Importer</a> installed. Open the <code>5 Skeleton Sharing.unity</code> Scene to see this sample in action.</p>
+<p><img src="images/2D-animation-samples-skelesharing.png" alt="The knight from the Skeleton Sharing example. A dropdown allows you to select between a knight and a wolf."></p>
+<p>This sample's setup is similar to the one in the <a href="ex-sprite-swap.html#full-skin-swap">Full Skin Swap</a> sample. The visual Assets are located in <code>Assets/Samples/2D Animation/[X.Y.Z]/Samples/5 SpriteSwap/Sprites</code>:</p>
+<ul>
+<li><code>Knight.psb</code></li>
+<li><code>Wolf.psb</code></li>
+</ul>
+<p>The <code>Wolf.psb</code> uses the <a href="https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest/index.html?subfolder=/manual/PSD-importer-properties.html%23main-skeleton">.skeleton Asset</a> from the <code>Knight.psb</code>, which means that the <code>Wolf.psb</code> is prepared using the same skeleton structure as the <code>Knight.psb</code>.</p>
+<p>The <code>Wolf</code> actor also uses the following Sprite Library Assets located in <code>Assets/Samples/2D Animation/[X.Y.Z]/Samples/5 SpriteSwap/Sprites</code>:</p>
+<ul>
+<li><code>Knight.spriteLib</code></li>
+<li><code>Wolf.spriteLib</code></li>
+</ul>
+<p>The <code>Knight.spriteLib</code> is assigned to the <strong>Main Library</strong> property for the <code>Wolf.spriteLib</code> is. The <code>Wolf.spriteLib</code> has been setup so that the <strong>torso</strong> Category is not overridden, which allows it to use the Sprite from <code>Knight.spriteLib</code>.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/ex-skeleton-sharing.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

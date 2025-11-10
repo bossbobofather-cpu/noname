@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Introduction to PSD Importer | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Introduction to PSD Importer | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.psdimporter@0adcab25a8fd/Documentation~/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="introduction-to-psd-importer">Introduction to PSD Importer</h1>
+
+<p>The <strong>PSD Importer</strong> is an <a href="https://docs.unity3d.com/ScriptReference/AssetImporter.html">Asset importer</a> that imports <a href="https://helpx.adobe.com/photoshop/using/file-formats.html#large_document_format_psb">Adobe Photoshop .psb</a> files into Unity, and generates a <a href="https://docs.unity3d.com/Manual/Prefabs.html">Prefab</a> of Sprites based on the imported source file. The .psb file format is functionally identical to the more common Adobe <a href="https://helpx.adobe.com/photoshop/using/file-formats.html#photoshop_format_psd">.psd format</a>, but supports much larger images than the .psd format (up to 300,000 pixels in any dimension). To convert existing artwork from .psd to .psb format, you can open them in Adobe Photoshop and then save them as .psb files.</p>
+<p>Importing .psb files with the PSD Importer allows you to use features such as <a href="PSD-importer-properties.html#Mosaic">Mosaic</a> (to automatically generate a Sprite sheet from the imported layers) and <a href="PSD-importer-properties.html#Rig">Character Rig</a> (to reassemble the Sprites of a character as they are arranged in their source files).</p>
+<p>The PSD Importer currently only supports two <a href="https://docs.unity3d.com/Manual/TextureTypes.html">Texture Modes</a>:<a href="https://docs.unity3d.com/Manual/TextureTypes.html#Default"> Default</a> and<a href="https://docs.unity3d.com/Manual/TextureTypes.html#Sprite"> Sprite</a>.</p>
+<p>The different versions of the PSD Importer package are supported by the following versions of Unity respectively:</p>
+<table>
+<thead>
+<tr>
+<th>Package version</th>
+<th>Unity Editor version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.x.x</td>
+<td>6000.1</td>
+</tr>
+<tr>
+<td>9.x.x</td>
+<td>2023.1 up to 6000.0</td>
+</tr>
+<tr>
+<td>8.x.x</td>
+<td>2022.2</td>
+</tr>
+<tr>
+<td>7.x.x</td>
+<td>2022.1</td>
+</tr>
+<tr>
+<td>6.x.x</td>
+<td>2021.2 or 2021.3</td>
+</tr>
+<tr>
+<td>5.x.x</td>
+<td>2020.2 or 2020.3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="support-for-psd-files">Support for .psd files</h2>
+<p>By default .psd files are imported with the Texture Importer. If you wish to instead import a .psd file with the PSD Importer, simply select the .psd file, click on the Importer dropdown and select <strong>UnityEditor.U2D.PSD.PSDImporter</strong>.</p>
+<p>For information on how to automate the selection of an importer, see the <a href="PSD-override.html">PSD File Importer Override</a> section.</p>
+<h2 id="supported-and-unsupported-photoshop-effects">Supported and unsupported Photoshop effects</h2>
+<p>When importing a .psb file into Unity with the PSD Importer, the importer generates a prefab of Sprites based on the image and layer data of the imported .psb file. To ensure the importer imports the file correctly, ensure that the Photoshop file is saved with <a href="https://helpx.adobe.com/au/photoshop/using/file-formats.html#maximize_compatibility_for_psd_and_psb_files">Maximize Compatibility</a> enabled.</p>
+<p>The PSD Importer does not support all of Photoshop’s layer and visual effects or features. The PSD Importer ignores the following Photoshop layer properties and visual effects when it generates the Sprites and prefab:</p>
+<ul>
+<li>Channels</li>
+<li>Blend Modes</li>
+<li>Layer Opacity</li>
+<li>Effects</li>
+</ul>
+<p>If you want to add visual effects to the generated Sprites, you can add additional Textures to the Sprites with the <a href="https://docs.unity3d.com/Manual/SpriteEditor-SecondaryTextures.html">Sprite Editor's Secondary Textures</a> module. Shaders can sample these Secondary Textures to apply additional effects to the Sprite, such as normal mapping. Refer to the <a href="https://docs.unity3d.com/Manual/SpriteEditor-SecondaryTextures.html">Sprite Editor: Secondary Textures</a> documentation for more information.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.psdimporter@0adcab25a8fd/Documentation~/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

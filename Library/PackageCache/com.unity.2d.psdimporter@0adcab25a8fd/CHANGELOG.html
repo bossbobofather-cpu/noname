@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Changelog | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Changelog | mysite ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.psdimporter@0adcab25a8fd/CHANGELOG.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="changelog">Changelog</h1>
+
+<h2 id="1101---2025-06-04">[11.0.1] - 2025-06-04</h2>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Replaced deprecated non-generic IMGUI TreeViewItem. (Case DANB-1004)</li>
+<li>Fixed case Layer Separation toggle icon is invisible when the icon state is &quot;separated&quot; with mousedown. (Case DANB-949)</li>
+</ul>
+<h2 id="1100---2025-05-07">[11.0.0] - 2025-05-07</h2>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Update minimum Unity version.</li>
+</ul>
+<h3 id="fixed-1">Fixed</h3>
+<ul>
+<li>Fixed case Layer Merging and Separation toggle icon is obscured in the Layer Management Panel of the PSD Importer (Case DANB-889)</li>
+<li>Fixed case the Include Hidden Layers option in the PSD Importer's Layer Management Panel is not being toggled reliably (Case DANB-888)</li>
+<li>Fixed a typo in settings. (Case DANB-891)</li>
+<li>Fixed case where &quot;Mip Map Preserve Coverage&quot; is cut off in the Inspector window. (Case DANB-892)</li>
+<li>doc: fix headings and incorrect links in the PSDImporter properties page</li>
+</ul>
+<h2 id="1010---2025-03-07">[10.1.0] - 2025-03-07</h2>
+<h3 id="fixed-2">Fixed</h3>
+<ul>
+<li>DANB-848 Fixed case where scroll down problems occur and the &quot;Apply&quot; button cannot be pressed when the &quot;Advanced&quot; tab is expanded</li>
+<li>Properly expose Tilemap related APIs in the PSDImporter.</li>
+</ul>
+<h2 id="1000---2024-12-09">[10.0.0] - 2024-12-09</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Added support for Sprite Frame Editing capabilities where data that are from the source file are locked by default.</li>
+<li>Added new ability to generate Tile asset and Tile Palette from PSDImporter.</li>
+</ul>
+<h2 id="903---2024-04-01">[9.0.3] - 2024-04-01</h2>
+<h3 id="fixed-3">Fixed</h3>
+<ul>
+<li>Fix source file cannot be deleted after subsequent import. (Case DANB-579)</li>
+</ul>
+<h3 id="changed-1">Changed</h3>
+<ul>
+<li>Updated the Editor Analytics to use the latest APIs.</li>
+</ul>
+<h2 id="902---2024-02-06">[9.0.2] - 2024-02-06</h2>
+<h3 id="fixed-4">Fixed</h3>
+<ul>
+<li>Provide custom packing override for users to override to address DANB-526. (Case DANB-526)</li>
+<li>Fixed layers are not shown in LayerImportSettings after unselecting all layers and applying. (Case DANB-569)</li>
+</ul>
+<h2 id="901---2023-08-15">[9.0.1] - 2023-08-15</h2>
+<h3 id="fixed-5">Fixed</h3>
+<ul>
+<li>Fixed case where PSDImporter does not support the PVRTC compression format for the iOS platform. (Case DANB-500)</li>
+<li>Provide custom packing override for users to override to address DANB-526. (Case DANB-526)</li>
+</ul>
+<h2 id="900---2023-02-23">[9.0.0] - 2023-02-23</h2>
+<h3 id="fixed-6">Fixed</h3>
+<ul>
+<li>Fixed an issue where warning logs in the console would get cut short due to invalid characters in layer names.</li>
+</ul>
+<h2 id="900-pre2---2022-11-30">[9.0.0-pre.2] - 2022-11-30</h2>
+<h3 id="fixed-7">Fixed</h3>
+<ul>
+<li>Enabled the ability to select mipmap streaming for textures imported with the PSD Importer.</li>
+<li>Fixed an issue where the amount of alpha removed from layers would not be re-applied as final position offset of the layers.</li>
+<li>Fixed an issue where the editor would crash when importing .psd/.psb files with their layers outside of the document canvas. (Case DANB-300)</li>
+<li>Fixed an issue where the generated GameObjects would be laid out differently from how they appear in the DCC tool. (Case DANB-298)</li>
+</ul>
+<h2 id="900-pre1---2022-09-21">[9.0.0-pre.1] - 2022-09-21</h2>
+<h3 id="changed-2">Changed</h3>
+<ul>
+<li>Simplified the Sprite Meta Data storage. We now have 3 storages; Single Sprite, Multiple Sprites and Mosaiac (Atlased) Sprites.</li>
+<li>Simplified the Psd Layer storage. We now only have one storage, Psd Layers.</li>
+<li>PSD Importer no longer depends on 2D Animation.</li>
+</ul>
+<h3 id="fixed-8">Fixed</h3>
+<ul>
+<li>Improved import speed and memory allocation for psd/psb files by reducing the intermediate texture buffers.</li>
+<li>Fixed exception when showing PSDImporter inspector. (Case DANB-195)</li>
+<li>Fixed a case where a .psd/.psb would not import with the correct layer coordinates.</li>
+</ul>
+<h2 id="800-pre3---2022-05-31">[8.0.0-pre.3] - 2022-05-31</h2>
+<h3 id="changed-3">Changed</h3>
+<ul>
+<li>Update dependency package version.</li>
+</ul>
+<h2 id="800-pre2---2022-05-20">[8.0.0-pre.2] - 2022-05-20</h2>
+<h3 id="fixed-9">Fixed</h3>
+<ul>
+<li>Fixed Sprite missing reference on certain source file created by third party tools. (Case DANB-30)</li>
+</ul>
+<h2 id="800-pre1---2022-03-21">[8.0.0-pre.1] - 2022-03-21</h2>
+<h3 id="fixed-10">Fixed</h3>
+<ul>
+<li>Allow multi editing for PSDImporter Settings tab. (Case 1400534)</li>
+<li>Fixed import not importing when Apply is clicked on Inspector.</li>
+</ul>
+<h3 id="changed-4">Changed</h3>
+<ul>
+<li>SpriteSkins generated by the PSD Importer now have their rootBone assigned to the root object of the model prefab.</li>
+</ul>
+<h3 id="added-1">Added</h3>
+<ul>
+<li>Added drop down list utility in Layer Management tool for quick selection of layers for import.</li>
+</ul>
+<h2 id="700---2022-01-25">[7.0.0] - 2022-01-25</h2>
+<h3 id="changed-5">Changed</h3>
+<ul>
+<li>Package release version.</li>
+</ul>
+<h3 id="fixed-11">Fixed</h3>
+<ul>
+<li>Fixed null exception when importing files with masks. (Case 1388820)</li>
+</ul>
+<h2 id="700-pre4---2021-11-24">[7.0.0-pre.4] - 2021-11-24</h2>
+<h3 id="fixed-12">Fixed</h3>
+<ul>
+<li>Fixed per platform settings does not get applied in Windows platform. (Case 1376608)</li>
+<li>Fixed unable to change mipmap settings in inspector. (Case 1379426)</li>
+<li>Fixed PSDImporter to able to specify swizzle data.</li>
+</ul>
+<h3 id="added-2">Added</h3>
+<ul>
+<li>Added ability to change swizzle format in inspector.</li>
+</ul>
+<h2 id="700-pre3---2021-10-21">[7.0.0-pre.3] - 2021-10-21</h2>
+<h3 id="changed-6">Changed</h3>
+<ul>
+<li>Update to latest com.unity.2d.animation package</li>
+</ul>
+<h2 id="700-pre2---2021-10-11">[7.0.0-pre.2] - 2021-10-11</h2>
+<h3 id="fixed-13">Fixed</h3>
+<ul>
+<li>Fixed artifacts on images when flatten</li>
+<li>Fixed exception &quot;PsdInvalidException: Unrecognized layer section type&quot; when importing certain files.</li>
+</ul>
+<h2 id="700-pre1---2021-08-06">[7.0.0-pre.1] - 2021-08-06</h2>
+<h3 id="changed-7">Changed</h3>
+<ul>
+<li>Update Unity supported version to 2022.1</li>
+</ul>
+<h3 id="fixed-14">Fixed</h3>
+<ul>
+<li>Removed memory requirement check since we cannot properly determine if there will be enough memory to import the file (case 1338690)</li>
+</ul>
+<h2 id="600-pre4---2021-07-05">[6.0.0-pre.4] - 2021-07-05</h2>
+<h3 id="fixed-15">Fixed</h3>
+<ul>
+<li>Fixed changing PSD Importer inspector fields causes UnityEditor.ObjectPreview errors (case 1333823)</li>
+<li>Fixed 2D PSDImporter always imports .psb files when switching build platforms (case 1327701)</li>
+<li>Fixed 2D PSDImporter doesn't apply settings from Sprite Editor Window when changes made in Inspector (case 1339799)</li>
+</ul>
+<h2 id="600-pre3---2021-05-17">[6.0.0-pre.3] - 2021-05-17</h2>
+<h3 id="changed-8">Changed</h3>
+<ul>
+<li>Update dependency version</li>
+</ul>
+<h2 id="600-pre2---2021-05-14">[6.0.0-pre.2] - 2021-05-14</h2>
+<h3 id="changed-9">Changed</h3>
+<ul>
+<li>Update dependency version</li>
+</ul>
+<h2 id="600-pre1---2021-05-05">[6.0.0-pre.1] - 2021-05-05</h2>
+<h3 id="changed-10">Changed</h3>
+<ul>
+<li>Version bump for Unity 2021.2</li>
+</ul>
+<h3 id="added-3">Added</h3>
+<ul>
+<li>Add ability to use Photoshop file's layer name to map to SpriteRect instead of using layer id</li>
+<li>Provide auto custom Physics shape generation option</li>
+<li>Add support to collapse layers in a Photoshop file's group</li>
+<li>Improve PSDImporter Inspector</li>
+</ul>
+<h3 id="fixed-16">Fixed</h3>
+<ul>
+<li>Fixed Unity hang when importing certain PSD files (case 1312835)</li>
+</ul>
+<h2 id="500---2021-03-17">[5.0.0] - 2021-03-17</h2>
+<h3 id="changed-11">Changed</h3>
+<ul>
+<li>Update version for release</li>
+</ul>
+<h2 id="500-pre3---2021-03-15">[5.0.0-pre.3] - 2021-03-15</h2>
+<h3 id="changed-12">Changed</h3>
+<ul>
+<li>Updated documentation</li>
+</ul>
+<h2 id="500-pre2---2021-01-16">[5.0.0-pre.2] - 2021-01-16</h2>
+<h3 id="changed-13">Changed</h3>
+<ul>
+<li>Update license file</li>
+</ul>
+<h3 id="fixed-17">Fixed</h3>
+<ul>
+<li>Fixed case 1291323 where upgrading from PSDImporter v2 causes Sprite to be missing</li>
+</ul>
+<h2 id="500-pre1---2020-11-02">[5.0.0-pre.1] - 2020-11-02</h2>
+<h3 id="added-4">Added</h3>
+<ul>
+<li>Added bone sharing from other PSDImporter file</li>
+</ul>
+<h2 id="402---2020-08-31">[4.0.2] - 2020-08-31</h2>
+<h3 id="fixed-18">Fixed</h3>
+<ul>
+<li>Fixed importing files with vector layers generates textures incorrectly (case 1266986)</li>
+<li>Fixed Sprite Editor Window doesn't show the Sprite when the Inspector is locked and the Sprite is not selected in the Project window</li>
+</ul>
+<h2 id="401---2020-07-07">[4.0.1] - 2020-07-07</h2>
+<h3 id="fixed-19">Fixed</h3>
+<ul>
+<li>Fixed ArgumentException thrown when 2D Game Kit is imported for the first time (case 1244287)</li>
+<li>Updated to use non-experimental AssetImporter  (case 1254380)</li>
+</ul>
+<h2 id="400---2020-05-11">[4.0.0] - 2020-05-11</h2>
+<h3 id="changed-14">Changed</h3>
+<ul>
+<li>Version bump for Unity 2020.2</li>
+</ul>
+<h2 id="314---2020-04-09">[3.1.4] - 2020-04-09</h2>
+<h3 id="fixed-20">Fixed</h3>
+<ul>
+<li>Fix PSD import issues with PSD file without unique layer id</li>
+<li>Fix crash on importing huge PSD files</li>
+<li>Fix metafile not updated when reimporting</li>
+<li>Fix error when importing PSB files with 32-bit color</li>
+</ul>
+<h3 id="changed-15">Changed</h3>
+<ul>
+<li>Improve PSD file import performance</li>
+</ul>
+<h2 id="313---2020-03-20">[3.1.3] - 2020-03-20</h2>
+<h3 id="changed-16">Changed</h3>
+<ul>
+<li>Update 2D Animation dependency</li>
+</ul>
+<h2 id="400---2020-03-11">[4.0.0] - 2020-03-11</h2>
+<h3 id="changed-17">Changed</h3>
+<ul>
+<li>Version bump for Unity 2020.2</li>
+</ul>
+<h2 id="312---2020-02-27">[3.1.2] - 2020-02-27</h2>
+<h3 id="fixed-21">Fixed</h3>
+<ul>
+<li>Fixed broken documentation links in inspectors</li>
+<li>Fixed empty GameObjects created in certain cases</li>
+</ul>
+<h2 id="311---2020-01-09">[3.1.1] - 2020-01-09</h2>
+<h3 id="fixed-22">Fixed</h3>
+<ul>
+<li>Fix wrong dependency version</li>
+</ul>
+<h2 id="310---2019-12-16">[3.1.0] - 2019-12-16</h2>
+<h3 id="added-5">Added</h3>
+<ul>
+<li>Expose PSDImporter class to be accessible via scripting</li>
+<li>Added example in manual to show how to set PSDImporter as default importer for PSD files.</li>
+</ul>
+<h2 id="300---2019-11-06">[3.0.0] - 2019-11-06</h2>
+<h3 id="changed-18">Changed</h3>
+<ul>
+<li>Update version number for Unity 2020.1</li>
+<li>Update documentation</li>
+</ul>
+<h2 id="206---2019-10-18">[2.0.6] - 2019-10-18</h2>
+<h3 id="fixed-23">Fixed</h3>
+<ul>
+<li>Fixed SpriteRect name clash when Photoshop layer is renamed to the same name as an exisiting user created SpriteRect</li>
+</ul>
+<h2 id="205---2019-08-06">[2.0.5] - 2019-08-06</h2>
+<h3 id="fixed-24">Fixed</h3>
+<ul>
+<li>Physics Shape not saved into Sprite when importing with AssetDatabase V2</li>
+</ul>
+<h3 id="added-6">Added</h3>
+<ul>
+<li>Experimental feature to have Sprites with same name generated from source file</li>
+<li>Support for providing Layer and Group order to Animation Skinning Module</li>
+</ul>
+<h2 id="204---2019-08-09">[2.0.4] - 2019-08-09</h2>
+<h3 id="added-7">Added</h3>
+<ul>
+<li>Add related test packages</li>
+<li>Add support Secondary Texture Module in Sprite Editor Window</li>
+</ul>
+<h3 id="fixed-25">Fixed</h3>
+<ul>
+<li>Texture and SpriteLibraryAsset subassets in PSDImporter now follows the main asset's name.</li>
+</ul>
+<h2 id="203---2019-07-20">[2.0.3] - 2019-07-20</h2>
+<h3 id="changed-19">Changed</h3>
+<ul>
+<li>Update 2D Animation dependency</li>
+</ul>
+<h2 id="202---2019-07-13">[2.0.2] - 2019-07-13</h2>
+<h3 id="changed-20">Changed</h3>
+<ul>
+<li>Mark package to support Unity 2019.3.0a10 onwards.</li>
+</ul>
+<h2 id="201---2019-06-12">[2.0.1] - 2019-06-12</h2>
+<h3 id="changed-21">Changed</h3>
+<ul>
+<li>Update 2D Animation dependency</li>
+</ul>
+<h2 id="200---2019-06-17">[2.0.0] - 2019-06-17</h2>
+<h3 id="changed-22">Changed</h3>
+<ul>
+<li>Remove preview tag</li>
+<li>Remove experimental namespace</li>
+</ul>
+<h2 id="120-preview2---2019-06-07">[1.2.0-preview.2] - 2019-06-07</h2>
+<h3 id="added-8">Added</h3>
+<ul>
+<li>Change API to internal access</li>
+<li>Only generate Sprite Library Asset if there is entry</li>
+<li>Do not reset Reslice checkbox after Inspector apply</li>
+</ul>
+<h2 id="120-preview1---2019-03-15">[1.2.0-preview.1] - 2019-03-15</h2>
+<h3 id="added-9">Added</h3>
+<ul>
+<li>Update support for 2019.2</li>
+<li>Integrate with 2D Animation Sprite Library</li>
+<li>Integrate with new 2D Animation Character Group</li>
+<li>Fix asset name conflict</li>
+</ul>
+<h2 id="110-preview2---2019-04-23">[1.1.0-preview.2] - 2019-04-23</h2>
+<h3 id="added-10">Added</h3>
+<ul>
+<li>Fix potential name clashing issues with ScriptedImporter</li>
+<li>Fix Prefab asset using wrong name. Note this will break Prefab references if upgrading from previous versions.</li>
+</ul>
+<h2 id="110-preview1---2019-02-19">[1.1.0-preview.1] - 2019-02-19</h2>
+<h3 id="added-11">Added</h3>
+<ul>
+<li>Update dependency for 2019.1 support</li>
+</ul>
+<h2 id="100-preview3---2019-02-19">[1.0.0-preview.3] - 2019-02-19</h2>
+<h3 id="added-12">Added</h3>
+<ul>
+<li>Fix compilation error in .NET 3.5</li>
+</ul>
+<h2 id="100-preview2---2019-01-25">[1.0.0-preview.2] - 2019-01-25</h2>
+<h3 id="added-13">Added</h3>
+<ul>
+<li>Fix unable to rig Sprites created manually</li>
+<li>Remove legacy packing tag</li>
+<li>Default Texture Type is changed to 'Sprite (2D and UI)'</li>
+<li>Default Sprite Mode is changed to 'Multiple'</li>
+</ul>
+<h2 id="100-preview1---2018-11-20">[1.0.0-preview.1] - 2018-11-20</h2>
+<h3 id="added-14">Added</h3>
+<ul>
+<li>New release</li>
+<li>ScriptedImporter for importing Adobe Photoshop file</li>
+<li>Supports handling of Adobe Photoshop layers
+<ul>
+<li>Creates Sprites from individual layers</li>
+<li>Handles include or exclude hidden layers</li>
+</ul>
+</li>
+<li>Supports Prefab generation that reconstruct generated Sprites to original art asset layout
+<ul>
+<li>Prefab generation supports GameObject grouping based on Adobe Photoshop layer grouping</li>
+</ul>
+</li>
+<li>Supports 2D Animation v2 single character with multiple Sprites workflow</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.psdimporter@0adcab25a8fd/CHANGELOG.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Overrides to the Main Library | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Overrides to the Main Library | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SL-Main-Library.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="overrides-to-the-main-library">Overrides to the Main Library</h1>
+
+<p>When you create a <a href="SL-Asset.html">Sprite Library Asset</a>, you have the option of <a href="SL-Asset.html#convert-a-sprite-library-asset-into-a-variant">converting it into a Sprite Library Asset Variant</a>, or <a href="SL-Asset.html#create-a-sprite-library-asset-variant">creating a Variant asset</a> of the selected Sprite Library Asset. A Variant asset inherits all the Categories and Labels from the Sprite Library Asset as its <strong>Main Library</strong>. You can't directly change the Categories and Labels inherited from the Main Library, but you can add to the inherited content by adding new Categories and Labels in the form of <a href="#create-overrides">overrides</a>.</p>
+<h2 id="inherited-categories-and-labels-limitations">Inherited Categories and Labels limitations</h2>
+<p>Assigning another existing Sprite Library Asset to the <strong>Main Library</strong> property of the current Sprite Library Asset allows the current Asset to access all Categories and Labels contained in the assigned Sprite Library Asset. Inherited Categories are visible in the <a href="SL-Editor-UI.html">Sprite Library Editor window</a> in the <a href="SL-Editor-UI.html#categories-and-labels-columns">Inherited foldout group</a>, while the <strong>Local</strong> foldout group contains all Categories that exist solely in the current asset.</p>
+<p>You can't rename or remove the Labels of inherited Categories, but you can add new Labels to an inherited Category as an <a href="#create-overrides">override</a>.</p>
+<h2 id="create-overrides">Create overrides</h2>
+<p>An override is any change you make to the contents of an inherited Category. While you can't rename or remove inherited Labels, you can do the following in an inherited Category:</p>
+<ul>
+<li><a href="SL-Editor.html#create-a-label">Create a new Label</a>.</li>
+<li><a href="#change-the-sprite-reference">Change the sprite</a> that the Label references.</li>
+<li>Revert overrides in selected Labels or for all inherited Categories and Labels.</li>
+</ul>
+<p>The Sprite Library Editor window <a href="SL-Editor-UI.html#variant-asset-specific-properties">displays a vertical white line</a> next to inherited Categories and inherited Labels when an override is present.</p>
+<h3 id="change-the-sprite-reference">Change the sprite reference</h3>
+<p>You can change a Label's sprite reference by selecting a different sprite from the object picker next to the <a href="SL-Editor-UI.html#categories-and-labels-columns">Sprite object field</a>. You can also change the sprite reference by <a href="SL-Drag.html">dragging</a> the desired sprite directly onto to a Label.</p>
+<p>To revert sprite reference changes made to selected Labels, right-click the Label(s) and select <strong>Revert Selected Overrides</strong> from the <a href="SL-Editor-UI.html#label-context-menu">context menu</a> to restore all sprite references back to their original inherited state from the Main Library.</p>
+<p>To revert all overrides in the selected inherited Category, select <strong>Revert All Overrides</strong> from the context menu.</p>
+<p><strong>Caution:</strong> Overrides aren't included in the <a href="SL-Editor-UI.html#saving-options">save state</a> of the Sprite Library Editor, and reverting overrides will remove all overrides regardless of the previous save state. To undo the last action, press Ctrl+Z (macOS: Cmd+Z).</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SL-Main-Library.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

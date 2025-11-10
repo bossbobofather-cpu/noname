@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Introduction to keywords in Shader Graph | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Introduction to keywords in Shader Graph | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.shadergraph@287dd3fa176c/Documentation~/Keywords-concepts.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="introduction-to-keywords-in-shader-graph">Introduction to keywords in Shader Graph</h1>
+
+<p>Keywords enable you to create shader variants that address multiple contexts, for example:</p>
+<ul>
+<li>Features that you can turn on or off for each material instance.</li>
+<li>Features that behave differently on certain platforms.</li>
+<li>Shaders that scale in complexity based on conditions you set.</li>
+</ul>
+<p>For more information about keywords and how they affect the final shader, refer to <a href="https://docs.unity3d.com/Manual/SL-MultipleProgramVariants.html">Changing how shaders work using keywords</a>.</p>
+<h2 id="conditions-and-keyword-types">Conditions and keyword types</h2>
+<p>There are two types of keywords you can use depending on the type of conditions you need to set up:</p>
+<ul>
+<li>Boolean keywords, either on or off, to enable switching between two shader branches.</li>
+<li>Enum keywords, with two or more states, to enable switching between two or more shader branches.</li>
+</ul>
+<h2 id="keyword-impact-optimization">Keyword impact optimization</h2>
+<p>Each keyword you add in your shader graph implies the addition of one or more branches in the graph. When you add multiple keywords, the number of branch combinations for a single shader graph increases extremely fast, which might result in significant performance impact at build time or at runtime.</p>
+<p>To minimize or balance performance impacts according to your project needs and your production context, you can define how Unity addresses the underlying behavior of each keyword at build time and at runtime. This mostly involves the use of either <a href="#dynamic-branching">dynamic branching</a> or <a href="#shader-variants">shader variants</a>.</p>
+<p>For example, you might consider setting your keywords for dynamic branching during development, to speed up build and iteration time, and then set them to shader variants toward the end of the project to improve runtime performance.</p>
+<p>For more information about keyword declarations and behaviors, refer to <a href="https://docs.unity3d.com/Manual/shader-conditionals-choose-a-type.html">How Unity compiles branching shaders</a>.</p>
+<h3 id="keyword-definition">Keyword Definition</h3>
+<p>Each keyword has its own <a href="Keywords-reference.html#common-parameters"><strong>Definition</strong> parameter</a> which lets you define the keyword behavior at build time and at runtime.</p>
+<p><a name="dynamic-branching"></a></p>
+<h3 id="dynamic-branching-and-build-time-optimization">Dynamic branching and build time optimization</h3>
+<p>When you set up a keyword in a dynamic branching configuration, Unity does the following:</p>
+<ul>
+<li>At build time, Unity compiles a single shader program that includes all the branching code.</li>
+<li>At runtime, Unity sends all keyword states to the GPU for each draw call.</li>
+</ul>
+<p>The impacts are the following:</p>
+<ul>
+<li>It keeps build times low and file sizes small.</li>
+<li>If your code has a lot of condition checks and complex branches, it might negatively impact GPU performance.</li>
+</ul>
+<p>To configure a keyword for dynamic branching, set its <a href="Keywords-reference.html#common-parameters"><strong>Definition</strong> parameter</a> to <strong>Dynamic Branch</strong>.</p>
+<p><a name="shader-variants"></a></p>
+<h3 id="shader-variants-and-runtime-optimization">Shader variants and runtime optimization</h3>
+<p>When you set up a keyword in a shader variant configuration:</p>
+<ul>
+<li>At build time, Unity compiles multiple shader variants according to the number of branches and keywords you define in your shader graph.</li>
+<li>At runtime, Unity sends the GPU the shader variant that matches the evaluation results.</li>
+</ul>
+<p>The impacts are the following:</p>
+<ul>
+<li>It improves GPU performance at runtime compared to a dynamic branching configuration.</li>
+<li>It mostly negatively affects the build time, especially if you use many keywords, which might require Unity to generate millions or trillions of shader variants.</li>
+</ul>
+<p>By default, Unity sets the keyword's <a href="Keywords-reference.html#common-parameters"><strong>Definition</strong> parameter</a> to <strong>Shader Feature</strong> to only compile shader variants you use in your build and reduce build time. If you need all the shader variants in your build, for example because you need to change shader branches at runtime, use <strong>Multi Compile</strong> instead. However, this might significantly increase build time and file sizes.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When Unity strips out a variant in the build process, any attempt to use this variant at runtime results in a pink shader error.</p>
+</div>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="Keywords-manage.html">Manage keywords in Shader Graph</a></li>
+<li><a href="Keywords-reference.html">Keyword parameter reference</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.shadergraph@287dd3fa176c/Documentation~/Keywords-concepts.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Sprite Swap examples | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Sprite Swap examples | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/ex-sprite-swap.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="sprite-swap-examples">Sprite Swap examples</h1>
+
+<p>This following sample projects demonstrate the different ways you can use Sprite Swap to achieve different effects and outcomes.</p>
+<p>The Scenes for the following samples can be all found in <code>Assets/Samples/2D Animation/[X.Y.Z]/Samples/4 SpriteSwap</code>:</p>
+<ul>
+<li><a href="#animated-swap">Animated swap</a></li>
+<li><a href="#part-swap">Part swap</a></li>
+<li><a href="#full-skin-swap">Full skin swap</a></li>
+<li><a href="#dlc-swap">DLC swap</a></li>
+<li><a href="ex-skeleton-sharing.html">Skeleton Sharing</a></li>
+<li><a href="ex-runtime-swap.html">Runtime Swap</a></li>
+</ul>
+<h2 id="animated-swap">Animated Swap</h2>
+<p>This sample demonstrates how to use Sprite Swap to create a reusable Animation Clip for animations that include both Sprite swapping and <a href="SpriteSkin.html">deformation</a> of the Sprites. <strong>Note:</strong> Install the <a href="https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest">PSD Importer</a> package to use this sample.</p>
+<p>Open the Scene file <code>1 Animated Swap.unity</code> to see the sample in action.</p>
+<p><img src="images/2D-animation-samples-spriteswap-animated1.png" alt="Color and grayscale versions of a character. The different characters share a single Animation clip. This is done by animating Sprite Resolver status. A hand animation from open hand to thumbs up is a swap between two Sprites."><br>Initial frame with the hands in thumbs-up position.</p>
+<p>This sample uses two different source files located in <code>Assets/Samples/2D Animation/[X.Y.Z]/Samples/5 SpriteSwap/Sprites</code>. The Assets used are:</p>
+<ul>
+<li><code>dialog.psb</code></li>
+<li><code>dialog gray.psb</code></li>
+</ul>
+<p>These Assets are imported with the PSD Importer with its <strong>Character Rig</strong> property enabled. Both Assets are rigged with the same skeleton, and each Asset has two different Sprites for the hands which are swapped during the animation.</p>
+<p>They are located in <code>Assets/Samples/2D Animation/[X.Y.Z]/Samples/5 Sprite Swap/Sprite Library</code> and are:</p>
+<ul>
+<li><code>dialog.spriteLib</code> for the color character.</li>
+<li><code>dialog gray.spriteLib</code> for the grayscale character.</li>
+</ul>
+<p>Follow the steps below to reconstruct the sample Scene:</p>
+<ol>
+<li><p>Drag both <code>dialog.psb</code> and <code>dialog gray.psb</code> Prefabs from the Project window into the Scene.</p>
+</li>
+<li><p>Add the <a href="SL-component.html">Sprite Library component</a> to <code>dialog</code> GameObject, then assign the <code>dialog.spriteLib</code> Asset to its <strong>Sprite Library Asset</strong> property.</p>
+</li>
+<li><p>Add the <a href="SL-component.html">Sprite Library component</a> to <code>dialog gray</code> GameObject, then assign the <code>dialog gray.spriteLib</code> Asset to its <strong>Sprite Library Asset</strong> property.</p>
+</li>
+<li><p>Expand the <code>dialog</code> GameObject's hierarchy and disable the <code>R_arm_2</code> child GameObject. This Asset is not required as it is swapped in during the animation.</p>
+</li>
+<li><p>Go to the <code>R_arm_1</code> GameObject, and add the <a href="SL-Resolver.html">Sprite Resolver component</a>. Select the <code>R_arm_2</code> graphic from the <strong>Label</strong> drop-down menu or from its thumbnail.</p>
+</li>
+<li><p>Repeat steps 4 to 5 with the <code>dialog gray</code> GameObject.</p>
+</li>
+<li><p>Add the <a href="https://docs.unity3d.com/Manual/class-Animator.html">Animator component</a> to the <code>dialog</code> and <code>dialog gray</code> GameObjects. Locate the Dialog <a href="https://docs.unity3d.com/Manual/Animator.html">Animator Controller Asset</a> in <code>Assets/Samples/2D Animation/[X.Y.Z]/Samples/5 Sprite Swap/Animation/Animators</code> and assign it to the Animator component's <strong>Controller</strong> property.</p>
+</li>
+</ol>
+<p>In this sample, the Sprite Library component is not attached to the same GameObject as the Sprite Resolver component. The Sprite Resolver attempts to locate a Sprite Library component starting from the same GameObject it is on and then traverse up the GameObject hierarchy. This lets a single or multiple Sprite Resolvers use the same Sprite Library component by attaching the Sprite Library component to a common root GameObject that the Sprite Resolver components are attached to.</p>
+<h2 id="part-swap">Part Swap</h2>
+<p>This sample demonstrates how to swap Sprite Assets using the API provided by changing the Sprite Resolver data. Open the <code>2 Part Swap.unity</code> Scene to see the sample in action.</p>
+<p><img src="images/2D-animation-samples-partswap-Scene.png" alt="A knight character with dropdowns for his various body parts. Different character parts can be swapped by changing the SpriteResolver's Label property on that part."></p>
+<p>In the Scene, each part has three different visual options that can be swapped. The graphic Assets are located in <code>Assets/Samples/2D Animation/[X.Y.Z]/Samples/5 SpriteSwap/Sprites</code>:</p>
+<ul>
+<li><code>Knight.psb</code></li>
+<li><code>Skeleton.psb</code></li>
+<li><code>Witch.psb</code></li>
+</ul>
+<p>A <a href="SL-Asset.html">Sprite Library Asset</a> containing Sprites made from all three graphic Assets above is created. A Category is created for each body part of the actor, with three Entries derived from the three different versions of the character. The Asset is located in <code>Assets/Samples/2D Animation/[X.Y.Z]/Samples/5 SpriteSwap/Sprite Library/Part Swap.spriteLib</code>.</p>
+<p>Attach the Sprite Library component to the <code>KnightRig</code> GameObject in the Scene. Assign the <code>Part Swap.spriteLib</code> Asset to its <strong>Sprite Library Asset</strong> property.</p>
+<p>Add the Sprite Resolver component to all Sprite Renderers under the <code>KnightRig</code> GameObject. Assign a Sprite that matches its corresponding GameObject, depending on the body part that GameObject represents. For example, select one of the Sprites in the 'Body' Category for the Sprite Resolver attached to the <code>KnightRig</code> GameObject and so on.</p>
+<p>With this setup, you can swap any part of the actor to another Sprite individually.</p>
+<h3 id="swap-part-script">Swap part script</h3>
+<p>A custom MonoBehaviour script called <code>SwapPart</code> is attached to the <code>KnightRig</code> GameObject. This script is located in <code>Assets/Samples/2D Animation/[X.Y.Z]/Samples/5 SpriteSwap/Scripts/Runtime/SwapPart.cs</code>.</p>
+<p>The script holds a reference to a Sprite Library component for retrieval of swappable Sprites. It also holds an array of data that describes the Category of Sprites in the Sprite Library that can be changed by a Sprite Resolver component.</p>
+<p>When the Swap Part script starts up, it attempts to fetch the Sprite Library Asset that is used by a Sprite Library component.</p>
+<pre><code class="lang-c++">var libraryAsset = spriteLibrary.spriteLibraryAsset;
+</code></pre>
+<p>From this Sprite Library Asset, it then fetches the Entries and Label names that are in a Category.</p>
+<pre><code class="lang-c++">var labels = libraryAsset.GetCategoryLabelNames(swapOption.category);
+</code></pre>
+<p>This is then used to populate the UI Drop Down list.</p>
+<p>When a value changes in the UI Drop Down List, it then sets the Sprite Resolver component to use the relevant Sprite.</p>
+<pre><code class="lang-c++">swapOption.spriteResolver.SetCategoryAndLabel(swapOption.category, swapOption.dropdown.options[x].text);
+</code></pre>
+<h2 id="full-skin-swap">Full Skin Swap</h2>
+<p>This sample demonstrates how to swap Sprite visuals using the provided API by changing the <a href="SL-Asset.html">Sprite Library Asset</a> referenced by the Sprite Library component. Open the <code>3 Full Swap.unity</code> Scene to see the sample in action.</p>
+<p><img src="images/2D-animation-samples-fullswap-scene.png" alt="A knight character with a dropdown that switches between knight, wolf, and witch. The entire character visual can be swapped by changing the SpriteLibraryAsset that is being used by the SpriteLibrary."></p>
+<p>In the Scene, there are three different visual Asset options that you can swap to. The Assets are located in <code>Assets/Samples/2D Animation/[X.Y.Z]/Samples/5 SpriteSwap/Sprites</code>:</p>
+<ul>
+<li><code>Knight.psb</code></li>
+<li><code>Wolf.psb</code></li>
+<li><code>Witch.psb</code></li>
+</ul>
+<p>The Sprite Library Assets have identical Categories, Entries, and Label names but with different Sprites selected. The Assets are located in <code>Assets/Samples/2D Animation/[X.Y.Z]/Samples/5 SpriteSwap/Sprite Library</code>.</p>
+<ul>
+<li><code>Knight.spriteLib</code></li>
+<li><code>Wolf.spriteLib</code></li>
+<li><code>Witch.spriteLib</code></li>
+</ul>
+<p>Attach the Sprite Library component to the <code>KnightRig</code> GameObject. Assign the <code>Knight.spriteLib</code> Asset to its Sprite Library Asset property.</p>
+<p>Add the Sprite Resolver component to each of the Sprite Renderers under the <code>KnightRig</code> GameObject. Assign a Sprite to each Sprite Resolver that corresponds to the body part they are attached to. For example, the <code>torso</code> Sprite is selected for the Sprite Resolver attached to the <code>torso</code> GameObject.</p>
+<h3 id="swap-full-skin-script">Swap Full Skin Script</h3>
+<p>A custom MonoBehaviour script called <code>SwapFullSkin</code> is attached to the<code> KnightRig</code> GameObject. This script is located in <code>Assets/Samples/2D Animation/[X.Y.Z]/Samples/5 SpriteSwap/Scripts/Runtime/SwapFullSkin.cs</code></p>
+<p>Where a value changes in the UI Drop Down List, the component sets the relevant Sprite Library Asset to be used for the Sprite Library component.</p>
+<pre><code class="lang-c++">spriteLibraryTarget.spriteLibraryAsset = spriteLibraries[value];
+</code></pre>
+<h2 id="dlc-swap">DLC Swap</h2>
+<p>This sample demonstrates how to swap Sprite visuals by changing the referenced Sprite Library Asset referenced by the Sprite Library component, using the API provided. This sample builds on the <a href="#full-skin-swap">Full Skin Swap</a> sample.</p>
+<p>This difference from the Full Skin Swap method is that the Sprite Library Asset is loaded from an <a href="https://docs.unity3d.com/Manual/AssetBundlesIntro.html">AssetBundle</a> during runtime and added to the Sprite Library component at a later time. Open the  <code>4 DLC Swap.unity</code> Scene to see the sample in action.</p>
+<p><img src="images/2D-animation-samples-DLCswap-scene.png" alt="Two knight characters, with dropdowns that select their skins. These characters have downloadable content with additional visuals. This can be achieved by exporting Sprite Library Assets in Asset Bundles to be loaded later."></p>
+<p>To ensure the AssetBundle works correctly, check that the <code>Skeleton.spriteLib</code> Asset in <code>Assets/Samples/2D Animation/[X.Y.Z]/Samples/5 SpriteSwap/Sprite Library</code> is labeled with its corresponding AssetBundle tag.</p>
+<h3 id="load-swap-dlc-script">Load Swap DLC Script</h3>
+<p>A custom MonoBehaviour script called <code>LoadSwapDLC</code> is attached to the <code>Load DLC</code> GameObject. The script is located in <code>Assets/Samples/2D Animation/[X.Y.Z]/Samples/5 SpriteSwap/Scripts/Runtime/LoadSwapDLC.cs</code></p>
+<p>The script starts up when the DLC is loaded, it scan the AssetBundles for any Sprite Library Assets. Once the Sprite Library Assets are loaded, it adds these Entries into the <code>SwapFullSkin</code> script from the <a href="#full-skin-swap">Full Skin Swap</a> sample.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/ex-sprite-swap.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

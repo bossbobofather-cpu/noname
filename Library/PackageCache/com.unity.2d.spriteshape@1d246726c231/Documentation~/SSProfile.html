@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Sprite Shape Profile | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Sprite Shape Profile | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.spriteshape@1d246726c231/Documentation~/SSProfile.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="sprite-shape-profile">Sprite Shape Profile</h1>
+
+<p>The <strong>Sprite Shape Profile</strong> contains the settings that determine which Sprites that appear on a Sprite Shape at specific Angle Ranges, as well as other display settings. You can use the same Profile for multiple <strong>Sprite Shapes</strong> in a Scene.</p>
+<p>Create a Sprite Shape Profile from the Editor main menu (menu: <strong>Assets &gt; Create &gt; Sprite Shape Profile</strong>), and select from the two available options: <a href="#open-shape">Open Shape</a> and <a href="#closed-shape">Closed Shape</a>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Function</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Control Points</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Use Sprite Borders</strong></td>
+<td>Enable to draw the <strong>Sprite Borders</strong> of a Sprite at the Control Point. Define the <strong>Sprite Borders</strong> in the <strong>Sprite Editor</strong>.</td>
+</tr>
+<tr>
+<td><strong>Fill</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Texture</strong></td>
+<td>Set the Texture to be used as a Fill to this field. Has no effect if the <strong>Open Ended</strong> property in the <strong>Sprite Shape Controller</strong> settings is enabled.</td>
+</tr>
+<tr>
+<td><strong>Offset</strong></td>
+<td>Determines the border offset at the edges of the Fill texture.</td>
+</tr>
+<tr>
+<td><img src="images/v1.1-AngleRange.png" alt="Angle Range tool"><strong>Angle Ranges (tool)</strong></td>
+<td>Use this tool to create Angle Ranges and assign Sprites to those ranges.</td>
+</tr>
+<tr>
+<td><strong>Start (degrees)</strong></td>
+<td>Enter the starting angle for the selected Angle Range in degrees.</td>
+</tr>
+<tr>
+<td><strong>End (degrees)</strong></td>
+<td>Enter the ending angle for the selected Angle Range in degrees.</td>
+</tr>
+<tr>
+<td><strong>Order</strong></td>
+<td>Determines the display priority when Sprites intersect. Sprites with higher values are rendered above lower ones.</td>
+</tr>
+<tr>
+<td><strong>Sprites</strong></td>
+<td>List of Sprites assigned to the selected Angle Range. Displays a list of all Sprites assigned to the selected Angle Range. The order of Sprites in the list determines their <strong>Sprite Variant</strong> number, starting from zero at the top of the list. The first Sprite at the top of the list is the Sprite displayed by default at a Control Point.</td>
+</tr>
+<tr>
+<td><strong>Corners</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>(All Corner options)</strong></td>
+<td>Assign specific Sprites to be displayed on the Sprite Shape at the respective corners.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="open-shape">Open Shape</h2>
+<p>Use the <strong>Open Shape</strong> preset Profile to create Shapes made from a single edge outline with tiled Sprites along its edge. This preset is ideal for creating level elements such as platforms.</p>
+<p><img src="images/2D_SpriteShape_024.png" alt="Example of level geometry made with the Open Shape preset, showing a snow-covered rock platform created by tiled sprites following the curve of the Sprite Shape's spline."></p>
+<p>Drag the Open Shape Profile into the Scene view to automatically generate a Sprite Shape with <strong>Open Ended</strong> enabled in its <strong>Sprite Shape Controller</strong> settings.</p>
+<h2 id="closed-shape">Closed Shape</h2>
+<p>Use the <strong>Closed Shape</strong> preset Profile to create Shapes that encompass an enclosed area. The Closed Sprite Shape can display and tile a Fill texture in the enclosed area, if a Fill texture is set in its Profile settings. Use this preset to create large solid filled Shapes that are ideal for backgrounds or large platforms.</p>
+<p>Drag the Closed Shape Profile into the Scene view to automatically generate a Sprite Shape with <strong>Open Ended</strong> disabled in its <strong>Sprite Shape Controller</strong> settings. The Closed Shape Profile's preset Angle Ranges create a square Sprite Shape by default.</p>
+<p>A key feature of the <strong>Sprite Shape Profile</strong> is the Angle Ranges tool. Assigning an Angle Range determines what Sprite is displayed at specific angles, as the Sprite Shape is deformed in the Scene.</p>
+<h2 id="creating-angle-ranges">Creating Angle Ranges</h2>
+<h3 id="method-1">Method 1:</h3>
+<p>To create an Angle Range, click the <strong>Create Range</strong> button at the bottom of the Angle Ranges tool.</p>
+<p>The <strong>Create Range</strong> button is only visible if the <strong>Preview Handle</strong> is over an area without an Angle Range.</p>
+<h3 id="method-2">Method 2:</h3>
+<p>Another way is to hover your cursor over an empty area of the Angle Range circle. An outline appears to show the possible default angle range. Click to create this Angle Range.</p>
+<h3 id="editing-the-angle-range-degrees">Editing the Angle Range degrees</h3>
+<p>The range covered by the currently selected Angle Range is displayed at the bottom of the tool.</p>
+<p>You can edit a range by entering new values into <strong>Start</strong> and <strong>End</strong>, or drag either endpoint of the tool to the desired angles. A range cannot be extended into an existing neighboring range. To delete an Angle Range, select the range and then press the <strong>Del/Delete</strong> key.</p>
+<h2 id="assigning-sprites">Assigning Sprites</h2>
+<p>After creating the Angle Ranges, the next step is to assign Sprites to those ranges. The <strong>Sprites</strong> list is found beneath the <strong>Angle Ranges</strong> tool. It lists all the Sprites assigned to the selected range.</p>
+<p>To add Sprites to the list, click the <strong>+</strong> icon to insert a new row to the list.  Click the circle icon next to the empty row to open the <strong>Object Picker</strong> window, which displays all available Sprites in the project.</p>
+<p>You can also drag a Sprite directly onto a row to add it to the list. The Sprite at the top of the list is the default Sprite displayed on the Sprite Shape.  Refer to the other Sprites in the list by their <a href="SSController.html">Sprite Variant</a> number. See the <a href="SSController.html">Sprite Shape Controller</a> page for more details.</p>
+<p>Drag the leftmost ends of the rows up or down to reorder the list, which changes the <strong>Sprite Variant</strong> numbers of the Sprites accordingly.</p>
+<h2 id="previewing-sprites-of-multiple-angle-ranges">Previewing Sprites of multiple Angle Ranges</h2>
+<p>After assigning Sprites to multiple <strong>Angle Ranges</strong>, rotate the Preview Handle around the Angle Range tool to preview the Sprites assigned those ranges.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.spriteshape@1d246726c231/Documentation~/SSProfile.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

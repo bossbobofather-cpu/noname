@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Drag sprites to create or edit Categories and Labels | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Drag sprites to create or edit Categories and Labels | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SL-Drag.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="drag-sprites-to-create-or-edit-categories-and-labels">Drag sprites to create or edit Categories and Labels</h1>
+
+<p>This page shows the different ways you can create or edit Categories and Labels in a Sprite Library Asset by dragging sprites directly into the Sprite Library Editor window.</p>
+<p>You can automatically create new Categories and Labels by dragging sprites or <a href="https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest">PSD Importer supported file types</a> directly into the <a href="SL-Editor.html">Sprite Library Editor</a> window.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li><a href="https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest">PSD Importer package</a> is required for the Sprite Library Editor to recognize imported .psb files.</li>
+</ul>
+<h2 id="create-a-new-category">Create a new Category</h2>
+<ol>
+<li>In the open Sprite Library Editor window, drag a sprite directly onto the Categories column to create a new Category. You can't create Labels without selecting an existing Category first.</li>
+</ol>
+<h2 id="create-a-new-label-for-each-sprite">Create a new Label for each sprite</h2>
+<ol>
+<li><p>Select a Category, then drag a or a selection of sprites into an empty space in the Labels column.</p>
+<p><img src="images/2D-animation-SLAsset-drag-n-drop-04.png" alt="The Sprite Library Editor with a head sprite added to the Labels column."><br><em>Dragging the <code>head</code> sprite into the Labels column creates a new Label named <code>head</code> in the selected Category.</em></p>
+</li>
+<li><p>Unity creates a new Label for each sprite in the selection and gives it the same name as the sprite it references. <strong>Note:</strong>  If an existing Label with the same name already exists at the destination, then the editor appends <code>_X</code> to the new Label's name, where <code>X</code> is the next number in sequence, starting from zero. For example, dragging in a selection of sprites all named <code>head</code> results in additional Labels created with the <code>_X</code> suffix for each sprite.</p>
+</li>
+</ol>
+<h2 id="replace-a-labels-sprite-reference">Replace a Label's sprite reference</h2>
+<ol>
+<li><p>Drag a sprite onto an existing Label.</p>
+</li>
+<li><p>The editor replaces the sprite reference to the new sprite. The Label's name remains unchanged.</p>
+</li>
+</ol>
+<h2 id="create-a-single-category-with-multiple-labels">Create a single Category with multiple Labels</h2>
+<ol>
+<li><p>Select multiple sprites from the Project window.</p>
+</li>
+<li><p>Drag the selected sprites into the Categories column to create a new Category. The Category is automatically named after the first sprite in the selection.</p>
+<p><img src="images/sl-editor-drag-select-sprites-drop.png" alt="The Sprite Library Editor window with a new category called left_leg that contains the left_leg and left_arm sprites dragged from the Labels column"></p>
+</li>
+</ol>
+<p><strong>Note:</strong>  If an existing Category with the same name already exists at the destination, then the editor appends <code>_X</code> to the new Category's name, where <code>X</code> is the next number in sequence, starting from zero.</p>
+<h2 id="create-categories-for-each-layer-and-layer-group">Create Categories for each Layer and Layer Group</h2>
+<p>After you <a href="PreparingArtwork.html">prepare the .psb</a> of your character, import it into Unity with the PSD Importer package. <strong>Note:</strong> The following <a href="#prerequisites">requires</a> the PSD Importer package to be installed.</p>
+<ol>
+<li><p>Enable <strong>Use Layer Group</strong> in the imported .psb's properties.</p>
+</li>
+<li><p>Drag the imported .psb file into the Sprite Library Editor's Categories column.</p>
+</li>
+<li><p>The editor creates a Category for each Layer and Layer Group, and creates Labels for each sprite. Sprites which belonged to the same Layer Group are automatically grouped into the same Category.</p>
+</li>
+</ol>
+<h2 id="replace-each-labels-sprite-references">Replace each Labels' sprite references</h2>
+<p>The following steps how to replace each Label's sprite reference with sprites from a different imported .psb. <strong>Note:</strong> This method only works if the imported .psb has Layers and Layer Groups with the same exact names as the original .psb used to <a href="#create-categories-for-each-layer-and-layer-group">create the Categories and Labels</a>.</p>
+<p>This method is useful when you have multiple characters with the same Layers and Layer Groups and want to replace their respective sprites without creating a new Sprite Library Asset.</p>
+<ol>
+<li><p>Enable <strong>Use Layer Groups</strong> in the replacement .psb file's properties.</p>
+</li>
+<li><p>Drag the replacement .psb onto an empty space in the Categories column and release. All sprite references of the same name and in the same Categories are automatically replaced with their respective counterparts from the replacement .psb.</p>
+</li>
+</ol>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest">PSD Importer package</a></li>
+<li><a href="PreparingArtwork.html">Preparing and importing artwork</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SL-Drag.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

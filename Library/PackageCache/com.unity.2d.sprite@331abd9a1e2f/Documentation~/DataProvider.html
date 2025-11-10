@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Sprite Editor Data Provider API | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Sprite Editor Data Provider API | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.sprite@331abd9a1e2f/Documentation~/DataProvider.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="sprite-editor-data-provider-api">Sprite Editor Data Provider API</h1>
+
+<p>By using the Sprite Editor Data Provider API, the user can add, change and remove Sprite data in a custom importer or editor tool. Refer to the code examples below to see how the API is applied.</p>
+<p><strong>Important:</strong> Some of the following examples contains an additional section of code which is needed if you are using Unity 2021.2 or newer. If you are using Unity 2021.1 or older, you should remove the indicated section to ensure the code compiles properly.</p>
+<h2 id="how-to-get-ispriteeditordataprovider-instances">How to get ISpriteEditorDataProvider instances</h2>
+<p>The following examples show you how to use the API to get each respective instance.</p>
+<h3 id="importer">Importer</h3>
+<pre><code class="lang-C#">using UnityEditor;
+using UnityEditor.U2D.Sprites;
+using UnityEngine;
+
+public class MyAssetPostProcessor : AssetPostprocessor
+{
+    private void OnPreprocessTexture()
+    {
+        var factory = new SpriteDataProviderFactories();
+        factory.Init();
+        var dataProvider = factory.GetSpriteEditorDataProviderFromObject(assetImporter);
+        dataProvider.InitSpriteEditorDataProvider();
+
+        /* Use the data provider */
+
+        // Apply the changes made to the data provider
+        dataProvider.Apply();
+    }
+}
+</code></pre>
+<h3 id="texture">Texture</h3>
+<pre><code class="lang-C#">using UnityEditor;
+using UnityEditor.U2D.Sprites;
+using UnityEngine;
+
+public static class MyCustomTool
+{
+    [MenuItem(&quot;Custom/Update Sprite Settings&quot;)]
+    static void UpdateSettings()
+    {
+        foreach (var obj in Selection.objects)
+        {
+            if (obj is Texture2D)
+            {
+                var factory = new SpriteDataProviderFactories();
+                factory.Init();
+                var dataProvider = factory.GetSpriteEditorDataProviderFromObject(obj);
+                dataProvider.InitSpriteEditorDataProvider();
+
+                /* Use the data provider */
+
+                // Apply the changes made to the data provider
+                dataProvider.Apply();
+
+                // Reimport the asset to have the changes applied
+                var assetImporter = dataProvider.targetObject as AssetImporter;
+                assetImporter.SaveAndReimport();
+            }
+        }
+    }
+}
+</code></pre>
+<h2 id="how-to-add-sprites">How to add Sprites</h2>
+<pre><code class="lang-C#">static void AddSprite(ISpriteEditorDataProvider dataProvider)
+{
+    // Define the new Sprite Rect
+    var newSprite = new SpriteRect()
+    {
+        name = &quot;MyNewSprite&quot;,
+        spriteID = GUID.Generate(),
+        rect = new Rect(0, 0, 32, 32)
+    };
+    // Add the Sprite Rect to the list of existing Sprite Rects
+    var spriteRects = dataProvider.GetSpriteRects().ToList();
+    spriteRects.Add(newSprite);
+
+    // Write the updated data back to the data provider
+    dataProvider.SetSpriteRects(spriteRects.ToArray());
+
+    // Note: This section is only for Unity 2021.2 and newer
+    // Register the new Sprite Rect's name and GUID with the ISpriteNameFileIdDataProvider
+    var spriteNameFileIdDataProvider = dataProvider.GetDataProvider&lt;ISpriteNameFileIdDataProvider&gt;();
+    var nameFileIdPairs = spriteNameFileIdDataProvider.GetNameFileIdPairs().ToList();
+    nameFileIdPairs.Add(new SpriteNameFileIdPair(newSprite.name, newSprite.spriteID));
+    spriteNameFileIdDataProvider.SetNameFileIdPairs(nameFileIdPairs);
+    // End of Unity 2021.2 and newer section
+
+    // Apply the changes
+    dataProvider.Apply();
+}
+</code></pre>
+<h2 id="how-to-change-sprite-data">How to change Sprite data</h2>
+<pre><code class="lang-C#">static void SetPivot(ISpriteEditorDataProvider dataProvider)
+{
+    // Get all the existing Sprites
+    var spriteRects = dataProvider.GetSpriteRects();
+
+    // Loop over all Sprites and update the pivots
+    foreach (var rect in spriteRects)
+    {
+        rect.pivot = new Vector2(0.1f, 0.2f);
+        rect.alignment = SpriteAlignment.Custom;
+    }
+
+    // Write the updated data back to the data provider
+    dataProvider.SetSpriteRects(spriteRects);
+
+    // Apply the changes
+    dataProvider.Apply();
+}
+</code></pre>
+<h2 id="how-to-remove-sprites">How to remove Sprites</h2>
+<pre><code class="lang-C#">static void RemoveSprite(ISpriteEditorDataProvider dataProvider, string spriteName)
+{
+    // Get all the existing Sprites and look for the Sprite with the selected name
+    var spriteRects = dataProvider.GetSpriteRects().ToList();
+    var index = spriteRects.FindIndex(x =&gt; x.name == spriteName);
+
+    // Remove the entry of the Sprite if found
+    if (index &gt;= 0)
+        spriteRects.RemoveAt(index);
+
+    // Write the updated data back to the data provider
+    dataProvider.SetSpriteRects(spriteRects.ToArray());
+
+    // Note: This section is only for Unity 2021.2 and newer
+    // Get all the existing SpriteName &amp; FileId pairs and look for the Sprite with the selected name
+    var spriteNameFileIdDataProvider = dataProvider.GetDataProvider&lt;ISpriteNameFileIdDataProvider&gt;();
+    var nameFileIdPairs = spriteNameFileIdDataProvider.GetNameFileIdPairs().ToList();
+    index = nameFileIdPairs.FindIndex(x =&gt; x.name == spriteName);
+
+    // Remove the entry of the Sprite if found
+    if (index &gt;= 0)
+        nameFileIdPairs.RemoveAt(index);
+
+    spriteNameFileIdDataProvider.SetNameFileIdPairs(nameFileIdPairs);
+    // End of Unity 2021.2 and newer section
+
+    // Apply the changes
+    dataProvider.Apply();
+}
+</code></pre>
+<h2 id="how-to-update-outline-data">How to update Outline data</h2>
+<pre><code class="lang-C#">static void SetOutline(ISpriteEditorDataProvider dataProvider)
+{
+    // Get the ISpriteOutlineDataProvider
+    var outlineDataProvider = dataProvider.GetDataProvider&lt;ISpriteOutlineDataProvider&gt;();
+
+    // Loop over all Sprites and set their outline to a quad
+    var spriteRects = dataProvider.GetSpriteRects();
+    foreach (var spriteRect in spriteRects)
+    {
+        var halfWidth = spriteRect.rect.width / 2f;
+        var halfHeight = spriteRect.rect.height / 2f;
+
+        var quadOutline = new Vector2[4]
+        {
+            new Vector2(-halfWidth, -halfHeight),
+            new Vector2(-halfWidth, halfHeight),
+            new Vector2(halfWidth, halfHeight),
+            new Vector2(halfWidth, -halfHeight)
+        };
+
+        var outlines = new List&lt;Vector2[]&gt;();
+        outlines.Add(quadOutline);
+
+        var spriteGuid = spriteRect.spriteID;
+        outlineDataProvider.SetOutlines(spriteGuid, outlines);
+    }
+
+    // Apply the changes
+    dataProvider.Apply();
+}
+</code></pre>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li>Full list of other available data providers is available in the package's <a href="xref:UnityEditor.U2D.Sprites">Scripting API section</a>.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.sprite@331abd9a1e2f/Documentation~/DataProvider.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

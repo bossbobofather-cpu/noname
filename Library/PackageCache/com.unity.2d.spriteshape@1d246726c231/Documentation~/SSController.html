@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Sprite Shape Controller | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Sprite Shape Controller | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.spriteshape@1d246726c231/Documentation~/SSController.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="sprite-shape-controller">Sprite Shape Controller</h1>
+
+<p>The <strong>Sprite Shape Controller</strong> component is automatically attached to the GameObject created when a <a href="SSProfile.html">Sprite Shape Profile</a> is dragged into the Scene. You edit the shape of the Sprite Shape's outline through the Controller's settings. The Controller displays different settings depending on different conditions.</p>
+<h2 id="property-settings---default">Property Settings - Default</h2>
+<p>The default component settings below are displayed when <strong>Edit Spline</strong> is not enabled.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Function</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Profile</strong></td>
+<td>Select the <strong>Sprite Shape Profile</strong> used by this Sprite Shape.</td>
+</tr>
+<tr>
+<td><strong>Edit Spline</strong></td>
+<td>Enable <img src="images/PropertyImage1.png" alt=""> to make the Control Points of the Sprite Shape visible and editable.</td>
+</tr>
+<tr>
+<td><strong>Spline</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Detail</strong></td>
+<td>Select the tessellation quality of the rendered Sprite Shape mesh. High/Medium/Low Quality options available.</td>
+</tr>
+<tr>
+<td><strong>Open Ended</strong></td>
+<td>Disable to connect both ends of the Sprite Shape together to form an enclosed Shape. Enable to leave both ends of the Sprite Shape unconnected.</td>
+</tr>
+<tr>
+<td><strong>Adaptive UV</strong></td>
+<td>Enabled by default. When enabled, Unity attempts to seamlessly tile the Sprites along the Sprite Shape path by deforming the Sprites to between Control Points. Disable this property to tile Sprites with no deformation and at  their exact width. Sprites may appear cutoff if the space between Control Points is shorter than the width of the Sprite.</td>
+</tr>
+<tr>
+<td><strong>Enable Tangents</strong></td>
+<td>Enable this property if there are features which require tangent calculations, such as when utilizing the Shaders with the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@9.0/manual/2d-index.html">2D Universal Render Pipeline</a>.</td>
+</tr>
+<tr>
+<td><strong>Corner Threshold</strong></td>
+<td>Use this slider to set the threshold of when a point is considered a corner of the Sprite Shape, where the value is the angle between adjacent edges and angles at the. A point is considered a corner at the threshold value and lower. The default value is 30 degrees. Set a custom value to override this default value.</td>
+</tr>
+<tr>
+<td><strong>Fill</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>Fill Tessellation (C# Job)</strong></td>
+<td>Generate fill geometry in C# Job.</td>
+</tr>
+<tr>
+<td><strong>Stretch UV</strong></td>
+<td>Enable this setting to have Unity stretch the UV of the Fill texture across the Full Rect of the Sprite Shape.</td>
+</tr>
+<tr>
+<td><strong>Custom Geometry Creator</strong></td>
+<td>Set the Scriptable Object that generates custom geometry. By default a built-in generator is set when created.</td>
+</tr>
+<tr>
+<td><strong>Custom Geometry Modifier</strong></td>
+<td>Set a list of Scriptable Objects that modifies generated geometry.</td>
+</tr>
+<tr>
+<td><strong>Pixels Per Unit (only available when Stretch UV is disabled)</strong></td>
+<td>This values affect the appearance of the Fill texture of the Sprite Shape. This value affects the scale of the Fill texture, with higher values reducing the size of the texture. The default value is 100.</td>
+</tr>
+<tr>
+<td><strong>World Space UV (only available when Stretch UV is disabled)</strong></td>
+<td>Enable to apply the Fill texture according to the World Space UV, instead of per GameObject UV.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="with-edit-spline-enabled-and-a-control-point-selected">With Edit Spline enabled and a Control Point selected</h3>
+<p>Enable <strong>Edit Spline</strong> in the Controller settings to make Control Points on the Sprite Shape visible and editable. Selecting a Control Point enables the following additional Controller settings.</p>
+<p><img src="images/SpriteShape_InspectorOverlay.png" alt="With a Control Point selected"><br>A: Global snap toggle</p>
+<table>
+<thead>
+<tr>
+<th><strong>Point</strong></th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tangent Mode</strong></td>
+<td>Select one of three <strong>Point Modes</strong> to change the way tangents on Control Points are edited.</td>
+</tr>
+<tr>
+<td><img src="images/2D_SpriteShape_7.png" alt=""><strong>Linear</strong></td>
+<td>No curve is formed between the Control Point and its neighboring points.</td>
+</tr>
+<tr>
+<td><img src="images/2D_SpriteShape_8.png" alt=""><strong>Continuous Mirrored</strong></td>
+<td>Two tangents appear on opposite sides of the Control Point, and the spline between the Control Point and its neighbors becomes curved. Adjust the tangents to change the shape of the curve. The angle between the two tangents is always 180 degrees in this mode.</td>
+</tr>
+<tr>
+<td><img src="images/2D_SpriteShape_9.png" alt=""><strong>Broken Mirrored</strong></td>
+<td>Two tangents appear on opposite sides of the Control Point, and the spline between the Control Point and its neighbors becomes curved. Adjust the tangents to change the shape of the curve. The length and angle of the tangents can be adjusted independently in this mood.</td>
+</tr>
+<tr>
+<td><strong>Position</strong></td>
+<td>The local x and y coordinates of a selected Control Point.</td>
+</tr>
+<tr>
+<td><strong>Height</strong></td>
+<td>Increase or decrease the height of Sprites at the Control Point by a factor of 0.1 to 4.</td>
+</tr>
+<tr>
+<td><strong>Corner</strong></td>
+<td>Sets whether Corner Sprites are rendered at Control Points. Set to <strong>Automatic</strong> by default.</td>
+</tr>
+<tr>
+<td>  <strong>Disabled</strong></td>
+<td>A Sprite is not rendered at the selected Control Point.</td>
+</tr>
+<tr>
+<td>   <strong>Automatic</strong></td>
+<td>The Control Point displays the assigned Corner Sprite, if both it and its neighbors are in <strong>Linear Point Mode</strong>.</td>
+</tr>
+<tr>
+<td>  <strong>Stretched</strong></td>
+<td>The Corner Sprite at the selected Control Point is connected to its adjacent neighbors, stretching the Sprite. See the <a href="#stretched-corners">list of required criteria</a> below to use this feature.</td>
+</tr>
+<tr>
+<td><strong>Sprite Variant</strong></td>
+<td>Select the <strong>Sprite Variant</strong> from the visual Variant selector. Press <strong>N</strong> to cycle through all available Variants for the Control Point.</td>
+</tr>
+<tr>
+<td><strong>Global snapping</strong></td>
+<td>When <a href="#editing-the-spline">Edit Spline</a> is enabled, select the <strong>Global Snap</strong> icon (see <strong>A</strong> in screenshot above) to toggle Grid Snapping on or off.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stretched-corners">Stretched Corners</h3>
+<p>This feature allows the Sprite Shape to form corners with stretched Sprites between adjacent edges between the corner point and its neighbors. Select the Stretched option from the <strong>Corner</strong> dropdown menu, and ensure the following criteria are met:</p>
+<ol>
+<li>Both the selected and adjacent points have the same <strong>Height</strong>.</li>
+<li>Sprites rendered at the Corner point and its neighboring points must have the same Sprite pivot position.</li>
+</ol>
+<h3 id="additional-collider-settings">Additional Collider settings</h3>
+<p>Add either the <strong>Polygon Collider 2D</strong> or <strong>Edge Collider 2D</strong> component to the <strong>Sprite Shape</strong> to enable additional <strong>Collider</strong> settings in the <strong>Sprite Shape Controller</strong>. Refer to <a href="SSCollision.html">Enabling Collision</a> for more details about enabling Colliders with Sprite Shapes. Colliders are always optimized by cleaning up extra control points that are colinear.</p>
+<p><img src="images/2019_3_SSController_collider.png" alt="Collider settings"></p>
+<table>
+<thead>
+<tr>
+<th>Collider</th>
+<th>-</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Update Collider</strong></td>
+<td>Enabled by Default. Enable this option to have the Collider mesh be updated to the Sprite Shape's current shape as the Sprite Shape is edited. Disable if you are editing the Collider mesh separately from the Sprite Shape and to use a custom Collider mesh.</td>
+</tr>
+<tr>
+<td><strong>Offset</strong></td>
+<td>Select the amount to extrude the Collider mesh towards the edge of the Sprite Shape. The range is from -0.5 to 0.5, starting at 0 by default.</td>
+</tr>
+<tr>
+<td><strong>Detail</strong></td>
+<td>Sets the tessellation quality of the rendered Collider. High/Medium/Low Quality options available.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="editing-the-spline">Editing the Spline</h2>
+<p>To edit the mesh outline of the <strong>Sprite Shape</strong>, click the <strong>Edit Spline</strong> button to make the Shape's spline and its <strong>Control Points</strong> become visible and editable.</p>
+<p><img src="images/UpdatedEditSpline_2019-3.png" alt="Edit Spline enabled"></p>
+<p>When <strong>Edit Spline</strong> is enabled, move the Control Points of the Sprite Shape to adjust its overall shape and size. Add additional Control Points by clicking on the spline in between Control Points. Press the <strong>Del/Delete</strong> key to remove the currently selected Control Point.</p>
+<p><img src="images/2D_SpriteShape_032.png" alt="Control Point added to spline"></p>
+<p>With a Control Point selected, cycle through the __Point Modes __by pressing the <strong>M</strong> key. To change the <strong>Mode</strong> of multiple Control Points at once, ensure that all selected Control Points are the same <strong>Mode</strong> first before cycling or selecting another <strong>Mode</strong>.</p>
+<p>To change the Sprite Variant currently displayed at a selected Control Point, press the <strong>N</strong> key to cycle through all available Variants.</p>
+<p>All shortcut keys can be rebound under the Shortcut menu (menu: <strong>Edit &gt; Shortcuts... &gt; SpriteShape Editing</strong>).</p>
+<h2 id="point-modes">Point Modes</h2>
+<p>When a Control Point is selected, its <strong>Point Mode</strong> can be one of three modes- <strong>Linear</strong>, <strong>Mirrored</strong>, and <strong>Non-Mirrored</strong>.</p>
+<p>The <strong>Point Mode</strong> determines the behavior of the tangents that are used to adjust the spline between Control Points. Each Control Point can be set to a specific Point Mode and contain its own settings.</p>
+<h3 id="linear-point-mode">Linear Point Mode</h3>
+<p>In <strong>Linear Point Mode</strong>, there are no tangents to control the curve between the Control Point and its neighbors, curves are not formed between Control Points and Sprites may overlap if they intersect.</p>
+<p>Adjust which Sprite is displayed when two or more intersect by adjusting their <strong>Order</strong> value in the <a href="SSProfile.html">Sprite Shape Profile's</a> <strong>Angle Range</strong> settings.</p>
+<p><img src="images/2D_SpriteShape_034.png" alt="Linear Point Mode"></p>
+<h3 id="continuous-mirrored-point-mode">Continuous Mirrored Point Mode</h3>
+<p>In <strong>Continuous Mirrored Point Mode</strong>, tangents appear on both sides of the selected Control Point to create a curve between the Control Point and its neighbors. Adjust the shape of the curve with the tangents. In this mode, the angle between the tangents is always maintained at 180 degrees although their lengths from the can vary.</p>
+<p>Press <strong>B</strong> to mirror the length of the last edited tangent onto the opposite tangent.</p>
+<p><img src="images/2D_SpriteShape_033.png" alt="Mirrored Point Mode"></p>
+<h3 id="broken-mirrored-point-mode">Broken Mirrored Point Mode</h3>
+<p>In <strong>Broken Mirrored Point Mode</strong>,  tangents appear on both sides of the selected Control Point to create a curve between the Control Point and its neighbors. Adjust the shape of the curve with the tangents. In this mode, the length and angle of each tangent can be adjusted independently.</p>
+<p>Press <strong>B</strong> to mirror the length of the last edited tangent onto the opposite tangent. In this mode, pressing <strong>B</strong> also causes the angle of the opposite tangent to become exactly 180 degrees from the last edited tangent.</p>
+<p><img src="images/2D_SpriteShape_036.png" alt="Non-Mirrored Mode"></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.spriteshape@1d246726c231/Documentation~/SSController.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

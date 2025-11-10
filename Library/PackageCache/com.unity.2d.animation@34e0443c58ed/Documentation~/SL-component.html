@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Sprite Library component in Unity | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Sprite Library component in Unity | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SL-component.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="sprite-library-component-in-unity">Sprite Library component in Unity</h1>
+
+<p>The <strong>Sprite Library</strong> component defines which <a href="SL-Asset.html">Sprite Library Asset</a> a GameObject refers to at runtime. When you attach this component to a GameObject, the <a href="SL-Resolver.html">Sprite Resolver component</a> attached to the same GameObject or child GameObject will refer to the Sprite Library Asset set by the Sprite Library component. This allows you to change the Sprite referenced by a <a href="https://docs.unity3d.com/Manual/class-SpriteRenderer">Sprite Renderer</a> with the Sprite Resolver component.</p>
+<h2 id="sprite-library-inspector-window">Sprite Library Inspector window</h2>
+<p>In the Sprite Library component’s Inspector window, assign the desired Sprite Library Asset to the <strong>Sprite Library Asset</strong> property. You can also select <strong>New</strong> to create and save a new Sprite Library Asset which is automatically assigned to the Sprite Library Asset field.</p>
+<p>After assigning a Sprite Library Asset, the Inspector window shows a <strong>Open Sprite Library Editor</strong> button.</p>
+<p>To edit the contents of a Sprite Library Asset, use the <a href="SL-Editor.html">Sprite Library Editor window</a>.</p>
+<h2 id="overriding-entries">Overriding entries</h2>
+<p>You can't override Sprite Library entries directly in the <strong>Inspector</strong> window starting from version 9 of the 2D Animation package. To override Sprite Library entries, use these <a href="xref:UnityEngine.U2D.Animation.SpriteLibrary#methods">public methods</a> instead.</p>
+<p>To save the overrides to a separate asset, select <strong>Export to Sprite Library Asset</strong>. The asset is then automatically assigned to the Sprite Library Asset property.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="SLASwap.html">Swapping Sprite Library Assets</a></li>
+<li><a href="SL-Main-Library.html">Overrides to the Main Library</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SL-component.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

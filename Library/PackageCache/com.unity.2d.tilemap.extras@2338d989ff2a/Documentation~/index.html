@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>2D Tilemap Extras | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="2D Tilemap Extras | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.tilemap.extras@2338d989ff2a/Documentation~/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="2d-tilemap-extras">2D Tilemap Extras</h1>
+
+<p>The 2D Tilemap Extras package contains reusable 2D and Tilemap editor scripts which you can use for your own Projects,
+and as the basis for your own custom Brushes and Tiles. You can freely customize the behavior of the scripts to create
+new Brushes that suit different uses or scenarios. To find these additional Brushes, open the Tile Palette window (menu:
+<strong>Window &gt; 2D &gt; Tile Palette</strong>) and open the Brush drop-down menu near the bottom of the editor. Select from the
+available Brush options for different effects.</p>
+<p><img src="images/BrushDropdown.png" alt="Brush drop-down menu."></p>
+<p>The source code for these scripts can be found in the
+repository <a href="https://github.com/Unity-Technologies/2d-extras" title="2d-extras: Extras for 2d features">2d-extras</a>, and
+examples of the implemented scripts can be found in the sister
+repository <a href="https://github.com/Unity-Technologies/2d-techdemos" title="2d-techdemos: Examples for 2d features">2d-techdemos</a>.</p>
+<h2 id="scriptable-brushes">Scriptable Brushes</h2>
+<ul>
+<li><p><a href="GameObjectBrush.html">GameObject</a>: This Brush instances, places and manipulates GameObjects onto the Scene. Use this as
+an example to create Brushes which targets GameObjects, other than Tiles, for instancing and manipulation.</p>
+</li>
+<li><p><a href="GroupBrush.html">Group</a>: This Brush picks groups of Tiles based on their positions relative to each other. Adjust the
+size of groups the Brush picks by setting the Gap and Limit properties. Use this Brush as an example to create Brushes
+that pick Tiles based on specific criteria.</p>
+</li>
+<li><p><a href="LineBrush.html">Line</a>: This Brush draws a line of Tiles between two points onto a Tilemap. Use this as an example to
+modify Brush painting behavior to make painting more efficient.</p>
+</li>
+<li><p><a href="RandomBrush.html">Random</a>: This Brush places random Tiles onto a Tilemap. Use this as an example to create Brushes
+which store specific data per Brush and to make Brushes which randomize behavior.</p>
+</li>
+</ul>
+<h2 id="scriptable-tiles">Scriptable Tiles</h2>
+<p>The following are the <a href="Tiles.html">Scriptable Tiles</a> included in this package. You can create (menu: <strong>Create &gt; Tiles</strong> )
+the following additional Tile types that are included with this package.</p>
+<ul>
+<li><a href="AnimatedTile.html">Animated</a>: This Tile runs through and displays a list of Sprites in sequence to create a
+frame-by-frame animation.</li>
+<li><a href="RuleTile.html">Rule Tile</a>: This is a generic visual Tile that accepts rules you create with the <strong>Tiling Rules</strong> editor
+to create different Tilesets. Rule Tiles are the basis of the Terrain, Pipeline, Random or Animated Tiles. There are
+different types of Rule Tiles for each of the <a href="https://docs.unity3d.com/Manual/class-Grid.html">Tilemap grid types</a>.
+The default Rule Tile is only used with the Rectangle Grid type Tilemap, while the Hexagonal and Isometric Rule Tiles
+are used with their respective Grid types.</li>
+<li><strong>Hexagonal Rule Tile</strong>: A Rule Tile
+for <a href="https://docs.unity3d.com/Documentation/Manual/Tilemap-Hexagonal.html">Hexagonal Grids</a>. Enable the <strong>Flat Top</strong>
+property for a Flat Top Hexagonal Grid, or clear it for a Pointed Top Hexagonal Grid.</li>
+<li><strong>Isometric Rule Tile</strong>: A Rule Tile for use
+with <a href="https://docs.unity3d.com/Documentation/Manual/Tilemap-Isometric-CreateIso.html">Isometric Grids</a>.</li>
+<li><a href="RuleOverrideTile.html">Rule Override Tile</a>: This Tile can override Sprites and GameObjects for a
+given <a href="RuleTile.html">Rule Tile</a> to provide different behaviour without changing the original Rules.</li>
+<li><a href="AdvancedRuleOverrideTile.html">Advanced Rule Override Tile</a>: This Tile can override a subset of Rules for a
+given <a href="RuleTile.html">Rule Tile</a> to provide specialized behavior, while keeping the rest of the original Rules intact.</li>
+<li><a href="AutoTile.html">Auto Tile</a>: This Tile match themselves based on the mask set on Textures to generate the AutoTile
+ruleset.</li>
+</ul>
+<h2 id="other">Other</h2>
+<ul>
+<li><a href="GridInformation.html">GridInformation</a>: A simple MonoBehavior that stores and provides information based on Grid
+positions and keywords.</li>
+<li><a href="CustomRulesForRuleTile.html">Custom Rules for RuleTile</a>: This helps to create new custom Rules for the Rule Tile with
+more options.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.tilemap.extras@2338d989ff2a/Documentation~/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Sprite Library Asset in Unity | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Sprite Library Asset in Unity | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SL-Asset.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="sprite-library-asset-in-unity">Sprite Library Asset in Unity</h1>
+
+<p>The <strong>Sprite Library Asset</strong> is an Unity asset that contains the Sprites that you want to use for <a href="SpriteSwapIntro.html">Sprite Swapping</a>. This page explains what are the <a href="#sprite-library-asset-properties">Sprite Library Asset properties</a> and how to <a href="#create-a-sprite-library-asset">create a Sprite Library Asset</a> or a <a href="#convert-a-sprite-library-asset-into-a-variant">Sprite Library Asset variant</a>.</p>
+<p>A Sprite Library Asset groups the Sprites it contains into <a href="SL-Editor.html#categories">Categories</a>, and you can give these Sprites unique names called <a href="SL-Editor.html#labels">Labels</a> to differentiate them. You can edit the Sprite Library Asset's content in the <a href="SL-Editor.html">Sprite Library Editor window</a> (refer to its documentation for more details).</p>
+<p>In the <a href="SpriteSwapSetup.html">Sprite Swap workflow</a>, after creating a Sprite Library Asset or several assets, you can select the Sprite Library Asset you want to use with the <a href="SL-component.html">Sprite Library</a> component, and the <a href="SL-Resolver.html">Sprite Resolver</a> component will pull information from the asset selected.</p>
+<h2 id="create-a-sprite-library-asset">Create a Sprite Library Asset</h2>
+<p>To create a Sprite Library Asset, go to <strong>Assets</strong> &gt; <strong>Create</strong> &gt; <strong>2D</strong> &gt; <strong>Sprite Library Asset</strong>.</p>
+<h2 id="sprite-library-asset-properties">Sprite Library Asset properties</h2>
+<p>Select the Sprite Library Asset and go to its Inspector window to view the following properties.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Open in Sprite Library Editor</strong></td>
+<td>Select this to open the <a href="SL-Editor.html">Sprite Library Editor window</a> to edit the content of this asset.</td>
+</tr>
+<tr>
+<td><strong>Main Library</strong></td>
+<td>Leave this property empty to have this Sprite Library Asset refer to its own Categories and Labels. Assign a different Sprite Library Asset to have it become the <a href="SL-Editor-UI.html#main-library">Main Library</a> of the selected Sprite Library Asset, which will now refer to the second asset's Categories and Labels instead. Doing so also <a href="#convert-a-sprite-library-asset-into-a-variant">converts</a> the selected Sprite Library Asset into a Variant asset of the Sprite Library Asset set as the <strong>Main Library</strong>.</td>
+</tr>
+<tr>
+<td><strong>Revert</strong></td>
+<td>Select this to reset property changes back to the last saved state. Selecting this removes all unsaved changes.</td>
+</tr>
+<tr>
+<td><strong>Apply</strong></td>
+<td>Select this to save the current property settings.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create-a-sprite-library-asset-variant">Create a Sprite Library Asset Variant</h2>
+<p>A Sprite Library Asset Variant inherits <strong>Categories</strong> and <strong>Labels</strong> from a selected Sprite Library Asset, instead of referring to its own. There are two ways to create a Variant.</p>
+<h3 id="create-through-the-menu">Create through the menu</h3>
+<p>After creating a Sprite Library Asset, select it in the Project window, then go to <strong>Assets</strong> &gt; <strong>Create</strong> &gt; <strong>2D</strong> &gt; <strong>Sprite Library Asset Variant</strong> to create a Variant asset that references it.</p>
+<h3 id="convert-a-sprite-library-asset-into-a-variant">Convert a Sprite Library Asset into a Variant</h3>
+<p>You can convert an existing Sprite Library Asset into a Variant of another by setting another Sprite Library Asset as its <a href="SL-Main-Library.html">Main Library</a>.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="SL-Editor.html">Sprite Library Editor</a></li>
+<li><a href="SpriteSwapSetup.html">Setting up for Sprite Swap</a></li>
+<li><a href="SL-Main-Library.html">Overrides to the Main Library</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SL-Asset.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

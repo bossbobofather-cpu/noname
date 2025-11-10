@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Changelog | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Changelog | mysite ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.tilemap@ba4a6b72f451/CHANGELOG.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="changelog">Changelog</h1>
+
+<p>All notable changes to this package will be documented in this file.</p>
+<p>The format is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a></p>
+<h2 id="100---2019-09-18">[1.0.0] - 2019-09-18</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Allow child GameObjects in the Palette Asset to be shown in the Tile Palette</li>
+<li>Add toggle to allow rendering of Gizmos in the Tile Palette</li>
+<li>Add OnSceneGUI API to GridBrushEditorBase for GUI calls for the active Brush (OnPaintSceneGUI is called only when the appropriate EditorTool is active)</li>
+<li>Add GridPaletteUtility to create Palette Assets through scripting</li>
+</ul>
+<h2 id="100---2019-06-06">[1.0.0] - 2019-06-06</h2>
+<h3 id="added-1">Added</h3>
+<ul>
+<li>Rename package to 2D Tilemap Editor</li>
+<li>Switch to a Paintable tool after picking from a Picking Is Default Paintable Grid if the previous tool was a tool that did not allow painting</li>
+<li>Store last used brush per session to persist when going into and out of PlayMode</li>
+</ul>
+<h2 id="100---2019-03-22">[1.0.0] - 2019-03-22</h2>
+<h3 id="added-2">Added</h3>
+<ul>
+<li>Allow users to convert Prefabs to Tile Palettes by dragging and dropping a valid Prefab onto the Tile Palette Window</li>
+<li>Add toggle to allow changing of Z Position with GridBrush</li>
+<li>Expose GridPaintingState.scenePaintTarget to allow users to change currently active target for Tile Palette Window</li>
+<li>Expose GridPaintingState.validTargets to allow users to get currently valid targets for Tile Palette Window</li>
+<li>Expose GridPaintingState.gridBrush to allow users to change currently active GridBrush for Tile Palette Window</li>
+<li>Expose GridPaintingState.palette to allow users to change currently active Palette for Tile Palette Window</li>
+<li>Expose TileUtility to allow users to create default Tiles through scripts</li>
+<li>Add CreateTileFromPaletteAttribute to allow users to specify how Tiles are created when dragging and dropping assets to the Tile Palette Window</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Convert TilePalette to use EditorTools API</li>
+</ul>
+<h2 id="100---2019-01-02">[1.0.0] - 2019-01-02</h2>
+<h3 id="this-is-the-first-release-of-tilemap-editor-as-a-package">This is the first release of Tilemap Editor, as a Package</h3>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.tilemap@ba4a6b72f451/CHANGELOG.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

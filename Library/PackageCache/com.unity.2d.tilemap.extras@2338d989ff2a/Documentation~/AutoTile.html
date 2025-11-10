@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>AutoTile | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="AutoTile | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.tilemap.extras@2338d989ff2a/Documentation~/AutoTile.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="autotile">AutoTile</h1>
+
+<p>AutoTiles match themselves based on the mask set on Textures to generate the AutoTile ruleset. Two types of Masks are
+available for the AutoTile, the 2x2 type for 16 Sprites and the 3x3 type for 47 Sprites set.</p>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Default Sprite</strong></td>
+<td>The Sprite set when there are no matches.</td>
+</tr>
+<tr>
+<td><strong>Default GameObject</strong></td>
+<td>The GameObject instantiated when set on the Tilemap.</td>
+</tr>
+<tr>
+<td><strong>Tile Collider</strong></td>
+<td>The Collider Type used for generating colliders.</td>
+</tr>
+<tr>
+<td>Mask Type</td>
+<td>Mask Type for setting Rules for the AutoTile. Use 2x2 for a 16 Sprite ruleset and 3x3 for a 47 Sprite ruleset.</td>
+</tr>
+<tr>
+<td>Random</td>
+<td>Randomly picks a Sprite if multiple Sprites share the same mask. Otherwise, uses the first Sprite set with the mask.</td>
+</tr>
+<tr>
+<td>Used Textures</td>
+<td>Sprites will be used from the selected Textures to make up the ruleset. You will be able to set the appropriate Sprites by painting the masks on the Sprites.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="usage">Usage</h3>
+<p><img src="images/AutoTileEditor.png" alt="AutoTile Editor"></p>
+<p>Set up the AutoTile by selecting the appropriate Mask Type and add the required Textures to be used. You can adjust the
+Scale per Texture to have it sized appropriately in the window.</p>
+<p>Each Texture will have its Sprites outlined as a rectangle. Depending on the Mask Type set, the rectangle will be split
+into portions, either 2x2 or 3x3. Click on each portion to set a mask on that portion. Doing these sets up the painting
+rule for that Sprite. Paint masks on each Sprite to set up the entire ruleset for the AutoTile.</p>
+<h4 id="2x2">2x2</h4>
+<p>Each corner mask must be matched with the same Tiles bordering that corner. For example, if the top right corner is
+masked, for this to be matched, there must be the same Tiles to its top, top right and right for it to be matched.</p>
+<p>In the below example, the center Tile has the same Tile on all corners except the top left. This matches the mask on the
+top right, bottom left and bottom right and will use the corresponding Sprite.</p>
+<p><img src="images/2x2Mask.png" alt="2x2 Mask"></p>
+<h4 id="3x3">3x3</h4>
+<p>Each mask on the borders must be matched with the same Tile for the painted Rule to be matched. The center mask
+determines if this mask rule is active.</p>
+<p>In the below example, the center Tile has the same Tile on the top, right and bottom. This matches the mask with the
+borders on the top, right and bottom and will use the corresponding Sprite.</p>
+<p><img src="images/3x3Mask.png" alt="3x3 Mask"></p>
+<p>If two or more Sprites have the same mask painted on, they will each have a red border to highlight this. If this error
+is not corrected, the first Sprite from the top left will be used when there is a match in the mask.</p>
+<p>You can save the finished AutoTile ruleset as a TileTemplate by clicking on the Save button. This exports the ruleset
+for the current Texture. You can load the TileTemplate for another AutoTile using a similar Texture with the same layout
+without having to set up the masks again. The example below shows an AutoTile with a Texture loaded with an
+AutoTileTemplate created from the AutoTile above.</p>
+<p><img src="images/LoadAutoTileTemplate.png" alt="Similar Texture with loaded AutoTile Template"></p>
+<p>Assets used are from <a href="https://kenney.nl/assets/top-down-shooter">https://kenney.nl/assets/top-down-shooter</a></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.tilemap.extras@2338d989ff2a/Documentation~/AutoTile.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

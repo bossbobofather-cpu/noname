@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class GameViewModel | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class GameViewModel | mysite ">
+      
+      <meta name="description" content="입력, 시뮬레이션, 이벤트 브로커 역할을 통합하는 최상위 뷰모델입니다.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Noname.Presentation.ViewModels.GameViewModel">
+
+
+
+  <h1 id="Noname_Presentation_ViewModels_GameViewModel" data-uid="Noname.Presentation.ViewModels.GameViewModel" class="text-break">
+Class GameViewModel  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Noname.html">Noname</a>.<a class="xref" href="Noname.Presentation.html">Presentation</a>.<a class="xref" href="Noname.Presentation.ViewModels.html">ViewModels</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>입력, 시뮬레이션, 이벤트 브로커 역할을 통합하는 최상위 뷰모델입니다.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class GameViewModel</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">GameViewModel</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Noname_Presentation_ViewModels_GameViewModel__ctor_" data-uid="Noname.Presentation.ViewModels.GameViewModel.#ctor*"></a>
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel__ctor_Noname_Application_UseCases_StartGameUseCase_Noname_Application_UseCases_MovePlayerUseCase_Noname_Application_Services_DefenseSimulationService_Noname_Application_Ports_IGameInputReader_Noname_Application_Ports_IGameStateRepository_" data-uid="Noname.Presentation.ViewModels.GameViewModel.#ctor(Noname.Application.UseCases.StartGameUseCase,Noname.Application.UseCases.MovePlayerUseCase,Noname.Application.Services.DefenseSimulationService,Noname.Application.Ports.IGameInputReader,Noname.Application.Ports.IGameStateRepository)">
+  GameViewModel(StartGameUseCase, MovePlayerUseCase, DefenseSimulationService, IGameInputReader, IGameStateRepository)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>턴 진행에 필요한 유즈케이스와 서비스를 주입합니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameViewModel(StartGameUseCase startGame, MovePlayerUseCase movePlayer, DefenseSimulationService simulationService, IGameInputReader inputReader, IGameStateRepository repository)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>startGame</code> <a class="xref" href="Noname.Application.UseCases.StartGameUseCase.html">StartGameUseCase</a></dt>
+    <dd></dd>
+    <dt><code>movePlayer</code> <a class="xref" href="Noname.Application.UseCases.MovePlayerUseCase.html">MovePlayerUseCase</a></dt>
+    <dd></dd>
+    <dt><code>simulationService</code> <a class="xref" href="Noname.Application.Services.DefenseSimulationService.html">DefenseSimulationService</a></dt>
+    <dd></dd>
+    <dt><code>inputReader</code> <a class="xref" href="Noname.Application.Ports.IGameInputReader.html">IGameInputReader</a></dt>
+    <dd></dd>
+    <dt><code>repository</code> <a class="xref" href="Noname.Application.Ports.IGameStateRepository.html">IGameStateRepository</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Noname_Presentation_ViewModels_GameViewModel_ApplyResourceDropEffect_" data-uid="Noname.Presentation.ViewModels.GameViewModel.ApplyResourceDropEffect*"></a>
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_ApplyResourceDropEffect_Noname_Application_ValueObjects_ResourceDropCollectedEvent_" data-uid="Noname.Presentation.ViewModels.GameViewModel.ApplyResourceDropEffect(Noname.Application.ValueObjects.ResourceDropCollectedEvent)">
+  ApplyResourceDropEffect(ResourceDropCollectedEvent)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>자원 드롭 효과를 적용하고 필요한 후속 로직을 수행합니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ApplyResourceDropEffect(ResourceDropCollectedEvent evt)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>evt</code> <a class="xref" href="Noname.Application.ValueObjects.ResourceDropCollectedEvent.html">ResourceDropCollectedEvent</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Presentation_ViewModels_GameViewModel_ForceAbilitySelection_" data-uid="Noname.Presentation.ViewModels.GameViewModel.ForceAbilitySelection*"></a>
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_ForceAbilitySelection" data-uid="Noname.Presentation.ViewModels.GameViewModel.ForceAbilitySelection">
+  ForceAbilitySelection()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>(디버그) 조건과 상관없이 어빌리티 선택 단계를 강제로 엽니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ForceAbilitySelection()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Presentation_ViewModels_GameViewModel_Initialize_" data-uid="Noname.Presentation.ViewModels.GameViewModel.Initialize*"></a>
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_Initialize_Noname_Core_ValueObjects_DefenseGameSettings_" data-uid="Noname.Presentation.ViewModels.GameViewModel.Initialize(Noname.Core.ValueObjects.DefenseGameSettings)">
+  Initialize(DefenseGameSettings)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>설정 값을 주입하고 상태를 초기화합니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Initialize(DefenseGameSettings settings)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>settings</code> <a class="xref" href="Noname.Core.ValueObjects.DefenseGameSettings.html">DefenseGameSettings</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Presentation_ViewModels_GameViewModel_SelectAbility_" data-uid="Noname.Presentation.ViewModels.GameViewModel.SelectAbility*"></a>
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_SelectAbility_System_Int32_" data-uid="Noname.Presentation.ViewModels.GameViewModel.SelectAbility(System.Int32)">
+  SelectAbility(int)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>표시 중인 어빌리티 목록에서 index에 해당하는 항목을 적용합니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SelectAbility(int index)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Presentation_ViewModels_GameViewModel_Tick_" data-uid="Noname.Presentation.ViewModels.GameViewModel.Tick*"></a>
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_Tick_System_Single_" data-uid="Noname.Presentation.ViewModels.GameViewModel.Tick(System.Single)">
+  Tick(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>입력 처리, 시뮬레이션 실행, 이벤트 브로드캐스트를 수행합니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Tick(float deltaTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="events">Events
+</h2>
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_AbilityChoicesPresented" data-uid="Noname.Presentation.ViewModels.GameViewModel.AbilityChoicesPresented">
+  AbilityChoicesPresented
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>어빌리티 선택지가 준비됐음을 알립니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;GameplayAbilityDefinition[]&gt; AbilityChoicesPresented</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Noname.Core.ValueObjects.GameplayAbilityDefinition.html">GameplayAbilityDefinition</a>[]&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_AbilitySelectionCleared" data-uid="Noname.Presentation.ViewModels.GameViewModel.AbilitySelectionCleared">
+  AbilitySelectionCleared
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>어빌리티 선택 UI가 닫혔음을 알립니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action AbilitySelectionCleared</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_BombardmentPointChanged" data-uid="Noname.Presentation.ViewModels.GameViewModel.BombardmentPointChanged">
+  BombardmentPointChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>폭격 고정 지점이 설정/해제될 때 호출됩니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;Float2?&gt; BombardmentPointChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a>?&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_EnemyHealthChanged" data-uid="Noname.Presentation.ViewModels.GameViewModel.EnemyHealthChanged">
+  EnemyHealthChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>적 체력이 변했을 때 호출됩니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;int, float&gt; EnemyHealthChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_EnemyPositionChanged" data-uid="Noname.Presentation.ViewModels.GameViewModel.EnemyPositionChanged">
+  EnemyPositionChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>적 위치가 갱신됐을 때 호출됩니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;int, Float2&gt; EnemyPositionChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_EnemyProjectileFired" data-uid="Noname.Presentation.ViewModels.GameViewModel.EnemyProjectileFired">
+  EnemyProjectileFired
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>적 투사체 발사 이벤트.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;EnemyProjectileFiredEvent&gt; EnemyProjectileFired</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Noname.Application.ValueObjects.EnemyProjectileFiredEvent.html">EnemyProjectileFiredEvent</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_EnemyRemoved" data-uid="Noname.Presentation.ViewModels.GameViewModel.EnemyRemoved">
+  EnemyRemoved
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>적이 제거됐을 때 호출됩니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;int&gt; EnemyRemoved</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_EnemySpawned" data-uid="Noname.Presentation.ViewModels.GameViewModel.EnemySpawned">
+  EnemySpawned
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>새 적이 스폰되면 호출됩니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;EnemyEntity&gt; EnemySpawned</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Noname.Core.Entities.EnemyEntity.html">EnemyEntity</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_FortressDamaged" data-uid="Noname.Presentation.ViewModels.GameViewModel.FortressDamaged">
+  FortressDamaged
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>거점이 피해를 입을 때 피해량을 전달합니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;float&gt; FortressDamaged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_FortressHealthChanged" data-uid="Noname.Presentation.ViewModels.GameViewModel.FortressHealthChanged">
+  FortressHealthChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>거점 현재/최대 체력이 변경될 때 발생합니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;float, float&gt; FortressHealthChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-2">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_GameOver" data-uid="Noname.Presentation.ViewModels.GameViewModel.GameOver">
+  GameOver
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>거점 파괴 등으로 게임이 끝났을 때 호출됩니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action GameOver</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action">Action</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_GamePaused" data-uid="Noname.Presentation.ViewModels.GameViewModel.GamePaused">
+  GamePaused
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>게임이 특정 이유로 일시 정지됐음을 알립니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;GameViewPauseReason&gt; GamePaused</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Noname.Presentation.ViewModels.GameViewPauseReason.html">GameViewPauseReason</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_GameResumed" data-uid="Noname.Presentation.ViewModels.GameViewModel.GameResumed">
+  GameResumed
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>일시 정지가 해제됐음을 알립니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;GameViewPauseReason&gt; GameResumed</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Noname.Presentation.ViewModels.GameViewPauseReason.html">GameViewPauseReason</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_PlayerExperienceChanged" data-uid="Noname.Presentation.ViewModels.GameViewModel.PlayerExperienceChanged">
+  PlayerExperienceChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>플레이어 경험치/레벨 상태가 바뀌면 호출됩니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;float, float, int&gt; PlayerExperienceChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-3">Action</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_PlayerPositionChanged" data-uid="Noname.Presentation.ViewModels.GameViewModel.PlayerPositionChanged">
+  PlayerPositionChanged
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>플레이어 위치가 변경될 때 발생합니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;Float2&gt; PlayerPositionChanged</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_PlayerProjectileFired" data-uid="Noname.Presentation.ViewModels.GameViewModel.PlayerProjectileFired">
+  PlayerProjectileFired
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>플레이어 투사체 발사 이벤트.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;PlayerProjectileFiredEvent&gt; PlayerProjectileFired</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Noname.Application.ValueObjects.PlayerProjectileFiredEvent.html">PlayerProjectileFiredEvent</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_ProjectileImpactOccurred" data-uid="Noname.Presentation.ViewModels.GameViewModel.ProjectileImpactOccurred">
+  ProjectileImpactOccurred
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>투사체 충돌 이벤트.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;ProjectileImpactEvent&gt; ProjectileImpactOccurred</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Noname.Application.ValueObjects.ProjectileImpactEvent.html">ProjectileImpactEvent</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_ResourceDropCollected" data-uid="Noname.Presentation.ViewModels.GameViewModel.ResourceDropCollected">
+  ResourceDropCollected
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>자원 드롭이 수집됐을 때 호출됩니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;ResourceDropCollectedEvent&gt; ResourceDropCollected</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Noname.Application.ValueObjects.ResourceDropCollectedEvent.html">ResourceDropCollectedEvent</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h3 id="Noname_Presentation_ViewModels_GameViewModel_ResourceDropSpawned" data-uid="Noname.Presentation.ViewModels.GameViewModel.ResourceDropSpawned">
+  ResourceDropSpawned
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>새 자원 드롭이 생성됐을 때 호출됩니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event Action&lt;ResourceDropSpawnedEvent&gt; ResourceDropSpawned</code></pre>
+  </div>
+
+
+
+
+
+
+  <h4 class="section">Event Type</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<a class="xref" href="Noname.Application.ValueObjects.ResourceDropSpawnedEvent.html">ResourceDropSpawnedEvent</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

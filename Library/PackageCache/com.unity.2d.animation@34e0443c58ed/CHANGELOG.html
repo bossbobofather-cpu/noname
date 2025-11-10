@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Changelog | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Changelog | mysite ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/CHANGELOG.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="changelog">Changelog</h1>
+
+<h2 id="1202---2025-06-12">[12.0.2] - 2025-06-12</h2>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Fix the icon quality of Sprite Swap Overlay Window. (DANB-988)</li>
+<li>Fix NullReferenceException error thrown by the Sprite Library Editor window when entering Play Mode with Game View maximised (DANB-1019)</li>
+</ul>
+<h2 id="1201---2025-06-04">[12.0.1] - 2025-06-04</h2>
+<h3 id="fixed-1">Fixed</h3>
+<ul>
+<li>Replaced deprecated non-generic IMGUI TreeViewItem. (Case DANB-1004)</li>
+<li>Fixed wrong USS syntax.</li>
+</ul>
+<h2 id="1200---2025-05-16">[12.0.0] - 2025-05-16</h2>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Update minimum Unity version.</li>
+</ul>
+<h3 id="fixed-2">Fixed</h3>
+<ul>
+<li>Fix the exception when generating geometry with hidden sprites. (DANB-841)</li>
+<li>Added missing tooltips to visibility window (DANB-843)</li>
+<li>Fixed InvalidOperationException occurs when playing in sample scene '3 Character' and 'Attachment Points'. (DANB-860)</li>
+<li>Fix the issue of putting a warning string &quot;Adding null Transform to TransformAccessArray will result in degraded performance.&quot; (DANB-931)</li>
+<li>Fixed misaligned text in 2D Animation preferences (DANB-879)</li>
+<li>Fixed blurry icons in Sprite Library Editor. (DANB-842)</li>
+<li>Fixed unselectable pivot dropdown in skinning editor. (DANB-956)</li>
+<li>Fixed incorrect scrollbars when adding a large number of categories to sprite library. (DANB-895)</li>
+<li>Fixed blurry Sprite Library asset icons in Project window. (DANB-901)</li>
+</ul>
+<h2 id="1020---2025-03-07">[10.2.0] - 2025-03-07</h2>
+<h3 id="changed-1">Changed</h3>
+<ul>
+<li>Update minimum Unity version.</li>
+</ul>
+<h3 id="fixed-3">Fixed</h3>
+<ul>
+<li>Sprite Skin's test instability. (DANB-772)</li>
+<li>Sprite Skin's null ref exception when HDRP is present in the project. (DANB-785)</li>
+<li>Updating Skinning Plugin to work on Ubuntu versions &gt;= 20.</li>
+<li>Skinning Editor style fixes. (DANB-804)</li>
+<li>Reset TransformAccessJob's cache. (DANB-807)</li>
+<li>Asset Upgrader icons. (DANB-802)</li>
+<li>Check for SRP Batching enabled from Backend.</li>
+</ul>
+<h2 id="1014---2024-10-07">[10.1.4] - 2024-10-07</h2>
+<h3 id="fixed-4">Fixed</h3>
+<ul>
+<li>Animation Preview window sometimes does not display deformed Sprites. (DANB-705)</li>
+<li>Sprite Resolver missing sprite previews when dealing with large number of entries. (DANB-714)</li>
+<li>Misaligned label previews in Sprite Resolver's inspector. (DANB-722)</li>
+<li>Sprite Resolver component not updated after Sprite Library Asset has been modified. (DANB-727)</li>
+<li>Sprite Skin breaks in the animation preview window after sprite swap. (DANB-743)</li>
+<li>IK gizmos are displayed in the SceneView when IKManager2D is active in Animation Preview window. (DANB-738)</li>
+<li>IK solvers are misaligned when bones have different depths. (DANB-753)</li>
+<li>Rendering issues with SRP Batching and Sprite mask. (DANB-760)</li>
+<li>Unable to drag sprites into empty rows of the Sprite Library Editor. (DANB-749)</li>
+<li>Sprite Skin deformation systems have outdated data after sprite swap. (DANB-766)</li>
+<li>Setting incorrect computer buffer size. (DANB-768)</li>
+<li>Reenable editor tests.</li>
+<li>Bone buffer binding issues.</li>
+<li>Sprite changed callback listeners.</li>
+</ul>
+<h2 id="1013---2024-07-26">[10.1.3] - 2024-07-26</h2>
+<h3 id="fixed-5">Fixed</h3>
+<ul>
+<li>Sprite Swap overlay Label selection not reacting to mouse clicks. (case DANB-627)</li>
+<li>Sprite Swap overlay selection lock behavior. (case DANB-629)</li>
+<li>Sprite Bone Influence tab bone reordering. (case DANB-634)</li>
+<li>Documentation, comments, and other requirements to conform to Package Validation. (DANB-653)</li>
+<li>Wrong Label is deleted when a newly created Label is deleted in the Sprite Library Editor. (case DANB-665)</li>
+<li>Cannot select multiple Labels in the Sprite Library Editor when using Grid View. (case DANB-670)</li>
+<li>Documentation, comments, and other requirements to conform to Package Validation. (DANB-653)</li>
+<li>Support for renaming Sprite Library Editor entries with 'F2' on Windows. (DANB-674)</li>
+<li>Renaming functionality for Labels is available to users when multiple Labels are selected. (case DANB-668)</li>
+<li>Fixed SpriteSkin's playmode test failures. (case DANB-678)</li>
+<li>Modifying the Sprite Skin component through public API.</li>
+<li>Skinning Editor bone and mesh Visibility sliders too short. (case DANB-681)</li>
+<li>Fixed an issue where opening a Sprite Library Asset, when it is a sub asset, in the Sprite Library Editor, would throw an exception.</li>
+</ul>
+<h2 id="1012---2024-05-06">[10.1.2] - 2024-05-06</h2>
+<h3 id="fixed-6">Fixed</h3>
+<ul>
+<li>Sprite Library's labels and categories cannot be reordered. (case DANB-593)</li>
+<li>Added safety checks to SpriteSkin's public APIs. (case DANB-598)</li>
+<li>Fixed the IK bones flipped at certain angels. (case DANB-595)</li>
+<li>Fixed the the memory leak in the SpriteSkin component. (case DANB-603)</li>
+<li>Fixed the incorrect transform cache capacity in the SpriteSkin component. (case DANB-615)</li>
+</ul>
+<h3 id="changed-2">Changed</h3>
+<ul>
+<li>Updated the Editor Analytics to use the latest APIs.</li>
+<li>Updated the UI Elements to use the latest APIs.</li>
+<li>Remove implicit NativeArray cast from MeshUtilities.</li>
+<li>Updated the SpriteSkin's deformation system to improve performance.</li>
+</ul>
+<h2 id="1011---2024-02-06">[10.1.1] - 2024-02-06</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Support for automatic weight generation in the Skinning Editor for ARM64 editors. (case DANB-550)</li>
+</ul>
+<h3 id="fixed-7">Fixed</h3>
+<ul>
+<li>Sprite Resolver previews not visible after editor regained focus. (case DANB-565)</li>
+<li>Sprite Skin is not deformed in the Editor after exiting the playmode if the domain reload is disabled. (case DANB-573)</li>
+</ul>
+<h2 id="1010---2023-11-30">[10.1.0] - 2023-11-30</h2>
+<h3 id="fixed-8">Fixed</h3>
+<ul>
+<li>Blend weight vertex attribute is added only when sprite has bones. (case DANB-521)</li>
+<li>Sprite Library editor drag and drop interactions. (case DANB-536)</li>
+<li>Sprite Library editor drag and drop blocked by labels. (case DANB-560)</li>
+<li>Adjust the copy-paste logic to not paste sprite mesh to the same sprite twice. (case DANB-532)</li>
+<li>Sprite Library Asset is selected on creation. (case DANB-544)</li>
+<li>Sprite Library Editor window not reacting to the delete command. (case DANB-547)</li>
+</ul>
+<h3 id="added-1">Added</h3>
+<ul>
+<li>SpriteSkin's Auto Rebind property can now be accessed from scripts. (case DANB-492)</li>
+<li>Sprite Library public API to save an asset as a .spriteLib SpriteLibrarySourceAsset.</li>
+<li>Ability to lock Sprite Library Editor window's asset selection.</li>
+</ul>
+<h3 id="changed-3">Changed</h3>
+<ul>
+<li>Update samples to use UI Toolkit.</li>
+<li>Moved the Sprite Library Editor window's save shortcut to the Shortcut Manager.</li>
+</ul>
+<h2 id="1003---2023-09-04">[10.0.3] - 2023-09-04</h2>
+<h3 id="fixed-9">Fixed</h3>
+<ul>
+<li>Fixed an issue where the FK doesn't blend correctly with the IK if solver solves from the bind pose. (case DANB-484)</li>
+<li>Fixed an issue where GPU-deformed Sprites will not animated after scene reload. (case DANB-461)</li>
+<li>Added correct help documentation link to Sprite Library Asset. (case DANB-487)</li>
+</ul>
+<h3 id="changed-4">Changed</h3>
+<ul>
+<li>Updated documentation on enabling GPU skinning.</li>
+<li>Update the Sprite Library component inspector to inform users about the entry overrides documentation page.</li>
+</ul>
+<h2 id="1002---2023-05-04">[10.0.2] - 2023-05-04</h2>
+<h3 id="added-2">Added</h3>
+<ul>
+<li>Updated IK parameter names and comments in public APIs.</li>
+</ul>
+<h3 id="fixed-10">Fixed</h3>
+<ul>
+<li>Fixed Sprite Resolver inspector not able to set category to 'No Category' if it contains the old hash value. (case DANB-396)</li>
+<li>Fixed an issue where the Limb IK solver will become unstable when the child bones have different Z position. (case DANB-416)</li>
+<li>Fixed an issue where the CCD and Fabrik solvers will become unstable when the child bones have different Z position. (case DANB-421)</li>
+<li>Fixed an issue where changing Sprite Library reference in the Inspector will result in an exception. (case DANB-429)</li>
+</ul>
+<h2 id="1001---2023-05-03">[10.0.1] - 2023-05-03</h2>
+<h3 id="added-3">Added</h3>
+<ul>
+<li>Added console log when Skinning Editor is overwriting mesh from Custom Outline module. Logs can be enabled or disabled from 2D Animation user settings.</li>
+<li>Added support for the Collections 2.X packages.</li>
+</ul>
+<h3 id="fixed-11">Fixed</h3>
+<ul>
+<li>Fixed Sprite Resolver inspector not able to set category to 'No Category' if it contains the old hash value. (case DANB-396)</li>
+</ul>
+<h3 id="changed-5">Changed</h3>
+<ul>
+<li>Renamed the &quot;Sprite Resolver&quot; overlay to &quot;Sprite Swap&quot;.</li>
+<li>Added lock toggle to the Sprite Swap overlay and updated its stylesheets.</li>
+<li>Added support for the Collections 2.X packages.</li>
+</ul>
+<h2 id="1000---2023-02-23">[10.0.0] - 2023-02-23</h2>
+<h3 id="added-4">Added</h3>
+<ul>
+<li>Scene overlays for manipulating Sprite Resolver's category and label.</li>
+<li>Ability to change Sprite Skin's root transform and bone transforms from a script.</li>
+<li>Ability to reset Sprite Skin's bind pose by script.</li>
+</ul>
+<h3 id="fixed-12">Fixed</h3>
+<ul>
+<li>Fixed an issue where undoing vertex painting results in a displaced mesh. (case DANB-334)</li>
+<li>Fixed an issue where &quot;System.ArgumentException&quot; thrown when opening sprite Prefab with Script. (DANB-335)</li>
+<li>Fixed an issue where IKEditorManager updates even when there are no active IK Manager 2Ds in the Scene. (case DANB-348)</li>
+<li>Fixed SpriteResolver does not animation with animation clip when upgrading from 2020.3. (case DANB-375)</li>
+<li>Fixed an issue where IKGizmos will throw an exception in the editor when IKSolver has an unassigned Solver in its list. (case DANB-373)</li>
+<li>Fixed IMGUIContainer:ProcessEvent error occurs when selecting a PSD embedded SpriteLibraryAsset as a Main Library of another Sprite Library Asset. (case DANB-379)</li>
+<li>Fixed Sprite Resolver inspector not updating its previews when the category is set externally to 'No Category'. (case DANB-390)</li>
+</ul>
+<h2 id="1000-pre2---2022-11-30">[10.0.0-pre.2] - 2022-11-30</h2>
+<h3 id="fixed-13">Fixed</h3>
+<ul>
+<li>Fixed an issue where body parts could not be selected from UI dropdowns in a sample scene '2 Part Swap'. (case DANB-262)</li>
+<li>Fixed case where IndexOutOfRangeException occurs when auto-generating mesh with a specific settings and bones. (Case DANB-244)</li>
+<li>Split the batch deformation into two, GPU &amp; CPU deformation, which allows renderers to be placed into the deformation system most suitable for the renderer.</li>
+<li>Optimized the bone gizmo rendering in the scene view.</li>
+<li>Replace obsolete API calls.</li>
+</ul>
+<h3 id="changed-6">Changed</h3>
+<ul>
+<li>Changed the default script execution order for of Sprite Resolvers, IK Managers and Sprite Skins.</li>
+</ul>
+<h3 id="added-5">Added</h3>
+<ul>
+<li>Sprite Library Assets can now be dragged and dropped into the scene, hierarchy, and inspector.</li>
+</ul>
+<h2 id="1000-pre1---2022-09-21">[10.0.0-pre.1] - 2022-09-21</h2>
+<h3 id="added-6">Added</h3>
+<ul>
+<li>Added bone weight index validation in SpriteSkin's validate method, to ensure valid data before continuing with deformation.</li>
+<li>IK Manger 2D now supports camera frustum culling.</li>
+<li>Added internal properties to Sprite Skin to get outline data of an assigned mesh.</li>
+</ul>
+<h3 id="fixed-14">Fixed</h3>
+<ul>
+<li>Fixed a case where moving vertices forcefully in the Skinning editor could cause a quad reset of the mesh. (case DANB-7)</li>
+<li>Fixed a case where pasting bones in the Skinning Editor would move bones rather than copy them. (case DANB-99)</li>
+<li>Fixed an issue where selecting bones in the Skinning Editor after removing any bone in the skeleton will throw an exception. (Case DANB-124)</li>
+<li>Fixed a case where setting IKManager2D's or Solver2D's weight to '0' doesn't update solver's effector position. (DANB-139)</li>
+<li>Fixed a case where multi selecting Sprite Skins would cause a null reference exception to be thrown. (case DANB-126)</li>
+<li>Fixed an issue where undo the addition of a Sprite Skin component would crash the editor. (DANB-201)</li>
+<li>Fixed an issue where the Sprite Skin editor would throw an exception if Sprite Renderer doesn't have a Sprite assigned to it.</li>
+<li>Fixed a case where new bones are not selected after pasting them in the Skinning Editor and an exception is thrown. (DANB-208)</li>
+<li>Fixed IK Manager 2D's inspector slow downs. (case DANB-214)</li>
+<li>Fixed a case where a .psd/.psb with a Main Skeleton assigned would generate incorrect bind poses. (Case DANB-225)</li>
+</ul>
+<h3 id="changed-7">Changed</h3>
+<ul>
+<li>Refactored internal triangulation and tessellation APIs.</li>
+<li>Disabled Sprite Library modification in the Component's Inspector and added a button to export changes to an Asset.</li>
+<li>Pasting unassociated data to Skinning Editor doesn't throw console errors.</li>
+<li>Expand and frame on bone selection.</li>
+</ul>
+<h2 id="900-pre3---2022-05-31">[9.0.0-pre.3] - 2022-05-31</h2>
+<h3 id="changed-8">Changed</h3>
+<ul>
+<li>Update dependency package version.</li>
+</ul>
+<h2 id="900-pre2---2022-05-20">[9.0.0-pre.2] - 2022-05-20</h2>
+<h3 id="fixed-15">Fixed</h3>
+<ul>
+<li>Creating a new vertex or an edge outside of the main geometry is now handled correctly. (case 1398541)</li>
+<li>Fixed an issue where null reference exceptions would show when the Skinning Editor was open during play mode. (case 1419720)</li>
+<li>Fixed Sprite Library Asset 'Revert' behavior. (case 1417743)</li>
+<li>Fixed Sprite Library Asset multi-editing in the Inspector window. (case 1417747)</li>
+<li>Fixed an issue where Variant Sprite Libraries would not be updated when the Main Library is changed. (case DANB-5)</li>
+</ul>
+<h3 id="changed-9">Changed</h3>
+<ul>
+<li>Added ability to create Sprite Library Asset variant from the create menu.</li>
+<li>Added dialog box to the Skinning Editor when entering Play Mode to allow saving unsaved changes.</li>
+</ul>
+<h2 id="900-pre1---2022-03-21">[9.0.0-pre.1] - 2022-03-21</h2>
+<h3 id="added-7">Added</h3>
+<ul>
+<li>Added the ability to cancel mesh generation in the Skinning Editor.</li>
+</ul>
+<h3 id="changed-10">Changed</h3>
+<ul>
+<li>2D Animation now depends on the Collections package.</li>
+<li>Sprite Skin's AutoRebind can now swap between all bones underneath the rootBone.</li>
+<li>Updated Visibility Tab documentation page.</li>
+<li>Sprite Skins are now registered/deregistered in batches for improved instatiation/destroy performance.</li>
+<li>Updated ListView event listeners to use new selection API.</li>
+</ul>
+<h3 id="fixed-16">Fixed</h3>
+<ul>
+<li>Fixed an issue where the animation window's preview of IK targets would not be the same as in Play Mode. (case 1391590)</li>
+<li>Sprite Library cannot reference itself in the Main Library field or any asset that references it. (case 1401464)</li>
+<li>Fixed an issue where moving vertices in the Skinning Editor might result in invalid edges. (case 1386153)</li>
+<li>Fixed an issue where the SpriteSkin components would not get initialized on editor launch. (case 1401139)</li>
+<li>Fixed an issue when Skinning Editor will lose reference after exiting Play mode. (case 1405289)</li>
+<li>Fixed an issue where the Skinning Editor's copy/paste tool would fail if two bones shared the same name. (case 1405028)</li>
+</ul>
+<h2 id="800---2022-01-25">[8.0.0] - 2022-01-25</h2>
+<h3 id="changed-11">Changed</h3>
+<ul>
+<li>Package release version.</li>
+</ul>
+<h3 id="fixed-17">Fixed</h3>
+<ul>
+<li>Sprite Skin's help button now leads to the correct documentation page. (case 1383765)</li>
+<li>Fixed the isolate behavior in the Sprite tab in the Visibility panel. (case 1387184)</li>
+</ul>
+<h2 id="800-pre4---2021-11-24">[8.0.0-pre.4] - 2021-11-24</h2>
+<h3 id="added-8">Added</h3>
+<ul>
+<li>Added support in the asset upgrading tool for animation clips authored across multiple Unity editor versions.</li>
+<li>Added a check to validate collinearity among vertices before tessellation.</li>
+</ul>
+<h3 id="changed-12">Changed</h3>
+<ul>
+<li>Updated the 2D Animation Upgrader documentation section with new information regarding Animation Clip upgrading.</li>
+</ul>
+<h3 id="fixed-18">Fixed</h3>
+<ul>
+<li>Added additional fallback for when the bursted tessellation step fails. (case 1372686)</li>
+<li>Sprite selection now reacts only to the left mouse button. (case 1371567)</li>
+<li>Fixed an issue where a Sprite Skin outside of the camera frustum enters the frustum, which could cause an editor and player crash. (case 1377867)</li>
+<li>Slider labels in the Skinning Editor now register input for easier value tweaking. (case 1294945)</li>
+</ul>
+<h2 id="800-pre3---2021-10-21">[8.0.0-pre.3] - 2021-10-21</h2>
+<h3 id="changed-13">Changed</h3>
+<ul>
+<li>Update to latest com.unity.2d.common package</li>
+</ul>
+<h2 id="800-pre2---2021-10-11">[8.0.0-pre.2] - 2021-10-11</h2>
+<h3 id="changed-14">Changed</h3>
+<ul>
+<li>Sprite Library Asset are now named &quot;New Sprite Library Asset.spriteLib&quot; by default on creation.</li>
+<li>Updated Toolbar and Visibility tab buttons' selection color.</li>
+<li>Updated package documentation.</li>
+</ul>
+<h3 id="fixed-19">Fixed</h3>
+<ul>
+<li>Sprite selection actions now work with Undo. (case 1367257)</li>
+<li>Fixed an issue where removing an edge in the Skinning editor would result in the mesh falling back to a quad. (case 1365831)</li>
+<li>Quads are now generated at correct positions after removing all vertices from Sprite meshes. (case 1366633)</li>
+</ul>
+<h2 id="800-pre1---2021-08-06">[8.0.0-pre.1] - 2021-08-06</h2>
+<h3 id="added-9">Added</h3>
+<ul>
+<li>Added an asset upgrading tool, which can upgrade older Sprite Library Assets and Animation Clips to the latest version.</li>
+</ul>
+<h3 id="changed-15">Changed</h3>
+<ul>
+<li>SpriteResolver.SetCategoryAndLabel and SpriteResolver.ResolveSpriteToSpriteRenderer now returns a bool to signal if the methods managed to resolve the request or not.</li>
+<li>Orientation function being replaced with a simpler version.</li>
+</ul>
+<h3 id="fixed-20">Fixed</h3>
+<ul>
+<li>Thumbnails in Sprite Library Asset flicker when the Library Asset contains many Categories and Labels. (case 1333228)</li>
+<li>SpriteLibraryAsset Category &amp; Label does not generate hash in Inspector. (case 1340587)</li>
+<li>SpriteResolver inspector selects first element when failing to resolve. (case 1340070)</li>
+<li>IKManager2D does not detect classes inheriting from Solver2D. (case 1343260)</li>
+<li>Skinning Editor tooltips updated.</li>
+<li>Bone and Sprite influence lists are displayed correctly. (case 1349041)</li>
+<li>Sprite Library Assets are now being cached properly. (case 1347339)</li>
+<li>Sprite outline in the Skinning Editor is now rendered based on Sprite's geometry. (case 1335586)</li>
+<li>Animation Preview windows can now show Sprite deformation, Sprite Swapping and IK controlled movement.</li>
+<li>Removed the need to set Broken and Constant tangent on each key when animating a SpriteResolver.</li>
+<li>Fixed render texture size error in the Skinning Editor. (case 1357552)</li>
+<li>Skinning Editor toolbar buttons now focus on hoykey presses. (case 1358714)</li>
+<li>Fixed an issue where opening certain .psb files would result in errors. (case 1358972)</li>
+<li>Fixed a case where quads generated in the Skinning Editor would be created with the wrong size and position. (case 1361053)</li>
+<li>Fixed an issue where variant Sprite Libraries would not display its main library content. (case 1362389)</li>
+<li>Fixed an issue where IK Solvers would not be updated when previewing an animation clip. (1354389)</li>
+<li>Fixed an issue where copying mesh and bone data from a .psb containing a single sprite would throw an exception. (case 1351543)</li>
+<li>Fixed an issue where an error would show up when destroying a Sprite Skin component while deep profling. (case 1364910)</li>
+</ul>
+<h2 id="700-pre3---2021-07-05">[7.0.0-pre.3] - 2021-07-05</h2>
+<h3 id="fixed-21">Fixed</h3>
+<ul>
+<li>Thumbnails in Sprite Library Asset flicker when the Library Asset contains many Categories and Labels. (case 1333228)</li>
+<li>SpriteLibraryAsset Category &amp; Label does not generate hash in Inspector. (case 1340587)</li>
+<li>SpriteResolver inspector selects first element when failing to resolve. (case 1340070)</li>
+<li>IKManager2D does not detect classes inheriting from Solver2D. (case 1343260)</li>
+<li>Skinning Editor tooltips updated.</li>
+</ul>
+<h2 id="700-pre2---2021-05-19">[7.0.0-pre.2] - 2021-05-19</h2>
+<h3 id="fixed-22">Fixed</h3>
+<ul>
+<li>Fixed Sprite Resolver component not updated when new categories/labels are added into Sprite Library asset. (case 1321069)</li>
+</ul>
+<h2 id="700-pre1---2021-05-05">[7.0.0-pre.1] - 2021-05-05</h2>
+<h3 id="changed-16">Changed</h3>
+<ul>
+<li>Version bump for Unity 2021.2.</li>
+<li>Moved Copy &amp; Paste Rig buttons in the Skinning Editor into their own Rig category.</li>
+<li>Moved Preview &amp; Restore Pose button in the Skinning Editor into their own Pose category.</li>
+<li>Replaced Triangle.Net with our own tessellation solution.</li>
+</ul>
+<h3 id="added-10">Added</h3>
+<ul>
+<li>Added shortcuts at the back of the Skinning Editor buttons tooltips for better discoverability.</li>
+<li>Added a color picker for each bone in the Skinning Editor's Visiblity tab.</li>
+<li>Added the Sprite Influence panel that allows to change a bone influence on the selected Sprite.</li>
+</ul>
+<h3 id="fixed-23">Fixed</h3>
+<ul>
+<li>Fixed crash when disabling Sprite Skin when multithreaded rendering is enabled. (case 1296355)</li>
+</ul>
+<h2 id="600---2021-03-17">[6.0.0] - 2021-03-17</h2>
+<h3 id="changed-17">Changed</h3>
+<ul>
+<li>Update version for release.</li>
+</ul>
+<h2 id="600-pre3---2021-03-15">[6.0.0-pre.3] - 2021-03-15</h2>
+<h3 id="changed-18">Changed</h3>
+<ul>
+<li>Updated manual.</li>
+</ul>
+<h3 id="fixed-24">Fixed</h3>
+<ul>
+<li>Deleting bones from a skeleton referenced by another character sometimes throws IndexOutOfRangeException. (case 1304768)</li>
+</ul>
+<h2 id="600-pre2---2021-01-16">[6.0.0-pre.2] - 2021-01-16</h2>
+<h3 id="changed-19">Changed</h3>
+<ul>
+<li>Update license file.</li>
+</ul>
+<h3 id="added-11">Added</h3>
+<ul>
+<li>Initial documentation update for new features for 6.0.0.</li>
+</ul>
+<h3 id="fixed-25">Fixed</h3>
+<ul>
+<li>SpriteResolver resets to the current Sprite from SpriteRenderer if exist in Sprite Library.</li>
+</ul>
+<h2 id="600-pre1---2020-11-02">[6.0.0-pre.1] - 2020-11-02</h2>
+<h3 id="changed-20">Changed</h3>
+<ul>
+<li>Sprite Swap related features moved out of experimental namespace.</li>
+<li>Removed editing of Sprite Swap feature in Skinning Module.</li>
+<li>Updated Sprite Swap workflow focusing on Project Window and Inspector.</li>
+<li>Sprite Library Asset is created via AssetImporter.</li>
+</ul>
+<h3 id="added-12">Added</h3>
+<ul>
+<li>Sprite Library Asset supports variant.</li>
+<li>Sprite Library supports override during editing.</li>
+<li>Supports sharing of bone structures in Skinning Module.</li>
+<li>Added position, rotation and bone color editing in Skinning Module.</li>
+</ul>
+<h3 id="fixed-26">Fixed</h3>
+<ul>
+<li>Added missing tooltips in the Sprite Skin inspector. (case 1285255)</li>
+</ul>
+<h2 id="503---2020-10-15">[5.0.3] - 2020-10-15</h2>
+<h3 id="fixed-27">Fixed</h3>
+<ul>
+<li>Fixed Sprite with no animation data is being processed during AssetPostProcessor.</li>
+<li>Fixed properties under the Sprite Library Asset overlapping in inspector. (case 1280017)</li>
+<li>Fixed vertical slider handle is not aligned and placed slightly to the right side in the Bone Influence window. (case 1260568)</li>
+</ul>
+<h2 id="502---2020-08-31">[5.0.2] - 2020-08-31</h2>
+<h3 id="fixed-28">Fixed</h3>
+<ul>
+<li>Fixed Visibility window overlaps with weights and geometry window when Sprite Editor Window resizes. (case 1263353)</li>
+<li>Fixed 'Depth' column label gets clipped in Visibility Tool Window. (case 1257991)</li>
+<li>Fixed 'Invalid worldAABB' error message when repeatedly pressing Pack Preview button. (case 1270150)</li>
+<li>Fixed Null reference exception when changing values of a material while recording animation with Skinning Module enabled. (case 1267300)</li>
+<li>Improved memory and speed of Animation SpritePostProcess for large sprite count.</li>
+</ul>
+<h2 id="501---2020-07-24">[5.0.1] - 2020-07-24</h2>
+<h3 id="fixed-29">Fixed</h3>
+<ul>
+<li>Fixed Skinning module flickers when creating in category in Visibility Window. (case 1244097)</li>
+<li>Fixed NullReferenceException when creating Preset for SpriteSkin component. (case 1254873)</li>
+<li>Updated optional dependency support for Collections to 0.9.0-preview.6 and Burst 1.3.3. (case 1255839)</li>
+</ul>
+<h2 id="500---2020-05-11">[5.0.0] - 2020-05-11</h2>
+<h3 id="changed-21">Changed</h3>
+<ul>
+<li>Version bump for Unity 2020.2.</li>
+</ul>
+<h3 id="added-13">Added</h3>
+<ul>
+<li>Combined 2D IK package with 2D Animation package.</li>
+</ul>
+<h3 id="fixed-30">Fixed</h3>
+<ul>
+<li>Remove unused XR dependency. (case 1249390)</li>
+<li>Fixed NullReferenceException when creating prefab with SpriteSkin component. (case 1245149)</li>
+</ul>
+<h2 id="424---2020-05-19">[4.2.4] - 2020-05-19</h2>
+<h3 id="fixed-31">Fixed</h3>
+<ul>
+<li>Fixed compilation error by depending on latest 2D Common package.</li>
+</ul>
+<h2 id="423---2020-04-26">[4.2.3] - 2020-04-26</h2>
+<h3 id="changed-22">Changed</h3>
+<ul>
+<li>Improved performance by batching buffer submission when Collection and Burst package is installed</li>
+</ul>
+<h3 id="fixed-32">Fixed</h3>
+<ul>
+<li>Fix 'ArgumentException' when creating UXML Template Asset with 2D Animation package installed (case 1239680)</li>
+</ul>
+<h2 id="422---2020-03-26">[4.2.2] - 2020-03-26</h2>
+<h3 id="fixed-33">Fixed</h3>
+<ul>
+<li>Fixed bone name field in weight slider does not display bone name (case 1226249)</li>
+<li>Fixed SpriteResolver's Inspector not updated when GameObject is disabled</li>
+</ul>
+<h3 id="changed-23">Changed</h3>
+<ul>
+<li>Improved deformation performance when Collection and Burst package is installed</li>
+</ul>
+<h3 id="added-14">Added</h3>
+<ul>
+<li>Allow reordering of bone order in Bone Influence window. This is to allow fine tuning of bone order when shown in SpriteSkin's Inspector</li>
+</ul>
+<h2 id="421---2020-03-20">[4.2.1] - 2020-03-20</h2>
+<h3 id="fixed-34">Fixed</h3>
+<ul>
+<li>Fixed inconsistent line ending</li>
+</ul>
+<h2 id="420---2020-03-11">[4.2.0] - 2020-03-11</h2>
+<h3 id="added-15">Added</h3>
+<ul>
+<li>Add alwaysUpdate option to SpriteSkin to determine if SpriteSkin execution should occur even when the associated SpriteRenderer is culled</li>
+<li>Added message to inform user on dependent packages when viewing certain sample Scenes</li>
+<li>Added API to access deformed vertices from SpriteSkin</li>
+</ul>
+<h3 id="changed-24">Changed</h3>
+<ul>
+<li>Improved SpriteSkinEditor UI</li>
+<li>Adjust length of popup and value fields for Weight Slider Window</li>
+</ul>
+<h3 id="removed">Removed</h3>
+<ul>
+<li>Remove Bounds Gizmo from SpriteSkin</li>
+<li>Remove Reset Bounds button from SpriteSkinEditor</li>
+</ul>
+<h3 id="fixed-35">Fixed</h3>
+<ul>
+<li>Fixed Sprite asset used by SpriteSkin in Scene is being deleted</li>
+<li>Fixed broken documentation links in inspectors</li>
+<li>Fixed Sprite deformation not updated when GameObject is being enabled</li>
+<li>Fixed exception after reverting from creating new vertices and edges</li>
+<li>Fixed visual defect after undoing changes to Bone Transform properties in SpriteSkin's Inspector</li>
+</ul>
+<h2 id="411---2020-01-20">[4.1.1] - 2020-01-20</h2>
+<p>###Fixed</p>
+<ul>
+<li>Fix 2D Animation not working when reloading scene in runtime (case 1211100)</li>
+</ul>
+<p>###Added</p>
+<ul>
+<li>Bone visibility persist after apply</li>
+<li>Sprite visibility persist after apply</li>
+</ul>
+<p>###Changed</p>
+<ul>
+<li>Deformed Sprite's bounds are now calculated and bounds property is removed from SpriteSkin's inspector (case 1208712)</li>
+</ul>
+<h2 id="410---2019-12-18">[4.1.0] - 2019-12-18</h2>
+<h3 id="changed-25">Changed</h3>
+<ul>
+<li>Changed default shortcut key for &quot;Animation/Create Vertex&quot; from &quot;Shift-D&quot; to &quot;Shift-J&quot;</li>
+<li>Changed default shortcut key for &quot;Animation/Weight Brush&quot; from &quot;Shift-C&quot; to &quot;Shift-N&quot;</li>
+</ul>
+<h3 id="fixed-36">Fixed</h3>
+<ul>
+<li>Fix visual glitch when using SpriteSwap with Multi-threaded rendering (case 1203380)</li>
+<li>Fix bone name misaligned under Weight Slider Inspector when a name contains more than 26 letters (case 1200873)</li>
+<li>Fix bones not chained correctly when splitting bone in certain cases</li>
+<li>Fix 'Label' and 'Sprite' name overlaps with its input field when preset of &quot;Sprite Library Asset&quot; is created (case 1201061)</li>
+<li>Fix bone names can be empty (case 1200861)</li>
+<li>Fix bone gets created even though clicked on Visibility Panel (case 1200857)</li>
+<li>Fix NullReferenceException when using shortcut 'Shift+1' in certain cases (case 1200849)</li>
+</ul>
+<h3 id="added-16">Added</h3>
+<ul>
+<li>Expose SpriteSkin component to be accessible from scripts.</li>
+</ul>
+<h2 id="401---2019-11-26">[4.0.1] - 2019-11-26</h2>
+<h3 id="changed-26">Changed</h3>
+<ul>
+<li>Changed how Samples are imported into the user's project</li>
+<li>Updated Third Party Notices file</li>
+</ul>
+<h3 id="fixed-37">Fixed</h3>
+<ul>
+<li>Fix Animation Samples crashes when installing on certain machines (case 1185787)</li>
+</ul>
+<h2 id="400---2019-11-06">[4.0.0] - 2019-11-06</h2>
+<h3 id="changed-27">Changed</h3>
+<ul>
+<li>Version bump for Unity 2020.1</li>
+<li>Improve optional performance boost by installing Burst and Collections package. Currently tested with
+<ul>
+<li>com.unity.collections 0.1.1-preview</li>
+<li>com.unity.burst 1.1.2</li>
+</ul>
+</li>
+</ul>
+<h3 id="added-17">Added</h3>
+<ul>
+<li>Skinning Module now persists the following state after Apply or Revert is clicked in Sprite Editor Window
+<ul>
+<li>Current view mode i.e. Character or Spritesheet Mode</li>
+<li>Sprite Selection</li>
+<li>Bone Selection</li>
+<li>Preview Pose</li>
+<li>Vertex Selection</li>
+<li>Visibililty Tool Active State</li>
+<li>Weight Brush Settings</li>
+</ul>
+</li>
+</ul>
+<h3 id="fixed-38">Fixed</h3>
+<ul>
+<li>Update to use new UIElements ListView API</li>
+</ul>
+<h2 id="307---2019-10-18">[3.0.7] - 2019-10-18</h2>
+<h3 id="fixed-39">Fixed</h3>
+<ul>
+<li>Fix Search reset button is visible in Visibility tool when nothing is entered into the search field (case 1182627)</li>
+<li>Fix Sprite outline disappears when the Selected Outline Color alpha value is less than 255 (case 1186776)</li>
+<li>Fix button's label spelling error in 'Generate For All Visible' (case 1188621)</li>
+</ul>
+<h2 id="306---2019-09-18">[3.0.6] - 2019-09-18</h2>
+<h3 id="changed-28">Changed</h3>
+<ul>
+<li>Remove usage of Resource folder for assets needed by package.</li>
+</ul>
+<h3 id="fixed-40">Fixed</h3>
+<ul>
+<li>Fix GC allocation when using Sprite Resolver.</li>
+</ul>
+<h2 id="305---2019-09-06">[3.0.5] - 2019-09-06</h2>
+<h3 id="added-18">Added</h3>
+<ul>
+<li>Optional performance boost by installing Burst package.</li>
+<li>Samples showing different how to produce different outcomes</li>
+</ul>
+<h3 id="changed-29">Changed</h3>
+<ul>
+<li>Sprite and Group in Sprite Visibility Window appear in same order as original art source file</li>
+</ul>
+<h3 id="fixed-41">Fixed</h3>
+<ul>
+<li>Fix missing bone data in Sprite when importing with AssetDatabase V2</li>
+</ul>
+<h2 id="304---2019-08-09">[3.0.4] - 2019-08-09</h2>
+<h3 id="added-19">Added</h3>
+<ul>
+<li>Add related test packages</li>
+<li>Added tangent deform for lighting support</li>
+</ul>
+<h3 id="fixed-42">Fixed</h3>
+<ul>
+<li>Fixed Amount slider not working in Weight Slider Panel</li>
+<li>Fixed exception when changing size to less than 0 in SpriteLibraryAssetInspector</li>
+<li>Fixed Sprite visual corruption when swapping Sprite using SpriteResolver</li>
+</ul>
+<p>###Changed</p>
+<ul>
+<li>Make Size property field in Weight Brush draggable for changing brush size</li>
+<li>Rename SpriteLibraryAsset::GetCategorylabelNames to SpriteLibraryAsset::GetCategoryLabelNames</li>
+<li>Change string hash for Category and Label name. This might break existing animation usage with SpriteResolver.</li>
+<li>Add Experimental tag on Sprite Swap related features</li>
+</ul>
+<h2 id="303---2019-07-17">[3.0.3] - 2019-07-17</h2>
+<h3 id="changed-30">Changed</h3>
+<ul>
+<li>Update documentation</li>
+<li>Update to latest Mathematics package version</li>
+</ul>
+<h2 id="302---2019-07-13">[3.0.2] - 2019-07-13</h2>
+<h3 id="changed-31">Changed</h3>
+<ul>
+<li>Mark package to support Unity 2019.3.0a10 onwards.</li>
+</ul>
+<h2 id="301---2019-07-12">[3.0.1] - 2019-07-12</h2>
+<h3 id="changed-32">Changed</h3>
+<ul>
+<li>Fix path length due to validation failure.</li>
+</ul>
+<h2 id="300---2019-06-17">[3.0.0] - 2019-06-17</h2>
+<h3 id="changed-33">Changed</h3>
+<ul>
+<li>Remove preview tag.</li>
+<li>Remove experimental namespace</li>
+</ul>
+<h2 id="220-preview3---2019-06-06">[2.2.0-preview.3] - 2019-06-06</h2>
+<h3 id="added-20">Added</h3>
+<ul>
+<li>BoneGizmos can be toggled in the SceneView Gizmos dropdown</li>
+<li>Scrollbar does not show for toolbar when required to scroll</li>
+<li>Change Sprite Library implementation.</li>
+<li>APIs redesigned. This will cause compilation errors if previous APIs are used</li>
+<li>Data serialization change. Previous Asset and Component data will not be compatible</li>
+</ul>
+<h2 id="220-preview2---2019-05-10">[2.2.0-preview.2] - 2019-05-10</h2>
+<h3 id="added-21">Added</h3>
+<ul>
+<li>BoneGizmos will only show in selected hierarchies.</li>
+<li>Associate nearest Bone to Sprite intead of root Bone when no Bones are overlapping the Sprite</li>
+<li>Fixed Sprite not showing after it is being culled due to bone animation</li>
+<li>Add icons for Sprite Library Asset, Sprite Library Component and Sprite Resolver Component</li>
+<li>Fixed Sprite Library Asset Inspector Property Field text clipping</li>
+<li>SpriteResolver will assign Sprite to SpriteRenderer even it resolves to a missing Sprite</li>
+<li>Add visual feedback in SpriteResolver Inspector for missing Sprite</li>
+</ul>
+<h2 id="220-preview1---2019-05-09">[2.2.0-preview.1] - 2019-05-09</h2>
+<h3 id="added-22">Added</h3>
+<ul>
+<li>Upgrade for 2019.2</li>
+<li>Copy and Paste rework</li>
+<li>Visibility Window remains open when switching between tools</li>
+<li>Reparent Bone tool removed and functionality moved into Bone Visibility Panel</li>
+<li>Added Sprite Library feature</li>
+<li>Add Layer Grouping support in Sprite Visibility Panel</li>
+</ul>
+<h2 id="210-preview4---2019-04-29">[2.1.0-preview.4] - 2019-04-29</h2>
+<h3 id="added-23">Added</h3>
+<ul>
+<li>Fix skinning not in sync with the rendering.</li>
+</ul>
+<h2 id="210-preview3---2019-04-24">[2.1.0-preview.3] - 2019-04-24</h2>
+<h3 id="added-24">Added</h3>
+<ul>
+<li>Set Burst compilation off for internal build</li>
+</ul>
+<h2 id="210-preview2---2019-02-25">[2.1.0-preview.2] - 2019-02-25</h2>
+<h3 id="added-25">Added</h3>
+<ul>
+<li>Fix enable skinning on add SpriteSkin component</li>
+<li>Upgrade dependency package version for Unity 2019.1 support</li>
+<li>Fix case 1118093: SpriteSkin.onDrawGizmos() increases memory usage.</li>
+</ul>
+<h2 id="210-preview1---2019-01-25">[2.1.0-preview.1] - 2019-01-25</h2>
+<h3 id="added-26">Added</h3>
+<ul>
+<li>Update package to work with 2019.1</li>
+<li>Improve animation runtime performance</li>
+<li>Fix bone reparenting sibling order</li>
+<li>Fix Sprite Visibility Tool in disabled state in certain cases</li>
+<li>Update documents</li>
+</ul>
+<h2 id="200-preview1---2018-11-20">[2.0.0-preview.1] - 2018-11-20</h2>
+<h3 id="added-27">Added</h3>
+<ul>
+<li>Overhauled 2D Animation workflow.
+<ul>
+<li>Refer to updated documentation for workflow changes.</li>
+</ul>
+</li>
+<li>Single Sprite Editor Window module for 2D Sprite Rigging workflow
+<ul>
+<li>Unified Bone, Geometry and Weight tools in a single window</li>
+</ul>
+</li>
+<li>Supports Multiple Sprite Single Character rigging workflow through 2D PSD Importer Package.</li>
+<li>SpriteSkin now uses user define bounds for renderer culling</li>
+</ul>
+<h2 id="1016-preview2---2018-11-14">[1.0.16-preview.2] - 2018-11-14</h2>
+<h3 id="added-28">Added</h3>
+<ul>
+<li>Fix 2 Issues:
+<ol>
+<li>Prefabs with SpriteSkin loses references to bone hierarchy when Library folder is rebuilt/different.</li>
+<li>The scene viewport shows the character without any bones applied, needing an re-import.</li>
+</ol>
+</li>
+</ul>
+<h2 id="1016-preview1---2018-07-18">[1.0.16-preview.1] - 2018-07-18</h2>
+<h3 id="added-29">Added</h3>
+<ul>
+<li>Fix error log about VertexAttribute</li>
+</ul>
+<h2 id="1016-preview---2018-06-20">[1.0.16-preview] - 2018-06-20</h2>
+<h3 id="added-30">Added</h3>
+<ul>
+<li>Fix Documentation warnings</li>
+<li>Fix error log complaining about DidReloadScripts signature.</li>
+<li>Fix issues with generate outline</li>
+</ul>
+<h2 id="1015-preview---2018-04-12">[1.0.15-preview] - 2018-04-12</h2>
+<h3 id="added-31">Added</h3>
+<ul>
+<li>New Version suffix (preview)</li>
+<li>Improved Scene View gizmos for better manipulation of bone rotation and position</li>
+<li>Added notification when Sprites are imported with incorrect weights</li>
+<li>Fixed bug where textures with max texture size could not generate geometry</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/CHANGELOG.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

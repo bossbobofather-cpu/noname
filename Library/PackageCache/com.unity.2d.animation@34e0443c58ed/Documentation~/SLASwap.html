@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Swapping Sprite Library Assets | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Swapping Sprite Library Assets | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SLASwap.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="swapping-sprite-library-assets">Swapping Sprite Library Assets</h1>
+
+<p>If <a href="CharacterParts.html">swapping each Sprite of an actor individually</a> takes too much effort, you can instead swap the entire <strong>Sprite Library Asset</strong> to another one containing alternate Sprites.</p>
+<p>The following example shows how to switch from a Sprite Library Asset of color Sprites to another one containing identical Sprites but in grayscale.</p>
+<p><img src="images/bothsprites.png" alt="Two images displaying a character sprite. The first is the character in color, the second is the character in grayscale."><br><strong>Left:</strong> An actor with the color Sprite Library Asset. <strong>Right:</strong> The same actor with the grayscale Sprite Library Asset.</p>
+<ol>
+<li><p>Create visual variants of your actor's artwork. In this example, the original artwork is in color and a grayscale variant of it is created as an alternate Sprite set. Both should be saved to separate .psb files.</p>
+</li>
+<li><p><a href="PreparingArtwork.html">Import</a> both .psb files into the Unity Editor. Both become separate Model Prefabs in the Asset window.</p>
+</li>
+<li><p><a href="SpriteSwapSetup.html">Create a Sprite Library Asset</a> and assign each Sprite of the actor to a unique <a href="SL-Asset.html#Categories">Category</a>. For convenience, name each Category and Label after the respective body part of the actor. You can also drag and drop your Sprites into the empty space in the Categories tab to populate them automatically. Save the changes once complete.<br><img src="images/2d-anim-slasset-swap-category-color.png" alt="Sprite Library Editor window displaying a newly created Sprite Library Asset. Two side-by-side columns: 'Categories' on the left and 'Labels' on the right. The 'head' category is selected, a character sprite labeled 'head' is displayed in the right column."><br>The Category and Label names for the parts of the color actor.</p>
+</li>
+<li><p>Repeat step 3 for the grayscale actor. Use the same Category and Label names for the corresponding gray Sprites. Remember that you can drag and drop your Sprites to empty space in the Categories and their corresponding Labels should now have a new Sprite reference.<br><img src="images/2d-anim-slasset-swap-category-gray.png" alt="The grayscale Sprites with the same corresponding Category and Label names."><br>The grayscale Sprites with the same corresponding Category and Label names.</p>
+</li>
+<li><p>Drag the color Model Prefab into the Scene view, and go to the root GameObject. Add a <a href="SL-component.html">Sprite Library component</a> to the root GameObject and assign the color Sprite Library Asset created in step 3 to the <strong>Sprite Library Asset</strong> property.</p>
+</li>
+<li><p>For every Sprite Renderer in the Instantiated Prefab, add a <a href="SL-Resolver.html">Sprite Resolver component</a> and ensure that the Sprite Resolver component has the same Sprite selected as the Sprite Renderer.</p>
+</li>
+<li><p>With the Inspector window of the color Prefab root GameObject remaining open, go to the Asset window and assign the Sprite Library Asset created in step 4 to the <strong>Sprite Library Asset</strong> property of the Sprite Library component.</p>
+</li>
+<li><p>The Sprites of the color Prefab should have switched to their grayscale counterparts of the grayscale Sprite Library Asset.<br><img src="images/2d-anim-slasset-swap-step-8.png" alt="The Sprite Library Asset property is set to the grayscale version of the original Sprite Library Asset and the actor's Sprites have switched accordingly."><br>The Sprite Library Asset property is set to the grayscale version of the original Sprite Library Asset and the actor's Sprites have switched accordingly.</p>
+</li>
+</ol>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SLASwap.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

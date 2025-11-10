@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Apply Processors | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Apply Processors | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.inputsystem@be6c4fd0abf5/Documentation~/HowToApplyProcessors.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="input-system-processors">
+<h1 id="apply-processors">Apply Processors</h1>
+
+<p>The following are the three different ways of applying Processors to input events. For more information on the general usage of Processors, refer to <a href="UsingProcessors.html">Using Processors</a>.</p>
+<ul>
+<li><a href="#processors-on-bindings">Processors on Bindings</a></li>
+<li><a href="#processors-on-actions">Processors on Actions</a></li>
+<li><a href="#processors-on-controls">Processors on Controls</a></li>
+</ul>
+<h2 id="processors-on-bindings">Processors on Bindings</h2>
+<p>When you create Bindings for your <a href="Actions.html">actions</a>, you can choose to add Processors to the Bindings. These process the values from the controls they bind to, before the system applies them to the Action value. For instance, you might want to invert the <code>Vector2</code> values from the controls along the Y-axis before passing these values to the Action that drives the input logic for your application. To do this, you can add an <a href="ProcessorTypes.html#invert-vector-2">Invert Vector2</a> Processor to your Binding.</p>
+<p>If you're using Actions defined in the <a href="ActionsEditor.html">Input Actions Editor</a>, or in an <a href="ActionAssets.html">Action Asset</a>, you can add any Processor to your Bindings in the Input Action editor:</p>
+<ol>
+<li>Select the Binding you want to add Processors to so that the Binding Properties panel shows up on the right side.</li>
+<li>Select the <strong>Add (+)</strong> icon on the <strong>Processors</strong> foldout to open a list of all available Processors that match your control type.</li>
+<li>Choose a Processor type to add a Processor instance of that type. The Processor now appears under the <strong>Processors</strong> foldout.</li>
+<li>(Optional) If the Processor has any parameters, you can edit them in the <strong>Processors</strong> foldout.</li>
+</ol>
+<p><img src="Images/BindingProcessors.png" alt="Binding Processors"></p>
+<p>To remove a Processor, click the Remove (-) icon next to it. You can also use the up and down arrows to change the order of Processors. This affects the order in which the system processes values.</p>
+<p>If you create your Bindings in code, you can add Processors like this:</p>
+<pre><code class="lang-CSharp">var action = new InputAction();
+action.AddBinding(&quot;&lt;Gamepad&gt;/leftStick&quot;)
+    .WithProcessor(&quot;invertVector2(invertX=false)&quot;);
+</code></pre>
+<h2 id="processors-on-actions">Processors on Actions</h2>
+<p>Processors on Actions work in the same way as Processors on Bindings, but they affect all controls bound to an Action, rather than just the controls from a specific Binding. If there are Processors on both the Binding and the Action, the system processes the ones from the Binding first.</p>
+<p>You can add and edit Processors on Actions in the <a href="ActionsEditor.html">Input Actions Editor</a>, or in an  <a href="ActionAssets.html">Action Asset</a> the <a href="#processors-on-bindings">same way</a> as you would for Bindings: select an Action to edit, then add one or more Processors in the right window pane.</p>
+<p>If you create your Actions in code, you can add Processors like this:</p>
+<pre><code class="lang-CSharp">var action = new InputAction(processors: &quot;invertVector2(invertX=false)&quot;);
+</code></pre>
+<h2 id="processors-on-controls">Processors on Controls</h2>
+<p>You can have any number of Processors directly on an <a href="../api/UnityEngine.InputSystem.InputControl.html"><code>InputControl</code></a>, which then process the values read from the Control. Whenever you call <a href="../api/UnityEngine.InputSystem.InputControl-1.html#UnityEngine_InputSystem_InputControl_1_ReadValue"><code>ReadValue</code></a> on a Control, all Processors on that Control process the value before it gets returned to you. You can use <a href="../api/UnityEngine.InputSystem.InputControl-1.html#UnityEngine_InputSystem_InputControl_1_ReadUnprocessedValue"><code>ReadUnprocessedValue</code></a> on a Control to bypass the Processors.</p>
+<p>The Input System adds Processors to a Control during device creation, if they're specified in the Control's <a href="Layouts.html">layout</a>. You can't add Processors to existing Controls after they've been created, so you can only add Processors to Controls when you're <a href="Devices.html#creating-custom-devices">creating custom devices</a>. The devices that the Input System supports out of the box already have some useful Processors added on their Controls. For instance, sticks on gamepads have a <a href="ProcessorTypes.html#stick-deadzone">Stick Deadzone</a> Processor.</p>
+<p>If you're using a layout generated by the Input System from a <a href="Devices.html#step-1-the-state-struct">state struct</a> using <a href="../api/UnityEngine.InputSystem.Layouts.InputControlAttribute.html"><code>InputControlAttributes</code></a>, you can specify the Processors you want to use via the <a href="../api/UnityEngine.InputSystem.Layouts.InputControlAttribute.html#UnityEngine_InputSystem_Layouts_InputControlAttribute_processors"><code>processors</code></a> property of the attribute, like this:</p>
+<pre><code class="lang-CSharp">public struct MyDeviceState : IInputStateTypeInfo
+{
+    public FourCC format =&gt; return new FourCC('M', 'Y', 'D', 'V');
+
+    // Add an axis deadzone to the Control to ignore values
+    // smaller then 0.2, as our Control does not have a stable
+    // resting position.
+    [InputControl(layout = &quot;Axis&quot;, processors = &quot;AxisDeadzone(min=0.2)&quot;)]
+    public short axis;
+}
+</code></pre>
+<p>If you <a href="Layouts.html#layout-from-json">create a layout from JSON</a>, you can specify Processors on your Controls like this:</p>
+<pre><code class="lang-CSharp">{
+    &quot;name&quot; : &quot;MyDevice&quot;,
+    &quot;extend&quot; : &quot;Gamepad&quot;, // Or some other thing
+    &quot;controls&quot; : [
+        {
+            &quot;name&quot; : &quot;axis&quot;,
+            &quot;layout&quot; : &quot;Axis&quot;,
+            &quot;offset&quot; : 4,
+            &quot;format&quot; : &quot;FLT&quot;,
+            &quot;processors&quot; : &quot;AxisDeadzone(min=0.2)&quot;
+        }
+    ]
+}
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.inputsystem@be6c4fd0abf5/Documentation~/HowToApplyProcessors.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

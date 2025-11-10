@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Keyword parameter reference | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Keyword parameter reference | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.shadergraph@287dd3fa176c/Documentation~/Keywords-reference.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="keyword-parameter-reference">Keyword parameter reference</h1>
+
+<p>There are two types of keywords: Boolean and Enum. Each keyword type has a few specific parameters in addition to the many parameters that all keyword types have in common.</p>
+<h2 id="common-parameters">Common parameters</h2>
+<p>Parameters that all keyword types have in common.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Name</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Name</strong></td>
+<td style="text-align: left;">The display name of the keyword. Unity shows this name in the title bar of nodes that reference the corresponding keyword, and also in the Material Inspector if you expose that keyword.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Reference</strong></td>
+<td style="text-align: left;">The internal name for the keyword in the shader.<br><br>If you overwrite this parameter, be aware of the following:<ul><li>A Keyword <strong>Reference</strong> has to be in full capitals. Unity converts any lowercase letters to uppercase.</li><li>If <strong>Reference</strong> contains any characters that HLSL does not support, Unity replaces those characters with underscores.</li><li>You can revert to the default <strong>Reference</strong>: right-click on the <strong>Reference</strong> field label, and select <strong>Reset Reference</strong>.</li></ul></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Definition</strong></td>
+<td style="text-align: left;">Sets the keyword declaration type, which determines how Unity compiles the shader code. This allows you to <a href="Keywords-concepts.html#keyword-impact-optimization">optimize the balance between build time, runtime, and file sizes</a>.<br><br>The options are:<ul><li><strong>Shader Feature</strong>: Unity only compiles shader variants for keyword combinations used by materials in your build, and removes other shader variants.</li><li><strong>Multi Compile</strong>: Unity compiles shader variants for all keyword combinations regardless of whether the build uses these variants.</li><li><strong>Predefined</strong>: Specifies that the target/sub-target already defines the keyword and you just want to reuse it. Predefined Keywords can either use a <a href="https://docs.unity3d.com/Manual/shader-branching-built-in-macros.html">built-in macro</a>, which results in static branching at build time, or any of the keywords already defined by the Shader Graph Target (for example, <a href="https://docs.unity3d.com/Manual/urp/urp-shaders/shader-keywords-macros.html">URP</a>), including <a href="https://docs.unity3d.com/Manual/SL-MultipleProgramVariants-shortcuts.html">Built-In keyword sets</a>, and where the branching depends on that definition.</li><li><strong>Dynamic Branch</strong>: Unity keeps branching code in one compiled shader program.</li></ul></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Is Overridable</strong></td>
+<td style="text-align: left;">Indicates whether the keyword's state can be overridden.<br>For more information, refer to <a href="https://docs.unity3d.com/Manual/shader-keywords-scripts.html">Toggle shader keywords in a script</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Generate Material Property</strong></td>
+<td style="text-align: left;">Generates a material property declaration to display the keyword as a property in the material inspector.<br>This adds a <code>[Toggle(_KEYWORD)]</code> attribute to the material property. For more information, refer to <a href="https://docs.unity3d.com/ScriptReference/MaterialPropertyDrawer.html"><code>MaterialPropertyDrawer</code></a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Stages</strong></td>
+<td style="text-align: left;">Set the stage the keyword applies to.<br><br>The following options are available:<ul><li><strong>All</strong> - Applies this keyword to all shader stages.<li><strong>Vertex</strong> - Applies this keyword to the vertex stage.<li><strong>Fragment</strong> - Applies this keyword to the fragment stage.</li></ul></td>
+</tr>
+</tbody>
+</table>
+<p><a name="BooleanKeywords"></a></p>
+<h2 id="boolean-keywords">Boolean keywords</h2>
+<p>Parameter specific to Boolean keywords in addition to the <a href="#common-parameters">common parameters</a>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Name</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Default Value</strong></td>
+<td style="text-align: left;">Enable this parameter to set the keyword's default state to on, and disable it to set the keyword's default state to off.<br><br>This parameter determines the value to use for the keyword when Shader Graph generates previews. It also defines the keyword's default value when you use this shader to create a new Material.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="EnumKeywords"></a></p>
+<h2 id="enum-keywords">Enum keywords</h2>
+<p>Parameters specific to Enum keywords in addition to the <a href="#common-parameters">common parameters</a>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Name</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Default Value</strong></td>
+<td style="text-align: left;">Select an entry from the drop-down menu to determine which value to use for the keyword when Shader Graph generates previews. This also defines the keyword's default value when you use this shader to create a new Material. When you edit the Entries list, Shader Graph automatically updates the options in this control.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Entries</strong></td>
+<td style="text-align: left;">This list defines all the states for the keyword. Each state has a separate <strong>Entry Name</strong> and <strong>Reference Suffix</strong>.<ul><li> <strong>Entry Name</strong>: The name displayed in drop-down menus for the keyword on the <a href="Internal-Inspector.html">Internal Inspector</a> and the Material Inspector. Shader Graph also uses this name for port labels on nodes that reference the keyword.<li> <strong>Reference Suffix</strong>: This identifies the final keyword, presented in the format <code>Reference_ReferenceSuffix</code>.</li></ul></td>
+</tr>
+</tbody>
+</table>
+<p>When you define an Enum keyword, Shader Graph displays labels for each state consisting of a version of the Enum's <strong>Entry Name</strong>  appended to the main <strong>Reference</strong> name.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Special characters such as <code>(</code>, <code>)</code>, <code>!</code>, or <code>@</code> are not valid in the <strong>Entry Name</strong> of an Enum keyword. Shader Graph converts invalid characters to underscores (<code>_</code>).</p>
+</div>
+<p><a name="BuiltinKeywords"></a></p>
+<h2 id="built-in-keywords">Built-in keywords</h2>
+<p>The parameters of built-in keywords depend on their type, which is always of either the Boolean or Enum type, and you cannot edit their values.</p>
+<p>All Built-in keyword fields in the <strong>Node Settings</strong> tab of the <a href="Internal-Inspector.html">Graph Inspector</a> are grayed out except for the <strong>Default</strong> field, which you can enable or disable to show the differences in Shader Graph previews. You also cannot expose Built-in keywords in the Material Inspector.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="Keywords-concepts.html">Introduction to keywords in Shader Graph</a></li>
+<li><a href="Keywords-manage.html">Manage keywords in Shader Graph</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.shadergraph@287dd3fa176c/Documentation~/Keywords-reference.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

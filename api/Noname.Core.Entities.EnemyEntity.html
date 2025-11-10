@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class EnemyEntity | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class EnemyEntity | mysite ">
+      
+      <meta name="description" content="단일 적 개체의 전투 스탯과 상태를 표현하는 도메인 모델입니다.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Noname.Core.Entities.EnemyEntity">
+
+
+
+  <h1 id="Noname_Core_Entities_EnemyEntity" data-uid="Noname.Core.Entities.EnemyEntity" class="text-break">
+Class EnemyEntity  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Noname.html">Noname</a>.<a class="xref" href="Noname.Core.html">Core</a>.<a class="xref" href="Noname.Core.Entities.html">Entities</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>단일 적 개체의 전투 스탯과 상태를 표현하는 도메인 모델입니다.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class EnemyEntity</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">EnemyEntity</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Noname_Core_Entities_EnemyEntity__ctor_" data-uid="Noname.Core.Entities.EnemyEntity.#ctor*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity__ctor_System_Int32_Noname_Core_Primitives_Float2_System_Single_System_Single_System_Single_System_Single_System_Single_Noname_Core_Enums_EnemyCombatRole_System_Single_Noname_Core_ValueObjects_EnemyDropDefinition___" data-uid="Noname.Core.Entities.EnemyEntity.#ctor(System.Int32,Noname.Core.Primitives.Float2,System.Single,System.Single,System.Single,System.Single,System.Single,Noname.Core.Enums.EnemyCombatRole,System.Single,Noname.Core.ValueObjects.EnemyDropDefinition[])">
+  EnemyEntity(int, Float2, float, float, float, float, float, EnemyCombatRole, float, EnemyDropDefinition[])
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>적 기본 스탯과 드롭 구성을 지정합니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EnemyEntity(int id, Float2 spawnPosition, float moveSpeed, float maxHealth, float attackDamage, float attackRange, float attackCooldown, EnemyCombatRole role, float preferredDistance, EnemyDropDefinition[] drops)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>spawnPosition</code> <a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a></dt>
+    <dd></dd>
+    <dt><code>moveSpeed</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>maxHealth</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>attackDamage</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>attackRange</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>attackCooldown</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>role</code> <a class="xref" href="Noname.Core.Enums.EnemyCombatRole.html">EnemyCombatRole</a></dt>
+    <dd></dd>
+    <dt><code>preferredDistance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>drops</code> <a class="xref" href="Noname.Core.ValueObjects.EnemyDropDefinition.html">EnemyDropDefinition</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Noname_Core_Entities_EnemyEntity_AttackCooldown_" data-uid="Noname.Core.Entities.EnemyEntity.AttackCooldown*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity_AttackCooldown" data-uid="Noname.Core.Entities.EnemyEntity.AttackCooldown">
+  AttackCooldown
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>공격 간 최소 시간.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float AttackCooldown { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_EnemyEntity_AttackDamage_" data-uid="Noname.Core.Entities.EnemyEntity.AttackDamage*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity_AttackDamage" data-uid="Noname.Core.Entities.EnemyEntity.AttackDamage">
+  AttackDamage
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>기본 공격력.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float AttackDamage { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_EnemyEntity_AttackRange_" data-uid="Noname.Core.Entities.EnemyEntity.AttackRange*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity_AttackRange" data-uid="Noname.Core.Entities.EnemyEntity.AttackRange">
+  AttackRange
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>공격 사거리.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float AttackRange { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_EnemyEntity_CurrentHealth_" data-uid="Noname.Core.Entities.EnemyEntity.CurrentHealth*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity_CurrentHealth" data-uid="Noname.Core.Entities.EnemyEntity.CurrentHealth">
+  CurrentHealth
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>현재 체력.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float CurrentHealth { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_EnemyEntity_DropDefinitions_" data-uid="Noname.Core.Entities.EnemyEntity.DropDefinitions*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity_DropDefinitions" data-uid="Noname.Core.Entities.EnemyEntity.DropDefinitions">
+  DropDefinitions
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>드롭 테이블.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EnemyDropDefinition[] DropDefinitions { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Noname.Core.ValueObjects.EnemyDropDefinition.html">EnemyDropDefinition</a>[]</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_EnemyEntity_Id_" data-uid="Noname.Core.Entities.EnemyEntity.Id*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity_Id" data-uid="Noname.Core.Entities.EnemyEntity.Id">
+  Id
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>적 고유 ID.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Id { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_EnemyEntity_IsAlive_" data-uid="Noname.Core.Entities.EnemyEntity.IsAlive*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity_IsAlive" data-uid="Noname.Core.Entities.EnemyEntity.IsAlive">
+  IsAlive
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>생존 여부.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAlive { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_EnemyEntity_MaxHealth_" data-uid="Noname.Core.Entities.EnemyEntity.MaxHealth*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity_MaxHealth" data-uid="Noname.Core.Entities.EnemyEntity.MaxHealth">
+  MaxHealth
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>최대 체력.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MaxHealth { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_EnemyEntity_MoveSpeed_" data-uid="Noname.Core.Entities.EnemyEntity.MoveSpeed*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity_MoveSpeed" data-uid="Noname.Core.Entities.EnemyEntity.MoveSpeed">
+  MoveSpeed
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>초당 이동 속도.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float MoveSpeed { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_EnemyEntity_Position_" data-uid="Noname.Core.Entities.EnemyEntity.Position*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity_Position" data-uid="Noname.Core.Entities.EnemyEntity.Position">
+  Position
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>현재 위치.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Float2 Position { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_EnemyEntity_PreferredDistance_" data-uid="Noname.Core.Entities.EnemyEntity.PreferredDistance*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity_PreferredDistance" data-uid="Noname.Core.Entities.EnemyEntity.PreferredDistance">
+  PreferredDistance
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>원거리 적이 유지하고 싶은 이상 거리.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float PreferredDistance { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_EnemyEntity_Role_" data-uid="Noname.Core.Entities.EnemyEntity.Role*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity_Role" data-uid="Noname.Core.Entities.EnemyEntity.Role">
+  Role
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>전투 역할(근접/원거리).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EnemyCombatRole Role { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Noname.Core.Enums.EnemyCombatRole.html">EnemyCombatRole</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Noname_Core_Entities_EnemyEntity_ApplyDamage_" data-uid="Noname.Core.Entities.EnemyEntity.ApplyDamage*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity_ApplyDamage_System_Single_" data-uid="Noname.Core.Entities.EnemyEntity.ApplyDamage(System.Single)">
+  ApplyDamage(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>피해를 적용하고 실제 감소한 체력을 반환합니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float ApplyDamage(float amount)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>amount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_EnemyEntity_IsInPreferredRange_" data-uid="Noname.Core.Entities.EnemyEntity.IsInPreferredRange*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity_IsInPreferredRange_Noname_Core_Primitives_Float2_" data-uid="Noname.Core.Entities.EnemyEntity.IsInPreferredRange(Noname.Core.Primitives.Float2)">
+  IsInPreferredRange(Float2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>현재 위치가 공격하기에 적합한 거리인지 확인합니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsInPreferredRange(Float2 target)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_EnemyEntity_MoveTowards_" data-uid="Noname.Core.Entities.EnemyEntity.MoveTowards*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity_MoveTowards_Noname_Core_Primitives_Float2_System_Single_" data-uid="Noname.Core.Entities.EnemyEntity.MoveTowards(Noname.Core.Primitives.Float2,System.Single)">
+  MoveTowards(Float2, float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>목표를 향해 이동합니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void MoveTowards(Float2 target, float deltaTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>target</code> <a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a></dt>
+    <dd></dd>
+    <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_EnemyEntity_SetPosition_" data-uid="Noname.Core.Entities.EnemyEntity.SetPosition*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity_SetPosition_Noname_Core_Primitives_Float2_" data-uid="Noname.Core.Entities.EnemyEntity.SetPosition(Noname.Core.Primitives.Float2)">
+  SetPosition(Float2)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>외부에서 강제로 위치를 갱신할 때 사용합니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetPosition(Float2 position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_EnemyEntity_TryAttack_" data-uid="Noname.Core.Entities.EnemyEntity.TryAttack*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity_TryAttack" data-uid="Noname.Core.Entities.EnemyEntity.TryAttack">
+  TryAttack()
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>쿨다운이 끝났다면 공격을 시작합니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryAttack()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_EnemyEntity_UpdateCooldown_" data-uid="Noname.Core.Entities.EnemyEntity.UpdateCooldown*"></a>
+
+  <h3 id="Noname_Core_Entities_EnemyEntity_UpdateCooldown_System_Single_" data-uid="Noname.Core.Entities.EnemyEntity.UpdateCooldown(System.Single)">
+  UpdateCooldown(float)
+  
+  </h3>
+
+  <div class="markdown level1 summary"><p>델타 타임만큼 공격 쿨다운을 감소시킵니다.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void UpdateCooldown(float deltaTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Editor tools and shortcuts | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Editor tools and shortcuts | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SkinEdToolsShortcuts.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="editor-tools-and-shortcuts">Editor tools and shortcuts</h1>
+
+<p><img src="images/LabelledEditorTools.png" alt="The Skinning Editor window. The Editor toolbar is at the top, and the tools in a column on the left."><br>Labelled 2D Animation Skinning Editor tools</p>
+<p>The Skinning Editor tools are split-up into the following groups:</p>
+<p>A. <a href="#editor-toolbar">Editor toolbar</a></p>
+<p>B. <a href="#pose-tools">Pose tools</a></p>
+<p>C. <a href="#bone-tools">Bone tools</a></p>
+<p>D. <a href="#geometry-tools">Geometry tools</a></p>
+<p>E. <a href="#weight-tools">Weight tools</a></p>
+<p>F. <a href="#rig-tools">Rig tools</a></p>
+<h2 id="editor-toolbar">Editor toolbar</h2>
+<p>This toolbar lets you toggle between <strong>Character</strong> and <strong>Sprite Sheet</strong> modes. It also contains the <strong>Visibility</strong> toggle.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Tool</strong></th>
+<th><strong>Default Shortcut</strong></th>
+<th><strong>Function</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="images/icon_ToggleView.png" alt="Toggle View Mode"><br><strong>Toggle View Mode</strong></td>
+<td>Shift + 2</td>
+<td>Switch between the <strong>Character</strong> and <strong>Sprite Sheet</strong> view modes.</td>
+</tr>
+<tr>
+<td><img src="images/icon_Visibility.png" alt="Visibility icon"><br><strong>Visibility</strong></td>
+<td>Shift + P</td>
+<td>Toggles the <a href="SpriteVis.html">Sprite visibility panel</a>, which controls the visibility of the Sprite meshes and bones in the editor window.</td>
+</tr>
+<tr>
+<td><strong>Toggle Tool Text</strong></td>
+<td>Shift + `</td>
+<td>Show or hide text on tool buttons.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pose-tools">Pose tools</h2>
+<p>This is a toolbar that contains the options to <strong>Preview Pose</strong> and restore the default pose with <strong>Restore Pose</strong>.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Tool</strong></th>
+<th><strong>Default Shortcut</strong></th>
+<th><strong>Function</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="images/icon_PreviewPose.png" alt="Preview Pose"><br><strong>Preview Pose</strong></td>
+<td>Shift + Q</td>
+<td>Enable this mode when moving and rotating an actor's model and joints to preview its poses after rigging. Any changes made in this mode are not saved.</td>
+</tr>
+<tr>
+<td><img src="images/icon_RestoreBind.png" alt="Reset Pose"><br><strong>Reset Pose</strong></td>
+<td>Shift + 1</td>
+<td>Restores an actor's bones and joints to their original positions.</td>
+</tr>
+<tr>
+<td><img src="images/icon_PosePivot.png" alt="Set Pivot"><br><strong>Set Pivot</strong></td>
+<td>Shift + T</td>
+<td>Enable this tool to edit the pivot point of the actor with the <a href="#pivot-panel">Pivot Panel</a> options.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pivot-panel">Pivot Panel</h3>
+<p>The <strong>Pivot Panel</strong> appears when you enable the <strong>Set Pivot</strong> tool.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pivot</strong></td>
+<td>Select the desired location of the Pivot from the dropdown menu.</td>
+</tr>
+<tr>
+<td><strong>Position</strong></td>
+<td>Enter a value from 0 to 1 to adjust the X and Y position of the pivot. This is a normalized value from 0 to 1, where (0,0) is lower left of workspace and (1,1) is the upper right of the workspace.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bone-tools">Bone tools</h2>
+<p>Use the <strong>Bone Tools</strong> to create and edit the bones of your character and their hierarchy.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Tool</strong></th>
+<th><strong>Default Shortcut</strong></th>
+<th><strong>Function</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="images/icon_EditJoints.png" alt="Edit Bone"><br><strong>Edit Bone</strong></td>
+<td>Shift + W</td>
+<td>Reposition the bones into a new position. These changes are automatically saved as the default bind pose for the Restore Bind Pose tool. Sprite geometry does not deform with the bones in this mode, even if the bones are attached as influencers.</td>
+</tr>
+<tr>
+<td><img src="images/icon_CreateBone.png" alt="Create Bone"><br><strong>Create Bone</strong></td>
+<td>Shift + E</td>
+<td>Click and drag to create bones.</td>
+</tr>
+<tr>
+<td><img src="images/icon_SplitBone.png" alt="Split Bone"><br><strong>Split Bone</strong></td>
+<td>Shift + R</td>
+<td>Splits the selected bone.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bone-panel">Bone panel</h3>
+<p>The <strong>Bone panel</strong> appears at the lower right of the editor window when you select a bone with one of the <strong>Bone Tools</strong> active.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name</strong></td>
+<td>Displays the name of the selected bone. Enter a new name here to rename the selected bone.</td>
+</tr>
+<tr>
+<td><strong>Position</strong></td>
+<td>The world position of the bone.</td>
+</tr>
+<tr>
+<td><strong>Rotation</strong></td>
+<td>The world rotation value of the bone.</td>
+</tr>
+<tr>
+<td><strong>Bone Color</strong></td>
+<td>The color of the bone.</td>
+</tr>
+<tr>
+<td><strong>Depth</strong></td>
+<td>Displays the Z-value of the selected bone that determines the render order of the vertices under its influence (refer to the examples below). Enter a new value (which can be negative) to change the render order of the affected vertices. Refer to the <a href="SpriteVis.html#bone-tab-and-hierarchy-tree">bone tab and hierarchy tree</a> documentation for more information on how the <strong>Depth</strong> value affects the way the Sprite mesh is rendered and deformed.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="setting-the-depth-value">Setting the Depth value</h3>
+<p>The following examples show how the <strong>Depth</strong> value of a selected bone affects the render order of the mesh vertices it influences. In this example, the selected bone (orange) and has an intitial <strong>Depth</strong> value of 1.</p>
+<p><img src="images/2D-animation-bone-depth1.png" alt="Close-up of a character's sprite with its bones visible. The selected bone is colored in orange. The sprite weighted to the bone appears in front other sprites.">
+Example 1: With the <strong>Depth</strong> value of 1, the vertices that are influenced by it (the blue are of the Sprite and mesh) appear in front of the other vertices, which have a lower <strong>Depth</strong> value.</p>
+<p>However, by setting the bone's <strong>Depth</strong> to -1 instead,</p>
+<p><img src="images/2D-animation-bone-depth2.png" alt="Close-up of a character's sprite with its bones visible. The selected bone is colored in orange. The sprite weighted to the bone appears behind the other sprites.">
+When the selected bone’s <strong>Depth</strong> is set to -1 instead, the vertices that are influenced by it appears behind of the other vertices.</p>
+<h2 id="geometry-tools">Geometry tools</h2>
+<p>Use the <strong>Geometry tools</strong> to generate and edit the meshes of the different Sprites that make up your character.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Tool</strong></th>
+<th><strong>Default Shortcut</strong></th>
+<th><strong>Function</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="images/icon_GenGeo.png" alt="Auto Geometry"><br><strong>Auto Geometry</strong></td>
+<td>Shift + A</td>
+<td>Select to auto-generate meshes for Sprites. When this tool is selected, the <a href="#geometry-panel">Geometry panel</a> becomes available at the lower right of the <strong>Skinning Editor</strong>.</td>
+</tr>
+<tr>
+<td><img src="images/icon_EditGeo.png" alt="Edit Geometry"><br><strong>Edit Geometry</strong></td>
+<td>Shift + S</td>
+<td>Edit generated meshes by repositioning vertices.</td>
+</tr>
+<tr>
+<td><img src="images/icon_CreateVertex.png" alt="Create Vertex"><br><strong>Create Vertex</strong></td>
+<td>Shift + D</td>
+<td>Create new vertices to create geometry.</td>
+</tr>
+<tr>
+<td><img src="images/icon_CreateEdge.png" alt="Create Edge"><br><strong>Create Edge</strong></td>
+<td>Shift + G</td>
+<td>Create new edges to create geometry.</td>
+</tr>
+<tr>
+<td><img src="images/icon_SplitEdge.png" alt="Split Edge"><br><strong>Split Edge</strong></td>
+<td>Shift + H</td>
+<td>Split an existing edge into two.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="geometry-panel">Geometry panel</h3>
+<p>The <strong>Geometry panel</strong> is only visible when <strong>Auto Geometry</strong> is enabled. It contains the available settings that affect how the geometry of selected Sprites are generated.</p>
+<p>Visible only when <strong>Auto Geometry</strong> is enabled.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Function</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Outline Detail</strong></td>
+<td>Use the slider to adjust the accuracy of the generated geometry’s outline to the outline of the Sprite. Smaller values create simpler outlines, while larger values create denser outlines that fit to the Sprite’s outline more accurately.</td>
+</tr>
+<tr>
+<td><strong>Alpha Tolerance</strong></td>
+<td>Use the slider to set the alpha value threshold to consider when generating geometry. Pixels with an alpha value lower than the set tolerance value are considered transparent during outline detection when the geometry is generated.</td>
+</tr>
+<tr>
+<td><strong>Subdivide</strong></td>
+<td>Use the slider to adjust the tessellation of the Sprite mesh by adding or decreasing the number of vertices inside the generated mesh.</td>
+</tr>
+<tr>
+<td><strong>Weights</strong></td>
+<td>Enable to automatically assign weights between the generated geometry mesh and nearby bones.</td>
+</tr>
+<tr>
+<td><strong>Generate For Selected/Generate For All Visible</strong></td>
+<td>Select this button to generate a geometry mesh for selected Sprites based on the property settings above. To generate geometry for all Sprites in the Skinning Editor, do not have any Sprite selected when you select this button.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="weight-tools">Weight tools</h2>
+<p>Vertices in the generated geometry meshes are influenced by different bones which affect how the meshes deform during animation. The percentage of influences from different bones for each vertex is contained in the weight information assigned to that vertex, which you can control with the following Weight tools.</p>
+<p>To add weights to your Sprites, you can first ensure that there are <a href="#bone-tools">bones</a> overlaying the Sprites and <a href="#geometry-tools">geometry</a> has been generated.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Tool</strong></th>
+<th><strong>Default Shortcut</strong></th>
+<th><strong>Function</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="images/icon_GenWeights.png" alt="Auto Weights"><br><strong>Auto Weights</strong></td>
+<td>Shift + Z</td>
+<td>Auto-generate weights between the geometry and bones. When this tool is selected, the <a href="#weights-panel">Weights panel</a> becomes available at the lower right of the <strong>Skinning Editor</strong> that displays the available settings and the option to generate weights for.</td>
+</tr>
+<tr>
+<td><img src="images/icon_WeightSlider.png" alt="Weight Slider"><br><strong>Weight Slider</strong></td>
+<td>Shift + X</td>
+<td>Use the slider to adjust weights.</td>
+</tr>
+<tr>
+<td><img src="images/icon_WeightPaint.png" alt="Weight Brush"><br><strong>Weight Brush</strong></td>
+<td>Shift + N</td>
+<td>Adjust weights by painting with a brush.</td>
+</tr>
+<tr>
+<td><img src="images/icon_BoneInfluence.png" alt="Bone Influence"><br><strong>Bone Influence</strong></td>
+<td>Shift + V</td>
+<td>Select which bones influence a Sprite.</td>
+</tr>
+<tr>
+<td><img src="images/icon_SpriteInfluence.png" alt="Sprite Influence"><br><strong>Sprite Influence</strong></td>
+<td>Shift + M</td>
+<td>Select which Sprites are being influenced by a bone.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="weights-panel">Weights panel</h3>
+<p>The Weights panel appears at the lower right of the Sprite Editor window when <strong>Auto Weights</strong> under the Weight tools is selected.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Function</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Associate Bones</strong></td>
+<td>Select this box to automatically associate bones to the Sprite geometry they overlay.</td>
+</tr>
+<tr>
+<td><strong>Generate/Generate All</strong></td>
+<td>Select this button to generate weights for the currently selected Sprite, or for all Sprites if no Sprite is selected. This does not do anything if <a href="#geometry-tools">geometry has not been generated</a> for the Sprites, or if no bones are associated with the Sprite geometry.</td>
+</tr>
+<tr>
+<td><strong>Normalize</strong></td>
+<td>Normalizes the weights of the selected Sprite, or all Sprites if no specific Sprite is selected.</td>
+</tr>
+<tr>
+<td><strong>Clear</strong></td>
+<td>Clear the weights of the selected Sprite, or of all Sprites if no specific Sprite is selected.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="weight-slider">Weight Slider</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Function</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mode</strong></td>
+<td>The current behavior of the <strong>Weight Slider</strong> tool.</td>
+</tr>
+<tr>
+<td>    Add and Subtract</td>
+<td>Select this mode to have all sliders influence all vertices around the selected bone (currently displayed in the <strong>Bone</strong> property).</td>
+</tr>
+<tr>
+<td>    Grow and Shrink</td>
+<td>Select this mode to have all sliders influence only vertices that are already affected by the selected bone (which is selected in the <strong>Bone</strong> property).</td>
+</tr>
+<tr>
+<td>    Smooth</td>
+<td>Averages the weights of all vertices with their neighbors to create an even distribution of weight across all vertices.</td>
+</tr>
+<tr>
+<td><strong>Bone</strong> (unavailable if <strong>Mode &gt; Smooth</strong>)</td>
+<td>Displays the currently selected bone. Use the drop-down menu to select a different bone, or select another bone.</td>
+</tr>
+<tr>
+<td><strong>Normalize</strong></td>
+<td>Select this to ensure the total normalized weight of all vertices of a selected Sprite mesh is equal to one.</td>
+</tr>
+<tr>
+<td><strong>Amount</strong></td>
+<td>Amount of weight applied on selected vertices.</td>
+</tr>
+<tr>
+<td><strong>Vertex Weight</strong></td>
+<td>Adjust the bone weights of selected vertices.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="weight-brush">Weight Brush</h3>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Function</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mode</strong></td>
+<td>The current behavior mode of the weights tool.</td>
+</tr>
+<tr>
+<td>    Add and Subtract</td>
+<td>Select this mode to have all sliders  influence all vertices around the selected bone.</td>
+</tr>
+<tr>
+<td>    Grow and Shrink</td>
+<td>Select this mode to have all sliders influence only vertices that are already affected by the selected bone.</td>
+</tr>
+<tr>
+<td>    Smooth</td>
+<td>Averages the weights of vertices with their neighbors to create a smoother distribution of weights.</td>
+</tr>
+<tr>
+<td><strong>Bone</strong></td>
+<td>The bone that the Brush is painting influence for. Select a different bone via the drop-down menu.</td>
+</tr>
+<tr>
+<td><strong>Normalize</strong></td>
+<td>Enable to ensure the normalized weight of painted vertices will equal to 1.</td>
+</tr>
+<tr>
+<td><strong>Size</strong></td>
+<td>Size of the weight brush cursor.</td>
+</tr>
+<tr>
+<td><strong>Hardness</strong></td>
+<td>Amount of weight applied by the brush per brushstroke. Higher values increase the weight per brushstroke, up to the maximum of 100 where the full weight is applied at once.</td>
+</tr>
+<tr>
+<td><strong>Step</strong></td>
+<td>Number of increments needed to apply the full weight of brush.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="bone-influences-panel">Bone Influences panel</h3>
+<p>The <strong>Bone Influences panel</strong> displays a list of bones that are currently influencing the selected Sprite mesh.</p>
+<p><img src="images/BoneInfluencesExample.png" alt="The Bone Influences panel, next to the leg of a model that has three bones."></p>
+<p>When the Skinning Editor is set to <a href="#editor-toolbar">Character mode</a>, the Bone Influences panel allows you to add a bone to the list which includes its influence in the deformation of the selected Sprite’s mesh, or remove a bone from the list which removes its influence instead.</p>
+<p>To add a bone to the list, select the bone in the <strong>Skinning Editor</strong> window and then select <strong>Add (+)</strong> at the lower right of the panel. To remove a bone from the list, select the bone in the list or in the editor window and then select <strong>Remove (-)</strong>.</p>
+<h4 id="rearranging-bone-order">Rearranging bone order</h4>
+<p>You can rearrange the bone order in the Bone Influences panel by selecting and the dragging the respective bone entries up or down the list.</p>
+<p>The order of the bones in the Bone Influences panel determines the order of the bones on the <strong>Sprite Skin</strong> component. This is especially important when replacing the Sprite for deformation in the <strong>Sprite Renderer</strong>, such as when using <a href="SpriteSwapIntro.html">Sprite Swap</a>, as you can ensure the bone order remains the same between the Sprites and that the correct Transform drives the correct deformation.</p>
+<h3 id="sprite-influences-panel">Sprite Influences panel</h3>
+<p>The <strong>Sprite Influences panel</strong> displays a list of Sprite meshes that are currently being influenced by the selected bone.</p>
+<p><img src="images/SpriteInfluencesExample.png" alt="The Sprite Influence panel next to a model with one bone highlighted. The list in the Sprite Influence panel indicates that the bone influences the body, amulet, and scarf meshes."></p>
+<p>When the <strong>Skinning Editor</strong> is set to <a href="#editor-toolbar">Character mode</a>, the Sprite Influences panel allows you to remove an unwanted Sprite mesh from the list so that it’s not influenced by the selected bone. It’s also possible to add a selected Sprite to the list which will include the selected bone’s influence in its deformation.</p>
+<p>To add a Sprite mesh to the list, select the bone in the Skinning Editor window as well as the Sprite you want to add, and then select <strong>Add (+)</strong> at the lower right of the panel. To remove a Sprite from the list, select it  in the list or in the editor window and then select <strong>Remove (-)</strong>.</p>
+<h2 id="rig-tools">Rig tools</h2>
+<p>The <strong>Rig tools</strong> contain the option to <strong>Copy</strong> and <strong>Paste</strong> bones from and into a skeleton rig.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Tool</strong></th>
+<th><strong>Default Shortcut</strong></th>
+<th><strong>Function</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="images/icon_Copy.png" alt="Copy"><br><strong>Copy</strong></td>
+<td>Ctrl + C</td>
+<td>Copies the bone and mesh data from the current selection.</td>
+</tr>
+<tr>
+<td><img src="images/icon_Paste.png" alt="Paste"><br><strong>Paste</strong></td>
+<td>Ctrl + V</td>
+<td>Pastes the copied bone and mesh data to the current selection.</td>
+</tr>
+<tr>
+<td><img src="images/icon_Paste.png" alt="Paste"><br><strong>Paste</strong></td>
+<td>Shift + B</td>
+<td>Use this shortcut to show additional pasting options.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="copy-and-paste-behavior">Copy and Paste behavior</h2>
+<p>Once you have <a href="CharacterRig.html">rigged the skeleton and bone weights</a> of your actor, you can reuse the same rigged skeleton with other Model Prefabs by using the <strong>Copy</strong> and <strong>Paste</strong> options on the <a href="SkinEdToolsShortcuts.html#rig-tools">Rig tools</a>. This is useful if you need to quickly create characters that share the same build and animations.</p>
+<p>You can only Copy and Paste if the source and destination Model Prefabs have the same number of Sprites and Sprite names. When you Copy and Paste the bone and mesh data, the following occurs:</p>
+<ol>
+<li>Copied bone data is pasted to the destination.</li>
+<li>Mesh, weights, and bone association of source Sprite(s) are pasted to destination Sprite(s) with the same names.</li>
+</ol>
+<h3 id="copy-behavior">Copy behavior</h3>
+<p>To copy sprite data, select a sprite and then select <strong>Copy</strong>. This copies the mesh and bone data associated with that sprite. If no sprite is selected, then this copies the data of all sprites' currently in the <a href="SkinningEditor.html">Skinning Editor</a> window instead.</p>
+<h3 id="paste-behavior">Paste behavior</h3>
+<p>To paste copied sprite data, select the <strong>Paste</strong> button. This opens the Paste panel at the lower right of the editor window which contains the following data options. Select which data you want to paste from the copied sprite data.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Option</strong></th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bones</strong></td>
+<td>Paste bone data.</td>
+</tr>
+<tr>
+<td><strong>Mesh</strong></td>
+<td>Paste mesh data.</td>
+</tr>
+<tr>
+<td><strong>Flip X</strong></td>
+<td>Paste the data but mirrored along the X-axis.</td>
+</tr>
+<tr>
+<td><strong>Flip Y</strong></td>
+<td>Paste the data but mirrored along the Y-axis.</td>
+</tr>
+</tbody>
+</table>
+<p>To paste copied sprite data, select a sprite and then select <strong>Paste</strong>. This pastes the selected data to a selected sprite. If no sprite is selected, then this pastes the data to all sprites’ currently in the <a href="SkinningEditor.html">Skinning Editor</a> window with the same name as the copied sprite.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SkinEdToolsShortcuts.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

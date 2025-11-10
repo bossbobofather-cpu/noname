@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>2d-extras | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="2d-extras | mysite ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.tilemap.extras@2338d989ff2a/README.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="2d-extras">2d-extras</h1>
+
+<p>2d-extras is a repository containing helpful reusable scripts which you can use to make your games, with a slant towards
+2D. Feel free to customise the behavior of the scripts to create new tools for your use case!</p>
+<p>Implemented examples using these scripts can be found in the sister
+repository <a href="https://github.com/Unity-Technologies/2d-techdemos" title="2d-techdemos: Examples for 2d features">2d-techdemos</a>.</p>
+<p>All items in the repository are grouped by use for a feature and are listed below.</p>
+<h2 id="how-to-use-this">How to use this</h2>
+<p>You can use this in two different ways: downloading this repository or adding it to your project's Package Manager
+manifest.</p>
+<p>Alternatively, you can pick and choose the scripts that you want by placing only these scripts in your
+project's <code>Assets</code> folder.</p>
+<h3 id="download">Download</h3>
+<h4 id="setup">Setup</h4>
+<p>Download or clone this repository into your project in the folder <code>Packages/com.unity.2d.tilemap.extras</code>.</p>
+<h3 id="package-manager-manifest">Package Manager Manifest</h3>
+<h4 id="requirements">Requirements</h4>
+<p><a href="https://git-scm.com/">Git</a> must be installed and added to your path.</p>
+<h4 id="setup-1">Setup</h4>
+<p>The following line needs to be added to your <code>Packages/manifest.json</code> file in your Unity Project under
+the <code>dependencies</code> section:</p>
+<pre><code class="lang-json">&quot;com.unity.2d.tilemap.extras&quot;: &quot;https://github.com/Unity-Technologies/2d-extras.git#master&quot;
+</code></pre>
+<h3 id="tilemap">Tilemap</h3>
+<p>For use with Unity <code>6000.1.0f1</code> onwards.</p>
+<p>Please use the <code>package_2023.1</code> branch for Unity 6000.0.* and 2023.1.* versions.</p>
+<p>Please use the <code>package_2022.1</code> branch for Unity 2022.1.* versions.</p>
+<p>Please use the <code>package_2021.1</code> branch for Unity 2021.1.* versions.</p>
+<p>Please use the <code>2020.3</code> branch for Unity 2020.1-2020.3 versions.</p>
+<p>Please use the <code>1.5.0-preview</code> tag for Unity 2019.2-2019.4 versions.</p>
+<p>Please use the <code>2019.1</code> tag for Unity 2019.1 versions.</p>
+<p>Please use the <code>2018.3</code> branch or the <code>2018.3</code> tag for Unity 2018.3-2018.4 versions.</p>
+<p>Please use the <code>2018.2</code> branch or the <code>2018.2</code> tag for Unity 2018.2 versions.</p>
+<p>Please use the <code>2017</code> branch or the <code>2017</code> tag for earlier versions of Unity (from 2017.2 and up).</p>
+<h5 id="brushes">Brushes</h5>
+<ul>
+<li><strong>Coordinate</strong>: This Brush displays the cell coordinates it is targeting in the SceneView. Use this as an example to
+create brushes which have extra visualization features when painting onto a Tilemap.</li>
+<li><strong>Line</strong>: This Brush helps draw lines of Tiles onto a Tilemap. The first click of the mouse sets the starting point of
+the line and the second click sets the ending point of the line and draws the lines of Tiles. Use this as an example
+to modify brush painting behaviour to making painting quicker with less actions.</li>
+<li><strong>Random</strong>: This Brush helps to place random Tiles onto a Tilemap. Use this as an example to create brushes which
+store specific data per brush and to make brushes which randomize behaviour.</li>
+<li><strong>Prefab</strong>: This Brush instances and places the containing Prefab onto the targeted location and parents the instanced
+object to the paint target. Use this as an example to quickly place an assorted type of GameObjects onto structured
+locations.</li>
+<li><strong>PrefabRandom</strong>: This Brush instances and places a randomly selected Prefabs onto the targeted location and parents
+the instanced object to the paint target. Use this as an example to quickly place an assorted type of GameObjects onto
+structured locations.</li>
+<li><strong>GameObject</strong>: This Brush instances, places and manipulates GameObjects onto the scene. Use this as an example to
+create brushes which targets objects other than tiles for manipulation.</li>
+<li><strong>TintBrush</strong>: Brush to edit Tilemap per-cell tint colors.</li>
+<li><strong>TintBrushSmooth</strong>: Advanced tint brush for interpolated tint color per-cell. Requires the use of custom shader (see
+TintedTilemap.shader) and helper component TileTextureGenerator.</li>
+<li><strong>Group</strong>: This Brush helps to pick Tiles which are grouped together by position. Gaps can be set to identify if Tiles
+belong to a Group. Limits can be set to ensure that an over-sized Group will not be picked. Use this as an example to
+create brushes that have the ability to choose and pick whichever Tiles it is interested in.</li>
+</ul>
+<h5 id="tiles">Tiles</h5>
+<ul>
+<li><strong>Animated</strong>: Animated Tiles are tiles which run through and display a list of sprites in sequence.</li>
+<li><strong>Pipeline</strong>: Pipeline Tiles are tiles which take into consideration its orthogonal neighboring tiles and displays a
+sprite depending on whether the neighboring tile is the same tile.</li>
+<li><strong>Random</strong>: Random Tiles are tiles which pseudo-randomly pick a sprite from a given list of sprites and a target
+location, and displays that sprite.</li>
+<li><strong>Terrain</strong>: Terrain Tiles, similar to Pipeline Tiles, are tiles which take into consideration its orthogonal and
+diagonal neighboring tiles and displays a sprite depending on whether the neighboring tile is the same tile.</li>
+<li><strong>RuleTile</strong>: Generic visual tile for creating different tilesets like terrain, pipeline, random or animated tiles.</li>
+<li><strong>Hexagonal Rule Tile</strong>: A Rule Tile for use with Hexagonal Grids. Enable Flat Top for Flat Top Hexagonal Grids and
+disable for Pointed Top Hexagonal Grids.</li>
+<li><strong>Isometric Rule Tile</strong>: A Rule Tile for use with Isometric Grids.</li>
+<li><strong>RuleOverrideTile</strong>: Rule Override Tiles are Tiles which can override a subset of Rules for a given Rule Tile to
+provide specialised behaviour while keeping most of the Rules originally set in the Rule Tile.</li>
+<li><strong>Weighted Random</strong>: Weighted Random Tiles are tiles which randomly pick a sprite from a given list of sprites and a
+target location, and displays that sprite. The sprites can be weighted with a value to change its probability of
+appearing.</li>
+</ul>
+<h5 id="other">Other</h5>
+<ul>
+<li><strong>GridInformation</strong>: A simple MonoBehaviour that stores and provides information based on Grid positions and keywords.</li>
+<li><strong>Custom Rules for RuleTile</strong>: This helps to create new custom Rules for the Rule Tile. Check
+the <a href="https://github.com/Unity-Technologies/2d-extras/wiki">Wiki</a> or this great <a href="https://youtu.be/FwOxLkJTXag">video</a>
+for more information on how to use this!</li>
+</ul>
+<p><a href="http://www.youtube.com/watch?v=FwOxLkJTXag" title="How to make Custom Rule Tiles in Unity"><img src="http://img.youtube.com/vi/FwOxLkJTXag/0.jpg" alt="How to make Custom Rule Tiles in Unity Video"></a></p>
+<h3 id="contribution-notice">Contribution Notice</h3>
+<p>From 7 January 2019 until 12 February 2020, all contributions are licensed under the Unity Companion License for
+Unity-dependent projects (see <a href="https://unity3d.com/legal/licenses/unity_companion_license">https://unity3d.com/legal/licenses/unity_companion_license</a>).</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.tilemap.extras@2338d989ff2a/README.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

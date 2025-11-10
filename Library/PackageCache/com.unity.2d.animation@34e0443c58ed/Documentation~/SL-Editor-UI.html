@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Sprite Library Editor reference | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Sprite Library Editor reference | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SL-Editor-UI.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="sprite-library-editor-reference">Sprite Library Editor reference</h1>
+
+<p>The <strong>Sprite Library Editor</strong> window displays the content of the selected <a href="SL-Asset.html">Sprite Library Asset</a>. Use the editor to view, create, or edit the <a href="SL-Editor.html#categories">Categories</a> and the <a href="SL-Editor.html#labels">Labels</a> in the selected Sprite Library Asset.</p>
+<p><img src="images/sl-editor-blank.png" alt="The Sprite Library Editor window, with the top area labelled. The asset name (A) and main library (B) are on the left, and the saving options (C) and filter (D) are on the right."></p>
+<p>A: The name of the Sprite Library Asset opened in this editor.
+B: This displays this asset's <a href="SL-Main-Library.html">Main Library</a> if it's a <a href="SL-Asset.html#convert-a-sprite-library-asset-into-a-variant">Variant asset</a>. Refer to <a href="#variant-asset-specific-properties">Variant asset-specific properties </a> for more information.
+C: The <a href="#saving-options">saving options</a> for changes made in this editor.
+D: Enter a text string here to filter the Categories or Labels by name. Select the magnifying glass icon to the left of the filter to bring up its <a href="#filter-context-menu">context menu</a>.</p>
+<h2 id="saving-options">Saving options</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Revert</strong></td>
+<td>Select this to discard all unsaved changes and to return to the last saved state of the asset.</td>
+</tr>
+<tr>
+<td><strong>Save</strong></td>
+<td>Select this to keep all unsaved changes and include them in the saved state of the asset.</td>
+</tr>
+<tr>
+<td><strong>Auto Save</strong></td>
+<td>Enable this option to have the editor automatically save when you make any changes to the asset.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="main-library">Main Library</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assign a Sprite Library Asset to this to set it as the opened Sprite Library Asset's Main Library, and it will inherit the Main Library's Categories and Labels. Doing so also converts the opened Sprite Library Asset into a <a href="SL-Asset.html#convert-a-sprite-library-asset-into-a-variant">Sprite Library Asset Variant</a>.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="filter-context-menu">Filter context menu</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Category and Label</strong></td>
+<td>Search for the entered search string in both Category and Label names.</td>
+</tr>
+<tr>
+<td><strong>Category</strong></td>
+<td>Search for the entered search string in only Category names.</td>
+</tr>
+<tr>
+<td><strong>Label</strong></td>
+<td>Search for the entered search string in only Label names.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="categories-and-labels-columns">Categories and Labels columns</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Categories</strong></td>
+<td>Displays all <a href="SL-Editor.html#categories">Categories</a> the opened Sprite Library Asset contains. The options are: <ul><li><strong>Local</strong> foldout group: Groups all Categories created in this Sprite Library Asset.</li><li><strong>Inherited</strong> foldout group: Groups all Categories inherited from this Sprite Library Asset Variant's Main Library. <strong>Note:</strong> This is only available if the opened Sprite Library Asset is a <a href="SL-Asset.html#convert-a-sprite-library-asset-into-a-variant">Variant asset</a>.</li></ul> Select <strong>Add (+)</strong> at the top left of this column to add a new empty <strong>Category</strong> to this asset.</td>
+</tr>
+<tr>
+<td><strong>Labels</strong></td>
+<td>Displays all <a href="SL-Editor.html#labels">Labels</a> a selected <strong>Category</strong> contains, when you select one from the Categories column. Select <strong>Add (+)</strong> at the top left of this column to add a new empty <strong>Label</strong> to this asset.</td>
+</tr>
+<tr>
+<td><strong>(Sprite)</strong> object field</td>
+<td>Displays the sprite that this Label refers to. This is blank by default. Select a sprite by opening the object picker, or drag a sprite directly onto this field.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="variant-asset-specific-properties">Variant asset-specific properties</h3>
+<p>The following properties and UI features are visible only when you open a <a href="SL-Asset.html#convert-a-sprite-library-asset-into-a-variant">Sprite Library Variant Asset</a> in the Sprite Library Editor.</p>
+<p><img src="images/sl-editor-variant-annotated.png" alt="The Variant window. The breadcrumb trail (E) and main library (F) are at the top. The list of inherited categories (G) is on the left. In the Labels section, one label has a white line (H) that indicates an override."></p>
+<p>E: The breadcrumb trail showing the names of the opened Variant asset and Library assets it inherits from.
+F: The Main Library the Variant asset inherits from.
+G: The Inherited group type that displays all Categories inherited from the Main Library.
+H: A vertical white line which shows that an <a href="SL-Main-Library.html#create-overrides">override</a> is present.</p>
+<h2 id="label-context-menu">Label context menu</h2>
+<p>Right-click over a Label in the Labels column to open this context menu.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Create a new Label</strong></td>
+<td>Create a new local Label in the selected Category.</td>
+</tr>
+<tr>
+<td><strong>Rename Label</strong></td>
+<td>Rename the selected Label. This is unavailable if it's an inherited Label.</td>
+</tr>
+<tr>
+<td><strong>Delete Selected Labels</strong></td>
+<td>Deletes all selected Labels. This is unavailable if they're inherited Labels.</td>
+</tr>
+<tr>
+<td><strong>Revert Selected Overrides</strong></td>
+<td>Removes all overrides made in the selected Labels, and returns them back to their inherited state.</td>
+</tr>
+<tr>
+<td><strong>Revert All Overrides</strong></td>
+<td>Removes all overrides in the selected Category.</td>
+</tr>
+<tr>
+<td><strong>Show Label Location</strong></td>
+<td>This is only available if the selected Label has a set sprite reference. Select this to open the sprite that the Label references.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="SL-Editor.html">Sprite Library Editor fundamentals</a></li>
+<li><a href="SpriteSwapSetup.html">Setting up for Sprite Swap</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SL-Editor-UI.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

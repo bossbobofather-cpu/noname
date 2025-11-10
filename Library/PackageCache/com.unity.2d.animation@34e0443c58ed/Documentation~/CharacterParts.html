@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Swapping individual Sprites | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Swapping individual Sprites | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/CharacterParts.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="swapping-individual-sprites">Swapping individual Sprites</h1>
+
+<p>You can use <strong>Sprite Swap</strong> to change only one Sprite on the actor without affecting the other Sprites. This allows you to alter part of an actor's visuals (for example, changing its clothes or skin to a different color) while keeping the rest of the visuals the same.</p>
+<p>In the following example, there are two Sprites that are variations of the actor’s scarf, with one being green and the other being blue. This workflow demonstrates how to switch from one to the other in the same actor:</p>
+<p><img src="images/bothscarves.png" alt="A human character sprite. Left: The original sprite with a green scarf. Right: The alternate sprite with a blue scarf."><br><strong>Left:</strong> The original <code>green scarf</code> Sprite. <strong>Right:</strong> An alternate <code>blue scarf</code> Sprite.</p>
+<ol>
+<li><p>Place the Sprites for both scarves into the same <a href="SL-Asset.html">Sprite Library Asset</a>, and add them both to the same <strong>Category</strong> (named <code>Scarf</code>).</p>
+</li>
+<li><p>Give each of the Sprites a unique <strong>Label</strong> name (in this case <code>green scarf</code> and <code>blue scarf</code> respectively).
+This and the previous step can be automated by dragging and dropping sprites into the Categories tab empty space.</p>
+</li>
+<li><p>In the Scene, select the <a href="https://docs.unity3d.com/Manual/InstantiatingPrefabs.html">Instantiated Prefab</a> and then select the <code>Scarf</code> GameObject in the Hierarchy window.</p>
+</li>
+<li><p>Go to the <a href="SL-Resolver.html">Sprite Resolver component</a> of the <code>Scarf</code> GameObject. The Sprite Resolver‘s visual selector displays the two Sprites available in the <code>Scarf</code> Category.</p>
+</li>
+<li><p>Select the <code>blue scarf</code> to switch the Sprite rendered by the <code>Scarf</code> GameObject to it instead.<br></p>
+</li>
+</ol>
+<p>If you want to switch more than one Sprite at a time, consider <a href="SLASwap.html">swapping the Sprite Library Asset</a> to switch to an entire alternate set of Sprites.</p>
+<h2 id="sprite-swap-scene-view-overlay">Sprite Swap Scene View overlay</h2>
+<p>Sprite Swap overlay allows you to swap individual Sprites directly from the Scene View. The overlay supports swapping Sprites from multiple resolvers. This might be useful when working on complex characters.
+The overlay can be enabled from the Overlay Menu which is accessible with the ` shortcut key, or from the Scene View's settings button.</p>
+<p>Once the overlay is displayed, select a single or multiple game objects with Sprite Resolver component. If a selected game object has child game objects with Sprite Resolvers, they will be displayed as well.</p>
+<p><br><img src="images/2D-animation-SResolver-overlay.png" alt="The Scene view with a knight character and the Sprite Resolver overlay. The overlay contains dropdowns that switch between different versions of the character's mouth, eyes, and head."></p>
+<p>To Sprite Swap, select Sprite Resolver's categories and labels using your mouse, or arrow keys on your keyboard when the overlay is in focus.</p>
+<p>It's possible to filter the list of Sprite Resolvers to show only Resolvers that contain two or more labels in their selected category. Select the first button in the bottom-left corner of the overlay to toggle the filter.</p>
+<h2 id="sprites-pivot-alignment">Sprites pivot alignment</h2>
+<p>When working with <a href="SkinningEditor.html">skinned Sprites</a>, the positions of their Meshes' vertices are calculated based on the current skeleton pose, and are unaffected by each Sprite’s individual pivot. However, when <a href="SpriteSwapIntro.html">swapping</a> Sprites which are not skinned (that is not <a href="SkinEdToolsShortcuts.html#bone-tools">Rigged</a> to an actor’s skeleton), then they may not align correctly as their pivots are not in the same relative positions. This is especially noticeable if the Sprites are of very different sizes. The following example shows how Sprites can misalign when a skinned Sprite is swapped with an unskinned one:</p>
+<p><img src="images/Pivot_Scene_OpenHand.png" alt="Figure 1: The original open-hand sprite."></p>
+<p><img src="images/Pivot_Scene_GestureOffset.png" alt="Figure 2: Swapping to the thumbs-up sprite. The hand is detached from the wrist."></p>
+<p>In this example, the GameObject containing the Sprite and the Sprite Swap component are aligned to match the <code>open hand</code> Sprite in the Skinning Editor. As the <code>thumbs up</code> Sprite is not rigged to the same skeleton, it appears misaligned as its pivot location is not in the same relative position as the original Sprite. To align the unskinned  <code>thumbs up</code> Sprite, you must adjust its pivot to match the relative position of the <code>open hand</code> Sprite’s pivot.</p>
+<p><strong>Note</strong>: If a Sprite is rigged to a skeleton, then its individual pivot location is overridden by the influence and position of the bone it is weighted to .</p>
+<p>To change the pivot position of a Sprite, first select the Sprite in the Sprite Editor, which causes the <strong>Sprite</strong> panel to appear at the bottom right of the <strong>Sprite Editor</strong> window. The <strong>Sprite</strong> panel shows details of the selected Sprite, such as its <strong>Name</strong>, <strong>Position</strong>, and <strong>Pivot</strong> properties. You can select from a dropdown list of predefined pivot options from the <strong>Pivot</strong> menu. These include options such as <strong>Center</strong> and <strong>Top Left</strong>, as well as <strong>Custom Pivot</strong> (this unlocks the <strong>Custom Pivot</strong> position property settings, allowing you to input your own custom position for the pivot).</p>
+<p>In the following example, the two swapped Sprites are aligned by changing the <strong>Pivot</strong> property from <strong>Center</strong> to <strong>Custom Position</strong>, and inputting the Custom Pivot position that aligns the <code>thumbs up</code> Sprite with the <code>open hand</code> Sprite. After applying the changes, the swapped Sprite is now aligned with the rest of the actor after the Sprite Swap.</p>
+<p><img src="images/Pivot_Scene_Fixed.png" alt="The thumbs-up sprite is now correctly attached to the wrist."></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/CharacterParts.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

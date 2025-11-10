@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Sprite Library Asset | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Sprite Library Asset | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SLAsset.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="sprite-library-asset">Sprite Library Asset</h1>
+
+<p>A Sprite Library Asset groups multiple Sprites into <a href="#Categories">Categories</a> and unique <a href="#Labels">Label</a> names. It is used in combination with the <a href="#sprite-library-component">Sprite Library</a> component and <a href="#sprite-resolver-component">Sprite Resolver</a> component to swap Sprite graphics at runtime.</p>
+<p>To create the Asset, go to <strong>Assets</strong> &gt; <strong>Create</strong> &gt; <strong>2D</strong> &gt; <strong>Sprite Library Asset</strong>.</p>
+<p><img src="images/2D-animation-SLAsset-dropdown.png" alt=""></p>
+<p>To create the Asset variant that inherits Categories and Labels from a selected Sprite Library Asset, first select the main asset in the Project window, then go to <strong>Assets</strong> &gt; <strong>Create</strong> &gt; <strong>2D</strong> &gt; <strong>Sprite Library Asset Variant</strong>.</p>
+<p><img src="images/2D-animation-SLAssetVariant-dropdown.png" alt=""></p>
+<h2 id="sprite-library-asset-inspector-window">Sprite Library Asset Inspector window</h2>
+<p>Once the Sprite Library Asset is created, select the Asset and go to its Inspector window.</p>
+<p><img src="images/2D-animation-SLAsset-properties.png" alt=""><br>Sprite Library Asset Inspector properties</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Open in Sprite Library Editor</strong></td>
+<td>Select this button to open a <a href="#Sprite-Library-Editor-window">Sprite Library Editor window</a> where the content of the Asset can be edited.</td>
+</tr>
+<tr>
+<td><strong>Main Library</strong></td>
+<td>Assign another Sprite Library Asset here to make it the main reference for the current Sprite Library Asset. The current Sprite Library Asset becomes a variant of the <a href="#main-library">Main Library</a>, which allows it to access the <strong>Main Library</strong>'s Categories and Entries.</td>
+</tr>
+<tr>
+<td><strong>Revert</strong></td>
+<td>This resets changes in the Inspector back to the last saved state. Unsaved changes are removed.</td>
+</tr>
+<tr>
+<td><strong>Apply</strong></td>
+<td>This saves the current value of Main Library in the Sprite Library Asset.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sprite-library-editor-window">Sprite Library Editor window</h2>
+<p>Sprite Library Editor window allows editing the content of the Sprite Library Asset. It can be accessed by <strong>double-clicking</strong> on the selected Sprite Library Asset in Project window, selecting the <strong>Open in Sprite Library Editor</strong> button in the <a href="#Sprite-Library-Asset-Inspector-window">Inspector</a>, or by selecting it from menu <strong>Window</strong> &gt; <strong>2D</strong> &gt; <strong>Sprite Library Editor</strong>.</p>
+<h3 id="categories">Categories</h3>
+<p>A Category contains selected Labels that have been grouped together for a common purpose. Make sure that each Category has a unique name.
+To create a new Category, select the '<strong>+</strong>' button, or <a href="#Drag-and-drop">drag and drop</a> Sprites directly into the Sprite Library Editor window.</p>
+<p><img src="images/2D-animation-SLAsset-add-category.png" alt=""><br>Categories tab with the '<strong>+</strong>' button</p>
+<p>The Categories Tab can contain <strong>Local</strong> and <strong>Inherited</strong> Categories:</p>
+<ul>
+<li>Local Categories are Categories created in the Sprite Library Asset currently being edited.</li>
+<li>Inherited Categories are retrieved from the <a href="#main-library">Main Library</a>. Inherited categories cannot be renamed to ensure that the Main Library and variant Sprite Library Assets contain Categories with exactly the same name. Any inherited Category can be  overridden by adding new Labels or changing the Sprite reference in a inherited Label.</li>
+</ul>
+<p><img src="images/2D-animation-SLAsset-category-local-inherited.png" alt=""><br>Local &amp; Inherited foldout groups in the Categories tab.</p>
+<h3 id="labels">Labels</h3>
+<p>Each Category can contain many Labels and each Label can reference a single Sprite in the project. To create a new Label, select the '<strong>+</strong>' button, or <a href="#Drag-and-drop">drag and drop</a> Sprite directly into the Sprite Library Editor window.</p>
+<p><img src="images/2D-animation-SLAsset-add-label.png" alt="">Labels tab with the '<strong>+</strong>' button</p>
+<p>If the Label exist in the Inherited Category, it cannot be renamed to ensure that the Main Library and Assets that reference that Sprite Library contain the same Categories and Labels. To revert changes in the inherited Category, select the Labels you wish to revert and right-click to open the context menu and select <strong>Revert Selected Overrides</strong> or <strong>Revert All Overrides</strong> if you want to make the entire Category the same as it is in the Main Library.</p>
+<p><img src="images/2D-animation-SLAsset-labels-revert-overrides.png" alt=""><br>Changes to Labels in inherited Categories can be reverted in the Labels tab.</p>
+<p>Sprite Library Editor window allows Labels to be viewed in a list or in a grid. To toggle between these two, use the buttons at the bottom of the window and use the slider to adjust the size of the Label elements.</p>
+<p><img src="images/2D-animation-SLAsset-labels-view-type.png" alt=""></p>
+<h3 id="search-for-categories-and-labels">Search for Categories and Labels</h3>
+<p>Categories and Label tabs can be filtered by the search phrase in the search bar in the top-right side of the window.</p>
+<h3 id="drag-and-drop">Drag and drop</h3>
+<p>You can quickly populate Categories and Labels by dragging Sprites or <a href="#PreparingArtwork.md">PSD Importer supported file types</a> into the Sprite Library Editor window.</p>
+<ol>
+<li>Create a new Category with one Label for each Sprite</li>
+</ol>
+<p>Drag and drop Sprites to an empty space in the Categories tab to create a new Category with one Label for each Sprite in the selection. The Category is be named after the first Sprite in the selection and Labels are named after the Sprite's name. If there are any conflicting name, it will be appended with _X suffix for example ConflictingSpriteName_0.</p>
+<p><br>Example: Drag and drop multiple Sprites to an empty space in Categories Tab.
+<img src="images/2D-animation-SLAsset-drag-n-drop-01.png" alt=""></p>
+<p><br>Result: One Category with Labels for each Sprite in the Selection
+<img src="images/2D-animation-SLAsset-drag-n-drop-01-finished.png" alt=""></p>
+<ol start="2">
+<li>Create a new Category for each Layer Group with one Label for each Sprite in a Layer</li>
+</ol>
+<p>To create Categories for each Layer Group with Labels that match Layers in that group simply drag and drop <a href="#PreparingArtwork.md">PSD Importer supported file</a> e.g. .psd or .psb. Make sure that <strong>Use Layer Group</strong> is checked.</p>
+<p><br>Result: One Category for each Layer Group and Labels for each Layer.
+<img src="images/2D-animation-SLAsset-drag-n-drop-02-finished.png" alt=""></p>
+<p>To replace each Label's Sprite reference with Sprites from a different file, simply drag and drop it to an empty space in the Categories Tab.</p>
+<p><br>Result: Each Label's Sprite reference is replaced.
+<img src="images/2D-animation-SLAsset-drag-n-drop-02-replace.png" alt=""></p>
+<ol start="3">
+<li>Replace each Label's Sprite in the Category</li>
+</ol>
+<p>Drag and drop Sprites to an existing Category. For each Sprite in the selection, a new Label with the same name will be created. If a Label with the same name already exists, its Sprite reference will be replaced with the first Sprite from the selection.</p>
+<p><br>Example: Category with several Labels.
+<img src="images/2D-animation-SLAsset-drag-n-drop-03.png" alt=""></p>
+<p><br>Result: Labels are replaced after drag and drop.
+<img src="images/2D-animation-SLAsset-drag-n-drop-03-finished.png" alt=""></p>
+<ol start="4">
+<li>Create a new Label for each Sprite in the Category</li>
+</ol>
+<p>Drag and drop Sprites to an empty space in the Labels tab. For each Sprite in the selection, a new Label with the same name will be created. If a Label with the same name already exists the _X suffix will be added to the newest Label.</p>
+<p><br>Example: Category with before dragging and dropping Sprites.
+<img src="images/2D-animation-SLAsset-drag-n-drop-04.png" alt=""></p>
+<p><br>Result: Additional Cateories created with suffix _0, _1 etc.
+<img src="images/2D-animation-SLAsset-drag-n-drop-04-finished.png" alt=""></p>
+<ol start="5">
+<li>Replace a Label's Sprite</li>
+</ol>
+<p>Drag and drop a Sprite to an existing Label.</p>
+<p><br>Example: Drag and drop a Sprite on a Label.
+<img src="images/2D-animation-SLAsset-drag-n-drop-05.png" alt=""></p>
+<p><br>Result: Label's Sprite reference is replaced with the first Sprite in the selection.
+<img src="images/2D-animation-SLAsset-drag-n-drop-05-finished.png" alt=""></p>
+<h2 id="main-library">Main Library</h2>
+<p>Assigning another existing Sprite Library Asset to the <strong>Main Library</strong> property of the current Sprite Library Asset allows the current Asset to access all Categories and Labels contained in the assigned Sprite Library Asset. Categories retrieved from the Main Library Asset are grouped under the <strong>Inherited</strong> foldout group, and all new Categories that exist only in the current Asset are grouped under the <strong>Local</strong> foldout group.</p>
+<p>The Labels of the Categories retrieved from the Main Library property can't be renamed or removed. However, you can add new Labels to a Category which was retrieved from the Sprite Library Asset assigned to the <strong>Main Library</strong> property.</p>
+<p>You can also edit a Label to change the Sprite that it refers to by selecting the object picker and choosing a different Sprite. It's also possible to <a href="#Drag-and-drop">drag and drop</a> a Sprite to a Label to change its Sprite. To revert changes to a Sprite, select the Label, right-click and select <strong>Revert Selected Overrides</strong> to restore it to the original Sprite that was retrieved from the Main Library.</p>
+<p><img src="images/2D-animation-SLAsset-label-revert.png" alt=""></p>
+<p>Use Sprite Library Editor <strong>breadcrumbs</strong> to navigate between between different Sprite Library Assets that the edited Asset inherits from. After clicking on an Asset in the breadcrums it will be selected in the Project window.</p>
+<p><img src="images/2D-animation-SLAsset-breadcrumbs.png" alt=""></p>
+<h2 id="sprite-library-component">Sprite Library component</h2>
+<p>The <a href="SL-component.html">Sprite Library component</a> defines which Sprite Library Asset a GameObject refers to at runtime. Attach this component to a GameObject or any parent GameObject of a Sprite Resolver component to allow the <a href="#sprite-resolver-component">Sprite Resolver</a> to change the Sprite that is being used by a <a href="https://docs.unity3d.com/Manual/class-SpriteRenderer">Sprite Renderer</a>.</p>
+<p>In the Sprite Library component’s Inspector window, assign the desired Sprite Library Asset to the <strong>Sprite Library Asset</strong> property. Alternatively, select the <strong>New</strong> button to create and save a new Sprite Library Asset which is automatically assigned to the Sprite Library Asset field.</p>
+<p><img src="images/2D-animation-SLComp-Open.png" alt=""></p>
+<h2 id="sprite-resolver-component">Sprite Resolver component</h2>
+<p>The Sprite Resolver component is attached to each GameObject in the Prefab. The component pulls information from the <a href="SL-Asset.html">Sprite Library Asset</a> (assigned to the <a href="SL-component.html">Sprite Library component</a> at the root of the Prefab). The component contains two properties - <a href="#category">Category</a> and <a href="#entry">Label</a> - and a visual Variant Selector that displays thumbnails of the Sprites contained in the Sprite Library Asset.</p>
+<p><img src="images/2D-animation-SResolver-properties.png" alt=""><br>Inspector view of Sprite Resolver component.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Category</strong></td>
+<td>Select which Category you want to use a Sprite from for this GameObject.</td>
+</tr>
+<tr>
+<td><strong>Label</strong></td>
+<td>Select the Label of the Sprite you want to use for this GameObject.</td>
+</tr>
+<tr>
+<td>(Visual variant selector)</td>
+<td>Displays selectable thumbnails of the Sprites contained in this Category.</td>
+</tr>
+</tbody>
+</table>
+<p>Select the Sprite you want the <strong>Sprite Renderer</strong> to render by selecting from the <strong>Category</strong> and <strong>Label</strong> dropdown menus, or select the Sprite directly in the visual variant selector.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SLAsset.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
