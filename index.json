@@ -59,6 +59,11 @@
     "title": "Presentation Layer | mysite",
     "summary": "Presentation Layer Unity 씬에서 GameState를 GameViewModel 이벤트로 바인딩하고 UI/뷰를 구성합니다. 주요 View DefenseGameBootstrapper: 모든 View/Prefab/Adapter를 주입하고 GameViewModel을 생성. PlayerView / EnemyView / FortressView: 위치·체력 등 상태 변화를 반영. ProjectileView / ResourceDropView: 이동·수집 애니메이션 처리. AugmentSelectionView: 어빌리티 선택 UI. DefenseDebugPanel: 개발용 치트/디버그 UI. ViewModel GameViewModel: 입력을 읽고 DefenseSimulationService를 호출하여 턴 진행, 어빌리티 선택, 폭격 입력 등을 관리합니다. Managers UIFeedbackManager, FXManager, SoundManager: UI/FX/Sound 이벤트를 중앙에서 처리(현재는 로그 기반 스텁). 씬에서는 DefenseGameBootstrapper 하나가 ViewModel/UseCase/Repository를 조립하고 Inspector 노출 필드에 View/Prefabs/Adapters를 연결합니다."
   },
+  "Docs/tools/definition-importer.html": {
+    "href": "Docs/tools/definition-importer.html",
+    "title": "Definition Importer Tool | mysite",
+    "summary": "Definition Importer Tool Excel 시트에서 적/플레이어 정의를 읽어 JSON과 ScriptableObject로 변환하는 Unity Editor 창입니다. 열기 Unity 상단 메뉴의 Tools > Definition Importer를 선택합니다. Excel → JSON Definition Type(Enemy/Player)을 고릅니다. [enemyInfo], [playerInfo] 섹션을 포함하는 .xlsx 파일을 선택합니다. Output JSON 경로를 지정한 뒤 Convert 버튼을 누르면 JSON 파일이 생성됩니다. JSON → ScriptableObject JSON Import Path에 변환된 파일을 지정합니다. Import JSON -> ScriptableObjects 버튼을 누르면 Assets/Resources/Enemies 또는 Assets/Resources/Players에 코드(ID) 기반 SO가 생성/갱신됩니다. JSON에 없는 SO는 자동 삭제되고, 값이 변경된 필드는 경고 로그로 출력됩니다. 주의 사항 Excel 셀 안에서 드롭 리스트는 (type:Gold;amount:5;probability:1) 형식으로 작성합니다. 행 시작이 ;인 경우 주석으로 간주되어 무시됩니다. DefinitionImporterWindow.cs에 XML 주석이 포함되어 있으므로 DocFX API 문서에서도 인터페이스를 확인할 수 있습니다."
+  },
   "README.html": {
     "href": "README.html",
     "title": "Document Link : https://www.notion.so/Augment-Defense-2926a7ce2b0480a5b672c7657a17833a | mysite",
@@ -402,6 +407,6 @@
   "index.html": {
     "href": "index.html",
     "title": "| mysite",
-    "summary": "주요 특징 Clean Architecture 기반(Core / Application / Infrastructure / Presentation) Excel → JSON → ScriptableObject Definition Importer 파이프라인 증강 시스템, 자원 드롭, 다중 어빌리티 선택 흐름 왜 클린 아키텍처인가? Unity/Unreal 등 다른 엔진에서도 핵심 로직을 재사용하고 싶은 요구가 있었습니다. 콘텐츠 개발자가 Core 로직을 직접 수정하면서 발생하는 사이드 이펙트를 줄이고, 역할을 명확히 분리하고자 했습니다. 엔진을 실행하지 않고도 Core/Application 단위 테스트를 수행할 수 있어 개발 속도를 유지할 수 있습니다. 빠른 시작 Introduction Getting Started Layers Overview API Reference 저장소 GitHub: bossbobofather-cpu/noname"
+    "summary": "주요 특징 Clean Architecture 기반(Core / Application / Infrastructure / Presentation) Excel → JSON → ScriptableObject Definition Importer 파이프라인 증강 시스템, 자원 드롭, 다중 어빌리티 선택 흐름 왜 클린 아키텍처인가? Unity/Unreal 등 다른 엔진에서도 핵심 로직을 재사용하고 싶은 요구가 있었습니다. 콘텐츠 개발자가 Core 로직을 직접 수정하면서 발생하는 사이드 이펙트를 줄이고, 역할을 명확히 분리하고자 했습니다. 엔진을 실행하지 않고도 Core/Application 단위 테스트를 수행할 수 있어 개발 속도를 유지할 수 있습니다. 빠른 시작 Introduction Getting Started Layers Overview API Reference Tools (Definition Importer) 저장소 GitHub: bossbobofather-cpu/noname"
   }
 }
