@@ -1,0 +1,1379 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Core.Entities.PlayerEntity
+  commentId: T:Noname.Core.Entities.PlayerEntity
+  id: PlayerEntity
+  parent: Noname.Core.Entities
+  children:
+  - Noname.Core.Entities.PlayerEntity.#ctor(Noname.Core.Primitives.Float2,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
+  - Noname.Core.Entities.PlayerEntity.AddExperience(System.Single)
+  - Noname.Core.Entities.PlayerEntity.AddGold(System.Single)
+  - Noname.Core.Entities.PlayerEntity.ApplyAbility(Noname.Core.ValueObjects.GameplayAbilityDefinition)
+  - Noname.Core.Entities.PlayerEntity.ApplyDamage(System.Single)
+  - Noname.Core.Entities.PlayerEntity.ApplyModifier(Noname.Core.ValueObjects.GameplayAttribute,Noname.Core.ValueObjects.ModifierOperation,System.Single)
+  - Noname.Core.Entities.PlayerEntity.AttackCooldown
+  - Noname.Core.Entities.PlayerEntity.AttackDamage
+  - Noname.Core.Entities.PlayerEntity.AttackRange
+  - Noname.Core.Entities.PlayerEntity.CanAttack
+  - Noname.Core.Entities.PlayerEntity.ConfigureExperienceProgression(System.Single,System.Single,System.Int32)
+  - Noname.Core.Entities.PlayerEntity.CurrentExperience
+  - Noname.Core.Entities.PlayerEntity.CurrentHealth
+  - Noname.Core.Entities.PlayerEntity.ExperienceForNextLevel
+  - Noname.Core.Entities.PlayerEntity.GetAttackOrigin
+  - Noname.Core.Entities.PlayerEntity.Gold
+  - Noname.Core.Entities.PlayerEntity.Heal(System.Single)
+  - Noname.Core.Entities.PlayerEntity.Level
+  - Noname.Core.Entities.PlayerEntity.Luck
+  - Noname.Core.Entities.PlayerEntity.MaxHealth
+  - Noname.Core.Entities.PlayerEntity.Move(System.Single,System.Single)
+  - Noname.Core.Entities.PlayerEntity.MoveSpeed
+  - Noname.Core.Entities.PlayerEntity.Position
+  - Noname.Core.Entities.PlayerEntity.Reset
+  - Noname.Core.Entities.PlayerEntity.SetHorizontalBounds(System.Single,System.Single)
+  - Noname.Core.Entities.PlayerEntity.SetLuck(System.Single)
+  - Noname.Core.Entities.PlayerEntity.SpawnPosition
+  - Noname.Core.Entities.PlayerEntity.StartAttack
+  - Noname.Core.Entities.PlayerEntity.UpdateCooldown(System.Single)
+  langs:
+  - csharp
+  - vb
+  name: PlayerEntity
+  nameWithType: PlayerEntity
+  fullName: Noname.Core.Entities.PlayerEntity
+  type: Class
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public sealed class PlayerEntity
+    content.vb: Public NotInheritable Class PlayerEntity
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: Noname.Core.Entities.PlayerEntity.#ctor(Noname.Core.Primitives.Float2,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
+  commentId: M:Noname.Core.Entities.PlayerEntity.#ctor(Noname.Core.Primitives.Float2,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
+  id: '#ctor(Noname.Core.Primitives.Float2,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)'
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: PlayerEntity(Float2, float, float, float, float, float, float)
+  nameWithType: PlayerEntity.PlayerEntity(Float2, float, float, float, float, float, float)
+  fullName: Noname.Core.Entities.PlayerEntity.PlayerEntity(Noname.Core.Primitives.Float2, float, float, float, float, float, float)
+  type: Constructor
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public PlayerEntity(Float2 spawnPosition, float moveSpeed, float attackDamage, float attackRange, float attackCooldown, float maxHealth, float luck)
+    parameters:
+    - id: spawnPosition
+      type: Noname.Core.Primitives.Float2
+    - id: moveSpeed
+      type: System.Single
+    - id: attackDamage
+      type: System.Single
+    - id: attackRange
+      type: System.Single
+    - id: attackCooldown
+      type: System.Single
+    - id: maxHealth
+      type: System.Single
+    - id: luck
+      type: System.Single
+    content.vb: Public Sub New(spawnPosition As Float2, moveSpeed As Single, attackDamage As Single, attackRange As Single, attackCooldown As Single, maxHealth As Single, luck As Single)
+  overload: Noname.Core.Entities.PlayerEntity.#ctor*
+  nameWithType.vb: PlayerEntity.New(Float2, Single, Single, Single, Single, Single, Single)
+  fullName.vb: Noname.Core.Entities.PlayerEntity.New(Noname.Core.Primitives.Float2, Single, Single, Single, Single, Single, Single)
+  name.vb: New(Float2, Single, Single, Single, Single, Single, Single)
+- uid: Noname.Core.Entities.PlayerEntity.SetHorizontalBounds(System.Single,System.Single)
+  commentId: M:Noname.Core.Entities.PlayerEntity.SetHorizontalBounds(System.Single,System.Single)
+  id: SetHorizontalBounds(System.Single,System.Single)
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: SetHorizontalBounds(float, float)
+  nameWithType: PlayerEntity.SetHorizontalBounds(float, float)
+  fullName: Noname.Core.Entities.PlayerEntity.SetHorizontalBounds(float, float)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public void SetHorizontalBounds(float minX, float maxX)
+    parameters:
+    - id: minX
+      type: System.Single
+    - id: maxX
+      type: System.Single
+    content.vb: Public Sub SetHorizontalBounds(minX As Single, maxX As Single)
+  overload: Noname.Core.Entities.PlayerEntity.SetHorizontalBounds*
+  nameWithType.vb: PlayerEntity.SetHorizontalBounds(Single, Single)
+  fullName.vb: Noname.Core.Entities.PlayerEntity.SetHorizontalBounds(Single, Single)
+  name.vb: SetHorizontalBounds(Single, Single)
+- uid: Noname.Core.Entities.PlayerEntity.Reset
+  commentId: M:Noname.Core.Entities.PlayerEntity.Reset
+  id: Reset
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: Reset()
+  nameWithType: PlayerEntity.Reset()
+  fullName: Noname.Core.Entities.PlayerEntity.Reset()
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public void Reset()
+    content.vb: Public Sub Reset()
+  overload: Noname.Core.Entities.PlayerEntity.Reset*
+- uid: Noname.Core.Entities.PlayerEntity.UpdateCooldown(System.Single)
+  commentId: M:Noname.Core.Entities.PlayerEntity.UpdateCooldown(System.Single)
+  id: UpdateCooldown(System.Single)
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: UpdateCooldown(float)
+  nameWithType: PlayerEntity.UpdateCooldown(float)
+  fullName: Noname.Core.Entities.PlayerEntity.UpdateCooldown(float)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public void UpdateCooldown(float deltaTime)
+    parameters:
+    - id: deltaTime
+      type: System.Single
+    content.vb: Public Sub UpdateCooldown(deltaTime As Single)
+  overload: Noname.Core.Entities.PlayerEntity.UpdateCooldown*
+  nameWithType.vb: PlayerEntity.UpdateCooldown(Single)
+  fullName.vb: Noname.Core.Entities.PlayerEntity.UpdateCooldown(Single)
+  name.vb: UpdateCooldown(Single)
+- uid: Noname.Core.Entities.PlayerEntity.Move(System.Single,System.Single)
+  commentId: M:Noname.Core.Entities.PlayerEntity.Move(System.Single,System.Single)
+  id: Move(System.Single,System.Single)
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: Move(float, float)
+  nameWithType: PlayerEntity.Move(float, float)
+  fullName: Noname.Core.Entities.PlayerEntity.Move(float, float)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public void Move(float horizontalInput, float deltaTime)
+    parameters:
+    - id: horizontalInput
+      type: System.Single
+    - id: deltaTime
+      type: System.Single
+    content.vb: Public Sub Move(horizontalInput As Single, deltaTime As Single)
+  overload: Noname.Core.Entities.PlayerEntity.Move*
+  nameWithType.vb: PlayerEntity.Move(Single, Single)
+  fullName.vb: Noname.Core.Entities.PlayerEntity.Move(Single, Single)
+  name.vb: Move(Single, Single)
+- uid: Noname.Core.Entities.PlayerEntity.StartAttack
+  commentId: M:Noname.Core.Entities.PlayerEntity.StartAttack
+  id: StartAttack
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: StartAttack()
+  nameWithType: PlayerEntity.StartAttack()
+  fullName: Noname.Core.Entities.PlayerEntity.StartAttack()
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public void StartAttack()
+    content.vb: Public Sub StartAttack()
+  overload: Noname.Core.Entities.PlayerEntity.StartAttack*
+- uid: Noname.Core.Entities.PlayerEntity.GetAttackOrigin
+  commentId: M:Noname.Core.Entities.PlayerEntity.GetAttackOrigin
+  id: GetAttackOrigin
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: GetAttackOrigin()
+  nameWithType: PlayerEntity.GetAttackOrigin()
+  fullName: Noname.Core.Entities.PlayerEntity.GetAttackOrigin()
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public Float2 GetAttackOrigin()
+    return:
+      type: Noname.Core.Primitives.Float2
+    content.vb: Public Function GetAttackOrigin() As Float2
+  overload: Noname.Core.Entities.PlayerEntity.GetAttackOrigin*
+- uid: Noname.Core.Entities.PlayerEntity.ConfigureExperienceProgression(System.Single,System.Single,System.Int32)
+  commentId: M:Noname.Core.Entities.PlayerEntity.ConfigureExperienceProgression(System.Single,System.Single,System.Int32)
+  id: ConfigureExperienceProgression(System.Single,System.Single,System.Int32)
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: ConfigureExperienceProgression(float, float, int)
+  nameWithType: PlayerEntity.ConfigureExperienceProgression(float, float, int)
+  fullName: Noname.Core.Entities.PlayerEntity.ConfigureExperienceProgression(float, float, int)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public void ConfigureExperienceProgression(float startingThreshold, float growthFactor, int startingLevel = 1)
+    parameters:
+    - id: startingThreshold
+      type: System.Single
+    - id: growthFactor
+      type: System.Single
+    - id: startingLevel
+      type: System.Int32
+    content.vb: Public Sub ConfigureExperienceProgression(startingThreshold As Single, growthFactor As Single, startingLevel As Integer = 1)
+  overload: Noname.Core.Entities.PlayerEntity.ConfigureExperienceProgression*
+  nameWithType.vb: PlayerEntity.ConfigureExperienceProgression(Single, Single, Integer)
+  fullName.vb: Noname.Core.Entities.PlayerEntity.ConfigureExperienceProgression(Single, Single, Integer)
+  name.vb: ConfigureExperienceProgression(Single, Single, Integer)
+- uid: Noname.Core.Entities.PlayerEntity.AddExperience(System.Single)
+  commentId: M:Noname.Core.Entities.PlayerEntity.AddExperience(System.Single)
+  id: AddExperience(System.Single)
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: AddExperience(float)
+  nameWithType: PlayerEntity.AddExperience(float)
+  fullName: Noname.Core.Entities.PlayerEntity.AddExperience(float)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public bool AddExperience(float amount)
+    parameters:
+    - id: amount
+      type: System.Single
+    return:
+      type: System.Boolean
+    content.vb: Public Function AddExperience(amount As Single) As Boolean
+  overload: Noname.Core.Entities.PlayerEntity.AddExperience*
+  nameWithType.vb: PlayerEntity.AddExperience(Single)
+  fullName.vb: Noname.Core.Entities.PlayerEntity.AddExperience(Single)
+  name.vb: AddExperience(Single)
+- uid: Noname.Core.Entities.PlayerEntity.ApplyAbility(Noname.Core.ValueObjects.GameplayAbilityDefinition)
+  commentId: M:Noname.Core.Entities.PlayerEntity.ApplyAbility(Noname.Core.ValueObjects.GameplayAbilityDefinition)
+  id: ApplyAbility(Noname.Core.ValueObjects.GameplayAbilityDefinition)
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: ApplyAbility(GameplayAbilityDefinition)
+  nameWithType: PlayerEntity.ApplyAbility(GameplayAbilityDefinition)
+  fullName: Noname.Core.Entities.PlayerEntity.ApplyAbility(Noname.Core.ValueObjects.GameplayAbilityDefinition)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public void ApplyAbility(GameplayAbilityDefinition ability)
+    parameters:
+    - id: ability
+      type: Noname.Core.ValueObjects.GameplayAbilityDefinition
+    content.vb: Public Sub ApplyAbility(ability As GameplayAbilityDefinition)
+  overload: Noname.Core.Entities.PlayerEntity.ApplyAbility*
+- uid: Noname.Core.Entities.PlayerEntity.ApplyModifier(Noname.Core.ValueObjects.GameplayAttribute,Noname.Core.ValueObjects.ModifierOperation,System.Single)
+  commentId: M:Noname.Core.Entities.PlayerEntity.ApplyModifier(Noname.Core.ValueObjects.GameplayAttribute,Noname.Core.ValueObjects.ModifierOperation,System.Single)
+  id: ApplyModifier(Noname.Core.ValueObjects.GameplayAttribute,Noname.Core.ValueObjects.ModifierOperation,System.Single)
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: ApplyModifier(GameplayAttribute, ModifierOperation, float)
+  nameWithType: PlayerEntity.ApplyModifier(GameplayAttribute, ModifierOperation, float)
+  fullName: Noname.Core.Entities.PlayerEntity.ApplyModifier(Noname.Core.ValueObjects.GameplayAttribute, Noname.Core.ValueObjects.ModifierOperation, float)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public void ApplyModifier(GameplayAttribute attribute, ModifierOperation operation, float value)
+    parameters:
+    - id: attribute
+      type: Noname.Core.ValueObjects.GameplayAttribute
+    - id: operation
+      type: Noname.Core.ValueObjects.ModifierOperation
+    - id: value
+      type: System.Single
+    content.vb: Public Sub ApplyModifier(attribute As GameplayAttribute, operation As ModifierOperation, value As Single)
+  overload: Noname.Core.Entities.PlayerEntity.ApplyModifier*
+  nameWithType.vb: PlayerEntity.ApplyModifier(GameplayAttribute, ModifierOperation, Single)
+  fullName.vb: Noname.Core.Entities.PlayerEntity.ApplyModifier(Noname.Core.ValueObjects.GameplayAttribute, Noname.Core.ValueObjects.ModifierOperation, Single)
+  name.vb: ApplyModifier(GameplayAttribute, ModifierOperation, Single)
+- uid: Noname.Core.Entities.PlayerEntity.SetLuck(System.Single)
+  commentId: M:Noname.Core.Entities.PlayerEntity.SetLuck(System.Single)
+  id: SetLuck(System.Single)
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: SetLuck(float)
+  nameWithType: PlayerEntity.SetLuck(float)
+  fullName: Noname.Core.Entities.PlayerEntity.SetLuck(float)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public void SetLuck(float luck)
+    parameters:
+    - id: luck
+      type: System.Single
+    content.vb: Public Sub SetLuck(luck As Single)
+  overload: Noname.Core.Entities.PlayerEntity.SetLuck*
+  nameWithType.vb: PlayerEntity.SetLuck(Single)
+  fullName.vb: Noname.Core.Entities.PlayerEntity.SetLuck(Single)
+  name.vb: SetLuck(Single)
+- uid: Noname.Core.Entities.PlayerEntity.AddGold(System.Single)
+  commentId: M:Noname.Core.Entities.PlayerEntity.AddGold(System.Single)
+  id: AddGold(System.Single)
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: AddGold(float)
+  nameWithType: PlayerEntity.AddGold(float)
+  fullName: Noname.Core.Entities.PlayerEntity.AddGold(float)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public void AddGold(float amount)
+    parameters:
+    - id: amount
+      type: System.Single
+    content.vb: Public Sub AddGold(amount As Single)
+  overload: Noname.Core.Entities.PlayerEntity.AddGold*
+  nameWithType.vb: PlayerEntity.AddGold(Single)
+  fullName.vb: Noname.Core.Entities.PlayerEntity.AddGold(Single)
+  name.vb: AddGold(Single)
+- uid: Noname.Core.Entities.PlayerEntity.Heal(System.Single)
+  commentId: M:Noname.Core.Entities.PlayerEntity.Heal(System.Single)
+  id: Heal(System.Single)
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: Heal(float)
+  nameWithType: PlayerEntity.Heal(float)
+  fullName: Noname.Core.Entities.PlayerEntity.Heal(float)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public float Heal(float amount)
+    parameters:
+    - id: amount
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Function Heal(amount As Single) As Single
+  overload: Noname.Core.Entities.PlayerEntity.Heal*
+  nameWithType.vb: PlayerEntity.Heal(Single)
+  fullName.vb: Noname.Core.Entities.PlayerEntity.Heal(Single)
+  name.vb: Heal(Single)
+- uid: Noname.Core.Entities.PlayerEntity.ApplyDamage(System.Single)
+  commentId: M:Noname.Core.Entities.PlayerEntity.ApplyDamage(System.Single)
+  id: ApplyDamage(System.Single)
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: ApplyDamage(float)
+  nameWithType: PlayerEntity.ApplyDamage(float)
+  fullName: Noname.Core.Entities.PlayerEntity.ApplyDamage(float)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public float ApplyDamage(float amount)
+    parameters:
+    - id: amount
+      type: System.Single
+    return:
+      type: System.Single
+    content.vb: Public Function ApplyDamage(amount As Single) As Single
+  overload: Noname.Core.Entities.PlayerEntity.ApplyDamage*
+  nameWithType.vb: PlayerEntity.ApplyDamage(Single)
+  fullName.vb: Noname.Core.Entities.PlayerEntity.ApplyDamage(Single)
+  name.vb: ApplyDamage(Single)
+- uid: Noname.Core.Entities.PlayerEntity.SpawnPosition
+  commentId: P:Noname.Core.Entities.PlayerEntity.SpawnPosition
+  id: SpawnPosition
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: SpawnPosition
+  nameWithType: PlayerEntity.SpawnPosition
+  fullName: Noname.Core.Entities.PlayerEntity.SpawnPosition
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public Float2 SpawnPosition { get; }
+    parameters: []
+    return:
+      type: Noname.Core.Primitives.Float2
+    content.vb: Public ReadOnly Property SpawnPosition As Float2
+  overload: Noname.Core.Entities.PlayerEntity.SpawnPosition*
+- uid: Noname.Core.Entities.PlayerEntity.Position
+  commentId: P:Noname.Core.Entities.PlayerEntity.Position
+  id: Position
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: PlayerEntity.Position
+  fullName: Noname.Core.Entities.PlayerEntity.Position
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public Float2 Position { get; }
+    parameters: []
+    return:
+      type: Noname.Core.Primitives.Float2
+    content.vb: Public ReadOnly Property Position As Float2
+  overload: Noname.Core.Entities.PlayerEntity.Position*
+- uid: Noname.Core.Entities.PlayerEntity.MoveSpeed
+  commentId: P:Noname.Core.Entities.PlayerEntity.MoveSpeed
+  id: MoveSpeed
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: MoveSpeed
+  nameWithType: PlayerEntity.MoveSpeed
+  fullName: Noname.Core.Entities.PlayerEntity.MoveSpeed
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public float MoveSpeed { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property MoveSpeed As Single
+  overload: Noname.Core.Entities.PlayerEntity.MoveSpeed*
+- uid: Noname.Core.Entities.PlayerEntity.AttackDamage
+  commentId: P:Noname.Core.Entities.PlayerEntity.AttackDamage
+  id: AttackDamage
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: AttackDamage
+  nameWithType: PlayerEntity.AttackDamage
+  fullName: Noname.Core.Entities.PlayerEntity.AttackDamage
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public float AttackDamage { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property AttackDamage As Single
+  overload: Noname.Core.Entities.PlayerEntity.AttackDamage*
+- uid: Noname.Core.Entities.PlayerEntity.AttackRange
+  commentId: P:Noname.Core.Entities.PlayerEntity.AttackRange
+  id: AttackRange
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: AttackRange
+  nameWithType: PlayerEntity.AttackRange
+  fullName: Noname.Core.Entities.PlayerEntity.AttackRange
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public float AttackRange { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property AttackRange As Single
+  overload: Noname.Core.Entities.PlayerEntity.AttackRange*
+- uid: Noname.Core.Entities.PlayerEntity.AttackCooldown
+  commentId: P:Noname.Core.Entities.PlayerEntity.AttackCooldown
+  id: AttackCooldown
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: AttackCooldown
+  nameWithType: PlayerEntity.AttackCooldown
+  fullName: Noname.Core.Entities.PlayerEntity.AttackCooldown
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public float AttackCooldown { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property AttackCooldown As Single
+  overload: Noname.Core.Entities.PlayerEntity.AttackCooldown*
+- uid: Noname.Core.Entities.PlayerEntity.Level
+  commentId: P:Noname.Core.Entities.PlayerEntity.Level
+  id: Level
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: Level
+  nameWithType: PlayerEntity.Level
+  fullName: Noname.Core.Entities.PlayerEntity.Level
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public int Level { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Level As Integer
+  overload: Noname.Core.Entities.PlayerEntity.Level*
+- uid: Noname.Core.Entities.PlayerEntity.CurrentExperience
+  commentId: P:Noname.Core.Entities.PlayerEntity.CurrentExperience
+  id: CurrentExperience
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: CurrentExperience
+  nameWithType: PlayerEntity.CurrentExperience
+  fullName: Noname.Core.Entities.PlayerEntity.CurrentExperience
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public float CurrentExperience { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property CurrentExperience As Single
+  overload: Noname.Core.Entities.PlayerEntity.CurrentExperience*
+- uid: Noname.Core.Entities.PlayerEntity.ExperienceForNextLevel
+  commentId: P:Noname.Core.Entities.PlayerEntity.ExperienceForNextLevel
+  id: ExperienceForNextLevel
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: ExperienceForNextLevel
+  nameWithType: PlayerEntity.ExperienceForNextLevel
+  fullName: Noname.Core.Entities.PlayerEntity.ExperienceForNextLevel
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public float ExperienceForNextLevel { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property ExperienceForNextLevel As Single
+  overload: Noname.Core.Entities.PlayerEntity.ExperienceForNextLevel*
+- uid: Noname.Core.Entities.PlayerEntity.CanAttack
+  commentId: P:Noname.Core.Entities.PlayerEntity.CanAttack
+  id: CanAttack
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: CanAttack
+  nameWithType: PlayerEntity.CanAttack
+  fullName: Noname.Core.Entities.PlayerEntity.CanAttack
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public bool CanAttack { get; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public ReadOnly Property CanAttack As Boolean
+  overload: Noname.Core.Entities.PlayerEntity.CanAttack*
+- uid: Noname.Core.Entities.PlayerEntity.MaxHealth
+  commentId: P:Noname.Core.Entities.PlayerEntity.MaxHealth
+  id: MaxHealth
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: MaxHealth
+  nameWithType: PlayerEntity.MaxHealth
+  fullName: Noname.Core.Entities.PlayerEntity.MaxHealth
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public float MaxHealth { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property MaxHealth As Single
+  overload: Noname.Core.Entities.PlayerEntity.MaxHealth*
+- uid: Noname.Core.Entities.PlayerEntity.CurrentHealth
+  commentId: P:Noname.Core.Entities.PlayerEntity.CurrentHealth
+  id: CurrentHealth
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: CurrentHealth
+  nameWithType: PlayerEntity.CurrentHealth
+  fullName: Noname.Core.Entities.PlayerEntity.CurrentHealth
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public float CurrentHealth { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property CurrentHealth As Single
+  overload: Noname.Core.Entities.PlayerEntity.CurrentHealth*
+- uid: Noname.Core.Entities.PlayerEntity.Luck
+  commentId: P:Noname.Core.Entities.PlayerEntity.Luck
+  id: Luck
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: Luck
+  nameWithType: PlayerEntity.Luck
+  fullName: Noname.Core.Entities.PlayerEntity.Luck
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public float Luck { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Luck As Single
+  overload: Noname.Core.Entities.PlayerEntity.Luck*
+- uid: Noname.Core.Entities.PlayerEntity.Gold
+  commentId: P:Noname.Core.Entities.PlayerEntity.Gold
+  id: Gold
+  parent: Noname.Core.Entities.PlayerEntity
+  langs:
+  - csharp
+  - vb
+  name: Gold
+  nameWithType: PlayerEntity.Gold
+  fullName: Noname.Core.Entities.PlayerEntity.Gold
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public float Gold { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Gold As Single
+  overload: Noname.Core.Entities.PlayerEntity.Gold*
+references:
+- uid: Noname.Core.Entities
+  commentId: N:Noname.Core.Entities
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Entities
+  nameWithType: Noname.Core.Entities
+  fullName: Noname.Core.Entities
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Entities
+    name: Entities
+    isExternal: true
+    href: Noname.Core.Entities.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Entities
+    name: Entities
+    isExternal: true
+    href: Noname.Core.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Noname.Core.Entities.PlayerEntity.#ctor*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.#ctor
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity__ctor_Noname_Core_Primitives_Float2_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_
+  name: PlayerEntity
+  nameWithType: PlayerEntity.PlayerEntity
+  fullName: Noname.Core.Entities.PlayerEntity.PlayerEntity
+  nameWithType.vb: PlayerEntity.New
+  fullName.vb: Noname.Core.Entities.PlayerEntity.New
+  name.vb: New
+- uid: Noname.Core.Primitives.Float2
+  commentId: T:Noname.Core.Primitives.Float2
+  parent: Noname.Core.Primitives
+  isExternal: true
+  href: Noname.Core.Primitives.Float2.html
+  name: Float2
+  nameWithType: Float2
+  fullName: Noname.Core.Primitives.Float2
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Noname.Core.Primitives
+  commentId: N:Noname.Core.Primitives
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Primitives
+  nameWithType: Noname.Core.Primitives
+  fullName: Noname.Core.Primitives
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Primitives
+    name: Primitives
+    isExternal: true
+    href: Noname.Core.Primitives.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Primitives
+    name: Primitives
+    isExternal: true
+    href: Noname.Core.Primitives.html
+- uid: Noname.Core.Entities.PlayerEntity.SetHorizontalBounds*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.SetHorizontalBounds
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_SetHorizontalBounds_System_Single_System_Single_
+  name: SetHorizontalBounds
+  nameWithType: PlayerEntity.SetHorizontalBounds
+  fullName: Noname.Core.Entities.PlayerEntity.SetHorizontalBounds
+- uid: Noname.Core.Entities.PlayerEntity.Reset*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.Reset
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_Reset
+  name: Reset
+  nameWithType: PlayerEntity.Reset
+  fullName: Noname.Core.Entities.PlayerEntity.Reset
+- uid: Noname.Core.Entities.PlayerEntity.UpdateCooldown*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.UpdateCooldown
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_UpdateCooldown_System_Single_
+  name: UpdateCooldown
+  nameWithType: PlayerEntity.UpdateCooldown
+  fullName: Noname.Core.Entities.PlayerEntity.UpdateCooldown
+- uid: Noname.Core.Entities.PlayerEntity.Move*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.Move
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_Move_System_Single_System_Single_
+  name: Move
+  nameWithType: PlayerEntity.Move
+  fullName: Noname.Core.Entities.PlayerEntity.Move
+- uid: Noname.Core.Entities.PlayerEntity.StartAttack*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.StartAttack
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_StartAttack
+  name: StartAttack
+  nameWithType: PlayerEntity.StartAttack
+  fullName: Noname.Core.Entities.PlayerEntity.StartAttack
+- uid: Noname.Core.Entities.PlayerEntity.GetAttackOrigin*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.GetAttackOrigin
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_GetAttackOrigin
+  name: GetAttackOrigin
+  nameWithType: PlayerEntity.GetAttackOrigin
+  fullName: Noname.Core.Entities.PlayerEntity.GetAttackOrigin
+- uid: Noname.Core.Entities.PlayerEntity.ConfigureExperienceProgression*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.ConfigureExperienceProgression
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_ConfigureExperienceProgression_System_Single_System_Single_System_Int32_
+  name: ConfigureExperienceProgression
+  nameWithType: PlayerEntity.ConfigureExperienceProgression
+  fullName: Noname.Core.Entities.PlayerEntity.ConfigureExperienceProgression
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Noname.Core.Entities.PlayerEntity.AddExperience*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.AddExperience
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_AddExperience_System_Single_
+  name: AddExperience
+  nameWithType: PlayerEntity.AddExperience
+  fullName: Noname.Core.Entities.PlayerEntity.AddExperience
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Noname.Core.Entities.PlayerEntity.ApplyAbility*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.ApplyAbility
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_ApplyAbility_Noname_Core_ValueObjects_GameplayAbilityDefinition_
+  name: ApplyAbility
+  nameWithType: PlayerEntity.ApplyAbility
+  fullName: Noname.Core.Entities.PlayerEntity.ApplyAbility
+- uid: Noname.Core.ValueObjects.GameplayAbilityDefinition
+  commentId: T:Noname.Core.ValueObjects.GameplayAbilityDefinition
+  parent: Noname.Core.ValueObjects
+  isExternal: true
+  href: Noname.Core.ValueObjects.GameplayAbilityDefinition.html
+  name: GameplayAbilityDefinition
+  nameWithType: GameplayAbilityDefinition
+  fullName: Noname.Core.ValueObjects.GameplayAbilityDefinition
+- uid: Noname.Core.ValueObjects
+  commentId: N:Noname.Core.ValueObjects
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.ValueObjects
+  nameWithType: Noname.Core.ValueObjects
+  fullName: Noname.Core.ValueObjects
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Core.ValueObjects.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Core.ValueObjects.html
+- uid: Noname.Core.Entities.PlayerEntity.ApplyModifier*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.ApplyModifier
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_ApplyModifier_Noname_Core_ValueObjects_GameplayAttribute_Noname_Core_ValueObjects_ModifierOperation_System_Single_
+  name: ApplyModifier
+  nameWithType: PlayerEntity.ApplyModifier
+  fullName: Noname.Core.Entities.PlayerEntity.ApplyModifier
+- uid: Noname.Core.ValueObjects.GameplayAttribute
+  commentId: T:Noname.Core.ValueObjects.GameplayAttribute
+  parent: Noname.Core.ValueObjects
+  isExternal: true
+  href: Noname.Core.ValueObjects.GameplayAttribute.html
+  name: GameplayAttribute
+  nameWithType: GameplayAttribute
+  fullName: Noname.Core.ValueObjects.GameplayAttribute
+- uid: Noname.Core.ValueObjects.ModifierOperation
+  commentId: T:Noname.Core.ValueObjects.ModifierOperation
+  parent: Noname.Core.ValueObjects
+  isExternal: true
+  href: Noname.Core.ValueObjects.ModifierOperation.html
+  name: ModifierOperation
+  nameWithType: ModifierOperation
+  fullName: Noname.Core.ValueObjects.ModifierOperation
+- uid: Noname.Core.Entities.PlayerEntity.SetLuck*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.SetLuck
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_SetLuck_System_Single_
+  name: SetLuck
+  nameWithType: PlayerEntity.SetLuck
+  fullName: Noname.Core.Entities.PlayerEntity.SetLuck
+- uid: Noname.Core.Entities.PlayerEntity.AddGold*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.AddGold
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_AddGold_System_Single_
+  name: AddGold
+  nameWithType: PlayerEntity.AddGold
+  fullName: Noname.Core.Entities.PlayerEntity.AddGold
+- uid: Noname.Core.Entities.PlayerEntity.Heal*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.Heal
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_Heal_System_Single_
+  name: Heal
+  nameWithType: PlayerEntity.Heal
+  fullName: Noname.Core.Entities.PlayerEntity.Heal
+- uid: Noname.Core.Entities.PlayerEntity.ApplyDamage*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.ApplyDamage
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_ApplyDamage_System_Single_
+  name: ApplyDamage
+  nameWithType: PlayerEntity.ApplyDamage
+  fullName: Noname.Core.Entities.PlayerEntity.ApplyDamage
+- uid: Noname.Core.Entities.PlayerEntity.SpawnPosition*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.SpawnPosition
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_SpawnPosition
+  name: SpawnPosition
+  nameWithType: PlayerEntity.SpawnPosition
+  fullName: Noname.Core.Entities.PlayerEntity.SpawnPosition
+- uid: Noname.Core.Entities.PlayerEntity.Position*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.Position
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_Position
+  name: Position
+  nameWithType: PlayerEntity.Position
+  fullName: Noname.Core.Entities.PlayerEntity.Position
+- uid: Noname.Core.Entities.PlayerEntity.MoveSpeed*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.MoveSpeed
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_MoveSpeed
+  name: MoveSpeed
+  nameWithType: PlayerEntity.MoveSpeed
+  fullName: Noname.Core.Entities.PlayerEntity.MoveSpeed
+- uid: Noname.Core.Entities.PlayerEntity.AttackDamage*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.AttackDamage
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_AttackDamage
+  name: AttackDamage
+  nameWithType: PlayerEntity.AttackDamage
+  fullName: Noname.Core.Entities.PlayerEntity.AttackDamage
+- uid: Noname.Core.Entities.PlayerEntity.AttackRange*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.AttackRange
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_AttackRange
+  name: AttackRange
+  nameWithType: PlayerEntity.AttackRange
+  fullName: Noname.Core.Entities.PlayerEntity.AttackRange
+- uid: Noname.Core.Entities.PlayerEntity.AttackCooldown*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.AttackCooldown
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_AttackCooldown
+  name: AttackCooldown
+  nameWithType: PlayerEntity.AttackCooldown
+  fullName: Noname.Core.Entities.PlayerEntity.AttackCooldown
+- uid: Noname.Core.Entities.PlayerEntity.Level*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.Level
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_Level
+  name: Level
+  nameWithType: PlayerEntity.Level
+  fullName: Noname.Core.Entities.PlayerEntity.Level
+- uid: Noname.Core.Entities.PlayerEntity.CurrentExperience*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.CurrentExperience
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_CurrentExperience
+  name: CurrentExperience
+  nameWithType: PlayerEntity.CurrentExperience
+  fullName: Noname.Core.Entities.PlayerEntity.CurrentExperience
+- uid: Noname.Core.Entities.PlayerEntity.ExperienceForNextLevel*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.ExperienceForNextLevel
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_ExperienceForNextLevel
+  name: ExperienceForNextLevel
+  nameWithType: PlayerEntity.ExperienceForNextLevel
+  fullName: Noname.Core.Entities.PlayerEntity.ExperienceForNextLevel
+- uid: Noname.Core.Entities.PlayerEntity.CanAttack*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.CanAttack
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_CanAttack
+  name: CanAttack
+  nameWithType: PlayerEntity.CanAttack
+  fullName: Noname.Core.Entities.PlayerEntity.CanAttack
+- uid: Noname.Core.Entities.PlayerEntity.MaxHealth*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.MaxHealth
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_MaxHealth
+  name: MaxHealth
+  nameWithType: PlayerEntity.MaxHealth
+  fullName: Noname.Core.Entities.PlayerEntity.MaxHealth
+- uid: Noname.Core.Entities.PlayerEntity.CurrentHealth*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.CurrentHealth
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_CurrentHealth
+  name: CurrentHealth
+  nameWithType: PlayerEntity.CurrentHealth
+  fullName: Noname.Core.Entities.PlayerEntity.CurrentHealth
+- uid: Noname.Core.Entities.PlayerEntity.Luck*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.Luck
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_Luck
+  name: Luck
+  nameWithType: PlayerEntity.Luck
+  fullName: Noname.Core.Entities.PlayerEntity.Luck
+- uid: Noname.Core.Entities.PlayerEntity.Gold*
+  commentId: Overload:Noname.Core.Entities.PlayerEntity.Gold
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html#Noname_Core_Entities_PlayerEntity_Gold
+  name: Gold
+  nameWithType: PlayerEntity.Gold
+  fullName: Noname.Core.Entities.PlayerEntity.Gold

@@ -1,0 +1,218 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Presentation.Views.AugmentSelectionView
+  commentId: T:Noname.Presentation.Views.AugmentSelectionView
+  id: AugmentSelectionView
+  parent: Noname.Presentation.Views
+  children:
+  - Noname.Presentation.Views.AugmentSelectionView.#ctor
+  - Noname.Presentation.Views.AugmentSelectionView.Bind(Noname.Presentation.ViewModels.GameViewModel)
+  - Noname.Presentation.Views.AugmentSelectionView.Unbind
+  langs:
+  - csharp
+  - vb
+  name: AugmentSelectionView
+  nameWithType: AugmentSelectionView
+  fullName: Noname.Presentation.Views.AugmentSelectionView
+  type: Class
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/AugmentSelectionView.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Views
+  syntax:
+    content: 'public sealed class AugmentSelectionView : MonoBehaviour'
+    content.vb: Public NotInheritable Class AugmentSelectionView Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Noname.Presentation.Views.AugmentSelectionView.Bind(Noname.Presentation.ViewModels.GameViewModel)
+  commentId: M:Noname.Presentation.Views.AugmentSelectionView.Bind(Noname.Presentation.ViewModels.GameViewModel)
+  id: Bind(Noname.Presentation.ViewModels.GameViewModel)
+  parent: Noname.Presentation.Views.AugmentSelectionView
+  langs:
+  - csharp
+  - vb
+  name: Bind(GameViewModel)
+  nameWithType: AugmentSelectionView.Bind(GameViewModel)
+  fullName: Noname.Presentation.Views.AugmentSelectionView.Bind(Noname.Presentation.ViewModels.GameViewModel)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/AugmentSelectionView.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Views
+  syntax:
+    content: public void Bind(GameViewModel viewModel)
+    parameters:
+    - id: viewModel
+      type: Noname.Presentation.ViewModels.GameViewModel
+    content.vb: Public Sub Bind(viewModel As GameViewModel)
+  overload: Noname.Presentation.Views.AugmentSelectionView.Bind*
+- uid: Noname.Presentation.Views.AugmentSelectionView.Unbind
+  commentId: M:Noname.Presentation.Views.AugmentSelectionView.Unbind
+  id: Unbind
+  parent: Noname.Presentation.Views.AugmentSelectionView
+  langs:
+  - csharp
+  - vb
+  name: Unbind()
+  nameWithType: AugmentSelectionView.Unbind()
+  fullName: Noname.Presentation.Views.AugmentSelectionView.Unbind()
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/AugmentSelectionView.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Views
+  syntax:
+    content: public void Unbind()
+    content.vb: Public Sub Unbind()
+  overload: Noname.Presentation.Views.AugmentSelectionView.Unbind*
+- uid: Noname.Presentation.Views.AugmentSelectionView.#ctor
+  commentId: M:Noname.Presentation.Views.AugmentSelectionView.#ctor
+  id: '#ctor'
+  parent: Noname.Presentation.Views.AugmentSelectionView
+  langs:
+  - csharp
+  - vb
+  name: AugmentSelectionView()
+  nameWithType: AugmentSelectionView.AugmentSelectionView()
+  fullName: Noname.Presentation.Views.AugmentSelectionView.AugmentSelectionView()
+  type: Constructor
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/AugmentSelectionView.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Views
+  syntax:
+    content: public AugmentSelectionView()
+    content.vb: Public Sub New()
+  overload: Noname.Presentation.Views.AugmentSelectionView.#ctor*
+  nameWithType.vb: AugmentSelectionView.New()
+  fullName.vb: Noname.Presentation.Views.AugmentSelectionView.New()
+  name.vb: New()
+references:
+- uid: Noname.Presentation.Views
+  commentId: N:Noname.Presentation.Views
+  isExternal: true
+  href: Noname.html
+  name: Noname.Presentation.Views
+  nameWithType: Noname.Presentation.Views
+  fullName: Noname.Presentation.Views
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Presentation
+    name: Presentation
+    isExternal: true
+    href: Noname.Presentation.html
+  - name: .
+  - uid: Noname.Presentation.Views
+    name: Views
+    isExternal: true
+    href: Noname.Presentation.Views.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Presentation
+    name: Presentation
+    isExternal: true
+    href: Noname.Presentation.html
+  - name: .
+  - uid: Noname.Presentation.Views
+    name: Views
+    isExternal: true
+    href: Noname.Presentation.Views.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Noname.Presentation.Views.AugmentSelectionView.Bind*
+  commentId: Overload:Noname.Presentation.Views.AugmentSelectionView.Bind
+  isExternal: true
+  href: Noname.Presentation.Views.AugmentSelectionView.html#Noname_Presentation_Views_AugmentSelectionView_Bind_Noname_Presentation_ViewModels_GameViewModel_
+  name: Bind
+  nameWithType: AugmentSelectionView.Bind
+  fullName: Noname.Presentation.Views.AugmentSelectionView.Bind
+- uid: Noname.Presentation.ViewModels.GameViewModel
+  commentId: T:Noname.Presentation.ViewModels.GameViewModel
+  parent: Noname.Presentation.ViewModels
+  isExternal: true
+  href: Noname.Presentation.ViewModels.GameViewModel.html
+  name: GameViewModel
+  nameWithType: GameViewModel
+  fullName: Noname.Presentation.ViewModels.GameViewModel
+- uid: Noname.Presentation.ViewModels
+  commentId: N:Noname.Presentation.ViewModels
+  isExternal: true
+  href: Noname.html
+  name: Noname.Presentation.ViewModels
+  nameWithType: Noname.Presentation.ViewModels
+  fullName: Noname.Presentation.ViewModels
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Presentation
+    name: Presentation
+    isExternal: true
+    href: Noname.Presentation.html
+  - name: .
+  - uid: Noname.Presentation.ViewModels
+    name: ViewModels
+    isExternal: true
+    href: Noname.Presentation.ViewModels.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Presentation
+    name: Presentation
+    isExternal: true
+    href: Noname.Presentation.html
+  - name: .
+  - uid: Noname.Presentation.ViewModels
+    name: ViewModels
+    isExternal: true
+    href: Noname.Presentation.ViewModels.html
+- uid: Noname.Presentation.Views.AugmentSelectionView.Unbind*
+  commentId: Overload:Noname.Presentation.Views.AugmentSelectionView.Unbind
+  isExternal: true
+  href: Noname.Presentation.Views.AugmentSelectionView.html#Noname_Presentation_Views_AugmentSelectionView_Unbind
+  name: Unbind
+  nameWithType: AugmentSelectionView.Unbind
+  fullName: Noname.Presentation.Views.AugmentSelectionView.Unbind
+- uid: Noname.Presentation.Views.AugmentSelectionView.#ctor*
+  commentId: Overload:Noname.Presentation.Views.AugmentSelectionView.#ctor
+  isExternal: true
+  href: Noname.Presentation.Views.AugmentSelectionView.html#Noname_Presentation_Views_AugmentSelectionView__ctor
+  name: AugmentSelectionView
+  nameWithType: AugmentSelectionView.AugmentSelectionView
+  fullName: Noname.Presentation.Views.AugmentSelectionView.AugmentSelectionView
+  nameWithType.vb: AugmentSelectionView.New
+  fullName.vb: Noname.Presentation.Views.AugmentSelectionView.New
+  name.vb: New

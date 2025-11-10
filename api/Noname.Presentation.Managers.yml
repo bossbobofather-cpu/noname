@@ -1,0 +1,40 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Presentation.Managers
+  commentId: N:Noname.Presentation.Managers
+  id: Noname.Presentation.Managers
+  children:
+  - Noname.Presentation.Managers.FXManager
+  - Noname.Presentation.Managers.SoundManager
+  - Noname.Presentation.Managers.UIFeedbackManager
+  langs:
+  - csharp
+  - vb
+  name: Noname.Presentation.Managers
+  nameWithType: Noname.Presentation.Managers
+  fullName: Noname.Presentation.Managers
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: Noname.Presentation.Managers.SoundManager
+  commentId: T:Noname.Presentation.Managers.SoundManager
+  isExternal: true
+  href: Noname.Presentation.Managers.SoundManager.html
+  name: SoundManager
+  nameWithType: SoundManager
+  fullName: Noname.Presentation.Managers.SoundManager
+- uid: Noname.Presentation.Managers.UIFeedbackManager
+  commentId: T:Noname.Presentation.Managers.UIFeedbackManager
+  isExternal: true
+  href: Noname.Presentation.Managers.UIFeedbackManager.html
+  name: UIFeedbackManager
+  nameWithType: UIFeedbackManager
+  fullName: Noname.Presentation.Managers.UIFeedbackManager
+- uid: Noname.Presentation.Managers.FXManager
+  commentId: T:Noname.Presentation.Managers.FXManager
+  isExternal: true
+  href: Noname.Presentation.Managers.FXManager.html
+  name: FXManager
+  nameWithType: FXManager
+  fullName: Noname.Presentation.Managers.FXManager

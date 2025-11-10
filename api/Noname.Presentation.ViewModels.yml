@@ -1,0 +1,71 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Presentation.ViewModels
+  commentId: N:Noname.Presentation.ViewModels
+  id: Noname.Presentation.ViewModels
+  children:
+  - Noname.Presentation.ViewModels.GameViewModel
+  - Noname.Presentation.ViewModels.GameViewPauseReason
+  langs:
+  - csharp
+  - vb
+  name: Noname.Presentation.ViewModels
+  nameWithType: Noname.Presentation.ViewModels
+  fullName: Noname.Presentation.ViewModels
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: Noname.Presentation.ViewModels.GameViewModel
+  commentId: T:Noname.Presentation.ViewModels.GameViewModel
+  parent: Noname.Presentation.ViewModels
+  isExternal: true
+  href: Noname.Presentation.ViewModels.GameViewModel.html
+  name: GameViewModel
+  nameWithType: GameViewModel
+  fullName: Noname.Presentation.ViewModels.GameViewModel
+- uid: Noname.Presentation.ViewModels.GameViewPauseReason
+  commentId: T:Noname.Presentation.ViewModels.GameViewPauseReason
+  parent: Noname.Presentation.ViewModels
+  isExternal: true
+  href: Noname.Presentation.ViewModels.GameViewPauseReason.html
+  name: GameViewPauseReason
+  nameWithType: GameViewPauseReason
+  fullName: Noname.Presentation.ViewModels.GameViewPauseReason
+- uid: Noname.Presentation.ViewModels
+  commentId: N:Noname.Presentation.ViewModels
+  isExternal: true
+  href: Noname.html
+  name: Noname.Presentation.ViewModels
+  nameWithType: Noname.Presentation.ViewModels
+  fullName: Noname.Presentation.ViewModels
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Presentation
+    name: Presentation
+    isExternal: true
+    href: Noname.Presentation.html
+  - name: .
+  - uid: Noname.Presentation.ViewModels
+    name: ViewModels
+    isExternal: true
+    href: Noname.Presentation.ViewModels.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Presentation
+    name: Presentation
+    isExternal: true
+    href: Noname.Presentation.html
+  - name: .
+  - uid: Noname.Presentation.ViewModels
+    name: ViewModels
+    isExternal: true
+    href: Noname.Presentation.ViewModels.html

@@ -1,0 +1,71 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Application.UseCases
+  commentId: N:Noname.Application.UseCases
+  id: Noname.Application.UseCases
+  children:
+  - Noname.Application.UseCases.MovePlayerUseCase
+  - Noname.Application.UseCases.StartGameUseCase
+  langs:
+  - csharp
+  - vb
+  name: Noname.Application.UseCases
+  nameWithType: Noname.Application.UseCases
+  fullName: Noname.Application.UseCases
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: Noname.Application.UseCases.MovePlayerUseCase
+  commentId: T:Noname.Application.UseCases.MovePlayerUseCase
+  parent: Noname.Application.UseCases
+  isExternal: true
+  href: Noname.Application.UseCases.MovePlayerUseCase.html
+  name: MovePlayerUseCase
+  nameWithType: MovePlayerUseCase
+  fullName: Noname.Application.UseCases.MovePlayerUseCase
+- uid: Noname.Application.UseCases.StartGameUseCase
+  commentId: T:Noname.Application.UseCases.StartGameUseCase
+  parent: Noname.Application.UseCases
+  isExternal: true
+  href: Noname.Application.UseCases.StartGameUseCase.html
+  name: StartGameUseCase
+  nameWithType: StartGameUseCase
+  fullName: Noname.Application.UseCases.StartGameUseCase
+- uid: Noname.Application.UseCases
+  commentId: N:Noname.Application.UseCases
+  isExternal: true
+  href: Noname.html
+  name: Noname.Application.UseCases
+  nameWithType: Noname.Application.UseCases
+  fullName: Noname.Application.UseCases
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.UseCases
+    name: UseCases
+    isExternal: true
+    href: Noname.Application.UseCases.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.UseCases
+    name: UseCases
+    isExternal: true
+    href: Noname.Application.UseCases.html

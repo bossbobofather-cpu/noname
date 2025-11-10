@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>2D Sprite Shape | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="2D Sprite Shape | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.spriteshape@1d246726c231/Documentation~/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="2d-sprite-shape">2D Sprite Shape</h1>
+
+<h2 id="overview">Overview</h2>
+<p>The <strong>Sprite Shape</strong> is a flexible and powerful world building Asset that features Sprite tiling along a shape's outline that automatically deforms and swaps Sprites based on the angle of the outline.  Additionally, you can assign a Fill texture to a Sprite Shape to create filled shapes with tiled textures as backgrounds or other large level-building props.</p>
+<p>The following are examples of Sprite Shapes used to construct different parts of various levels.</p>
+<p><img src="images/2D_SpriteShape_1.png" alt="This image shows a level created with the Sprite Shape tool. This shows a 2D side-scrolling platform level with multiple platforms made of tiled red brick sprites. The platforms are all of different lengths. The background is made of tiled purple bricks made to resemble castle walls. The different level elements are curved to show that their geometry follows the spline of the Sprite Shape tool."></p>
+<p><img src="images/2D_SpriteShape_2.png" alt="This image shows a level created with the Sprite Shape tool. This shows a 2D side-scrolling platform with purple rounded geometry of random shapes. The random shapes make up both the floor and ceiling of a platforming level, with a character sprite to the left."></p>
+<p><img src="images/2D_SpriteShape_3.png" alt="This image shows a level created with the Sprite Shape tool. This shows a 2D side-scrolling platform level with its floor made of tiled grass and rock tiles. Trees and plants decorate the level, which are made of tiled sprites with the Sprite Shape tool."></p>
+<p>Sprite Shapes comprise of two parts - the <a href="SSProfile.html">Sprite Shape Profile</a> Asset, and the <a href="SSController.html">Sprite Shape Controller</a> component. The Sprite Shape Profile contains the angle settings and Sprites used by the Sprite Shape, and you edit the Sprite Shape's outline with the Sprite Shape Controller component.</p>
+<h2 id="importing-sprites-for-sprite-shapes">Importing Sprites for Sprite Shapes</h2>
+<p>When importing Sprites, use the following <a href="https://docs.unity3d.com/Manual/TextureTypes.html#Sprite">property settings</a> to ensure that the Sprites are compatible for use with Sprite Shape:</p>
+<ol>
+<li><a href="https://docs.unity3d.com/Manual/TextureTypes.html#Sprite">Texture Type</a> - Set this to ‘Sprite (2D and UI)’. Other Texture types are not supported for Sprite Shapes.</li>
+<li><strong>Sprite Mode</strong> - Set this to ‘Single’ if the Texture contains only a single Sprite.</li>
+<li><strong>Mesh Type</strong> - This must be set to <strong>Full Rect</strong> for the Sprite to be used with Sprite Shape.</li>
+</ol>
+<p>In addition, if the Sprites used for the Sprite Shape are part of a Sprite Atlas, disable both <strong>Allow Rotation</strong> and <strong>Tight Packing</strong> options under the Sprite Atlas’ properties so that the Sprites can be used by the Sprite Shape.</p>
+<h2 id="creating-a-sprite-shape-general-workflow">Creating a Sprite Shape general workflow</h2>
+<p>Create <strong>Sprite Shapes</strong> with the following steps:</p>
+<ol>
+<li>Create a <strong>Sprite Shape</strong> GameObject from the main GameObject menu (menu: <strong>GameObject &gt; 2D Object &gt; Sprite Shape</strong>) and select from the two available options:
+<ul>
+<li><a href="SSProfile.html#open-shape">Open Shape</a></li>
+<li><a href="SSProfile.html#closed-shape">Closed Shape</a></li>
+</ul>
+</li>
+<li>Edit the outline of the Sprite Shape with the <a href="SSController.html">Sprite Shape Controller</a> component settings.</li>
+<li>Enable <a href="https://docs.unity3d.com/Manual/class-Physics2DManager.html">Physics 2D</a> interactions for your Sprite Shapes by attaching a <a href="SSCollision.html">Collider</a> component.</li>
+</ol>
+<p>To further customize the shape and outline of a <strong>Sprite Shape</strong>:</p>
+<ol>
+<li>Create a <strong>Sprite Shape Profile</strong> from the main menu (menu: <strong>Assets &gt; Create &gt; 2D &gt; Sprite Shape Profile</strong>).</li>
+<li>Create <a href="SSProfile.html#creating-angle-ranges">Angle Ranges</a> and <a href="SSProfile.html#assigning-sprites">assign Sprites</a> in the <strong>Sprite Shape Profile</strong>.</li>
+<li>Assign the <strong>Sprite Shape Profile</strong> to a <strong>Sprite Shape Controller</strong>'s <strong>Profile</strong> settings. The same Profile can be used by multiple Sprite Shapes.</li>
+</ol>
+<h2 id="placing-an-object-along-the-spline">Placing an Object along the Spline</h2>
+<p>Place an object along with the spline with the following steps.</p>
+<ol>
+<li>Select the desired GameObject and add <a href="SSObjectPlacement.html">Sprite Shape Object Placement</a> component from Add Component in Inspector.</li>
+<li>Select and assign the source SpriteShapeController in the Inspector.</li>
+<li>Adjust the ratio, start and end points to position the GameObject along the spline.</li>
+<li>Toggle Set Normal to adjust the GameObject to rotate along the direction of the SpriteShapeController.</li>
+</ol>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.spriteshape@1d246726c231/Documentation~/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

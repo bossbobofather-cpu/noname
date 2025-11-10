@@ -5,7 +5,7 @@ using Noname.Core.ValueObjects;
 namespace Noname.Core.Entities
 {
     /// <summary>
-    /// 플레이어 캐릭터의 위치, 전투 스탯, 성장 정보를 관리합니다.
+    /// 플레이어 캐릭터의 위치, 전투 스탯, 성장 상태를 관리합니다.
     /// </summary>
     public sealed class PlayerEntity
     {
@@ -22,6 +22,9 @@ namespace Noname.Core.Entities
         private float _luck;
         private float _gold;
 
+        /// <summary>
+        /// 플레이어를 기본 스탯과 스폰 위치로 초기화합니다.
+        /// </summary>
         public PlayerEntity(Float2 spawnPosition, float moveSpeed, float attackDamage, float attackRange, float attackCooldown, float maxHealth, float luck)
         {
             SpawnPosition = spawnPosition;
@@ -42,21 +45,51 @@ namespace Noname.Core.Entities
             _experienceGrowthFactor = 1.25f;
         }
 
+        /// <summary>스폰 위치입니다.</summary>
         public Float2 SpawnPosition { get; }
+
+        /// <summary>현재 위치입니다.</summary>
         public Float2 Position { get; private set; }
+
+        /// <summary>이동 속도입니다.</summary>
         public float MoveSpeed => _moveSpeed;
+
+        /// <summary>기본 공격력입니다.</summary>
         public float AttackDamage => _attackDamage;
+
+        /// <summary>공격 사거리입니다.</summary>
         public float AttackRange => _attackRange;
+
+        /// <summary>공격 쿨다운(초)입니다.</summary>
         public float AttackCooldown => _attackCooldown;
+
+        /// <summary>현재 레벨입니다.</summary>
         public int Level { get; private set; }
+
+        /// <summary>누적 경험치입니다.</summary>
         public float CurrentExperience { get; private set; }
+
+        /// <summary>다음 레벨업까지 필요한 경험치입니다.</summary>
         public float ExperienceForNextLevel { get; private set; }
+
+        /// <summary>즉시 공격 가능 여부입니다.</summary>
         public bool CanAttack => _cooldownRemaining <= 0f;
+
+        /// <summary>최대 체력입니다.</summary>
         public float MaxHealth => _maxHealth;
+
+        /// <summary>현재 체력입니다.</summary>
         public float CurrentHealth => _currentHealth;
+
+        /// <summary>운(Luck) 수치입니다.</summary>
         public float Luck => _luck;
+
+        /// <summary>보유 골드입니다.</summary>
         public float Gold => _gold;
 
+        /// <summary>
+        /// 좌우 이동 한계를 설정합니다.
+        /// </summary>
         public void SetHorizontalBounds(float minX, float maxX)
         {
             if (minX > maxX)
@@ -70,6 +103,9 @@ namespace Noname.Core.Entities
             }
         }
 
+        /// <summary>
+        /// 위치/쿨다운/경험치/골드를 초기화합니다.
+        /// </summary>
         public void Reset()
         {
             Position = SpawnPosition;
@@ -80,6 +116,9 @@ namespace Noname.Core.Entities
             _gold = 0f;
         }
 
+        /// <summary>
+        /// 공격 쿨다운을 감소시킵니다.
+        /// </summary>
         public void UpdateCooldown(float deltaTime)
         {
             if (_cooldownRemaining <= 0f)
@@ -90,6 +129,9 @@ namespace Noname.Core.Entities
             _cooldownRemaining = MathF.Max(0f, _cooldownRemaining - deltaTime);
         }
 
+        /// <summary>
+        /// 수평 입력에 따라 이동합니다.
+        /// </summary>
         public void Move(float horizontalInput, float deltaTime)
         {
             var displacement = _moveSpeed * horizontalInput * deltaTime;
@@ -98,16 +140,25 @@ namespace Noname.Core.Entities
             Position = new Float2(nextX, Position.Y);
         }
 
+        /// <summary>
+        /// 공격을 시작하고 쿨다운을 설정합니다.
+        /// </summary>
         public void StartAttack()
         {
             _cooldownRemaining = _attackCooldown;
         }
 
+        /// <summary>
+        /// 공격이 발사되는 위치를 반환합니다.
+        /// </summary>
         public Float2 GetAttackOrigin()
         {
             return Position;
         }
 
+        /// <summary>
+        /// 레벨업 곡선을 초기화합니다.
+        /// </summary>
         public void ConfigureExperienceProgression(float startingThreshold, float growthFactor, int startingLevel = 1)
         {
             Level = Math.Max(1, startingLevel);
@@ -116,6 +167,9 @@ namespace Noname.Core.Entities
             _experienceGrowthFactor = MathF.Max(1f, growthFactor);
         }
 
+        /// <summary>
+        /// 경험치를 더하고, 레벨업 여부를 반환합니다.
+        /// </summary>
         public bool AddExperience(float amount)
         {
             if (amount <= 0f)
@@ -137,11 +191,17 @@ namespace Noname.Core.Entities
             return leveledUp;
         }
 
+        /// <summary>
+        /// 게임 플레이 어빌리티를 적용합니다.
+        /// </summary>
         public void ApplyAbility(GameplayAbilityDefinition ability)
         {
             ability?.Apply(this);
         }
 
+        /// <summary>
+        /// 개별 속성에 대한 수치 변화를 적용합니다.
+        /// </summary>
         public void ApplyModifier(GameplayAttribute attribute, ModifierOperation operation, float value)
         {
             switch (attribute)
@@ -174,11 +234,17 @@ namespace Noname.Core.Entities
             }
         }
 
+        /// <summary>
+        /// 운 수치를 설정합니다.
+        /// </summary>
         public void SetLuck(float luck)
         {
             _luck = MathF.Max(0f, luck);
         }
 
+        /// <summary>
+        /// 골드를 추가합니다.
+        /// </summary>
         public void AddGold(float amount)
         {
             if (amount <= 0f)
@@ -189,6 +255,9 @@ namespace Noname.Core.Entities
             _gold += amount;
         }
 
+        /// <summary>
+        /// 체력을 회복시키고 회복량을 반환합니다.
+        /// </summary>
         public float Heal(float amount)
         {
             if (amount <= 0f)
@@ -201,6 +270,9 @@ namespace Noname.Core.Entities
             return _currentHealth - previous;
         }
 
+        /// <summary>
+        /// 피해를 적용하고 실제 감소량을 반환합니다.
+        /// </summary>
         public float ApplyDamage(float amount)
         {
             if (amount <= 0f)

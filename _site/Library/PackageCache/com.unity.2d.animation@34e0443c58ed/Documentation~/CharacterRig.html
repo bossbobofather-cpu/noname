@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Actor skinning and weighting workflow | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Actor skinning and weighting workflow | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/CharacterRig.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="actor-skinning-and-weighting-workflow">Actor skinning and weighting workflow</h1>
+
+<p>The following steps are the general workflow for preparing your actor for animation with the Skinning Editor, after you have <a href="PreparingArtwork.html">imported</a> it into Unity. Follow the steps below to create the bones, generate the meshes, and adjust the weights for your actor. For more specific samples and examples, refer to the samples distributed with the 2D Animation package and the sample documentation included <a href="Examples.html">here</a>.</p>
+<ol>
+<li><p>Use the <a href="SkinEdToolsShortcuts.html#bone-tools">Create Bone</a> tool to build the bones of the actor skeleton. With the tool selected, click to define the start-point of the bone. Then move the cursor to where the bone should end, and click again to set the bone’s end-point.</p>
+<ul>
+<li><p>After creating a bone, the tool allows you to set the end-point of the second bone and so on, in order to create a chain of bones.</p>
+</li>
+<li><p>To continue a chain of bones from any bone, select the <strong>Create Bone</strong> tool and click an existing bone, then click its end-point. A new bone is started from the end-point, creating a chain.</p>
+</li>
+<li><p>Alternatively, you can set the start-point of the new bone away from its parent bone. The child bone still belongs to the same chain and this is reflected in the <a href="SpriteVis.html#bone-tab-and-hierarchy-tree">bone hierarchy</a>.</p>
+<p><img src="images/BoneChain.png" alt="A character sprite with a chain of bones through the head. A faded link shows that two bones are still connected in a chain, even though they don't physically connect."><br>A faded link shows the red and blue bones are connected in a chain.
+<br></p>
+</li>
+</ul>
+</li>
+<li><p>After creating the bones of the actor, generate the geometry Mesh for the <strong>Sprites</strong>. It is recommended to use the <a href="SkinEdToolsShortcuts.html#geometry-tools">Auto Geometry</a> tool to auto-generate the geometry Mesh.</p>
+<ul>
+<li>With the <strong>Auto Geometry</strong> tool selected, select a Sprite and then select the <strong>Generate For Selected button</strong> to generate a Mesh for that Sprite only. To <strong>Generate For All Visible Sprites</strong>, click the generate button without selecting any Sprite.
+<br></li>
+</ul>
+</li>
+<li><p>Refine the generated Meshes further by using the <a href="SkinEdToolsShortcuts.html#geometry-tools">Edit Geometry</a> Geometry tool, or create your own Mesh outline with the <a href="SkinEdToolsShortcuts.html#geometry-tools">Create Vertex</a> and <a href="SkinEdToolsShortcuts.html#geometry-tools">Create Edge</a> Geometry tools.</p>
+</li>
+<li><p><a href="SkinEdToolsShortcuts.html#weight-tools">Paint weights</a> onto the Sprite geometry to adjust how much influence a bone has on the vertices of the Mesh. This affects how the mesh deforms when the actor is animated. It is recommended to use the <a href="SkinEdToolsShortcuts.html#weight-tools">Auto Weights</a> tool to auto-generate the weights. The <strong>Auto Weights</strong> tool only generates weights for Sprites that have both a geometry Mesh, and bones intersecting their Mesh:</p>
+<ul>
+<li><p>The <strong>Generate For All Visible</strong> button is available when you do not select any specific Sprite. Select it to generate weights for all valid Sprite Meshes in the editor.</p>
+</li>
+<li><p>The <strong>Generate For Selected</strong> button is available when you have a Sprite selected in the editor. Select it to generate weights for only the selected Sprite.</p>
+</li>
+</ul>
+</li>
+<li><p>Use the <a href="SkinEdToolsShortcuts.html#weight-slider">Weight Slider</a> and <a href="SkinEdToolsShortcuts.html#weight-brush">Weight Brush</a> tools to further adjust the weights of the Mesh vertices.</p>
+</li>
+<li><p>To edit which bones influence a Sprite, select it and then go to the <a href="SkinEdToolsShortcuts.html#bone-influences-panel">Bone Influence</a> tool. A list of bones currently influencing the Sprite’s Mesh are listed in this panel at the bottom-right of the editor.</p>
+<ul>
+<li><p>To remove a bone, select it from the list and select <strong>Remove (-)</strong> at the bottom right of the list.</p>
+</li>
+<li><p>To add a bone as an influencer to the currently selected Sprite Mesh, select the bone in the editor window and select <strong>Add (+)</strong> to add it to the list.</p>
+</li>
+<li><p>To do the reverse and edit which Sprites are being influenced by a bone, select the bone you want to examine, and then go to the <a href="SkinEdToolsShortcuts.html#sprite-influences-panel">Sprite Influence</a> tool. Similarly to the Bone Influence tool, there is an <strong>Add (+)</strong> and <strong>Remove (-)</strong> button.</p>
+</li>
+</ul>
+</li>
+<li><p>Test your rigged actor by posing it with the <a href="SkinEdToolsShortcuts.html#pose-tools">Preview Pose</a> tool. Move and rotate the different bones to check that the geometry Mesh deforms properly. Previewing poses can also be done while the following tools are selected: the <strong>Weight Brush</strong>, <strong>Weight Slider</strong>, <strong>Bone Influence</strong>, <strong>Auto Weights</strong>, and <strong>Visibility</strong> tools.</p>
+<ul>
+<li><p>To restore a rigged actor to its original pose, select <strong>Reset Pose</strong> from the <a href="SkinEdToolsShortcuts.html#pose-tools">Pose toolbar</a>.</p>
+</li>
+<li><p>Edit the default pose by moving the actor bones and joints with the <a href="SkinEdToolsShortcuts.html#bone-tools">Edit Bone</a> tool.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>After you have completed rigging your actor, you are now prepared to <a href="Animating-actor.html">animate</a> the actor.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/CharacterRig.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

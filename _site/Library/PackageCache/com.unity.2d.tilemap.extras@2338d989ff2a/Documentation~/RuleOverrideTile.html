@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Rule Override Tile | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Rule Override Tile | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.tilemap.extras@2338d989ff2a/Documentation~/RuleOverrideTile.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="rule-override-tile">Rule Override Tile</h1>
+
+<p><strong>Contributions by:</strong> <a href="https://github.com/johnsoncodehk">johnsoncodehk</a>, <a href="https://github.com/Autofire">Autofire</a></p>
+<p><strong>Rule Override Tiles</strong> are Tiles which can override the Sprites and GameObjects for a given <a href="RuleTile.html">Rule Tile</a>
+while maintaining the Rule set of the Rule Tile. This allows you to create Tiles that provide variations of a Rule Tile
+without setting new Rules.</p>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tile</strong></td>
+<td>The Rule Tile to override.</td>
+</tr>
+</tbody>
+</table>
+<p>Depending on the Rule Tile that is overridden, there may be further properties which you can override here. Any public
+property in the Rule Tile that does not have a <code>RuleTile.DontOverride</code> attribute will be shown here and can be
+overridden.</p>
+<h2 id="usage">Usage</h2>
+<p>First select the Rule Tile to be overridden in the <strong>Tile</strong> property. The Editor then displays the different Sprites and
+GameObjects in the selected Rule Tile which you can override.</p>
+<p>The editor displays the original Sprites that are used in the Rule Tile in the left column. Select the Sprites that
+override each of the respective original Sprites on the right ‘Override’ column. When the Rule Tile has a match that
+would usually output the original Sprite, it will instead output the override Sprite.</p>
+<p>Below that, the editor displays the original GameObjects that are used in the Rule Tile in the left column. Select the
+GameObjects that override each of the respective original GameObjects on the right ‘Override’ column. When the Rule Tile
+has a match that would usually output the original GameObject, it will instead output the override GameObject.</p>
+<p><img src="images/RuleOverrideTileEditor.png" alt="Rule Override Tile Editor"></p>
+<p>If you have modified the original Rule Tile and changed the Sprites there, the Rule Override Tile will note that the
+original Sprites are missing. You can check the original Rule Tile to see if it is set up correctly or set the Override
+Sprites to None to remove the override.</p>
+<p><img src="images/RuleOverrideTileEditorMissing.png" alt="Rule Override Tile Editor with Missing Original Sprites"></p>
+<p>Paint with the Rule Override Tile using the <a href="https://docs.unity3d.com/Manual/Tilemap-Painting.html">Tile Palette</a> tools.</p>
+<p><img src="images/RuleOverrideTile.png" alt="Scene View with Rule Override Tile"></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.tilemap.extras@2338d989ff2a/Documentation~/RuleOverrideTile.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

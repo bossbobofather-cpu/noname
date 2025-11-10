@@ -16,6 +16,9 @@ using UnityEngine;
 
 namespace Noname.Presentation.Views
 {
+    /// <summary>
+    /// Scene 내 의존성을 구성하고 GameViewModel을 초기화/갱신하는 엔트리 포인트입니다.
+    /// </summary>
     public sealed class DefenseGameBootstrapper : MonoBehaviour
     {
         [Header("References")]
@@ -79,6 +82,7 @@ namespace Noname.Presentation.Views
         private FortressView _fortressViewInstance;
         private AugmentSelectionView _augmentSelectionInstance;
 
+        /// <summary>현재 활성화된 GameViewModel 인스턴스.</summary>
         public GameViewModel ViewModel => _gameViewModel;
         [Serializable]
         private struct ResourceDropPrefabEntry

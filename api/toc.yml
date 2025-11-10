@@ -1,0 +1,218 @@
+### YamlMime:TableOfContent
+items:
+- uid: Noname.Application.Ports
+  name: Noname.Application.Ports
+  type: Namespace
+  items:
+  - uid: Noname.Application.Ports.IGameInputReader
+    name: IGameInputReader
+    type: Interface
+  - uid: Noname.Application.Ports.IGameStateRepository
+    name: IGameStateRepository
+    type: Interface
+- uid: Noname.Application.Services
+  name: Noname.Application.Services
+  type: Namespace
+  items:
+  - uid: Noname.Application.Services.DefenseSimulationService
+    name: DefenseSimulationService
+    type: Class
+  - uid: Noname.Application.Services.EnemyAttackEvent
+    name: EnemyAttackEvent
+    type: Struct
+  - uid: Noname.Application.Services.SimulationStepResult
+    name: SimulationStepResult
+    type: Struct
+- uid: Noname.Application.UseCases
+  name: Noname.Application.UseCases
+  type: Namespace
+  items:
+  - uid: Noname.Application.UseCases.MovePlayerUseCase
+    name: MovePlayerUseCase
+    type: Class
+  - uid: Noname.Application.UseCases.StartGameUseCase
+    name: StartGameUseCase
+    type: Class
+- uid: Noname.Application.ValueObjects
+  name: Noname.Application.ValueObjects
+  type: Namespace
+  items:
+  - uid: Noname.Application.ValueObjects.EnemyHitInfo
+    name: EnemyHitInfo
+    type: Struct
+  - uid: Noname.Application.ValueObjects.EnemyProjectileFiredEvent
+    name: EnemyProjectileFiredEvent
+    type: Struct
+  - uid: Noname.Application.ValueObjects.PlayerLevelUpEvent
+    name: PlayerLevelUpEvent
+    type: Struct
+  - uid: Noname.Application.ValueObjects.PlayerProjectileFiredEvent
+    name: PlayerProjectileFiredEvent
+    type: Struct
+  - uid: Noname.Application.ValueObjects.ProjectileImpactEvent
+    name: ProjectileImpactEvent
+    type: Struct
+  - uid: Noname.Application.ValueObjects.ResourceDropCollectedEvent
+    name: ResourceDropCollectedEvent
+    type: Struct
+  - uid: Noname.Application.ValueObjects.ResourceDropSpawnedEvent
+    name: ResourceDropSpawnedEvent
+    type: Struct
+- uid: Noname.Core.Entities
+  name: Noname.Core.Entities
+  type: Namespace
+  items:
+  - uid: Noname.Core.Entities.EnemyEntity
+    name: EnemyEntity
+    type: Class
+  - uid: Noname.Core.Entities.FortressEntity
+    name: FortressEntity
+    type: Class
+  - uid: Noname.Core.Entities.GameState
+    name: GameState
+    type: Class
+  - uid: Noname.Core.Entities.PlayerEntity
+    name: PlayerEntity
+    type: Class
+  - uid: Noname.Core.Entities.ProjectileEntity
+    name: ProjectileEntity
+    type: Class
+  - uid: Noname.Core.Entities.ResourceDropEntity
+    name: ResourceDropEntity
+    type: Class
+- uid: Noname.Core.Enums
+  name: Noname.Core.Enums
+  type: Namespace
+  items:
+  - uid: Noname.Core.Enums.EnemyCombatRole
+    name: EnemyCombatRole
+    type: Enum
+  - uid: Noname.Core.Enums.MonsterRole
+    name: MonsterRole
+    type: Enum
+  - uid: Noname.Core.Enums.ProjectileFaction
+    name: ProjectileFaction
+    type: Enum
+  - uid: Noname.Core.Enums.ResourceDropType
+    name: ResourceDropType
+    type: Enum
+- uid: Noname.Core.Primitives
+  name: Noname.Core.Primitives
+  type: Namespace
+  items:
+  - uid: Noname.Core.Primitives.Float2
+    name: Float2
+    type: Struct
+- uid: Noname.Core.ValueObjects
+  name: Noname.Core.ValueObjects
+  type: Namespace
+  items:
+  - uid: Noname.Core.ValueObjects.DefenseGameSettings
+    name: DefenseGameSettings
+    type: Struct
+  - uid: Noname.Core.ValueObjects.EnemyDefinition
+    name: EnemyDefinition
+    type: Class
+  - uid: Noname.Core.ValueObjects.EnemyDropDefinition
+    name: EnemyDropDefinition
+    type: Struct
+  - uid: Noname.Core.ValueObjects.EnemySpawnEntry
+    name: EnemySpawnEntry
+    type: Struct
+  - uid: Noname.Core.ValueObjects.GameplayAbilityDefinition
+    name: GameplayAbilityDefinition
+    type: Class
+  - uid: Noname.Core.ValueObjects.GameplayAttribute
+    name: GameplayAttribute
+    type: Enum
+  - uid: Noname.Core.ValueObjects.GameplayEffectDefinition
+    name: GameplayEffectDefinition
+    type: Class
+  - uid: Noname.Core.ValueObjects.GameplayEffectModifier
+    name: GameplayEffectModifier
+    type: Struct
+  - uid: Noname.Core.ValueObjects.ModifierOperation
+    name: ModifierOperation
+    type: Enum
+  - uid: Noname.Core.ValueObjects.PlayerDefinition
+    name: PlayerDefinition
+    type: Class
+- uid: Noname.Infrastructure.Input
+  name: Noname.Infrastructure.Input
+  type: Namespace
+  items:
+  - uid: Noname.Infrastructure.Input.DefenseInputAdapter
+    name: DefenseInputAdapter
+    type: Class
+  - uid: Noname.Infrastructure.Input.InputBlocker
+    name: InputBlocker
+    type: Class
+- uid: Noname.Infrastructure.Repositories
+  name: Noname.Infrastructure.Repositories
+  type: Namespace
+  items:
+  - uid: Noname.Infrastructure.Repositories.InMemoryGameStateRepository
+    name: InMemoryGameStateRepository
+    type: Class
+- uid: Noname.Infrastructure.Unity
+  name: Noname.Infrastructure.Unity
+  type: Namespace
+  items:
+  - uid: Noname.Infrastructure.Unity.Float2UnityExtensions
+    name: Float2UnityExtensions
+    type: Class
+- uid: Noname.Presentation.Managers
+  name: Noname.Presentation.Managers
+  type: Namespace
+  items:
+  - uid: Noname.Presentation.Managers.FXManager
+    name: FXManager
+    type: Class
+  - uid: Noname.Presentation.Managers.SoundManager
+    name: SoundManager
+    type: Class
+  - uid: Noname.Presentation.Managers.UIFeedbackManager
+    name: UIFeedbackManager
+    type: Class
+- uid: Noname.Presentation.ViewModels
+  name: Noname.Presentation.ViewModels
+  type: Namespace
+  items:
+  - uid: Noname.Presentation.ViewModels.GameViewModel
+    name: GameViewModel
+    type: Class
+  - uid: Noname.Presentation.ViewModels.GameViewPauseReason
+    name: GameViewPauseReason
+    type: Enum
+- uid: Noname.Presentation.Views
+  name: Noname.Presentation.Views
+  type: Namespace
+  items:
+  - uid: Noname.Presentation.Views.AugmentSelectionOptionView
+    name: AugmentSelectionOptionView
+    type: Class
+  - uid: Noname.Presentation.Views.AugmentSelectionView
+    name: AugmentSelectionView
+    type: Class
+  - uid: Noname.Presentation.Views.DefenseDebugPanel
+    name: DefenseDebugPanel
+    type: Class
+  - uid: Noname.Presentation.Views.DefenseGameBootstrapper
+    name: DefenseGameBootstrapper
+    type: Class
+  - uid: Noname.Presentation.Views.EnemyView
+    name: EnemyView
+    type: Class
+  - uid: Noname.Presentation.Views.FortressView
+    name: FortressView
+    type: Class
+  - uid: Noname.Presentation.Views.PlayerView
+    name: PlayerView
+    type: Class
+  - uid: Noname.Presentation.Views.ProjectileView
+    name: ProjectileView
+    type: Class
+  - uid: Noname.Presentation.Views.ResourceDropView
+    name: ResourceDropView
+    type: Class
+memberLayout: SamePage

@@ -1,0 +1,1057 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Core.ValueObjects.DefenseGameSettings
+  commentId: T:Noname.Core.ValueObjects.DefenseGameSettings
+  id: DefenseGameSettings
+  parent: Noname.Core.ValueObjects
+  children:
+  - Noname.Core.ValueObjects.DefenseGameSettings.#ctor(Noname.Core.Primitives.Float2,Noname.Core.ValueObjects.PlayerDefinition[],System.Int32,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Int32,Noname.Core.ValueObjects.GameplayAbilityDefinition[],Noname.Core.Primitives.Float2,Noname.Core.Primitives.Float2,System.Single,Noname.Core.Primitives.Float2,Noname.Core.Primitives.Float2,System.Single,System.Single,Noname.Core.ValueObjects.EnemySpawnEntry[],System.Single)
+  - Noname.Core.ValueObjects.DefenseGameSettings.GetDefaultPlayerDefinition
+  - Noname.Core.ValueObjects.DefenseGameSettings.GetPlayerDefinitionOrDefault(System.Int32)
+  - Noname.Core.ValueObjects.DefenseGameSettings.abilityChoicesPerLevel
+  - Noname.Core.ValueObjects.DefenseGameSettings.abilityPool
+  - Noname.Core.ValueObjects.DefenseGameSettings.baseExperienceToLevel
+  - Noname.Core.ValueObjects.DefenseGameSettings.defaultPlayerIndex
+  - Noname.Core.ValueObjects.DefenseGameSettings.enemyProjectileSpeed
+  - Noname.Core.ValueObjects.DefenseGameSettings.enemySpawnEntries
+  - Noname.Core.ValueObjects.DefenseGameSettings.enemySpawnMax
+  - Noname.Core.ValueObjects.DefenseGameSettings.enemySpawnMin
+  - Noname.Core.ValueObjects.DefenseGameSettings.experienceGrowthFactor
+  - Noname.Core.ValueObjects.DefenseGameSettings.experiencePickupDelay
+  - Noname.Core.ValueObjects.DefenseGameSettings.fortressHalfExtents
+  - Noname.Core.ValueObjects.DefenseGameSettings.fortressMaxHealth
+  - Noname.Core.ValueObjects.DefenseGameSettings.fortressPosition
+  - Noname.Core.ValueObjects.DefenseGameSettings.initialSpawnDelay
+  - Noname.Core.ValueObjects.DefenseGameSettings.luckBonusPerPoint
+  - Noname.Core.ValueObjects.DefenseGameSettings.movementMaxX
+  - Noname.Core.ValueObjects.DefenseGameSettings.movementMinX
+  - Noname.Core.ValueObjects.DefenseGameSettings.playerDefinitions
+  - Noname.Core.ValueObjects.DefenseGameSettings.playerExplosionRadius
+  - Noname.Core.ValueObjects.DefenseGameSettings.playerProjectileSpeed
+  - Noname.Core.ValueObjects.DefenseGameSettings.playerSpawnPosition
+  - Noname.Core.ValueObjects.DefenseGameSettings.spawnInterval
+  langs:
+  - csharp
+  - vb
+  name: DefenseGameSettings
+  nameWithType: DefenseGameSettings
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings
+  type: Struct
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public struct DefenseGameSettings
+    content.vb: Public Structure DefenseGameSettings
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.GetType
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.playerSpawnPosition
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.playerSpawnPosition
+  id: playerSpawnPosition
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: playerSpawnPosition
+  nameWithType: DefenseGameSettings.playerSpawnPosition
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.playerSpawnPosition
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public Float2 playerSpawnPosition
+    return:
+      type: Noname.Core.Primitives.Float2
+    content.vb: Public playerSpawnPosition As Float2
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.playerDefinitions
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.playerDefinitions
+  id: playerDefinitions
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: playerDefinitions
+  nameWithType: DefenseGameSettings.playerDefinitions
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.playerDefinitions
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public PlayerDefinition[] playerDefinitions
+    return:
+      type: Noname.Core.ValueObjects.PlayerDefinition[]
+    content.vb: Public playerDefinitions As PlayerDefinition()
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.defaultPlayerIndex
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.defaultPlayerIndex
+  id: defaultPlayerIndex
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: defaultPlayerIndex
+  nameWithType: DefenseGameSettings.defaultPlayerIndex
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.defaultPlayerIndex
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public int defaultPlayerIndex
+    return:
+      type: System.Int32
+    content.vb: Public defaultPlayerIndex As Integer
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.movementMinX
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.movementMinX
+  id: movementMinX
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: movementMinX
+  nameWithType: DefenseGameSettings.movementMinX
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.movementMinX
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float movementMinX
+    return:
+      type: System.Single
+    content.vb: Public movementMinX As Single
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.movementMaxX
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.movementMaxX
+  id: movementMaxX
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: movementMaxX
+  nameWithType: DefenseGameSettings.movementMaxX
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.movementMaxX
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float movementMaxX
+    return:
+      type: System.Single
+    content.vb: Public movementMaxX As Single
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.playerProjectileSpeed
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.playerProjectileSpeed
+  id: playerProjectileSpeed
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: playerProjectileSpeed
+  nameWithType: DefenseGameSettings.playerProjectileSpeed
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.playerProjectileSpeed
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float playerProjectileSpeed
+    return:
+      type: System.Single
+    content.vb: Public playerProjectileSpeed As Single
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.playerExplosionRadius
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.playerExplosionRadius
+  id: playerExplosionRadius
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: playerExplosionRadius
+  nameWithType: DefenseGameSettings.playerExplosionRadius
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.playerExplosionRadius
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float playerExplosionRadius
+    return:
+      type: System.Single
+    content.vb: Public playerExplosionRadius As Single
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.baseExperienceToLevel
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.baseExperienceToLevel
+  id: baseExperienceToLevel
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: baseExperienceToLevel
+  nameWithType: DefenseGameSettings.baseExperienceToLevel
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.baseExperienceToLevel
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float baseExperienceToLevel
+    return:
+      type: System.Single
+    content.vb: Public baseExperienceToLevel As Single
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.experienceGrowthFactor
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.experienceGrowthFactor
+  id: experienceGrowthFactor
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: experienceGrowthFactor
+  nameWithType: DefenseGameSettings.experienceGrowthFactor
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.experienceGrowthFactor
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float experienceGrowthFactor
+    return:
+      type: System.Single
+    content.vb: Public experienceGrowthFactor As Single
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.experiencePickupDelay
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.experiencePickupDelay
+  id: experiencePickupDelay
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: experiencePickupDelay
+  nameWithType: DefenseGameSettings.experiencePickupDelay
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.experiencePickupDelay
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float experiencePickupDelay
+    return:
+      type: System.Single
+    content.vb: Public experiencePickupDelay As Single
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.luckBonusPerPoint
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.luckBonusPerPoint
+  id: luckBonusPerPoint
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: luckBonusPerPoint
+  nameWithType: DefenseGameSettings.luckBonusPerPoint
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.luckBonusPerPoint
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float luckBonusPerPoint
+    return:
+      type: System.Single
+    content.vb: Public luckBonusPerPoint As Single
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.abilityChoicesPerLevel
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.abilityChoicesPerLevel
+  id: abilityChoicesPerLevel
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: abilityChoicesPerLevel
+  nameWithType: DefenseGameSettings.abilityChoicesPerLevel
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.abilityChoicesPerLevel
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public int abilityChoicesPerLevel
+    return:
+      type: System.Int32
+    content.vb: Public abilityChoicesPerLevel As Integer
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.abilityPool
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.abilityPool
+  id: abilityPool
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: abilityPool
+  nameWithType: DefenseGameSettings.abilityPool
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.abilityPool
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public GameplayAbilityDefinition[] abilityPool
+    return:
+      type: Noname.Core.ValueObjects.GameplayAbilityDefinition[]
+    content.vb: Public abilityPool As GameplayAbilityDefinition()
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.fortressPosition
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.fortressPosition
+  id: fortressPosition
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: fortressPosition
+  nameWithType: DefenseGameSettings.fortressPosition
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.fortressPosition
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public Float2 fortressPosition
+    return:
+      type: Noname.Core.Primitives.Float2
+    content.vb: Public fortressPosition As Float2
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.fortressHalfExtents
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.fortressHalfExtents
+  id: fortressHalfExtents
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: fortressHalfExtents
+  nameWithType: DefenseGameSettings.fortressHalfExtents
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.fortressHalfExtents
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public Float2 fortressHalfExtents
+    return:
+      type: Noname.Core.Primitives.Float2
+    content.vb: Public fortressHalfExtents As Float2
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.fortressMaxHealth
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.fortressMaxHealth
+  id: fortressMaxHealth
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: fortressMaxHealth
+  nameWithType: DefenseGameSettings.fortressMaxHealth
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.fortressMaxHealth
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float fortressMaxHealth
+    return:
+      type: System.Single
+    content.vb: Public fortressMaxHealth As Single
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.enemySpawnMin
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.enemySpawnMin
+  id: enemySpawnMin
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: enemySpawnMin
+  nameWithType: DefenseGameSettings.enemySpawnMin
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.enemySpawnMin
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public Float2 enemySpawnMin
+    return:
+      type: Noname.Core.Primitives.Float2
+    content.vb: Public enemySpawnMin As Float2
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.enemySpawnMax
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.enemySpawnMax
+  id: enemySpawnMax
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: enemySpawnMax
+  nameWithType: DefenseGameSettings.enemySpawnMax
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.enemySpawnMax
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public Float2 enemySpawnMax
+    return:
+      type: Noname.Core.Primitives.Float2
+    content.vb: Public enemySpawnMax As Float2
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.initialSpawnDelay
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.initialSpawnDelay
+  id: initialSpawnDelay
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: initialSpawnDelay
+  nameWithType: DefenseGameSettings.initialSpawnDelay
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.initialSpawnDelay
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float initialSpawnDelay
+    return:
+      type: System.Single
+    content.vb: Public initialSpawnDelay As Single
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.spawnInterval
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.spawnInterval
+  id: spawnInterval
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: spawnInterval
+  nameWithType: DefenseGameSettings.spawnInterval
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.spawnInterval
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float spawnInterval
+    return:
+      type: System.Single
+    content.vb: Public spawnInterval As Single
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.enemySpawnEntries
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.enemySpawnEntries
+  id: enemySpawnEntries
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: enemySpawnEntries
+  nameWithType: DefenseGameSettings.enemySpawnEntries
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.enemySpawnEntries
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public EnemySpawnEntry[] enemySpawnEntries
+    return:
+      type: Noname.Core.ValueObjects.EnemySpawnEntry[]
+    content.vb: Public enemySpawnEntries As EnemySpawnEntry()
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.enemyProjectileSpeed
+  commentId: F:Noname.Core.ValueObjects.DefenseGameSettings.enemyProjectileSpeed
+  id: enemyProjectileSpeed
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: enemyProjectileSpeed
+  nameWithType: DefenseGameSettings.enemyProjectileSpeed
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.enemyProjectileSpeed
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float enemyProjectileSpeed
+    return:
+      type: System.Single
+    content.vb: Public enemyProjectileSpeed As Single
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.#ctor(Noname.Core.Primitives.Float2,Noname.Core.ValueObjects.PlayerDefinition[],System.Int32,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Int32,Noname.Core.ValueObjects.GameplayAbilityDefinition[],Noname.Core.Primitives.Float2,Noname.Core.Primitives.Float2,System.Single,Noname.Core.Primitives.Float2,Noname.Core.Primitives.Float2,System.Single,System.Single,Noname.Core.ValueObjects.EnemySpawnEntry[],System.Single)
+  commentId: M:Noname.Core.ValueObjects.DefenseGameSettings.#ctor(Noname.Core.Primitives.Float2,Noname.Core.ValueObjects.PlayerDefinition[],System.Int32,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Int32,Noname.Core.ValueObjects.GameplayAbilityDefinition[],Noname.Core.Primitives.Float2,Noname.Core.Primitives.Float2,System.Single,Noname.Core.Primitives.Float2,Noname.Core.Primitives.Float2,System.Single,System.Single,Noname.Core.ValueObjects.EnemySpawnEntry[],System.Single)
+  id: '#ctor(Noname.Core.Primitives.Float2,Noname.Core.ValueObjects.PlayerDefinition[],System.Int32,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Int32,Noname.Core.ValueObjects.GameplayAbilityDefinition[],Noname.Core.Primitives.Float2,Noname.Core.Primitives.Float2,System.Single,Noname.Core.Primitives.Float2,Noname.Core.Primitives.Float2,System.Single,System.Single,Noname.Core.ValueObjects.EnemySpawnEntry[],System.Single)'
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: DefenseGameSettings(Float2, PlayerDefinition[], int, float, float, float, float, float, float, float, float, int, GameplayAbilityDefinition[], Float2, Float2, float, Float2, Float2, float, float, EnemySpawnEntry[], float)
+  nameWithType: DefenseGameSettings.DefenseGameSettings(Float2, PlayerDefinition[], int, float, float, float, float, float, float, float, float, int, GameplayAbilityDefinition[], Float2, Float2, float, Float2, Float2, float, float, EnemySpawnEntry[], float)
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.DefenseGameSettings(Noname.Core.Primitives.Float2, Noname.Core.ValueObjects.PlayerDefinition[], int, float, float, float, float, float, float, float, float, int, Noname.Core.ValueObjects.GameplayAbilityDefinition[], Noname.Core.Primitives.Float2, Noname.Core.Primitives.Float2, float, Noname.Core.Primitives.Float2, Noname.Core.Primitives.Float2, float, float, Noname.Core.ValueObjects.EnemySpawnEntry[], float)
+  type: Constructor
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public DefenseGameSettings(Float2 playerSpawnPosition, PlayerDefinition[] playerDefinitions, int defaultPlayerIndex, float movementMinX, float movementMaxX, float playerProjectileSpeed, float playerExplosionRadius, float baseExperienceToLevel, float experienceGrowthFactor, float experiencePickupDelay, float luckBonusPerPoint, int abilityChoicesPerLevel, GameplayAbilityDefinition[] abilityPool, Float2 fortressPosition, Float2 fortressHalfExtents, float fortressMaxHealth, Float2 enemySpawnMin, Float2 enemySpawnMax, float initialSpawnDelay, float spawnInterval, EnemySpawnEntry[] enemySpawnEntries, float enemyProjectileSpeed)
+    parameters:
+    - id: playerSpawnPosition
+      type: Noname.Core.Primitives.Float2
+    - id: playerDefinitions
+      type: Noname.Core.ValueObjects.PlayerDefinition[]
+    - id: defaultPlayerIndex
+      type: System.Int32
+    - id: movementMinX
+      type: System.Single
+    - id: movementMaxX
+      type: System.Single
+    - id: playerProjectileSpeed
+      type: System.Single
+    - id: playerExplosionRadius
+      type: System.Single
+    - id: baseExperienceToLevel
+      type: System.Single
+    - id: experienceGrowthFactor
+      type: System.Single
+    - id: experiencePickupDelay
+      type: System.Single
+    - id: luckBonusPerPoint
+      type: System.Single
+    - id: abilityChoicesPerLevel
+      type: System.Int32
+    - id: abilityPool
+      type: Noname.Core.ValueObjects.GameplayAbilityDefinition[]
+    - id: fortressPosition
+      type: Noname.Core.Primitives.Float2
+    - id: fortressHalfExtents
+      type: Noname.Core.Primitives.Float2
+    - id: fortressMaxHealth
+      type: System.Single
+    - id: enemySpawnMin
+      type: Noname.Core.Primitives.Float2
+    - id: enemySpawnMax
+      type: Noname.Core.Primitives.Float2
+    - id: initialSpawnDelay
+      type: System.Single
+    - id: spawnInterval
+      type: System.Single
+    - id: enemySpawnEntries
+      type: Noname.Core.ValueObjects.EnemySpawnEntry[]
+    - id: enemyProjectileSpeed
+      type: System.Single
+    content.vb: Public Sub New(playerSpawnPosition As Float2, playerDefinitions As PlayerDefinition(), defaultPlayerIndex As Integer, movementMinX As Single, movementMaxX As Single, playerProjectileSpeed As Single, playerExplosionRadius As Single, baseExperienceToLevel As Single, experienceGrowthFactor As Single, experiencePickupDelay As Single, luckBonusPerPoint As Single, abilityChoicesPerLevel As Integer, abilityPool As GameplayAbilityDefinition(), fortressPosition As Float2, fortressHalfExtents As Float2, fortressMaxHealth As Single, enemySpawnMin As Float2, enemySpawnMax As Float2, initialSpawnDelay As Single, spawnInterval As Single, enemySpawnEntries As EnemySpawnEntry(), enemyProjectileSpeed As Single)
+  overload: Noname.Core.ValueObjects.DefenseGameSettings.#ctor*
+  nameWithType.vb: DefenseGameSettings.New(Float2, PlayerDefinition(), Integer, Single, Single, Single, Single, Single, Single, Single, Single, Integer, GameplayAbilityDefinition(), Float2, Float2, Single, Float2, Float2, Single, Single, EnemySpawnEntry(), Single)
+  fullName.vb: Noname.Core.ValueObjects.DefenseGameSettings.New(Noname.Core.Primitives.Float2, Noname.Core.ValueObjects.PlayerDefinition(), Integer, Single, Single, Single, Single, Single, Single, Single, Single, Integer, Noname.Core.ValueObjects.GameplayAbilityDefinition(), Noname.Core.Primitives.Float2, Noname.Core.Primitives.Float2, Single, Noname.Core.Primitives.Float2, Noname.Core.Primitives.Float2, Single, Single, Noname.Core.ValueObjects.EnemySpawnEntry(), Single)
+  name.vb: New(Float2, PlayerDefinition(), Integer, Single, Single, Single, Single, Single, Single, Single, Single, Integer, GameplayAbilityDefinition(), Float2, Float2, Single, Float2, Float2, Single, Single, EnemySpawnEntry(), Single)
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.GetPlayerDefinitionOrDefault(System.Int32)
+  commentId: M:Noname.Core.ValueObjects.DefenseGameSettings.GetPlayerDefinitionOrDefault(System.Int32)
+  id: GetPlayerDefinitionOrDefault(System.Int32)
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: GetPlayerDefinitionOrDefault(int)
+  nameWithType: DefenseGameSettings.GetPlayerDefinitionOrDefault(int)
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.GetPlayerDefinitionOrDefault(int)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public PlayerDefinition GetPlayerDefinitionOrDefault(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+    return:
+      type: Noname.Core.ValueObjects.PlayerDefinition
+    content.vb: Public Function GetPlayerDefinitionOrDefault(index As Integer) As PlayerDefinition
+  overload: Noname.Core.ValueObjects.DefenseGameSettings.GetPlayerDefinitionOrDefault*
+  nameWithType.vb: DefenseGameSettings.GetPlayerDefinitionOrDefault(Integer)
+  fullName.vb: Noname.Core.ValueObjects.DefenseGameSettings.GetPlayerDefinitionOrDefault(Integer)
+  name.vb: GetPlayerDefinitionOrDefault(Integer)
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.GetDefaultPlayerDefinition
+  commentId: M:Noname.Core.ValueObjects.DefenseGameSettings.GetDefaultPlayerDefinition
+  id: GetDefaultPlayerDefinition
+  parent: Noname.Core.ValueObjects.DefenseGameSettings
+  langs:
+  - csharp
+  - vb
+  name: GetDefaultPlayerDefinition()
+  nameWithType: DefenseGameSettings.GetDefaultPlayerDefinition()
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.GetDefaultPlayerDefinition()
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/DefenseGameSettings.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public PlayerDefinition GetDefaultPlayerDefinition()
+    return:
+      type: Noname.Core.ValueObjects.PlayerDefinition
+    content.vb: Public Function GetDefaultPlayerDefinition() As PlayerDefinition
+  overload: Noname.Core.ValueObjects.DefenseGameSettings.GetDefaultPlayerDefinition*
+references:
+- uid: Noname.Core.ValueObjects
+  commentId: N:Noname.Core.ValueObjects
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.ValueObjects
+  nameWithType: Noname.Core.ValueObjects
+  fullName: Noname.Core.ValueObjects
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Core.ValueObjects.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Core.ValueObjects.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Noname.Core.Primitives.Float2
+  commentId: T:Noname.Core.Primitives.Float2
+  parent: Noname.Core.Primitives
+  isExternal: true
+  href: Noname.Core.Primitives.Float2.html
+  name: Float2
+  nameWithType: Float2
+  fullName: Noname.Core.Primitives.Float2
+- uid: Noname.Core.Primitives
+  commentId: N:Noname.Core.Primitives
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Primitives
+  nameWithType: Noname.Core.Primitives
+  fullName: Noname.Core.Primitives
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Primitives
+    name: Primitives
+    isExternal: true
+    href: Noname.Core.Primitives.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Primitives
+    name: Primitives
+    isExternal: true
+    href: Noname.Core.Primitives.html
+- uid: Noname.Core.ValueObjects.PlayerDefinition[]
+  isExternal: true
+  href: Noname.Core.ValueObjects.PlayerDefinition.html
+  name: PlayerDefinition[]
+  nameWithType: PlayerDefinition[]
+  fullName: Noname.Core.ValueObjects.PlayerDefinition[]
+  nameWithType.vb: PlayerDefinition()
+  fullName.vb: Noname.Core.ValueObjects.PlayerDefinition()
+  name.vb: PlayerDefinition()
+  spec.csharp:
+  - uid: Noname.Core.ValueObjects.PlayerDefinition
+    name: PlayerDefinition
+    isExternal: true
+    href: Noname.Core.ValueObjects.PlayerDefinition.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Noname.Core.ValueObjects.PlayerDefinition
+    name: PlayerDefinition
+    isExternal: true
+    href: Noname.Core.ValueObjects.PlayerDefinition.html
+  - name: (
+  - name: )
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Noname.Core.ValueObjects.GameplayAbilityDefinition[]
+  isExternal: true
+  href: Noname.Core.ValueObjects.GameplayAbilityDefinition.html
+  name: GameplayAbilityDefinition[]
+  nameWithType: GameplayAbilityDefinition[]
+  fullName: Noname.Core.ValueObjects.GameplayAbilityDefinition[]
+  nameWithType.vb: GameplayAbilityDefinition()
+  fullName.vb: Noname.Core.ValueObjects.GameplayAbilityDefinition()
+  name.vb: GameplayAbilityDefinition()
+  spec.csharp:
+  - uid: Noname.Core.ValueObjects.GameplayAbilityDefinition
+    name: GameplayAbilityDefinition
+    isExternal: true
+    href: Noname.Core.ValueObjects.GameplayAbilityDefinition.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Noname.Core.ValueObjects.GameplayAbilityDefinition
+    name: GameplayAbilityDefinition
+    isExternal: true
+    href: Noname.Core.ValueObjects.GameplayAbilityDefinition.html
+  - name: (
+  - name: )
+- uid: Noname.Core.ValueObjects.EnemySpawnEntry[]
+  isExternal: true
+  href: Noname.Core.ValueObjects.EnemySpawnEntry.html
+  name: EnemySpawnEntry[]
+  nameWithType: EnemySpawnEntry[]
+  fullName: Noname.Core.ValueObjects.EnemySpawnEntry[]
+  nameWithType.vb: EnemySpawnEntry()
+  fullName.vb: Noname.Core.ValueObjects.EnemySpawnEntry()
+  name.vb: EnemySpawnEntry()
+  spec.csharp:
+  - uid: Noname.Core.ValueObjects.EnemySpawnEntry
+    name: EnemySpawnEntry
+    isExternal: true
+    href: Noname.Core.ValueObjects.EnemySpawnEntry.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Noname.Core.ValueObjects.EnemySpawnEntry
+    name: EnemySpawnEntry
+    isExternal: true
+    href: Noname.Core.ValueObjects.EnemySpawnEntry.html
+  - name: (
+  - name: )
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.#ctor*
+  commentId: Overload:Noname.Core.ValueObjects.DefenseGameSettings.#ctor
+  isExternal: true
+  href: Noname.Core.ValueObjects.DefenseGameSettings.html#Noname_Core_ValueObjects_DefenseGameSettings__ctor_Noname_Core_Primitives_Float2_Noname_Core_ValueObjects_PlayerDefinition___System_Int32_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_System_Single_System_Int32_Noname_Core_ValueObjects_GameplayAbilityDefinition___Noname_Core_Primitives_Float2_Noname_Core_Primitives_Float2_System_Single_Noname_Core_Primitives_Float2_Noname_Core_Primitives_Float2_System_Single_System_Single_Noname_Core_ValueObjects_EnemySpawnEntry___System_Single_
+  name: DefenseGameSettings
+  nameWithType: DefenseGameSettings.DefenseGameSettings
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.DefenseGameSettings
+  nameWithType.vb: DefenseGameSettings.New
+  fullName.vb: Noname.Core.ValueObjects.DefenseGameSettings.New
+  name.vb: New
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.GetPlayerDefinitionOrDefault*
+  commentId: Overload:Noname.Core.ValueObjects.DefenseGameSettings.GetPlayerDefinitionOrDefault
+  isExternal: true
+  href: Noname.Core.ValueObjects.DefenseGameSettings.html#Noname_Core_ValueObjects_DefenseGameSettings_GetPlayerDefinitionOrDefault_System_Int32_
+  name: GetPlayerDefinitionOrDefault
+  nameWithType: DefenseGameSettings.GetPlayerDefinitionOrDefault
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.GetPlayerDefinitionOrDefault
+- uid: Noname.Core.ValueObjects.PlayerDefinition
+  commentId: T:Noname.Core.ValueObjects.PlayerDefinition
+  parent: Noname.Core.ValueObjects
+  isExternal: true
+  href: Noname.Core.ValueObjects.PlayerDefinition.html
+  name: PlayerDefinition
+  nameWithType: PlayerDefinition
+  fullName: Noname.Core.ValueObjects.PlayerDefinition
+- uid: Noname.Core.ValueObjects.DefenseGameSettings.GetDefaultPlayerDefinition*
+  commentId: Overload:Noname.Core.ValueObjects.DefenseGameSettings.GetDefaultPlayerDefinition
+  isExternal: true
+  href: Noname.Core.ValueObjects.DefenseGameSettings.html#Noname_Core_ValueObjects_DefenseGameSettings_GetDefaultPlayerDefinition
+  name: GetDefaultPlayerDefinition
+  nameWithType: DefenseGameSettings.GetDefaultPlayerDefinition
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings.GetDefaultPlayerDefinition

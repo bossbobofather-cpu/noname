@@ -1,0 +1,107 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Core.Entities
+  commentId: N:Noname.Core.Entities
+  id: Noname.Core.Entities
+  children:
+  - Noname.Core.Entities.EnemyEntity
+  - Noname.Core.Entities.FortressEntity
+  - Noname.Core.Entities.GameState
+  - Noname.Core.Entities.PlayerEntity
+  - Noname.Core.Entities.ProjectileEntity
+  - Noname.Core.Entities.ResourceDropEntity
+  langs:
+  - csharp
+  - vb
+  name: Noname.Core.Entities
+  nameWithType: Noname.Core.Entities
+  fullName: Noname.Core.Entities
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: Noname.Core.Entities.GameState
+  commentId: T:Noname.Core.Entities.GameState
+  parent: Noname.Core.Entities
+  isExternal: true
+  href: Noname.Core.Entities.GameState.html
+  name: GameState
+  nameWithType: GameState
+  fullName: Noname.Core.Entities.GameState
+- uid: Noname.Core.Entities.ProjectileEntity
+  commentId: T:Noname.Core.Entities.ProjectileEntity
+  parent: Noname.Core.Entities
+  isExternal: true
+  href: Noname.Core.Entities.ProjectileEntity.html
+  name: ProjectileEntity
+  nameWithType: ProjectileEntity
+  fullName: Noname.Core.Entities.ProjectileEntity
+- uid: Noname.Core.Entities.ResourceDropEntity
+  commentId: T:Noname.Core.Entities.ResourceDropEntity
+  parent: Noname.Core.Entities
+  isExternal: true
+  href: Noname.Core.Entities.ResourceDropEntity.html
+  name: ResourceDropEntity
+  nameWithType: ResourceDropEntity
+  fullName: Noname.Core.Entities.ResourceDropEntity
+- uid: Noname.Core.Entities.FortressEntity
+  commentId: T:Noname.Core.Entities.FortressEntity
+  parent: Noname.Core.Entities
+  isExternal: true
+  href: Noname.Core.Entities.FortressEntity.html
+  name: FortressEntity
+  nameWithType: FortressEntity
+  fullName: Noname.Core.Entities.FortressEntity
+- uid: Noname.Core.Entities.PlayerEntity
+  commentId: T:Noname.Core.Entities.PlayerEntity
+  parent: Noname.Core.Entities
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html
+  name: PlayerEntity
+  nameWithType: PlayerEntity
+  fullName: Noname.Core.Entities.PlayerEntity
+- uid: Noname.Core.Entities.EnemyEntity
+  commentId: T:Noname.Core.Entities.EnemyEntity
+  parent: Noname.Core.Entities
+  isExternal: true
+  href: Noname.Core.Entities.EnemyEntity.html
+  name: EnemyEntity
+  nameWithType: EnemyEntity
+  fullName: Noname.Core.Entities.EnemyEntity
+- uid: Noname.Core.Entities
+  commentId: N:Noname.Core.Entities
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Entities
+  nameWithType: Noname.Core.Entities
+  fullName: Noname.Core.Entities
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Entities
+    name: Entities
+    isExternal: true
+    href: Noname.Core.Entities.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Entities
+    name: Entities
+    isExternal: true
+    href: Noname.Core.Entities.html

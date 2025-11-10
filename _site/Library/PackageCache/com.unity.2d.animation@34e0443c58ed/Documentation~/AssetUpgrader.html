@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>2D Animation Asset Upgrader | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="2D Animation Asset Upgrader | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/AssetUpgrader.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="2d-animation-asset-upgrader">2D Animation Asset Upgrader</h1>
+
+<p>The 2D Animation package and its assets are often updated with major and minor tweaks over time. Some asset improvements can be automatically applied when you upgrade to the latest version of the package. However, some of these changes require a manual step in order to have the assets use the latest code path.</p>
+<p>The 2D Animation Asset Upgrader tool eases the transition and upgrade of older assets to newer ones. This tool has the following features:</p>
+<ul>
+<li>Upgrades <a href="SL-Asset.html">Sprite Library Asset</a> files ending in <code>.asset</code> to Sprite Library Source Asset files ending in <code>.spriteLib</code>.</li>
+<li>Moves Sprite Library Assets baked into <code>.psb</code> files created in Unity 2019 and Unity 2020 out into their own separate Sprite Library Source Asset files ending in <code>.spriteLib</code>.</li>
+<li>Upgrades <a href="https://docs.unity3d.com/Manual/AnimationClips.html">Animation Clips</a> that animate Sprites based on the <a href="https://docs.unity3d.com/Packages/com.unity.2d.animation@latest/index.html?subfolder=/manual/SL-Resolver.html">Sprite Resolver component</a>'s <a href="SL-Editor.html">Category and Label</a> hash in Unity 2019 and Unity 2020, to Sprite Resolver's new <strong>Sprite Hash</strong> property from Unity 2022 onwards.</li>
+<li>Upgrades Animation Clips animating the Sprite Resolver component's <strong>Sprite Key</strong> property in Unity 2021, to Sprite Resolver's new Sprite Hash property from Unity 2022 onwards.</li>
+</ul>
+<h2 id="getting-started">Getting Started</h2>
+<p>Before upgrading any assets in your current project, make sure to source control or back up your project.</p>
+<p>Go to <strong>Window &gt; 2D &gt; 2D Animation Asset Upgrader</strong> to open the 2D Animation Asset Upgrader.</p>
+<h2 id="upgrading-sprite-libraries">Upgrading Sprite Libraries</h2>
+<p>Follow these steps to upgrade the Sprite Libraries in the project.</p>
+<ol>
+<li><p><a href="#getting-started">Open</a> the 2D Animation Asset Upgrader.</p>
+</li>
+<li><p>Select the <strong>Sprite Libraries</strong> button to open the Sprite Libraries tab.</p>
+</li>
+<li><p>Select the <strong>Scan project</strong> button. The window then displays a list of all the Sprite Libraries that you can upgrade.</p>
+</li>
+<li><p>Clear any Sprite Library Assets which you do not want to upgrade.</p>
+</li>
+<li><p>Select the <strong>Upgrade selected</strong> button to begin the upgrading process.</p>
+</li>
+<li><p>The editor then displays a pop-up window to inform you that the upgrade cannot be reverted, and any <a href="https://docs.unity3d.com/Manual/AssetBundlesIntro.html">Asset Bundles</a> connected to the Sprite Libraries will need to be rebuilt. Select <strong>Yes</strong> to proceed with the upgrade, or <strong>No</strong> to cancel the upgrading process.</p>
+</li>
+<li><p>Once the upgrading process is complete, the 2D Animation Asset Upgrader will display the status of the upgrading process for each of the selected assets.</p>
+</li>
+<li><p>Select the <strong>Open upgrade log</strong> button to get more detailed information about the different upgrade warnings and errors that may appear. The upgrade log will also list all the Asset Bundles that need to be rebuilt for the upgrading process.</p>
+</li>
+</ol>
+<h2 id="upgrade-animation-clips">Upgrade Animation Clips</h2>
+<p>Follow these steps to upgrade the Animation Clips in the project:</p>
+<ol>
+<li><p>Open the 2D Animation Asset Upgrader.</p>
+</li>
+<li><p>Select the <strong>Animation Clips</strong> button to open the Animation Clips tab.</p>
+</li>
+<li><p>Select the <strong>Scan project</strong> button. The window then displays a list of all the Animation Clips that you can upgrade.</p>
+</li>
+<li><p>Clear any Animation Clips which you do not want to upgrade.</p>
+</li>
+<li><p>Select the <strong>Upgrade selected</strong> button to begin the upgrading process.</p>
+</li>
+<li><p>The editor then displays a pop-up window to inform you that the upgrade cannot be reverted, and that any Asset Bundles connected to the Animation Clips will need to be rebuilt. Select <strong>Yes</strong> to proceed with the upgrade, or <strong>No</strong> to cancel the upgrading process.</p>
+</li>
+<li><p>Once the upgrading process is complete, the 2D Animation Asset Upgrader will display the status the upgrading process for each of the selected Animation Clips.</p>
+</li>
+<li><p>Select the <strong>Open upgrade log</strong> button to get more detailed information about the upgrade warnings and errors that may appear. The upgrade log will also list all the Asset Bundles that need to be rebuilt for the upgrading process.</p>
+</li>
+</ol>
+<h2 id="common-upgrading-errors-and-solutions">Common upgrading errors and solutions</h2>
+<p>The following are the common errors you may face when upgrading your projects, and their suggested solutions.</p>
+<h3 id="referring-to-the-upgrade-log-for-general-debugging">Referring to the upgrade log for general debugging</h3>
+<p>The first step to debugging an upgrade failure is to refer to the upgrade log. The 2D Animation Asset Upgrader writes each action it takes into the log, helping you to track down the point of failure.</p>
+<pre><code>9/11/2021 2:06:23 PM
+Asset Upgrading
+---------------
+Verifying if the asset Talk (UnityEngine.AnimationClip) is an AnimationClip.
+Extracting SpriteHash bindings from clip. Found 0 bindings.
+Extracting SpriteKey bindings from clip. Found 0 bindings.
+Extracting Category bindings from clip. Found 0 bindings.
+Extracting Label keyframes from clip. Found 3 keyframes.
+Extracting Label bindings from clip. Found 1 bindings.
+Merging different types keyframes from the same bindings, into the same binding list. We now have 1 binding lists.
+Order the keyframe data in binding=Hand by time.
+Converting keyframes into uniformed format for binding=Hand
+Cannot find a category for keyframe at time=0 in binding=Hand.
+Cannot find a category for keyframe at time=3.383333 in binding=Hand.
+Cannot find a category for keyframe at time=4.966667 in binding=Hand.
+Expected 3 keyframes after cleanup for binding=Hand, but ended up with 0.
+The upgrade of the clip Talk failed. Some keyframes could not be converted in the animation clip.
+</code></pre>
+<p>In this example, the upgrade log shows the actions and results from upgrading an Animation Clip that contains only Label hashes, but no Category hashes. The 2D Animation Upgrader writes to the log that it cannot find a Category hash for three out of three keyframes. This results in a failure to upgrade the Animation Clip.</p>
+<h3 id="when-some-keyframes-could-not-be-converted-in-the-animation-clip">When some keyframes could not be converted in the Animation Clip</h3>
+<p>If keyframes can't be converted in the Animation Clip, the Animation Clip displays an error. The tooltip shows the message <strong>The upgrade of the clip failed. Some keyframes could not be converted in the animation clip.</strong>.</p>
+<p>One of the most common reasons for this error is when an Animation Clip contains either Sprite Resolver Category hash keys or Sprite Resolver Label hash keys, but not both types of hash keys at the same time.</p>
+<p><img src="images/AssetUpgrader_Err_CatLabel_InCorrect.png" alt="The Animation window with an incorrect Animation Clip setup where the Animation Clip contains only the Label hash, but not a Category hash.">
+This example shows an incorrect Animation Clip setup where the Animation Clip contains only the Label hash, but not a Category hash, which leads to the above error.</p>
+<p><img src="images/AssetUpgrader_Err_CatLabel_Correct.png" alt="The Animation window with the corrected setup, where the Animation Clip contains both the Label hash and the Category hash.">
+This example shows the corrected setup, where the Animation Clip contains both the Label hash and the Category hash.</p>
+<p>Fix this error by recording a Sprite Swap on the first frame in the Animation Clip. Once the Sprite Swap is added, the 2D Animation Asset Upgrader is able to upgrade the Animation Clip.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/AssetUpgrader.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

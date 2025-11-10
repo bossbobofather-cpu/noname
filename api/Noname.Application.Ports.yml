@@ -1,0 +1,71 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Application.Ports
+  commentId: N:Noname.Application.Ports
+  id: Noname.Application.Ports
+  children:
+  - Noname.Application.Ports.IGameInputReader
+  - Noname.Application.Ports.IGameStateRepository
+  langs:
+  - csharp
+  - vb
+  name: Noname.Application.Ports
+  nameWithType: Noname.Application.Ports
+  fullName: Noname.Application.Ports
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: Noname.Application.Ports.IGameInputReader
+  commentId: T:Noname.Application.Ports.IGameInputReader
+  parent: Noname.Application.Ports
+  isExternal: true
+  href: Noname.Application.Ports.IGameInputReader.html
+  name: IGameInputReader
+  nameWithType: IGameInputReader
+  fullName: Noname.Application.Ports.IGameInputReader
+- uid: Noname.Application.Ports.IGameStateRepository
+  commentId: T:Noname.Application.Ports.IGameStateRepository
+  parent: Noname.Application.Ports
+  isExternal: true
+  href: Noname.Application.Ports.IGameStateRepository.html
+  name: IGameStateRepository
+  nameWithType: IGameStateRepository
+  fullName: Noname.Application.Ports.IGameStateRepository
+- uid: Noname.Application.Ports
+  commentId: N:Noname.Application.Ports
+  isExternal: true
+  href: Noname.html
+  name: Noname.Application.Ports
+  nameWithType: Noname.Application.Ports
+  fullName: Noname.Application.Ports
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.Ports
+    name: Ports
+    isExternal: true
+    href: Noname.Application.Ports.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.Ports
+    name: Ports
+    isExternal: true
+    href: Noname.Application.Ports.html

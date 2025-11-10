@@ -1,0 +1,425 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Core.ValueObjects.GameplayAbilityDefinition
+  commentId: T:Noname.Core.ValueObjects.GameplayAbilityDefinition
+  id: GameplayAbilityDefinition
+  parent: Noname.Core.ValueObjects
+  children:
+  - Noname.Core.ValueObjects.GameplayAbilityDefinition.#ctor
+  - Noname.Core.ValueObjects.GameplayAbilityDefinition.Apply(Noname.Core.Entities.PlayerEntity)
+  - Noname.Core.ValueObjects.GameplayAbilityDefinition.Description
+  - Noname.Core.ValueObjects.GameplayAbilityDefinition.Effects
+  - Noname.Core.ValueObjects.GameplayAbilityDefinition.Id
+  - Noname.Core.ValueObjects.GameplayAbilityDefinition.Title
+  langs:
+  - csharp
+  - vb
+  name: GameplayAbilityDefinition
+  nameWithType: GameplayAbilityDefinition
+  fullName: Noname.Core.ValueObjects.GameplayAbilityDefinition
+  type: Class
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/GameplayAbilityDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: 'public sealed class GameplayAbilityDefinition : ScriptableObject'
+    content.vb: Public NotInheritable Class GameplayAbilityDefinition Inherits ScriptableObject
+  inheritance:
+  - System.Object
+- uid: Noname.Core.ValueObjects.GameplayAbilityDefinition.Apply(Noname.Core.Entities.PlayerEntity)
+  commentId: M:Noname.Core.ValueObjects.GameplayAbilityDefinition.Apply(Noname.Core.Entities.PlayerEntity)
+  id: Apply(Noname.Core.Entities.PlayerEntity)
+  parent: Noname.Core.ValueObjects.GameplayAbilityDefinition
+  langs:
+  - csharp
+  - vb
+  name: Apply(PlayerEntity)
+  nameWithType: GameplayAbilityDefinition.Apply(PlayerEntity)
+  fullName: Noname.Core.ValueObjects.GameplayAbilityDefinition.Apply(Noname.Core.Entities.PlayerEntity)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/GameplayAbilityDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public void Apply(PlayerEntity target)
+    parameters:
+    - id: target
+      type: Noname.Core.Entities.PlayerEntity
+    content.vb: Public Sub Apply(target As PlayerEntity)
+  overload: Noname.Core.ValueObjects.GameplayAbilityDefinition.Apply*
+- uid: Noname.Core.ValueObjects.GameplayAbilityDefinition.#ctor
+  commentId: M:Noname.Core.ValueObjects.GameplayAbilityDefinition.#ctor
+  id: '#ctor'
+  parent: Noname.Core.ValueObjects.GameplayAbilityDefinition
+  langs:
+  - csharp
+  - vb
+  name: GameplayAbilityDefinition()
+  nameWithType: GameplayAbilityDefinition.GameplayAbilityDefinition()
+  fullName: Noname.Core.ValueObjects.GameplayAbilityDefinition.GameplayAbilityDefinition()
+  type: Constructor
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/GameplayAbilityDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public GameplayAbilityDefinition()
+    content.vb: Public Sub New()
+  overload: Noname.Core.ValueObjects.GameplayAbilityDefinition.#ctor*
+  nameWithType.vb: GameplayAbilityDefinition.New()
+  fullName.vb: Noname.Core.ValueObjects.GameplayAbilityDefinition.New()
+  name.vb: New()
+- uid: Noname.Core.ValueObjects.GameplayAbilityDefinition.Id
+  commentId: P:Noname.Core.ValueObjects.GameplayAbilityDefinition.Id
+  id: Id
+  parent: Noname.Core.ValueObjects.GameplayAbilityDefinition
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: GameplayAbilityDefinition.Id
+  fullName: Noname.Core.ValueObjects.GameplayAbilityDefinition.Id
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/GameplayAbilityDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public string Id { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Id As String
+  overload: Noname.Core.ValueObjects.GameplayAbilityDefinition.Id*
+- uid: Noname.Core.ValueObjects.GameplayAbilityDefinition.Title
+  commentId: P:Noname.Core.ValueObjects.GameplayAbilityDefinition.Title
+  id: Title
+  parent: Noname.Core.ValueObjects.GameplayAbilityDefinition
+  langs:
+  - csharp
+  - vb
+  name: Title
+  nameWithType: GameplayAbilityDefinition.Title
+  fullName: Noname.Core.ValueObjects.GameplayAbilityDefinition.Title
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/GameplayAbilityDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public string Title { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Title As String
+  overload: Noname.Core.ValueObjects.GameplayAbilityDefinition.Title*
+- uid: Noname.Core.ValueObjects.GameplayAbilityDefinition.Description
+  commentId: P:Noname.Core.ValueObjects.GameplayAbilityDefinition.Description
+  id: Description
+  parent: Noname.Core.ValueObjects.GameplayAbilityDefinition
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: GameplayAbilityDefinition.Description
+  fullName: Noname.Core.ValueObjects.GameplayAbilityDefinition.Description
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/GameplayAbilityDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public string Description { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public ReadOnly Property Description As String
+  overload: Noname.Core.ValueObjects.GameplayAbilityDefinition.Description*
+- uid: Noname.Core.ValueObjects.GameplayAbilityDefinition.Effects
+  commentId: P:Noname.Core.ValueObjects.GameplayAbilityDefinition.Effects
+  id: Effects
+  parent: Noname.Core.ValueObjects.GameplayAbilityDefinition
+  langs:
+  - csharp
+  - vb
+  name: Effects
+  nameWithType: GameplayAbilityDefinition.Effects
+  fullName: Noname.Core.ValueObjects.GameplayAbilityDefinition.Effects
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/GameplayAbilityDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public IReadOnlyList<GameplayEffectDefinition> Effects { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IReadOnlyList{Noname.Core.ValueObjects.GameplayEffectDefinition}
+    content.vb: Public ReadOnly Property Effects As IReadOnlyList(Of GameplayEffectDefinition)
+  overload: Noname.Core.ValueObjects.GameplayAbilityDefinition.Effects*
+references:
+- uid: Noname.Core.ValueObjects
+  commentId: N:Noname.Core.ValueObjects
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.ValueObjects
+  nameWithType: Noname.Core.ValueObjects
+  fullName: Noname.Core.ValueObjects
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Core.ValueObjects.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Core.ValueObjects.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Noname.Core.ValueObjects.GameplayAbilityDefinition.Apply*
+  commentId: Overload:Noname.Core.ValueObjects.GameplayAbilityDefinition.Apply
+  isExternal: true
+  href: Noname.Core.ValueObjects.GameplayAbilityDefinition.html#Noname_Core_ValueObjects_GameplayAbilityDefinition_Apply_Noname_Core_Entities_PlayerEntity_
+  name: Apply
+  nameWithType: GameplayAbilityDefinition.Apply
+  fullName: Noname.Core.ValueObjects.GameplayAbilityDefinition.Apply
+- uid: Noname.Core.Entities.PlayerEntity
+  commentId: T:Noname.Core.Entities.PlayerEntity
+  parent: Noname.Core.Entities
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html
+  name: PlayerEntity
+  nameWithType: PlayerEntity
+  fullName: Noname.Core.Entities.PlayerEntity
+- uid: Noname.Core.Entities
+  commentId: N:Noname.Core.Entities
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Entities
+  nameWithType: Noname.Core.Entities
+  fullName: Noname.Core.Entities
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Entities
+    name: Entities
+    isExternal: true
+    href: Noname.Core.Entities.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Entities
+    name: Entities
+    isExternal: true
+    href: Noname.Core.Entities.html
+- uid: Noname.Core.ValueObjects.GameplayAbilityDefinition.#ctor*
+  commentId: Overload:Noname.Core.ValueObjects.GameplayAbilityDefinition.#ctor
+  isExternal: true
+  href: Noname.Core.ValueObjects.GameplayAbilityDefinition.html#Noname_Core_ValueObjects_GameplayAbilityDefinition__ctor
+  name: GameplayAbilityDefinition
+  nameWithType: GameplayAbilityDefinition.GameplayAbilityDefinition
+  fullName: Noname.Core.ValueObjects.GameplayAbilityDefinition.GameplayAbilityDefinition
+  nameWithType.vb: GameplayAbilityDefinition.New
+  fullName.vb: Noname.Core.ValueObjects.GameplayAbilityDefinition.New
+  name.vb: New
+- uid: Noname.Core.ValueObjects.GameplayAbilityDefinition.Id*
+  commentId: Overload:Noname.Core.ValueObjects.GameplayAbilityDefinition.Id
+  isExternal: true
+  href: Noname.Core.ValueObjects.GameplayAbilityDefinition.html#Noname_Core_ValueObjects_GameplayAbilityDefinition_Id
+  name: Id
+  nameWithType: GameplayAbilityDefinition.Id
+  fullName: Noname.Core.ValueObjects.GameplayAbilityDefinition.Id
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Noname.Core.ValueObjects.GameplayAbilityDefinition.Title*
+  commentId: Overload:Noname.Core.ValueObjects.GameplayAbilityDefinition.Title
+  isExternal: true
+  href: Noname.Core.ValueObjects.GameplayAbilityDefinition.html#Noname_Core_ValueObjects_GameplayAbilityDefinition_Title
+  name: Title
+  nameWithType: GameplayAbilityDefinition.Title
+  fullName: Noname.Core.ValueObjects.GameplayAbilityDefinition.Title
+- uid: Noname.Core.ValueObjects.GameplayAbilityDefinition.Description*
+  commentId: Overload:Noname.Core.ValueObjects.GameplayAbilityDefinition.Description
+  isExternal: true
+  href: Noname.Core.ValueObjects.GameplayAbilityDefinition.html#Noname_Core_ValueObjects_GameplayAbilityDefinition_Description
+  name: Description
+  nameWithType: GameplayAbilityDefinition.Description
+  fullName: Noname.Core.ValueObjects.GameplayAbilityDefinition.Description
+- uid: Noname.Core.ValueObjects.GameplayAbilityDefinition.Effects*
+  commentId: Overload:Noname.Core.ValueObjects.GameplayAbilityDefinition.Effects
+  isExternal: true
+  href: Noname.Core.ValueObjects.GameplayAbilityDefinition.html#Noname_Core_ValueObjects_GameplayAbilityDefinition_Effects
+  name: Effects
+  nameWithType: GameplayAbilityDefinition.Effects
+  fullName: Noname.Core.ValueObjects.GameplayAbilityDefinition.Effects
+- uid: System.Collections.Generic.IReadOnlyList{Noname.Core.ValueObjects.GameplayEffectDefinition}
+  commentId: T:System.Collections.Generic.IReadOnlyList{Noname.Core.ValueObjects.GameplayEffectDefinition}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IReadOnlyList`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<GameplayEffectDefinition>
+  nameWithType: IReadOnlyList<GameplayEffectDefinition>
+  fullName: System.Collections.Generic.IReadOnlyList<Noname.Core.ValueObjects.GameplayEffectDefinition>
+  nameWithType.vb: IReadOnlyList(Of GameplayEffectDefinition)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of Noname.Core.ValueObjects.GameplayEffectDefinition)
+  name.vb: IReadOnlyList(Of GameplayEffectDefinition)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - uid: Noname.Core.ValueObjects.GameplayEffectDefinition
+    name: GameplayEffectDefinition
+    isExternal: true
+    href: Noname.Core.ValueObjects.GameplayEffectDefinition.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Noname.Core.ValueObjects.GameplayEffectDefinition
+    name: GameplayEffectDefinition
+    isExternal: true
+    href: Noname.Core.ValueObjects.GameplayEffectDefinition.html
+  - name: )
+- uid: System.Collections.Generic.IReadOnlyList`1
+  commentId: T:System.Collections.Generic.IReadOnlyList`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  name: IReadOnlyList<T>
+  nameWithType: IReadOnlyList<T>
+  fullName: System.Collections.Generic.IReadOnlyList<T>
+  nameWithType.vb: IReadOnlyList(Of T)
+  fullName.vb: System.Collections.Generic.IReadOnlyList(Of T)
+  name.vb: IReadOnlyList(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IReadOnlyList`1
+    name: IReadOnlyList
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic

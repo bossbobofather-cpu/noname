@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Sprite Visibility panel | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Sprite Visibility panel | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SpriteVis.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="sprite-visibility-panel">Sprite Visibility panel</h1>
+
+<p>Use the Sprite Visibility panel to increase or decrease the visibility of bones and sprite meshes.</p>
+<p>Toggle the <strong>Sprite Visibility</strong> panel by selecting the <strong>Visibility tool</strong> button along the upper right of the editor window:</p>
+<p><img src="images/Highlighted_Visibility_icon.png" alt="The Visibility button in the Editor window."></p>
+<p>The panel appears on the right-side of the editor window. It has two sliders at the top that control the visibility of the <img src="images/bone_icon.png" alt="Bone icon"> bones and <img src="images/mesh_icon.png" alt="Sprite icon"> Sprite meshes within the editor window. Move either slider further to the left to decrease the visibility of the bones or meshes respectively, and to the right to increase their visibility.</p>
+<p><img src="images/2D-animation-v7-vis-panel.png" alt="The Bone tab displays the Bone hierarchy of the character Prefab. The Sprite tab displays the names of the Sprites and their grouping hierarchy."></p>
+<p>The <strong>Bone</strong> tab displays the <a href="#bone-tab-and-hierarchy-tree">Bone hierarchy</a> of the character Prefab. The <strong>Sprite</strong> tab displays the names of the Sprites and their grouping hierarchy.</p>
+<h2 id="bone-tab-and-hierarchy-tree">Bone tab and hierarchy tree</h2>
+<p>Select the <strong>Bone</strong> tab to view the list of bones in the character Prefab. The list reflects the hierarchy of bones you created with the <a href="SkinEdToolsShortcuts.html#bone-tools">Bone tools</a>. You can reparent and reorder bones directly from the bone tab by dragging selected bones up and down the list. Toggle the visibility of each bone by selecting the <img src="images/visibility_icon.png" alt="Visibility icon"> icon next to it.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="images/visibility_icon.png" alt="Visibility"></td>
+<td>Toggle the visibility of each bone by selecting this icon next to the bone.</td>
+</tr>
+<tr>
+<td><img src="images/visibility_icon.png" alt="Visibility"> +Alt (macOS: +Option)</td>
+<td>Toggle the visibility of a bone and its children by selecting this icon while holding Alt (macOS: holding Option).</td>
+</tr>
+<tr>
+<td><strong>Bone</strong></td>
+<td>The name of the Bone.</td>
+</tr>
+<tr>
+<td><strong>Depth</strong></td>
+<td>Displays the Z-value of bones that are influencing the same Sprite Mesh. The parts of the Mesh that is influenced by a bone with higher <strong>Depth</strong> value will render in front of the Mesh influenced by bones with lower <strong>Depth</strong> value. <br>A bone’s <strong>Depth</strong> value is 0 by default.</td>
+</tr>
+<tr>
+<td><strong>Color</strong></td>
+<td>The color of the Bone.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sprite-tab">Sprite tab</h2>
+<p>Select the <strong>Sprite tab</strong> to see the list of Sprites that make up the character Prefab in the Skinning editor window. The names  and order of the Sprites mirror their names, layer and grouping order in the original source file. Toggle the visibility of a Layer by selecting the <img src="images/visibility_icon.png" alt="Visibility icon"> icon next to it. Hold Alt (macOS: hold Option) to view it in isolation and hide every other Layer.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SpriteVis.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

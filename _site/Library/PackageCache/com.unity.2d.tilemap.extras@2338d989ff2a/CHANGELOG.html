@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Changelog | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Changelog | mysite ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.tilemap.extras@2338d989ff2a/CHANGELOG.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="changelog">Changelog</h1>
+
+<p>All notable changes to this package will be documented in this file.</p>
+<p>The format is based on <a href="http://keepachangelog.com/en/1.0.0/">Keep a Changelog</a></p>
+<h2 id="501---2025-06-12">[5.0.1] - 2025-06-12</h2>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>[AutoTileEditor] Fix exception thrown when texture count is reduced</li>
+</ul>
+<h2 id="500---2025-05-16">[5.0.0] - 2025-05-16</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>[AutoTile] Add Random property. AutoTile randomly picks a Sprite if multiple Sprites share the same mask. Otherwise, uses the first Sprite set with the mask.</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Update minimum Unity version.</li>
+</ul>
+<h3 id="fixed-1">Fixed</h3>
+<ul>
+<li>[AutoTileEditor] Only clear entries for current Texture when loading an AutoTileTemplate for the selected Texture</li>
+<li>[AutoTileEditor] Improve duplication checks for entries across multiple Textures</li>
+</ul>
+<h2 id="430---2025-01-17">[4.3.0] - 2025-01-17</h2>
+<h3 id="fixed-2">Fixed</h3>
+<ul>
+<li>[AutoTile] Add AutoTile to Table of Contents</li>
+<li>[AutoTile] Add warning when loading an asset which is not an AutoTileTemplate when loading an AutoTileTemplate</li>
+<li>[AutoTileEditor] Set better limits for Texture Scale depending on size of original Texture</li>
+<li>[AutoTileEditor] Save set Texture Scale</li>
+<li>[RuleTileEditor] Set expansion limits for TilingRule to a maximum of 10</li>
+<li>[RuleTileEditor] Set default properties to TilingRule when adding a new TilingRule</li>
+<li>[Editor] Set an upper limit of 1000 for editable collection sizes</li>
+</ul>
+<h2 id="421---2024-12-10">[4.2.1] - 2024-12-10</h2>
+<h3 id="fixed-3">Fixed</h3>
+<ul>
+<li>[AutoTile] Fix AutoTile Create Asset menu item</li>
+</ul>
+<h2 id="420---2024-12-05">[4.2.0] - 2024-12-05</h2>
+<h3 id="added-1">Added</h3>
+<ul>
+<li>[AutoTile] Add AutoTile</li>
+<li>[RuleTile] Add RuleTileTemplate to save RuleTile rules</li>
+</ul>
+<h2 id="410---2024-09-18">[4.1.0] - 2024-09-18</h2>
+<h3 id="fixed-4">Fixed</h3>
+<ul>
+<li>[GameObjectBrush] Allow expansion of SceneRoot Grid foldout when clicking on label</li>
+<li>[GridInformation] Fix exception when serializing GridInformation component if component is part of a Prefab</li>
+<li>Remove dependency on com.unity.ugui</li>
+</ul>
+<h2 id="402---2023-08-21">[4.0.2] - 2023-08-21</h2>
+<h3 id="fixed-5">Fixed</h3>
+<ul>
+<li>[GameObjectBrush] Use cell offset to determine location of GameObject when painting and erasing</li>
+</ul>
+<h2 id="401---2023-04-26">[4.0.1] - 2023-04-26</h2>
+<h3 id="fixed-6">Fixed</h3>
+<ul>
+<li>[GameObjectBrush] Set HideFlags of instantiated GameObject to HideFlags.None when painting</li>
+<li>[GridInformation] Fix serialization of GridInformationKey/Value</li>
+</ul>
+<h2 id="400---2023-03-07">[4.0.0] - 2023-03-07</h2>
+<h3 id="added-2">Added</h3>
+<ul>
+<li>[RuleTile] Add RotatedMirror rule which checks neighbors using both the mirror and rotation Rule in addition to the
+standard rotation Rule</li>
+</ul>
+<h3 id="fixed-7">Fixed</h3>
+<ul>
+<li>[GameObjectBrush] Validate size of GameObjectBrush when it changes</li>
+</ul>
+<h2 id="400-pre3---2022-11-23">[4.0.0-pre.3] - 2022-11-23</h2>
+<h3 id="fixed-8">Fixed</h3>
+<ul>
+<li>[TintBrush] Replace obsolete method calls.</li>
+<li>[TintBrushSmooth] Replace obsolete method calls.</li>
+<li>[GameObjectBrush] Fix placement of GameObjects for Hexagon Layouts with Anchor</li>
+<li>[GameObjectBrush] Align rotation and flip to 2D View in Editor</li>
+<li>[RandomBrush] Use default color and transform when painting over with RandomBrush</li>
+</ul>
+<h3 id="added-3">Added</h3>
+<ul>
+<li>[AnimatedTileEditor] Add field to change TileAnimationFlags</li>
+</ul>
+<h3 id="changed-1">Changed</h3>
+<ul>
+<li>[AnimatedTileEditor] Moved to Unity.2d.Tilemap.Extras.Editor</li>
+</ul>
+<h2 id="400-pre2---2022-11-03">[4.0.0-pre.2] - 2022-11-03</h2>
+<h3 id="changed-2">Changed</h3>
+<ul>
+<li>[RandomBrush] Add RenderStaticPreview for RandomBrush</li>
+<li>[TintBrush] Add RenderStaticPreview for TintBrush</li>
+<li>[GameObjectBrush] Add RenderStaticPreview for GameObjectBrush</li>
+<li>[GameObjectBrush] Add shouldSaveBrushForSelection for GameObjectBrush</li>
+<li>[GridBrush] Add icons for brushes</li>
+</ul>
+<h3 id="fixed-9">Fixed</h3>
+<ul>
+<li>[LineBrush] Do not serialize lineStartActive</li>
+</ul>
+<h2 id="400-pre1---2022-10-04">[4.0.0-pre.1] - 2022-10-04</h2>
+<ul>
+<li>Update version to 4.0.0-pre.1 for Unity 2023.1</li>
+</ul>
+<h3 id="fixed-10">Fixed</h3>
+<ul>
+<li>[GridInformation] Implement IEquatable for GridInformationKey</li>
+<li>[PrefabRandomBrush] Fix possible NullReferenceException in PrefabRandomBrush</li>
+<li>[GameObjectBrush] Fix placement of GameObjects when Cell Gap is set</li>
+</ul>
+<h2 id="302---2022-04-01">[3.0.2] - 2022-04-01</h2>
+<h3 id="fixed-11">Fixed</h3>
+<ul>
+<li>[RuleOverrideTile] -Mark RuleOverrideTile InstanceTile as dirty when overriding RuleTile for the RuleOverrideTile
+changes</li>
+<li>[RuleOverrideTile] -Fix undo for RuleOverrideTile when overriding RuleTile has changed</li>
+<li>[RuleTileEditor] -Fix height for ReorderableList when extending the view for marking Rules</li>
+</ul>
+<h2 id="301---2022-03-03">[3.0.1] - 2022-03-03</h2>
+<h3 id="fixed-12">Fixed</h3>
+<ul>
+<li>[AnimatedTileEditor] -Fix undo when setting number of Sprites for Animated Tile</li>
+<li>[RuleTile] -Fix data for custom container fields not being transferred in RuleOverrideTiles overriding a Custom Rule
+Tile</li>
+<li>[RuleTileEditor] -Fix undo when setting number of Rules for Rule Tile</li>
+<li>[RuleTileEditor] -Use different text color for Extend Neighbors with dark and light skin</li>
+</ul>
+<h2 id="300---2021-08-06">[3.0.0] - 2021-08-06</h2>
+<ul>
+<li>Update version to 3.0.0 for Unity 2022.1</li>
+</ul>
+<h3 id="changed-3">Changed</h3>
+<ul>
+<li>[GameObjectBrush] Add canChangePosition</li>
+<li>[GameObjectBrush] Use GridLayout from BrushTarget if it has one</li>
+<li>[HexagonalRuleTile] Fix GetOffsetPositionReverse</li>
+<li>[RuleOverrideTile] Create instance Tile on override</li>
+<li>[RuleTile] Add scripting documentation</li>
+<li>[RuleTileEditor] Add drag and drop rect for Sprites to create initial TilingRules</li>
+<li>[RuleTileEditor] Add field to change number of TilingRules</li>
+<li>[RuleTileEditor] Add blank space to the end of the Rule list</li>
+<li>[RuleTileEditor] Add undo for changes</li>
+<li>[AnimatedTileEditor] Add undo for changes</li>
+<li>[TintBrush] Convert cell positions to world positions based on the Grid used</li>
+<li>[TintBrush] Add k_ScaleFactor for better precision when painting on non-rectangular Tilemaps</li>
+</ul>
+<h3 id="fixed-13">Fixed</h3>
+<ul>
+<li>[RuleTile] Fixed error in RuleTileEditor when removing all Rules and adding a new Rule</li>
+</ul>
+<h2 id="220---2021-06-01">[2.2.0] - 2021-06-01</h2>
+<h3 id="changed-4">Changed</h3>
+<ul>
+<li>[RuleTileEditor] Add tooltips to fields</li>
+<li>Add required package dependencies</li>
+</ul>
+<h2 id="210---2021-05-06">[2.1.0] - 2021-05-06</h2>
+<h3 id="changed-5">Changed</h3>
+<ul>
+<li>[RuleTile] Improve performance of RuleTile caching</li>
+<li>[RuleTileEditor] Allow non-public fields with the SerializeField attribute as custom fields for RuleTile</li>
+<li>Make U2DExtrasPlaceholder internal</li>
+</ul>
+<h3 id="fixed-14">Fixed</h3>
+<ul>
+<li>[RuleTileEditor] Fix exception when adding a new Rule when no Rule is selected</li>
+</ul>
+<h2 id="200---2021-03-17">[2.0.0] - 2021-03-17</h2>
+<ul>
+<li>Update version to 2.0.0</li>
+</ul>
+<h2 id="200-pre3---2021-02-19">[2.0.0-pre.3] - 2021-02-19</h2>
+<ul>
+<li>[HexagonalRuleTile] Fix issue with mirror rule</li>
+<li>[RuleTile] Add min and max animation speedup</li>
+<li>[RuleOverrideTile] Fix import issue when upgrading from a previous version of RuleOverrideTile</li>
+<li>[RuleTileEditor] Add new rule below selected rule in RuleTileEditor</li>
+<li>[RuleTileEditor] Add dropdown to duplicate Rule</li>
+</ul>
+<h2 id="200-pre2---2020-11-26">[2.0.0-pre.2] - 2020-11-26</h2>
+<h3 id="changed-6">Changed</h3>
+<ul>
+<li>Update documentation</li>
+<li>Add contribution notice in README.md</li>
+<li>Update Third Party Notices.md</li>
+<li>[PrefabBush] Add pick</li>
+<li>[PrefabBush] Add tooltip for &quot;Erase Any Objects&quot; field</li>
+<li>[PrefabBrush][GameObjectBrush] Account for Anchor when using GetObjectsInCell in PrefabBrush and GameObjectBrush</li>
+<li>[CustomRuleTileScript] Allow Custom Rule Tile template script to be created regardless of where template script is
+installed (from a package or in the project)</li>
+</ul>
+<h2 id="200-pre1---2020-10-14">[2.0.0-pre.1] - 2020-10-14</h2>
+<ul>
+<li>Update version to 2.0.0-pre.1</li>
+</ul>
+<h2 id="162-preview---2020-09-25">[1.6.2-preview] - 2020-09-25</h2>
+<h3 id="changed-7">Changed</h3>
+<ul>
+<li>[RuleTile/RuleOverrideTile/AdvancedRuleOverrideTile] Renamed Game Object to GameObject</li>
+<li>[RuleTile] Fix menu order for RuleOverrideTile</li>
+<li>[RuleOverrideTile] Fix menu order for RuleOverrideTile</li>
+<li>[AdvancedRuleOverrideTile] Fix Rule toggle for AdvancedRuleOverrideTile</li>
+<li>[GameObjectBrush] Use correct position when ClearSceneCell</li>
+<li>[GameObjectBrush] Update cells when size changes</li>
+<li>[GameObjectBrush] Clear cell for Prefabs</li>
+<li>[LineBrush] Clear previews from base.OnPaintSceneGUI</li>
+<li>[PrefabBrush] Fix box erase</li>
+</ul>
+<h2 id="161-preview---2020-08-11">[1.6.1-preview] - 2020-08-11</h2>
+<h3 id="changed-8">Changed</h3>
+<ul>
+<li>Update samples</li>
+</ul>
+<h2 id="160-preview---2020-05-27">[1.6.0-preview] - 2020-05-27</h2>
+<h3 id="changed-9">Changed</h3>
+<ul>
+<li>Updated for Unity 2020.1</li>
+<li>[GameObjectBrush] Allow painting, erasing and picking on Tile Palette</li>
+<li>[GameObjectBrush] Add Paint on Scene view to GameObjectBrush</li>
+<li>[PrefabBush] Add BoxFill to PrefabBrush</li>
+<li>[PrefabBush] Add Rotation to PrefabBrush</li>
+<li>Consolidated menu items</li>
+</ul>
+<h2 id="150-preview---2020-02-14">[1.5.0-preview] - 2020-02-14</h2>
+<h3 id="added-4">Added</h3>
+<ul>
+<li>Added CONTRIBUTING.md</li>
+<li>Updated LICENSE.md</li>
+</ul>
+<h3 id="added-5">Added</h3>
+<ul>
+<li>[PrefabRandomBrush] Split functionality of PrefabBrush to PrefabBrush and PrefabRandomBrush</li>
+<li>[PrefabBrush/PrefabRandomBrush] Add Erase Any Objects toggle to choose between erasing any Objects or Objects in the
+Brush</li>
+</ul>
+<h3 id="changed-10">Changed</h3>
+<ul>
+<li>Consolidated menu items</li>
+</ul>
+<h3 id="fixed-15">Fixed</h3>
+<ul>
+<li>[WeightedRandomTile] Fixed WeightedRandomTile messing up Random.seed!</li>
+</ul>
+<h2 id="140---2020-01-07">[1.4.0] - 2020-01-07</h2>
+<h3 id="added-6">Added</h3>
+<ul>
+<li>[RuleTile / HexagonalRuleTile / IsometricRuleTile / RuleOverrideTile] Added Asset Preview for TilingRules</li>
+<li>[RuleTile] Hidden Rule field</li>
+<li>[CustomRuleTile] Support custom field of Object type</li>
+<li>[CustomRuleTile] Support HideInInspector, DontOverride attributes</li>
+<li>[RuleOverrideTile] Move advanced mode to AdvancedRuleOverrideTile</li>
+<li>[RuleOverrideTile] Add GameObject overrides</li>
+<li>[RuleOverrideTile] List height lessen</li>
+<li>[RuleOverrideTile] Don't override null sprite</li>
+<li>[RuleOverrideTile] Add static preview</li>
+<li>[AdvancedRuleOverrideTile] List GUI simplify</li>
+<li>[RuleOverrideTile / AdvancedRuleOverrideTile] Show unused overrides</li>
+<li>[RuleOverrideTile / AdvancedRuleOverrideTile] Support multiple inheritance</li>
+<li>[RuleOverrideTile / AdvancedRuleOverrideTile] Prevent circular reference</li>
+<li>[AnimatedTile] Added Animation Start Frame which helps to calculate the Animation Start Time for a given Tilemap</li>
+</ul>
+<h3 id="fixed-16">Fixed</h3>
+<ul>
+<li>[RuleTile] Fixed RuleTile InstantiatedGameObject rotation/scale</li>
+<li>[RuleTile] Fixed override tiles have not update when default properties changed</li>
+<li>[AdvancedRuleOverrideTile] Fix override rule lost reference when source rule reorder</li>
+<li>[PrefabBrush] Use WorldToCell comparison when getting GameObjects using PrefabBrush</li>
+</ul>
+<h2 id="131---2019-11-06">[1.3.1] - 2019-11-06</h2>
+<h3 id="changed-11">Changed</h3>
+<ul>
+<li>[RuleTile] Simplified</li>
+<li>[RuleTile] Caching all RuleTile neighbor positions for Tilemap to speedup refresh affected tiles</li>
+</ul>
+<h3 id="fixed-17">Fixed</h3>
+<ul>
+<li>[RuleTile] Fix remote positions missing of MirrorXY (#148)</li>
+<li>[HexagonalRuleTile] Fix ApplyRandomTransform() of HexagonalRuleTile missing MirrorXY case</li>
+<li>[RuleOverrideTile] Fix RuleOverrideTile does not refresh when add/remove rule</li>
+<li>[RuleTile] Fix random rotation calculation mistake</li>
+<li>[RuleTile] Fix cache data will not update when rule change</li>
+</ul>
+<h2 id="130---2019-11-01">[1.3.0] - 2019-11-01</h2>
+<h3 id="changed-12">Changed</h3>
+<ul>
+<li>[RuleTile] changed from using index to using position.</li>
+<li>[RuleTile] Additional storage rule position.</li>
+<li>[RuleTile] Delete DontCare rule.</li>
+<li>[RuleTile] Rule list increased Extend Neighbor toggle. When selected, it will increase the rule range that can be set.</li>
+<li>[RuleTile] No longer fixed to checking around 8 rules.</li>
+<li>[RuleTile] RefreshTile() will refresh affected remote Tiles.</li>
+<li>[RuleTile] Delete GetMatchingNeighboringTiles(), no longer get nearby Tiles in advance, the performance is affected. (
+may be changed to cache later)</li>
+<li>[IsometricRuleTile] Rewrite.</li>
+<li>[HexagonalRuleTile] Rewrite.</li>
+<li>[LineBrush] Fix for Tiles disappear after selection and drag with LineBrush</li>
+<li>[RuleTile] Add MirrorXY Transform Rule</li>
+</ul>
+<h2 id="120---2019-10-17">[1.2.0] - 2019-10-17</h2>
+<h3 id="changed-13">Changed</h3>
+<ul>
+<li>[PrefabBrush] Erase GameObjects at target position before painting</li>
+<li>[RuleTileEditor] Made RuleTileEditor and children public</li>
+<li>[RuleTile] Roll back m_Self to this.</li>
+<li>[RuleOverrideTile] Remove m_OverrideSelf property.</li>
+<li>[RuleOverrideTile] Inherit custom properties from custom RuleTile.</li>
+<li>[RuleOverrideTile] Change m_RuntimeTile to m_InstanceTile.</li>
+</ul>
+<h2 id="110---2019-08-23">[1.1.0] - 2019-08-23</h2>
+<h3 id="changed-14">Changed</h3>
+<ul>
+<li>Validate Gap and Limit for GroupBrush</li>
+<li>Fix z iterator for RandomBrush</li>
+<li>Check randomTileSets on addToRandomTiles</li>
+<li>Add Anchor to GameObjectBrush and PrefabBrush</li>
+</ul>
+<h2 id="110---2019-03-22">[1.1.0] - 2019-03-22</h2>
+<h3 id="changed-15">Changed</h3>
+<ul>
+<li>Copy GameObject when copying TilingRule in RuleOverrideTile</li>
+</ul>
+<h2 id="110---2019-03-08">[1.1.0] - 2019-03-08</h2>
+<h3 id="added-7">Added</h3>
+<ul>
+<li>Added com.unity.2d.tilemap as a dependency of com.unity.2d.tilemap.extras</li>
+</ul>
+<h3 id="changed-16">Changed</h3>
+<ul>
+<li>Custom Grid Brushes have been updated to the UnityEditor.Tilemaps namespace</li>
+</ul>
+<h2 id="100---2019-01-02">[1.0.0] - 2019-01-02</h2>
+<h3 id="this-is-the-first-release-of-tilemap-extras-as-a-package">This is the first release of Tilemap Extras, as a Package</h3>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.tilemap.extras@2338d989ff2a/CHANGELOG.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

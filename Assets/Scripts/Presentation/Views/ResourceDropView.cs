@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Noname.Presentation.Views
 {
+    /// <summary>
+    /// 자원 드롭의 시각적 상태(대기, 플레이어에게 이동)를 표현합니다.
+    /// </summary>
     public sealed class ResourceDropView : MonoBehaviour
     {
         [Header("Idle Motion")]
@@ -25,6 +28,9 @@ namespace Noname.Presentation.Views
         private float _travelTimer;
         private Action<int> _onTravelCompleted;
 
+        /// <summary>
+        /// 드롭 ID를 설정하고 초기 위치를 기록합니다.
+        /// </summary>
         public void Initialize(int dropId, ResourceDropType type)
         {
             _dropId = dropId;
@@ -45,6 +51,9 @@ namespace Noname.Presentation.Views
             }
         }
 
+        /// <summary>
+        /// 플레이어 앵커를 향해 이동을 시작하고 완료 시 콜백을 호출합니다.
+        /// </summary>
         public void BeginPickupTravel(Transform target, Action<int> onCompleted)
         {
             if (target == null)

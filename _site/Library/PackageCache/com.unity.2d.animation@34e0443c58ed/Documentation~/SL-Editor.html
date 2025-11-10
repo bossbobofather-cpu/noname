@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Sprite Library Editor fundamentals | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Sprite Library Editor fundamentals | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SL-Editor.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="sprite-library-editor-fundamentals">Sprite Library Editor fundamentals</h1>
+
+<p>The Sprite Library Editor window is where you edit the content of a selected <a href="SL-Asset.html">Sprite Library Asset</a>. Select a Sprite Library Asset and then select <strong>Open in Sprite Library Editor</strong> in its Inspector window to open this editor. You can also open the Sprite Library Editor window directly by going to  <strong>Window</strong> &gt; <strong>2D</strong> &gt; <strong>Sprite Library Editor</strong>.</p>
+<p>A Sprite Library Asset groups the sprites it contains into <a href="#categories">Categories</a> and <a href="#labels">Labels</a>, and you edit their contents in the Sprite Library Editor window. This page shows you the <a href="#useful-editor-features">basic features</a> of the Sprite Library Editor and how to begin editing a Sprite Library Asset.</p>
+<h2 id="categories">Categories</h2>
+<p><img src="images/2D-animation-SLAsset-add-category.png" alt="The Sprite Library Editor. The Categories column is on the left, and a new Category is being created."><br><em>Creating a new Category in the Categories column.</em></p>
+<p>Use <strong>Categories</strong> to contain and group <strong>Labels</strong> together for a common purpose to make it easier to organize your sprites. For example, you can create a Category named 'Hat' for Labels which refer to sprites of hats for your character.</p>
+<p>To create a new Category, select <strong>Add (+)</strong> in the Categories column, or <a href="SL-Drag.html">drag</a> sprites directly into the Sprite Library Editor window. Give each Category a unique name to ensure that the editor correctly identifies each individual Category.</p>
+<h3 id="local-and-inherited-categories">Local and inherited Categories</h3>
+<p>There are two types of Categories:</p>
+<ul>
+<li><strong>Local</strong>: A Local Category is a Category created in the open Sprite Library Asset in the editor window.</li>
+<li><strong>Inherited</strong>: An Inherited Category is a Category retrieved from the Sprite Library Asset set as the <a href="SL-Editor-UI.html#main-library">Main Library</a>.</li>
+</ul>
+<p><strong>Note</strong>: You can't rename inherited Categories, to ensure that the Category names in the <a href="SL-Asset.html#create-a-sprite-library-asset-variant">Sprite Library Asset Variant</a> matches the originals in the Main Library. This ensures that the Variant asset can inherit all Categories and Labels from the Main Library.</p>
+<p>To make changes to an inherited Category's content, you can create <a href="SL-Main-Library.html#create-overrides">overrides</a> to an inherited Category or Label such as adding new Labels or changing the Sprite an inherited Label references instead.</p>
+<h2 id="labels">Labels</h2>
+<p>A Category contains multiple Labels, with each Label referencing a single sprite in the project. When you are <a href="SpriteSwapSetup.html">setting up for Sprite Swap</a>, Labels with similar functions are commonly placed in the same Category. For example, a Category named 'Hats' may contain Labels which each reference a different hat sprite.</p>
+<p>To create a new Label, select <strong>Add (+)</strong> in the Labels column, or <a href="SL-Drag.html">drag</a> Sprite directly into the Sprite Library Editor window.</p>
+<p><strong>Note:</strong> If a Label is inherited from a Main Library and exists in an <a href="#local-and-inherited-categories">inherited Category</a>, you can't rename the inherited Label to ensure that it matches the original's name in the Main Library. This ensures that the Variant asset can inherit all Categories and Labels from the Main Library.</p>
+<p>You can create new Labels or edit the sprite reference of an inherited Label as <a href="SL-Main-Library.html#create-overrides">overrides</a> to an inherited Category or Label. Refer to <a href="SL-Main-Library.html">Overrides in the Main Library</a> for more information.</p>
+<h2 id="useful-editor-features">Useful editor features</h2>
+<p>The following editor features make it more convenient to edit the contents of a Sprite Library Asset. For more information about all available editor features, refer to the <a href="SL-Editor-UI.html">Sprite Library Editor reference</a>.</p>
+<h3 id="navigate-between-different-assets">Navigate between different assets</h3>
+<p><img src="images/2D-animation-SLAsset-breadcrumbs.png" alt="The breadcrumb trail at the top of the Sprite Library Editor window."></p>
+<p>When you open a Sprite Library Asset Variant in the Sprite Library Editor, you can use the Sprite Library Editor breadcrumb trail to navigate between different Sprite Library Assets that the opened asset inherits from. Select an asset in the breadcrumb trail to select it in the Project window.</p>
+<h3 id="toggle-between-list-or-grid-view">Toggle between list or grid view</h3>
+<p>You can view the sprite content of Labels in a list or in a grid. To toggle between these two views, select the respective icon at the lower right of the editor window, and use the slider to adjust the size of the visual preview.</p>
+<h3 id="filter-categories-and-labels-by-name">Filter Categories and Labels by name</h3>
+<p>Filter the Categories and Labels by entering a text string into the filter bar in the upper right of the window. You can adjust the parameters of the filter by using the <a href="SL-Editor-UI.html#filter-context-menu">filter context menu</a>.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="SL-Editor-UI.html">Sprite Library Editor reference</a></li>
+<li><a href="SL-Drag.html">Drag sprites to create or edit Categories and Labels</a></li>
+<li><a href="SL-Main-Library.html">Overrides to the Main Library</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SL-Editor.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

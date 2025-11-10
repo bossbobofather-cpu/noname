@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Append Node | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Append Node | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.shadergraph@287dd3fa176c/Documentation~/Append-Node.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="append-node">Append Node</h1>
+
+<h2 id="description">Description</h2>
+<p>Creates a new vector <strong>Out</strong> by combining the channels of input <strong>A</strong> followed by the channels of input <strong>B</strong>.
+Inputs <strong>A</strong> and <strong>B</strong> can have up to <strong>three</strong> channels.</p>
+<p><strong>Out</strong> can have <strong>two</strong> to <strong>four</strong> channels, depending on the combination of channels of the inputs.</p>
+<p>Input <strong>A</strong> channels take priority over input <strong>B</strong> to combine up to a maximum of <strong>four</strong> in the output.</p>
+<h2 id="ports">Ports</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Direction</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Binding</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">A</td>
+<td style="text-align: left;">Input</td>
+<td style="text-align: left;">Dynamic</td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">First input value</td>
+</tr>
+<tr>
+<td style="text-align: left;">B</td>
+<td style="text-align: left;">Input</td>
+<td style="text-align: left;">Dynamic</td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">Second input value</td>
+</tr>
+<tr>
+<td style="text-align: left;">Out</td>
+<td style="text-align: left;">Output</td>
+<td style="text-align: left;">Dynamic</td>
+<td style="text-align: left;">None</td>
+<td style="text-align: left;">Combined vector from A and B</td>
+</tr>
+</tbody>
+</table>
+<h2 id="example-graph-usage">Example graph usage</h2>
+<p>In the following example, an <strong>Append</strong> node combines a <strong>Vector 2</strong> and a <strong>Float</strong>. The resulting output vector has 3 channels: the <strong>X</strong> and <strong>Y</strong> from the <strong>Vector 2</strong>, and the <strong>X</strong> from the <strong>Float</strong>.</p>
+<p>Notice that with an Append node, you don't need to use a Split node to break up the Vector 2 into individual channels, then a Combine node to combine the 3 separate channels.</p>
+<p><img src="images/sg-append-node-example.png" alt="An image of the Graph window that shows a Vector 2 node and a Float node with their outputs connected to the inputs of an Append node."></p>
+<h2 id="generated-code-example">Generated Code Example</h2>
+<p>The following example code represents one possible outcome of this node for different inputs combinations.</p>
+<h3 id="vector2-and-float">Vector2 and Float</h3>
+<pre><code>float3 Append_Out = float3( A.xy, B.x);
+</code></pre>
+<h3 id="float-and-vector3">Float and Vector3</h3>
+<pre><code>float4 Append_Out = float4( A.x, B.xyz);
+</code></pre>
+<h3 id="vector3-and-vector2">Vector3 and Vector2</h3>
+<pre><code>float4 Append_Out = float4( A.xyz, B.x);
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.shadergraph@287dd3fa176c/Documentation~/Append-Node.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

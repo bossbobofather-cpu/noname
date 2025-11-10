@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Noname.Application.Ports;
 using Noname.Application.Services;
@@ -12,6 +12,9 @@ using UnityEngine;
 
 namespace Noname.Presentation.ViewModels
 {
+    /// <summary>
+    /// 입력, 시뮬레이션, 이벤트 브로커 역할을 통합하는 최상위 뷰모델입니다.
+    /// </summary>
     public sealed class GameViewModel
     {
         private const int AbilityChoicesCount = 3;
@@ -32,6 +35,9 @@ namespace Noname.Presentation.ViewModels
         private float _initialAbilityDelayRemaining;
         private int _pendingAbilitySelections;
 
+        /// <summary>
+        /// 턴 진행에 필요한 유즈케이스와 서비스를 주입합니다.
+        /// </summary>
         public GameViewModel(
             StartGameUseCase startGame,
             MovePlayerUseCase movePlayer,
@@ -46,26 +52,48 @@ namespace Noname.Presentation.ViewModels
             _repository = repository;
         }
 
+        /// <summary>플레이어 위치가 변경될 때 발생합니다.</summary>
         public event Action<Float2> PlayerPositionChanged;
+        /// <summary>거점 현재/최대 체력이 변경될 때 발생합니다.</summary>
         public event Action<float, float> FortressHealthChanged;
+        /// <summary>새 적이 스폰되면 호출됩니다.</summary>
         public event Action<EnemyEntity> EnemySpawned;
+        /// <summary>적이 제거됐을 때 호출됩니다.</summary>
         public event Action<int> EnemyRemoved;
+        /// <summary>적 위치가 갱신됐을 때 호출됩니다.</summary>
         public event Action<int, Float2> EnemyPositionChanged;
+        /// <summary>적 체력이 변했을 때 호출됩니다.</summary>
         public event Action<int, float> EnemyHealthChanged;
+        /// <summary>거점이 피해를 입을 때 피해량을 전달합니다.</summary>
         public event Action<float> FortressDamaged;
+        /// <summary>플레이어 투사체 발사 이벤트.</summary>
         public event Action<PlayerProjectileFiredEvent> PlayerProjectileFired;
+        /// <summary>적 투사체 발사 이벤트.</summary>
         public event Action<EnemyProjectileFiredEvent> EnemyProjectileFired;
+        /// <summary>투사체 충돌 이벤트.</summary>
         public event Action<ProjectileImpactEvent> ProjectileImpactOccurred;
+        /// <summary>새 자원 드롭이 생성됐을 때 호출됩니다.</summary>
         public event Action<ResourceDropSpawnedEvent> ResourceDropSpawned;
+        /// <summary>자원 드롭이 수집됐을 때 호출됩니다.</summary>
         public event Action<ResourceDropCollectedEvent> ResourceDropCollected;
+        /// <summary>플레이어 경험치/레벨 상태가 바뀌면 호출됩니다.</summary>
         public event Action<float, float, int> PlayerExperienceChanged;
+        /// <summary>어빌리티 선택지가 준비됐음을 알립니다.</summary>
         public event Action<GameplayAbilityDefinition[]> AbilityChoicesPresented;
+        /// <summary>어빌리티 선택 UI가 닫혔음을 알립니다.</summary>
         public event Action AbilitySelectionCleared;
+        /// <summary>게임이 특정 이유로 일시 정지됐음을 알립니다.</summary>
         public event Action<GameViewPauseReason> GamePaused;
+        /// <summary>일시 정지가 해제됐음을 알립니다.</summary>
         public event Action<GameViewPauseReason> GameResumed;
+        /// <summary>거점 파괴 등으로 게임이 끝났을 때 호출됩니다.</summary>
         public event Action GameOver;
+        /// <summary>폭격 고정 지점이 설정/해제될 때 호출됩니다.</summary>
         public event Action<Float2?> BombardmentPointChanged;
 
+        /// <summary>
+        /// 설정 값을 주입하고 상태를 초기화합니다.
+        /// </summary>
         public void Initialize(DefenseGameSettings settings)
         {
             _settings = settings;
@@ -96,6 +124,9 @@ namespace Noname.Presentation.ViewModels
             BombardmentPointChanged?.Invoke(null);
         }
 
+        /// <summary>
+        /// 입력 처리, 시뮬레이션 실행, 이벤트 브로드캐스트를 수행합니다.
+        /// </summary>
         public void Tick(float deltaTime)
         {
             var state = _repository.State;
@@ -177,6 +208,9 @@ namespace Noname.Presentation.ViewModels
             }
         }
 
+        /// <summary>
+        /// 표시 중인 어빌리티 목록에서 index에 해당하는 항목을 적용합니다.
+        /// </summary>
         public void SelectAbility(int index)
         {
             if (!_isPausedForAbilitySelection || _currentAbilityChoices == null || index < 0 || index >= _currentAbilityChoices.Length)
@@ -201,6 +235,9 @@ namespace Noname.Presentation.ViewModels
             }
         }
 
+        /// <summary>
+        /// (디버그) 조건과 상관없이 어빌리티 선택 단계를 강제로 엽니다.
+        /// </summary>
         public bool ForceAbilitySelection()
         {
             if (_pendingAbilitySelections <= 0)
@@ -211,6 +248,9 @@ namespace Noname.Presentation.ViewModels
             return TryPresentAbilityChoices();
         }
 
+        /// <summary>
+        /// 자원 드롭 효과를 적용하고 필요한 후속 로직을 수행합니다.
+        /// </summary>
         public void ApplyResourceDropEffect(ResourceDropCollectedEvent evt)
         {
             var player = _repository.State.Player;
@@ -266,7 +306,7 @@ namespace Noname.Presentation.ViewModels
             var pool = _settings.abilityPool;
             if (pool == null || pool.Length < AbilityChoicesCount)
             {
-                Debug.LogWarning($"Ability pool�� �ּ� {AbilityChoicesCount}���� �����Ƽ�� ��ϵǾ�� �մϴ�.");
+                Debug.LogWarning($"Ability pool은 최소 {AbilityChoicesCount}개의 어빌리티가 등록되어야 합니다.");
                 return false;
             }
 
@@ -325,8 +365,13 @@ namespace Noname.Presentation.ViewModels
         }
     }
 
+    /// <summary>
+    /// GameViewModel이 일시 정지 상태에 들어가는 이유.
+    /// </summary>
     public enum GameViewPauseReason
     {
+        /// <summary>어빌리티 선택을 기다리는 중.</summary>
         AwaitAbilitySelection
     }
 }
+

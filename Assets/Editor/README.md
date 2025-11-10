@@ -1,16 +1,16 @@
 # Definition Importer
 
-`Tools ? Definition Importer` Ã¢¿¡¼­ Excel/JSON µ¥ÀÌÅÍ¸¦ ±â¹ÝÀ¸·Î `EnemyDefinition`, `PlayerDefinition` ScriptableObject¸¦ °ü¸®ÇÕ´Ï´Ù.
+`Tools > Definition Importer` ë©”ë‰´ì—ì„œ Excel/JSON ë°ì´í„°ë¥¼ ë¶ˆëŸ¬ì™€ `EnemyDefinition`, `PlayerDefinition` ScriptableObjectë¥¼ ìƒì„±/ê°±ì‹ í•©ë‹ˆë‹¤.
 
-## ¿¢¼¿ ¡æ JSON
-1. `[enemyInfo]`, `[playerInfo]` ¼½¼ÇÀÌ Æ÷ÇÔµÈ `.xlsx` ÆÄÀÏÀ» ÁöÁ¤ÇÕ´Ï´Ù.
-2. Definition Type(Enemy/Player)À» ¼±ÅÃÇÏ°í `Convert` ¹öÆ°À» ´©¸£¸é ÇØ´ç ¼½¼ÇÀÌ JSONÀ¸·Î Á÷·ÄÈ­µË´Ï´Ù.
+## Excel â†’ JSON
+1. `[enemyInfo]`, `[playerInfo]` ì„¹ì…˜ì„ í¬í•¨í•œ `.xlsx` íŒŒì¼ì„ ì„ íƒí•©ë‹ˆë‹¤.
+2. Definition Type(Enemy/Player)ì„ ì§€ì •í•œ ë’¤ `Convert` ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ í•´ë‹¹ ì‹œíŠ¸ê°€ JSONìœ¼ë¡œ ë³€í™˜ë©ë‹ˆë‹¤.
 
-## JSON ¡æ ScriptableObject
-1. Definition TypeÀ» ¼±ÅÃÇÑ µÚ »ý¼ºµÈ JSON ÆÄÀÏÀ» ÁöÁ¤ÇÕ´Ï´Ù.
-2. `Import JSON -> ScriptableObjects` ¹öÆ°À» ´©¸£¸é
-   - `Assets/Resources/Enemies` ¶Ç´Â `Assets/Resources/Players` Æú´õ¿¡ ÄÚµå¸í ±â¹Ý SO°¡ »ý¼º/°»½ÅµË´Ï´Ù.
-   - JSON¿¡ Á¸ÀçÇÏÁö ¾Ê´Â ÄÚµåÀÇ ±âÁ¸ SO´Â ÀÚµ¿À¸·Î »èÁ¦µË´Ï´Ù.
-   - µ¿ÀÏÇÑ ÄÚµå SOÀÇ °ªÀÌ ¹Ù²î¸é º¯°æµÈ ÇÊµå°¡ ÄÜ¼Ö °æ°í·Î Ãâ·ÂµË´Ï´Ù.
+## JSON â†’ ScriptableObject
+1. Definition Typeì„ ê³ ë¥´ê³  ë³€í™˜í•  JSON íŒŒì¼ì„ ì„ íƒí•©ë‹ˆë‹¤.
+2. `Import JSON -> ScriptableObjects` ë²„íŠ¼ì„ ëˆ„ë¥´ë©´
+   - `Assets/Resources/Enemies` ë˜ëŠ” `Assets/Resources/Players` í´ë”ì— ì½”ë“œ(ID) ê¸°ë°˜ SOê°€ ìƒì„±/ê°±ì‹ ë©ë‹ˆë‹¤.
+   - JSONì— ì—†ëŠ” SOëŠ” ìžë™ ì‚­ì œë©ë‹ˆë‹¤.
+   - ê¸°ì¡´ SOì™€ ê°’ì´ ë‹¤ë¥´ë©´ ì–´ë–¤ í•„ë“œê°€ ë°”ë€Œì—ˆëŠ”ì§€ ê²½ê³  ë¡œê·¸ê°€ ì¶œë ¥ë©ë‹ˆë‹¤.
 
-ÀÌ ÅøÀ» ÅëÇØ µ¥ÀÌÅÍ ÆÀÀÌ ¿¢¼¿¸¸ ¼öÁ¤ÇØµµ °ÔÀÓ ³» Á¤ÀÇ¸¦ ÀÏ°ý °»½ÅÇÒ ¼ö ÀÖ½À´Ï´Ù.
+Excel/JSON êµ¬ì¡°ê°€ ë°”ë€” ê²½ìš° DefinitionImporterWindow.csë¥¼ í•¨ê»˜ ìˆ˜ì •í•´ ì£¼ì„¸ìš”.

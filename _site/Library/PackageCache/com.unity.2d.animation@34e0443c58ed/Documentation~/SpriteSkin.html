@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Sprite Skin component | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Sprite Skin component | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SpriteSkin.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="sprite-skin-component">Sprite Skin component</h1>
+
+<p>When the Sprite Skin component is added to a GameObject that also contains the <a href="https://docs.unity3d.com/Manual/class-SpriteRenderer.html">Sprite Renderer</a> component with a Sprite assigned, the Sprite Skin deforms that Sprite by using the bones that were <a href="CharacterRig.html">rigged</a> and weighted to the Sprite in the <a href="SkinningEditor.html">Skinning Editor</a>.</p>
+<p>After <a href="PreparingArtwork.html">preparing and importing</a> your artwork into Unity, bring the generated Prefab into the Scene view and Unity automatically adds the Sprite Skin component to the Prefab. This component is required for the bones to deform the Sprite meshes in the Scene view.</p>
+<p>The Sprite Skin deforms a Sprite by using GameObject Transforms to represent the bones that were added to the Sprite in the Skinning Editor module.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Always Update</strong></td>
+<td>Enable this to have the Sprite Skin continue to deform the Sprite even when the visual is not in the view of the Camera.</td>
+</tr>
+<tr>
+<td><strong><a href="#auto-rebind">Auto Rebind</a></strong></td>
+<td>Enable this to have the component attempt to find the correct GameObject Transforms to use as bones for the Sprite by using the GameObject Transform set in the <strong>Root Bone</strong> property as the starting point.</td>
+</tr>
+<tr>
+<td><strong>Root Bone</strong></td>
+<td>Use this property to indicate which GameObject Transform to use as the Root Bone for the Sprite.</td>
+</tr>
+<tr>
+<td><strong>Bones</strong></td>
+<td>This shows the list of bones that are being set up for the Sprite in the Skinning Editor module. Each Sprite’s <strong>Bone</strong> entry must have a GameObject Transform associated with it for correct deformation.</td>
+</tr>
+<tr>
+<td><strong>Create Bones</strong></td>
+<td>The button lets you create GameObject Transform(s) to represent the Sprite’s Bone and assign them to the <strong>Root Bone</strong> property and the individual Bones entry. The Root Bone that is created is placed as a child of the GameObject of the Sprite Skin. The button is only enabled if the Root Bone property isn't assigned.</td>
+</tr>
+<tr>
+<td><strong>Reset Bind Pose</strong></td>
+<td>The button resets the GameObject Transforms assigned in the Bones entry to the bind pose value set up for the Sprite in the Skinning Editor module.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="auto-rebind">Auto Rebind</h2>
+<p>When you enable <strong>Auto Rebind</strong>, Sprite Skin attempts to automatically locate the GameObject Transform that is needed for the current Sprite assigned to the Sprite Renderer. This is triggered when the Sprite in the Sprite Renderer property is changed.</p>
+<p>When a rebind is required, the Sprite Skin looks for the GameObject Transform name that matches the bone name in the Skinning Editor module.</p>
+<p><img src="images/2d-anim-auto-rebind-example.png" alt="A leg sprite in the Bone Panel. The window displays the hierarchy of three bones with red, yellow, and green label colors. The sprite displays the same bones with the same colors."><br>Example: Selecting a Sprite in the <a href="SkinEdToolsShortcuts.html#bone-panel">Bone Panel</a> shows the bones currently rigged to and influencing the Sprite, along with their names.</p>
+<p>In the above example, the Sprite is rigged with three connected bones - starting with 'bone_1' as the root bone, 'bone_2' as a child of 'bone_1', and 'bone_3' as a child of 'bone_2'.</p>
+<p>For the Sprite Skin component to automatically locate the bones successfully, GameObject Transforms with the same name and hierarchy as shown in the above example must be available in the Scene.</p>
+<p><img src="images/2d-anim-sprite-skin-root-bone.png" alt="GameObject Transform components with the names bone_1, bone_2 and bone_3."></p>
+<p>By setting the Sprite Skin’s <strong>Root Bone</strong> property to the correct GameObject Transform, Sprite Skin will then map the GameObject Transform to the Sprite’s rigged bone of the same name. For the <strong>Auto Rebind</strong> to be successful, the name and the hierarchy of the rigged bones and the GameObject Transforms must match. This means that changing the name of the bones in the Skinning Editor will require you to update the names of the GameObject Transforms to match as well.</p>
+<h2 id="deformation-methods">Deformation methods</h2>
+<p>Starting from 2D Animation 10 (Unity 2023.1), Sprite Skins can be deformed using two different methods, CPU and GPU deformation. However, do note that GPU deforomation is only available with the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest">Universal Render Pipeline (URP)</a>.</p>
+<h3 id="usage-guidelines">Usage guidelines</h3>
+<p>The option to choose between CPU and GPU deformation allows projects to pick where the deformation should happen, on the CPU or the GPU. Projects which are heavily using the CPU for their different systems are therefore advised to use GPU deformation, and vice versa.</p>
+<p>Do also note that selecting GPU deformation will cause the Sprite to be rendered using the <a href="https://docs.unity3d.com/Manual/SRPBatcher.html">SRP Batcher</a>. This means that there is a small draw call cost per object. When selecting CPU deformation, the Sprites are dynamically batched, reducing the overall draw calls. We therefore advice choosing CPU deformation when a scene contains many low-polygon objects, and GPU deformation when a scene contains fewer high-polygon objects.</p>
+<p>As always, do verify the performance impact with <a href="https://docs.unity3d.com/Manual/Profiler.html">profiling tools</a> and make changes according to the data, as every use case is unique.</p>
+<h3 id="selecting-cpugpu-deformation">Selecting CPU/GPU deformation</h3>
+<ol>
+<li>Ensure your project is setup with the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest">Universal Render Pipeline (URP)</a> package.
+<ul>
+<li>If the project isn't set up with the Universal Render Pipeline package, <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest?subfolder=/manual/Setup.html">refer to this guide</a> on how to set it up.</li>
+</ul>
+</li>
+<li>Ensure that you enabled the <strong>SRP Batcher</strong> option in the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@latest?subfolder=/manual/universalrp-asset.html">Universal Render Pipeline Asset</a>.
+<ul>
+<li>If the <strong>SRP Batcher</strong> option is not visible, open the <strong>More</strong> (⋮) menu in the Rendering section and enable <strong>Show Additional Properties</strong>.</li>
+</ul>
+</li>
+<li>Go to <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Player</strong> &gt; <strong>Other Settings</strong>. In the Rendering section, set <strong>GPU Skinning</strong> to <strong>GPU (Batched)</strong>. When <strong>GPU Skinning</strong> is set to <strong>GPU (Batched)</strong> or <strong>GPU</strong>, Unity performs Sprite Skin deformation on the GPU instead of the CPU.</li>
+</ol>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/SpriteSkin.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

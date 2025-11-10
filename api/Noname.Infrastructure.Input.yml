@@ -1,0 +1,32 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Infrastructure.Input
+  commentId: N:Noname.Infrastructure.Input
+  id: Noname.Infrastructure.Input
+  children:
+  - Noname.Infrastructure.Input.DefenseInputAdapter
+  - Noname.Infrastructure.Input.InputBlocker
+  langs:
+  - csharp
+  - vb
+  name: Noname.Infrastructure.Input
+  nameWithType: Noname.Infrastructure.Input
+  fullName: Noname.Infrastructure.Input
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: Noname.Infrastructure.Input.InputBlocker
+  commentId: T:Noname.Infrastructure.Input.InputBlocker
+  isExternal: true
+  href: Noname.Infrastructure.Input.InputBlocker.html
+  name: InputBlocker
+  nameWithType: InputBlocker
+  fullName: Noname.Infrastructure.Input.InputBlocker
+- uid: Noname.Infrastructure.Input.DefenseInputAdapter
+  commentId: T:Noname.Infrastructure.Input.DefenseInputAdapter
+  isExternal: true
+  href: Noname.Infrastructure.Input.DefenseInputAdapter.html
+  name: DefenseInputAdapter
+  nameWithType: DefenseInputAdapter
+  fullName: Noname.Infrastructure.Input.DefenseInputAdapter

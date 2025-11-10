@@ -1,0 +1,641 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Core.Entities.ResourceDropEntity
+  commentId: T:Noname.Core.Entities.ResourceDropEntity
+  id: ResourceDropEntity
+  parent: Noname.Core.Entities
+  children:
+  - Noname.Core.Entities.ResourceDropEntity.#ctor(System.Int32,Noname.Core.Enums.ResourceDropType,Noname.Core.Primitives.Float2,System.Single,System.Single)
+  - Noname.Core.Entities.ResourceDropEntity.Amount
+  - Noname.Core.Entities.ResourceDropEntity.Id
+  - Noname.Core.Entities.ResourceDropEntity.Position
+  - Noname.Core.Entities.ResourceDropEntity.RemainingDelay
+  - Noname.Core.Entities.ResourceDropEntity.Tick(System.Single)
+  - Noname.Core.Entities.ResourceDropEntity.Type
+  langs:
+  - csharp
+  - vb
+  name: ResourceDropEntity
+  nameWithType: ResourceDropEntity
+  fullName: Noname.Core.Entities.ResourceDropEntity
+  type: Class
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ResourceDropEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public sealed class ResourceDropEntity
+    content.vb: Public NotInheritable Class ResourceDropEntity
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: Noname.Core.Entities.ResourceDropEntity.#ctor(System.Int32,Noname.Core.Enums.ResourceDropType,Noname.Core.Primitives.Float2,System.Single,System.Single)
+  commentId: M:Noname.Core.Entities.ResourceDropEntity.#ctor(System.Int32,Noname.Core.Enums.ResourceDropType,Noname.Core.Primitives.Float2,System.Single,System.Single)
+  id: '#ctor(System.Int32,Noname.Core.Enums.ResourceDropType,Noname.Core.Primitives.Float2,System.Single,System.Single)'
+  parent: Noname.Core.Entities.ResourceDropEntity
+  langs:
+  - csharp
+  - vb
+  name: ResourceDropEntity(int, ResourceDropType, Float2, float, float)
+  nameWithType: ResourceDropEntity.ResourceDropEntity(int, ResourceDropType, Float2, float, float)
+  fullName: Noname.Core.Entities.ResourceDropEntity.ResourceDropEntity(int, Noname.Core.Enums.ResourceDropType, Noname.Core.Primitives.Float2, float, float)
+  type: Constructor
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ResourceDropEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public ResourceDropEntity(int id, ResourceDropType type, Float2 position, float amount, float delay)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: type
+      type: Noname.Core.Enums.ResourceDropType
+    - id: position
+      type: Noname.Core.Primitives.Float2
+    - id: amount
+      type: System.Single
+    - id: delay
+      type: System.Single
+    content.vb: Public Sub New(id As Integer, type As ResourceDropType, position As Float2, amount As Single, delay As Single)
+  overload: Noname.Core.Entities.ResourceDropEntity.#ctor*
+  nameWithType.vb: ResourceDropEntity.New(Integer, ResourceDropType, Float2, Single, Single)
+  fullName.vb: Noname.Core.Entities.ResourceDropEntity.New(Integer, Noname.Core.Enums.ResourceDropType, Noname.Core.Primitives.Float2, Single, Single)
+  name.vb: New(Integer, ResourceDropType, Float2, Single, Single)
+- uid: Noname.Core.Entities.ResourceDropEntity.Tick(System.Single)
+  commentId: M:Noname.Core.Entities.ResourceDropEntity.Tick(System.Single)
+  id: Tick(System.Single)
+  parent: Noname.Core.Entities.ResourceDropEntity
+  langs:
+  - csharp
+  - vb
+  name: Tick(float)
+  nameWithType: ResourceDropEntity.Tick(float)
+  fullName: Noname.Core.Entities.ResourceDropEntity.Tick(float)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ResourceDropEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public bool Tick(float deltaTime)
+    parameters:
+    - id: deltaTime
+      type: System.Single
+    return:
+      type: System.Boolean
+    content.vb: Public Function Tick(deltaTime As Single) As Boolean
+  overload: Noname.Core.Entities.ResourceDropEntity.Tick*
+  nameWithType.vb: ResourceDropEntity.Tick(Single)
+  fullName.vb: Noname.Core.Entities.ResourceDropEntity.Tick(Single)
+  name.vb: Tick(Single)
+- uid: Noname.Core.Entities.ResourceDropEntity.Id
+  commentId: P:Noname.Core.Entities.ResourceDropEntity.Id
+  id: Id
+  parent: Noname.Core.Entities.ResourceDropEntity
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: ResourceDropEntity.Id
+  fullName: Noname.Core.Entities.ResourceDropEntity.Id
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ResourceDropEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public int Id { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Id As Integer
+  overload: Noname.Core.Entities.ResourceDropEntity.Id*
+- uid: Noname.Core.Entities.ResourceDropEntity.Type
+  commentId: P:Noname.Core.Entities.ResourceDropEntity.Type
+  id: Type
+  parent: Noname.Core.Entities.ResourceDropEntity
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: ResourceDropEntity.Type
+  fullName: Noname.Core.Entities.ResourceDropEntity.Type
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ResourceDropEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public ResourceDropType Type { get; }
+    parameters: []
+    return:
+      type: Noname.Core.Enums.ResourceDropType
+    content.vb: Public ReadOnly Property Type As ResourceDropType
+  overload: Noname.Core.Entities.ResourceDropEntity.Type*
+- uid: Noname.Core.Entities.ResourceDropEntity.Position
+  commentId: P:Noname.Core.Entities.ResourceDropEntity.Position
+  id: Position
+  parent: Noname.Core.Entities.ResourceDropEntity
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: ResourceDropEntity.Position
+  fullName: Noname.Core.Entities.ResourceDropEntity.Position
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ResourceDropEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public Float2 Position { get; }
+    parameters: []
+    return:
+      type: Noname.Core.Primitives.Float2
+    content.vb: Public ReadOnly Property Position As Float2
+  overload: Noname.Core.Entities.ResourceDropEntity.Position*
+- uid: Noname.Core.Entities.ResourceDropEntity.Amount
+  commentId: P:Noname.Core.Entities.ResourceDropEntity.Amount
+  id: Amount
+  parent: Noname.Core.Entities.ResourceDropEntity
+  langs:
+  - csharp
+  - vb
+  name: Amount
+  nameWithType: ResourceDropEntity.Amount
+  fullName: Noname.Core.Entities.ResourceDropEntity.Amount
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ResourceDropEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public float Amount { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Amount As Single
+  overload: Noname.Core.Entities.ResourceDropEntity.Amount*
+- uid: Noname.Core.Entities.ResourceDropEntity.RemainingDelay
+  commentId: P:Noname.Core.Entities.ResourceDropEntity.RemainingDelay
+  id: RemainingDelay
+  parent: Noname.Core.Entities.ResourceDropEntity
+  langs:
+  - csharp
+  - vb
+  name: RemainingDelay
+  nameWithType: ResourceDropEntity.RemainingDelay
+  fullName: Noname.Core.Entities.ResourceDropEntity.RemainingDelay
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ResourceDropEntity.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Entities
+  syntax:
+    content: public float RemainingDelay { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property RemainingDelay As Single
+  overload: Noname.Core.Entities.ResourceDropEntity.RemainingDelay*
+references:
+- uid: Noname.Core.Entities
+  commentId: N:Noname.Core.Entities
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Entities
+  nameWithType: Noname.Core.Entities
+  fullName: Noname.Core.Entities
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Entities
+    name: Entities
+    isExternal: true
+    href: Noname.Core.Entities.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Entities
+    name: Entities
+    isExternal: true
+    href: Noname.Core.Entities.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Noname.Core.Entities.ResourceDropEntity.#ctor*
+  commentId: Overload:Noname.Core.Entities.ResourceDropEntity.#ctor
+  isExternal: true
+  href: Noname.Core.Entities.ResourceDropEntity.html#Noname_Core_Entities_ResourceDropEntity__ctor_System_Int32_Noname_Core_Enums_ResourceDropType_Noname_Core_Primitives_Float2_System_Single_System_Single_
+  name: ResourceDropEntity
+  nameWithType: ResourceDropEntity.ResourceDropEntity
+  fullName: Noname.Core.Entities.ResourceDropEntity.ResourceDropEntity
+  nameWithType.vb: ResourceDropEntity.New
+  fullName.vb: Noname.Core.Entities.ResourceDropEntity.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Noname.Core.Enums.ResourceDropType
+  commentId: T:Noname.Core.Enums.ResourceDropType
+  parent: Noname.Core.Enums
+  isExternal: true
+  href: Noname.Core.Enums.ResourceDropType.html
+  name: ResourceDropType
+  nameWithType: ResourceDropType
+  fullName: Noname.Core.Enums.ResourceDropType
+- uid: Noname.Core.Primitives.Float2
+  commentId: T:Noname.Core.Primitives.Float2
+  parent: Noname.Core.Primitives
+  isExternal: true
+  href: Noname.Core.Primitives.Float2.html
+  name: Float2
+  nameWithType: Float2
+  fullName: Noname.Core.Primitives.Float2
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Noname.Core.Enums
+  commentId: N:Noname.Core.Enums
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Enums
+  nameWithType: Noname.Core.Enums
+  fullName: Noname.Core.Enums
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Enums
+    name: Enums
+    isExternal: true
+    href: Noname.Core.Enums.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Enums
+    name: Enums
+    isExternal: true
+    href: Noname.Core.Enums.html
+- uid: Noname.Core.Primitives
+  commentId: N:Noname.Core.Primitives
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Primitives
+  nameWithType: Noname.Core.Primitives
+  fullName: Noname.Core.Primitives
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Primitives
+    name: Primitives
+    isExternal: true
+    href: Noname.Core.Primitives.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Primitives
+    name: Primitives
+    isExternal: true
+    href: Noname.Core.Primitives.html
+- uid: Noname.Core.Entities.ResourceDropEntity.Tick*
+  commentId: Overload:Noname.Core.Entities.ResourceDropEntity.Tick
+  isExternal: true
+  href: Noname.Core.Entities.ResourceDropEntity.html#Noname_Core_Entities_ResourceDropEntity_Tick_System_Single_
+  name: Tick
+  nameWithType: ResourceDropEntity.Tick
+  fullName: Noname.Core.Entities.ResourceDropEntity.Tick
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Noname.Core.Entities.ResourceDropEntity.Id*
+  commentId: Overload:Noname.Core.Entities.ResourceDropEntity.Id
+  isExternal: true
+  href: Noname.Core.Entities.ResourceDropEntity.html#Noname_Core_Entities_ResourceDropEntity_Id
+  name: Id
+  nameWithType: ResourceDropEntity.Id
+  fullName: Noname.Core.Entities.ResourceDropEntity.Id
+- uid: Noname.Core.Entities.ResourceDropEntity.Type*
+  commentId: Overload:Noname.Core.Entities.ResourceDropEntity.Type
+  isExternal: true
+  href: Noname.Core.Entities.ResourceDropEntity.html#Noname_Core_Entities_ResourceDropEntity_Type
+  name: Type
+  nameWithType: ResourceDropEntity.Type
+  fullName: Noname.Core.Entities.ResourceDropEntity.Type
+- uid: Noname.Core.Entities.ResourceDropEntity.Position*
+  commentId: Overload:Noname.Core.Entities.ResourceDropEntity.Position
+  isExternal: true
+  href: Noname.Core.Entities.ResourceDropEntity.html#Noname_Core_Entities_ResourceDropEntity_Position
+  name: Position
+  nameWithType: ResourceDropEntity.Position
+  fullName: Noname.Core.Entities.ResourceDropEntity.Position
+- uid: Noname.Core.Entities.ResourceDropEntity.Amount*
+  commentId: Overload:Noname.Core.Entities.ResourceDropEntity.Amount
+  isExternal: true
+  href: Noname.Core.Entities.ResourceDropEntity.html#Noname_Core_Entities_ResourceDropEntity_Amount
+  name: Amount
+  nameWithType: ResourceDropEntity.Amount
+  fullName: Noname.Core.Entities.ResourceDropEntity.Amount
+- uid: Noname.Core.Entities.ResourceDropEntity.RemainingDelay*
+  commentId: Overload:Noname.Core.Entities.ResourceDropEntity.RemainingDelay
+  isExternal: true
+  href: Noname.Core.Entities.ResourceDropEntity.html#Noname_Core_Entities_ResourceDropEntity_RemainingDelay
+  name: RemainingDelay
+  nameWithType: ResourceDropEntity.RemainingDelay
+  fullName: Noname.Core.Entities.ResourceDropEntity.RemainingDelay

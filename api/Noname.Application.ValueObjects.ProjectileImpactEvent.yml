@@ -1,0 +1,563 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Application.ValueObjects.ProjectileImpactEvent
+  commentId: T:Noname.Application.ValueObjects.ProjectileImpactEvent
+  id: ProjectileImpactEvent
+  parent: Noname.Application.ValueObjects
+  children:
+  - Noname.Application.ValueObjects.ProjectileImpactEvent.#ctor(System.Int32,Noname.Core.Enums.ProjectileFaction,Noname.Core.Primitives.Float2,System.Single)
+  - Noname.Application.ValueObjects.ProjectileImpactEvent.ExplosionRadius
+  - Noname.Application.ValueObjects.ProjectileImpactEvent.Faction
+  - Noname.Application.ValueObjects.ProjectileImpactEvent.Position
+  - Noname.Application.ValueObjects.ProjectileImpactEvent.ProjectileId
+  langs:
+  - csharp
+  - vb
+  name: ProjectileImpactEvent
+  nameWithType: ProjectileImpactEvent
+  fullName: Noname.Application.ValueObjects.ProjectileImpactEvent
+  type: Struct
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/ProjectileImpactEvent.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.ValueObjects
+  syntax:
+    content: public readonly struct ProjectileImpactEvent
+    content.vb: Public Structure ProjectileImpactEvent
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.GetType
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: Noname.Application.ValueObjects.ProjectileImpactEvent.#ctor(System.Int32,Noname.Core.Enums.ProjectileFaction,Noname.Core.Primitives.Float2,System.Single)
+  commentId: M:Noname.Application.ValueObjects.ProjectileImpactEvent.#ctor(System.Int32,Noname.Core.Enums.ProjectileFaction,Noname.Core.Primitives.Float2,System.Single)
+  id: '#ctor(System.Int32,Noname.Core.Enums.ProjectileFaction,Noname.Core.Primitives.Float2,System.Single)'
+  parent: Noname.Application.ValueObjects.ProjectileImpactEvent
+  langs:
+  - csharp
+  - vb
+  name: ProjectileImpactEvent(int, ProjectileFaction, Float2, float)
+  nameWithType: ProjectileImpactEvent.ProjectileImpactEvent(int, ProjectileFaction, Float2, float)
+  fullName: Noname.Application.ValueObjects.ProjectileImpactEvent.ProjectileImpactEvent(int, Noname.Core.Enums.ProjectileFaction, Noname.Core.Primitives.Float2, float)
+  type: Constructor
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/ProjectileImpactEvent.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.ValueObjects
+  syntax:
+    content: public ProjectileImpactEvent(int projectileId, ProjectileFaction faction, Float2 position, float explosionRadius)
+    parameters:
+    - id: projectileId
+      type: System.Int32
+    - id: faction
+      type: Noname.Core.Enums.ProjectileFaction
+    - id: position
+      type: Noname.Core.Primitives.Float2
+    - id: explosionRadius
+      type: System.Single
+    content.vb: Public Sub New(projectileId As Integer, faction As ProjectileFaction, position As Float2, explosionRadius As Single)
+  overload: Noname.Application.ValueObjects.ProjectileImpactEvent.#ctor*
+  nameWithType.vb: ProjectileImpactEvent.New(Integer, ProjectileFaction, Float2, Single)
+  fullName.vb: Noname.Application.ValueObjects.ProjectileImpactEvent.New(Integer, Noname.Core.Enums.ProjectileFaction, Noname.Core.Primitives.Float2, Single)
+  name.vb: New(Integer, ProjectileFaction, Float2, Single)
+- uid: Noname.Application.ValueObjects.ProjectileImpactEvent.ProjectileId
+  commentId: P:Noname.Application.ValueObjects.ProjectileImpactEvent.ProjectileId
+  id: ProjectileId
+  parent: Noname.Application.ValueObjects.ProjectileImpactEvent
+  langs:
+  - csharp
+  - vb
+  name: ProjectileId
+  nameWithType: ProjectileImpactEvent.ProjectileId
+  fullName: Noname.Application.ValueObjects.ProjectileImpactEvent.ProjectileId
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/ProjectileImpactEvent.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.ValueObjects
+  syntax:
+    content: public int ProjectileId { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property ProjectileId As Integer
+  overload: Noname.Application.ValueObjects.ProjectileImpactEvent.ProjectileId*
+- uid: Noname.Application.ValueObjects.ProjectileImpactEvent.Faction
+  commentId: P:Noname.Application.ValueObjects.ProjectileImpactEvent.Faction
+  id: Faction
+  parent: Noname.Application.ValueObjects.ProjectileImpactEvent
+  langs:
+  - csharp
+  - vb
+  name: Faction
+  nameWithType: ProjectileImpactEvent.Faction
+  fullName: Noname.Application.ValueObjects.ProjectileImpactEvent.Faction
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/ProjectileImpactEvent.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.ValueObjects
+  syntax:
+    content: public ProjectileFaction Faction { get; }
+    parameters: []
+    return:
+      type: Noname.Core.Enums.ProjectileFaction
+    content.vb: Public ReadOnly Property Faction As ProjectileFaction
+  overload: Noname.Application.ValueObjects.ProjectileImpactEvent.Faction*
+- uid: Noname.Application.ValueObjects.ProjectileImpactEvent.Position
+  commentId: P:Noname.Application.ValueObjects.ProjectileImpactEvent.Position
+  id: Position
+  parent: Noname.Application.ValueObjects.ProjectileImpactEvent
+  langs:
+  - csharp
+  - vb
+  name: Position
+  nameWithType: ProjectileImpactEvent.Position
+  fullName: Noname.Application.ValueObjects.ProjectileImpactEvent.Position
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/ProjectileImpactEvent.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.ValueObjects
+  syntax:
+    content: public Float2 Position { get; }
+    parameters: []
+    return:
+      type: Noname.Core.Primitives.Float2
+    content.vb: Public ReadOnly Property Position As Float2
+  overload: Noname.Application.ValueObjects.ProjectileImpactEvent.Position*
+- uid: Noname.Application.ValueObjects.ProjectileImpactEvent.ExplosionRadius
+  commentId: P:Noname.Application.ValueObjects.ProjectileImpactEvent.ExplosionRadius
+  id: ExplosionRadius
+  parent: Noname.Application.ValueObjects.ProjectileImpactEvent
+  langs:
+  - csharp
+  - vb
+  name: ExplosionRadius
+  nameWithType: ProjectileImpactEvent.ExplosionRadius
+  fullName: Noname.Application.ValueObjects.ProjectileImpactEvent.ExplosionRadius
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/ProjectileImpactEvent.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.ValueObjects
+  syntax:
+    content: public float ExplosionRadius { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property ExplosionRadius As Single
+  overload: Noname.Application.ValueObjects.ProjectileImpactEvent.ExplosionRadius*
+references:
+- uid: Noname.Application.ValueObjects
+  commentId: N:Noname.Application.ValueObjects
+  isExternal: true
+  href: Noname.html
+  name: Noname.Application.ValueObjects
+  nameWithType: Noname.Application.ValueObjects
+  fullName: Noname.Application.ValueObjects
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Application.ValueObjects.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Application.ValueObjects.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Noname.Application.ValueObjects.ProjectileImpactEvent.#ctor*
+  commentId: Overload:Noname.Application.ValueObjects.ProjectileImpactEvent.#ctor
+  isExternal: true
+  href: Noname.Application.ValueObjects.ProjectileImpactEvent.html#Noname_Application_ValueObjects_ProjectileImpactEvent__ctor_System_Int32_Noname_Core_Enums_ProjectileFaction_Noname_Core_Primitives_Float2_System_Single_
+  name: ProjectileImpactEvent
+  nameWithType: ProjectileImpactEvent.ProjectileImpactEvent
+  fullName: Noname.Application.ValueObjects.ProjectileImpactEvent.ProjectileImpactEvent
+  nameWithType.vb: ProjectileImpactEvent.New
+  fullName.vb: Noname.Application.ValueObjects.ProjectileImpactEvent.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Noname.Core.Enums.ProjectileFaction
+  commentId: T:Noname.Core.Enums.ProjectileFaction
+  parent: Noname.Core.Enums
+  isExternal: true
+  href: Noname.Core.Enums.ProjectileFaction.html
+  name: ProjectileFaction
+  nameWithType: ProjectileFaction
+  fullName: Noname.Core.Enums.ProjectileFaction
+- uid: Noname.Core.Primitives.Float2
+  commentId: T:Noname.Core.Primitives.Float2
+  parent: Noname.Core.Primitives
+  isExternal: true
+  href: Noname.Core.Primitives.Float2.html
+  name: Float2
+  nameWithType: Float2
+  fullName: Noname.Core.Primitives.Float2
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Noname.Core.Enums
+  commentId: N:Noname.Core.Enums
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Enums
+  nameWithType: Noname.Core.Enums
+  fullName: Noname.Core.Enums
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Enums
+    name: Enums
+    isExternal: true
+    href: Noname.Core.Enums.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Enums
+    name: Enums
+    isExternal: true
+    href: Noname.Core.Enums.html
+- uid: Noname.Core.Primitives
+  commentId: N:Noname.Core.Primitives
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Primitives
+  nameWithType: Noname.Core.Primitives
+  fullName: Noname.Core.Primitives
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Primitives
+    name: Primitives
+    isExternal: true
+    href: Noname.Core.Primitives.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Primitives
+    name: Primitives
+    isExternal: true
+    href: Noname.Core.Primitives.html
+- uid: Noname.Application.ValueObjects.ProjectileImpactEvent.ProjectileId*
+  commentId: Overload:Noname.Application.ValueObjects.ProjectileImpactEvent.ProjectileId
+  isExternal: true
+  href: Noname.Application.ValueObjects.ProjectileImpactEvent.html#Noname_Application_ValueObjects_ProjectileImpactEvent_ProjectileId
+  name: ProjectileId
+  nameWithType: ProjectileImpactEvent.ProjectileId
+  fullName: Noname.Application.ValueObjects.ProjectileImpactEvent.ProjectileId
+- uid: Noname.Application.ValueObjects.ProjectileImpactEvent.Faction*
+  commentId: Overload:Noname.Application.ValueObjects.ProjectileImpactEvent.Faction
+  isExternal: true
+  href: Noname.Application.ValueObjects.ProjectileImpactEvent.html#Noname_Application_ValueObjects_ProjectileImpactEvent_Faction
+  name: Faction
+  nameWithType: ProjectileImpactEvent.Faction
+  fullName: Noname.Application.ValueObjects.ProjectileImpactEvent.Faction
+- uid: Noname.Application.ValueObjects.ProjectileImpactEvent.Position*
+  commentId: Overload:Noname.Application.ValueObjects.ProjectileImpactEvent.Position
+  isExternal: true
+  href: Noname.Application.ValueObjects.ProjectileImpactEvent.html#Noname_Application_ValueObjects_ProjectileImpactEvent_Position
+  name: Position
+  nameWithType: ProjectileImpactEvent.Position
+  fullName: Noname.Application.ValueObjects.ProjectileImpactEvent.Position
+- uid: Noname.Application.ValueObjects.ProjectileImpactEvent.ExplosionRadius*
+  commentId: Overload:Noname.Application.ValueObjects.ProjectileImpactEvent.ExplosionRadius
+  isExternal: true
+  href: Noname.Application.ValueObjects.ProjectileImpactEvent.html#Noname_Application_ValueObjects_ProjectileImpactEvent_ExplosionRadius
+  name: ExplosionRadius
+  nameWithType: ProjectileImpactEvent.ExplosionRadius
+  fullName: Noname.Application.ValueObjects.ProjectileImpactEvent.ExplosionRadius

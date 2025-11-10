@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>2D Inverse Kinematics (IK) | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="2D Inverse Kinematics (IK) | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/2DIK.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="2d-inverse-kinematics-ik">2D Inverse Kinematics (IK)</h1>
+
+<h2 id="overview">Overview</h2>
+<p>The 2D <a href="https://docs.unity3d.com/Manual/InverseKinematics.html">Inverse Kinematics</a> (IK) feature set allows you to apply <strong>2D IK</strong> to the bones and Transforms of your characters’ animation skeletons. <strong>2D IK</strong> automatically calculates for the positions and rotations of a chain of bones moving towards a target position. This makes it easier to pose and animate character limbs for animation, or to manipulate a skeleton in real-time.</p>
+<h2 id="applying-2d-ik-to-character-skeletons">Applying 2D IK to character skeletons</h2>
+<p>The following workflow continues from the <strong>2D Animation</strong> package <a href="CharacterRig.html">animation workflow</a>, and demonstrates how to apply <strong>2D IK</strong> to your character skeletons.</p>
+<ol>
+<li><p>Refer to the hierarchy of bones created with the <strong>2D Animation</strong> package's <a href="SkinEdToolsShortcuts.html#bone-tools">Bone tools</a> of the <a href="SkinningEditor.html">Skinning Editor</a>.</p>
+</li>
+<li><p>Add the <a href="#ik-manager-2d">IK Manager 2D</a> component to the GameObject at the top of the hierarchy. This is usually the main root bone of the entire character skeleton.</p>
+</li>
+<li><p>Add to the <a href="#ik-solvers">IK Solvers</a> list by selecting which type of <strong>IK Solver</strong> to use. The IK Solvers are also added as additional GameObjects in the hierarchy.</p>
+</li>
+<li><p>With an <strong>IK Solver</strong> selected, create and set the <strong>Effector</strong> and <a href="#creating-an-effector-and-its-target">Target</a> for the IK Solver.</p>
+</li>
+<li><p>Position bones by moving the <strong>Target's</strong> position to move the chain of bones with IK applied.</p>
+</li>
+</ol>
+<h2 id="example-demonstrating-how-to-use-the-ik-manager-2d">Example demonstrating how to use the IK Manager 2D</h2>
+<p>The <strong>IK Manager 2D</strong> component controls the <strong>IK Solvers</strong> in the hierarchy.  Add the Manager component to the highest bone in the hierarchy, commonly referred to as the <em>Root</em> bone.</p>
+<ol>
+<li><p>In this example, add the component to <em>Plunkah</em> as it is the <em>Root</em> bone in the hierarchy:</p>
+</li>
+<li><p>To add an IK Solver, in the <strong>IK Manager 2D (Script)</strong> component, select the + symbol at the bottom right of the <em>IK Solvers</em> list.</p>
+</li>
+<li><p>Select an IK Solver from the three options in the dropdown menu  - <strong>Chain (CCD)</strong>, <strong>Chain (FABRIK)</strong>, and <strong>Limb</strong>. Each type of <a href="#ik-solvers">IK Solver</a> uses a different algorithm to solve for the position of Effectors.</p>
+</li>
+</ol>
+<p><strong>IK Solvers</strong> are iterated in descending order, with Solvers lower in the list referring to the positions set by the Solvers higher in the list. The order of Solvers usually reflects the order of bones/Transforms in the skeleton hierarchy.</p>
+<p>For example, if the arm bone is the child of the torso bone,   then the torso's IK Solver should be set above the arm’s Solver in the list. Rearrange the Solvers by dragging the leftmost edge of a row up or down.</p>
+<h3 id="weight">Weight</h3>
+<p>Weight measures the degree that a Solver’s solution affects the positions of the bones/Transforms in the chain. The <strong>IK Manager 2D</strong> has a master Weight property that affects all Solvers it controls. It is applied in addition to the Solver’s individual Weight settings.</p>
+<h3 id="always-update">Always Update</h3>
+<p>Used for performance optimization. When checked, IK Manager 2D will always update its solvers. When unchecked, it will only update solvers if any of the <a href="#SpriteSkin">Sprite Skins</a> that are driven by bones from all IK Solvers' chains are visible.</p>
+<h3 id="restore-default-pose">Restore Default Pose</h3>
+<p>Select this to reset all bones and Transforms back to their original positions.</p>
+<h2 id="ik-solvers">IK Solvers</h2>
+<p>The <strong>IK Solver</strong> calculates the position and rotation the Effector and its connected bones should take to achieve their Target position. Each type of <strong>IK Solver</strong> has its own algorithm that makes them better suited to different kinds of conditions.</p>
+<p>The following properties are available to all Solvers:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Effector</strong></td>
+<td>Define the bone or Transform the IK Solver solves for.</td>
+</tr>
+<tr>
+<td><strong>Target</strong></td>
+<td>The Transform which is used to indicate the desired position for the Effector.</td>
+</tr>
+<tr>
+<td><strong>Constrain Rotation</strong></td>
+<td>This constrains the rotation of the Effector to the rotation of the Target.</td>
+</tr>
+<tr>
+<td><strong>Restore Default Pose</strong></td>
+<td>Enable to restore the bones to their original positions before 2D IK is applied. Disable to apply 2D IK in relation to the Effector’s current position and rotation.</td>
+</tr>
+<tr>
+<td><strong>Weight</strong></td>
+<td>Use the slider to adjust the degree the IK Solver’s solution affects the original Transform positions. At the lowest value of 0, the IK solution is ignored. At the maximum value of 1 the IK solution is fully applied. This value is further influenced by the IK Manager's master Weight setting.</td>
+</tr>
+</tbody>
+</table>
+<p>The following properties are only available to Chain (CCD) and Chain (FABRIK):</p>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Chain Length</strong></td>
+<td>The number of bones/Transforms (starting from the Effector) in the chain that the IK solution is applied to.</td>
+</tr>
+<tr>
+<td><strong>Iterations</strong></td>
+<td>The number of times the algorithm runs.</td>
+</tr>
+<tr>
+<td><strong>Tolerance</strong></td>
+<td>The threshold where the Target is considered to have reached its destination position, and when the IK Solver stops iterating.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="limb">Limb</h3>
+<p>This is a standard two bone Solver that is ideal for posing joints such as arms and legs. This Solver’s chain length is fixed to three bones - starting from the Effector bone/Transform and including up to two additional bones in its chain.</p>
+<h3 id="chain-ccd---cyclic-coordinate-descent">Chain (CCD) - Cyclic Coordinate Descent</h3>
+<p>This IK Solver uses the <em>Cyclic Coordinate Descent</em> algorithm, which gradually becomes more accurate the more times the algorithm is run. The Solver stops running once the set <a href="#tolerance">tolerance</a> or <a href="#runs">number of iterations</a> is reached.</p>
+<p>The following property is only available to the <strong>Chain (CCD) IK Solver</strong>:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Velocity</strong></td>
+<td>The speed the IK algorithm is applied to the  Effector until it reaches its destination.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="chain-fabrik---forward-and-backward-reaching-inverse-kinematics">Chain (FABRIK) - Forward And Backward Reaching Inverse Kinematics</h3>
+<p>This IK Solver uses the <strong>Forward And Backward Reaching Inverse Kinematics (FABRIK)</strong> algorithm. It is similar to Chain (CCD) as its solution becomes more accurate the more times its algorithm is run. This Solver stops running once the set <strong>Tolerance</strong> or number of <strong>Iterations</strong> is reached.</p>
+<p>The Chain (FABRIK) IK Solver generally takes less iterations to reach the <strong>Target's</strong> destination compared to Chain (CCD), but is slower per iteration if rotation limits are applied to the chain. This Solver is able to adapt quickly to if the bones are manipulated in real-time to different positions.</p>
+<p>##Creating an Effector and its Target</p>
+<p>After creating an IK Solver,  the next step is to set the <strong>Effector</strong> and its <strong>Target</strong>. A <strong>Target</strong> is a Transform that represents the target position the Effector attempts to reach. As the Effector moves towards the Target position, the IK Solver calculates for the position and rotation of the Effector and the chain of bones it is connected to.</p>
+<p>Follow the steps below to set a <strong>Target</strong>:</p>
+<ol>
+<li><p>Select the last bone in the chain.</p>
+</li>
+<li><p>Create an empty Transform (right-click &gt; <strong>Create Empty</strong>). It is automatically created as a child of the highlighted bone.</p>
+</li>
+<li><p>Move the position of the Transform to the tip of the last bone in the chain.
+<img src="images/2D_IK_Image5.png" alt="The empty Transform selected in the Hierarchy window, and positioned in the Scene view so it's at the tip of the last bone."></p>
+</li>
+<li><p>Select the IK Solver. With its Inspector window open, drag the Transform from the hierarchy onto the <strong>Effector</strong> field.</p>
+</li>
+<li><p>Click the <strong>Create Target</strong> button. A Target is created at the Transform's position.</p>
+<p>If the <strong>Create Target</strong> button appears inactive, ensure that the <a href="#ChainL">Chain Length</a> value is set to one or greater.</p>
+</li>
+<li><p>The Target is created as a child of the IK Solver. It appears as a circle gizmo in the Scene view. Move the <strong>Target</strong> to manipulate the connected chain of bones.</p>
+</li>
+</ol>
+<h2 id="the-scene-view-gizmo">The Scene view Gizmo</h2>
+<p>Toggle or customize the display settings of the IK Gizmos to adjust their visibility when animating your characters. This is useful when you need to improve their readability or to reduce on-screen noise when editing animating your characters.</p>
+<h3 id="global-ik-gizmos-toggle">Global IK Gizmos Toggle</h3>
+<p>You can toggle the IK Gizmos by going to the <a href="https://docs.unity3d.com/Manual/GizmosMenu.html">Gizmos drop-down menu</a> at the upper right of the Scene view window, then select or clear <strong>IKManager2D</strong> (menu: <strong>Gizmos &gt; Scripts &gt; IKManager2D</strong>) to enable or disable the Gizmos respectively.</p>
+<h3 id="solver-gizmos">Solver Gizmos</h3>
+<p>Customize Solver Gizmos via the IK Manager 2D component that manages the Solvers. From the IK Manager 2D Component Inspector, you can individually hide the Solver's Gizmo to isolate only the Solvers that you are interested in. To further distinguish the Gizmos, you can also customize the colors of the Gizmos from the IK Manager 2D Component Inspector</p>
+<h2 id="scripting-api-reference">Scripting API Reference</h2>
+<h3 id="adding-new-solvers">Adding New Solvers</h3>
+<p>You can add your own solver by extending from the class <code>Solver2D</code>. Your extended class will then show up as a new solver under the solver menu in the IKManager2D component.</p>
+<h4 id="solver2d">Solver2D</h4>
+<p>This is the base class for all IK Solvers in this package. <code>IKManager2D</code> will detect all classes extending this and accept it as a Solver it can control. Implement or override the following methods to create your own IK Solver:</p>
+<p><code>protected abstract int GetChainCount()</code></p>
+<p>This function returns the number of IK chains the solver owns. Use this to return the number of IK chains your solver owns.</p>
+<p><code>public abstract IKChain2D GetChain(int index)</code></p>
+<p>This function returns the IKChain2D at the given index. Use this to return the IKChain2D your solver owns at the given index.</p>
+<p><code>protected virtual bool DoValidate()</code></p>
+<p>This function does validation for all parameters passed into the solver. Use this to check if your solver is set up correctly with all inputs.</p>
+<p><code>protected virtual void DoInitialize()</code></p>
+<p>This function initializes the solver and builds the IK chains owned by the solver. This is called whenever the solver is invalid after changing the target of the solver or other parameters of the solver. Use this to initialize all the data from the parameters given to the solver, such as the IK chains owned by the solver.</p>
+<p><code>protected virtual void DoPrepare()</code></p>
+<p>This function prepares and converts the information of the Transforms (position, rotation, IK parameters etc) to structures which can be used by the IK algorithms. Use this to do any work to gather data used by your solver when updating the IK positions.</p>
+<p><code>protected abstract void DoUpdateIK(List effectorPositions)</code></p>
+<p>This function calculates and sets the desired IK positions for the Transforms controlled by the solver given a list of effector positions for each chain owned by the solver. The effector positions may be overridden by user positions if manipulated from the SceneView.</p>
+<p><code>protected virtual Transform GetPlaneRootTransform()</code></p>
+<p>This function returns the transform whose localspace XY plane is used to perform IK calculations. Use this to define the Transform used.</p>
+<h4 id="ikchain2d">IKChain2D</h4>
+<p>This is the class which stores the transforms involved in an IK chain. When a chain is set up with a target and a transform count, initializing the Solver will populate the chain with the right transforms if valid.</p>
+<ul>
+<li><code>Target</code> - The transform which is used as the desired position for the target.</li>
+<li><code>Effector</code> - The transform to perform IK on to reach a desired position.</li>
+<li><code>TransformCount</code> - The number of transforms involved in the IK solution starting from the target. This is generally equivalent to <code>ChainLength</code> in solvers.</li>
+<li><code>Transforms</code> - All transforms involved in the chain. In general, the last transform in this is the target transform and the first transform is considered the root transform for the chain.</li>
+<li><code>Lengths</code> - The lengths between each transform in the chain.</li>
+</ul>
+<h4 id="solver2dmenu">Solver2DMenu</h4>
+<p>This attribute allows you to tag your <code>Solver2D</code> with a different name under the <code>IKManager2D</code>. Use this if you do not want to use the name of the class of the <code>Solver2D</code>.</p>
+<p>Example when giving the <code>LimbSolver2D</code> the name 'Limb' in the menu: <code>[Solver2DMenuAttribute(&quot;Limb&quot;)]</code></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/2DIK.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

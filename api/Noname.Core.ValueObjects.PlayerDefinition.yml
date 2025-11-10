@@ -1,0 +1,380 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Core.ValueObjects.PlayerDefinition
+  commentId: T:Noname.Core.ValueObjects.PlayerDefinition
+  id: PlayerDefinition
+  parent: Noname.Core.ValueObjects
+  children:
+  - Noname.Core.ValueObjects.PlayerDefinition.#ctor
+  - Noname.Core.ValueObjects.PlayerDefinition.CreateEntity(Noname.Core.Primitives.Float2)
+  - Noname.Core.ValueObjects.PlayerDefinition.attackCooldown
+  - Noname.Core.ValueObjects.PlayerDefinition.attackDamage
+  - Noname.Core.ValueObjects.PlayerDefinition.attackRange
+  - Noname.Core.ValueObjects.PlayerDefinition.luck
+  - Noname.Core.ValueObjects.PlayerDefinition.maxHealth
+  - Noname.Core.ValueObjects.PlayerDefinition.moveSpeed
+  langs:
+  - csharp
+  - vb
+  name: PlayerDefinition
+  nameWithType: PlayerDefinition
+  fullName: Noname.Core.ValueObjects.PlayerDefinition
+  type: Class
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/PlayerDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: 'public sealed class PlayerDefinition : ScriptableObject'
+    content.vb: Public NotInheritable Class PlayerDefinition Inherits ScriptableObject
+  inheritance:
+  - System.Object
+- uid: Noname.Core.ValueObjects.PlayerDefinition.moveSpeed
+  commentId: F:Noname.Core.ValueObjects.PlayerDefinition.moveSpeed
+  id: moveSpeed
+  parent: Noname.Core.ValueObjects.PlayerDefinition
+  langs:
+  - csharp
+  - vb
+  name: moveSpeed
+  nameWithType: PlayerDefinition.moveSpeed
+  fullName: Noname.Core.ValueObjects.PlayerDefinition.moveSpeed
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/PlayerDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float moveSpeed
+    return:
+      type: System.Single
+    content.vb: Public moveSpeed As Single
+- uid: Noname.Core.ValueObjects.PlayerDefinition.attackDamage
+  commentId: F:Noname.Core.ValueObjects.PlayerDefinition.attackDamage
+  id: attackDamage
+  parent: Noname.Core.ValueObjects.PlayerDefinition
+  langs:
+  - csharp
+  - vb
+  name: attackDamage
+  nameWithType: PlayerDefinition.attackDamage
+  fullName: Noname.Core.ValueObjects.PlayerDefinition.attackDamage
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/PlayerDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float attackDamage
+    return:
+      type: System.Single
+    content.vb: Public attackDamage As Single
+- uid: Noname.Core.ValueObjects.PlayerDefinition.attackRange
+  commentId: F:Noname.Core.ValueObjects.PlayerDefinition.attackRange
+  id: attackRange
+  parent: Noname.Core.ValueObjects.PlayerDefinition
+  langs:
+  - csharp
+  - vb
+  name: attackRange
+  nameWithType: PlayerDefinition.attackRange
+  fullName: Noname.Core.ValueObjects.PlayerDefinition.attackRange
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/PlayerDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float attackRange
+    return:
+      type: System.Single
+    content.vb: Public attackRange As Single
+- uid: Noname.Core.ValueObjects.PlayerDefinition.attackCooldown
+  commentId: F:Noname.Core.ValueObjects.PlayerDefinition.attackCooldown
+  id: attackCooldown
+  parent: Noname.Core.ValueObjects.PlayerDefinition
+  langs:
+  - csharp
+  - vb
+  name: attackCooldown
+  nameWithType: PlayerDefinition.attackCooldown
+  fullName: Noname.Core.ValueObjects.PlayerDefinition.attackCooldown
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/PlayerDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float attackCooldown
+    return:
+      type: System.Single
+    content.vb: Public attackCooldown As Single
+- uid: Noname.Core.ValueObjects.PlayerDefinition.maxHealth
+  commentId: F:Noname.Core.ValueObjects.PlayerDefinition.maxHealth
+  id: maxHealth
+  parent: Noname.Core.ValueObjects.PlayerDefinition
+  langs:
+  - csharp
+  - vb
+  name: maxHealth
+  nameWithType: PlayerDefinition.maxHealth
+  fullName: Noname.Core.ValueObjects.PlayerDefinition.maxHealth
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/PlayerDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float maxHealth
+    return:
+      type: System.Single
+    content.vb: Public maxHealth As Single
+- uid: Noname.Core.ValueObjects.PlayerDefinition.luck
+  commentId: F:Noname.Core.ValueObjects.PlayerDefinition.luck
+  id: luck
+  parent: Noname.Core.ValueObjects.PlayerDefinition
+  langs:
+  - csharp
+  - vb
+  name: luck
+  nameWithType: PlayerDefinition.luck
+  fullName: Noname.Core.ValueObjects.PlayerDefinition.luck
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/PlayerDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float luck
+    return:
+      type: System.Single
+    content.vb: Public luck As Single
+- uid: Noname.Core.ValueObjects.PlayerDefinition.CreateEntity(Noname.Core.Primitives.Float2)
+  commentId: M:Noname.Core.ValueObjects.PlayerDefinition.CreateEntity(Noname.Core.Primitives.Float2)
+  id: CreateEntity(Noname.Core.Primitives.Float2)
+  parent: Noname.Core.ValueObjects.PlayerDefinition
+  langs:
+  - csharp
+  - vb
+  name: CreateEntity(Float2)
+  nameWithType: PlayerDefinition.CreateEntity(Float2)
+  fullName: Noname.Core.ValueObjects.PlayerDefinition.CreateEntity(Noname.Core.Primitives.Float2)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/PlayerDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public PlayerEntity CreateEntity(Float2 spawnPosition)
+    parameters:
+    - id: spawnPosition
+      type: Noname.Core.Primitives.Float2
+    return:
+      type: Noname.Core.Entities.PlayerEntity
+    content.vb: Public Function CreateEntity(spawnPosition As Float2) As PlayerEntity
+  overload: Noname.Core.ValueObjects.PlayerDefinition.CreateEntity*
+- uid: Noname.Core.ValueObjects.PlayerDefinition.#ctor
+  commentId: M:Noname.Core.ValueObjects.PlayerDefinition.#ctor
+  id: '#ctor'
+  parent: Noname.Core.ValueObjects.PlayerDefinition
+  langs:
+  - csharp
+  - vb
+  name: PlayerDefinition()
+  nameWithType: PlayerDefinition.PlayerDefinition()
+  fullName: Noname.Core.ValueObjects.PlayerDefinition.PlayerDefinition()
+  type: Constructor
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/PlayerDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public PlayerDefinition()
+    content.vb: Public Sub New()
+  overload: Noname.Core.ValueObjects.PlayerDefinition.#ctor*
+  nameWithType.vb: PlayerDefinition.New()
+  fullName.vb: Noname.Core.ValueObjects.PlayerDefinition.New()
+  name.vb: New()
+references:
+- uid: Noname.Core.ValueObjects
+  commentId: N:Noname.Core.ValueObjects
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.ValueObjects
+  nameWithType: Noname.Core.ValueObjects
+  fullName: Noname.Core.ValueObjects
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Core.ValueObjects.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Core.ValueObjects.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Noname.Core.ValueObjects.PlayerDefinition.CreateEntity*
+  commentId: Overload:Noname.Core.ValueObjects.PlayerDefinition.CreateEntity
+  isExternal: true
+  href: Noname.Core.ValueObjects.PlayerDefinition.html#Noname_Core_ValueObjects_PlayerDefinition_CreateEntity_Noname_Core_Primitives_Float2_
+  name: CreateEntity
+  nameWithType: PlayerDefinition.CreateEntity
+  fullName: Noname.Core.ValueObjects.PlayerDefinition.CreateEntity
+- uid: Noname.Core.Primitives.Float2
+  commentId: T:Noname.Core.Primitives.Float2
+  parent: Noname.Core.Primitives
+  isExternal: true
+  href: Noname.Core.Primitives.Float2.html
+  name: Float2
+  nameWithType: Float2
+  fullName: Noname.Core.Primitives.Float2
+- uid: Noname.Core.Entities.PlayerEntity
+  commentId: T:Noname.Core.Entities.PlayerEntity
+  parent: Noname.Core.Entities
+  isExternal: true
+  href: Noname.Core.Entities.PlayerEntity.html
+  name: PlayerEntity
+  nameWithType: PlayerEntity
+  fullName: Noname.Core.Entities.PlayerEntity
+- uid: Noname.Core.Primitives
+  commentId: N:Noname.Core.Primitives
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Primitives
+  nameWithType: Noname.Core.Primitives
+  fullName: Noname.Core.Primitives
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Primitives
+    name: Primitives
+    isExternal: true
+    href: Noname.Core.Primitives.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Primitives
+    name: Primitives
+    isExternal: true
+    href: Noname.Core.Primitives.html
+- uid: Noname.Core.Entities
+  commentId: N:Noname.Core.Entities
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Entities
+  nameWithType: Noname.Core.Entities
+  fullName: Noname.Core.Entities
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Entities
+    name: Entities
+    isExternal: true
+    href: Noname.Core.Entities.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Entities
+    name: Entities
+    isExternal: true
+    href: Noname.Core.Entities.html
+- uid: Noname.Core.ValueObjects.PlayerDefinition.#ctor*
+  commentId: Overload:Noname.Core.ValueObjects.PlayerDefinition.#ctor
+  isExternal: true
+  href: Noname.Core.ValueObjects.PlayerDefinition.html#Noname_Core_ValueObjects_PlayerDefinition__ctor
+  name: PlayerDefinition
+  nameWithType: PlayerDefinition.PlayerDefinition
+  fullName: Noname.Core.ValueObjects.PlayerDefinition.PlayerDefinition
+  nameWithType.vb: PlayerDefinition.New
+  fullName.vb: Noname.Core.ValueObjects.PlayerDefinition.New
+  name.vb: New

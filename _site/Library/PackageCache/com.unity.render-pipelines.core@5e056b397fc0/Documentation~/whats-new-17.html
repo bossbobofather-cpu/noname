@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>What&#39;s new in SRP Core 17 / Unity 6 | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="What&#39;s new in SRP Core 17 / Unity 6 | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.render-pipelines.core@5e056b397fc0/Documentation~/whats-new-17.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="whats-new-in-srp-core-17--unity-6">What's new in SRP Core 17 / Unity 6</h1>
+
+<p><strong>Note:</strong> Starting with 17.2 (Unity 6.2), refer to <a href="xref:um-whats-new">What’s new in Unity</a> for the latest updates and improvements.</p>
+<h2 id="whats-new-in-srp-core-171--unity-61">What's new in SRP Core 17.1 / Unity 6.1</h2>
+<p>The following are the new features and improvements added to the SRP Core package 17.1, embedded Unity 6.1.</p>
+<h2 id="added">Added</h2>
+<h3 id="disable-pass-merging-in-the-render-graph-system">Disable pass merging in the render graph system</h3>
+<p>Added a render graph debug setting that allows you to temporarily disable pass merging to isolate issues or investigate performance changes.</p>
+<h3 id="new-variable-rate-shading-vrs-api">New variable rate shading (VRS) API</h3>
+<p>You can use the new variable rate shading (VRS) API to control the shading rate of Scriptable Renderer Features, and balance between GPU performance and image quality. This API is supported on DirectX 12, Vulkan, and compatible consoles.</p>
+<p>VRS is also known as fragment shading rate, and is a technique which allows you to decouple the rasterization and pixel shading rate. VRS can vary the shading rate across the screen space by using a shading rate image, which encodes the shading rates for different regions of the screen at different rates. When setting a lower shading rate, the pixel shader will execute at a lower frequency, which can drastically improve GPU performance.</p>
+<p><img src="Images/srp-vrs-example.jpg" alt="A scene with a shading rate image (SRI) in the corner. The blue and red areas represent the different shading rates of the UI and the game visuals."></p>
+<p>For more information about VRS, refer to the <a href="https://discussions.unity.com/t/optimize-renderer-features-with-variable-rate-shading-in-unity-6-1/1605893/1">Optimize Renderer Features with Variable Rate Shading in Unity 6.1</a> Unity Discussions page.</p>
+<h2 id="whats-new-in-srp-core-version-170--unity-60">What's new in SRP Core version 17.0 / Unity 6.0</h2>
+<p>The following is an overview of new features, improvements, and issues resolved in version 17 of the Scriptable Render Pipeline (SRP) Core package, embedded in Unity 6.</p>
+<h2 id="improvements">Improvements</h2>
+<h3 id="render-graph-system-optimization">Render graph system optimization</h3>
+<p>The render graph system API and compiler are now carefully optimized to reduce their cost on the main CPU thread. To prevent Unity compiling the render graph each frame, there's now a caching system so Unity only compiles when the rendering is different from the previous frame. This means performance on the main CPU thread should be faster, especially in non-development builds.</p>
+<h3 id="native-render-pass-support-in-the-render-graph-system">Native Render Pass support in the render graph system</h3>
+<p>The render graph system API now provides automatic Native Render Pass support using the <code>AddRasterRenderPass</code> API. This means Unity can use framebuffer fetch operations on platforms with tile-based GPUs, which improves performance.</p>
+<p>Native Render Pass support is implemented in the Universal Render Pipeline (URP). For more information, refer to <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@17.0/manual/render-graph.html">Render graph system</a> in the URP manual.</p>
+<p><strong>Note:</strong> You can't use the <code>AddRasterRenderPass</code> API with the existing <code>AddRenderPass</code> API. Instead, use the new <code>AddComputePass</code> and <code>AddUnsafePass</code> APIs.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.render-pipelines.core@5e056b397fc0/Documentation~/whats-new-17.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

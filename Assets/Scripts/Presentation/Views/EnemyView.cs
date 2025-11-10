@@ -5,6 +5,9 @@ using UnityEngine;
 
 namespace Noname.Presentation.Views
 {
+    /// <summary>
+    /// 적 하나의 시각 표현과 GameViewModel 이벤트를 연결합니다.
+    /// </summary>
     public sealed class EnemyView : MonoBehaviour
     {
         [SerializeField] private Transform visualRoot;
@@ -13,6 +16,7 @@ namespace Noname.Presentation.Views
         private int _enemyId = -1;
         private bool _isActive;
 
+        /// <summary>바인딩된 적 ID.</summary>
         public int EnemyId => _enemyId;
 
         private void Awake()
@@ -28,6 +32,9 @@ namespace Noname.Presentation.Views
             Unbind();
         }
 
+        /// <summary>
+        /// 주어진 적 엔티티와 뷰모델 이벤트에 바인딩합니다.
+        /// </summary>
         public void Bind(GameViewModel viewModel, EnemyEntity entity)
         {
             Unbind();
@@ -42,6 +49,9 @@ namespace Noname.Presentation.Views
             ApplyPosition(entity.Position);
         }
 
+        /// <summary>
+        /// 모든 이벤트 구독을 해제합니다.
+        /// </summary>
         public void Unbind()
         {
             if (_viewModel == null)

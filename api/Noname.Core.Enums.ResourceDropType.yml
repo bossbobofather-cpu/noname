@@ -1,0 +1,152 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Core.Enums.ResourceDropType
+  commentId: T:Noname.Core.Enums.ResourceDropType
+  id: ResourceDropType
+  parent: Noname.Core.Enums
+  children:
+  - Noname.Core.Enums.ResourceDropType.Ability
+  - Noname.Core.Enums.ResourceDropType.Experience
+  - Noname.Core.Enums.ResourceDropType.Gold
+  - Noname.Core.Enums.ResourceDropType.Health
+  langs:
+  - csharp
+  - vb
+  name: ResourceDropType
+  nameWithType: ResourceDropType
+  fullName: Noname.Core.Enums.ResourceDropType
+  type: Enum
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Enums/ResourceDropType.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Enums
+  syntax:
+    content: public enum ResourceDropType
+    content.vb: Public Enum ResourceDropType
+- uid: Noname.Core.Enums.ResourceDropType.Experience
+  commentId: F:Noname.Core.Enums.ResourceDropType.Experience
+  id: Experience
+  parent: Noname.Core.Enums.ResourceDropType
+  langs:
+  - csharp
+  - vb
+  name: Experience
+  nameWithType: ResourceDropType.Experience
+  fullName: Noname.Core.Enums.ResourceDropType.Experience
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Enums/ResourceDropType.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Enums
+  syntax:
+    content: Experience = 0
+    return:
+      type: Noname.Core.Enums.ResourceDropType
+- uid: Noname.Core.Enums.ResourceDropType.Gold
+  commentId: F:Noname.Core.Enums.ResourceDropType.Gold
+  id: Gold
+  parent: Noname.Core.Enums.ResourceDropType
+  langs:
+  - csharp
+  - vb
+  name: Gold
+  nameWithType: ResourceDropType.Gold
+  fullName: Noname.Core.Enums.ResourceDropType.Gold
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Enums/ResourceDropType.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Enums
+  syntax:
+    content: Gold = 1
+    return:
+      type: Noname.Core.Enums.ResourceDropType
+- uid: Noname.Core.Enums.ResourceDropType.Health
+  commentId: F:Noname.Core.Enums.ResourceDropType.Health
+  id: Health
+  parent: Noname.Core.Enums.ResourceDropType
+  langs:
+  - csharp
+  - vb
+  name: Health
+  nameWithType: ResourceDropType.Health
+  fullName: Noname.Core.Enums.ResourceDropType.Health
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Enums/ResourceDropType.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Enums
+  syntax:
+    content: Health = 2
+    return:
+      type: Noname.Core.Enums.ResourceDropType
+- uid: Noname.Core.Enums.ResourceDropType.Ability
+  commentId: F:Noname.Core.Enums.ResourceDropType.Ability
+  id: Ability
+  parent: Noname.Core.Enums.ResourceDropType
+  langs:
+  - csharp
+  - vb
+  name: Ability
+  nameWithType: ResourceDropType.Ability
+  fullName: Noname.Core.Enums.ResourceDropType.Ability
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Enums/ResourceDropType.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.Enums
+  syntax:
+    content: Ability = 3
+    return:
+      type: Noname.Core.Enums.ResourceDropType
+references:
+- uid: Noname.Core.Enums
+  commentId: N:Noname.Core.Enums
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Enums
+  nameWithType: Noname.Core.Enums
+  fullName: Noname.Core.Enums
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Enums
+    name: Enums
+    isExternal: true
+    href: Noname.Core.Enums.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Enums
+    name: Enums
+    isExternal: true
+    href: Noname.Core.Enums.html
+- uid: Noname.Core.Enums.ResourceDropType
+  commentId: T:Noname.Core.Enums.ResourceDropType
+  parent: Noname.Core.Enums
+  isExternal: true
+  href: Noname.Core.Enums.ResourceDropType.html
+  name: ResourceDropType
+  nameWithType: ResourceDropType
+  fullName: Noname.Core.Enums.ResourceDropType

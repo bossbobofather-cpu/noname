@@ -3,6 +3,9 @@ using UnityEngine;
 
 namespace Noname.Presentation.Views
 {
+    /// <summary>
+    /// 거점 체력/경험치 UI를 GameViewModel과 동기화합니다.
+    /// </summary>
     public sealed class FortressView : MonoBehaviour
     {
         [SerializeField] private UnityEngine.UI.Slider healthSlider;
@@ -16,6 +19,9 @@ namespace Noname.Presentation.Views
             Unbind();
         }
 
+        /// <summary>
+        /// GameViewModel 이벤트에 바인딩합니다.
+        /// </summary>
         public void Bind(GameViewModel viewModel)
         {
             Unbind();
@@ -24,6 +30,9 @@ namespace Noname.Presentation.Views
             _viewModel.PlayerExperienceChanged += HandleExperienceChanged;
         }
 
+        /// <summary>
+        /// 모든 구독을 해제합니다.
+        /// </summary>
         public void Unbind()
         {
             if (_viewModel == null)

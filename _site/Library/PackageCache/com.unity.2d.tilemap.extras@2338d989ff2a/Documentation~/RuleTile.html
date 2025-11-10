@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Rule Tile | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Rule Tile | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.tilemap.extras@2338d989ff2a/Documentation~/RuleTile.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="rule-tile">Rule Tile</h1>
+
+<p>__Contributions by:
+__ <a href="https://github.com/johnsoncodehk">johnsoncodehk</a>, <a href="https://github.com/DreadBoy">DreadBoy</a>, <a href="https://github.com/AVChemodanov">AVChemodanov</a>, <a href="https://github.com/DoctorShinobi">DoctorShinobi</a>, <a href="https://github.com/n4n0lix">n4n0lix</a></p>
+<p>This is a generic visual Tile that other Tiles such as
+the <a href="TerrainTile.md">Terrain Tiles</a>, <a href="PipelineTile.md">Pipeline Tile</a>, <a href="RandomTile.md">Random Tile</a>
+or <a href="AnimatedTile.html">Animated Tiles</a> are based on. There are specific types of Rule Tiles for each of
+the <a href="https://docs.unity3d.com/Manual/class-Grid.html">Tilemap grid types</a>. The default Rule Tile is for the
+default <a href="https://docs.unity3d.com/Manual/Tilemap-CreatingTilemaps.html">Rectangle Grid</a> type; the Hexagonal Rule Tile is
+for the <a href="https://docs.unity3d.com/Manual/Tilemap-Hexagonal.html">Hexagonal Grid</a> type; and the Isometric Rule Tile is
+for the <a href="https://docs.unity3d.com/Manual/Tilemap-Isometric.html">Isometric Grid</a> types. The different types of Rule
+Tiles all possess the same properties.</p>
+<h2 id="properties">Properties</h2>
+<p><img src="images/RuleTileEditor.png" alt="The Rule Tile editor of a Terrain Tile."><br>The Rule Tile editor of a Terrain Tile.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Default Sprite</strong></td>
+<td>The default Sprite set when creating a new Rule.</td>
+</tr>
+<tr>
+<td><strong>Default GameObject</strong></td>
+<td>The default GameObject set when creating a new Rule.</td>
+</tr>
+<tr>
+<td><strong>Default Collider</strong></td>
+<td>The default Collider Type set when creating a new Rule.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="tiling-rules">Tiling Rules</h3>
+<p><img src="images/RuleTileRule.png" alt="Tiling Rules properties."><br>Tiling Rules properties</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rule</strong></td>
+<td>The Rule Type for this Rule.</td>
+</tr>
+<tr>
+<td><strong>GameObject</strong></td>
+<td>The GameObject for the Tile which fits this Rule.</td>
+</tr>
+<tr>
+<td><strong>Collider</strong></td>
+<td>The Collider Type for the Tile which fits this Rule</td>
+</tr>
+<tr>
+<td><strong>Output</strong></td>
+<td>The Output for the Tile which fits this Rule. Each Output type has its own properties.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output-fixed">Output: Fixed</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sprite</strong></td>
+<td>Display this Sprite for Tiles which fit this Rule.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output-random">Output: Random</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Noise</strong></td>
+<td>The <a href="https://en.wikipedia.org/wiki/Perlin_noise">Perlin noise</a> factor when placing the Tile.</td>
+</tr>
+<tr>
+<td><strong>Shuffle</strong></td>
+<td>The randomized transform given to the Tile when placing it.</td>
+</tr>
+<tr>
+<td><strong>Size</strong></td>
+<td>The number of Sprites to randomize from.</td>
+</tr>
+<tr>
+<td><strong>Sprite</strong></td>
+<td>The Sprite for the Tile which fits this Rule. A random Sprite will be chosen out of this when placing the Tile.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="output-animation">Output: Animation</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>MinSpeed</strong></td>
+<td>The minimum speed at which the animation is played.</td>
+</tr>
+<tr>
+<td><strong>MaxSpeed</strong></td>
+<td>The maximum speed at which the animation is played.</td>
+</tr>
+<tr>
+<td><strong>Size</strong></td>
+<td>The number of Sprites in the animation.</td>
+</tr>
+<tr>
+<td><strong>Sprite</strong></td>
+<td>The Sprite for the Tile which fits this Rule. Sprites will be shown in sequence based on the order of the list.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="editor-properties">Editor Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Extend Neighbor</strong></td>
+<td>Enabling this allows you to increase the range of neighbors beyond the 3x3 box.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Usage">Setting up a Rule Tile</h2>
+<p>Set up the Rule Tile with the required rules with the <strong>Rule Tile editor</strong>. In the Rule Tile editor, you can change,
+add, duplicate or remove Rules in the <strong>Tiling Rules</strong> list. Click on the + or - buttons to add or remove Rules. If you
+have a Rule selected, clicking on the + button will allow you to choose between adding a new Rule or duplicating the
+selected Rule. The newly created Rule will be placed after the current selected Rule. Select and hold the top left
+corner of each row to drag them up or down to change the order of the Rules in the list.</p>
+<p><img src="images/RuleTileEditor.png" alt="Rule Tile Editor."><br>Rule Tile Editor</p>
+<p>When you add a new Rule, the Rule editor displays the following: the list of Rule properties, a 3x3 box that visualizes
+the behavior of the set Rules, and a Sprite selector that displays a preview of the selected Sprite.</p>
+<p><img src="images/RuleTileRule.png" alt="The list of Rule properties, a 3x3 box that visualizes
+the behavior of the set Rules, and a Sprite selector that displays a preview of the selected Sprite."></p>
+<p>The 3x3 box represents the neighbors a Tile can have, where the center represents the Tile itself, and the eight
+bordering cells are its neighboring Tiles in their relative positions to the Tile. Each of the neighboring cells can be
+set with one of three options: <strong>Don't Care</strong>, <strong>This</strong> and <strong>Not This</strong>. These define the behavior of the Rule Tile
+towards these Tiles. Edit the 3x3 box to set up the Rule the Tile must match.</p>
+<table>
+<thead>
+<tr>
+<th>Options</th>
+<th>Rule Tile behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Don't Care</strong></td>
+<td>The Rule Tile ignores the contents in this cell.</td>
+</tr>
+<tr>
+<td><strong>This</strong></td>
+<td>The Rule Tile checks if the contents of this cell is an instance of this Rule Tile. If it is an instance, the rule passes. If it is not an instance, the rule fails.</td>
+</tr>
+<tr>
+<td><strong>Not This</strong></td>
+<td>The Rule Tile checks if the contents of this cell is not an instance of this Rule Tile. If it is not an instance, the rule passes. If it is an instance, the rule fails.</td>
+</tr>
+</tbody>
+</table>
+<p>If all of the neighbors of the Rule Tile match the options set for their respective directions, then the Rule is
+considered matched and the rest of the Rule properties are applied.</p>
+<p>When the Rule is set to Fixed, the Rule will only match exactly the conditions set for its neighbors. The example below
+will only match if there are the same Rule Tiles to the left and right of it.</p>
+<p><img src="images/RuleTileRuleFixed.png" alt="Rule Tile with Fixed Rule."></p>
+<p>When the Rule is set to ‘Rotated’, the 3x3 box will be rotated 90 degrees each time the Rule fails to match and it will
+try to match again with this rotated 3x3 box. If the Rule now matches, the contents of this Rule will be applied as well
+as the rotation required to match the Rule. Use this if you want the Rule to match for the four 90 degree rotations if
+rotation is possible.</p>
+<p><img src="images/RuleTileRuleRotated.png" alt="Rule Tile with Rotated Rule."></p>
+<p>When the Rule is set to Mirror X, Mirror Y or Mirror XY, the 3x3 box will be mirrored in that axis each time the Rule
+fails to match and it will try to match again with this mirrored 3x3 box. If the Rule now matches, the contents of this
+Rule will be applied as well as the mirroring required to match the Rule. Use this if you want the Rule to match for the
+mirrored locations if mirroring is possible.</p>
+<p><img src="images/RuleTileRuleMirror.png" alt="Rule Tile with Mirror XY Rule."></p>
+<p>If you want the Rule Tile to have a Random output, you can set the Output to Random. This will allow you to specify a
+number of input Sprites to randomize from. The rotation of the Sprites can be randomized as well by changing the _
+<em>Shuffle</em>_ property.</p>
+<p><img src="images/RuleTileOutputRandom.png" alt="Rule Tile with Random Output."></p>
+<p>If you want the Rule Tile to output a Sprite Animation, you can set the Output to Animation. This will allow you to
+specify a number of Sprites to animate sequentially. The speed of the Animation can be randomized as well by changing
+the <strong>Speed</strong> property.</p>
+<p><img src="images/RuleTileOutputAnimation.png" alt="Rule Tile with Animation Output."></p>
+<p>When <b>Extend Neighbors</b> is enabled, the 3x3 box can be extended to allow for more specific neighbor matching. The
+Transform rule matching (eg. Rotated, Mirror) will apply for the extended neighbors set.</p>
+<p><img src="images/RuleTileRuleExtendNeighbor.png" alt="Rule Tile with Animation Output."></p>
+<p>Paint with the Rule Tile in the same way as other Tiles by using the Tile Palette tools.</p>
+<p><img src="images/RuleTile.png" alt="Scene View with Rule Tile."></p>
+<p>For optimization, please set the most common Rule at the top of the list of Rules and follow with next most common Rule
+and so on. When matching Rules during the placement of the Tile, the Rule Tile algorithm will check the first Rule
+first, before proceeding with the next Rules.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.tilemap.extras@2338d989ff2a/Documentation~/RuleTile.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

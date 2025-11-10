@@ -8,6 +8,9 @@ using UnityEngine.InputSystem;
 
 namespace Noname.Presentation.Views
 {
+    /// <summary>
+    /// 개발용 치트 콘솔을 제공하고 입력을 차단하는 디버그 UI입니다.
+    /// </summary>
     public sealed class DefenseDebugPanel : MonoBehaviour
     {
         [SerializeField] private DefenseGameBootstrapper bootstrapper;

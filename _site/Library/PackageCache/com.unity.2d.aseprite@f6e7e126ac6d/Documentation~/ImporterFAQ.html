@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Frequently asked questions | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Frequently asked questions | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.aseprite@f6e7e126ac6d/Documentation~/ImporterFAQ.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="frequently-asked-questions">Frequently asked questions</h1>
+
+<h2 id="how-are-the-layers-sorted-in-unity">How are the layers sorted in Unity?</h2>
+<p>When an Aseprite file is imported using the <strong>Import Mode: Individual</strong>, every layer from the source file becomes a GameObject inside the generated model prefab. If the layer is a normal layer (and not a group layer), it has a SpriteRenderer component added to it. To make sure each SpriteRenderer renders in the same order as inside Aseprite, Unity automatically assigns a value to the <strong>Order in Layer</strong> field on the SpriteRenderer component. This value is a combination of two variables, the order of the layer inside Aseprite, where the bottom layer has the value of 0, and the top layer has the value of <code>Number of layers</code>, e.g., if the source file contains five layers, the top layer will have the value of 5. The second value is the z-index, which can be set per cell in Aseprite. The final formula to calculate the <strong>Order in Layer</strong> value is: <code>Layer count from the bottom + Z-Index of the current cell</code>.</p>
+<p>Apart from the Order in Layer value, Unity also adds a <a href="https://docs.unity3d.com/Manual/class-SortingGroup.html">Sorting Group component</a> onto the root GameObject of the model prefab, to make sure that every SpriteRenderer within the prefab is sorted together.</p>
+<p>For more information about general 2D sorting in Unity, see <a href="https://docs.unity3d.com/Manual/2DSorting.html">the 2D Sorting page</a> in the Unity manual.</p>
+<h2 id="which-actions-cause-sprite-data-to-be-overwritten">Which actions cause Sprite data to be overwritten?</h2>
+<p>The Aseprite Importer will overwrite custom Sprite data authored in the Sprite Editor when the following actions are performed:</p>
+<ul>
+<li>Updated any of the following importer settings:
+<ul>
+<li>Pivot alignment</li>
+<li>Pivot space</li>
+<li>Custom pivot point</li>
+<li>Sprite padding</li>
+</ul>
+</li>
+<li>Changed the cell's size in Aseprite.</li>
+<li>Packing texture's size has changed.</li>
+<li>Removed or renamed a layer.</li>
+<li>Import mode is set to TileSet.</li>
+</ul>
+<h3 id="enable-uuid-for-layers">Enable UUID for layers</h3>
+<p>By default, the Aseprite Importer identifies the layers (and the Sprites) by the name and the path of a layer. In Aseprite <code>v1.3.14-beta1</code>, a unique identifier for layers was introduced. If switched on, the Sprite data is kept even if the layer name in Aseprite is changed.</p>
+<p>To turn the unique identifiers on, open Aseprite, go to <strong>Sprite &gt; Properties...</strong> and check the <strong>Create UUID for layers</strong>-checkbox. Note that this has to be done for every Aseprite file.</p>
+<p><img src="images/Faq_uuid_00.png" alt=""></p>
+<h2 id="how-to-combine-multiple-sprite-sheets-into-one">How to combine multiple sprite sheets into one?</h2>
+<p>You can make use of Sprite Atlases to combine multiple sprite sheets into a single texture. Read more about Sprite Atlas <a href="https://docs.unity3d.com/2021.3/Documentation/Manual/class-SpriteAtlas.html">here</a>. Combining multiple sprite sheets into one is a good way to reduce the draw calls in a scene.</p>
+<h2 id="why-is-my-trimmed-aseprite-file-not-trimmed-in-unity">Why is my trimmed Aseprite file not trimmed in Unity?</h2>
+<p>When modifying the <a href="https://www.aseprite.org/docs/canvas/#canvas-size">canvas size</a>, make sure the <strong>Trim content outside the canvas</strong> checkbox is checked. This way, the stored texture will be cropped to the specified size.</p>
+<p><img src="images/Faq_TrimContent.png" alt=""></p>
+<h2 id="how-to-add-events-to-animation-clips">How to add events to Animation Clips?</h2>
+<p><a href="https://docs.unity3d.com/Manual/script-AnimationWindowEvent.html">Animation Events</a> can be generated by adding user data to Cells inside Aseprite.</p>
+<p>Follow these steps to add an Animation Event to a frame:</p>
+<ul>
+<li>In Aseprite, select any cel in the frame you want to add an event to.</li>
+<li>Right-click on the cel and select <strong>Cel Properties</strong>.</li>
+</ul>
+<p><img src="images/Faq_AddEvents_00.png" alt=""></p>
+<ul>
+<li>Press the <strong>User Data</strong>-button to the left of the <strong>Opacity</strong> slider to bring up the <strong>User Data</strong>-field.</li>
+</ul>
+<p><img src="images/Faq_AddEvents_01.png" alt=""></p>
+<ul>
+<li><p>Enter the event name in the following format: <strong>event:EventName</strong>. E.g. <strong>event:OnIdle</strong>.</p>
+</li>
+<li><p>Save the file and switch over to Unity.</p>
+</li>
+<li><p>Open the Animation Window and inspect the Animation Clip. You can see that the event has been added to the frame.</p>
+</li>
+</ul>
+<p><img src="images/Faq_AddEvents_02.png" alt=""></p>
+<p>To receive the event, place the following script on the same GameObject as the Animator is located on:</p>
+<pre><code class="lang-CSharp">using UnityEngine;
+
+public class MyEventReceiver : MonoBehaviour
+{
+    // In our example, we created an event called &quot;OnIdle&quot;.
+    // This should be changed to the event name you specified in Aseprite.
+    private void OnIdle()
+    {
+        Debug.Log(&quot;OnIdle was called.&quot;);
+    }
+}
+</code></pre>
+<h3 id="add-an-argument-to-an-event">Add an argument to an event</h3>
+<p>You can also add one argument to the event. We support the following data types:</p>
+<ul>
+<li>String</li>
+<li>Integer</li>
+<li>Float</li>
+</ul>
+<p>To add an argument to an event, add a comma (,) after the event name and then fill in the argument. E.g.</p>
+<ul>
+<li><strong>event:MyIntEvent, 123</strong></li>
+<li><strong>event:MyFloatEvent, 1.234f</strong></li>
+<li><strong>event:MyStringEvent, &quot;Hello&quot;</strong></li>
+</ul>
+<p><strong>Note:</strong> If the Individual Events toggle is unchecked in the Generate Assets settings, arguments will not be available in the event. The only argument used by the general purpose event (OnAnimationEvent) is a string containing the event name from the User Data in Aseprite.</p>
+<p><img src="images/Faq_AddEvents_03.png" alt=""></p>
+<p>To receive the event with a parameter, place the following script on the same GameObject as the Animator is located on:</p>
+<pre><code class="lang-CSharp">using UnityEngine;
+
+public class MyEventReceiver : MonoBehaviour
+{
+    // In our example, we created an event called &quot;MyEventReceiver&quot; with a string parameter.
+    // This should be changed to the event name and parameter type you specified in Aseprite.
+    private void MyStringEvent(string data)
+    {
+        Debug.Log($&quot;MyStringEvent was called with the data: {data}&quot;);
+    }
+}
+</code></pre>
+<h3 id="single-event-receiver-for-all-events">Single event receiver for all events</h3>
+<p>There are times when you prefer to receive all animation events from an Animator in one method. To do this, begin by unchecking the Individual Events toggle in the Aseprite Importer inspector.</p>
+<p><img src="images/Faq_ComboEvents_00.png" alt=""></p>
+<p>By unchecking the Individual Events toggle and pressing Apply, the Aseprite Importer will update the AnimationClips to use the following event string &quot;OnAnimationEvent&quot; for all events.</p>
+<p>To receive the events, place the following script on the same GameObject as the Animator is located on:</p>
+<pre><code class="lang-CSharp">using UnityEngine;
+
+public class MyEventReceiver : MonoBehaviour
+{
+    private void OnAnimationEvent(string eventName)
+    {
+        Debug.Log($&quot;{eventName} was called.&quot;);
+    }
+}
+</code></pre>
+<p><strong>Note:</strong> If the Individual Events toggle is unchecked in the Generate Assets settings, arguments will not be available in the event. The only argument used by the general purpose event (OnAnimationEvent) is a string containing the event name from the User Data in Aseprite.</p>
+<h2 id="how-to-make-changes-to-an-animator-controller">How to make changes to an Animator Controller?</h2>
+<p>The Aseprite Importer generates an Animator Controller if the Aseprite file contains more than one frame, and the <strong>Animation Clip</strong> checkbox is checked in the importer. This Animator Controller is Read-Only, meaning that it cannot be changed.</p>
+<p><img src="images/Faq_AnimController.png" alt=""></p>
+<p>The Animator Controller is Read-Only.</p>
+<p>If you like to have an Animator Controller which you can change, follow these steps:</p>
+<ul>
+<li>Select an Aseprite file in Unity.</li>
+<li>Press the <strong>Export Animation Assets</strong>-button.</li>
+<li>In the popup, make sure the <strong>Animator Controller</strong> checkbox is checked. Leave the <strong>Animation Clips</strong> checkbox unchecked if you do not wish to edit any of the clips.</li>
+<li>Press <strong>Export</strong> and select a folder to place the Asset(s) into.</li>
+</ul>
+<p><img src="images/Faq_ExportPopup.png" alt=""></p>
+<p>An Animator Controller should now be located in the selected folder. If the Animation Clip checkbox was left unchecked, all the states within the Animator Controller are linked back to the Aseprite file, meaning that the clips will stay up to date with any changes made in Aseprite.</p>
+<p>Do note that if you add a new <a href="https://www.aseprite.org/docs/tags/">tag</a> in Aseprite, you need to add the resulting Animation Clip to the exported Animator Controller, as this will not happen automatically.</p>
+<h2 id="how-to-inject-custom-assets-on-import">How to inject custom assets on import?</h2>
+<p>The Aseprite Importer comes with an event, OnPostAsepriteImport, which is fired at the end of the import process. This event can be used to inject or change the generated assets when importing an Aseprite file.</p>
+<pre><code class="lang-CSharp">using UnityEditor;
+using UnityEditor.U2D.Aseprite;
+using UnityEngine;
+
+public class GameObjectInjector : AssetPostprocessor
+{
+    void OnPreprocessAsset()
+    {
+        if (assetImporter is AsepriteImporter aseImporter)
+            aseImporter.OnPostAsepriteImport += OnPostAsepriteImport;
+    }
+
+    static void OnPostAsepriteImport(AsepriteImporter.ImportEventArgs args)
+    {
+        var myGo = new GameObject(&quot;MyGameObject&quot;);
+        args.context.AddObjectToAsset(myGo.name, myGo);
+    }
+}
+</code></pre>
+<h2 id="how-to-disable-looping-on-animation-clips">How to disable looping on Animation Clips?</h2>
+<p>By default, Animation Clips generated from Aseprite <a href="https://www.aseprite.org/docs/tags/">Tags</a> will automatically loop. To disable looping, open Aseprite and bring up the Tag Property window of the Tag you wish to turn non-looping. In the Repeat field, change the value from ∞ to 1 (Aseprite Importer only supports looping and non-looping. Any value greater than 1 will still result in only a single playback).</p>
+<p><img src="images/Faq_NonLoop_00.png" alt=""></p>
+<p>Save your changes in Aseprite and switch over to Unity. The Aseprite file will automatically be reimported with the Animation Clip updated with non-looping set.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.aseprite@f6e7e126ac6d/Documentation~/ImporterFAQ.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

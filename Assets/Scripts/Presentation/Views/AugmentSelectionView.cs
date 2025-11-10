@@ -4,6 +4,9 @@ using UnityEngine;
 
 namespace Noname.Presentation.Views
 {
+    /// <summary>
+    /// 어빌리티 선택 UI 전체를 관리하는 뷰입니다.
+    /// </summary>
     public sealed class AugmentSelectionView : MonoBehaviour
     {
         [SerializeField] private CanvasGroup canvasGroup;
@@ -21,6 +24,9 @@ namespace Noname.Presentation.Views
             Unbind();
         }
 
+        /// <summary>
+        /// GameViewModel 이벤트에 구독합니다.
+        /// </summary>
         public void Bind(GameViewModel viewModel)
         {
             Unbind();
@@ -34,6 +40,9 @@ namespace Noname.Presentation.Views
             _viewModel.AbilitySelectionCleared += HandleSelectionCleared;
         }
 
+        /// <summary>
+        /// 구독 중인 모든 이벤트를 해제합니다.
+        /// </summary>
         public void Unbind()
         {
             if (_viewModel == null)
@@ -109,4 +118,3 @@ namespace Noname.Presentation.Views
         }
     }
 }
-

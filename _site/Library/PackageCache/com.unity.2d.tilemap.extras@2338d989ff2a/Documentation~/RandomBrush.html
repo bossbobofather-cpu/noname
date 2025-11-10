@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Random Brush  | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Random Brush  | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.tilemap.extras@2338d989ff2a/Documentation~/RandomBrush.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="random-brush-random-brush-icon">Random Brush <img src="images/RandomBrushIcon.png" alt="Random Brush Icon"></h1>
+
+<p>This Brush places random Tiles onto a Tilemap by selecting from defined <strong>Tile Sets</strong> while painting onto the the
+Tilemap. Use this as an example to create custom Brushes which store specific data per Brush, and to make Brushes with
+randomized painting behavior.</p>
+<h2 id="properties">Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pick Random Tiles</strong></td>
+<td>Enable this property to pick the Tiles from the current selection as a random Tile Set.</td>
+</tr>
+<tr>
+<td><strong>Add To Random Tiles</strong></td>
+<td>Enable this property to add the picked Tile Sets to existing Tile Sets instead of replacing them.</td>
+</tr>
+<tr>
+<td><strong>Tile Set Size</strong></td>
+<td>Set the size of the Tile Set that is painted by this Brush.</td>
+</tr>
+<tr>
+<td><strong>Number of Tiles</strong></td>
+<td>The number of Tile Sets.</td>
+</tr>
+<tr>
+<td><strong>Tile Set</strong></td>
+<td>The Tile Set to randomize from</td>
+</tr>
+<tr>
+<td><strong>Tiles</strong></td>
+<td>The Tiles in the Tile Set.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="usage">Usage</h2>
+<p>To create a <strong>Tile Set</strong>, first define the size of the Tile Set you want to paint by setting its size values in the *
+<em>Tile Set Size</em>* property. Then you can add Tile Sets manually with the Brush Editor or select them from an existing
+Tile Palette.</p>
+<p>To select Tile Sets from an existing <a href="https://docs.unity3d.com/Manual/Tilemap-Palette.html">Tile Palette</a>, enable the _
+<em>Pick Random Tiles</em>_ property and select the Tile Sets using
+the <a href="https://docs.unity3d.com/Manual/Tilemap-Painting.html#Picker">Picker Tool</a>. This will create a Tile Set, or
+multiple Sets if the picked size is larger than the size set in the <strong>Tile Set Size</strong> property. Enable the <strong>Add To
+Random Tiles</strong> property to add a picked selection of Tiles onto new or existing Tile Sets instead of replacing them.</p>
+<p><img src="images/RandomBrushTileSet.png" alt="Brush Editor with Random Brush"><br> In this example, 3 Tile Sets of 1x2 are created.</p>
+<p>When painting with the Random Brush, the Random Brush will randomly pick from the available Tile Sets while painting the
+Tiles.</p>
+<p><img src="images/RandomBrush.png" alt="Scene View with Random Brush"></p>
+<h2 id="implementation">Implementation</h2>
+<p>The Random Brush inherits from the Grid Brush and implements the following overrides:</p>
+<ul>
+<li>It overrides the Paint method to paint random selections of Tiles from chosen Tile Sets.</li>
+<li>It overrides the Pick method to be able to pick selections of Tiles for the random Tile Sets.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.tilemap.extras@2338d989ff2a/Documentation~/RandomBrush.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

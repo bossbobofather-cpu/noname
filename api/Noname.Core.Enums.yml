@@ -1,0 +1,89 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Core.Enums
+  commentId: N:Noname.Core.Enums
+  id: Noname.Core.Enums
+  children:
+  - Noname.Core.Enums.EnemyCombatRole
+  - Noname.Core.Enums.MonsterRole
+  - Noname.Core.Enums.ProjectileFaction
+  - Noname.Core.Enums.ResourceDropType
+  langs:
+  - csharp
+  - vb
+  name: Noname.Core.Enums
+  nameWithType: Noname.Core.Enums
+  fullName: Noname.Core.Enums
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: Noname.Core.Enums.MonsterRole
+  commentId: T:Noname.Core.Enums.MonsterRole
+  parent: Noname.Core.Enums
+  isExternal: true
+  href: Noname.Core.Enums.MonsterRole.html
+  name: MonsterRole
+  nameWithType: MonsterRole
+  fullName: Noname.Core.Enums.MonsterRole
+- uid: Noname.Core.Enums.ProjectileFaction
+  commentId: T:Noname.Core.Enums.ProjectileFaction
+  parent: Noname.Core.Enums
+  isExternal: true
+  href: Noname.Core.Enums.ProjectileFaction.html
+  name: ProjectileFaction
+  nameWithType: ProjectileFaction
+  fullName: Noname.Core.Enums.ProjectileFaction
+- uid: Noname.Core.Enums.ResourceDropType
+  commentId: T:Noname.Core.Enums.ResourceDropType
+  parent: Noname.Core.Enums
+  isExternal: true
+  href: Noname.Core.Enums.ResourceDropType.html
+  name: ResourceDropType
+  nameWithType: ResourceDropType
+  fullName: Noname.Core.Enums.ResourceDropType
+- uid: Noname.Core.Enums.EnemyCombatRole
+  commentId: T:Noname.Core.Enums.EnemyCombatRole
+  parent: Noname.Core.Enums
+  isExternal: true
+  href: Noname.Core.Enums.EnemyCombatRole.html
+  name: EnemyCombatRole
+  nameWithType: EnemyCombatRole
+  fullName: Noname.Core.Enums.EnemyCombatRole
+- uid: Noname.Core.Enums
+  commentId: N:Noname.Core.Enums
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Enums
+  nameWithType: Noname.Core.Enums
+  fullName: Noname.Core.Enums
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Enums
+    name: Enums
+    isExternal: true
+    href: Noname.Core.Enums.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Enums
+    name: Enums
+    isExternal: true
+    href: Noname.Core.Enums.html

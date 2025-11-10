@@ -1,0 +1,233 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Presentation.Views.ProjectileView
+  commentId: T:Noname.Presentation.Views.ProjectileView
+  id: ProjectileView
+  parent: Noname.Presentation.Views
+  children:
+  - Noname.Presentation.Views.ProjectileView.#ctor
+  - Noname.Presentation.Views.ProjectileView.Complete(System.Single)
+  - Noname.Presentation.Views.ProjectileView.Launch(UnityEngine.Vector3,UnityEngine.Vector3,System.Single)
+  - Noname.Presentation.Views.ProjectileView.SnapTo(UnityEngine.Vector3)
+  langs:
+  - csharp
+  - vb
+  name: ProjectileView
+  nameWithType: ProjectileView
+  fullName: Noname.Presentation.Views.ProjectileView
+  type: Class
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/ProjectileView.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Views
+  syntax:
+    content: 'public sealed class ProjectileView : MonoBehaviour'
+    content.vb: Public NotInheritable Class ProjectileView Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Noname.Presentation.Views.ProjectileView.Launch(UnityEngine.Vector3,UnityEngine.Vector3,System.Single)
+  commentId: M:Noname.Presentation.Views.ProjectileView.Launch(UnityEngine.Vector3,UnityEngine.Vector3,System.Single)
+  id: Launch(UnityEngine.Vector3,UnityEngine.Vector3,System.Single)
+  parent: Noname.Presentation.Views.ProjectileView
+  langs:
+  - csharp
+  - vb
+  name: Launch(Vector3, Vector3, float)
+  nameWithType: ProjectileView.Launch(Vector3, Vector3, float)
+  fullName: Noname.Presentation.Views.ProjectileView.Launch(UnityEngine.Vector3, UnityEngine.Vector3, float)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/ProjectileView.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Views
+  syntax:
+    content: public void Launch(Vector3 origin, Vector3 target, float speed)
+    parameters:
+    - id: origin
+      type: UnityEngine.Vector3
+    - id: target
+      type: UnityEngine.Vector3
+    - id: speed
+      type: System.Single
+    content.vb: Public Sub Launch(origin As Vector3, target As Vector3, speed As Single)
+  overload: Noname.Presentation.Views.ProjectileView.Launch*
+  nameWithType.vb: ProjectileView.Launch(Vector3, Vector3, Single)
+  fullName.vb: Noname.Presentation.Views.ProjectileView.Launch(UnityEngine.Vector3, UnityEngine.Vector3, Single)
+  name.vb: Launch(Vector3, Vector3, Single)
+- uid: Noname.Presentation.Views.ProjectileView.SnapTo(UnityEngine.Vector3)
+  commentId: M:Noname.Presentation.Views.ProjectileView.SnapTo(UnityEngine.Vector3)
+  id: SnapTo(UnityEngine.Vector3)
+  parent: Noname.Presentation.Views.ProjectileView
+  langs:
+  - csharp
+  - vb
+  name: SnapTo(Vector3)
+  nameWithType: ProjectileView.SnapTo(Vector3)
+  fullName: Noname.Presentation.Views.ProjectileView.SnapTo(UnityEngine.Vector3)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/ProjectileView.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Views
+  syntax:
+    content: public void SnapTo(Vector3 position)
+    parameters:
+    - id: position
+      type: UnityEngine.Vector3
+    content.vb: Public Sub SnapTo(position As Vector3)
+  overload: Noname.Presentation.Views.ProjectileView.SnapTo*
+- uid: Noname.Presentation.Views.ProjectileView.Complete(System.Single)
+  commentId: M:Noname.Presentation.Views.ProjectileView.Complete(System.Single)
+  id: Complete(System.Single)
+  parent: Noname.Presentation.Views.ProjectileView
+  langs:
+  - csharp
+  - vb
+  name: Complete(float)
+  nameWithType: ProjectileView.Complete(float)
+  fullName: Noname.Presentation.Views.ProjectileView.Complete(float)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/ProjectileView.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Views
+  syntax:
+    content: public void Complete(float explosionRadius)
+    parameters:
+    - id: explosionRadius
+      type: System.Single
+    content.vb: Public Sub Complete(explosionRadius As Single)
+  overload: Noname.Presentation.Views.ProjectileView.Complete*
+  nameWithType.vb: ProjectileView.Complete(Single)
+  fullName.vb: Noname.Presentation.Views.ProjectileView.Complete(Single)
+  name.vb: Complete(Single)
+- uid: Noname.Presentation.Views.ProjectileView.#ctor
+  commentId: M:Noname.Presentation.Views.ProjectileView.#ctor
+  id: '#ctor'
+  parent: Noname.Presentation.Views.ProjectileView
+  langs:
+  - csharp
+  - vb
+  name: ProjectileView()
+  nameWithType: ProjectileView.ProjectileView()
+  fullName: Noname.Presentation.Views.ProjectileView.ProjectileView()
+  type: Constructor
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/ProjectileView.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Views
+  syntax:
+    content: public ProjectileView()
+    content.vb: Public Sub New()
+  overload: Noname.Presentation.Views.ProjectileView.#ctor*
+  nameWithType.vb: ProjectileView.New()
+  fullName.vb: Noname.Presentation.Views.ProjectileView.New()
+  name.vb: New()
+references:
+- uid: Noname.Presentation.Views
+  commentId: N:Noname.Presentation.Views
+  isExternal: true
+  href: Noname.html
+  name: Noname.Presentation.Views
+  nameWithType: Noname.Presentation.Views
+  fullName: Noname.Presentation.Views
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Presentation
+    name: Presentation
+    isExternal: true
+    href: Noname.Presentation.html
+  - name: .
+  - uid: Noname.Presentation.Views
+    name: Views
+    isExternal: true
+    href: Noname.Presentation.Views.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Presentation
+    name: Presentation
+    isExternal: true
+    href: Noname.Presentation.html
+  - name: .
+  - uid: Noname.Presentation.Views
+    name: Views
+    isExternal: true
+    href: Noname.Presentation.Views.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Noname.Presentation.Views.ProjectileView.Launch*
+  commentId: Overload:Noname.Presentation.Views.ProjectileView.Launch
+  isExternal: true
+  href: Noname.Presentation.Views.ProjectileView.html#Noname_Presentation_Views_ProjectileView_Launch_UnityEngine_Vector3_UnityEngine_Vector3_System_Single_
+  name: Launch
+  nameWithType: ProjectileView.Launch
+  fullName: Noname.Presentation.Views.ProjectileView.Launch
+- uid: UnityEngine.Vector3
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: UnityEngine.Vector3
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Noname.Presentation.Views.ProjectileView.SnapTo*
+  commentId: Overload:Noname.Presentation.Views.ProjectileView.SnapTo
+  isExternal: true
+  href: Noname.Presentation.Views.ProjectileView.html#Noname_Presentation_Views_ProjectileView_SnapTo_UnityEngine_Vector3_
+  name: SnapTo
+  nameWithType: ProjectileView.SnapTo
+  fullName: Noname.Presentation.Views.ProjectileView.SnapTo
+- uid: Noname.Presentation.Views.ProjectileView.Complete*
+  commentId: Overload:Noname.Presentation.Views.ProjectileView.Complete
+  isExternal: true
+  href: Noname.Presentation.Views.ProjectileView.html#Noname_Presentation_Views_ProjectileView_Complete_System_Single_
+  name: Complete
+  nameWithType: ProjectileView.Complete
+  fullName: Noname.Presentation.Views.ProjectileView.Complete
+- uid: Noname.Presentation.Views.ProjectileView.#ctor*
+  commentId: Overload:Noname.Presentation.Views.ProjectileView.#ctor
+  isExternal: true
+  href: Noname.Presentation.Views.ProjectileView.html#Noname_Presentation_Views_ProjectileView__ctor
+  name: ProjectileView
+  nameWithType: ProjectileView.ProjectileView
+  fullName: Noname.Presentation.Views.ProjectileView.ProjectileView
+  nameWithType.vb: ProjectileView.New
+  fullName.vb: Noname.Presentation.Views.ProjectileView.New
+  name.vb: New

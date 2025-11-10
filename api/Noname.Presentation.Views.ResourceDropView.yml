@@ -1,0 +1,310 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Presentation.Views.ResourceDropView
+  commentId: T:Noname.Presentation.Views.ResourceDropView
+  id: ResourceDropView
+  parent: Noname.Presentation.Views
+  children:
+  - Noname.Presentation.Views.ResourceDropView.#ctor
+  - Noname.Presentation.Views.ResourceDropView.BeginPickupTravel(UnityEngine.Transform,System.Action{System.Int32})
+  - Noname.Presentation.Views.ResourceDropView.Initialize(System.Int32,Noname.Core.Enums.ResourceDropType)
+  langs:
+  - csharp
+  - vb
+  name: ResourceDropView
+  nameWithType: ResourceDropView
+  fullName: Noname.Presentation.Views.ResourceDropView
+  type: Class
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/ResourceDropView.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Views
+  syntax:
+    content: 'public sealed class ResourceDropView : MonoBehaviour'
+    content.vb: Public NotInheritable Class ResourceDropView Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Noname.Presentation.Views.ResourceDropView.Initialize(System.Int32,Noname.Core.Enums.ResourceDropType)
+  commentId: M:Noname.Presentation.Views.ResourceDropView.Initialize(System.Int32,Noname.Core.Enums.ResourceDropType)
+  id: Initialize(System.Int32,Noname.Core.Enums.ResourceDropType)
+  parent: Noname.Presentation.Views.ResourceDropView
+  langs:
+  - csharp
+  - vb
+  name: Initialize(int, ResourceDropType)
+  nameWithType: ResourceDropView.Initialize(int, ResourceDropType)
+  fullName: Noname.Presentation.Views.ResourceDropView.Initialize(int, Noname.Core.Enums.ResourceDropType)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/ResourceDropView.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Views
+  syntax:
+    content: public void Initialize(int dropId, ResourceDropType type)
+    parameters:
+    - id: dropId
+      type: System.Int32
+    - id: type
+      type: Noname.Core.Enums.ResourceDropType
+    content.vb: Public Sub Initialize(dropId As Integer, type As ResourceDropType)
+  overload: Noname.Presentation.Views.ResourceDropView.Initialize*
+  nameWithType.vb: ResourceDropView.Initialize(Integer, ResourceDropType)
+  fullName.vb: Noname.Presentation.Views.ResourceDropView.Initialize(Integer, Noname.Core.Enums.ResourceDropType)
+  name.vb: Initialize(Integer, ResourceDropType)
+- uid: Noname.Presentation.Views.ResourceDropView.BeginPickupTravel(UnityEngine.Transform,System.Action{System.Int32})
+  commentId: M:Noname.Presentation.Views.ResourceDropView.BeginPickupTravel(UnityEngine.Transform,System.Action{System.Int32})
+  id: BeginPickupTravel(UnityEngine.Transform,System.Action{System.Int32})
+  parent: Noname.Presentation.Views.ResourceDropView
+  langs:
+  - csharp
+  - vb
+  name: BeginPickupTravel(Transform, Action<int>)
+  nameWithType: ResourceDropView.BeginPickupTravel(Transform, Action<int>)
+  fullName: Noname.Presentation.Views.ResourceDropView.BeginPickupTravel(UnityEngine.Transform, System.Action<int>)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/ResourceDropView.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Views
+  syntax:
+    content: public void BeginPickupTravel(Transform target, Action<int> onCompleted)
+    parameters:
+    - id: target
+      type: UnityEngine.Transform
+    - id: onCompleted
+      type: System.Action{System.Int32}
+    content.vb: Public Sub BeginPickupTravel(target As Transform, onCompleted As Action(Of Integer))
+  overload: Noname.Presentation.Views.ResourceDropView.BeginPickupTravel*
+  nameWithType.vb: ResourceDropView.BeginPickupTravel(Transform, Action(Of Integer))
+  fullName.vb: Noname.Presentation.Views.ResourceDropView.BeginPickupTravel(UnityEngine.Transform, System.Action(Of Integer))
+  name.vb: BeginPickupTravel(Transform, Action(Of Integer))
+- uid: Noname.Presentation.Views.ResourceDropView.#ctor
+  commentId: M:Noname.Presentation.Views.ResourceDropView.#ctor
+  id: '#ctor'
+  parent: Noname.Presentation.Views.ResourceDropView
+  langs:
+  - csharp
+  - vb
+  name: ResourceDropView()
+  nameWithType: ResourceDropView.ResourceDropView()
+  fullName: Noname.Presentation.Views.ResourceDropView.ResourceDropView()
+  type: Constructor
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/ResourceDropView.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Views
+  syntax:
+    content: public ResourceDropView()
+    content.vb: Public Sub New()
+  overload: Noname.Presentation.Views.ResourceDropView.#ctor*
+  nameWithType.vb: ResourceDropView.New()
+  fullName.vb: Noname.Presentation.Views.ResourceDropView.New()
+  name.vb: New()
+references:
+- uid: Noname.Presentation.Views
+  commentId: N:Noname.Presentation.Views
+  isExternal: true
+  href: Noname.html
+  name: Noname.Presentation.Views
+  nameWithType: Noname.Presentation.Views
+  fullName: Noname.Presentation.Views
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Presentation
+    name: Presentation
+    isExternal: true
+    href: Noname.Presentation.html
+  - name: .
+  - uid: Noname.Presentation.Views
+    name: Views
+    isExternal: true
+    href: Noname.Presentation.Views.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Presentation
+    name: Presentation
+    isExternal: true
+    href: Noname.Presentation.html
+  - name: .
+  - uid: Noname.Presentation.Views
+    name: Views
+    isExternal: true
+    href: Noname.Presentation.Views.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Noname.Presentation.Views.ResourceDropView.Initialize*
+  commentId: Overload:Noname.Presentation.Views.ResourceDropView.Initialize
+  isExternal: true
+  href: Noname.Presentation.Views.ResourceDropView.html#Noname_Presentation_Views_ResourceDropView_Initialize_System_Int32_Noname_Core_Enums_ResourceDropType_
+  name: Initialize
+  nameWithType: ResourceDropView.Initialize
+  fullName: Noname.Presentation.Views.ResourceDropView.Initialize
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Noname.Core.Enums.ResourceDropType
+  commentId: T:Noname.Core.Enums.ResourceDropType
+  parent: Noname.Core.Enums
+  isExternal: true
+  href: Noname.Core.Enums.ResourceDropType.html
+  name: ResourceDropType
+  nameWithType: ResourceDropType
+  fullName: Noname.Core.Enums.ResourceDropType
+- uid: Noname.Core.Enums
+  commentId: N:Noname.Core.Enums
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Enums
+  nameWithType: Noname.Core.Enums
+  fullName: Noname.Core.Enums
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Enums
+    name: Enums
+    isExternal: true
+    href: Noname.Core.Enums.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Enums
+    name: Enums
+    isExternal: true
+    href: Noname.Core.Enums.html
+- uid: Noname.Presentation.Views.ResourceDropView.BeginPickupTravel*
+  commentId: Overload:Noname.Presentation.Views.ResourceDropView.BeginPickupTravel
+  isExternal: true
+  href: Noname.Presentation.Views.ResourceDropView.html#Noname_Presentation_Views_ResourceDropView_BeginPickupTravel_UnityEngine_Transform_System_Action_System_Int32__
+  name: BeginPickupTravel
+  nameWithType: ResourceDropView.BeginPickupTravel
+  fullName: Noname.Presentation.Views.ResourceDropView.BeginPickupTravel
+- uid: UnityEngine.Transform
+  isExternal: true
+  name: Transform
+  nameWithType: Transform
+  fullName: UnityEngine.Transform
+- uid: System.Action{System.Int32}
+  commentId: T:System.Action{System.Int32}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<int>
+  nameWithType: Action<int>
+  fullName: System.Action<int>
+  nameWithType.vb: Action(Of Integer)
+  fullName.vb: System.Action(Of Integer)
+  name.vb: Action(Of Integer)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: Noname.Presentation.Views.ResourceDropView.#ctor*
+  commentId: Overload:Noname.Presentation.Views.ResourceDropView.#ctor
+  isExternal: true
+  href: Noname.Presentation.Views.ResourceDropView.html#Noname_Presentation_Views_ResourceDropView__ctor
+  name: ResourceDropView
+  nameWithType: ResourceDropView.ResourceDropView
+  fullName: Noname.Presentation.Views.ResourceDropView.ResourceDropView
+  nameWithType.vb: ResourceDropView.New
+  fullName.vb: Noname.Presentation.Views.ResourceDropView.New
+  name.vb: New

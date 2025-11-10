@@ -9,6 +9,9 @@ using Noname.Core.ValueObjects;
 
 namespace Noname.Application.Services
 {
+    /// <summary>
+    /// 적 스폰, 투사체, 드롭 등 디펜스 게임 진행을 계산하는 핵심 시뮬레이션 서비스입니다.
+    /// </summary>
     public sealed class DefenseSimulationService
     {
         private readonly IGameStateRepository _repository;
@@ -28,6 +31,9 @@ namespace Noname.Application.Services
         private readonly List<PlayerLevelUpEvent> _levelUps = new List<PlayerLevelUpEvent>();
         private readonly List<ResourceDropEntity> _resourceBuffer = new List<ResourceDropEntity>();
 
+        /// <summary>
+        /// 시뮬레이션을 수행하기 위한 필수 의존성을 주입합니다.
+        /// </summary>
         public DefenseSimulationService(IGameStateRepository repository, DefenseGameSettings settings)
         {
             _repository = repository;
@@ -35,6 +41,9 @@ namespace Noname.Application.Services
             _spawnTimer = MathF.Max(0f, settings.initialSpawnDelay);
         }
 
+        /// <summary>
+        /// 한 프레임 분량의 게임 로직을 진행하고 결과 이벤트 묶음을 반환합니다.
+        /// </summary>
         public SimulationStepResult Tick(float deltaTime)
         {
             var state = _repository.State;
@@ -524,8 +533,14 @@ namespace Noname.Application.Services
         }
     }
 
+    /// <summary>
+    /// 한 번의 Tick 결과로 생성된 모든 이벤트와 상태 변화를 담습니다.
+    /// </summary>
     public readonly struct SimulationStepResult
     {
+        /// <summary>
+        /// 시뮬레이션 결과를 초기화합니다.
+        /// </summary>
         public SimulationStepResult(
             EnemyEntity[] spawnedEnemies,
             int[] removedEnemyIds,
@@ -551,19 +566,34 @@ namespace Noname.Application.Services
         }
 
         public EnemyEntity[] SpawnedEnemies { get; }
+        /// <summary>제거된 적 ID.</summary>
         public int[] RemovedEnemyIds { get; }
+        /// <summary>적 공격 이벤트.</summary>
         public EnemyAttackEvent[] EnemyAttacks { get; }
+        /// <summary>플레이어 투사체가 적에게 준 피해.</summary>
         public EnemyHitInfo[] PlayerProjectileHits { get; }
+        /// <summary>플레이어 발사체 생성 이벤트.</summary>
         public PlayerProjectileFiredEvent[] PlayerProjectilesFired { get; }
+        /// <summary>적 발사체 생성 이벤트.</summary>
         public EnemyProjectileFiredEvent[] EnemyProjectilesFired { get; }
+        /// <summary>발사체 충돌 이벤트.</summary>
         public ProjectileImpactEvent[] ProjectileImpacts { get; }
+        /// <summary>새 드롭 스폰 이벤트.</summary>
         public ResourceDropSpawnedEvent[] ResourceDropsSpawned { get; }
+        /// <summary>드롭 수집 이벤트.</summary>
         public ResourceDropCollectedEvent[] ResourceDropsCollected { get; }
+        /// <summary>플레이어 레벨업 이벤트.</summary>
         public PlayerLevelUpEvent[] PlayerLevelUps { get; }
     }
 
+    /// <summary>
+    /// 특정 적이 거점을 공격했을 때 발생하는 이벤트입니다.
+    /// </summary>
     public readonly struct EnemyAttackEvent
     {
+        /// <summary>
+        /// 적 공격 이벤트를 초기화합니다.
+        /// </summary>
         public EnemyAttackEvent(int enemyId, float damage, float fortressRemainingHealth)
         {
             EnemyId = enemyId;
@@ -571,8 +601,11 @@ namespace Noname.Application.Services
             FortressRemainingHealth = fortressRemainingHealth;
         }
 
+        /// <summary>공격한 적 ID.</summary>
         public int EnemyId { get; }
+        /// <summary>입힌 피해량.</summary>
         public float Damage { get; }
+        /// <summary>공격 이후 남은 거점 체력.</summary>
         public float FortressRemainingHealth { get; }
     }
 }

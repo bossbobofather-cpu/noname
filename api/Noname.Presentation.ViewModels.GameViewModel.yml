@@ -1,0 +1,1915 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Presentation.ViewModels.GameViewModel
+  commentId: T:Noname.Presentation.ViewModels.GameViewModel
+  id: GameViewModel
+  parent: Noname.Presentation.ViewModels
+  children:
+  - Noname.Presentation.ViewModels.GameViewModel.#ctor(Noname.Application.UseCases.StartGameUseCase,Noname.Application.UseCases.MovePlayerUseCase,Noname.Application.Services.DefenseSimulationService,Noname.Application.Ports.IGameInputReader,Noname.Application.Ports.IGameStateRepository)
+  - Noname.Presentation.ViewModels.GameViewModel.AbilityChoicesPresented
+  - Noname.Presentation.ViewModels.GameViewModel.AbilitySelectionCleared
+  - Noname.Presentation.ViewModels.GameViewModel.ApplyResourceDropEffect(Noname.Application.ValueObjects.ResourceDropCollectedEvent)
+  - Noname.Presentation.ViewModels.GameViewModel.BombardmentPointChanged
+  - Noname.Presentation.ViewModels.GameViewModel.EnemyHealthChanged
+  - Noname.Presentation.ViewModels.GameViewModel.EnemyPositionChanged
+  - Noname.Presentation.ViewModels.GameViewModel.EnemyProjectileFired
+  - Noname.Presentation.ViewModels.GameViewModel.EnemyRemoved
+  - Noname.Presentation.ViewModels.GameViewModel.EnemySpawned
+  - Noname.Presentation.ViewModels.GameViewModel.ForceAbilitySelection
+  - Noname.Presentation.ViewModels.GameViewModel.FortressDamaged
+  - Noname.Presentation.ViewModels.GameViewModel.FortressHealthChanged
+  - Noname.Presentation.ViewModels.GameViewModel.GameOver
+  - Noname.Presentation.ViewModels.GameViewModel.GamePaused
+  - Noname.Presentation.ViewModels.GameViewModel.GameResumed
+  - Noname.Presentation.ViewModels.GameViewModel.Initialize(Noname.Core.ValueObjects.DefenseGameSettings)
+  - Noname.Presentation.ViewModels.GameViewModel.PlayerExperienceChanged
+  - Noname.Presentation.ViewModels.GameViewModel.PlayerPositionChanged
+  - Noname.Presentation.ViewModels.GameViewModel.PlayerProjectileFired
+  - Noname.Presentation.ViewModels.GameViewModel.ProjectileImpactOccurred
+  - Noname.Presentation.ViewModels.GameViewModel.ResourceDropCollected
+  - Noname.Presentation.ViewModels.GameViewModel.ResourceDropSpawned
+  - Noname.Presentation.ViewModels.GameViewModel.SelectAbility(System.Int32)
+  - Noname.Presentation.ViewModels.GameViewModel.Tick(System.Single)
+  langs:
+  - csharp
+  - vb
+  name: GameViewModel
+  nameWithType: GameViewModel
+  fullName: Noname.Presentation.ViewModels.GameViewModel
+  type: Class
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public sealed class GameViewModel
+    content.vb: Public NotInheritable Class GameViewModel
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: Noname.Presentation.ViewModels.GameViewModel.#ctor(Noname.Application.UseCases.StartGameUseCase,Noname.Application.UseCases.MovePlayerUseCase,Noname.Application.Services.DefenseSimulationService,Noname.Application.Ports.IGameInputReader,Noname.Application.Ports.IGameStateRepository)
+  commentId: M:Noname.Presentation.ViewModels.GameViewModel.#ctor(Noname.Application.UseCases.StartGameUseCase,Noname.Application.UseCases.MovePlayerUseCase,Noname.Application.Services.DefenseSimulationService,Noname.Application.Ports.IGameInputReader,Noname.Application.Ports.IGameStateRepository)
+  id: '#ctor(Noname.Application.UseCases.StartGameUseCase,Noname.Application.UseCases.MovePlayerUseCase,Noname.Application.Services.DefenseSimulationService,Noname.Application.Ports.IGameInputReader,Noname.Application.Ports.IGameStateRepository)'
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: GameViewModel(StartGameUseCase, MovePlayerUseCase, DefenseSimulationService, IGameInputReader, IGameStateRepository)
+  nameWithType: GameViewModel.GameViewModel(StartGameUseCase, MovePlayerUseCase, DefenseSimulationService, IGameInputReader, IGameStateRepository)
+  fullName: Noname.Presentation.ViewModels.GameViewModel.GameViewModel(Noname.Application.UseCases.StartGameUseCase, Noname.Application.UseCases.MovePlayerUseCase, Noname.Application.Services.DefenseSimulationService, Noname.Application.Ports.IGameInputReader, Noname.Application.Ports.IGameStateRepository)
+  type: Constructor
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public GameViewModel(StartGameUseCase startGame, MovePlayerUseCase movePlayer, DefenseSimulationService simulationService, IGameInputReader inputReader, IGameStateRepository repository)
+    parameters:
+    - id: startGame
+      type: Noname.Application.UseCases.StartGameUseCase
+    - id: movePlayer
+      type: Noname.Application.UseCases.MovePlayerUseCase
+    - id: simulationService
+      type: Noname.Application.Services.DefenseSimulationService
+    - id: inputReader
+      type: Noname.Application.Ports.IGameInputReader
+    - id: repository
+      type: Noname.Application.Ports.IGameStateRepository
+    content.vb: Public Sub New(startGame As StartGameUseCase, movePlayer As MovePlayerUseCase, simulationService As DefenseSimulationService, inputReader As IGameInputReader, repository As IGameStateRepository)
+  overload: Noname.Presentation.ViewModels.GameViewModel.#ctor*
+  nameWithType.vb: GameViewModel.New(StartGameUseCase, MovePlayerUseCase, DefenseSimulationService, IGameInputReader, IGameStateRepository)
+  fullName.vb: Noname.Presentation.ViewModels.GameViewModel.New(Noname.Application.UseCases.StartGameUseCase, Noname.Application.UseCases.MovePlayerUseCase, Noname.Application.Services.DefenseSimulationService, Noname.Application.Ports.IGameInputReader, Noname.Application.Ports.IGameStateRepository)
+  name.vb: New(StartGameUseCase, MovePlayerUseCase, DefenseSimulationService, IGameInputReader, IGameStateRepository)
+- uid: Noname.Presentation.ViewModels.GameViewModel.Initialize(Noname.Core.ValueObjects.DefenseGameSettings)
+  commentId: M:Noname.Presentation.ViewModels.GameViewModel.Initialize(Noname.Core.ValueObjects.DefenseGameSettings)
+  id: Initialize(Noname.Core.ValueObjects.DefenseGameSettings)
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: Initialize(DefenseGameSettings)
+  nameWithType: GameViewModel.Initialize(DefenseGameSettings)
+  fullName: Noname.Presentation.ViewModels.GameViewModel.Initialize(Noname.Core.ValueObjects.DefenseGameSettings)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public void Initialize(DefenseGameSettings settings)
+    parameters:
+    - id: settings
+      type: Noname.Core.ValueObjects.DefenseGameSettings
+    content.vb: Public Sub Initialize(settings As DefenseGameSettings)
+  overload: Noname.Presentation.ViewModels.GameViewModel.Initialize*
+- uid: Noname.Presentation.ViewModels.GameViewModel.Tick(System.Single)
+  commentId: M:Noname.Presentation.ViewModels.GameViewModel.Tick(System.Single)
+  id: Tick(System.Single)
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: Tick(float)
+  nameWithType: GameViewModel.Tick(float)
+  fullName: Noname.Presentation.ViewModels.GameViewModel.Tick(float)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public void Tick(float deltaTime)
+    parameters:
+    - id: deltaTime
+      type: System.Single
+    content.vb: Public Sub Tick(deltaTime As Single)
+  overload: Noname.Presentation.ViewModels.GameViewModel.Tick*
+  nameWithType.vb: GameViewModel.Tick(Single)
+  fullName.vb: Noname.Presentation.ViewModels.GameViewModel.Tick(Single)
+  name.vb: Tick(Single)
+- uid: Noname.Presentation.ViewModels.GameViewModel.SelectAbility(System.Int32)
+  commentId: M:Noname.Presentation.ViewModels.GameViewModel.SelectAbility(System.Int32)
+  id: SelectAbility(System.Int32)
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: SelectAbility(int)
+  nameWithType: GameViewModel.SelectAbility(int)
+  fullName: Noname.Presentation.ViewModels.GameViewModel.SelectAbility(int)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public void SelectAbility(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+    content.vb: Public Sub SelectAbility(index As Integer)
+  overload: Noname.Presentation.ViewModels.GameViewModel.SelectAbility*
+  nameWithType.vb: GameViewModel.SelectAbility(Integer)
+  fullName.vb: Noname.Presentation.ViewModels.GameViewModel.SelectAbility(Integer)
+  name.vb: SelectAbility(Integer)
+- uid: Noname.Presentation.ViewModels.GameViewModel.ForceAbilitySelection
+  commentId: M:Noname.Presentation.ViewModels.GameViewModel.ForceAbilitySelection
+  id: ForceAbilitySelection
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: ForceAbilitySelection()
+  nameWithType: GameViewModel.ForceAbilitySelection()
+  fullName: Noname.Presentation.ViewModels.GameViewModel.ForceAbilitySelection()
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public bool ForceAbilitySelection()
+    return:
+      type: System.Boolean
+    content.vb: Public Function ForceAbilitySelection() As Boolean
+  overload: Noname.Presentation.ViewModels.GameViewModel.ForceAbilitySelection*
+- uid: Noname.Presentation.ViewModels.GameViewModel.ApplyResourceDropEffect(Noname.Application.ValueObjects.ResourceDropCollectedEvent)
+  commentId: M:Noname.Presentation.ViewModels.GameViewModel.ApplyResourceDropEffect(Noname.Application.ValueObjects.ResourceDropCollectedEvent)
+  id: ApplyResourceDropEffect(Noname.Application.ValueObjects.ResourceDropCollectedEvent)
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: ApplyResourceDropEffect(ResourceDropCollectedEvent)
+  nameWithType: GameViewModel.ApplyResourceDropEffect(ResourceDropCollectedEvent)
+  fullName: Noname.Presentation.ViewModels.GameViewModel.ApplyResourceDropEffect(Noname.Application.ValueObjects.ResourceDropCollectedEvent)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public void ApplyResourceDropEffect(ResourceDropCollectedEvent evt)
+    parameters:
+    - id: evt
+      type: Noname.Application.ValueObjects.ResourceDropCollectedEvent
+    content.vb: Public Sub ApplyResourceDropEffect(evt As ResourceDropCollectedEvent)
+  overload: Noname.Presentation.ViewModels.GameViewModel.ApplyResourceDropEffect*
+- uid: Noname.Presentation.ViewModels.GameViewModel.PlayerPositionChanged
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.PlayerPositionChanged
+  id: PlayerPositionChanged
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: PlayerPositionChanged
+  nameWithType: GameViewModel.PlayerPositionChanged
+  fullName: Noname.Presentation.ViewModels.GameViewModel.PlayerPositionChanged
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action<Float2> PlayerPositionChanged
+    return:
+      type: System.Action{Noname.Core.Primitives.Float2}
+    content.vb: Public Event PlayerPositionChanged As Action(Of Float2)
+- uid: Noname.Presentation.ViewModels.GameViewModel.FortressHealthChanged
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.FortressHealthChanged
+  id: FortressHealthChanged
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: FortressHealthChanged
+  nameWithType: GameViewModel.FortressHealthChanged
+  fullName: Noname.Presentation.ViewModels.GameViewModel.FortressHealthChanged
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action<float, float> FortressHealthChanged
+    return:
+      type: System.Action{System.Single,System.Single}
+    content.vb: Public Event FortressHealthChanged As Action(Of Single, Single)
+- uid: Noname.Presentation.ViewModels.GameViewModel.EnemySpawned
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.EnemySpawned
+  id: EnemySpawned
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: EnemySpawned
+  nameWithType: GameViewModel.EnemySpawned
+  fullName: Noname.Presentation.ViewModels.GameViewModel.EnemySpawned
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action<EnemyEntity> EnemySpawned
+    return:
+      type: System.Action{Noname.Core.Entities.EnemyEntity}
+    content.vb: Public Event EnemySpawned As Action(Of EnemyEntity)
+- uid: Noname.Presentation.ViewModels.GameViewModel.EnemyRemoved
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.EnemyRemoved
+  id: EnemyRemoved
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: EnemyRemoved
+  nameWithType: GameViewModel.EnemyRemoved
+  fullName: Noname.Presentation.ViewModels.GameViewModel.EnemyRemoved
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action<int> EnemyRemoved
+    return:
+      type: System.Action{System.Int32}
+    content.vb: Public Event EnemyRemoved As Action(Of Integer)
+- uid: Noname.Presentation.ViewModels.GameViewModel.EnemyPositionChanged
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.EnemyPositionChanged
+  id: EnemyPositionChanged
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: EnemyPositionChanged
+  nameWithType: GameViewModel.EnemyPositionChanged
+  fullName: Noname.Presentation.ViewModels.GameViewModel.EnemyPositionChanged
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action<int, Float2> EnemyPositionChanged
+    return:
+      type: System.Action{System.Int32,Noname.Core.Primitives.Float2}
+    content.vb: Public Event EnemyPositionChanged As Action(Of Integer, Float2)
+- uid: Noname.Presentation.ViewModels.GameViewModel.EnemyHealthChanged
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.EnemyHealthChanged
+  id: EnemyHealthChanged
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: EnemyHealthChanged
+  nameWithType: GameViewModel.EnemyHealthChanged
+  fullName: Noname.Presentation.ViewModels.GameViewModel.EnemyHealthChanged
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action<int, float> EnemyHealthChanged
+    return:
+      type: System.Action{System.Int32,System.Single}
+    content.vb: Public Event EnemyHealthChanged As Action(Of Integer, Single)
+- uid: Noname.Presentation.ViewModels.GameViewModel.FortressDamaged
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.FortressDamaged
+  id: FortressDamaged
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: FortressDamaged
+  nameWithType: GameViewModel.FortressDamaged
+  fullName: Noname.Presentation.ViewModels.GameViewModel.FortressDamaged
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action<float> FortressDamaged
+    return:
+      type: System.Action{System.Single}
+    content.vb: Public Event FortressDamaged As Action(Of Single)
+- uid: Noname.Presentation.ViewModels.GameViewModel.PlayerProjectileFired
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.PlayerProjectileFired
+  id: PlayerProjectileFired
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: PlayerProjectileFired
+  nameWithType: GameViewModel.PlayerProjectileFired
+  fullName: Noname.Presentation.ViewModels.GameViewModel.PlayerProjectileFired
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action<PlayerProjectileFiredEvent> PlayerProjectileFired
+    return:
+      type: System.Action{Noname.Application.ValueObjects.PlayerProjectileFiredEvent}
+    content.vb: Public Event PlayerProjectileFired As Action(Of PlayerProjectileFiredEvent)
+- uid: Noname.Presentation.ViewModels.GameViewModel.EnemyProjectileFired
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.EnemyProjectileFired
+  id: EnemyProjectileFired
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: EnemyProjectileFired
+  nameWithType: GameViewModel.EnemyProjectileFired
+  fullName: Noname.Presentation.ViewModels.GameViewModel.EnemyProjectileFired
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action<EnemyProjectileFiredEvent> EnemyProjectileFired
+    return:
+      type: System.Action{Noname.Application.ValueObjects.EnemyProjectileFiredEvent}
+    content.vb: Public Event EnemyProjectileFired As Action(Of EnemyProjectileFiredEvent)
+- uid: Noname.Presentation.ViewModels.GameViewModel.ProjectileImpactOccurred
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.ProjectileImpactOccurred
+  id: ProjectileImpactOccurred
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: ProjectileImpactOccurred
+  nameWithType: GameViewModel.ProjectileImpactOccurred
+  fullName: Noname.Presentation.ViewModels.GameViewModel.ProjectileImpactOccurred
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action<ProjectileImpactEvent> ProjectileImpactOccurred
+    return:
+      type: System.Action{Noname.Application.ValueObjects.ProjectileImpactEvent}
+    content.vb: Public Event ProjectileImpactOccurred As Action(Of ProjectileImpactEvent)
+- uid: Noname.Presentation.ViewModels.GameViewModel.ResourceDropSpawned
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.ResourceDropSpawned
+  id: ResourceDropSpawned
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: ResourceDropSpawned
+  nameWithType: GameViewModel.ResourceDropSpawned
+  fullName: Noname.Presentation.ViewModels.GameViewModel.ResourceDropSpawned
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action<ResourceDropSpawnedEvent> ResourceDropSpawned
+    return:
+      type: System.Action{Noname.Application.ValueObjects.ResourceDropSpawnedEvent}
+    content.vb: Public Event ResourceDropSpawned As Action(Of ResourceDropSpawnedEvent)
+- uid: Noname.Presentation.ViewModels.GameViewModel.ResourceDropCollected
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.ResourceDropCollected
+  id: ResourceDropCollected
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: ResourceDropCollected
+  nameWithType: GameViewModel.ResourceDropCollected
+  fullName: Noname.Presentation.ViewModels.GameViewModel.ResourceDropCollected
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action<ResourceDropCollectedEvent> ResourceDropCollected
+    return:
+      type: System.Action{Noname.Application.ValueObjects.ResourceDropCollectedEvent}
+    content.vb: Public Event ResourceDropCollected As Action(Of ResourceDropCollectedEvent)
+- uid: Noname.Presentation.ViewModels.GameViewModel.PlayerExperienceChanged
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.PlayerExperienceChanged
+  id: PlayerExperienceChanged
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: PlayerExperienceChanged
+  nameWithType: GameViewModel.PlayerExperienceChanged
+  fullName: Noname.Presentation.ViewModels.GameViewModel.PlayerExperienceChanged
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action<float, float, int> PlayerExperienceChanged
+    return:
+      type: System.Action{System.Single,System.Single,System.Int32}
+    content.vb: Public Event PlayerExperienceChanged As Action(Of Single, Single, Integer)
+- uid: Noname.Presentation.ViewModels.GameViewModel.AbilityChoicesPresented
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.AbilityChoicesPresented
+  id: AbilityChoicesPresented
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: AbilityChoicesPresented
+  nameWithType: GameViewModel.AbilityChoicesPresented
+  fullName: Noname.Presentation.ViewModels.GameViewModel.AbilityChoicesPresented
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action<GameplayAbilityDefinition[]> AbilityChoicesPresented
+    return:
+      type: System.Action{Noname.Core.ValueObjects.GameplayAbilityDefinition[]}
+    content.vb: Public Event AbilityChoicesPresented As Action(Of GameplayAbilityDefinition())
+- uid: Noname.Presentation.ViewModels.GameViewModel.AbilitySelectionCleared
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.AbilitySelectionCleared
+  id: AbilitySelectionCleared
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: AbilitySelectionCleared
+  nameWithType: GameViewModel.AbilitySelectionCleared
+  fullName: Noname.Presentation.ViewModels.GameViewModel.AbilitySelectionCleared
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action AbilitySelectionCleared
+    return:
+      type: System.Action
+    content.vb: Public Event AbilitySelectionCleared As Action
+- uid: Noname.Presentation.ViewModels.GameViewModel.GamePaused
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.GamePaused
+  id: GamePaused
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: GamePaused
+  nameWithType: GameViewModel.GamePaused
+  fullName: Noname.Presentation.ViewModels.GameViewModel.GamePaused
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action<GameViewPauseReason> GamePaused
+    return:
+      type: System.Action{Noname.Presentation.ViewModels.GameViewPauseReason}
+    content.vb: Public Event GamePaused As Action(Of GameViewPauseReason)
+- uid: Noname.Presentation.ViewModels.GameViewModel.GameResumed
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.GameResumed
+  id: GameResumed
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: GameResumed
+  nameWithType: GameViewModel.GameResumed
+  fullName: Noname.Presentation.ViewModels.GameViewModel.GameResumed
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action<GameViewPauseReason> GameResumed
+    return:
+      type: System.Action{Noname.Presentation.ViewModels.GameViewPauseReason}
+    content.vb: Public Event GameResumed As Action(Of GameViewPauseReason)
+- uid: Noname.Presentation.ViewModels.GameViewModel.GameOver
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.GameOver
+  id: GameOver
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: GameOver
+  nameWithType: GameViewModel.GameOver
+  fullName: Noname.Presentation.ViewModels.GameViewModel.GameOver
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action GameOver
+    return:
+      type: System.Action
+    content.vb: Public Event GameOver As Action
+- uid: Noname.Presentation.ViewModels.GameViewModel.BombardmentPointChanged
+  commentId: E:Noname.Presentation.ViewModels.GameViewModel.BombardmentPointChanged
+  id: BombardmentPointChanged
+  parent: Noname.Presentation.ViewModels.GameViewModel
+  langs:
+  - csharp
+  - vb
+  name: BombardmentPointChanged
+  nameWithType: GameViewModel.BombardmentPointChanged
+  fullName: Noname.Presentation.ViewModels.GameViewModel.BombardmentPointChanged
+  type: Event
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.ViewModels
+  syntax:
+    content: public event Action<Float2?> BombardmentPointChanged
+    return:
+      type: System.Action{System.Nullable{Noname.Core.Primitives.Float2}}
+    content.vb: Public Event BombardmentPointChanged As Action(Of Float2?)
+references:
+- uid: Noname.Presentation.ViewModels
+  commentId: N:Noname.Presentation.ViewModels
+  isExternal: true
+  href: Noname.html
+  name: Noname.Presentation.ViewModels
+  nameWithType: Noname.Presentation.ViewModels
+  fullName: Noname.Presentation.ViewModels
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Presentation
+    name: Presentation
+    isExternal: true
+    href: Noname.Presentation.html
+  - name: .
+  - uid: Noname.Presentation.ViewModels
+    name: ViewModels
+    isExternal: true
+    href: Noname.Presentation.ViewModels.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Presentation
+    name: Presentation
+    isExternal: true
+    href: Noname.Presentation.html
+  - name: .
+  - uid: Noname.Presentation.ViewModels
+    name: ViewModels
+    isExternal: true
+    href: Noname.Presentation.ViewModels.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Noname.Presentation.ViewModels.GameViewModel.#ctor*
+  commentId: Overload:Noname.Presentation.ViewModels.GameViewModel.#ctor
+  isExternal: true
+  href: Noname.Presentation.ViewModels.GameViewModel.html#Noname_Presentation_ViewModels_GameViewModel__ctor_Noname_Application_UseCases_StartGameUseCase_Noname_Application_UseCases_MovePlayerUseCase_Noname_Application_Services_DefenseSimulationService_Noname_Application_Ports_IGameInputReader_Noname_Application_Ports_IGameStateRepository_
+  name: GameViewModel
+  nameWithType: GameViewModel.GameViewModel
+  fullName: Noname.Presentation.ViewModels.GameViewModel.GameViewModel
+  nameWithType.vb: GameViewModel.New
+  fullName.vb: Noname.Presentation.ViewModels.GameViewModel.New
+  name.vb: New
+- uid: Noname.Application.UseCases.StartGameUseCase
+  commentId: T:Noname.Application.UseCases.StartGameUseCase
+  parent: Noname.Application.UseCases
+  isExternal: true
+  href: Noname.Application.UseCases.StartGameUseCase.html
+  name: StartGameUseCase
+  nameWithType: StartGameUseCase
+  fullName: Noname.Application.UseCases.StartGameUseCase
+- uid: Noname.Application.UseCases.MovePlayerUseCase
+  commentId: T:Noname.Application.UseCases.MovePlayerUseCase
+  parent: Noname.Application.UseCases
+  isExternal: true
+  href: Noname.Application.UseCases.MovePlayerUseCase.html
+  name: MovePlayerUseCase
+  nameWithType: MovePlayerUseCase
+  fullName: Noname.Application.UseCases.MovePlayerUseCase
+- uid: Noname.Application.Services.DefenseSimulationService
+  commentId: T:Noname.Application.Services.DefenseSimulationService
+  parent: Noname.Application.Services
+  isExternal: true
+  href: Noname.Application.Services.DefenseSimulationService.html
+  name: DefenseSimulationService
+  nameWithType: DefenseSimulationService
+  fullName: Noname.Application.Services.DefenseSimulationService
+- uid: Noname.Application.Ports.IGameInputReader
+  commentId: T:Noname.Application.Ports.IGameInputReader
+  parent: Noname.Application.Ports
+  isExternal: true
+  href: Noname.Application.Ports.IGameInputReader.html
+  name: IGameInputReader
+  nameWithType: IGameInputReader
+  fullName: Noname.Application.Ports.IGameInputReader
+- uid: Noname.Application.Ports.IGameStateRepository
+  commentId: T:Noname.Application.Ports.IGameStateRepository
+  parent: Noname.Application.Ports
+  isExternal: true
+  href: Noname.Application.Ports.IGameStateRepository.html
+  name: IGameStateRepository
+  nameWithType: IGameStateRepository
+  fullName: Noname.Application.Ports.IGameStateRepository
+- uid: Noname.Application.UseCases
+  commentId: N:Noname.Application.UseCases
+  isExternal: true
+  href: Noname.html
+  name: Noname.Application.UseCases
+  nameWithType: Noname.Application.UseCases
+  fullName: Noname.Application.UseCases
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.UseCases
+    name: UseCases
+    isExternal: true
+    href: Noname.Application.UseCases.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.UseCases
+    name: UseCases
+    isExternal: true
+    href: Noname.Application.UseCases.html
+- uid: Noname.Application.Services
+  commentId: N:Noname.Application.Services
+  isExternal: true
+  href: Noname.html
+  name: Noname.Application.Services
+  nameWithType: Noname.Application.Services
+  fullName: Noname.Application.Services
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.Services
+    name: Services
+    isExternal: true
+    href: Noname.Application.Services.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.Services
+    name: Services
+    isExternal: true
+    href: Noname.Application.Services.html
+- uid: Noname.Application.Ports
+  commentId: N:Noname.Application.Ports
+  isExternal: true
+  href: Noname.html
+  name: Noname.Application.Ports
+  nameWithType: Noname.Application.Ports
+  fullName: Noname.Application.Ports
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.Ports
+    name: Ports
+    isExternal: true
+    href: Noname.Application.Ports.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.Ports
+    name: Ports
+    isExternal: true
+    href: Noname.Application.Ports.html
+- uid: Noname.Presentation.ViewModels.GameViewModel.Initialize*
+  commentId: Overload:Noname.Presentation.ViewModels.GameViewModel.Initialize
+  isExternal: true
+  href: Noname.Presentation.ViewModels.GameViewModel.html#Noname_Presentation_ViewModels_GameViewModel_Initialize_Noname_Core_ValueObjects_DefenseGameSettings_
+  name: Initialize
+  nameWithType: GameViewModel.Initialize
+  fullName: Noname.Presentation.ViewModels.GameViewModel.Initialize
+- uid: Noname.Core.ValueObjects.DefenseGameSettings
+  commentId: T:Noname.Core.ValueObjects.DefenseGameSettings
+  parent: Noname.Core.ValueObjects
+  isExternal: true
+  href: Noname.Core.ValueObjects.DefenseGameSettings.html
+  name: DefenseGameSettings
+  nameWithType: DefenseGameSettings
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings
+- uid: Noname.Core.ValueObjects
+  commentId: N:Noname.Core.ValueObjects
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.ValueObjects
+  nameWithType: Noname.Core.ValueObjects
+  fullName: Noname.Core.ValueObjects
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Core.ValueObjects.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Core.ValueObjects.html
+- uid: Noname.Presentation.ViewModels.GameViewModel.Tick*
+  commentId: Overload:Noname.Presentation.ViewModels.GameViewModel.Tick
+  isExternal: true
+  href: Noname.Presentation.ViewModels.GameViewModel.html#Noname_Presentation_ViewModels_GameViewModel_Tick_System_Single_
+  name: Tick
+  nameWithType: GameViewModel.Tick
+  fullName: Noname.Presentation.ViewModels.GameViewModel.Tick
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Noname.Presentation.ViewModels.GameViewModel.SelectAbility*
+  commentId: Overload:Noname.Presentation.ViewModels.GameViewModel.SelectAbility
+  isExternal: true
+  href: Noname.Presentation.ViewModels.GameViewModel.html#Noname_Presentation_ViewModels_GameViewModel_SelectAbility_System_Int32_
+  name: SelectAbility
+  nameWithType: GameViewModel.SelectAbility
+  fullName: Noname.Presentation.ViewModels.GameViewModel.SelectAbility
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Noname.Presentation.ViewModels.GameViewModel.ForceAbilitySelection*
+  commentId: Overload:Noname.Presentation.ViewModels.GameViewModel.ForceAbilitySelection
+  isExternal: true
+  href: Noname.Presentation.ViewModels.GameViewModel.html#Noname_Presentation_ViewModels_GameViewModel_ForceAbilitySelection
+  name: ForceAbilitySelection
+  nameWithType: GameViewModel.ForceAbilitySelection
+  fullName: Noname.Presentation.ViewModels.GameViewModel.ForceAbilitySelection
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: Noname.Presentation.ViewModels.GameViewModel.ApplyResourceDropEffect*
+  commentId: Overload:Noname.Presentation.ViewModels.GameViewModel.ApplyResourceDropEffect
+  isExternal: true
+  href: Noname.Presentation.ViewModels.GameViewModel.html#Noname_Presentation_ViewModels_GameViewModel_ApplyResourceDropEffect_Noname_Application_ValueObjects_ResourceDropCollectedEvent_
+  name: ApplyResourceDropEffect
+  nameWithType: GameViewModel.ApplyResourceDropEffect
+  fullName: Noname.Presentation.ViewModels.GameViewModel.ApplyResourceDropEffect
+- uid: Noname.Application.ValueObjects.ResourceDropCollectedEvent
+  commentId: T:Noname.Application.ValueObjects.ResourceDropCollectedEvent
+  parent: Noname.Application.ValueObjects
+  isExternal: true
+  href: Noname.Application.ValueObjects.ResourceDropCollectedEvent.html
+  name: ResourceDropCollectedEvent
+  nameWithType: ResourceDropCollectedEvent
+  fullName: Noname.Application.ValueObjects.ResourceDropCollectedEvent
+- uid: Noname.Application.ValueObjects
+  commentId: N:Noname.Application.ValueObjects
+  isExternal: true
+  href: Noname.html
+  name: Noname.Application.ValueObjects
+  nameWithType: Noname.Application.ValueObjects
+  fullName: Noname.Application.ValueObjects
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Application.ValueObjects.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Application.ValueObjects.html
+- uid: System.Action{Noname.Core.Primitives.Float2}
+  commentId: T:System.Action{Noname.Core.Primitives.Float2}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<Float2>
+  nameWithType: Action<Float2>
+  fullName: System.Action<Noname.Core.Primitives.Float2>
+  nameWithType.vb: Action(Of Float2)
+  fullName.vb: System.Action(Of Noname.Core.Primitives.Float2)
+  name.vb: Action(Of Float2)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Noname.Core.Primitives.Float2
+    name: Float2
+    isExternal: true
+    href: Noname.Core.Primitives.Float2.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Noname.Core.Primitives.Float2
+    name: Float2
+    isExternal: true
+    href: Noname.Core.Primitives.Float2.html
+  - name: )
+- uid: System.Action`1
+  commentId: T:System.Action`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<T>
+  nameWithType: Action<T>
+  fullName: System.Action<T>
+  nameWithType.vb: Action(Of T)
+  fullName.vb: System.Action(Of T)
+  name.vb: Action(Of T)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System.Action{System.Single,System.Single}
+  commentId: T:System.Action{System.Single,System.Single}
+  parent: System
+  definition: System.Action`2
+  href: https://learn.microsoft.com/dotnet/api/system.action-2
+  name: Action<float, float>
+  nameWithType: Action<float, float>
+  fullName: System.Action<float, float>
+  nameWithType.vb: Action(Of Single, Single)
+  fullName.vb: System.Action(Of Single, Single)
+  name.vb: Action(Of Single, Single)
+  spec.csharp:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: System.Action`2
+  commentId: T:System.Action`2
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-2
+  name: Action<T1, T2>
+  nameWithType: Action<T1, T2>
+  fullName: System.Action<T1, T2>
+  nameWithType.vb: Action(Of T1, T2)
+  fullName.vb: System.Action(Of T1, T2)
+  name.vb: Action(Of T1, T2)
+  spec.csharp:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+- uid: System.Action{Noname.Core.Entities.EnemyEntity}
+  commentId: T:System.Action{Noname.Core.Entities.EnemyEntity}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<EnemyEntity>
+  nameWithType: Action<EnemyEntity>
+  fullName: System.Action<Noname.Core.Entities.EnemyEntity>
+  nameWithType.vb: Action(Of EnemyEntity)
+  fullName.vb: System.Action(Of Noname.Core.Entities.EnemyEntity)
+  name.vb: Action(Of EnemyEntity)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Noname.Core.Entities.EnemyEntity
+    name: EnemyEntity
+    isExternal: true
+    href: Noname.Core.Entities.EnemyEntity.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Noname.Core.Entities.EnemyEntity
+    name: EnemyEntity
+    isExternal: true
+    href: Noname.Core.Entities.EnemyEntity.html
+  - name: )
+- uid: System.Action{System.Int32}
+  commentId: T:System.Action{System.Int32}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<int>
+  nameWithType: Action<int>
+  fullName: System.Action<int>
+  nameWithType.vb: Action(Of Integer)
+  fullName.vb: System.Action(Of Integer)
+  name.vb: Action(Of Integer)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Action{System.Int32,Noname.Core.Primitives.Float2}
+  commentId: T:System.Action{System.Int32,Noname.Core.Primitives.Float2}
+  parent: System
+  definition: System.Action`2
+  href: https://learn.microsoft.com/dotnet/api/system.action-2
+  name: Action<int, Float2>
+  nameWithType: Action<int, Float2>
+  fullName: System.Action<int, Noname.Core.Primitives.Float2>
+  nameWithType.vb: Action(Of Integer, Float2)
+  fullName.vb: System.Action(Of Integer, Noname.Core.Primitives.Float2)
+  name.vb: Action(Of Integer, Float2)
+  spec.csharp:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: Noname.Core.Primitives.Float2
+    name: Float2
+    isExternal: true
+    href: Noname.Core.Primitives.Float2.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: Noname.Core.Primitives.Float2
+    name: Float2
+    isExternal: true
+    href: Noname.Core.Primitives.Float2.html
+  - name: )
+- uid: System.Action{System.Int32,System.Single}
+  commentId: T:System.Action{System.Int32,System.Single}
+  parent: System
+  definition: System.Action`2
+  href: https://learn.microsoft.com/dotnet/api/system.action-2
+  name: Action<int, float>
+  nameWithType: Action<int, float>
+  fullName: System.Action<int, float>
+  nameWithType.vb: Action(Of Integer, Single)
+  fullName.vb: System.Action(Of Integer, Single)
+  name.vb: Action(Of Integer, Single)
+  spec.csharp:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: <
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`2
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-2
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: System.Action{System.Single}
+  commentId: T:System.Action{System.Single}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<float>
+  nameWithType: Action<float>
+  fullName: System.Action<float>
+  nameWithType.vb: Action(Of Single)
+  fullName.vb: System.Action(Of Single)
+  name.vb: Action(Of Single)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: System.Action{Noname.Application.ValueObjects.PlayerProjectileFiredEvent}
+  commentId: T:System.Action{Noname.Application.ValueObjects.PlayerProjectileFiredEvent}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<PlayerProjectileFiredEvent>
+  nameWithType: Action<PlayerProjectileFiredEvent>
+  fullName: System.Action<Noname.Application.ValueObjects.PlayerProjectileFiredEvent>
+  nameWithType.vb: Action(Of PlayerProjectileFiredEvent)
+  fullName.vb: System.Action(Of Noname.Application.ValueObjects.PlayerProjectileFiredEvent)
+  name.vb: Action(Of PlayerProjectileFiredEvent)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Noname.Application.ValueObjects.PlayerProjectileFiredEvent
+    name: PlayerProjectileFiredEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.PlayerProjectileFiredEvent.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Noname.Application.ValueObjects.PlayerProjectileFiredEvent
+    name: PlayerProjectileFiredEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.PlayerProjectileFiredEvent.html
+  - name: )
+- uid: System.Action{Noname.Application.ValueObjects.EnemyProjectileFiredEvent}
+  commentId: T:System.Action{Noname.Application.ValueObjects.EnemyProjectileFiredEvent}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<EnemyProjectileFiredEvent>
+  nameWithType: Action<EnemyProjectileFiredEvent>
+  fullName: System.Action<Noname.Application.ValueObjects.EnemyProjectileFiredEvent>
+  nameWithType.vb: Action(Of EnemyProjectileFiredEvent)
+  fullName.vb: System.Action(Of Noname.Application.ValueObjects.EnemyProjectileFiredEvent)
+  name.vb: Action(Of EnemyProjectileFiredEvent)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Noname.Application.ValueObjects.EnemyProjectileFiredEvent
+    name: EnemyProjectileFiredEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.EnemyProjectileFiredEvent.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Noname.Application.ValueObjects.EnemyProjectileFiredEvent
+    name: EnemyProjectileFiredEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.EnemyProjectileFiredEvent.html
+  - name: )
+- uid: System.Action{Noname.Application.ValueObjects.ProjectileImpactEvent}
+  commentId: T:System.Action{Noname.Application.ValueObjects.ProjectileImpactEvent}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<ProjectileImpactEvent>
+  nameWithType: Action<ProjectileImpactEvent>
+  fullName: System.Action<Noname.Application.ValueObjects.ProjectileImpactEvent>
+  nameWithType.vb: Action(Of ProjectileImpactEvent)
+  fullName.vb: System.Action(Of Noname.Application.ValueObjects.ProjectileImpactEvent)
+  name.vb: Action(Of ProjectileImpactEvent)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Noname.Application.ValueObjects.ProjectileImpactEvent
+    name: ProjectileImpactEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.ProjectileImpactEvent.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Noname.Application.ValueObjects.ProjectileImpactEvent
+    name: ProjectileImpactEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.ProjectileImpactEvent.html
+  - name: )
+- uid: System.Action{Noname.Application.ValueObjects.ResourceDropSpawnedEvent}
+  commentId: T:System.Action{Noname.Application.ValueObjects.ResourceDropSpawnedEvent}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<ResourceDropSpawnedEvent>
+  nameWithType: Action<ResourceDropSpawnedEvent>
+  fullName: System.Action<Noname.Application.ValueObjects.ResourceDropSpawnedEvent>
+  nameWithType.vb: Action(Of ResourceDropSpawnedEvent)
+  fullName.vb: System.Action(Of Noname.Application.ValueObjects.ResourceDropSpawnedEvent)
+  name.vb: Action(Of ResourceDropSpawnedEvent)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Noname.Application.ValueObjects.ResourceDropSpawnedEvent
+    name: ResourceDropSpawnedEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.ResourceDropSpawnedEvent.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Noname.Application.ValueObjects.ResourceDropSpawnedEvent
+    name: ResourceDropSpawnedEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.ResourceDropSpawnedEvent.html
+  - name: )
+- uid: System.Action{Noname.Application.ValueObjects.ResourceDropCollectedEvent}
+  commentId: T:System.Action{Noname.Application.ValueObjects.ResourceDropCollectedEvent}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<ResourceDropCollectedEvent>
+  nameWithType: Action<ResourceDropCollectedEvent>
+  fullName: System.Action<Noname.Application.ValueObjects.ResourceDropCollectedEvent>
+  nameWithType.vb: Action(Of ResourceDropCollectedEvent)
+  fullName.vb: System.Action(Of Noname.Application.ValueObjects.ResourceDropCollectedEvent)
+  name.vb: Action(Of ResourceDropCollectedEvent)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Noname.Application.ValueObjects.ResourceDropCollectedEvent
+    name: ResourceDropCollectedEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.ResourceDropCollectedEvent.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Noname.Application.ValueObjects.ResourceDropCollectedEvent
+    name: ResourceDropCollectedEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.ResourceDropCollectedEvent.html
+  - name: )
+- uid: System.Action{System.Single,System.Single,System.Int32}
+  commentId: T:System.Action{System.Single,System.Single,System.Int32}
+  parent: System
+  definition: System.Action`3
+  href: https://learn.microsoft.com/dotnet/api/system.action-3
+  name: Action<float, float, int>
+  nameWithType: Action<float, float, int>
+  fullName: System.Action<float, float, int>
+  nameWithType.vb: Action(Of Single, Single, Integer)
+  fullName.vb: System.Action(Of Single, Single, Integer)
+  name.vb: Action(Of Single, Single, Integer)
+  spec.csharp:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: <
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.Action`3
+  commentId: T:System.Action`3
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action-3
+  name: Action<T1, T2, T3>
+  nameWithType: Action<T1, T2, T3>
+  fullName: System.Action<T1, T2, T3>
+  nameWithType.vb: Action(Of T1, T2, T3)
+  fullName.vb: System.Action(Of T1, T2, T3)
+  name.vb: Action(Of T1, T2, T3)
+  spec.csharp:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: <
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`3
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-3
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: ','
+  - name: " "
+  - name: T3
+  - name: )
+- uid: System.Action{Noname.Core.ValueObjects.GameplayAbilityDefinition[]}
+  commentId: T:System.Action{Noname.Core.ValueObjects.GameplayAbilityDefinition[]}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<GameplayAbilityDefinition[]>
+  nameWithType: Action<GameplayAbilityDefinition[]>
+  fullName: System.Action<Noname.Core.ValueObjects.GameplayAbilityDefinition[]>
+  nameWithType.vb: Action(Of GameplayAbilityDefinition())
+  fullName.vb: System.Action(Of Noname.Core.ValueObjects.GameplayAbilityDefinition())
+  name.vb: Action(Of GameplayAbilityDefinition())
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Noname.Core.ValueObjects.GameplayAbilityDefinition
+    name: GameplayAbilityDefinition
+    isExternal: true
+    href: Noname.Core.ValueObjects.GameplayAbilityDefinition.html
+  - name: '['
+  - name: ']'
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Noname.Core.ValueObjects.GameplayAbilityDefinition
+    name: GameplayAbilityDefinition
+    isExternal: true
+    href: Noname.Core.ValueObjects.GameplayAbilityDefinition.html
+  - name: (
+  - name: )
+  - name: )
+- uid: System.Action
+  commentId: T:System.Action
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.action
+  name: Action
+  nameWithType: Action
+  fullName: System.Action
+- uid: System.Action{Noname.Presentation.ViewModels.GameViewPauseReason}
+  commentId: T:System.Action{Noname.Presentation.ViewModels.GameViewPauseReason}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<GameViewPauseReason>
+  nameWithType: Action<GameViewPauseReason>
+  fullName: System.Action<Noname.Presentation.ViewModels.GameViewPauseReason>
+  nameWithType.vb: Action(Of GameViewPauseReason)
+  fullName.vb: System.Action(Of Noname.Presentation.ViewModels.GameViewPauseReason)
+  name.vb: Action(Of GameViewPauseReason)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Noname.Presentation.ViewModels.GameViewPauseReason
+    name: GameViewPauseReason
+    isExternal: true
+    href: Noname.Presentation.ViewModels.GameViewPauseReason.html
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Noname.Presentation.ViewModels.GameViewPauseReason
+    name: GameViewPauseReason
+    isExternal: true
+    href: Noname.Presentation.ViewModels.GameViewPauseReason.html
+  - name: )
+- uid: System.Action{System.Nullable{Noname.Core.Primitives.Float2}}
+  commentId: T:System.Action{System.Nullable{Noname.Core.Primitives.Float2}}
+  parent: System
+  definition: System.Action`1
+  href: https://learn.microsoft.com/dotnet/api/system.action-1
+  name: Action<Float2?>
+  nameWithType: Action<Float2?>
+  fullName: System.Action<Noname.Core.Primitives.Float2?>
+  nameWithType.vb: Action(Of Float2?)
+  fullName.vb: System.Action(Of Noname.Core.Primitives.Float2?)
+  name.vb: Action(Of Float2?)
+  spec.csharp:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: <
+  - uid: Noname.Core.Primitives.Float2
+    name: Float2
+    isExternal: true
+    href: Noname.Core.Primitives.Float2.html
+  - name: '?'
+  - name: '>'
+  spec.vb:
+  - uid: System.Action`1
+    name: Action
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.action-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: Noname.Core.Primitives.Float2
+    name: Float2
+    isExternal: true
+    href: Noname.Core.Primitives.Float2.html
+  - name: '?'
+  - name: )

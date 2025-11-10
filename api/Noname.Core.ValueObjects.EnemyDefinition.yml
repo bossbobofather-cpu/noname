@@ -1,0 +1,508 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Core.ValueObjects.EnemyDefinition
+  commentId: T:Noname.Core.ValueObjects.EnemyDefinition
+  id: EnemyDefinition
+  parent: Noname.Core.ValueObjects
+  children:
+  - Noname.Core.ValueObjects.EnemyDefinition.#ctor
+  - Noname.Core.ValueObjects.EnemyDefinition.CreateEntity(System.Int32,Noname.Core.Primitives.Float2)
+  - Noname.Core.ValueObjects.EnemyDefinition.attackCooldown
+  - Noname.Core.ValueObjects.EnemyDefinition.attackDamage
+  - Noname.Core.ValueObjects.EnemyDefinition.attackRange
+  - Noname.Core.ValueObjects.EnemyDefinition.drops
+  - Noname.Core.ValueObjects.EnemyDefinition.maxHealth
+  - Noname.Core.ValueObjects.EnemyDefinition.moveSpeed
+  - Noname.Core.ValueObjects.EnemyDefinition.preferredDistance
+  - Noname.Core.ValueObjects.EnemyDefinition.role
+  langs:
+  - csharp
+  - vb
+  name: EnemyDefinition
+  nameWithType: EnemyDefinition
+  fullName: Noname.Core.ValueObjects.EnemyDefinition
+  type: Class
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/EnemyDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: 'public sealed class EnemyDefinition : ScriptableObject'
+    content.vb: Public NotInheritable Class EnemyDefinition Inherits ScriptableObject
+  inheritance:
+  - System.Object
+- uid: Noname.Core.ValueObjects.EnemyDefinition.role
+  commentId: F:Noname.Core.ValueObjects.EnemyDefinition.role
+  id: role
+  parent: Noname.Core.ValueObjects.EnemyDefinition
+  langs:
+  - csharp
+  - vb
+  name: role
+  nameWithType: EnemyDefinition.role
+  fullName: Noname.Core.ValueObjects.EnemyDefinition.role
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/EnemyDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public EnemyCombatRole role
+    return:
+      type: Noname.Core.Enums.EnemyCombatRole
+    content.vb: Public role As EnemyCombatRole
+- uid: Noname.Core.ValueObjects.EnemyDefinition.moveSpeed
+  commentId: F:Noname.Core.ValueObjects.EnemyDefinition.moveSpeed
+  id: moveSpeed
+  parent: Noname.Core.ValueObjects.EnemyDefinition
+  langs:
+  - csharp
+  - vb
+  name: moveSpeed
+  nameWithType: EnemyDefinition.moveSpeed
+  fullName: Noname.Core.ValueObjects.EnemyDefinition.moveSpeed
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/EnemyDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float moveSpeed
+    return:
+      type: System.Single
+    content.vb: Public moveSpeed As Single
+- uid: Noname.Core.ValueObjects.EnemyDefinition.maxHealth
+  commentId: F:Noname.Core.ValueObjects.EnemyDefinition.maxHealth
+  id: maxHealth
+  parent: Noname.Core.ValueObjects.EnemyDefinition
+  langs:
+  - csharp
+  - vb
+  name: maxHealth
+  nameWithType: EnemyDefinition.maxHealth
+  fullName: Noname.Core.ValueObjects.EnemyDefinition.maxHealth
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/EnemyDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float maxHealth
+    return:
+      type: System.Single
+    content.vb: Public maxHealth As Single
+- uid: Noname.Core.ValueObjects.EnemyDefinition.attackDamage
+  commentId: F:Noname.Core.ValueObjects.EnemyDefinition.attackDamage
+  id: attackDamage
+  parent: Noname.Core.ValueObjects.EnemyDefinition
+  langs:
+  - csharp
+  - vb
+  name: attackDamage
+  nameWithType: EnemyDefinition.attackDamage
+  fullName: Noname.Core.ValueObjects.EnemyDefinition.attackDamage
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/EnemyDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float attackDamage
+    return:
+      type: System.Single
+    content.vb: Public attackDamage As Single
+- uid: Noname.Core.ValueObjects.EnemyDefinition.attackRange
+  commentId: F:Noname.Core.ValueObjects.EnemyDefinition.attackRange
+  id: attackRange
+  parent: Noname.Core.ValueObjects.EnemyDefinition
+  langs:
+  - csharp
+  - vb
+  name: attackRange
+  nameWithType: EnemyDefinition.attackRange
+  fullName: Noname.Core.ValueObjects.EnemyDefinition.attackRange
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/EnemyDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float attackRange
+    return:
+      type: System.Single
+    content.vb: Public attackRange As Single
+- uid: Noname.Core.ValueObjects.EnemyDefinition.attackCooldown
+  commentId: F:Noname.Core.ValueObjects.EnemyDefinition.attackCooldown
+  id: attackCooldown
+  parent: Noname.Core.ValueObjects.EnemyDefinition
+  langs:
+  - csharp
+  - vb
+  name: attackCooldown
+  nameWithType: EnemyDefinition.attackCooldown
+  fullName: Noname.Core.ValueObjects.EnemyDefinition.attackCooldown
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/EnemyDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float attackCooldown
+    return:
+      type: System.Single
+    content.vb: Public attackCooldown As Single
+- uid: Noname.Core.ValueObjects.EnemyDefinition.preferredDistance
+  commentId: F:Noname.Core.ValueObjects.EnemyDefinition.preferredDistance
+  id: preferredDistance
+  parent: Noname.Core.ValueObjects.EnemyDefinition
+  langs:
+  - csharp
+  - vb
+  name: preferredDistance
+  nameWithType: EnemyDefinition.preferredDistance
+  fullName: Noname.Core.ValueObjects.EnemyDefinition.preferredDistance
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/EnemyDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public float preferredDistance
+    return:
+      type: System.Single
+    content.vb: Public preferredDistance As Single
+- uid: Noname.Core.ValueObjects.EnemyDefinition.drops
+  commentId: F:Noname.Core.ValueObjects.EnemyDefinition.drops
+  id: drops
+  parent: Noname.Core.ValueObjects.EnemyDefinition
+  langs:
+  - csharp
+  - vb
+  name: drops
+  nameWithType: EnemyDefinition.drops
+  fullName: Noname.Core.ValueObjects.EnemyDefinition.drops
+  type: Field
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/EnemyDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public EnemyDropDefinition[] drops
+    return:
+      type: Noname.Core.ValueObjects.EnemyDropDefinition[]
+    content.vb: Public drops As EnemyDropDefinition()
+- uid: Noname.Core.ValueObjects.EnemyDefinition.CreateEntity(System.Int32,Noname.Core.Primitives.Float2)
+  commentId: M:Noname.Core.ValueObjects.EnemyDefinition.CreateEntity(System.Int32,Noname.Core.Primitives.Float2)
+  id: CreateEntity(System.Int32,Noname.Core.Primitives.Float2)
+  parent: Noname.Core.ValueObjects.EnemyDefinition
+  langs:
+  - csharp
+  - vb
+  name: CreateEntity(int, Float2)
+  nameWithType: EnemyDefinition.CreateEntity(int, Float2)
+  fullName: Noname.Core.ValueObjects.EnemyDefinition.CreateEntity(int, Noname.Core.Primitives.Float2)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/EnemyDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public EnemyEntity CreateEntity(int id, Float2 spawnPosition)
+    parameters:
+    - id: id
+      type: System.Int32
+    - id: spawnPosition
+      type: Noname.Core.Primitives.Float2
+    return:
+      type: Noname.Core.Entities.EnemyEntity
+    content.vb: Public Function CreateEntity(id As Integer, spawnPosition As Float2) As EnemyEntity
+  overload: Noname.Core.ValueObjects.EnemyDefinition.CreateEntity*
+  nameWithType.vb: EnemyDefinition.CreateEntity(Integer, Float2)
+  fullName.vb: Noname.Core.ValueObjects.EnemyDefinition.CreateEntity(Integer, Noname.Core.Primitives.Float2)
+  name.vb: CreateEntity(Integer, Float2)
+- uid: Noname.Core.ValueObjects.EnemyDefinition.#ctor
+  commentId: M:Noname.Core.ValueObjects.EnemyDefinition.#ctor
+  id: '#ctor'
+  parent: Noname.Core.ValueObjects.EnemyDefinition
+  langs:
+  - csharp
+  - vb
+  name: EnemyDefinition()
+  nameWithType: EnemyDefinition.EnemyDefinition()
+  fullName: Noname.Core.ValueObjects.EnemyDefinition.EnemyDefinition()
+  type: Constructor
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/EnemyDefinition.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Core.ValueObjects
+  syntax:
+    content: public EnemyDefinition()
+    content.vb: Public Sub New()
+  overload: Noname.Core.ValueObjects.EnemyDefinition.#ctor*
+  nameWithType.vb: EnemyDefinition.New()
+  fullName.vb: Noname.Core.ValueObjects.EnemyDefinition.New()
+  name.vb: New()
+references:
+- uid: Noname.Core.ValueObjects
+  commentId: N:Noname.Core.ValueObjects
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.ValueObjects
+  nameWithType: Noname.Core.ValueObjects
+  fullName: Noname.Core.ValueObjects
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Core.ValueObjects.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Core.ValueObjects.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Noname.Core.Enums.EnemyCombatRole
+  commentId: T:Noname.Core.Enums.EnemyCombatRole
+  parent: Noname.Core.Enums
+  isExternal: true
+  href: Noname.Core.Enums.EnemyCombatRole.html
+  name: EnemyCombatRole
+  nameWithType: EnemyCombatRole
+  fullName: Noname.Core.Enums.EnemyCombatRole
+- uid: Noname.Core.Enums
+  commentId: N:Noname.Core.Enums
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Enums
+  nameWithType: Noname.Core.Enums
+  fullName: Noname.Core.Enums
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Enums
+    name: Enums
+    isExternal: true
+    href: Noname.Core.Enums.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Enums
+    name: Enums
+    isExternal: true
+    href: Noname.Core.Enums.html
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Noname.Core.ValueObjects.EnemyDropDefinition[]
+  isExternal: true
+  href: Noname.Core.ValueObjects.EnemyDropDefinition.html
+  name: EnemyDropDefinition[]
+  nameWithType: EnemyDropDefinition[]
+  fullName: Noname.Core.ValueObjects.EnemyDropDefinition[]
+  nameWithType.vb: EnemyDropDefinition()
+  fullName.vb: Noname.Core.ValueObjects.EnemyDropDefinition()
+  name.vb: EnemyDropDefinition()
+  spec.csharp:
+  - uid: Noname.Core.ValueObjects.EnemyDropDefinition
+    name: EnemyDropDefinition
+    isExternal: true
+    href: Noname.Core.ValueObjects.EnemyDropDefinition.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Noname.Core.ValueObjects.EnemyDropDefinition
+    name: EnemyDropDefinition
+    isExternal: true
+    href: Noname.Core.ValueObjects.EnemyDropDefinition.html
+  - name: (
+  - name: )
+- uid: Noname.Core.ValueObjects.EnemyDefinition.CreateEntity*
+  commentId: Overload:Noname.Core.ValueObjects.EnemyDefinition.CreateEntity
+  isExternal: true
+  href: Noname.Core.ValueObjects.EnemyDefinition.html#Noname_Core_ValueObjects_EnemyDefinition_CreateEntity_System_Int32_Noname_Core_Primitives_Float2_
+  name: CreateEntity
+  nameWithType: EnemyDefinition.CreateEntity
+  fullName: Noname.Core.ValueObjects.EnemyDefinition.CreateEntity
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: Noname.Core.Primitives.Float2
+  commentId: T:Noname.Core.Primitives.Float2
+  parent: Noname.Core.Primitives
+  isExternal: true
+  href: Noname.Core.Primitives.Float2.html
+  name: Float2
+  nameWithType: Float2
+  fullName: Noname.Core.Primitives.Float2
+- uid: Noname.Core.Entities.EnemyEntity
+  commentId: T:Noname.Core.Entities.EnemyEntity
+  parent: Noname.Core.Entities
+  isExternal: true
+  href: Noname.Core.Entities.EnemyEntity.html
+  name: EnemyEntity
+  nameWithType: EnemyEntity
+  fullName: Noname.Core.Entities.EnemyEntity
+- uid: Noname.Core.Primitives
+  commentId: N:Noname.Core.Primitives
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Primitives
+  nameWithType: Noname.Core.Primitives
+  fullName: Noname.Core.Primitives
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Primitives
+    name: Primitives
+    isExternal: true
+    href: Noname.Core.Primitives.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Primitives
+    name: Primitives
+    isExternal: true
+    href: Noname.Core.Primitives.html
+- uid: Noname.Core.Entities
+  commentId: N:Noname.Core.Entities
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Entities
+  nameWithType: Noname.Core.Entities
+  fullName: Noname.Core.Entities
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Entities
+    name: Entities
+    isExternal: true
+    href: Noname.Core.Entities.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Entities
+    name: Entities
+    isExternal: true
+    href: Noname.Core.Entities.html
+- uid: Noname.Core.ValueObjects.EnemyDefinition.#ctor*
+  commentId: Overload:Noname.Core.ValueObjects.EnemyDefinition.#ctor
+  isExternal: true
+  href: Noname.Core.ValueObjects.EnemyDefinition.html#Noname_Core_ValueObjects_EnemyDefinition__ctor
+  name: EnemyDefinition
+  nameWithType: EnemyDefinition.EnemyDefinition
+  fullName: Noname.Core.ValueObjects.EnemyDefinition.EnemyDefinition
+  nameWithType.vb: EnemyDefinition.New
+  fullName.vb: Noname.Core.ValueObjects.EnemyDefinition.New
+  name.vb: New

@@ -1,0 +1,457 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Infrastructure.Unity.Float2UnityExtensions
+  commentId: T:Noname.Infrastructure.Unity.Float2UnityExtensions
+  id: Float2UnityExtensions
+  parent: Noname.Infrastructure.Unity
+  children:
+  - Noname.Infrastructure.Unity.Float2UnityExtensions.ToFloat2(UnityEngine.Vector2)
+  - Noname.Infrastructure.Unity.Float2UnityExtensions.ToFloat2(UnityEngine.Vector3)
+  - Noname.Infrastructure.Unity.Float2UnityExtensions.ToUnityVector2(Noname.Core.Primitives.Float2)
+  langs:
+  - csharp
+  - vb
+  name: Float2UnityExtensions
+  nameWithType: Float2UnityExtensions
+  fullName: Noname.Infrastructure.Unity.Float2UnityExtensions
+  type: Class
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Infrastructure/Unity/Float2UnityExtensions.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Infrastructure.Unity
+  syntax:
+    content: public static class Float2UnityExtensions
+    content.vb: Public Module Float2UnityExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.GetHashCode
+- uid: Noname.Infrastructure.Unity.Float2UnityExtensions.ToUnityVector2(Noname.Core.Primitives.Float2)
+  commentId: M:Noname.Infrastructure.Unity.Float2UnityExtensions.ToUnityVector2(Noname.Core.Primitives.Float2)
+  id: ToUnityVector2(Noname.Core.Primitives.Float2)
+  isExtensionMethod: true
+  parent: Noname.Infrastructure.Unity.Float2UnityExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToUnityVector2(Float2)
+  nameWithType: Float2UnityExtensions.ToUnityVector2(Float2)
+  fullName: Noname.Infrastructure.Unity.Float2UnityExtensions.ToUnityVector2(Noname.Core.Primitives.Float2)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Infrastructure/Unity/Float2UnityExtensions.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Infrastructure.Unity
+  syntax:
+    content: public static Vector2 ToUnityVector2(this Float2 value)
+    parameters:
+    - id: value
+      type: Noname.Core.Primitives.Float2
+    return:
+      type: UnityEngine.Vector2
+    content.vb: Public Shared Function ToUnityVector2(value As Float2) As Vector2
+  overload: Noname.Infrastructure.Unity.Float2UnityExtensions.ToUnityVector2*
+- uid: Noname.Infrastructure.Unity.Float2UnityExtensions.ToFloat2(UnityEngine.Vector2)
+  commentId: M:Noname.Infrastructure.Unity.Float2UnityExtensions.ToFloat2(UnityEngine.Vector2)
+  id: ToFloat2(UnityEngine.Vector2)
+  isExtensionMethod: true
+  parent: Noname.Infrastructure.Unity.Float2UnityExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToFloat2(Vector2)
+  nameWithType: Float2UnityExtensions.ToFloat2(Vector2)
+  fullName: Noname.Infrastructure.Unity.Float2UnityExtensions.ToFloat2(UnityEngine.Vector2)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Infrastructure/Unity/Float2UnityExtensions.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Infrastructure.Unity
+  syntax:
+    content: public static Float2 ToFloat2(this Vector2 value)
+    parameters:
+    - id: value
+      type: UnityEngine.Vector2
+    return:
+      type: Noname.Core.Primitives.Float2
+    content.vb: Public Shared Function ToFloat2(value As Vector2) As Float2
+  overload: Noname.Infrastructure.Unity.Float2UnityExtensions.ToFloat2*
+- uid: Noname.Infrastructure.Unity.Float2UnityExtensions.ToFloat2(UnityEngine.Vector3)
+  commentId: M:Noname.Infrastructure.Unity.Float2UnityExtensions.ToFloat2(UnityEngine.Vector3)
+  id: ToFloat2(UnityEngine.Vector3)
+  isExtensionMethod: true
+  parent: Noname.Infrastructure.Unity.Float2UnityExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToFloat2(Vector3)
+  nameWithType: Float2UnityExtensions.ToFloat2(Vector3)
+  fullName: Noname.Infrastructure.Unity.Float2UnityExtensions.ToFloat2(UnityEngine.Vector3)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Infrastructure/Unity/Float2UnityExtensions.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Infrastructure.Unity
+  syntax:
+    content: public static Float2 ToFloat2(this Vector3 value)
+    parameters:
+    - id: value
+      type: UnityEngine.Vector3
+    return:
+      type: Noname.Core.Primitives.Float2
+    content.vb: Public Shared Function ToFloat2(value As Vector3) As Float2
+  overload: Noname.Infrastructure.Unity.Float2UnityExtensions.ToFloat2*
+references:
+- uid: Noname.Infrastructure.Unity
+  commentId: N:Noname.Infrastructure.Unity
+  isExternal: true
+  href: Noname.html
+  name: Noname.Infrastructure.Unity
+  nameWithType: Noname.Infrastructure.Unity
+  fullName: Noname.Infrastructure.Unity
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Infrastructure
+    name: Infrastructure
+    isExternal: true
+    href: Noname.Infrastructure.html
+  - name: .
+  - uid: Noname.Infrastructure.Unity
+    name: Unity
+    isExternal: true
+    href: Noname.Infrastructure.Unity.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Infrastructure
+    name: Infrastructure
+    isExternal: true
+    href: Noname.Infrastructure.html
+  - name: .
+  - uid: Noname.Infrastructure.Unity
+    name: Unity
+    isExternal: true
+    href: Noname.Infrastructure.Unity.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Noname.Infrastructure.Unity.Float2UnityExtensions.ToUnityVector2*
+  commentId: Overload:Noname.Infrastructure.Unity.Float2UnityExtensions.ToUnityVector2
+  isExternal: true
+  href: Noname.Infrastructure.Unity.Float2UnityExtensions.html#Noname_Infrastructure_Unity_Float2UnityExtensions_ToUnityVector2_Noname_Core_Primitives_Float2_
+  name: ToUnityVector2
+  nameWithType: Float2UnityExtensions.ToUnityVector2
+  fullName: Noname.Infrastructure.Unity.Float2UnityExtensions.ToUnityVector2
+- uid: Noname.Core.Primitives.Float2
+  commentId: T:Noname.Core.Primitives.Float2
+  parent: Noname.Core.Primitives
+  isExternal: true
+  href: Noname.Core.Primitives.Float2.html
+  name: Float2
+  nameWithType: Float2
+  fullName: Noname.Core.Primitives.Float2
+- uid: UnityEngine.Vector2
+  isExternal: true
+  name: Vector2
+  nameWithType: Vector2
+  fullName: UnityEngine.Vector2
+- uid: Noname.Core.Primitives
+  commentId: N:Noname.Core.Primitives
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Primitives
+  nameWithType: Noname.Core.Primitives
+  fullName: Noname.Core.Primitives
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Primitives
+    name: Primitives
+    isExternal: true
+    href: Noname.Core.Primitives.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Primitives
+    name: Primitives
+    isExternal: true
+    href: Noname.Core.Primitives.html
+- uid: Noname.Infrastructure.Unity.Float2UnityExtensions.ToFloat2*
+  commentId: Overload:Noname.Infrastructure.Unity.Float2UnityExtensions.ToFloat2
+  isExternal: true
+  href: Noname.Infrastructure.Unity.Float2UnityExtensions.html#Noname_Infrastructure_Unity_Float2UnityExtensions_ToFloat2_UnityEngine_Vector2_
+  name: ToFloat2
+  nameWithType: Float2UnityExtensions.ToFloat2
+  fullName: Noname.Infrastructure.Unity.Float2UnityExtensions.ToFloat2
+- uid: UnityEngine.Vector3
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: UnityEngine.Vector3

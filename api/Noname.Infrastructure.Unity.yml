@@ -1,0 +1,62 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Infrastructure.Unity
+  commentId: N:Noname.Infrastructure.Unity
+  id: Noname.Infrastructure.Unity
+  children:
+  - Noname.Infrastructure.Unity.Float2UnityExtensions
+  langs:
+  - csharp
+  - vb
+  name: Noname.Infrastructure.Unity
+  nameWithType: Noname.Infrastructure.Unity
+  fullName: Noname.Infrastructure.Unity
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: Noname.Infrastructure.Unity.Float2UnityExtensions
+  commentId: T:Noname.Infrastructure.Unity.Float2UnityExtensions
+  parent: Noname.Infrastructure.Unity
+  isExternal: true
+  href: Noname.Infrastructure.Unity.Float2UnityExtensions.html
+  name: Float2UnityExtensions
+  nameWithType: Float2UnityExtensions
+  fullName: Noname.Infrastructure.Unity.Float2UnityExtensions
+- uid: Noname.Infrastructure.Unity
+  commentId: N:Noname.Infrastructure.Unity
+  isExternal: true
+  href: Noname.html
+  name: Noname.Infrastructure.Unity
+  nameWithType: Noname.Infrastructure.Unity
+  fullName: Noname.Infrastructure.Unity
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Infrastructure
+    name: Infrastructure
+    isExternal: true
+    href: Noname.Infrastructure.html
+  - name: .
+  - uid: Noname.Infrastructure.Unity
+    name: Unity
+    isExternal: true
+    href: Noname.Infrastructure.Unity.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Infrastructure
+    name: Infrastructure
+    isExternal: true
+    href: Noname.Infrastructure.html
+  - name: .
+  - uid: Noname.Infrastructure.Unity
+    name: Unity
+    isExternal: true
+    href: Noname.Infrastructure.Unity.html

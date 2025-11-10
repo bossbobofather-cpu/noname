@@ -1,0 +1,139 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Core.ValueObjects
+  commentId: N:Noname.Core.ValueObjects
+  id: Noname.Core.ValueObjects
+  children:
+  - Noname.Core.ValueObjects.DefenseGameSettings
+  - Noname.Core.ValueObjects.EnemyDefinition
+  - Noname.Core.ValueObjects.EnemyDropDefinition
+  - Noname.Core.ValueObjects.EnemySpawnEntry
+  - Noname.Core.ValueObjects.GameplayAbilityDefinition
+  - Noname.Core.ValueObjects.GameplayAttribute
+  - Noname.Core.ValueObjects.GameplayEffectDefinition
+  - Noname.Core.ValueObjects.GameplayEffectModifier
+  - Noname.Core.ValueObjects.ModifierOperation
+  - Noname.Core.ValueObjects.PlayerDefinition
+  langs:
+  - csharp
+  - vb
+  name: Noname.Core.ValueObjects
+  nameWithType: Noname.Core.ValueObjects
+  fullName: Noname.Core.ValueObjects
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: Noname.Core.ValueObjects.EnemySpawnEntry
+  commentId: T:Noname.Core.ValueObjects.EnemySpawnEntry
+  isExternal: true
+  href: Noname.Core.ValueObjects.EnemySpawnEntry.html
+  name: EnemySpawnEntry
+  nameWithType: EnemySpawnEntry
+  fullName: Noname.Core.ValueObjects.EnemySpawnEntry
+- uid: Noname.Core.ValueObjects.EnemyDropDefinition
+  commentId: T:Noname.Core.ValueObjects.EnemyDropDefinition
+  isExternal: true
+  href: Noname.Core.ValueObjects.EnemyDropDefinition.html
+  name: EnemyDropDefinition
+  nameWithType: EnemyDropDefinition
+  fullName: Noname.Core.ValueObjects.EnemyDropDefinition
+- uid: Noname.Core.ValueObjects.PlayerDefinition
+  commentId: T:Noname.Core.ValueObjects.PlayerDefinition
+  parent: Noname.Core.ValueObjects
+  isExternal: true
+  href: Noname.Core.ValueObjects.PlayerDefinition.html
+  name: PlayerDefinition
+  nameWithType: PlayerDefinition
+  fullName: Noname.Core.ValueObjects.PlayerDefinition
+- uid: Noname.Core.ValueObjects.DefenseGameSettings
+  commentId: T:Noname.Core.ValueObjects.DefenseGameSettings
+  parent: Noname.Core.ValueObjects
+  isExternal: true
+  href: Noname.Core.ValueObjects.DefenseGameSettings.html
+  name: DefenseGameSettings
+  nameWithType: DefenseGameSettings
+  fullName: Noname.Core.ValueObjects.DefenseGameSettings
+- uid: Noname.Core.ValueObjects.GameplayAttribute
+  commentId: T:Noname.Core.ValueObjects.GameplayAttribute
+  parent: Noname.Core.ValueObjects
+  isExternal: true
+  href: Noname.Core.ValueObjects.GameplayAttribute.html
+  name: GameplayAttribute
+  nameWithType: GameplayAttribute
+  fullName: Noname.Core.ValueObjects.GameplayAttribute
+- uid: Noname.Core.ValueObjects.EnemyDefinition
+  commentId: T:Noname.Core.ValueObjects.EnemyDefinition
+  parent: Noname.Core.ValueObjects
+  isExternal: true
+  href: Noname.Core.ValueObjects.EnemyDefinition.html
+  name: EnemyDefinition
+  nameWithType: EnemyDefinition
+  fullName: Noname.Core.ValueObjects.EnemyDefinition
+- uid: Noname.Core.ValueObjects.GameplayEffectModifier
+  commentId: T:Noname.Core.ValueObjects.GameplayEffectModifier
+  isExternal: true
+  href: Noname.Core.ValueObjects.GameplayEffectModifier.html
+  name: GameplayEffectModifier
+  nameWithType: GameplayEffectModifier
+  fullName: Noname.Core.ValueObjects.GameplayEffectModifier
+- uid: Noname.Core.ValueObjects.GameplayAbilityDefinition
+  commentId: T:Noname.Core.ValueObjects.GameplayAbilityDefinition
+  parent: Noname.Core.ValueObjects
+  isExternal: true
+  href: Noname.Core.ValueObjects.GameplayAbilityDefinition.html
+  name: GameplayAbilityDefinition
+  nameWithType: GameplayAbilityDefinition
+  fullName: Noname.Core.ValueObjects.GameplayAbilityDefinition
+- uid: Noname.Core.ValueObjects.GameplayEffectDefinition
+  commentId: T:Noname.Core.ValueObjects.GameplayEffectDefinition
+  isExternal: true
+  href: Noname.Core.ValueObjects.GameplayEffectDefinition.html
+  name: GameplayEffectDefinition
+  nameWithType: GameplayEffectDefinition
+  fullName: Noname.Core.ValueObjects.GameplayEffectDefinition
+- uid: Noname.Core.ValueObjects.ModifierOperation
+  commentId: T:Noname.Core.ValueObjects.ModifierOperation
+  parent: Noname.Core.ValueObjects
+  isExternal: true
+  href: Noname.Core.ValueObjects.ModifierOperation.html
+  name: ModifierOperation
+  nameWithType: ModifierOperation
+  fullName: Noname.Core.ValueObjects.ModifierOperation
+- uid: Noname.Core.ValueObjects
+  commentId: N:Noname.Core.ValueObjects
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.ValueObjects
+  nameWithType: Noname.Core.ValueObjects
+  fullName: Noname.Core.ValueObjects
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Core.ValueObjects.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Core.ValueObjects.html

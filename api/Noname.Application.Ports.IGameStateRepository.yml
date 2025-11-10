@@ -1,0 +1,136 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Application.Ports.IGameStateRepository
+  commentId: T:Noname.Application.Ports.IGameStateRepository
+  id: IGameStateRepository
+  parent: Noname.Application.Ports
+  children:
+  - Noname.Application.Ports.IGameStateRepository.State
+  langs:
+  - csharp
+  - vb
+  name: IGameStateRepository
+  nameWithType: IGameStateRepository
+  fullName: Noname.Application.Ports.IGameStateRepository
+  type: Interface
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Ports/IGameStateRepository.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Ports
+  syntax:
+    content: public interface IGameStateRepository
+    content.vb: Public Interface IGameStateRepository
+- uid: Noname.Application.Ports.IGameStateRepository.State
+  commentId: P:Noname.Application.Ports.IGameStateRepository.State
+  id: State
+  parent: Noname.Application.Ports.IGameStateRepository
+  langs:
+  - csharp
+  - vb
+  name: State
+  nameWithType: IGameStateRepository.State
+  fullName: Noname.Application.Ports.IGameStateRepository.State
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Ports/IGameStateRepository.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Ports
+  syntax:
+    content: GameState State { get; }
+    parameters: []
+    return:
+      type: Noname.Core.Entities.GameState
+    content.vb: ReadOnly Property State As GameState
+  overload: Noname.Application.Ports.IGameStateRepository.State*
+references:
+- uid: Noname.Application.Ports
+  commentId: N:Noname.Application.Ports
+  isExternal: true
+  href: Noname.html
+  name: Noname.Application.Ports
+  nameWithType: Noname.Application.Ports
+  fullName: Noname.Application.Ports
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.Ports
+    name: Ports
+    isExternal: true
+    href: Noname.Application.Ports.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.Ports
+    name: Ports
+    isExternal: true
+    href: Noname.Application.Ports.html
+- uid: Noname.Application.Ports.IGameStateRepository.State*
+  commentId: Overload:Noname.Application.Ports.IGameStateRepository.State
+  isExternal: true
+  href: Noname.Application.Ports.IGameStateRepository.html#Noname_Application_Ports_IGameStateRepository_State
+  name: State
+  nameWithType: IGameStateRepository.State
+  fullName: Noname.Application.Ports.IGameStateRepository.State
+- uid: Noname.Core.Entities.GameState
+  commentId: T:Noname.Core.Entities.GameState
+  parent: Noname.Core.Entities
+  isExternal: true
+  href: Noname.Core.Entities.GameState.html
+  name: GameState
+  nameWithType: GameState
+  fullName: Noname.Core.Entities.GameState
+- uid: Noname.Core.Entities
+  commentId: N:Noname.Core.Entities
+  isExternal: true
+  href: Noname.html
+  name: Noname.Core.Entities
+  nameWithType: Noname.Core.Entities
+  fullName: Noname.Core.Entities
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Entities
+    name: Entities
+    isExternal: true
+    href: Noname.Core.Entities.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Core
+    name: Core
+    isExternal: true
+    href: Noname.Core.html
+  - name: .
+  - uid: Noname.Core.Entities
+    name: Entities
+    isExternal: true
+    href: Noname.Core.Entities.html

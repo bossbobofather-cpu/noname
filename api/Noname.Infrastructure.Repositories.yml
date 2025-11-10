@@ -1,0 +1,24 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Infrastructure.Repositories
+  commentId: N:Noname.Infrastructure.Repositories
+  id: Noname.Infrastructure.Repositories
+  children:
+  - Noname.Infrastructure.Repositories.InMemoryGameStateRepository
+  langs:
+  - csharp
+  - vb
+  name: Noname.Infrastructure.Repositories
+  nameWithType: Noname.Infrastructure.Repositories
+  fullName: Noname.Infrastructure.Repositories
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: Noname.Infrastructure.Repositories.InMemoryGameStateRepository
+  commentId: T:Noname.Infrastructure.Repositories.InMemoryGameStateRepository
+  isExternal: true
+  href: Noname.Infrastructure.Repositories.InMemoryGameStateRepository.html
+  name: InMemoryGameStateRepository
+  nameWithType: InMemoryGameStateRepository
+  fullName: Noname.Infrastructure.Repositories.InMemoryGameStateRepository

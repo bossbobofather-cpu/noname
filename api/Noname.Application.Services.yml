@@ -1,0 +1,79 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Application.Services
+  commentId: N:Noname.Application.Services
+  id: Noname.Application.Services
+  children:
+  - Noname.Application.Services.DefenseSimulationService
+  - Noname.Application.Services.EnemyAttackEvent
+  - Noname.Application.Services.SimulationStepResult
+  langs:
+  - csharp
+  - vb
+  name: Noname.Application.Services
+  nameWithType: Noname.Application.Services
+  fullName: Noname.Application.Services
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: Noname.Application.Services.DefenseSimulationService
+  commentId: T:Noname.Application.Services.DefenseSimulationService
+  parent: Noname.Application.Services
+  isExternal: true
+  href: Noname.Application.Services.DefenseSimulationService.html
+  name: DefenseSimulationService
+  nameWithType: DefenseSimulationService
+  fullName: Noname.Application.Services.DefenseSimulationService
+- uid: Noname.Application.Services.SimulationStepResult
+  commentId: T:Noname.Application.Services.SimulationStepResult
+  parent: Noname.Application.Services
+  isExternal: true
+  href: Noname.Application.Services.SimulationStepResult.html
+  name: SimulationStepResult
+  nameWithType: SimulationStepResult
+  fullName: Noname.Application.Services.SimulationStepResult
+- uid: Noname.Application.Services.EnemyAttackEvent
+  commentId: T:Noname.Application.Services.EnemyAttackEvent
+  isExternal: true
+  href: Noname.Application.Services.EnemyAttackEvent.html
+  name: EnemyAttackEvent
+  nameWithType: EnemyAttackEvent
+  fullName: Noname.Application.Services.EnemyAttackEvent
+- uid: Noname.Application.Services
+  commentId: N:Noname.Application.Services
+  isExternal: true
+  href: Noname.html
+  name: Noname.Application.Services
+  nameWithType: Noname.Application.Services
+  fullName: Noname.Application.Services
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.Services
+    name: Services
+    isExternal: true
+    href: Noname.Application.Services.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.Services
+    name: Services
+    isExternal: true
+    href: Noname.Application.Services.html

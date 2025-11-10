@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Fill Tessellation (C# Job) | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Fill Tessellation (C# Job) | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.spriteshape@1d246726c231/Documentation~/FillTessellation.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="fill-tessellation-c-job">Fill Tessellation (C# Job)</h1>
+
+<p><img src="images/spriteshape-filltess-example.png" alt="Example of a Sprite Shape in the Scene window. It shows a freeform shape with a blue interior framed by green tiled edge geometry."><br>Example of a Sprite Shape: the blue area is the inner fill geometry, while the green area is the edge geometry.</p>
+<p>The geometry of a Sprite Shape is made up of its outer edge (for both <a href="SSProfile.html#open-shape">Open</a> and <a href="SSProfile.html#closed-shape">Closed Shapes</a> and its inner fill (only for Closed Shapes). Both edge and fill geometry are always generated in a <a href="https://docs.unity3d.com/Manual/JobSystemOverview.html">C# Job</a> which provides performance benefits and avoids potential performance loss from garbage collection (refer to <a href="https://docs.unity3d.com/Manual/UnderstandingAutomaticMemoryManagement.html">Understanding Automatic Memory Management</a> for more information). Running C# Job also gains additional performance if the <a href="https://docs.unity3d.com/Packages/com.unity.burst@latest">Burst</a> package is installed in the same Project.</p>
+<p>If <strong>Fill Tessellation (C# Job)</strong> is disabled, the fill geometry is generated in the main thread using <a href="https://github.com/speps/LibTessDotNet">LibNess.NET</a> instead (see <a href="https://docs.unity3d.com/Manual/JobSystemMultithreading.html">What is multithreading?</a> for more information).</p>
+<h2 id="requirements">Requirements</h2>
+<p>To enable <strong>Fill Tessellation (C# Job)</strong>, select a Sprite Shape and then select the  <strong>Fill Tessellation (C# Job)</strong> checkbox in its Inspector window; clear the checkbox to disable the feature. The Sprite Shape must also fulfill the following requirements for this feature to work:</p>
+<ol>
+<li>The Sprite Shape must not have any duplicate points or points that are too close to each other. Duplicate points can occur if you drag a point over another point.</li>
+<li>The Sprite Shape’s edges cannot intersect or overlap each other.</li>
+</ol>
+<p><strong>Note:</strong> If <strong>Fill Tessellation (C# Job)</strong> is enabled but the Sprite Shape does not fulfill these requirements, then the Sprite Shape’s Fill geometry will not be generated. Disable <strong>Fill Tessellation (C# Job)</strong> to enable the default tessellation method to generate the geometry.</p>
+<p>Enabling or disabling this option does not affect the edge geometry tessellation method which is always in a C# Job.</p>
+<h2 id="recommended-tessellation-method">Recommended tessellation method</h2>
+<p>The following are examples and reasons for when either method of tessellation is recommended, depending on the requirements of your project.</p>
+<h3 id="when-fill-tessellation-c-job-is-recommended">When Fill Tessellation (C# Job) is recommended</h3>
+<p>Enabling <strong>Fill Tessellation (C# Job)</strong> is ideal for situations where you want to reduce memory usage for improved CPU performance. For example, when you have dynamic Sprite Shape objects generated at runtime, or are animating Sprite Shape objects at runtime. Both scenarios feature CPU intensive processes, and enabling <strong>Fill Tessellation (C# Job)</strong> helps to reduce the memory usage of these processes and improve performance overall.</p>
+<p>In general, enabling <strong>Fill Tessellation (C# Job)</strong> is also recommended whenever size and memory usage are important constraints to consider for your application or game.</p>
+<h3 id="when-default-libtessnet-is-recommended">When default LibTess.NET is recommended</h3>
+<p>It is recommended to disable the <strong>Fill Tessellation (C# Job)</strong> option and use the default LibTess.NET generation method whenever the Sprite Shape cannot meet the <a href="#requirements">requirements</a> that allow it to be generated in a C# Job. This could be because the Sprite Shape has a complex spline shape, with overlapping edges or duplicate points. If the Sprite Shape is being generated with non-deterministic and random input points for the shape of its spline, then it is recommended to use LibTess.NET as it is not guaranteed that the Sprite Shape fulfils the Fill Tessellation requirements.</p>
+<p>If you enabled <strong>Cache Geometry</strong> under the Sprite Shape Controller properties, then it is recommended that you use LibTess.NET instead of Fill Tessellation. The Sprite Shape’s geometry is cached as it is generated in the Editor, and this stored data is used at runtime instead of being generated at runtime. Both the LibTess.NET and Fill Tessellation options use this stored data instead of recalculating and regenerating the geometry if it is available. As LibTess.NET is more flexible and is able to accept a wider range of inputs when generating the Sprite Shape, it is recommended to disable <strong>Fill Tessellation</strong> if <strong>Cache Geometry</strong> is  used.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.spriteshape@1d246726c231/Documentation~/FillTessellation.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Tracked Input Devices | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Tracked Input Devices | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.inputsystem@be6c4fd0abf5/Documentation~/TrackedInputDevices.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="input-system-tracked-input-devices">
+<h1 id="tracked-input-devices">Tracked Input Devices</h1>
+
+<p>Some input devices can provide information about their spatial position and orientation. It can then be used to pose other objects in your scene, or to interact with your scene.</p>
+<h2 id="tracked-pose-driver">Tracked Pose Driver</h2>
+<p>Use the Tracked Pose Driver component to synchronize a <strong>GameObject</strong>'s transform with input data from a tracked device such as an XR headset, motion controller, or other devices that provide positional and rotational tracking. It allows creating immersive XR experiences by dynamically updating the <strong>GameObject</strong>’s position and rotation based on the real-world movement of the tracked device. The component works with Unity's Input System to gather position, rotation, and tracking state data, and it provides several customization options, such as updating specific transform properties, controlling update timing, and managing how invalid tracking data is handled.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../api/UnityEngine.InputSystem.XR.TrackedPoseDriver.html#UnityEngine_InputSystem_XR_TrackedPoseDriver_trackingType"><code>Tracking Type</code></a></td>
+<td>Specify which transform properties (position, rotation, or both) to update based on the tracked data.</td>
+</tr>
+<tr>
+<td><a href="../api/UnityEngine.InputSystem.XR.TrackedPoseDriver.html#UnityEngine_InputSystem_XR_TrackedPoseDriver_updateType"><code>Update Type</code></a></td>
+<td>Determine when updates to the transform occur within Unity's event loop, such as during rendering or gameplay.</td>
+</tr>
+<tr>
+<td><a href="../api/UnityEngine.InputSystem.XR.TrackedPoseDriver.html#UnityEngine_InputSystem_XR_TrackedPoseDriver_ignoreTrackingState"><code>Ignore Tracking State</code></a></td>
+<td>Enable to ignore the tracking state and assume that the input pose is valid, even when flagged otherwise.</td>
+</tr>
+<tr>
+<td><a href="../api/UnityEngine.InputSystem.XR.TrackedPoseDriver.html#UnityEngine_InputSystem_XR_TrackedPoseDriver_positionInput"><code>Position Input</code></a></td>
+<td>Set an input action that retrieves the position data (Vector3) of the tracked device.</td>
+</tr>
+<tr>
+<td><a href="../api/UnityEngine.InputSystem.XR.TrackedPoseDriver.html#UnityEngine_InputSystem_XR_TrackedPoseDriver_rotationInput"><code>Rotation Input</code></a></td>
+<td>Set an input action that retrieves the rotation data (Quaternion) of the tracked device.</td>
+</tr>
+<tr>
+<td><a href="../api/UnityEngine.InputSystem.XR.TrackedPoseDriver.html#UnityEngine_InputSystem_XR_TrackedPoseDriver_trackingStateInput"><code>Tracking State Input</code></a></td>
+<td>Set an input action that determines whether the tracking state (position or rotation) is valid (integer).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tracked-device-raycaster">Tracked Device Raycaster</h2>
+<p>Use the Tracked Device Raycaster component to enable ray casting from tracked input devices, such as XR controllers, to interact with UI elements rendered in 3D space.</p>
+<p>Tracked Device Raycaster works with the the <strong>Canvas</strong> component, and replaces the standard <strong>GraphicRaycaster</strong> for XR and AR use cases. Use Tracked Device Raycaster to process pointer events that are based on ray intersections with graphics in world space.</p>
+<p>The component also supports occlusion checks, custom ray distance limits, and filtering of reversed graphics to enable UI interactions in immersive environments. You can use it to build XR-enabled user interfaces where traditional 2D input methods, such as a mouse, do not apply.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../api/UnityEngine.InputSystem.UI.TrackedDeviceRaycaster.html#UnityEngine_InputSystem_UI_TrackedDeviceRaycaster_ignoreReversedGraphics"><code>Ignore Reversed Graphics</code></a></td>
+<td>Enable to ignore graphics whose normal faces away from the direction of the ray.</td>
+</tr>
+<tr>
+<td><a href="../api/UnityEngine.InputSystem.UI.TrackedDeviceRaycaster.html#UnityEngine_InputSystem_UI_TrackedDeviceRaycaster_checkFor2DOcclusion"><code>Check For 2D Occlusion</code></a></td>
+<td>Enable occlusion checks for 2D objects, such as sprites in the scene.</td>
+</tr>
+<tr>
+<td><a href="../api/UnityEngine.InputSystem.UI.TrackedDeviceRaycaster.html#UnityEngine_InputSystem_UI_TrackedDeviceRaycaster_checkFor3DOcclusion"><code>Check For 3D Occulusion</code></a></td>
+<td>Enable occlusion checks for 3D objects to prevent rays from passing through physical geometry.</td>
+</tr>
+<tr>
+<td><a href="../api/UnityEngine.InputSystem.UI.TrackedDeviceRaycaster.html#UnityEngine_InputSystem_UI_TrackedDeviceRaycaster_maxDistance"><code>Max Distance</code></a></td>
+<td>Set the maximum ray distance for interaction detection in world space coordinates.</td>
+</tr>
+<tr>
+<td><a href="../api/UnityEngine.InputSystem.UI.TrackedDeviceRaycaster.html#UnityEngine_InputSystem_UI_TrackedDeviceRaycaster_blockingMask"><code>Blocking Mask</code></a></td>
+<td>Define the layer mask used to check for occlusion when ray casting.</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.inputsystem@be6c4fd0abf5/Documentation~/TrackedInputDevices.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

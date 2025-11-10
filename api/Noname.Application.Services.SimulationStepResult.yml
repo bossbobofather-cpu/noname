@@ -1,0 +1,879 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Application.Services.SimulationStepResult
+  commentId: T:Noname.Application.Services.SimulationStepResult
+  id: SimulationStepResult
+  parent: Noname.Application.Services
+  children:
+  - Noname.Application.Services.SimulationStepResult.#ctor(Noname.Core.Entities.EnemyEntity[],System.Int32[],Noname.Application.Services.EnemyAttackEvent[],Noname.Application.ValueObjects.EnemyHitInfo[],Noname.Application.ValueObjects.PlayerProjectileFiredEvent[],Noname.Application.ValueObjects.EnemyProjectileFiredEvent[],Noname.Application.ValueObjects.ProjectileImpactEvent[],Noname.Application.ValueObjects.ResourceDropSpawnedEvent[],Noname.Application.ValueObjects.ResourceDropCollectedEvent[],Noname.Application.ValueObjects.PlayerLevelUpEvent[])
+  - Noname.Application.Services.SimulationStepResult.EnemyAttacks
+  - Noname.Application.Services.SimulationStepResult.EnemyProjectilesFired
+  - Noname.Application.Services.SimulationStepResult.PlayerLevelUps
+  - Noname.Application.Services.SimulationStepResult.PlayerProjectileHits
+  - Noname.Application.Services.SimulationStepResult.PlayerProjectilesFired
+  - Noname.Application.Services.SimulationStepResult.ProjectileImpacts
+  - Noname.Application.Services.SimulationStepResult.RemovedEnemyIds
+  - Noname.Application.Services.SimulationStepResult.ResourceDropsCollected
+  - Noname.Application.Services.SimulationStepResult.ResourceDropsSpawned
+  - Noname.Application.Services.SimulationStepResult.SpawnedEnemies
+  langs:
+  - csharp
+  - vb
+  name: SimulationStepResult
+  nameWithType: SimulationStepResult
+  fullName: Noname.Application.Services.SimulationStepResult
+  type: Struct
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Services
+  syntax:
+    content: public readonly struct SimulationStepResult
+    content.vb: Public Structure SimulationStepResult
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.GetType
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: Noname.Application.Services.SimulationStepResult.#ctor(Noname.Core.Entities.EnemyEntity[],System.Int32[],Noname.Application.Services.EnemyAttackEvent[],Noname.Application.ValueObjects.EnemyHitInfo[],Noname.Application.ValueObjects.PlayerProjectileFiredEvent[],Noname.Application.ValueObjects.EnemyProjectileFiredEvent[],Noname.Application.ValueObjects.ProjectileImpactEvent[],Noname.Application.ValueObjects.ResourceDropSpawnedEvent[],Noname.Application.ValueObjects.ResourceDropCollectedEvent[],Noname.Application.ValueObjects.PlayerLevelUpEvent[])
+  commentId: M:Noname.Application.Services.SimulationStepResult.#ctor(Noname.Core.Entities.EnemyEntity[],System.Int32[],Noname.Application.Services.EnemyAttackEvent[],Noname.Application.ValueObjects.EnemyHitInfo[],Noname.Application.ValueObjects.PlayerProjectileFiredEvent[],Noname.Application.ValueObjects.EnemyProjectileFiredEvent[],Noname.Application.ValueObjects.ProjectileImpactEvent[],Noname.Application.ValueObjects.ResourceDropSpawnedEvent[],Noname.Application.ValueObjects.ResourceDropCollectedEvent[],Noname.Application.ValueObjects.PlayerLevelUpEvent[])
+  id: '#ctor(Noname.Core.Entities.EnemyEntity[],System.Int32[],Noname.Application.Services.EnemyAttackEvent[],Noname.Application.ValueObjects.EnemyHitInfo[],Noname.Application.ValueObjects.PlayerProjectileFiredEvent[],Noname.Application.ValueObjects.EnemyProjectileFiredEvent[],Noname.Application.ValueObjects.ProjectileImpactEvent[],Noname.Application.ValueObjects.ResourceDropSpawnedEvent[],Noname.Application.ValueObjects.ResourceDropCollectedEvent[],Noname.Application.ValueObjects.PlayerLevelUpEvent[])'
+  parent: Noname.Application.Services.SimulationStepResult
+  langs:
+  - csharp
+  - vb
+  name: SimulationStepResult(EnemyEntity[], int[], EnemyAttackEvent[], EnemyHitInfo[], PlayerProjectileFiredEvent[], EnemyProjectileFiredEvent[], ProjectileImpactEvent[], ResourceDropSpawnedEvent[], ResourceDropCollectedEvent[], PlayerLevelUpEvent[])
+  nameWithType: SimulationStepResult.SimulationStepResult(EnemyEntity[], int[], EnemyAttackEvent[], EnemyHitInfo[], PlayerProjectileFiredEvent[], EnemyProjectileFiredEvent[], ProjectileImpactEvent[], ResourceDropSpawnedEvent[], ResourceDropCollectedEvent[], PlayerLevelUpEvent[])
+  fullName: Noname.Application.Services.SimulationStepResult.SimulationStepResult(Noname.Core.Entities.EnemyEntity[], int[], Noname.Application.Services.EnemyAttackEvent[], Noname.Application.ValueObjects.EnemyHitInfo[], Noname.Application.ValueObjects.PlayerProjectileFiredEvent[], Noname.Application.ValueObjects.EnemyProjectileFiredEvent[], Noname.Application.ValueObjects.ProjectileImpactEvent[], Noname.Application.ValueObjects.ResourceDropSpawnedEvent[], Noname.Application.ValueObjects.ResourceDropCollectedEvent[], Noname.Application.ValueObjects.PlayerLevelUpEvent[])
+  type: Constructor
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Services
+  syntax:
+    content: public SimulationStepResult(EnemyEntity[] spawnedEnemies, int[] removedEnemyIds, EnemyAttackEvent[] attackEvents, EnemyHitInfo[] playerHits, PlayerProjectileFiredEvent[] playerProjectiles, EnemyProjectileFiredEvent[] enemyProjectiles, ProjectileImpactEvent[] projectileImpacts, ResourceDropSpawnedEvent[] resourceDropsSpawned, ResourceDropCollectedEvent[] resourceDropsCollected, PlayerLevelUpEvent[] playerLevelUps)
+    parameters:
+    - id: spawnedEnemies
+      type: Noname.Core.Entities.EnemyEntity[]
+    - id: removedEnemyIds
+      type: System.Int32[]
+    - id: attackEvents
+      type: Noname.Application.Services.EnemyAttackEvent[]
+    - id: playerHits
+      type: Noname.Application.ValueObjects.EnemyHitInfo[]
+    - id: playerProjectiles
+      type: Noname.Application.ValueObjects.PlayerProjectileFiredEvent[]
+    - id: enemyProjectiles
+      type: Noname.Application.ValueObjects.EnemyProjectileFiredEvent[]
+    - id: projectileImpacts
+      type: Noname.Application.ValueObjects.ProjectileImpactEvent[]
+    - id: resourceDropsSpawned
+      type: Noname.Application.ValueObjects.ResourceDropSpawnedEvent[]
+    - id: resourceDropsCollected
+      type: Noname.Application.ValueObjects.ResourceDropCollectedEvent[]
+    - id: playerLevelUps
+      type: Noname.Application.ValueObjects.PlayerLevelUpEvent[]
+    content.vb: Public Sub New(spawnedEnemies As EnemyEntity(), removedEnemyIds As Integer(), attackEvents As EnemyAttackEvent(), playerHits As EnemyHitInfo(), playerProjectiles As PlayerProjectileFiredEvent(), enemyProjectiles As EnemyProjectileFiredEvent(), projectileImpacts As ProjectileImpactEvent(), resourceDropsSpawned As ResourceDropSpawnedEvent(), resourceDropsCollected As ResourceDropCollectedEvent(), playerLevelUps As PlayerLevelUpEvent())
+  overload: Noname.Application.Services.SimulationStepResult.#ctor*
+  nameWithType.vb: SimulationStepResult.New(EnemyEntity(), Integer(), EnemyAttackEvent(), EnemyHitInfo(), PlayerProjectileFiredEvent(), EnemyProjectileFiredEvent(), ProjectileImpactEvent(), ResourceDropSpawnedEvent(), ResourceDropCollectedEvent(), PlayerLevelUpEvent())
+  fullName.vb: Noname.Application.Services.SimulationStepResult.New(Noname.Core.Entities.EnemyEntity(), Integer(), Noname.Application.Services.EnemyAttackEvent(), Noname.Application.ValueObjects.EnemyHitInfo(), Noname.Application.ValueObjects.PlayerProjectileFiredEvent(), Noname.Application.ValueObjects.EnemyProjectileFiredEvent(), Noname.Application.ValueObjects.ProjectileImpactEvent(), Noname.Application.ValueObjects.ResourceDropSpawnedEvent(), Noname.Application.ValueObjects.ResourceDropCollectedEvent(), Noname.Application.ValueObjects.PlayerLevelUpEvent())
+  name.vb: New(EnemyEntity(), Integer(), EnemyAttackEvent(), EnemyHitInfo(), PlayerProjectileFiredEvent(), EnemyProjectileFiredEvent(), ProjectileImpactEvent(), ResourceDropSpawnedEvent(), ResourceDropCollectedEvent(), PlayerLevelUpEvent())
+- uid: Noname.Application.Services.SimulationStepResult.SpawnedEnemies
+  commentId: P:Noname.Application.Services.SimulationStepResult.SpawnedEnemies
+  id: SpawnedEnemies
+  parent: Noname.Application.Services.SimulationStepResult
+  langs:
+  - csharp
+  - vb
+  name: SpawnedEnemies
+  nameWithType: SimulationStepResult.SpawnedEnemies
+  fullName: Noname.Application.Services.SimulationStepResult.SpawnedEnemies
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Services
+  syntax:
+    content: public EnemyEntity[] SpawnedEnemies { get; }
+    parameters: []
+    return:
+      type: Noname.Core.Entities.EnemyEntity[]
+    content.vb: Public ReadOnly Property SpawnedEnemies As EnemyEntity()
+  overload: Noname.Application.Services.SimulationStepResult.SpawnedEnemies*
+- uid: Noname.Application.Services.SimulationStepResult.RemovedEnemyIds
+  commentId: P:Noname.Application.Services.SimulationStepResult.RemovedEnemyIds
+  id: RemovedEnemyIds
+  parent: Noname.Application.Services.SimulationStepResult
+  langs:
+  - csharp
+  - vb
+  name: RemovedEnemyIds
+  nameWithType: SimulationStepResult.RemovedEnemyIds
+  fullName: Noname.Application.Services.SimulationStepResult.RemovedEnemyIds
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Services
+  syntax:
+    content: public int[] RemovedEnemyIds { get; }
+    parameters: []
+    return:
+      type: System.Int32[]
+    content.vb: Public ReadOnly Property RemovedEnemyIds As Integer()
+  overload: Noname.Application.Services.SimulationStepResult.RemovedEnemyIds*
+- uid: Noname.Application.Services.SimulationStepResult.EnemyAttacks
+  commentId: P:Noname.Application.Services.SimulationStepResult.EnemyAttacks
+  id: EnemyAttacks
+  parent: Noname.Application.Services.SimulationStepResult
+  langs:
+  - csharp
+  - vb
+  name: EnemyAttacks
+  nameWithType: SimulationStepResult.EnemyAttacks
+  fullName: Noname.Application.Services.SimulationStepResult.EnemyAttacks
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Services
+  syntax:
+    content: public EnemyAttackEvent[] EnemyAttacks { get; }
+    parameters: []
+    return:
+      type: Noname.Application.Services.EnemyAttackEvent[]
+    content.vb: Public ReadOnly Property EnemyAttacks As EnemyAttackEvent()
+  overload: Noname.Application.Services.SimulationStepResult.EnemyAttacks*
+- uid: Noname.Application.Services.SimulationStepResult.PlayerProjectileHits
+  commentId: P:Noname.Application.Services.SimulationStepResult.PlayerProjectileHits
+  id: PlayerProjectileHits
+  parent: Noname.Application.Services.SimulationStepResult
+  langs:
+  - csharp
+  - vb
+  name: PlayerProjectileHits
+  nameWithType: SimulationStepResult.PlayerProjectileHits
+  fullName: Noname.Application.Services.SimulationStepResult.PlayerProjectileHits
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Services
+  syntax:
+    content: public EnemyHitInfo[] PlayerProjectileHits { get; }
+    parameters: []
+    return:
+      type: Noname.Application.ValueObjects.EnemyHitInfo[]
+    content.vb: Public ReadOnly Property PlayerProjectileHits As EnemyHitInfo()
+  overload: Noname.Application.Services.SimulationStepResult.PlayerProjectileHits*
+- uid: Noname.Application.Services.SimulationStepResult.PlayerProjectilesFired
+  commentId: P:Noname.Application.Services.SimulationStepResult.PlayerProjectilesFired
+  id: PlayerProjectilesFired
+  parent: Noname.Application.Services.SimulationStepResult
+  langs:
+  - csharp
+  - vb
+  name: PlayerProjectilesFired
+  nameWithType: SimulationStepResult.PlayerProjectilesFired
+  fullName: Noname.Application.Services.SimulationStepResult.PlayerProjectilesFired
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Services
+  syntax:
+    content: public PlayerProjectileFiredEvent[] PlayerProjectilesFired { get; }
+    parameters: []
+    return:
+      type: Noname.Application.ValueObjects.PlayerProjectileFiredEvent[]
+    content.vb: Public ReadOnly Property PlayerProjectilesFired As PlayerProjectileFiredEvent()
+  overload: Noname.Application.Services.SimulationStepResult.PlayerProjectilesFired*
+- uid: Noname.Application.Services.SimulationStepResult.EnemyProjectilesFired
+  commentId: P:Noname.Application.Services.SimulationStepResult.EnemyProjectilesFired
+  id: EnemyProjectilesFired
+  parent: Noname.Application.Services.SimulationStepResult
+  langs:
+  - csharp
+  - vb
+  name: EnemyProjectilesFired
+  nameWithType: SimulationStepResult.EnemyProjectilesFired
+  fullName: Noname.Application.Services.SimulationStepResult.EnemyProjectilesFired
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Services
+  syntax:
+    content: public EnemyProjectileFiredEvent[] EnemyProjectilesFired { get; }
+    parameters: []
+    return:
+      type: Noname.Application.ValueObjects.EnemyProjectileFiredEvent[]
+    content.vb: Public ReadOnly Property EnemyProjectilesFired As EnemyProjectileFiredEvent()
+  overload: Noname.Application.Services.SimulationStepResult.EnemyProjectilesFired*
+- uid: Noname.Application.Services.SimulationStepResult.ProjectileImpacts
+  commentId: P:Noname.Application.Services.SimulationStepResult.ProjectileImpacts
+  id: ProjectileImpacts
+  parent: Noname.Application.Services.SimulationStepResult
+  langs:
+  - csharp
+  - vb
+  name: ProjectileImpacts
+  nameWithType: SimulationStepResult.ProjectileImpacts
+  fullName: Noname.Application.Services.SimulationStepResult.ProjectileImpacts
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Services
+  syntax:
+    content: public ProjectileImpactEvent[] ProjectileImpacts { get; }
+    parameters: []
+    return:
+      type: Noname.Application.ValueObjects.ProjectileImpactEvent[]
+    content.vb: Public ReadOnly Property ProjectileImpacts As ProjectileImpactEvent()
+  overload: Noname.Application.Services.SimulationStepResult.ProjectileImpacts*
+- uid: Noname.Application.Services.SimulationStepResult.ResourceDropsSpawned
+  commentId: P:Noname.Application.Services.SimulationStepResult.ResourceDropsSpawned
+  id: ResourceDropsSpawned
+  parent: Noname.Application.Services.SimulationStepResult
+  langs:
+  - csharp
+  - vb
+  name: ResourceDropsSpawned
+  nameWithType: SimulationStepResult.ResourceDropsSpawned
+  fullName: Noname.Application.Services.SimulationStepResult.ResourceDropsSpawned
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Services
+  syntax:
+    content: public ResourceDropSpawnedEvent[] ResourceDropsSpawned { get; }
+    parameters: []
+    return:
+      type: Noname.Application.ValueObjects.ResourceDropSpawnedEvent[]
+    content.vb: Public ReadOnly Property ResourceDropsSpawned As ResourceDropSpawnedEvent()
+  overload: Noname.Application.Services.SimulationStepResult.ResourceDropsSpawned*
+- uid: Noname.Application.Services.SimulationStepResult.ResourceDropsCollected
+  commentId: P:Noname.Application.Services.SimulationStepResult.ResourceDropsCollected
+  id: ResourceDropsCollected
+  parent: Noname.Application.Services.SimulationStepResult
+  langs:
+  - csharp
+  - vb
+  name: ResourceDropsCollected
+  nameWithType: SimulationStepResult.ResourceDropsCollected
+  fullName: Noname.Application.Services.SimulationStepResult.ResourceDropsCollected
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Services
+  syntax:
+    content: public ResourceDropCollectedEvent[] ResourceDropsCollected { get; }
+    parameters: []
+    return:
+      type: Noname.Application.ValueObjects.ResourceDropCollectedEvent[]
+    content.vb: Public ReadOnly Property ResourceDropsCollected As ResourceDropCollectedEvent()
+  overload: Noname.Application.Services.SimulationStepResult.ResourceDropsCollected*
+- uid: Noname.Application.Services.SimulationStepResult.PlayerLevelUps
+  commentId: P:Noname.Application.Services.SimulationStepResult.PlayerLevelUps
+  id: PlayerLevelUps
+  parent: Noname.Application.Services.SimulationStepResult
+  langs:
+  - csharp
+  - vb
+  name: PlayerLevelUps
+  nameWithType: SimulationStepResult.PlayerLevelUps
+  fullName: Noname.Application.Services.SimulationStepResult.PlayerLevelUps
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Services
+  syntax:
+    content: public PlayerLevelUpEvent[] PlayerLevelUps { get; }
+    parameters: []
+    return:
+      type: Noname.Application.ValueObjects.PlayerLevelUpEvent[]
+    content.vb: Public ReadOnly Property PlayerLevelUps As PlayerLevelUpEvent()
+  overload: Noname.Application.Services.SimulationStepResult.PlayerLevelUps*
+references:
+- uid: Noname.Application.Services
+  commentId: N:Noname.Application.Services
+  isExternal: true
+  href: Noname.html
+  name: Noname.Application.Services
+  nameWithType: Noname.Application.Services
+  fullName: Noname.Application.Services
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.Services
+    name: Services
+    isExternal: true
+    href: Noname.Application.Services.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.Services
+    name: Services
+    isExternal: true
+    href: Noname.Application.Services.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Noname.Application.Services.SimulationStepResult.#ctor*
+  commentId: Overload:Noname.Application.Services.SimulationStepResult.#ctor
+  isExternal: true
+  href: Noname.Application.Services.SimulationStepResult.html#Noname_Application_Services_SimulationStepResult__ctor_Noname_Core_Entities_EnemyEntity___System_Int32___Noname_Application_Services_EnemyAttackEvent___Noname_Application_ValueObjects_EnemyHitInfo___Noname_Application_ValueObjects_PlayerProjectileFiredEvent___Noname_Application_ValueObjects_EnemyProjectileFiredEvent___Noname_Application_ValueObjects_ProjectileImpactEvent___Noname_Application_ValueObjects_ResourceDropSpawnedEvent___Noname_Application_ValueObjects_ResourceDropCollectedEvent___Noname_Application_ValueObjects_PlayerLevelUpEvent___
+  name: SimulationStepResult
+  nameWithType: SimulationStepResult.SimulationStepResult
+  fullName: Noname.Application.Services.SimulationStepResult.SimulationStepResult
+  nameWithType.vb: SimulationStepResult.New
+  fullName.vb: Noname.Application.Services.SimulationStepResult.New
+  name.vb: New
+- uid: Noname.Core.Entities.EnemyEntity[]
+  isExternal: true
+  href: Noname.Core.Entities.EnemyEntity.html
+  name: EnemyEntity[]
+  nameWithType: EnemyEntity[]
+  fullName: Noname.Core.Entities.EnemyEntity[]
+  nameWithType.vb: EnemyEntity()
+  fullName.vb: Noname.Core.Entities.EnemyEntity()
+  name.vb: EnemyEntity()
+  spec.csharp:
+  - uid: Noname.Core.Entities.EnemyEntity
+    name: EnemyEntity
+    isExternal: true
+    href: Noname.Core.Entities.EnemyEntity.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Noname.Core.Entities.EnemyEntity
+    name: EnemyEntity
+    isExternal: true
+    href: Noname.Core.Entities.EnemyEntity.html
+  - name: (
+  - name: )
+- uid: System.Int32[]
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int[]
+  nameWithType: int[]
+  fullName: int[]
+  nameWithType.vb: Integer()
+  fullName.vb: Integer()
+  name.vb: Integer()
+  spec.csharp:
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: (
+  - name: )
+- uid: Noname.Application.Services.EnemyAttackEvent[]
+  isExternal: true
+  href: Noname.Application.Services.EnemyAttackEvent.html
+  name: EnemyAttackEvent[]
+  nameWithType: EnemyAttackEvent[]
+  fullName: Noname.Application.Services.EnemyAttackEvent[]
+  nameWithType.vb: EnemyAttackEvent()
+  fullName.vb: Noname.Application.Services.EnemyAttackEvent()
+  name.vb: EnemyAttackEvent()
+  spec.csharp:
+  - uid: Noname.Application.Services.EnemyAttackEvent
+    name: EnemyAttackEvent
+    isExternal: true
+    href: Noname.Application.Services.EnemyAttackEvent.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Noname.Application.Services.EnemyAttackEvent
+    name: EnemyAttackEvent
+    isExternal: true
+    href: Noname.Application.Services.EnemyAttackEvent.html
+  - name: (
+  - name: )
+- uid: Noname.Application.ValueObjects.EnemyHitInfo[]
+  isExternal: true
+  href: Noname.Application.ValueObjects.EnemyHitInfo.html
+  name: EnemyHitInfo[]
+  nameWithType: EnemyHitInfo[]
+  fullName: Noname.Application.ValueObjects.EnemyHitInfo[]
+  nameWithType.vb: EnemyHitInfo()
+  fullName.vb: Noname.Application.ValueObjects.EnemyHitInfo()
+  name.vb: EnemyHitInfo()
+  spec.csharp:
+  - uid: Noname.Application.ValueObjects.EnemyHitInfo
+    name: EnemyHitInfo
+    isExternal: true
+    href: Noname.Application.ValueObjects.EnemyHitInfo.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Noname.Application.ValueObjects.EnemyHitInfo
+    name: EnemyHitInfo
+    isExternal: true
+    href: Noname.Application.ValueObjects.EnemyHitInfo.html
+  - name: (
+  - name: )
+- uid: Noname.Application.ValueObjects.PlayerProjectileFiredEvent[]
+  isExternal: true
+  href: Noname.Application.ValueObjects.PlayerProjectileFiredEvent.html
+  name: PlayerProjectileFiredEvent[]
+  nameWithType: PlayerProjectileFiredEvent[]
+  fullName: Noname.Application.ValueObjects.PlayerProjectileFiredEvent[]
+  nameWithType.vb: PlayerProjectileFiredEvent()
+  fullName.vb: Noname.Application.ValueObjects.PlayerProjectileFiredEvent()
+  name.vb: PlayerProjectileFiredEvent()
+  spec.csharp:
+  - uid: Noname.Application.ValueObjects.PlayerProjectileFiredEvent
+    name: PlayerProjectileFiredEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.PlayerProjectileFiredEvent.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Noname.Application.ValueObjects.PlayerProjectileFiredEvent
+    name: PlayerProjectileFiredEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.PlayerProjectileFiredEvent.html
+  - name: (
+  - name: )
+- uid: Noname.Application.ValueObjects.EnemyProjectileFiredEvent[]
+  isExternal: true
+  href: Noname.Application.ValueObjects.EnemyProjectileFiredEvent.html
+  name: EnemyProjectileFiredEvent[]
+  nameWithType: EnemyProjectileFiredEvent[]
+  fullName: Noname.Application.ValueObjects.EnemyProjectileFiredEvent[]
+  nameWithType.vb: EnemyProjectileFiredEvent()
+  fullName.vb: Noname.Application.ValueObjects.EnemyProjectileFiredEvent()
+  name.vb: EnemyProjectileFiredEvent()
+  spec.csharp:
+  - uid: Noname.Application.ValueObjects.EnemyProjectileFiredEvent
+    name: EnemyProjectileFiredEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.EnemyProjectileFiredEvent.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Noname.Application.ValueObjects.EnemyProjectileFiredEvent
+    name: EnemyProjectileFiredEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.EnemyProjectileFiredEvent.html
+  - name: (
+  - name: )
+- uid: Noname.Application.ValueObjects.ProjectileImpactEvent[]
+  isExternal: true
+  href: Noname.Application.ValueObjects.ProjectileImpactEvent.html
+  name: ProjectileImpactEvent[]
+  nameWithType: ProjectileImpactEvent[]
+  fullName: Noname.Application.ValueObjects.ProjectileImpactEvent[]
+  nameWithType.vb: ProjectileImpactEvent()
+  fullName.vb: Noname.Application.ValueObjects.ProjectileImpactEvent()
+  name.vb: ProjectileImpactEvent()
+  spec.csharp:
+  - uid: Noname.Application.ValueObjects.ProjectileImpactEvent
+    name: ProjectileImpactEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.ProjectileImpactEvent.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Noname.Application.ValueObjects.ProjectileImpactEvent
+    name: ProjectileImpactEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.ProjectileImpactEvent.html
+  - name: (
+  - name: )
+- uid: Noname.Application.ValueObjects.ResourceDropSpawnedEvent[]
+  isExternal: true
+  href: Noname.Application.ValueObjects.ResourceDropSpawnedEvent.html
+  name: ResourceDropSpawnedEvent[]
+  nameWithType: ResourceDropSpawnedEvent[]
+  fullName: Noname.Application.ValueObjects.ResourceDropSpawnedEvent[]
+  nameWithType.vb: ResourceDropSpawnedEvent()
+  fullName.vb: Noname.Application.ValueObjects.ResourceDropSpawnedEvent()
+  name.vb: ResourceDropSpawnedEvent()
+  spec.csharp:
+  - uid: Noname.Application.ValueObjects.ResourceDropSpawnedEvent
+    name: ResourceDropSpawnedEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.ResourceDropSpawnedEvent.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Noname.Application.ValueObjects.ResourceDropSpawnedEvent
+    name: ResourceDropSpawnedEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.ResourceDropSpawnedEvent.html
+  - name: (
+  - name: )
+- uid: Noname.Application.ValueObjects.ResourceDropCollectedEvent[]
+  isExternal: true
+  href: Noname.Application.ValueObjects.ResourceDropCollectedEvent.html
+  name: ResourceDropCollectedEvent[]
+  nameWithType: ResourceDropCollectedEvent[]
+  fullName: Noname.Application.ValueObjects.ResourceDropCollectedEvent[]
+  nameWithType.vb: ResourceDropCollectedEvent()
+  fullName.vb: Noname.Application.ValueObjects.ResourceDropCollectedEvent()
+  name.vb: ResourceDropCollectedEvent()
+  spec.csharp:
+  - uid: Noname.Application.ValueObjects.ResourceDropCollectedEvent
+    name: ResourceDropCollectedEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.ResourceDropCollectedEvent.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Noname.Application.ValueObjects.ResourceDropCollectedEvent
+    name: ResourceDropCollectedEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.ResourceDropCollectedEvent.html
+  - name: (
+  - name: )
+- uid: Noname.Application.ValueObjects.PlayerLevelUpEvent[]
+  isExternal: true
+  href: Noname.Application.ValueObjects.PlayerLevelUpEvent.html
+  name: PlayerLevelUpEvent[]
+  nameWithType: PlayerLevelUpEvent[]
+  fullName: Noname.Application.ValueObjects.PlayerLevelUpEvent[]
+  nameWithType.vb: PlayerLevelUpEvent()
+  fullName.vb: Noname.Application.ValueObjects.PlayerLevelUpEvent()
+  name.vb: PlayerLevelUpEvent()
+  spec.csharp:
+  - uid: Noname.Application.ValueObjects.PlayerLevelUpEvent
+    name: PlayerLevelUpEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.PlayerLevelUpEvent.html
+  - name: '['
+  - name: ']'
+  spec.vb:
+  - uid: Noname.Application.ValueObjects.PlayerLevelUpEvent
+    name: PlayerLevelUpEvent
+    isExternal: true
+    href: Noname.Application.ValueObjects.PlayerLevelUpEvent.html
+  - name: (
+  - name: )
+- uid: Noname.Application.Services.SimulationStepResult.SpawnedEnemies*
+  commentId: Overload:Noname.Application.Services.SimulationStepResult.SpawnedEnemies
+  isExternal: true
+  href: Noname.Application.Services.SimulationStepResult.html#Noname_Application_Services_SimulationStepResult_SpawnedEnemies
+  name: SpawnedEnemies
+  nameWithType: SimulationStepResult.SpawnedEnemies
+  fullName: Noname.Application.Services.SimulationStepResult.SpawnedEnemies
+- uid: Noname.Application.Services.SimulationStepResult.RemovedEnemyIds*
+  commentId: Overload:Noname.Application.Services.SimulationStepResult.RemovedEnemyIds
+  isExternal: true
+  href: Noname.Application.Services.SimulationStepResult.html#Noname_Application_Services_SimulationStepResult_RemovedEnemyIds
+  name: RemovedEnemyIds
+  nameWithType: SimulationStepResult.RemovedEnemyIds
+  fullName: Noname.Application.Services.SimulationStepResult.RemovedEnemyIds
+- uid: Noname.Application.Services.SimulationStepResult.EnemyAttacks*
+  commentId: Overload:Noname.Application.Services.SimulationStepResult.EnemyAttacks
+  isExternal: true
+  href: Noname.Application.Services.SimulationStepResult.html#Noname_Application_Services_SimulationStepResult_EnemyAttacks
+  name: EnemyAttacks
+  nameWithType: SimulationStepResult.EnemyAttacks
+  fullName: Noname.Application.Services.SimulationStepResult.EnemyAttacks
+- uid: Noname.Application.Services.SimulationStepResult.PlayerProjectileHits*
+  commentId: Overload:Noname.Application.Services.SimulationStepResult.PlayerProjectileHits
+  isExternal: true
+  href: Noname.Application.Services.SimulationStepResult.html#Noname_Application_Services_SimulationStepResult_PlayerProjectileHits
+  name: PlayerProjectileHits
+  nameWithType: SimulationStepResult.PlayerProjectileHits
+  fullName: Noname.Application.Services.SimulationStepResult.PlayerProjectileHits
+- uid: Noname.Application.Services.SimulationStepResult.PlayerProjectilesFired*
+  commentId: Overload:Noname.Application.Services.SimulationStepResult.PlayerProjectilesFired
+  isExternal: true
+  href: Noname.Application.Services.SimulationStepResult.html#Noname_Application_Services_SimulationStepResult_PlayerProjectilesFired
+  name: PlayerProjectilesFired
+  nameWithType: SimulationStepResult.PlayerProjectilesFired
+  fullName: Noname.Application.Services.SimulationStepResult.PlayerProjectilesFired
+- uid: Noname.Application.Services.SimulationStepResult.EnemyProjectilesFired*
+  commentId: Overload:Noname.Application.Services.SimulationStepResult.EnemyProjectilesFired
+  isExternal: true
+  href: Noname.Application.Services.SimulationStepResult.html#Noname_Application_Services_SimulationStepResult_EnemyProjectilesFired
+  name: EnemyProjectilesFired
+  nameWithType: SimulationStepResult.EnemyProjectilesFired
+  fullName: Noname.Application.Services.SimulationStepResult.EnemyProjectilesFired
+- uid: Noname.Application.Services.SimulationStepResult.ProjectileImpacts*
+  commentId: Overload:Noname.Application.Services.SimulationStepResult.ProjectileImpacts
+  isExternal: true
+  href: Noname.Application.Services.SimulationStepResult.html#Noname_Application_Services_SimulationStepResult_ProjectileImpacts
+  name: ProjectileImpacts
+  nameWithType: SimulationStepResult.ProjectileImpacts
+  fullName: Noname.Application.Services.SimulationStepResult.ProjectileImpacts
+- uid: Noname.Application.Services.SimulationStepResult.ResourceDropsSpawned*
+  commentId: Overload:Noname.Application.Services.SimulationStepResult.ResourceDropsSpawned
+  isExternal: true
+  href: Noname.Application.Services.SimulationStepResult.html#Noname_Application_Services_SimulationStepResult_ResourceDropsSpawned
+  name: ResourceDropsSpawned
+  nameWithType: SimulationStepResult.ResourceDropsSpawned
+  fullName: Noname.Application.Services.SimulationStepResult.ResourceDropsSpawned
+- uid: Noname.Application.Services.SimulationStepResult.ResourceDropsCollected*
+  commentId: Overload:Noname.Application.Services.SimulationStepResult.ResourceDropsCollected
+  isExternal: true
+  href: Noname.Application.Services.SimulationStepResult.html#Noname_Application_Services_SimulationStepResult_ResourceDropsCollected
+  name: ResourceDropsCollected
+  nameWithType: SimulationStepResult.ResourceDropsCollected
+  fullName: Noname.Application.Services.SimulationStepResult.ResourceDropsCollected
+- uid: Noname.Application.Services.SimulationStepResult.PlayerLevelUps*
+  commentId: Overload:Noname.Application.Services.SimulationStepResult.PlayerLevelUps
+  isExternal: true
+  href: Noname.Application.Services.SimulationStepResult.html#Noname_Application_Services_SimulationStepResult_PlayerLevelUps
+  name: PlayerLevelUps
+  nameWithType: SimulationStepResult.PlayerLevelUps
+  fullName: Noname.Application.Services.SimulationStepResult.PlayerLevelUps

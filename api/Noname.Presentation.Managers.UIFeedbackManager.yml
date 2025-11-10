@@ -1,0 +1,258 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Presentation.Managers.UIFeedbackManager
+  commentId: T:Noname.Presentation.Managers.UIFeedbackManager
+  id: UIFeedbackManager
+  parent: Noname.Presentation.Managers
+  children:
+  - Noname.Presentation.Managers.UIFeedbackManager.#ctor
+  - Noname.Presentation.Managers.UIFeedbackManager.ShowAbilitySelectionClosed
+  - Noname.Presentation.Managers.UIFeedbackManager.ShowAbilitySelectionOpened
+  - Noname.Presentation.Managers.UIFeedbackManager.ShowExperienceGain(System.Single,UnityEngine.Vector3)
+  - Noname.Presentation.Managers.UIFeedbackManager.ShowGoldGain(System.Single,UnityEngine.Vector3)
+  langs:
+  - csharp
+  - vb
+  name: UIFeedbackManager
+  nameWithType: UIFeedbackManager
+  fullName: Noname.Presentation.Managers.UIFeedbackManager
+  type: Class
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Managers/UIFeedbackManager.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Managers
+  syntax:
+    content: 'public sealed class UIFeedbackManager : MonoBehaviour'
+    content.vb: Public NotInheritable Class UIFeedbackManager Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Noname.Presentation.Managers.UIFeedbackManager.ShowGoldGain(System.Single,UnityEngine.Vector3)
+  commentId: M:Noname.Presentation.Managers.UIFeedbackManager.ShowGoldGain(System.Single,UnityEngine.Vector3)
+  id: ShowGoldGain(System.Single,UnityEngine.Vector3)
+  parent: Noname.Presentation.Managers.UIFeedbackManager
+  langs:
+  - csharp
+  - vb
+  name: ShowGoldGain(float, Vector3)
+  nameWithType: UIFeedbackManager.ShowGoldGain(float, Vector3)
+  fullName: Noname.Presentation.Managers.UIFeedbackManager.ShowGoldGain(float, UnityEngine.Vector3)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Managers/UIFeedbackManager.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Managers
+  syntax:
+    content: public void ShowGoldGain(float amount, Vector3 worldPosition)
+    parameters:
+    - id: amount
+      type: System.Single
+    - id: worldPosition
+      type: UnityEngine.Vector3
+    content.vb: Public Sub ShowGoldGain(amount As Single, worldPosition As Vector3)
+  overload: Noname.Presentation.Managers.UIFeedbackManager.ShowGoldGain*
+  nameWithType.vb: UIFeedbackManager.ShowGoldGain(Single, Vector3)
+  fullName.vb: Noname.Presentation.Managers.UIFeedbackManager.ShowGoldGain(Single, UnityEngine.Vector3)
+  name.vb: ShowGoldGain(Single, Vector3)
+- uid: Noname.Presentation.Managers.UIFeedbackManager.ShowExperienceGain(System.Single,UnityEngine.Vector3)
+  commentId: M:Noname.Presentation.Managers.UIFeedbackManager.ShowExperienceGain(System.Single,UnityEngine.Vector3)
+  id: ShowExperienceGain(System.Single,UnityEngine.Vector3)
+  parent: Noname.Presentation.Managers.UIFeedbackManager
+  langs:
+  - csharp
+  - vb
+  name: ShowExperienceGain(float, Vector3)
+  nameWithType: UIFeedbackManager.ShowExperienceGain(float, Vector3)
+  fullName: Noname.Presentation.Managers.UIFeedbackManager.ShowExperienceGain(float, UnityEngine.Vector3)
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Managers/UIFeedbackManager.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Managers
+  syntax:
+    content: public void ShowExperienceGain(float amount, Vector3 worldPosition)
+    parameters:
+    - id: amount
+      type: System.Single
+    - id: worldPosition
+      type: UnityEngine.Vector3
+    content.vb: Public Sub ShowExperienceGain(amount As Single, worldPosition As Vector3)
+  overload: Noname.Presentation.Managers.UIFeedbackManager.ShowExperienceGain*
+  nameWithType.vb: UIFeedbackManager.ShowExperienceGain(Single, Vector3)
+  fullName.vb: Noname.Presentation.Managers.UIFeedbackManager.ShowExperienceGain(Single, UnityEngine.Vector3)
+  name.vb: ShowExperienceGain(Single, Vector3)
+- uid: Noname.Presentation.Managers.UIFeedbackManager.ShowAbilitySelectionOpened
+  commentId: M:Noname.Presentation.Managers.UIFeedbackManager.ShowAbilitySelectionOpened
+  id: ShowAbilitySelectionOpened
+  parent: Noname.Presentation.Managers.UIFeedbackManager
+  langs:
+  - csharp
+  - vb
+  name: ShowAbilitySelectionOpened()
+  nameWithType: UIFeedbackManager.ShowAbilitySelectionOpened()
+  fullName: Noname.Presentation.Managers.UIFeedbackManager.ShowAbilitySelectionOpened()
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Managers/UIFeedbackManager.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Managers
+  syntax:
+    content: public void ShowAbilitySelectionOpened()
+    content.vb: Public Sub ShowAbilitySelectionOpened()
+  overload: Noname.Presentation.Managers.UIFeedbackManager.ShowAbilitySelectionOpened*
+- uid: Noname.Presentation.Managers.UIFeedbackManager.ShowAbilitySelectionClosed
+  commentId: M:Noname.Presentation.Managers.UIFeedbackManager.ShowAbilitySelectionClosed
+  id: ShowAbilitySelectionClosed
+  parent: Noname.Presentation.Managers.UIFeedbackManager
+  langs:
+  - csharp
+  - vb
+  name: ShowAbilitySelectionClosed()
+  nameWithType: UIFeedbackManager.ShowAbilitySelectionClosed()
+  fullName: Noname.Presentation.Managers.UIFeedbackManager.ShowAbilitySelectionClosed()
+  type: Method
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Managers/UIFeedbackManager.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Managers
+  syntax:
+    content: public void ShowAbilitySelectionClosed()
+    content.vb: Public Sub ShowAbilitySelectionClosed()
+  overload: Noname.Presentation.Managers.UIFeedbackManager.ShowAbilitySelectionClosed*
+- uid: Noname.Presentation.Managers.UIFeedbackManager.#ctor
+  commentId: M:Noname.Presentation.Managers.UIFeedbackManager.#ctor
+  id: '#ctor'
+  parent: Noname.Presentation.Managers.UIFeedbackManager
+  langs:
+  - csharp
+  - vb
+  name: UIFeedbackManager()
+  nameWithType: UIFeedbackManager.UIFeedbackManager()
+  fullName: Noname.Presentation.Managers.UIFeedbackManager.UIFeedbackManager()
+  type: Constructor
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Managers/UIFeedbackManager.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Managers
+  syntax:
+    content: public UIFeedbackManager()
+    content.vb: Public Sub New()
+  overload: Noname.Presentation.Managers.UIFeedbackManager.#ctor*
+  nameWithType.vb: UIFeedbackManager.New()
+  fullName.vb: Noname.Presentation.Managers.UIFeedbackManager.New()
+  name.vb: New()
+references:
+- uid: Noname.Presentation.Managers
+  commentId: N:Noname.Presentation.Managers
+  isExternal: true
+  href: Noname.html
+  name: Noname.Presentation.Managers
+  nameWithType: Noname.Presentation.Managers
+  fullName: Noname.Presentation.Managers
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Presentation
+    name: Presentation
+    isExternal: true
+    href: Noname.Presentation.html
+  - name: .
+  - uid: Noname.Presentation.Managers
+    name: Managers
+    isExternal: true
+    href: Noname.Presentation.Managers.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Presentation
+    name: Presentation
+    isExternal: true
+    href: Noname.Presentation.html
+  - name: .
+  - uid: Noname.Presentation.Managers
+    name: Managers
+    isExternal: true
+    href: Noname.Presentation.Managers.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Noname.Presentation.Managers.UIFeedbackManager.ShowGoldGain*
+  commentId: Overload:Noname.Presentation.Managers.UIFeedbackManager.ShowGoldGain
+  isExternal: true
+  href: Noname.Presentation.Managers.UIFeedbackManager.html#Noname_Presentation_Managers_UIFeedbackManager_ShowGoldGain_System_Single_UnityEngine_Vector3_
+  name: ShowGoldGain
+  nameWithType: UIFeedbackManager.ShowGoldGain
+  fullName: Noname.Presentation.Managers.UIFeedbackManager.ShowGoldGain
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: UnityEngine.Vector3
+  isExternal: true
+  name: Vector3
+  nameWithType: Vector3
+  fullName: UnityEngine.Vector3
+- uid: Noname.Presentation.Managers.UIFeedbackManager.ShowExperienceGain*
+  commentId: Overload:Noname.Presentation.Managers.UIFeedbackManager.ShowExperienceGain
+  isExternal: true
+  href: Noname.Presentation.Managers.UIFeedbackManager.html#Noname_Presentation_Managers_UIFeedbackManager_ShowExperienceGain_System_Single_UnityEngine_Vector3_
+  name: ShowExperienceGain
+  nameWithType: UIFeedbackManager.ShowExperienceGain
+  fullName: Noname.Presentation.Managers.UIFeedbackManager.ShowExperienceGain
+- uid: Noname.Presentation.Managers.UIFeedbackManager.ShowAbilitySelectionOpened*
+  commentId: Overload:Noname.Presentation.Managers.UIFeedbackManager.ShowAbilitySelectionOpened
+  isExternal: true
+  href: Noname.Presentation.Managers.UIFeedbackManager.html#Noname_Presentation_Managers_UIFeedbackManager_ShowAbilitySelectionOpened
+  name: ShowAbilitySelectionOpened
+  nameWithType: UIFeedbackManager.ShowAbilitySelectionOpened
+  fullName: Noname.Presentation.Managers.UIFeedbackManager.ShowAbilitySelectionOpened
+- uid: Noname.Presentation.Managers.UIFeedbackManager.ShowAbilitySelectionClosed*
+  commentId: Overload:Noname.Presentation.Managers.UIFeedbackManager.ShowAbilitySelectionClosed
+  isExternal: true
+  href: Noname.Presentation.Managers.UIFeedbackManager.html#Noname_Presentation_Managers_UIFeedbackManager_ShowAbilitySelectionClosed
+  name: ShowAbilitySelectionClosed
+  nameWithType: UIFeedbackManager.ShowAbilitySelectionClosed
+  fullName: Noname.Presentation.Managers.UIFeedbackManager.ShowAbilitySelectionClosed
+- uid: Noname.Presentation.Managers.UIFeedbackManager.#ctor*
+  commentId: Overload:Noname.Presentation.Managers.UIFeedbackManager.#ctor
+  isExternal: true
+  href: Noname.Presentation.Managers.UIFeedbackManager.html#Noname_Presentation_Managers_UIFeedbackManager__ctor
+  name: UIFeedbackManager
+  nameWithType: UIFeedbackManager.UIFeedbackManager
+  fullName: Noname.Presentation.Managers.UIFeedbackManager.UIFeedbackManager
+  nameWithType.vb: UIFeedbackManager.New
+  fullName.vb: Noname.Presentation.Managers.UIFeedbackManager.New
+  name.vb: New

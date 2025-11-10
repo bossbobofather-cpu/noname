@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Runtime Swap | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Runtime Swap | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/ex-runtime-swap.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="runtime-swap">Runtime Swap</h1>
+
+<p>This sample demonstrates how you can use the Sprite Library API to override a specific Entry. Note that the sample requires the <a href="https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest">PSD Importer</a> installed. Open the <code>6 Runtime Swap</code> Scene to see the sample in action.</p>
+<p><img src="images/2D-animation-samples-runtimeswap.png" alt="A knight character, and a selection of alternate sprites for his head, arms, and legs that convert him into a skeleton.">
+The graphic Assets are located in <code>Assets/Samples/2D Animation/[X.Y.Z]/Samples/5 SpriteSwap/Sprites</code>:</p>
+<ul>
+<li><code>Knight.psb</code></li>
+<li><code>Skeleton.psb</code></li>
+</ul>
+<p>The <code>Skeleton.psb</code> uses the <a href="https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest/index.html?subfolder=/manual/PSD-importer-properties.html%23main-skeleton">.skeleton Asset</a> from the <code>Knight.psb</code> for its rigging. It also references the <code>Knight.spriteLib</code> Sprite Library Asset located in <code>Assets/Samples/2D Animation/[X.Y.Z]/Samples/5 SpriteSwap/Sprites</code>.</p>
+<h2 id="runtime-swap-script">Runtime Swap script</h2>
+<p>A custom MonoBehaviour script called the <code>RuntimeSwap</code> is attached to the <code>KnigtboyRig</code> GameObject. The script is located in <code>Assets/Samples/2D Animation/[X.Y.Z]/Samples/5 SpriteSwap/Scripts/Runtime/RuntimeSwap.cs</code></p>
+<p>Pressing a button (in the sample Scene) with a Sprite from the <code>Skeleton.psb</code> causes the script to use the override API from the Sprite Library to override that Sprite Entry.</p>
+<pre><code class="lang-c++">m_SpriteLibraryTarget.AddOverride(entry.sprite, entry.category, entry.entry);
+</code></pre>
+<p>Pressing a button with a Sprite from the <code>Knight.psb</code> causes the script to use the override rest API from the Sprite Library to remove the Sprite Entry override.</p>
+<pre><code class="lang-c++">m_SpriteLibraryTarget.RemoveOverride(entry.category, entry.entry);
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/ex-runtime-swap.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

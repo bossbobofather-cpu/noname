@@ -1,0 +1,440 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Application.Services.EnemyAttackEvent
+  commentId: T:Noname.Application.Services.EnemyAttackEvent
+  id: EnemyAttackEvent
+  parent: Noname.Application.Services
+  children:
+  - Noname.Application.Services.EnemyAttackEvent.#ctor(System.Int32,System.Single,System.Single)
+  - Noname.Application.Services.EnemyAttackEvent.Damage
+  - Noname.Application.Services.EnemyAttackEvent.EnemyId
+  - Noname.Application.Services.EnemyAttackEvent.FortressRemainingHealth
+  langs:
+  - csharp
+  - vb
+  name: EnemyAttackEvent
+  nameWithType: EnemyAttackEvent
+  fullName: Noname.Application.Services.EnemyAttackEvent
+  type: Struct
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Services
+  syntax:
+    content: public readonly struct EnemyAttackEvent
+    content.vb: Public Structure EnemyAttackEvent
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.GetType
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: Noname.Application.Services.EnemyAttackEvent.#ctor(System.Int32,System.Single,System.Single)
+  commentId: M:Noname.Application.Services.EnemyAttackEvent.#ctor(System.Int32,System.Single,System.Single)
+  id: '#ctor(System.Int32,System.Single,System.Single)'
+  parent: Noname.Application.Services.EnemyAttackEvent
+  langs:
+  - csharp
+  - vb
+  name: EnemyAttackEvent(int, float, float)
+  nameWithType: EnemyAttackEvent.EnemyAttackEvent(int, float, float)
+  fullName: Noname.Application.Services.EnemyAttackEvent.EnemyAttackEvent(int, float, float)
+  type: Constructor
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Services
+  syntax:
+    content: public EnemyAttackEvent(int enemyId, float damage, float fortressRemainingHealth)
+    parameters:
+    - id: enemyId
+      type: System.Int32
+    - id: damage
+      type: System.Single
+    - id: fortressRemainingHealth
+      type: System.Single
+    content.vb: Public Sub New(enemyId As Integer, damage As Single, fortressRemainingHealth As Single)
+  overload: Noname.Application.Services.EnemyAttackEvent.#ctor*
+  nameWithType.vb: EnemyAttackEvent.New(Integer, Single, Single)
+  fullName.vb: Noname.Application.Services.EnemyAttackEvent.New(Integer, Single, Single)
+  name.vb: New(Integer, Single, Single)
+- uid: Noname.Application.Services.EnemyAttackEvent.EnemyId
+  commentId: P:Noname.Application.Services.EnemyAttackEvent.EnemyId
+  id: EnemyId
+  parent: Noname.Application.Services.EnemyAttackEvent
+  langs:
+  - csharp
+  - vb
+  name: EnemyId
+  nameWithType: EnemyAttackEvent.EnemyId
+  fullName: Noname.Application.Services.EnemyAttackEvent.EnemyId
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Services
+  syntax:
+    content: public int EnemyId { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property EnemyId As Integer
+  overload: Noname.Application.Services.EnemyAttackEvent.EnemyId*
+- uid: Noname.Application.Services.EnemyAttackEvent.Damage
+  commentId: P:Noname.Application.Services.EnemyAttackEvent.Damage
+  id: Damage
+  parent: Noname.Application.Services.EnemyAttackEvent
+  langs:
+  - csharp
+  - vb
+  name: Damage
+  nameWithType: EnemyAttackEvent.Damage
+  fullName: Noname.Application.Services.EnemyAttackEvent.Damage
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Services
+  syntax:
+    content: public float Damage { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property Damage As Single
+  overload: Noname.Application.Services.EnemyAttackEvent.Damage*
+- uid: Noname.Application.Services.EnemyAttackEvent.FortressRemainingHealth
+  commentId: P:Noname.Application.Services.EnemyAttackEvent.FortressRemainingHealth
+  id: FortressRemainingHealth
+  parent: Noname.Application.Services.EnemyAttackEvent
+  langs:
+  - csharp
+  - vb
+  name: FortressRemainingHealth
+  nameWithType: EnemyAttackEvent.FortressRemainingHealth
+  fullName: Noname.Application.Services.EnemyAttackEvent.FortressRemainingHealth
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Application.Services
+  syntax:
+    content: public float FortressRemainingHealth { get; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public ReadOnly Property FortressRemainingHealth As Single
+  overload: Noname.Application.Services.EnemyAttackEvent.FortressRemainingHealth*
+references:
+- uid: Noname.Application.Services
+  commentId: N:Noname.Application.Services
+  isExternal: true
+  href: Noname.html
+  name: Noname.Application.Services
+  nameWithType: Noname.Application.Services
+  fullName: Noname.Application.Services
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.Services
+    name: Services
+    isExternal: true
+    href: Noname.Application.Services.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.Services
+    name: Services
+    isExternal: true
+    href: Noname.Application.Services.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Noname.Application.Services.EnemyAttackEvent.#ctor*
+  commentId: Overload:Noname.Application.Services.EnemyAttackEvent.#ctor
+  isExternal: true
+  href: Noname.Application.Services.EnemyAttackEvent.html#Noname_Application_Services_EnemyAttackEvent__ctor_System_Int32_System_Single_System_Single_
+  name: EnemyAttackEvent
+  nameWithType: EnemyAttackEvent.EnemyAttackEvent
+  fullName: Noname.Application.Services.EnemyAttackEvent.EnemyAttackEvent
+  nameWithType.vb: EnemyAttackEvent.New
+  fullName.vb: Noname.Application.Services.EnemyAttackEvent.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: Noname.Application.Services.EnemyAttackEvent.EnemyId*
+  commentId: Overload:Noname.Application.Services.EnemyAttackEvent.EnemyId
+  isExternal: true
+  href: Noname.Application.Services.EnemyAttackEvent.html#Noname_Application_Services_EnemyAttackEvent_EnemyId
+  name: EnemyId
+  nameWithType: EnemyAttackEvent.EnemyId
+  fullName: Noname.Application.Services.EnemyAttackEvent.EnemyId
+- uid: Noname.Application.Services.EnemyAttackEvent.Damage*
+  commentId: Overload:Noname.Application.Services.EnemyAttackEvent.Damage
+  isExternal: true
+  href: Noname.Application.Services.EnemyAttackEvent.html#Noname_Application_Services_EnemyAttackEvent_Damage
+  name: Damage
+  nameWithType: EnemyAttackEvent.Damage
+  fullName: Noname.Application.Services.EnemyAttackEvent.Damage
+- uid: Noname.Application.Services.EnemyAttackEvent.FortressRemainingHealth*
+  commentId: Overload:Noname.Application.Services.EnemyAttackEvent.FortressRemainingHealth
+  isExternal: true
+  href: Noname.Application.Services.EnemyAttackEvent.html#Noname_Application_Services_EnemyAttackEvent_FortressRemainingHealth
+  name: FortressRemainingHealth
+  nameWithType: EnemyAttackEvent.FortressRemainingHealth
+  fullName: Noname.Application.Services.EnemyAttackEvent.FortressRemainingHealth

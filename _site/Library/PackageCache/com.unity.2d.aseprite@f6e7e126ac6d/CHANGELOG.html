@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Changelog | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Changelog | mysite ">
+      
+      
+      <link rel="icon" href="../../../favicon.ico">
+      <link rel="stylesheet" href="../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.aseprite@f6e7e126ac6d/CHANGELOG.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../index.html">
+            <img id="logo" class="svg" src="../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="changelog">Changelog</h1>
+
+<h2 id="201---2025-06-12">[2.0.1] - 2025-06-12</h2>
+<h3 id="fixed">Fixed</h3>
+<ul>
+<li>Fixed an issue where the &quot;Export Animation Assets&quot;-button had an additional offset of 15 px to the right. (DANB-1000)</li>
+</ul>
+<h2 id="200---2025-05-16">[2.0.0] - 2025-05-16</h2>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Update minimum Unity version.</li>
+<li>Aseprite files containing Tile data will automatically be imported as Tile Set by default.</li>
+</ul>
+<h2 id="124---2025-03-18">[1.2.4] - 2025-03-18</h2>
+<h3 id="fixed-1">Fixed</h3>
+<ul>
+<li>Fixed an issue where going from Import Mode: Individual Layers to Import Mode: Merge Frame would cause the importer to fail the import. (DANB-875)</li>
+<li>Fixed an issue where the content in the Aseprite's Preference menu were misaligned. (DANB-880)</li>
+<li>Fixed an issue where some elements in the Aseprite Importer inspector could not be edited when in Debug mode. (DANB-863)</li>
+</ul>
+<h2 id="123---2025-03-01">[1.2.3] - 2025-03-01</h2>
+<h3 id="added">Added</h3>
+<ul>
+<li>Added support for Aseprite's new Layer UUID, to help identify each Aseprite Layer by id instead of name and path.</li>
+</ul>
+<h3 id="fixed-2">Fixed</h3>
+<ul>
+<li>Fixed an issue where changes to a Tile's size in Aseprite would not be reflected in Unity. (DANB-816)</li>
+<li>Fixed an issue where Tile Layers from Aseprite would not stack in the generated Tile Palette.</li>
+<li>Slight improvement to the way tile data is imported, resulting in slightly quicker imports.</li>
+</ul>
+<h2 id="122---2025-02-27">[1.2.2] - 2025-02-27</h2>
+<h3 id="fixed-3">Fixed</h3>
+<ul>
+<li>Fixed an issue where the Tile Palette would not be generated the same way as in Aseprite when the Aseprite file contains a Tile Layer. (DANB-824)</li>
+</ul>
+<h2 id="121---2025-01-07">[1.2.1] - 2025-01-07</h2>
+<h3 id="fixed-4">Fixed</h3>
+<ul>
+<li>Fixed an issue where Sprites smaller than the tile size would be wrongly placed in the tile palette.</li>
+<li>Fixed an issue where the importer inspector would throw an exception if an animation clip was empty of data. (DANB-788)</li>
+<li>Fixed an issue where the Z-Index would not be taken into account when the import mode is set to &quot;Merge Frame&quot;. (DANB-787)</li>
+</ul>
+<h2 id="120---2024-08-29">[1.2.0] - 2024-08-29</h2>
+<h3 id="added-1">Added</h3>
+<ul>
+<li>Added a new import mode, Tile Set, which imports tile data from Aseprite and generates Unity Tilemap assets on import.</li>
+<li>Added support for a parameter in the generated animation events.</li>
+<li>Added a choice on how Animation Events are stored, as individual events or grouped up and listened through <code>OnAnimationEvent(string)</code>.</li>
+</ul>
+<h3 id="fixed-5">Fixed</h3>
+<ul>
+<li>Reduced the font size slightly in the importer headers to match other inspector headers in Unity. (DANB-644)</li>
+<li>Fixed an issue where the Sort Order would not be reset in Animation Clips when making use of the Z-index in Aseprite.</li>
+<li>Fixed an issue where SpriteRenderers would lose their reference if an Aseprite file's name was changed. (DANB-692)</li>
+<li>Fixed an issue where adding Sprite Bones would cause the Sprites to become corrupt in the importation. (DANB-779)</li>
+<li>Fixed an issue where the sprite rect would not get updated after being set in the Sprite Editor.</li>
+<li>Fixed an issue where the references to sprites would be lost when adding new layers to an Aseprite file. (DANB-782)</li>
+</ul>
+<h2 id="114---2024-05-02">[1.1.4] - 2024-05-02</h2>
+<h3 id="fixed-6">Fixed</h3>
+<ul>
+<li>Fixed an issue where Sprite Renderers would be hidden after transitioning from one Animation Clip to another.</li>
+<li>Fixed an issue where generated AnimationClips would be 0.01 seconds too long.</li>
+</ul>
+<h2 id="113---2024-03-25">[1.1.3] - 2024-03-25</h2>
+<h3 id="fixed-7">Fixed</h3>
+<ul>
+<li>Fixed an issue where the importer would not parse palette data from the &quot;old palette&quot; chunks.</li>
+<li>Fixed an issue where the Physics Shapes would not take the Sprite Rects into account, causing the outline to be wrongly offset.</li>
+<li>Fixed an issue where .ase/.aseprite files containing z-index data would fail to import. (DANB-608)</li>
+</ul>
+<h2 id="112---2024-03-10">[1.1.2] - 2024-03-10</h2>
+<h3 id="fixed-8">Fixed</h3>
+<ul>
+<li>Fixed an issue where the Mosaic padding did not show up in Sprite Sheet import mode.</li>
+<li>Fixed an issue where using Sprite Padding with individual import mode would misalign the GameObjects in the generated model prefab.</li>
+<li>Fixed an issue where the Aseprite package would contest with the XR subsystem package over the InternalAPIEditorBridge.005. (UUM-49338)</li>
+</ul>
+<h2 id="111---2024-01-03">[1.1.1] - 2024-01-03</h2>
+<h3 id="fixed-9">Fixed</h3>
+<ul>
+<li>Fixed an issue where the Sprite Editor could be opened even though there was no valid texture to open it with.</li>
+<li>Fixed an issue where the importer would not generate a square power-of-two texture for compressions which needs it (pvrtc).</li>
+<li>Fixed an issue where changes to linked cells would not be taken into account when reimporting.</li>
+</ul>
+<h2 id="110---2023-11-24">[1.1.0] - 2023-11-24</h2>
+<h3 id="added-2">Added</h3>
+<ul>
+<li>Added a mosaic padding option to the importer editor.</li>
+<li>Added &quot;Generate Physics Shape&quot; option to the importer editor.</li>
+</ul>
+<h3 id="changed-1">Changed</h3>
+<ul>
+<li>Fixed an issue where the background importer would act on files that were not Aseprite files.</li>
+</ul>
+<h2 id="100---2023-05-17">[1.0.0] - 2023-05-17</h2>
+<h3 id="added-3">Added</h3>
+<ul>
+<li>Added a new event to the Aseprite Importer which is fired at the last import process step.</li>
+<li>Made the Aseprite file property publicly available.</li>
+<li>Made the Aseprite file parsing API publicly available.</li>
+</ul>
+<h3 id="fixed-10">Fixed</h3>
+<ul>
+<li>Fixed an issue where the Animation Window would no longer detect Animation Clips on a prefab. (DANB-458)</li>
+</ul>
+<h2 id="100-pre4---2023-04-16">[1.0.0-pre.4] - 2023-04-16</h2>
+<h3 id="added-4">Added</h3>
+<ul>
+<li>Added a property to set the padding within each generated SpriteRect.</li>
+<li>Added an option to select import mode for the file, either Animated Sprite or Sprite Sheet.</li>
+</ul>
+<h3 id="fixed-11">Fixed</h3>
+<ul>
+<li>Fixed an issue where the platform settings could not be modified. (DANB-445)</li>
+<li>Fixed an issue where the Animation Events would be generated with the wrong time stamp.</li>
+</ul>
+<h2 id="100-pre3---2023-03-23">[1.0.0-pre.3] - 2023-03-23</h2>
+<h3 id="added-5">Added</h3>
+<ul>
+<li>Burst compiled the texture generation tasks to speed up importation of Aseprite files. (Note: Only for Unity 2022.2 and newer).</li>
+<li>Layer blend modes are now supported with Import Mode: Merge Frames.</li>
+<li>Added ability to generate Animation Events from Cell user data.</li>
+<li>Added ability to export Animator Controller and/or Animation Clips.</li>
+<li>Added canvasSize to the Aseprite Importer's public API.</li>
+</ul>
+<h3 id="fixed-12">Fixed</h3>
+<ul>
+<li>Fixed an issue where the last frame in a generated Animation Clip would receive an incorrect length. (DANB-434)</li>
+<li>Improved the background importer, so that it only imports modified Aseprite files in the background.</li>
+</ul>
+<h2 id="100-pre2---2023-02-27">[1.0.0-pre.2] - 2023-02-27</h2>
+<h3 id="added-6">Added</h3>
+<ul>
+<li>Added support for individual frame timings in animation clips.</li>
+<li>Added support for layer groups.</li>
+<li>Added support for Layer &amp; Cel opacity.</li>
+<li>Added support for repeating/non-repeating tags/clips.</li>
+</ul>
+<h3 id="changed-2">Changed</h3>
+<ul>
+<li>The importer UI is now re-written in UI Toolkit.</li>
+<li>If a Model Prefab only contains one SpriteRenderer, all components will be placed on the root GameObject, rather than generating a single GameObject to house them.</li>
+<li>A Sorting Group component is added by default to Model Prefabs with more than one Sprite Renderer.</li>
+</ul>
+<h3 id="fixed-13">Fixed</h3>
+<ul>
+<li>Fixed an issue where renaming an Aseprite file in Unity would throw a null reference exception. (DANB-384)</li>
+<li>Fixed an issue where the background importer would import assets even when Unity Editor has focus.</li>
+<li>Fixed an issue where the Pixels Per Unit value could be set to invalid values.</li>
+</ul>
+<h2 id="100-pre1---2023-01-06">[1.0.0-pre.1] - 2023-01-06</h2>
+<h3 id="added-7">Added</h3>
+<ul>
+<li>First release of this package.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.aseprite@f6e7e126ac6d/CHANGELOG.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

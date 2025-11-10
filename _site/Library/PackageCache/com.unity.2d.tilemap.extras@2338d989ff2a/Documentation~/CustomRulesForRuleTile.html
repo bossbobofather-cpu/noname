@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Custom Rules for Rule Tile | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Custom Rules for Rule Tile | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.tilemap.extras@2338d989ff2a/Documentation~/CustomRulesForRuleTile.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="custom-rules-for-rule-tile">Custom Rules for Rule Tile</h1>
+
+<p><strong>Contribution by:</strong> <a href="https://github.com/johnsoncodehk">johnsoncodehk</a></p>
+<p>Use this template script to create new custom <a href="RuleTile.html">Rule Tiles</a> with matching options that differ from the Rule
+Tile’s <a href="RuleTile.html#Usage">default options</a> (namely <strong>This</strong> and <strong>Not This</strong>). This creates selectable options for each
+Rule in your custom <strong>Rule Tile</strong>.</p>
+<h2 id="template-features">Template features</h2>
+<ul>
+<li>Inheritable Rule Tile.</li>
+<li>Customizable properties.</li>
+<li>Expand or rewrite both neighbor Rules and the GUI display of the Rules.</li>
+<li>Usable with by <a href="RuleOverrideTile.html">RuleOverrideTile</a></li>
+<li>Create from a template script.</li>
+<li>Neighbor Rules tooltips.</li>
+<li>Backward compatible.</li>
+</ul>
+<h2 id="creating-a-custom-rule-tile-script">Creating a custom Rule Tile script</h2>
+<p>Create a Custom Rule Tile script by going to <strong>Assets &gt; Create &gt; Custom Rule Tile Script</strong>. Name the newly created file
+when prompted. After creating the file, you can edit it to add new matching options and custom algorithms for testing
+matches.</p>
+<h3 id="examples">Examples</h3>
+<ul>
+<li>Custom properties:</li>
+</ul>
+<pre><code class="lang-csharp">public class MyTile : RuleTile {
+    public string tileId;
+    public bool isWater;
+}
+</code></pre>
+<ul>
+<li>Custom rules:</li>
+</ul>
+<pre><code class="lang-csharp">public class MyTile : RuleTile&lt;MyTile.Neighbor&gt; {
+    public class Neighbor {
+        public const int MyRule1 = 0;
+        public const int MyRule2 = 1;
+    }
+    public override bool RuleMatch(int neighbor, TileBase tile) {
+        switch (neighbor) {
+            case Neighbor.MyRule1: return false;
+            case Neighbor.MyRule2: return true;
+        }
+        return true;
+    }
+}
+</code></pre>
+<ul>
+<li>Expansion rules</li>
+</ul>
+<pre><code class="lang-csharp">public class MyTile : RuleTile&lt;MyTile.Neighbor&gt; {
+    public class Neighbor : RuleTile.TilingRule.Neighbor {
+        // 0, 1, 2 is using in RuleTile.TilingRule.Neighbor
+        public const int MyRule1 = 3;
+        public const int MyRule2 = 4;
+    }
+    public override bool RuleMatch(int neighbor, TileBase tile) {
+        switch (neighbor) {
+            case Neighbor.MyRule1: return false;
+            case Neighbor.MyRule2: return true;
+        }
+        return base.RuleMatch(neighbor, tile);
+    }
+}
+</code></pre>
+<ul>
+<li>Siblings Tile 1</li>
+</ul>
+<pre><code class="lang-csharp">public class MyTile : RuleTile&lt;MyTile.Neighbor&gt; {
+    public List&lt;TileBase&gt; sibings = new List&lt;TileBase&gt;();
+    public class Neighbor : RuleTile.TilingRule.Neighbor {
+        public const int Sibing = 3;
+    }
+    public override bool RuleMatch(int neighbor, TileBase tile) {
+        switch (neighbor) {
+            case Neighbor.Sibing: return sibings.Contains(tile);
+        }
+        return base.RuleMatch(neighbor, tile);
+    }
+}
+</code></pre>
+<ul>
+<li>Siblings Tile 2</li>
+</ul>
+<pre><code class="lang-csharp">public class MyTile : RuleTile&lt;MyTile.Neighbor&gt; {
+    public int siblingGroup;
+    public class Neighbor : RuleTile.TilingRule.Neighbor {
+        public const int Sibing = 3;
+    }
+    public override bool RuleMatch(int neighbor, TileBase tile) {
+        MyTile myTile = tile as MyTile;
+        switch (neighbor) {
+            case Neighbor.Sibing: return myTile &amp;&amp; myTile.siblingGroup == siblingGroup;
+        }
+        return base.RuleMatch(neighbor, tile);
+    }
+}
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.tilemap.extras@2338d989ff2a/Documentation~/CustomRulesForRuleTile.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

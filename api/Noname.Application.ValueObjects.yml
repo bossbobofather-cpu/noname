@@ -1,0 +1,110 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Application.ValueObjects
+  commentId: N:Noname.Application.ValueObjects
+  id: Noname.Application.ValueObjects
+  children:
+  - Noname.Application.ValueObjects.EnemyHitInfo
+  - Noname.Application.ValueObjects.EnemyProjectileFiredEvent
+  - Noname.Application.ValueObjects.PlayerLevelUpEvent
+  - Noname.Application.ValueObjects.PlayerProjectileFiredEvent
+  - Noname.Application.ValueObjects.ProjectileImpactEvent
+  - Noname.Application.ValueObjects.ResourceDropCollectedEvent
+  - Noname.Application.ValueObjects.ResourceDropSpawnedEvent
+  langs:
+  - csharp
+  - vb
+  name: Noname.Application.ValueObjects
+  nameWithType: Noname.Application.ValueObjects
+  fullName: Noname.Application.ValueObjects
+  type: Namespace
+  assemblies:
+  - Assembly-CSharp
+references:
+- uid: Noname.Application.ValueObjects.EnemyHitInfo
+  commentId: T:Noname.Application.ValueObjects.EnemyHitInfo
+  isExternal: true
+  href: Noname.Application.ValueObjects.EnemyHitInfo.html
+  name: EnemyHitInfo
+  nameWithType: EnemyHitInfo
+  fullName: Noname.Application.ValueObjects.EnemyHitInfo
+- uid: Noname.Application.ValueObjects.ProjectileImpactEvent
+  commentId: T:Noname.Application.ValueObjects.ProjectileImpactEvent
+  isExternal: true
+  href: Noname.Application.ValueObjects.ProjectileImpactEvent.html
+  name: ProjectileImpactEvent
+  nameWithType: ProjectileImpactEvent
+  fullName: Noname.Application.ValueObjects.ProjectileImpactEvent
+- uid: Noname.Application.ValueObjects.ResourceDropCollectedEvent
+  commentId: T:Noname.Application.ValueObjects.ResourceDropCollectedEvent
+  parent: Noname.Application.ValueObjects
+  isExternal: true
+  href: Noname.Application.ValueObjects.ResourceDropCollectedEvent.html
+  name: ResourceDropCollectedEvent
+  nameWithType: ResourceDropCollectedEvent
+  fullName: Noname.Application.ValueObjects.ResourceDropCollectedEvent
+- uid: Noname.Application.ValueObjects.EnemyProjectileFiredEvent
+  commentId: T:Noname.Application.ValueObjects.EnemyProjectileFiredEvent
+  isExternal: true
+  href: Noname.Application.ValueObjects.EnemyProjectileFiredEvent.html
+  name: EnemyProjectileFiredEvent
+  nameWithType: EnemyProjectileFiredEvent
+  fullName: Noname.Application.ValueObjects.EnemyProjectileFiredEvent
+- uid: Noname.Application.ValueObjects.ResourceDropSpawnedEvent
+  commentId: T:Noname.Application.ValueObjects.ResourceDropSpawnedEvent
+  isExternal: true
+  href: Noname.Application.ValueObjects.ResourceDropSpawnedEvent.html
+  name: ResourceDropSpawnedEvent
+  nameWithType: ResourceDropSpawnedEvent
+  fullName: Noname.Application.ValueObjects.ResourceDropSpawnedEvent
+- uid: Noname.Application.ValueObjects.PlayerLevelUpEvent
+  commentId: T:Noname.Application.ValueObjects.PlayerLevelUpEvent
+  isExternal: true
+  href: Noname.Application.ValueObjects.PlayerLevelUpEvent.html
+  name: PlayerLevelUpEvent
+  nameWithType: PlayerLevelUpEvent
+  fullName: Noname.Application.ValueObjects.PlayerLevelUpEvent
+- uid: Noname.Application.ValueObjects.PlayerProjectileFiredEvent
+  commentId: T:Noname.Application.ValueObjects.PlayerProjectileFiredEvent
+  isExternal: true
+  href: Noname.Application.ValueObjects.PlayerProjectileFiredEvent.html
+  name: PlayerProjectileFiredEvent
+  nameWithType: PlayerProjectileFiredEvent
+  fullName: Noname.Application.ValueObjects.PlayerProjectileFiredEvent
+- uid: Noname.Application.ValueObjects
+  commentId: N:Noname.Application.ValueObjects
+  isExternal: true
+  href: Noname.html
+  name: Noname.Application.ValueObjects
+  nameWithType: Noname.Application.ValueObjects
+  fullName: Noname.Application.ValueObjects
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Application.ValueObjects.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Application
+    name: Application
+    isExternal: true
+    href: Noname.Application.html
+  - name: .
+  - uid: Noname.Application.ValueObjects
+    name: ValueObjects
+    isExternal: true
+    href: Noname.Application.ValueObjects.html

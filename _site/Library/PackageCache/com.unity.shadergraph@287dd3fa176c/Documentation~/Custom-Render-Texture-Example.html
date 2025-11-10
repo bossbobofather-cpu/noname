@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Example Custom Render Texture with Shader Graph | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Example Custom Render Texture with Shader Graph | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.shadergraph@287dd3fa176c/Documentation~/Custom-Render-Texture-Example.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="example-custom-render-texture-with-shader-graph">Example Custom Render Texture with Shader Graph</h1>
+
+<p>This example demonstrates how to set up a Shader Graph for Custom Render Texture shaders to create a self-healing deformation effect that could be used for snow, sand, etc.</p>
+<p><video src="Images/CustomRenderTexture-Animation.mp4" title="A grid with various cells labeled with letter-number pairs (for example, A0, B1, G2, and so on), accompanied by arrows. Each cell is a different color. In the upper-left corner, there’s a black square with two red spots, one square and the other circular. The square remains stationary, while the circular spot traces a curve. In the upper-right corner, a black square contains the same glowing red spots, with the circular spot leaving a fading trail as it describes a curve. Above the grid, a cube corresponding to the square floats and leaves a hollow imprint behind, as if the grid were a mattress pressed by a heavy object. A red sphere traces the same curve as the circular spot, creating a furrow in the grid. The grid gradually recovers its original shape, and the furrow disappears." width="700" height="auto" autoplay="true" loop="true" controls></video></p>
+<p>For this effect, we need a Render Texture that contains the pixels we want to displace. This Render Texture is displayed at the top left corner of the preceding image. It was directly assigned to a camera that renders the objects in red above the UV plane.</p>
+<ol>
+<li><p>Create a <strong>Custom Render Texture</strong> Shader Graph as follows:</p>
+<ul>
+<li>Right-click in the Project window.</li>
+<li>Select <strong>Create</strong> &gt; <strong>Shader Graph</strong> &gt; <strong>Custom Render Texture</strong> and name your shader.</li>
+</ul>
+</li>
+<li><p>Create a new <strong>Custom Render Texture</strong> as follows:</p>
+<ul>
+<li>Select <strong>Create</strong> &gt; <strong>Rendering</strong> &gt; <strong>Custom Render Texture</strong>.</li>
+<li>Configure the parameters to match the following settings:
+<ul>
+<li><strong>Dimension</strong>: 2D</li>
+<li><strong>Size</strong>: 1024 x 1024</li>
+<li><strong>Anti-aliasing</strong>: None</li>
+<li><strong>Enable Compatible Format</strong>: selected</li>
+<li><strong>Color Format</strong>: R32_SFLOAT</li>
+<li><strong>Depth Stencil Format</strong>: None</li>
+<li><strong>Mipmap</strong>: not selected</li>
+<li><strong>Dynamic Scaling</strong>: not selected</li>
+<li><strong>Random Write</strong>: not selected</li>
+<li><strong>Wrap Mode</strong>: Clamp</li>
+<li><strong>Filter Mode</strong>: Bilinear</li>
+<li><strong>Aniso Level</strong>: 0</li>
+<li><strong>Material</strong>: SnowHeightmapUpdate
+<strong>Note</strong>: The material in the <strong>Material</strong> field was created.</li>
+<li><strong>Shader Pass</strong>: &lt;Unnamed Pass 0&gt;</li>
+<li><strong>Initialization Mode</strong>: OnDemand</li>
+<li><strong>Source</strong>: Texture and Color</li>
+<li><strong>Color</strong>: select a color</li>
+<li><strong>Texture</strong>: None (Texture)</li>
+<li><strong>Update Mode</strong>: Realtime</li>
+<li><strong>Period</strong>: 0</li>
+<li><strong>Double Buffered</strong>: selected</li>
+<li><strong>Wrap Update Zones</strong>: not selected</li>
+<li><strong>Update Zone Space</strong>: Normalized</li>
+<li><strong>Update Zones</strong>: list empty</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p><img src="images/CustomRenderTextureInspector.png" alt="The Custom Render Texture inspector as it looks with the preceding settings."></p>
+<p>The following Shader Graph reads the output of the Camera Render Texture, as well as the Self texture, then adds them and lerps the result so that it tends towards 0 over time.</p>
+<p><img src="images/CustomRenderTextureShaderGraph.png" alt="The graph that is described in the preceding text."></p>
+<ol start="3">
+<li>Finally you need to assign the <strong>Custom Render Texture</strong> to a material that can deform the geometry (tessellation or pixel displacement).</li>
+</ol>
+<h2 id="new-shadergraph-nodes-for-custom-render-textures">New ShaderGraph Nodes for Custom Render Textures</h2>
+<p>Three new ShaderGraph nodes have been introduced to facilitate working with Custom Render Textures:</p>
+<ol>
+<li><p><a href="Custom-Texture-Self.html">Custom Render Texture Self</a></p>
+<ul>
+<li>Outputs the double-buffered texture from the previous update.</li>
+<li>It provides three outputs for different types of textures: 2D, 3D, and Cube textures.</li>
+</ul>
+</li>
+<li><p><a href="Custom-Texture-Size.html">Custom Render Texture Size</a></p>
+<ul>
+<li>Outputs the width, height, and volume depth of the current Custom Render Texture.</li>
+<li>Use this node to determine the size of the texture being worked with.</li>
+</ul>
+</li>
+<li><p><a href="Custom-Texture-Slice.html">Custom Render Texture Slice</a></p>
+<ul>
+<li>Outputs the current slice for 2D Texture Arrays or the Cubemap face index being updated.</li>
+</ul>
+</li>
+</ol>
+<h2 id="known-limitations">Known Limitations</h2>
+<p>When working with Custom Render Texture shaders, be aware of the following limitations:</p>
+<ul>
+<li>Rendering Order
+<ul>
+<li>The Custom Render Texture update loop runs before any rendering operations. This means:
+<ul>
+<li>You cannot access any render pipeline-specific information in the shader, such as depth, normal, or scene color.</li>
+<li>Despite this, you can rely on the content of the Custom Render Texture being ready for use in the scene when the camera renders.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="https://docs.unity3d.com/Manual/class-CustomRenderTexture.html">Custom Render Textures</a></li>
+<li><a href="Custom-Render-Texture-Nodes.html">Custom Render Texture Nodes</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.shadergraph@287dd3fa176c/Documentation~/Custom-Render-Texture-Example.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,190 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.Presentation.Views.DefenseGameBootstrapper
+  commentId: T:Noname.Presentation.Views.DefenseGameBootstrapper
+  id: DefenseGameBootstrapper
+  parent: Noname.Presentation.Views
+  children:
+  - Noname.Presentation.Views.DefenseGameBootstrapper.#ctor
+  - Noname.Presentation.Views.DefenseGameBootstrapper.ViewModel
+  langs:
+  - csharp
+  - vb
+  name: DefenseGameBootstrapper
+  nameWithType: DefenseGameBootstrapper
+  fullName: Noname.Presentation.Views.DefenseGameBootstrapper
+  type: Class
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/DefenseGameBootstrapper.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Views
+  syntax:
+    content: 'public sealed class DefenseGameBootstrapper : MonoBehaviour'
+    content.vb: Public NotInheritable Class DefenseGameBootstrapper Inherits MonoBehaviour
+  inheritance:
+  - System.Object
+- uid: Noname.Presentation.Views.DefenseGameBootstrapper.#ctor
+  commentId: M:Noname.Presentation.Views.DefenseGameBootstrapper.#ctor
+  id: '#ctor'
+  parent: Noname.Presentation.Views.DefenseGameBootstrapper
+  langs:
+  - csharp
+  - vb
+  name: DefenseGameBootstrapper()
+  nameWithType: DefenseGameBootstrapper.DefenseGameBootstrapper()
+  fullName: Noname.Presentation.Views.DefenseGameBootstrapper.DefenseGameBootstrapper()
+  type: Constructor
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/DefenseGameBootstrapper.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Views
+  syntax:
+    content: public DefenseGameBootstrapper()
+    content.vb: Public Sub New()
+  overload: Noname.Presentation.Views.DefenseGameBootstrapper.#ctor*
+  nameWithType.vb: DefenseGameBootstrapper.New()
+  fullName.vb: Noname.Presentation.Views.DefenseGameBootstrapper.New()
+  name.vb: New()
+- uid: Noname.Presentation.Views.DefenseGameBootstrapper.ViewModel
+  commentId: P:Noname.Presentation.Views.DefenseGameBootstrapper.ViewModel
+  id: ViewModel
+  parent: Noname.Presentation.Views.DefenseGameBootstrapper
+  langs:
+  - csharp
+  - vb
+  name: ViewModel
+  nameWithType: DefenseGameBootstrapper.ViewModel
+  fullName: Noname.Presentation.Views.DefenseGameBootstrapper.ViewModel
+  type: Property
+  source:
+    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/DefenseGameBootstrapper.cs
+  assemblies:
+  - Assembly-CSharp
+  namespace: Noname.Presentation.Views
+  syntax:
+    content: public GameViewModel ViewModel { get; }
+    parameters: []
+    return:
+      type: Noname.Presentation.ViewModels.GameViewModel
+    content.vb: Public ReadOnly Property ViewModel As GameViewModel
+  overload: Noname.Presentation.Views.DefenseGameBootstrapper.ViewModel*
+references:
+- uid: Noname.Presentation.Views
+  commentId: N:Noname.Presentation.Views
+  isExternal: true
+  href: Noname.html
+  name: Noname.Presentation.Views
+  nameWithType: Noname.Presentation.Views
+  fullName: Noname.Presentation.Views
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Presentation
+    name: Presentation
+    isExternal: true
+    href: Noname.Presentation.html
+  - name: .
+  - uid: Noname.Presentation.Views
+    name: Views
+    isExternal: true
+    href: Noname.Presentation.Views.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Presentation
+    name: Presentation
+    isExternal: true
+    href: Noname.Presentation.html
+  - name: .
+  - uid: Noname.Presentation.Views
+    name: Views
+    isExternal: true
+    href: Noname.Presentation.Views.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Noname.Presentation.Views.DefenseGameBootstrapper.#ctor*
+  commentId: Overload:Noname.Presentation.Views.DefenseGameBootstrapper.#ctor
+  isExternal: true
+  href: Noname.Presentation.Views.DefenseGameBootstrapper.html#Noname_Presentation_Views_DefenseGameBootstrapper__ctor
+  name: DefenseGameBootstrapper
+  nameWithType: DefenseGameBootstrapper.DefenseGameBootstrapper
+  fullName: Noname.Presentation.Views.DefenseGameBootstrapper.DefenseGameBootstrapper
+  nameWithType.vb: DefenseGameBootstrapper.New
+  fullName.vb: Noname.Presentation.Views.DefenseGameBootstrapper.New
+  name.vb: New
+- uid: Noname.Presentation.Views.DefenseGameBootstrapper.ViewModel*
+  commentId: Overload:Noname.Presentation.Views.DefenseGameBootstrapper.ViewModel
+  isExternal: true
+  href: Noname.Presentation.Views.DefenseGameBootstrapper.html#Noname_Presentation_Views_DefenseGameBootstrapper_ViewModel
+  name: ViewModel
+  nameWithType: DefenseGameBootstrapper.ViewModel
+  fullName: Noname.Presentation.Views.DefenseGameBootstrapper.ViewModel
+- uid: Noname.Presentation.ViewModels.GameViewModel
+  commentId: T:Noname.Presentation.ViewModels.GameViewModel
+  parent: Noname.Presentation.ViewModels
+  isExternal: true
+  href: Noname.Presentation.ViewModels.GameViewModel.html
+  name: GameViewModel
+  nameWithType: GameViewModel
+  fullName: Noname.Presentation.ViewModels.GameViewModel
+- uid: Noname.Presentation.ViewModels
+  commentId: N:Noname.Presentation.ViewModels
+  isExternal: true
+  href: Noname.html
+  name: Noname.Presentation.ViewModels
+  nameWithType: Noname.Presentation.ViewModels
+  fullName: Noname.Presentation.ViewModels
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Presentation
+    name: Presentation
+    isExternal: true
+    href: Noname.Presentation.html
+  - name: .
+  - uid: Noname.Presentation.ViewModels
+    name: ViewModels
+    isExternal: true
+    href: Noname.Presentation.ViewModels.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    isExternal: true
+    href: Noname.html
+  - name: .
+  - uid: Noname.Presentation
+    name: Presentation
+    isExternal: true
+    href: Noname.Presentation.html
+  - name: .
+  - uid: Noname.Presentation.ViewModels
+    name: ViewModels
+    isExternal: true
+    href: Noname.Presentation.ViewModels.html

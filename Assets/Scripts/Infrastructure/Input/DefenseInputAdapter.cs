@@ -36,6 +36,9 @@ namespace Noname.Infrastructure.Input
             _moveAction = null;
         }
 
+        /// <summary>
+        /// 현재 수평 입력 값을 읽습니다.
+        /// </summary>
         public float ReadMovement()
         {
             if (InputBlocker.IsBlocked)
@@ -46,6 +49,9 @@ namespace Noname.Infrastructure.Input
             return _moveAction.ReadValue<float>();
         }
 
+        /// <summary>
+        /// 마우스/터치 위치를 월드 좌표로 변환해 폭격 지점으로 사용합니다.
+        /// </summary>
         public bool TryReadBombardmentPoint(out Float2 worldPosition)
         {
             worldPosition = Float2.Zero;

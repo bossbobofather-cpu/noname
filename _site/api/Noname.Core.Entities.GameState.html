@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class GameState | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class GameState | mysite ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="Noname.Core.Entities.GameState">
+
+
+
+  <h1 id="Noname_Core_Entities_GameState" data-uid="Noname.Core.Entities.GameState" class="text-break">
+Class GameState  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="Noname.html">Noname</a>.<a class="xref" href="Noname.Core.html">Core</a>.<a class="xref" href="Noname.Core.Entities.html">Entities</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>Assembly-CSharp.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class GameState</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">GameState</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="Noname_Core_Entities_GameState__ctor_" data-uid="Noname.Core.Entities.GameState.#ctor*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState__ctor_Noname_Core_Entities_PlayerEntity_Noname_Core_Entities_FortressEntity_Noname_Core_Primitives_Float2_Noname_Core_Primitives_Float2_" data-uid="Noname.Core.Entities.GameState.#ctor(Noname.Core.Entities.PlayerEntity,Noname.Core.Entities.FortressEntity,Noname.Core.Primitives.Float2,Noname.Core.Primitives.Float2)">
+  GameState(PlayerEntity, FortressEntity, Float2, Float2)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public GameState(PlayerEntity player, FortressEntity fortress, Float2 enemySpawnMin, Float2 enemySpawnMax)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>player</code> <a class="xref" href="Noname.Core.Entities.PlayerEntity.html">PlayerEntity</a></dt>
+    <dd></dd>
+    <dt><code>fortress</code> <a class="xref" href="Noname.Core.Entities.FortressEntity.html">FortressEntity</a></dt>
+    <dd></dd>
+    <dt><code>enemySpawnMin</code> <a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a></dt>
+    <dd></dd>
+    <dt><code>enemySpawnMax</code> <a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="Noname_Core_Entities_GameState_ElapsedTime_" data-uid="Noname.Core.Entities.GameState.ElapsedTime*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_ElapsedTime" data-uid="Noname.Core.Entities.GameState.ElapsedTime">
+  ElapsedTime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float ElapsedTime { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_Enemies_" data-uid="Noname.Core.Entities.GameState.Enemies*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_Enemies" data-uid="Noname.Core.Entities.GameState.Enemies">
+  Enemies
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;EnemyEntity&gt; Enemies { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="Noname.Core.Entities.EnemyEntity.html">EnemyEntity</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_EnemyProjectiles_" data-uid="Noname.Core.Entities.GameState.EnemyProjectiles*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_EnemyProjectiles" data-uid="Noname.Core.Entities.GameState.EnemyProjectiles">
+  EnemyProjectiles
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;ProjectileEntity&gt; EnemyProjectiles { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="Noname.Core.Entities.ProjectileEntity.html">ProjectileEntity</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_EnemySpawnMax_" data-uid="Noname.Core.Entities.GameState.EnemySpawnMax*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_EnemySpawnMax" data-uid="Noname.Core.Entities.GameState.EnemySpawnMax">
+  EnemySpawnMax
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Float2 EnemySpawnMax { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_EnemySpawnMin_" data-uid="Noname.Core.Entities.GameState.EnemySpawnMin*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_EnemySpawnMin" data-uid="Noname.Core.Entities.GameState.EnemySpawnMin">
+  EnemySpawnMin
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Float2 EnemySpawnMin { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_FixedBombardmentPosition_" data-uid="Noname.Core.Entities.GameState.FixedBombardmentPosition*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_FixedBombardmentPosition" data-uid="Noname.Core.Entities.GameState.FixedBombardmentPosition">
+  FixedBombardmentPosition
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Float2 FixedBombardmentPosition { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_Fortress_" data-uid="Noname.Core.Entities.GameState.Fortress*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_Fortress" data-uid="Noname.Core.Entities.GameState.Fortress">
+  Fortress
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public FortressEntity Fortress { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Noname.Core.Entities.FortressEntity.html">FortressEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_HasFixedBombardment_" data-uid="Noname.Core.Entities.GameState.HasFixedBombardment*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_HasFixedBombardment" data-uid="Noname.Core.Entities.GameState.HasFixedBombardment">
+  HasFixedBombardment
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool HasFixedBombardment { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_IsGameOver_" data-uid="Noname.Core.Entities.GameState.IsGameOver*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_IsGameOver" data-uid="Noname.Core.Entities.GameState.IsGameOver">
+  IsGameOver
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsGameOver { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_Player_" data-uid="Noname.Core.Entities.GameState.Player*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_Player" data-uid="Noname.Core.Entities.GameState.Player">
+  Player
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PlayerEntity Player { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Noname.Core.Entities.PlayerEntity.html">PlayerEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_PlayerProjectiles_" data-uid="Noname.Core.Entities.GameState.PlayerProjectiles*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_PlayerProjectiles" data-uid="Noname.Core.Entities.GameState.PlayerProjectiles">
+  PlayerProjectiles
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;ProjectileEntity&gt; PlayerProjectiles { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="Noname.Core.Entities.ProjectileEntity.html">ProjectileEntity</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_ResourceDrops_" data-uid="Noname.Core.Entities.GameState.ResourceDrops*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_ResourceDrops" data-uid="Noname.Core.Entities.GameState.ResourceDrops">
+  ResourceDrops
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IReadOnlyList&lt;ResourceDropEntity&gt; ResourceDrops { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ireadonlylist-1">IReadOnlyList</a>&lt;<a class="xref" href="Noname.Core.Entities.ResourceDropEntity.html">ResourceDropEntity</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="Noname_Core_Entities_GameState_AddEnemy_" data-uid="Noname.Core.Entities.GameState.AddEnemy*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_AddEnemy_Noname_Core_Entities_EnemyEntity_" data-uid="Noname.Core.Entities.GameState.AddEnemy(Noname.Core.Entities.EnemyEntity)">
+  AddEnemy(EnemyEntity)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddEnemy(EnemyEntity enemy)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>enemy</code> <a class="xref" href="Noname.Core.Entities.EnemyEntity.html">EnemyEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_AddEnemyProjectile_" data-uid="Noname.Core.Entities.GameState.AddEnemyProjectile*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_AddEnemyProjectile_System_Int32_Noname_Core_Primitives_Float2_Noname_Core_Primitives_Float2_System_Single_Noname_Core_Primitives_Float2_" data-uid="Noname.Core.Entities.GameState.AddEnemyProjectile(System.Int32,Noname.Core.Primitives.Float2,Noname.Core.Primitives.Float2,System.Single,Noname.Core.Primitives.Float2)">
+  AddEnemyProjectile(int, Float2, Float2, float, Float2)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProjectileEntity AddEnemyProjectile(int enemyId, Float2 position, Float2 velocity, float damage, Float2 targetPosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>enemyId</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>position</code> <a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a></dt>
+    <dd></dd>
+    <dt><code>velocity</code> <a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a></dt>
+    <dd></dd>
+    <dt><code>damage</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>targetPosition</code> <a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Noname.Core.Entities.ProjectileEntity.html">ProjectileEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_AddPlayerProjectile_" data-uid="Noname.Core.Entities.GameState.AddPlayerProjectile*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_AddPlayerProjectile_Noname_Core_Primitives_Float2_Noname_Core_Primitives_Float2_System_Single_System_Single_Noname_Core_Primitives_Float2_" data-uid="Noname.Core.Entities.GameState.AddPlayerProjectile(Noname.Core.Primitives.Float2,Noname.Core.Primitives.Float2,System.Single,System.Single,Noname.Core.Primitives.Float2)">
+  AddPlayerProjectile(Float2, Float2, float, float, Float2)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ProjectileEntity AddPlayerProjectile(Float2 position, Float2 velocity, float damage, float explosionRadius, Float2 targetPosition)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a></dt>
+    <dd></dd>
+    <dt><code>velocity</code> <a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a></dt>
+    <dd></dd>
+    <dt><code>damage</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>explosionRadius</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>targetPosition</code> <a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Noname.Core.Entities.ProjectileEntity.html">ProjectileEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_AdvanceTime_" data-uid="Noname.Core.Entities.GameState.AdvanceTime*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_AdvanceTime_System_Single_" data-uid="Noname.Core.Entities.GameState.AdvanceTime(System.Single)">
+  AdvanceTime(float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AdvanceTime(float deltaTime)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_ClearEnemies_" data-uid="Noname.Core.Entities.GameState.ClearEnemies*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_ClearEnemies" data-uid="Noname.Core.Entities.GameState.ClearEnemies">
+  ClearEnemies()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearEnemies()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_ClearFixedBombardment_" data-uid="Noname.Core.Entities.GameState.ClearFixedBombardment*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_ClearFixedBombardment" data-uid="Noname.Core.Entities.GameState.ClearFixedBombardment">
+  ClearFixedBombardment()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ClearFixedBombardment()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_CollectReadyResourceDrops_" data-uid="Noname.Core.Entities.GameState.CollectReadyResourceDrops*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_CollectReadyResourceDrops_System_Single_System_Collections_Generic_List_Noname_Core_Entities_ResourceDropEntity__" data-uid="Noname.Core.Entities.GameState.CollectReadyResourceDrops(System.Single,System.Collections.Generic.List{Noname.Core.Entities.ResourceDropEntity})">
+  CollectReadyResourceDrops(float, List&lt;ResourceDropEntity&gt;)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CollectReadyResourceDrops(float deltaTime, List&lt;ResourceDropEntity&gt; readyList)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deltaTime</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>readyList</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Noname.Core.Entities.ResourceDropEntity.html">ResourceDropEntity</a>&gt;</dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_GetNextEnemyId_" data-uid="Noname.Core.Entities.GameState.GetNextEnemyId*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_GetNextEnemyId" data-uid="Noname.Core.Entities.GameState.GetNextEnemyId">
+  GetNextEnemyId()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GetNextEnemyId()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_QueueResourceDrop_" data-uid="Noname.Core.Entities.GameState.QueueResourceDrop*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_QueueResourceDrop_Noname_Core_Enums_ResourceDropType_Noname_Core_Primitives_Float2_System_Single_System_Single_" data-uid="Noname.Core.Entities.GameState.QueueResourceDrop(Noname.Core.Enums.ResourceDropType,Noname.Core.Primitives.Float2,System.Single,System.Single)">
+  QueueResourceDrop(ResourceDropType, Float2, float, float)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ResourceDropEntity QueueResourceDrop(ResourceDropType type, Float2 position, float amount, float delay)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>type</code> <a class="xref" href="Noname.Core.Enums.ResourceDropType.html">ResourceDropType</a></dt>
+    <dd></dd>
+    <dt><code>position</code> <a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a></dt>
+    <dd></dd>
+    <dt><code>amount</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+    <dt><code>delay</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="Noname.Core.Entities.ResourceDropEntity.html">ResourceDropEntity</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_RemoveDeadEnemies_" data-uid="Noname.Core.Entities.GameState.RemoveDeadEnemies*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_RemoveDeadEnemies" data-uid="Noname.Core.Entities.GameState.RemoveDeadEnemies">
+  RemoveDeadEnemies()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveDeadEnemies()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_RemoveEnemyProjectileAt_" data-uid="Noname.Core.Entities.GameState.RemoveEnemyProjectileAt*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_RemoveEnemyProjectileAt_System_Int32_" data-uid="Noname.Core.Entities.GameState.RemoveEnemyProjectileAt(System.Int32)">
+  RemoveEnemyProjectileAt(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveEnemyProjectileAt(int index)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_RemovePlayerProjectileAt_" data-uid="Noname.Core.Entities.GameState.RemovePlayerProjectileAt*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_RemovePlayerProjectileAt_System_Int32_" data-uid="Noname.Core.Entities.GameState.RemovePlayerProjectileAt(System.Int32)">
+  RemovePlayerProjectileAt(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemovePlayerProjectileAt(int index)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>index</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_Reset_" data-uid="Noname.Core.Entities.GameState.Reset*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_Reset" data-uid="Noname.Core.Entities.GameState.Reset">
+  Reset()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Reset()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="Noname_Core_Entities_GameState_SetFixedBombardment_" data-uid="Noname.Core.Entities.GameState.SetFixedBombardment*"></a>
+
+  <h3 id="Noname_Core_Entities_GameState_SetFixedBombardment_Noname_Core_Primitives_Float2_" data-uid="Noname.Core.Entities.GameState.SetFixedBombardment(Noname.Core.Primitives.Float2)">
+  SetFixedBombardment(Float2)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetFixedBombardment(Float2 position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="Noname.Core.Primitives.Float2.html">Float2</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

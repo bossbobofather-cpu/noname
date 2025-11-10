@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Preparing and importing artwork | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Preparing and importing artwork | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/PreparingArtwork.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="preparing-and-importing-artwork">Preparing and importing artwork</h1>
+
+<p>Use the 2D Animation package together with the <a href="https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest">PSD Importer</a> package to import your artwork for animation. The PSD Importer imports the graphic data from each <a href="https://helpx.adobe.com/photoshop/using/layer-basics.html">Photoshop Layer</a> as Sprites, and provides various <a href="#psd-importer-features">importer options</a> that prepare your artwork for animation. The PSD Importer only supports the <a href="https://helpx.adobe.com/photoshop/using/file-formats.html#large_document_format_psb">Adobe Photoshop .psb</a> file format, thus it is recommended to create your artwork in <a href="https://www.adobe.com/products/photoshop.html">Adobe Photoshop</a> or any other graphic software which supports the Adobe .psb file format.</p>
+<p>When preparing your character or prop artwork, it is recommended to prepare them in a neutral or idle position. Depending on the complexity and use of your animation, it is also recommended to separate the individual parts of the artwork onto different Photoshop <a href="https://helpx.adobe.com/photoshop/using/layer-basics.html">Layers</a> (see Example 1 below). The artwork file must be saved in the <a href="https://helpx.adobe.com/photoshop/using/file-formats.html#large_document_format_psb">Adobe Photoshop .psb</a> file format, which is functionally identical to the more common Adobe <a href="https://helpx.adobe.com/photoshop/using/file-formats.html#photoshop_format_psd">.psd format</a>, but supports much larger images than the .psd format (up to 300,000 pixels in any dimension). To convert artwork from the .psd format to the .psb format, open and save the .psd files as .psb files in Adobe Photoshop.</p>
+<h2 id="psd-importer-features">PSD Importer features</h2>
+<p>The PSD Importer has many features and options that prepare the actor for animation. For example, enable the <a href="https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest/index.html?subfolder=/manual/PSD-importer-properties.html%23Mosiac">Mosaic</a> option to have Unity automatically generate a Sprite sheet from the imported layers; or enable <a href="https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest/index.html?subfolder=/manual/PSD-importer-properties.html%23character-rig">Character Rig</a> to have Unity generate a Prefab with Sprites generated from the imported source file, with the Sprites arranged into their original positions based on the source file. Refer the <a href="https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest">PSD Importer's documentation</a> for more information about the different options and their functions.</p>
+<p><img src="images/2DAnimationV2_Mosaic_Prefab.png" alt="The Project window with a spritesheet of a character selected. The right column displays the automatically generated spritesheet of the parts of the character, and the generated GameObject of the full character."><br>Example 2: The imported actor's layers arranged into a Sprite sheet, and reassembled into their original positions in the generated Prefab.</p>
+<h2 id="workflow-between-2d-animation-and-psd-importer">Workflow between 2D Animation and PSD Importer</h2>
+<p>There are several ways to animate with the 2D Animation package, depending on how your artwork is prepared and how your animation will be used in your Unity Project. The 2D Animation package contains sample projects with examples of the different ways to use the package. You can import these using the <a href="https://docs.unity3d.com/Manual/Packages.html">Package Manager</a>. Refer to the <a href="Examples.html">Importing Samples documentation</a> for more information.</p>
+<p>The following is a general workflow for importing a multilayered and multipart character into Unity for 2D animation with the PSD Importer. For a more detailed specific example, see <a href="ex-psd-importer.html">Rigging a character imported with the PSD Importer</a>:</p>
+<ol>
+<li><p>Save your artwork as a .psb file in Adobe Photoshop by selecting the <strong>Large Document Format</strong> under the <strong>Save As</strong> menu, or convert an existing .psd file into the .psb format.</p>
+</li>
+<li><p>Import the .psb file into Unity with the <a href="https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest">PSD Importer</a>, which generates a Prefab containing Sprites based on the layers of the source file. This Prefab is referred to as an 'actor' when used with the 2D Animation package.</p>
+</li>
+<li><p>Select the actor and go to its Inspector window to select its Importer settings. Refer to the <a href="https://docs.unity3d.com/Packages/com.unity.2d.psdimporter@latest">PSD Importer</a> documentation and the <a href="Examples.html">imported Samples and respective documentation</a> to determine which settings are a best fit for your Project.</p>
+<p>For example, the following are the recommended import settings for a <a href="ex-psd-importer.html">character with multiple limbs and layers in its source file</a>:</p>
+<ul>
+<li>Set <strong>Texture Type</strong> to <strong>Sprite(2D and UI)</strong>.</li>
+<li>Set <strong>Sprite Mode</strong> to <strong>Multiple</strong>.</li>
+<li>Select the <strong>Mosaic</strong> check box.</li>
+<li>Select the <strong>Character Rig</strong> check box.</li>
+<li>Select the <strong>Use Layer Grouping</strong> check box to preserve any Layer Groups in the original .psb source file.</li>
+</ul>
+</li>
+<li><p>Select <strong>Apply</strong> to apply the above settings. Once the artwork is imported, a Prefab is generated from the graphic data of each layer as individual Sprites, which may be arranged in their original position or as a Sprite sheet depending on the selected <a href="#psd-importer-features">importer options</a>. The generated Prefab is referred to as an 'actor' when used with the 2D Animation package. The generated actor is now ready for <a href="CharacterRig.html">rigging</a>.</p>
+</li>
+<li><p>Drag the actor Prefab into the Scene view to begin <a href="Animating-actor.html">animating</a>. Unity automatically adds the <a href="SpriteSkin.html">Sprite Skin component</a> to the actor which deforms the Sprite using GameObject Transforms to represent the bones that are <a href="CharacterRig.html">rigged</a> and weighted to the Sprite  in the <a href="SkinningEditor.html">Skinning Editor</a>.</p>
+</li>
+</ol>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.2d.animation@34e0443c58ed/Documentation~/PreparingArtwork.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
