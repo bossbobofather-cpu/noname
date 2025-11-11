@@ -1,0 +1,400 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.EditorTools.DefinitionImporterWindow
+  commentId: T:Noname.EditorTools.DefinitionImporterWindow
+  id: DefinitionImporterWindow
+  parent: Noname.EditorTools
+  children:
+  - Noname.EditorTools.DefinitionImporterWindow.ConvertXlsxToJson(Noname.EditorTools.DefinitionImporterWindow.DefinitionKind,System.String,System.String)
+  - Noname.EditorTools.DefinitionImporterWindow.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImporterWindow.DefinitionKind,System.String)
+  langs:
+  - csharp
+  - vb
+  name: DefinitionImporterWindow
+  nameWithType: DefinitionImporterWindow
+  fullName: Noname.EditorTools.DefinitionImporterWindow
+  type: Class
+  source:
+    remote:
+      path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+      branch: main
+      repo: https://github.com/bossbobofather-cpu/noname.git
+    id: DefinitionImporterWindow
+    path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+    startLine: 8
+  assemblies:
+  - DefinitionImporterDocs
+  namespace: Noname.EditorTools
+  summary: >-
+    Definition Importer Editor 툴의 동작을 문서화하기 위한 DocFX 전용 스텁입니다.
+
+    실제 구현은 Unity Editor 전용 코드에 있으며, 여기서는 공개 API 시그니처만 설명합니다.
+  example: []
+  syntax:
+    content: public sealed class DefinitionImporterWindow
+    content.vb: Public NotInheritable Class DefinitionImporterWindow
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Noname.EditorTools.DefinitionImporterWindow.ConvertXlsxToJson(Noname.EditorTools.DefinitionImporterWindow.DefinitionKind,System.String,System.String)
+  commentId: M:Noname.EditorTools.DefinitionImporterWindow.ConvertXlsxToJson(Noname.EditorTools.DefinitionImporterWindow.DefinitionKind,System.String,System.String)
+  id: ConvertXlsxToJson(Noname.EditorTools.DefinitionImporterWindow.DefinitionKind,System.String,System.String)
+  parent: Noname.EditorTools.DefinitionImporterWindow
+  langs:
+  - csharp
+  - vb
+  name: ConvertXlsxToJson(DefinitionKind, string, string)
+  nameWithType: DefinitionImporterWindow.ConvertXlsxToJson(DefinitionImporterWindow.DefinitionKind, string, string)
+  fullName: Noname.EditorTools.DefinitionImporterWindow.ConvertXlsxToJson(Noname.EditorTools.DefinitionImporterWindow.DefinitionKind, string, string)
+  type: Method
+  source:
+    remote:
+      path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+      branch: main
+      repo: https://github.com/bossbobofather-cpu/noname.git
+    id: ConvertXlsxToJson
+    path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+    startLine: 22
+  assemblies:
+  - DefinitionImporterDocs
+  namespace: Noname.EditorTools
+  summary: '`[enemyInfo]`, `[playerInfo]` 섹션을 포함한 XLSX 데이터를 JSON으로 변환하는 절차를 제공합니다.'
+  example: []
+  syntax:
+    content: public void ConvertXlsxToJson(DefinitionImporterWindow.DefinitionKind kind, string xlsxPath, string jsonPath)
+    parameters:
+    - id: kind
+      type: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+    - id: xlsxPath
+      type: System.String
+    - id: jsonPath
+      type: System.String
+    content.vb: Public Sub ConvertXlsxToJson(kind As DefinitionImporterWindow.DefinitionKind, xlsxPath As String, jsonPath As String)
+  overload: Noname.EditorTools.DefinitionImporterWindow.ConvertXlsxToJson*
+  nameWithType.vb: DefinitionImporterWindow.ConvertXlsxToJson(DefinitionImporterWindow.DefinitionKind, String, String)
+  fullName.vb: Noname.EditorTools.DefinitionImporterWindow.ConvertXlsxToJson(Noname.EditorTools.DefinitionImporterWindow.DefinitionKind, String, String)
+  name.vb: ConvertXlsxToJson(DefinitionKind, String, String)
+- uid: Noname.EditorTools.DefinitionImporterWindow.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImporterWindow.DefinitionKind,System.String)
+  commentId: M:Noname.EditorTools.DefinitionImporterWindow.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImporterWindow.DefinitionKind,System.String)
+  id: ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImporterWindow.DefinitionKind,System.String)
+  parent: Noname.EditorTools.DefinitionImporterWindow
+  langs:
+  - csharp
+  - vb
+  name: ImportJsonToScriptableObjects(DefinitionKind, string)
+  nameWithType: DefinitionImporterWindow.ImportJsonToScriptableObjects(DefinitionImporterWindow.DefinitionKind, string)
+  fullName: Noname.EditorTools.DefinitionImporterWindow.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImporterWindow.DefinitionKind, string)
+  type: Method
+  source:
+    remote:
+      path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+      branch: main
+      repo: https://github.com/bossbobofather-cpu/noname.git
+    id: ImportJsonToScriptableObjects
+    path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+    startLine: 30
+  assemblies:
+  - DefinitionImporterDocs
+  namespace: Noname.EditorTools
+  summary: JSON 정의를 읽어 ScriptableObject를 생성/갱신합니다.
+  example: []
+  syntax:
+    content: public void ImportJsonToScriptableObjects(DefinitionImporterWindow.DefinitionKind kind, string jsonPath)
+    parameters:
+    - id: kind
+      type: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+    - id: jsonPath
+      type: System.String
+    content.vb: Public Sub ImportJsonToScriptableObjects(kind As DefinitionImporterWindow.DefinitionKind, jsonPath As String)
+  overload: Noname.EditorTools.DefinitionImporterWindow.ImportJsonToScriptableObjects*
+  nameWithType.vb: DefinitionImporterWindow.ImportJsonToScriptableObjects(DefinitionImporterWindow.DefinitionKind, String)
+  fullName.vb: Noname.EditorTools.DefinitionImporterWindow.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImporterWindow.DefinitionKind, String)
+  name.vb: ImportJsonToScriptableObjects(DefinitionKind, String)
+references:
+- uid: Noname.EditorTools
+  commentId: N:Noname.EditorTools
+  href: Noname.html
+  name: Noname.EditorTools
+  nameWithType: Noname.EditorTools
+  fullName: Noname.EditorTools
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    href: Noname.html
+  - name: .
+  - uid: Noname.EditorTools
+    name: EditorTools
+    href: Noname.EditorTools.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    href: Noname.html
+  - name: .
+  - uid: Noname.EditorTools
+    name: EditorTools
+    href: Noname.EditorTools.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Noname.EditorTools.DefinitionImporterWindow.ConvertXlsxToJson*
+  commentId: Overload:Noname.EditorTools.DefinitionImporterWindow.ConvertXlsxToJson
+  href: Noname.EditorTools.DefinitionImporterWindow.html#Noname_EditorTools_DefinitionImporterWindow_ConvertXlsxToJson_Noname_EditorTools_DefinitionImporterWindow_DefinitionKind_System_String_System_String_
+  name: ConvertXlsxToJson
+  nameWithType: DefinitionImporterWindow.ConvertXlsxToJson
+  fullName: Noname.EditorTools.DefinitionImporterWindow.ConvertXlsxToJson
+- uid: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  commentId: T:Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  parent: Noname.EditorTools
+  href: Noname.EditorTools.DefinitionImporterWindow.html
+  name: DefinitionImporterWindow.DefinitionKind
+  nameWithType: DefinitionImporterWindow.DefinitionKind
+  fullName: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  spec.csharp:
+  - uid: Noname.EditorTools.DefinitionImporterWindow
+    name: DefinitionImporterWindow
+    href: Noname.EditorTools.DefinitionImporterWindow.html
+  - name: .
+  - uid: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+    name: DefinitionKind
+    href: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.html
+  spec.vb:
+  - uid: Noname.EditorTools.DefinitionImporterWindow
+    name: DefinitionImporterWindow
+    href: Noname.EditorTools.DefinitionImporterWindow.html
+  - name: .
+  - uid: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+    name: DefinitionKind
+    href: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.html
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Noname.EditorTools.DefinitionImporterWindow.ImportJsonToScriptableObjects*
+  commentId: Overload:Noname.EditorTools.DefinitionImporterWindow.ImportJsonToScriptableObjects
+  href: Noname.EditorTools.DefinitionImporterWindow.html#Noname_EditorTools_DefinitionImporterWindow_ImportJsonToScriptableObjects_Noname_EditorTools_DefinitionImporterWindow_DefinitionKind_System_String_
+  name: ImportJsonToScriptableObjects
+  nameWithType: DefinitionImporterWindow.ImportJsonToScriptableObjects
+  fullName: Noname.EditorTools.DefinitionImporterWindow.ImportJsonToScriptableObjects

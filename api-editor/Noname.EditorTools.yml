@@ -1,0 +1,69 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.EditorTools
+  commentId: N:Noname.EditorTools
+  id: Noname.EditorTools
+  children:
+  - Noname.EditorTools.DefinitionImporterWindow
+  - Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  langs:
+  - csharp
+  - vb
+  name: Noname.EditorTools
+  nameWithType: Noname.EditorTools
+  fullName: Noname.EditorTools
+  type: Namespace
+  assemblies:
+  - DefinitionImporterDocs
+references:
+- uid: Noname.EditorTools.DefinitionImporterWindow
+  commentId: T:Noname.EditorTools.DefinitionImporterWindow
+  href: Noname.EditorTools.DefinitionImporterWindow.html
+  name: DefinitionImporterWindow
+  nameWithType: DefinitionImporterWindow
+  fullName: Noname.EditorTools.DefinitionImporterWindow
+- uid: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  commentId: T:Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  parent: Noname.EditorTools
+  href: Noname.EditorTools.DefinitionImporterWindow.html
+  name: DefinitionImporterWindow.DefinitionKind
+  nameWithType: DefinitionImporterWindow.DefinitionKind
+  fullName: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  spec.csharp:
+  - uid: Noname.EditorTools.DefinitionImporterWindow
+    name: DefinitionImporterWindow
+    href: Noname.EditorTools.DefinitionImporterWindow.html
+  - name: .
+  - uid: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+    name: DefinitionKind
+    href: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.html
+  spec.vb:
+  - uid: Noname.EditorTools.DefinitionImporterWindow
+    name: DefinitionImporterWindow
+    href: Noname.EditorTools.DefinitionImporterWindow.html
+  - name: .
+  - uid: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+    name: DefinitionKind
+    href: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.html
+- uid: Noname.EditorTools
+  commentId: N:Noname.EditorTools
+  href: Noname.html
+  name: Noname.EditorTools
+  nameWithType: Noname.EditorTools
+  fullName: Noname.EditorTools
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    href: Noname.html
+  - name: .
+  - uid: Noname.EditorTools
+    name: EditorTools
+    href: Noname.EditorTools.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    href: Noname.html
+  - name: .
+  - uid: Noname.EditorTools
+    name: EditorTools
+    href: Noname.EditorTools.html

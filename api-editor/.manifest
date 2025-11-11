@@ -1,0 +1,9 @@
+{
+  "Noname.EditorTools": "Noname.EditorTools.yml",
+  "Noname.EditorTools.DefinitionImporterWindow": "Noname.EditorTools.DefinitionImporterWindow.yml",
+  "Noname.EditorTools.DefinitionImporterWindow.ConvertXlsxToJson(Noname.EditorTools.DefinitionImporterWindow.DefinitionKind,System.String,System.String)": "Noname.EditorTools.DefinitionImporterWindow.yml",
+  "Noname.EditorTools.DefinitionImporterWindow.DefinitionKind": "Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.yml",
+  "Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.Enemy": "Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.yml",
+  "Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.Player": "Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.yml",
+  "Noname.EditorTools.DefinitionImporterWindow.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImporterWindow.DefinitionKind,System.String)": "Noname.EditorTools.DefinitionImporterWindow.yml"
+}

@@ -1,0 +1,130 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  commentId: T:Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  id: DefinitionImporterWindow.DefinitionKind
+  parent: Noname.EditorTools
+  children:
+  - Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.Enemy
+  - Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.Player
+  langs:
+  - csharp
+  - vb
+  name: DefinitionImporterWindow.DefinitionKind
+  nameWithType: DefinitionImporterWindow.DefinitionKind
+  fullName: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  type: Enum
+  source:
+    remote:
+      path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+      branch: main
+      repo: https://github.com/bossbobofather-cpu/noname.git
+    id: DefinitionKind
+    path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+    startLine: 13
+  assemblies:
+  - DefinitionImporterDocs
+  namespace: Noname.EditorTools
+  summary: 변환 대상 정의 종류를 나타냅니다.
+  example: []
+  syntax:
+    content: public enum DefinitionImporterWindow.DefinitionKind
+    content.vb: Public Enum DefinitionImporterWindow.DefinitionKind
+- uid: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.Enemy
+  commentId: F:Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.Enemy
+  id: Enemy
+  parent: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  langs:
+  - csharp
+  - vb
+  name: Enemy
+  nameWithType: DefinitionImporterWindow.DefinitionKind.Enemy
+  fullName: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.Enemy
+  type: Field
+  source:
+    remote:
+      path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+      branch: main
+      repo: https://github.com/bossbobofather-cpu/noname.git
+    id: Enemy
+    path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+    startLine: 15
+  assemblies:
+  - DefinitionImporterDocs
+  namespace: Noname.EditorTools
+  syntax:
+    content: Enemy = 0
+    return:
+      type: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+- uid: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.Player
+  commentId: F:Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.Player
+  id: Player
+  parent: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  langs:
+  - csharp
+  - vb
+  name: Player
+  nameWithType: DefinitionImporterWindow.DefinitionKind.Player
+  fullName: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.Player
+  type: Field
+  source:
+    remote:
+      path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+      branch: main
+      repo: https://github.com/bossbobofather-cpu/noname.git
+    id: Player
+    path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+    startLine: 16
+  assemblies:
+  - DefinitionImporterDocs
+  namespace: Noname.EditorTools
+  syntax:
+    content: Player = 1
+    return:
+      type: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+references:
+- uid: Noname.EditorTools
+  commentId: N:Noname.EditorTools
+  href: Noname.html
+  name: Noname.EditorTools
+  nameWithType: Noname.EditorTools
+  fullName: Noname.EditorTools
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    href: Noname.html
+  - name: .
+  - uid: Noname.EditorTools
+    name: EditorTools
+    href: Noname.EditorTools.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    href: Noname.html
+  - name: .
+  - uid: Noname.EditorTools
+    name: EditorTools
+    href: Noname.EditorTools.html
+- uid: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  commentId: T:Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  parent: Noname.EditorTools
+  href: Noname.EditorTools.DefinitionImporterWindow.html
+  name: DefinitionImporterWindow.DefinitionKind
+  nameWithType: DefinitionImporterWindow.DefinitionKind
+  fullName: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  spec.csharp:
+  - uid: Noname.EditorTools.DefinitionImporterWindow
+    name: DefinitionImporterWindow
+    href: Noname.EditorTools.DefinitionImporterWindow.html
+  - name: .
+  - uid: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+    name: DefinitionKind
+    href: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.html
+  spec.vb:
+  - uid: Noname.EditorTools.DefinitionImporterWindow
+    name: DefinitionImporterWindow
+    href: Noname.EditorTools.DefinitionImporterWindow.html
+  - name: .
+  - uid: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+    name: DefinitionKind
+    href: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.html

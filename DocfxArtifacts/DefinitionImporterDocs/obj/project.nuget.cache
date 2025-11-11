@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "n0/DwiNUc2/BdzHmBB0nOQKainznucfuCvjUjXWMuQv4+wAVkXg+0Z5oj5xX9SAMiJlHK8WUvdRm9JSKWI3EcQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\user\\OneDrive\\바탕 화면\\UnityProject\\noname\\DocfxArtifacts\\DefinitionImporterDocs\\DefinitionImporterDocs.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.30\\microsoft.netcore.app.ref.6.0.30.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.30\\microsoft.windowsdesktop.app.ref.6.0.30.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.30\\microsoft.aspnetcore.app.ref.6.0.30.nupkg.sha512"
+  ],
+  "logs": []
+}

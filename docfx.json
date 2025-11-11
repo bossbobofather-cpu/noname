@@ -6,7 +6,7 @@
       "dest": "api"
     },
     {
-      "src": [{ "files": ["DocfxArtifacts/Assembly-CSharp-Editor.dll"] }],
+      "src": [{ "files": ["DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterDocs.csproj"] }],
       "dest": "api-editor"
     }
   ],

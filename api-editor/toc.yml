@@ -1,0 +1,13 @@
+### YamlMime:TableOfContent
+items:
+- uid: Noname.EditorTools
+  name: Noname.EditorTools
+  type: Namespace
+  items:
+  - uid: Noname.EditorTools.DefinitionImporterWindow
+    name: DefinitionImporterWindow
+    type: Class
+  - uid: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+    name: DefinitionImporterWindow.DefinitionKind
+    type: Enum
+memberLayout: SamePage
