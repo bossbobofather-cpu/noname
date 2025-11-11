@@ -62,6 +62,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Docs/editor-api.md",
+      "output": {
+        ".html": {
+          "relative_path": "Docs/editor-api.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Docs/getting-started.md",
       "output": {
         ".html": {
@@ -139,6 +149,16 @@
         },
         ".json": {
           "relative_path": "Docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Docs/todo/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Docs/todo/index.html"
         }
       },
       "version": ""

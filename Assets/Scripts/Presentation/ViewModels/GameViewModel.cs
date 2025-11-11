@@ -28,7 +28,6 @@ namespace Noname.Presentation.ViewModels
         private readonly System.Random _random = new System.Random();
 
         private DefenseGameSettings _settings;
-        private float _bombardmentReleaseRadiusSq;
         private bool _isPausedForAbilitySelection;
         private GameplayAbilityDefinition[] _currentAbilityChoices;
         private bool _initialAbilityPresented;
@@ -89,7 +88,7 @@ namespace Noname.Presentation.ViewModels
         /// <summary>거점 파괴 등으로 게임이 끝났을 때 호출됩니다.</summary>
         public event Action GameOver;
         /// <summary>폭격 고정 지점이 설정/해제될 때 호출됩니다.</summary>
-        public event Action<Float2?> BombardmentPointChanged;
+        public event Action<GridCellSelection?> TargetCellChanged;
 
         /// <summary>
         /// 설정 값을 주입하고 상태를 초기화합니다.
@@ -104,10 +103,7 @@ namespace Noname.Presentation.ViewModels
             state.Player.Reset();
             state.Fortress.Reset();
             state.ClearEnemies();
-            state.ClearFixedBombardment();
-
-            var releaseRadius = MathF.Max(0.25f, settings.playerExplosionRadius * 0.5f);
-            _bombardmentReleaseRadiusSq = releaseRadius * releaseRadius;
+            state.ClearTargetCell();
 
             _initialAbilityDelayRemaining = InitialAbilityDelaySeconds;
             _initialAbilityPresented = false;
@@ -121,7 +117,7 @@ namespace Noname.Presentation.ViewModels
                 state.Player.CurrentExperience,
                 state.Player.ExperienceForNextLevel,
                 state.Player.Level);
-            BombardmentPointChanged?.Invoke(null);
+            TargetCellChanged?.Invoke(null);
         }
 
         /// <summary>
@@ -146,7 +142,7 @@ namespace Noname.Presentation.ViewModels
             _movePlayer.Execute(movement, deltaTime);
             PlayerPositionChanged?.Invoke(state.Player.Position);
 
-            ProcessBombardmentInput(state);
+            ProcessTargetCellInput(state);
 
             var result = _simulationService.Tick(deltaTime);
 
@@ -200,6 +196,8 @@ namespace Noname.Presentation.ViewModels
             {
                 EnemyPositionChanged?.Invoke(enemy.Id, enemy.Position);
             }
+
+            EnsureTargetCellStillValid(state);
 
             if (state.Fortress.IsDestroyed)
             {
@@ -334,34 +332,84 @@ namespace Noname.Presentation.ViewModels
             player.ApplyAbility(ability);
         }
 
-        private void ProcessBombardmentInput(GameState state)
+        private void EnsureTargetCellStillValid(GameState state)
+        {
+            if (!state.TryGetTargetCell(out var row, out var column))
+            {
+                return;
+            }
+
+            for (int i = 0; i < state.Enemies.Count; i++)
+            {
+                var enemy = state.Enemies[i];
+                if (enemy.IsAlive && enemy.GridRow == row && enemy.GridColumn == column)
+                {
+                    return;
+                }
+            }
+
+            state.ClearTargetCell();
+            TargetCellChanged?.Invoke(null);
+        }
+
+        private void ProcessTargetCellInput(GameState state)
         {
             if (!_inputReader.TryReadBombardmentPoint(out var pointerPosition))
             {
                 return;
             }
 
-            var playerPosition = state.Player.Position;
-            var rangeSq = state.Player.AttackRange * state.Player.AttackRange;
-
-            if (!state.HasFixedBombardment)
+            if (!_settings.TryGetCellIndices(pointerPosition, out var row, out var column))
             {
-                if ((pointerPosition - playerPosition).SqrMagnitude > rangeSq)
-                {
-                    return;
-                }
-
-                state.SetFixedBombardment(pointerPosition);
-                BombardmentPointChanged?.Invoke(pointerPosition);
                 return;
             }
 
-            var delta = pointerPosition - state.FixedBombardmentPosition;
-            if (delta.SqrMagnitude <= _bombardmentReleaseRadiusSq)
+            var enemy = FindEnemyInCell(state, row, column);
+            if (enemy == null)
             {
-                state.ClearFixedBombardment();
-                BombardmentPointChanged?.Invoke(null);
+                return;
             }
+
+            var playerPosition = state.Player.Position;
+            var rangeSq = state.Player.AttackRange * state.Player.AttackRange;
+            var toEnemy = enemy.Position - playerPosition;
+            if (toEnemy.SqrMagnitude > rangeSq)
+            {
+                return;
+            }
+
+            var enemyRow = enemy.GridRow;
+            var enemyColumn = enemy.GridColumn;
+
+            if (state.HasTargetCell && state.TryGetTargetCell(out var currentRow, out var currentColumn) &&
+                currentRow == enemyRow && currentColumn == enemyColumn)
+            {
+                state.ClearTargetCell();
+                TargetCellChanged?.Invoke(null);
+                return;
+            }
+
+            state.SetTargetCell(enemyRow, enemyColumn);
+            TargetCellChanged?.Invoke(new GridCellSelection(enemyRow, enemyColumn, enemy.Position));
+        }
+
+        private static EnemyEntity FindEnemyInCell(GameState state, int row, int column)
+        {
+            for (int i = 0; i < state.Enemies.Count; i++)
+            {
+                var enemy = state.Enemies[i];
+                if (!enemy.IsAlive)
+                {
+                    continue;
+                }
+
+                if (enemy.GridRow == row && enemy.GridColumn == column)
+                {
+                    return enemy;
+                }
+            }
+
+            return null;
         }
     }
 
@@ -373,5 +421,21 @@ namespace Noname.Presentation.ViewModels
         /// <summary>어빌리티 선택을 기다리는 중.</summary>
         AwaitAbilitySelection
     }
-}
 
+    /// <summary>
+    /// 플레이어가 조준 중인 격자 셀 정보를 나타냅니다.
+    /// </summary>
+    public readonly struct GridCellSelection
+    {
+        public GridCellSelection(int row, int column, Float2 center)
+        {
+            Row = row;
+            Column = column;
+            Center = center;
+        }
+
+        public int Row { get; }
+        public int Column { get; }
+        public Float2 Center { get; }
+    }
+}

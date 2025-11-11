@@ -5,96 +5,88 @@ using UnityEngine.Serialization;
 namespace Noname.Core.ValueObjects
 {
     /// <summary>
-    /// 디펜스 게임 모드에 필요한 각종 밸런스 수치를 묶은 구조체입니다.
+    /// 방어 모드 밸런스 파라미터를 모두 보관하는 구조체입니다.
     /// </summary>
     [System.Serializable]
     public struct DefenseGameSettings
     {
         [Header("Player")]
-        /// <summary>플레이어 스폰 위치.</summary>
         public Float2 playerSpawnPosition;
 
-        [Tooltip("플레이어 스탯을 담은 ScriptableObject 목록")]
-        /// <summary>선택 가능한 플레이어 정의 목록.</summary>
+        [Tooltip("사용 가능한 플레이어 정의(ScriptableObject) 목록")]
         public PlayerDefinition[] playerDefinitions;
 
         [Tooltip("playerDefinitions 배열에서 기본으로 사용할 인덱스")]
-        /// <summary>기본 플레이어 인덱스.</summary>
         public int defaultPlayerIndex;
 
-        /// <summary>좌측 이동 제한.</summary>
         public float movementMinX;
-
-        /// <summary>우측 이동 제한.</summary>
         public float movementMaxX;
-
-        /// <summary>플레이어 투사체 속도.</summary>
         public float playerProjectileSpeed;
-
-        /// <summary>플레이어 폭발 반경.</summary>
         public float playerExplosionRadius;
 
         [Header("Player Progression")]
-        [Tooltip("1레벨에서 2레벨로 가기까지 필요한 기본 경험치")]
-        /// <summary>기본 레벨업 요구 경험치.</summary>
+        [Tooltip("1레벨 → 2레벨에 필요한 기본 경험치")]
         public float baseExperienceToLevel;
 
-        [Tooltip("레벨마다 누적 경험치에 곱해지는 계수")]
-        /// <summary>레벨업 요구량 증가 계수.</summary>
+        [Tooltip("레벨마다 적용되는 경험치 배수")]
         public float experienceGrowthFactor;
 
-        [Tooltip("드랍된 경험치가 자동으로 주워지기까지의 지연 시간(초)")]
-        /// <summary>경험치 드롭 지연.</summary>
+        [Tooltip("드롭이 자동으로 줍히기까지의 지연 시간(초)")]
         public float experiencePickupDelay;
 
-        [Tooltip("운 1포인트당 드랍 확률이 올라가는 양")]
-        /// <summary>운 스탯 당 보너스 확률.</summary>
+        [Tooltip("Luck 1포인트당 확률 가중치")]
         public float luckBonusPerPoint;
 
-        [Tooltip("레벨업 시 제공할 게임 어빌리티 선택지 수")]
-        /// <summary>레벨업 당 어빌리티 선택지 수.</summary>
+        [Tooltip("레벨업 시 제공할 능력 선택지 수")]
         public int abilityChoicesPerLevel;
 
-        [Tooltip("게임 어빌리티 풀 (ScriptableObject)")]
+        [Tooltip("플레이어에게 부여할 능력 풀")]
         [FormerlySerializedAs("augmentPool")]
-        /// <summary>랜덤 추첨에 사용할 어빌리티 풀.</summary>
         public GameplayAbilityDefinition[] abilityPool;
 
         [Header("Fortress")]
-        /// <summary>거점 위치.</summary>
         public Float2 fortressPosition;
-
-        /// <summary>거점 바운딩 박스 절반 크기.</summary>
         public Float2 fortressHalfExtents;
-
-        /// <summary>거점 최대 체력.</summary>
         public float fortressMaxHealth;
 
-        [Header("Enemy Spawning")]
-        /// <summary>적 스폰 영역 최소 좌표.</summary>
-        public Float2 enemySpawnMin;
+        [Header("Enemy Grid & Waves")]
+        [Tooltip("격자 행 수")]
+        public int gridRows;
 
-        /// <summary>적 스폰 영역 최대 좌표.</summary>
-        public Float2 enemySpawnMax;
+        [Tooltip("격자 열 수")]
+        public int gridColumns;
 
-        /// <summary>첫 스폰까지의 지연.</summary>
+        [Tooltip("한 번에 한 행씩 전진하는 간격(초)")]
+        public float enemyRowAdvanceInterval;
+
+        [Tooltip("왼쪽 기준 스폰 X 좌표")]
+        public float spawnOriginX;
+
+        [Tooltip("열 간격(단위: 월드 좌표)")]
+        public float spawnColumnSpacing;
+
+        [Tooltip("0행(최상단) Y 좌표")]
+        public float firstRowY;
+
+        [Tooltip("행 간격(월드 좌표)")]
+        public float rowSpacing;
+
+        [Tooltip("라운드마다 채울 열 비율 (0~1)")]
+        public float waveColumnFillRatio;
+
+        [Tooltip("디버그용: 첫 웨이브만 스폰할지 여부")]
+        public bool spawnOnlyFirstWave;
+
+        [Tooltip("첫 전진까지 대기 시간")]
         public float initialSpawnDelay;
 
-        /// <summary>스폰 간격.</summary>
-        public float spawnInterval;
-
-        [Tooltip("웨이브별 스폰 가중치 목록")]
+        [Tooltip("웨이브 구성에 사용할 적 정의/가중치")]
         [FormerlySerializedAs("enemyArchetypes")]
-        /// <summary>스폰 후보와 가중치 목록.</summary>
         public EnemySpawnEntry[] enemySpawnEntries;
 
         [Header("Enemy Projectiles")]
-        /// <summary>적 발사체 속도.</summary>
         public float enemyProjectileSpeed;
 
-        /// <summary>
-        /// 모든 설정 값을 한 번에 채우는 생성자입니다.
-        /// </summary>
         public DefenseGameSettings(
             Float2 playerSpawnPosition,
             PlayerDefinition[] playerDefinitions,
@@ -112,10 +104,16 @@ namespace Noname.Core.ValueObjects
             Float2 fortressPosition,
             Float2 fortressHalfExtents,
             float fortressMaxHealth,
-            Float2 enemySpawnMin,
-            Float2 enemySpawnMax,
+            int gridRows,
+            int gridColumns,
+            float enemyRowAdvanceInterval,
+            float spawnOriginX,
+            float spawnColumnSpacing,
+            float firstRowY,
+            float rowSpacing,
+            float waveColumnFillRatio,
+            bool spawnOnlyFirstWave,
             float initialSpawnDelay,
-            float spawnInterval,
             EnemySpawnEntry[] enemySpawnEntries,
             float enemyProjectileSpeed)
         {
@@ -135,17 +133,85 @@ namespace Noname.Core.ValueObjects
             this.fortressPosition = fortressPosition;
             this.fortressHalfExtents = fortressHalfExtents;
             this.fortressMaxHealth = fortressMaxHealth;
-            this.enemySpawnMin = enemySpawnMin;
-            this.enemySpawnMax = enemySpawnMax;
+            this.gridRows = gridRows;
+            this.gridColumns = gridColumns;
+            this.enemyRowAdvanceInterval = enemyRowAdvanceInterval;
+            this.spawnOriginX = spawnOriginX;
+            this.spawnColumnSpacing = spawnColumnSpacing;
+            this.firstRowY = firstRowY;
+            this.rowSpacing = rowSpacing;
+            this.waveColumnFillRatio = waveColumnFillRatio;
+            this.spawnOnlyFirstWave = spawnOnlyFirstWave;
             this.initialSpawnDelay = initialSpawnDelay;
-            this.spawnInterval = spawnInterval;
             this.enemySpawnEntries = enemySpawnEntries;
             this.enemyProjectileSpeed = enemyProjectileSpeed;
         }
 
-        /// <summary>
-        /// 인덱스로 플레이어 정의를 안전하게 가져옵니다.
-        /// </summary>
+        private float ResolveRowSpacing()
+        {
+            if (rowSpacing > 0f)
+            {
+                return rowSpacing;
+            }
+
+            var fallbackBottom = fortressPosition.Y - fortressHalfExtents.Y - 1f;
+            var span = Mathf.Abs(firstRowY - fallbackBottom);
+            return gridRows <= 1 ? Mathf.Max(1f, span) : Mathf.Max(0.1f, span / Mathf.Max(1, gridRows - 1));
+        }
+
+        private float ResolveColumnSpacing()
+        {
+            return spawnColumnSpacing > 0f ? spawnColumnSpacing : 1f;
+        }
+
+        public Float2 GetCellWorldPosition(int row, int column)
+        {
+            var columns = Mathf.Max(1, gridColumns);
+            var spacingX = ResolveColumnSpacing();
+            var clampedColumn = Mathf.Clamp(column, 0, columns - 1);
+            var x = spawnOriginX + clampedColumn * spacingX;
+
+            var spacingY = ResolveRowSpacing();
+            // row 0 == firstRowY, 양수는 아래쪽(성벽 방향)으로 진행
+            var y = firstRowY - spacingY * row;
+            return new Float2(x, y);
+        }
+
+        public bool TryGetCellIndices(Float2 worldPosition, out int row, out int column)
+        {
+            row = 0;
+            column = 0;
+
+            if (gridColumns <= 0 || gridRows <= 0)
+            {
+                return false;
+            }
+
+            var spacingX = ResolveColumnSpacing();
+            var spacingY = ResolveRowSpacing();
+            var minX = spawnOriginX - spacingX * 0.5f;
+            var maxX = spawnOriginX + spacingX * (Mathf.Max(1, gridColumns) - 0.5f);
+            if (worldPosition.X < minX || worldPosition.X > maxX)
+            {
+                return false;
+            }
+
+            var topY = firstRowY;
+            var minY = topY - spacingY * (Mathf.Max(1, gridRows) - 0.5f);
+            var maxY = topY + spacingY * 0.5f;
+            if (worldPosition.Y > maxY || worldPosition.Y < minY)
+            {
+                return false;
+            }
+
+            var normalizedColumn = (worldPosition.X - spawnOriginX) / spacingX;
+            column = Mathf.Clamp(Mathf.RoundToInt(normalizedColumn), 0, gridColumns - 1);
+
+            var normalizedRow = (topY - worldPosition.Y) / spacingY;
+            row = Mathf.Clamp(Mathf.RoundToInt(normalizedRow), 0, gridRows - 1);
+            return true;
+        }
+
         public PlayerDefinition GetPlayerDefinitionOrDefault(int index)
         {
             if (playerDefinitions == null || playerDefinitions.Length == 0)
@@ -157,9 +223,6 @@ namespace Noname.Core.ValueObjects
             return playerDefinitions[index];
         }
 
-        /// <summary>
-        /// 기본 인덱스로 설정된 플레이어 정의를 반환합니다.
-        /// </summary>
         public PlayerDefinition GetDefaultPlayerDefinition()
         {
             return GetPlayerDefinitionOrDefault(defaultPlayerIndex);

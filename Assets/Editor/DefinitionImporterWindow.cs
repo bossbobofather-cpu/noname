@@ -409,13 +409,10 @@ public sealed class DefinitionImporterWindow : EditorWindow
             var record = new EnemyInfoRecord
             {
                 enemyCode = GetRowValue(row, "enemyCode"),
-                moveSpeed = ParseFloat(GetRowValue(row, "moveSpeed")),
                 maxHealth = ParseFloat(GetRowValue(row, "maxHealth")),
                 attackDamage = ParseFloat(GetRowValue(row, "attackDamage")),
                 attackRange = ParseFloat(GetRowValue(row, "attackRange")),
-                attackCooldown = ParseFloat(GetRowValue(row, "attackCooldown")),
-                preferredDistance = ParseFloat(GetRowValue(row, "preferredDistance")),
-                role = GetRowValue(row, "role")
+                attackCooldown = ParseFloat(GetRowValue(row, "attackCooldown"))
             };
 
             var dropCell = GetRowValue(row, "dropTable");
@@ -588,16 +585,6 @@ public sealed class DefinitionImporterWindow : EditorWindow
         return assetPath;
     }
 
-    private static EnemyCombatRole ParseEnemyRole(string value)
-    {
-        if (!string.IsNullOrWhiteSpace(value) && Enum.TryParse(value, true, out EnemyCombatRole parsed))
-        {
-            return parsed;
-        }
-
-        return EnemyCombatRole.Melee;
-    }
-
     private static ResourceDropType ParseDropType(string value)
     {
         if (!string.IsNullOrWhiteSpace(value) && Enum.TryParse(value, true, out ResourceDropType parsed))
@@ -634,14 +621,10 @@ public sealed class DefinitionImporterWindow : EditorWindow
     private static List<string> ApplyEnemyDefinitionValues(EnemyDefinition definition, EnemyInfoRecord record)
     {
         var changes = new List<string>();
-        var newRole = ParseEnemyRole(record.role);
-        ApplyEnumChange(ref definition.role, newRole, "role", changes);
-        ApplyFloatChange(ref definition.moveSpeed, record.moveSpeed, "moveSpeed", changes);
         ApplyFloatChange(ref definition.maxHealth, record.maxHealth, "maxHealth", changes);
         ApplyFloatChange(ref definition.attackDamage, record.attackDamage, "attackDamage", changes);
         ApplyFloatChange(ref definition.attackRange, record.attackRange, "attackRange", changes);
         ApplyFloatChange(ref definition.attackCooldown, record.attackCooldown, "attackCooldown", changes);
-        ApplyFloatChange(ref definition.preferredDistance, record.preferredDistance, "preferredDistance", changes);
 
         var newDrops = ConvertDrops(record.dropTable);
         if (!EnemyDropsEqual(definition.drops, newDrops))
@@ -850,13 +833,10 @@ public sealed class DefinitionImporterWindow : EditorWindow
     private sealed class EnemyInfoRecord
     {
         public string enemyCode;
-        public string role;
-        public float moveSpeed;
         public float maxHealth;
         public float attackDamage;
         public float attackRange;
         public float attackCooldown;
-        public float preferredDistance;
         public List<DropTableEntry> dropTable;
     }
 

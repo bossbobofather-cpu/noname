@@ -16,26 +16,21 @@ namespace Noname.Core.Entities
         private int _enemyIdCounter;
         private int _projectileIdCounter;
         private int _resourceDropIdCounter;
-        private bool _hasFixedBombardment;
-        private Float2 _fixedBombardmentPosition;
+        private bool _hasTargetCell;
+        private int _targetRow;
+        private int _targetColumn;
 
         /// <summary>
         /// 게임 상태를 구성하는 핵심 엔티티와 스폰 영역을 지정합니다.
         /// </summary>
         /// <param name="player">플레이어 엔티티.</param>
         /// <param name="fortress">거점 엔티티.</param>
-        /// <param name="enemySpawnMin">적 스폰 영역 최소 좌표.</param>
-        /// <param name="enemySpawnMax">적 스폰 영역 최대 좌표.</param>
         public GameState(
             PlayerEntity player,
-            FortressEntity fortress,
-            Float2 enemySpawnMin,
-            Float2 enemySpawnMax)
+            FortressEntity fortress)
         {
             Player = player;
             Fortress = fortress;
-            EnemySpawnMin = enemySpawnMin;
-            EnemySpawnMax = enemySpawnMax;
         }
 
         /// <summary>플레이어 엔티티입니다.</summary>
@@ -56,23 +51,15 @@ namespace Noname.Core.Entities
         /// <summary>대기 중인 자원 드롭 목록입니다.</summary>
         public IReadOnlyList<ResourceDropEntity> ResourceDrops => _resourceDrops;
 
-        /// <summary>적 스폰 영역 최소 좌표입니다.</summary>
-        public Float2 EnemySpawnMin { get; }
-
-        /// <summary>적 스폰 영역 최대 좌표입니다.</summary>
-        public Float2 EnemySpawnMax { get; }
-
         /// <summary>게임이 시작된 이후 누적 시간입니다.</summary>
         public float ElapsedTime { get; private set; }
 
         /// <summary>거점 파괴 여부입니다.</summary>
         public bool IsGameOver => Fortress.IsDestroyed;
 
-        /// <summary>고정 폭격 지점 설정 여부입니다.</summary>
-        public bool HasFixedBombardment => _hasFixedBombardment;
+        /// <summary>선택된 셀 정보가 존재하는지 여부입니다.</summary>
+        public bool HasTargetCell => _hasTargetCell;
 
-        /// <summary>고정 폭격 지점 좌표입니다.</summary>
-        public Float2 FixedBombardmentPosition => _fixedBombardmentPosition;
 
         /// <summary>
         /// 플레이어·거점·컬렉션을 모두 초기화합니다.
@@ -89,8 +76,7 @@ namespace Noname.Core.Entities
             _resourceDrops.Clear();
             _resourceDropIdCounter = 0;
             ElapsedTime = 0f;
-            _hasFixedBombardment = false;
-            _fixedBombardmentPosition = Float2.Zero;
+            ClearTargetCell();
         }
 
         /// <summary>
@@ -209,21 +195,33 @@ namespace Noname.Core.Entities
         }
 
         /// <summary>
-        /// 폭격 지점을 설정합니다.
+        /// 플레이어가 조준 중인 셀을 설정합니다.
         /// </summary>
-        public void SetFixedBombardment(Float2 position)
+        public void SetTargetCell(int row, int column)
         {
-            _fixedBombardmentPosition = position;
-            _hasFixedBombardment = true;
+            _targetRow = row;
+            _targetColumn = column;
+            _hasTargetCell = true;
         }
 
         /// <summary>
-        /// 폭격 지점을 해제합니다.
+        /// 조준 중인 셀 정보를 제거합니다.
         /// </summary>
-        public void ClearFixedBombardment()
+        public void ClearTargetCell()
         {
-            _hasFixedBombardment = false;
-            _fixedBombardmentPosition = Float2.Zero;
+            _hasTargetCell = false;
+            _targetRow = 0;
+            _targetColumn = 0;
+        }
+
+        /// <summary>
+        /// 선택된 셀 좌표를 반환합니다.
+        /// </summary>
+        public bool TryGetTargetCell(out int row, out int column)
+        {
+            row = _targetRow;
+            column = _targetColumn;
+            return _hasTargetCell;
         }
 
         /// <summary>

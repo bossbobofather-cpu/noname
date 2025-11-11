@@ -1,17 +1,20 @@
-# Application 레이어
+﻿# Application 계층
 
-핵심 방어 게임 규칙을 수행하는 유즈케이스와 서비스를 모아 둔 계층입니다.  
-도메인(Core) 모델을 조작하지만 Unity나 UI에 직접 의존하지 않도록 구성되어 있습니다.
+핵심 방어 규칙을 실행하는 UseCase·서비스·포트가 모여 있습니다. Core 모델만 조작하며 Unity 구체 구현과는 분리되어 동작합니다.
 
 ## Ports
-- `IGameStateRepository` : 현재 `GameState`를 상위 계층에서 주입받기 위한 인터페이스입니다.
-- `IGameInputReader` : Unity Input System 등을 통해 읽은 입력(좌우 이동, 폭격 위치)을 애플리케이션 계층에 전달합니다.
+- `IGameStateRepository`: 현재 `GameState` 인스턴스를 보관하고 상위 계층에서 주입/조회할 수 있도록 해 주는 저장소 포트입니다.
+- `IGameInputReader`: 최신 Input System 입력(좌우 이동, 격자 셀을 지정하는 포인터 클릭 등)을 읽어 도메인 친화적인 값으로 변환합니다.
 
 ## UseCases
-- `StartGameUseCase` : 플레이어·거점·적 상태를 초기화하고 단계 진행을 리셋합니다.
-- `MovePlayerUseCase` : 입력값과 `deltaTime`을 기반으로 플레이어 이동/쿨다운을 갱신합니다.
+- `StartGameUseCase`: 플레이어·거점·게임 상태를 초기화하고 진행 상황을 리셋합니다.
+- `MovePlayerUseCase`: 입력값과 `deltaTime`을 기반으로 플레이어 이동과 공격 쿨다운을 갱신합니다.
 
 ## Services
-- `DefenseSimulationService` : 적 스폰, 이동, 투사체, 자원 드롭, 레벨업 등을 한 프레임 단위로 계산하고 결과 이벤트 묶음을 반환합니다.
+- `DefenseSimulationService`
+  - `DefenseGameSettings`가 정의한 격자(`spawnOriginX`, `spawnColumnSpacing`, `firstRowY`, `rowSpacing`, `gridRows`, `gridColumns`, `enemyRowAdvanceInterval`)를 바탕으로 -1행 대기열을 만들고 주기적으로 한 행씩 전진시킵니다. 행 개수와 상관없이 계속 내려오며, 플레이어 위치나 성벽 위치와 “트리거” 충돌이 감지되면 제거됩니다.
+  - 플레이어 자동 공격은 `GameState`에 기록된 셀(row/column)을 우선 조준하고, 해당 셀이 비면 사거리 안에서 가장 가까운 적을 즉시 재조준합니다.
+  - 플레이어나 성벽에 충돌해 피해를 준 뒤 제거된 몬스터는 드롭 아이템을 생성하지 않습니다.
+  - 드롭 스폰/수거, 적 공격, 투사체 충돌, 레벨업 이벤트를 묶어 `SimulationStepResult`로 반환하여 Presentation 계층이 뷰를 갱신하도록 합니다.
 
-Presentation/Infrastructure 계층은 이 인터페이스/서비스를 주입받아 입력 처리와 화면 갱신을 수행합니다.
+Presentation/Infrastructure 계층은 위 포트를 주입받아 입력 처리와 화면 갱신을 담당합니다.

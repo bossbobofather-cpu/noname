@@ -99,6 +99,10 @@ MonoBehaviour:
       x: 1.5
       y: 0.75
     fortressMaxHealth: 500
+    gridRows: 8
+    gridColumns: 6
+    enemyRowAdvanceInterval: 1.25
+    waveColumnFillRatio: 0.4
     enemySpawnMin:
       x: -4.5
       y: 6

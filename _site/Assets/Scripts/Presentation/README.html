@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Presentation 계층 | mysite </title>
+      <title>Presentation Layer | mysite </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Presentation 계층 | mysite ">
+      <meta name="title" content="Presentation Layer | mysite ">
       
       
       <link rel="icon" href="../../../favicon.ico">
@@ -71,77 +71,42 @@
         </div>
 
         <article data-uid="">
-<h1 id="presentation-계층">Presentation 계층</h1>
+<h1 id="presentation-layer">Presentation Layer</h1>
 
-<p>Unity 씬에서 게임 상태를 시각화하고 <code>GameViewModel</code> 이벤트를 UI/오브젝트와 연결합니다.</p>
+<p>Unity 씬에서 GameState를 View/ViewModel/Manager로 바인딩하는 계층입니다. <code>GameViewModel</code> 이벤트를 구독해 UI를 활성/비활성하고, Input·FX·사운드 매니저를 orchestrate 합니다.</p>
 <h2 id="주요-view">주요 View</h2>
 <ul>
 <li><strong>DefenseGameBootstrapper</strong>
 <ul>
-<li>필수 참조: <code>DefenseInputAdapter</code>, 플레이어/성벽/적/투사체 프리팹, <code>DefenseGameSettings</code>, <code>AugmentSelectionView</code> 프리팹, 좌우 이동 한계를 위한 콜라이더(<code>leftBoundaryCollider</code>, <code>rightBoundaryCollider</code>). 콜라이더의 <code>bounds.min/max.x</code> 값이 이동 최소/최대 경계로 자동 반영됩니다.</li>
-<li><code>resourceDropPrefabs</code> 배열에는 경험치/골드/HP/증강 드랍용 프리팹을 타입별로 등록합니다. 드랍 프리팹에는 <code>ResourceDropView</code>가 붙어 있어야 하며, <code>resourceDropParent</code> 아래에서 생성·수거됩니다.</li>
+<li>Inspector로 <code>DefenseInputAdapter</code>, Player/Fortress/Enemy/Projectile/Drop Prefab, <code>DefenseGameSettings</code>, <code>AugmentSelectionView</code>, 좌우 이동 제한 Collider를 주입받습니다.</li>
+<li><code>enemyViewVariants</code> 배열을 통해 적 View Prefab을 가중치 기반으로 선택하며, 없을 경우 <code>fallbackEnemyViewPrefab</code>을 사용합니다.</li>
+<li><code>resourceDropPrefabs</code>를 이용해 경험치/골드/체력/증강 드롭을 스폰하고, 게임 오버 시 남아 있는 드롭을 즉시 제거하며 골드·증강 보상은 바로 적용합니다.</li>
 </ul>
 </li>
-<li><strong>PlayerView</strong>
-<ul>
-<li><code>PlayerPositionChanged</code> 이벤트를 받아 플레이어 프리팹 위치를 갱신합니다.</li>
-</ul>
-</li>
-<li><strong>EnemyView</strong>
-<ul>
-<li>생성된 <code>EnemyEntity</code>마다 인스턴스화되어 위치·체력 변화를 반영하고 제거 이벤트에서 비활성화됩니다.</li>
-</ul>
-</li>
-<li><strong>FortressView</strong>
-<ul>
-<li>성벽 HP 슬라이더와 경험치 슬라이더/레벨 라벨을 갱신합니다. 인스펙터에서 UI 참조를 연결해야 합니다.</li>
-</ul>
-</li>
-<li><strong>ProjectileView</strong>
-<ul>
-<li>플레이어/적 투사체 이동을 시각화하고 <code>ProjectileImpactOccurred</code> 이벤트 시 이펙트를 재생합니다.</li>
-</ul>
-</li>
-<li><strong>AugmentSelectionView</strong>
-<ul>
-<li>레벨업 또는 어빌리티 드랍 시 나타나는 증강 선택 UI입니다. <code>AbilityChoicesPresented</code> 이벤트로 제목·설명을 채우고, 버튼 클릭 시 <code>GameViewModel.SelectAbility</code>를 호출합니다.</li>
-</ul>
-</li>
-<li><strong>ResourceDropView</strong>
-<ul>
-<li>드랍 아이템을 약간의 진동 애니메이션으로 표시하고, 픽업 신호를 받으면 곡선을 그리며 플레이어에게 이동한 뒤 제거합니다.</li>
-</ul>
-</li>
-<li><strong>DefenseDebugPanel</strong>
-<ul>
-<li>테스트 편의를 위한 UI 스크립트입니다. 버튼으로 <code>GameViewModel.ForceAbilitySelection()</code>을 호출해 즉시 증강 선택창을 띄울 수 있으며, 슬라이더/토글로 <code>Time.timeScale</code>을 조절하거나 일시 정지할 수 있습니다.</li>
-</ul>
-</li>
-<li><strong>DefenseInputAdapter</strong>
-<ul>
-<li>Unity Input System을 사용해 좌우 이동 입력과 포격 고정 지점을 읽어 <code>IGameInputReader</code>에 전달합니다.</li>
-</ul>
-</li>
+<li><strong>PlayerView / EnemyView / FortressView</strong>: <code>GameViewModel</code> 이벤트로 위치·체력·파괴 상태를 반영합니다.</li>
+<li><strong>ProjectileView / ResourceDropView</strong>: 이동·충돌·수집 애니메이션을 담당합니다.</li>
+<li><strong>AugmentSelectionView</strong>: 증강(어빌리티) 선택 UI를 열고, 선택 결과를 <code>GameViewModel</code>로 돌려줍니다.</li>
+<li><strong>DefenseDebugPanel</strong>: 경험치 부스트, 시간 정지 등 개발용 헬퍼를 노출합니다.</li>
+<li><strong>DefenseInputAdapter</strong>: 최신 Input System을 사용해 좌우 이동 값과 격자 셀 지정용 포인터 좌표를 읽어 <code>IGameInputReader</code>로 전달합니다.</li>
 </ul>
 <h2 id="viewmodel">ViewModel</h2>
 <ul>
 <li><strong>GameViewModel</strong>
 <ul>
-<li>이동, 자동 공격, <code>DefenseSimulationService</code> 호출을 담당합니다.</li>
-<li>적/투사체/드랍/경험치/레벨업 이벤트를 뷰에 전달하고, 레벨업 또는 어빌리티 드랍 시 게임을 일시 정지해 증강 선택 과정을 기다립니다.</li>
-<li><code>ForceAbilitySelection()</code> 등 디버그 편의 메서드를 제공해 테스트 UI에서 호출할 수 있습니다.</li>
+<li>입력을 처리하고 <code>MovePlayerUseCase</code>, <code>DefenseSimulationService</code>를 호출해 턴을 진행합니다.</li>
+<li><code>TargetCellChanged</code> 이벤트로 현재 조준 중인 격자 셀(<code>GridCellSelection</code>)을 브로드캐스트하며, 적이 제거되면 자동으로 선택을 해제하고 가장 가까운 적으로 재조준합니다.</li>
+<li>플레이어/적/투사체/드롭/어빌리티 선택 이벤트를 묶어 각 View/Manager가 화면을 갱신하도록 합니다.</li>
 </ul>
 </li>
 </ul>
 <h2 id="흐름-요약">흐름 요약</h2>
 <ol>
-<li>플레이어는 설정된 좌우 경계 안에서만 이동합니다.</li>
-<li>공격 범위 안에 적이 있거나 고정 포격 지점이 지정되어 있으면 자동으로 투사체를 발사합니다.</li>
-<li>시뮬레이션 서비스가 적 스폰·이동·공격, 그리고 드랍 생성/자동 픽업을 처리합니다.</li>
-<li>경험치나 어빌리티 드랍으로 레벨업 조건을 만족하면 증강 선택 UI가 열리고, 선택 후 게임이 다시 진행됩니다.</li>
-<li>성벽 HP가 0이 되면 <code>GameOver</code> 이벤트가 발생하며 모든 뷰가 정리됩니다.</li>
+<li>플레이어가 좌우로 이동하고, 포인터 클릭으로 조준 셀을 선택합니다.</li>
+<li><code>DefenseSimulationService</code>가 몬스터 이동·공격·드롭/투사체 판정을 계산해 <code>SimulationStepResult</code>로 돌려줍니다.</li>
+<li>ViewModel이 결과 이벤트를 전달하면 View가 위치/HP/이펙트를 갱신합니다.</li>
+<li>드롭을 수거하면 <code>ResourceDropView</code>가 곡선을 따라 플레이어에게 이동하고, 게임 오버 시에는 모든 드롭이 즉시 정리됩니다.</li>
+<li>성벽 HP가 0이 되면 <code>GameOver</code> 이벤트가 발생하고, Bootstrapper가 남은 비주얼과 이펙트를 정리합니다.</li>
 </ol>
-<p>씬에서 Bootstrapper의 필드를 모두 채우고 실행하면 프리팹과 UI가 자동으로 연결됩니다. DebugPanel을 추가로 배치하면 테스트 중 증강 선택이나 타임 스케일을 쉽게 제어할 수 있습니다.</p>
 
 </article>
 

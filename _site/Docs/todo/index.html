@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>TODO List | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="TODO List | mysite ">
+      
+      
+      <link rel="icon" href="../../favicon.ico">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="../toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Docs/todo/index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="todo-list">TODO List</h1>
+
+<p>새로운 격자 기반 플레이 구조를 적용한 뒤 추가로 챙겨야 할 작업들을 정리했습니다. 진행 상황에 따라 체크 상태를 업데이트해 주세요.</p>
+<h2 id="gameplay--balancing">Gameplay &amp; Balancing</h2>
+<ul>
+<li>[ ] 웨이브 데이터 자산화: 스테이지별 열/행 점유율과 이동 속도 곡선을 ScriptableObject/테이블로 분리</li>
+<li>[ ] Enemy View 프리팹 가중치 튜닝: 실제 드랍률/사거리 변화에 맞춰 시각 피드백 재검토</li>
+<li>[ ] 셀 타게팅 튜토리얼 추가: 조준 셀을 고정/해제하는 UX 가이드와 입력 장치별 안내</li>
+</ul>
+<h2 id="systems--infrastructure">Systems &amp; Infrastructure</h2>
+<ul>
+<li>[ ] DocFX 정적 사이트 자동 배포: GitHub Actions 또는 CI 스크립트로 <code>_site</code> 생성/배포 파이프라인 구성</li>
+<li>[ ] Definition Importer 개선: Excel 증강/웨이브 시트 추가, 검증 에러를 UIElements ValidationSummary로 출력</li>
+<li>[ ] 리소스 드롭 풀링: 게임 오버 후 즉시 제거하는 경로와 객체 풀을 통합해 GC 부담 최소화</li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li>[ ] Layers 문서에 테스트/QA 전략 섹션 추가 (Play Mode vs. Edit Mode)</li>
+<li>[ ] Tools 문서에 GIF/이미지 자산 관리 지침 명시 (경로: <code>images/</code>)</li>
+<li>[ ] TODO 페이지 최신화 자동화: 릴리스마다 완료/신규 항목 검토</li>
+</ul>
+<h2 id="tracking">Tracking</h2>
+<table>
+<thead>
+<tr>
+<th>우선순위</th>
+<th>항목</th>
+<th>담당</th>
+<th>상태</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>High</td>
+<td>웨이브 데이터 자산화</td>
+<td>TBD</td>
+<td>진행 예정</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>DocFX 배포 자동화</td>
+<td>TBD</td>
+<td>진행 예정</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>Definition Importer 검증 UX</td>
+<td>TBD</td>
+<td>진행 예정</td>
+</tr>
+<tr>
+<td>Low</td>
+<td>문서 QA 섹션 확장</td>
+<td>TBD</td>
+<td>대기</td>
+</tr>
+</tbody>
+</table>
+<p>필요 시 이 페이지를 반복적으로 갱신해 진행 상황을 공유해 주세요.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Docs/todo/index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

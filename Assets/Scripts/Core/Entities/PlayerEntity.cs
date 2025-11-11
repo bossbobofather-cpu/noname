@@ -210,7 +210,7 @@ namespace Noname.Core.Entities
                     _attackDamage = ApplyOperation(_attackDamage, operation, value, minValue: 0f);
                     break;
                 case GameplayAttribute.AttackCooldown:
-                    _attackCooldown = ApplyOperation(_attackCooldown, operation, value, minValue: 0.05f);
+                    _attackCooldown = ApplyAttackCooldownOperation(_attackCooldown, operation, value);
                     break;
                 case GameplayAttribute.MoveSpeed:
                     _moveSpeed = ApplyOperation(_moveSpeed, operation, value, minValue: 0f);
@@ -231,6 +231,23 @@ namespace Noname.Core.Entities
                     return MathF.Max(minValue, current * MathF.Max(0.01f, value));
                 default:
                     return current;
+            }
+        }
+
+        private static float ApplyAttackCooldownOperation(float current, ModifierOperation operation, float value)
+        {
+            const float minCooldown = 0.05f;
+            switch (operation)
+            {
+                case ModifierOperation.Add:
+                    // 양의 value = 쿨다운 감소(=공격 속도 증가)
+                    return MathF.Max(minCooldown, current - value);
+                case ModifierOperation.Multiply:
+                    var factor = MathF.Max(0.01f, value);
+                    // 값이 1보다 크면 공격 속도 증가를 의미하므로 쿨다운을 나눠서 줄인다.
+                    return MathF.Max(minCooldown, current / factor);
+                default:
+                    return MathF.Max(minCooldown, current);
             }
         }
 

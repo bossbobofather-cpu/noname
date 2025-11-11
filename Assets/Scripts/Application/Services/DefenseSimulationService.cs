@@ -17,7 +17,7 @@ namespace Noname.Application.Services
         private readonly IGameStateRepository _repository;
         private readonly DefenseGameSettings _settings;
         private readonly Random _random = new Random();
-        private float _spawnTimer;
+        private float _rowAdvanceTimer;
 
         private readonly List<EnemyEntity> _spawned = new List<EnemyEntity>();
         private readonly List<int> _removed = new List<int>();
@@ -30,6 +30,9 @@ namespace Noname.Application.Services
         private readonly List<ResourceDropCollectedEvent> _resourceDropsCollected = new List<ResourceDropCollectedEvent>();
         private readonly List<PlayerLevelUpEvent> _levelUps = new List<PlayerLevelUpEvent>();
         private readonly List<ResourceDropEntity> _resourceBuffer = new List<ResourceDropEntity>();
+        private bool _hasStandbyRow;
+        private bool _firstWaveSpawned;
+        private readonly List<int> _columnSelectionBuffer = new List<int>();
 
         /// <summary>
         /// 시뮬레이션을 수행하기 위한 필수 의존성을 주입합니다.
@@ -38,7 +41,7 @@ namespace Noname.Application.Services
         {
             _repository = repository;
             _settings = settings;
-            _spawnTimer = MathF.Max(0f, settings.initialSpawnDelay);
+            _rowAdvanceTimer = MathF.Max(0f, settings.initialSpawnDelay);
         }
 
         /// <summary>
@@ -60,10 +63,9 @@ namespace Noname.Application.Services
             _levelUps.Clear();
             _resourceBuffer.Clear();
 
-            HandleSpawning(state, deltaTime);
+            HandleWaveProgression(state, deltaTime);
             HandlePlayerAutoAttack(state);
             UpdatePlayerProjectiles(state, deltaTime);
-            UpdateEnemies(state, deltaTime);
             UpdateEnemyProjectiles(state, deltaTime);
             UpdateResourceDrops(state, deltaTime);
 
@@ -82,22 +84,110 @@ namespace Noname.Application.Services
                 _levelUps.ToArray());
         }
 
-        private void HandleSpawning(GameState state, float deltaTime)
+        private void HandleWaveProgression(GameState state, float deltaTime)
         {
-            if (_settings.enemySpawnEntries == null || _settings.enemySpawnEntries.Length == 0)
+            if (!HasValidGridConfig() || _settings.enemySpawnEntries == null || _settings.enemySpawnEntries.Length == 0)
             {
                 return;
             }
 
-            _spawnTimer -= deltaTime;
-            while (_spawnTimer <= 0f)
+            if (!_hasStandbyRow && (!_settings.spawnOnlyFirstWave || !_firstWaveSpawned))
             {
-                SpawnEnemy(state);
-                _spawnTimer += MathF.Max(0.1f, _settings.spawnInterval);
+                SpawnStandbyRow(state);
+            }
+
+            _rowAdvanceTimer -= deltaTime;
+            while (_rowAdvanceTimer <= 0f)
+            {
+                AdvanceExistingEnemies(state);
+                UpdateEnemies(state, deltaTime);
+                if (!_settings.spawnOnlyFirstWave || !_firstWaveSpawned)
+                {
+                    SpawnStandbyRow(state);
+                }
+                _rowAdvanceTimer += MathF.Max(0.1f, _settings.enemyRowAdvanceInterval);
             }
         }
 
-        private void SpawnEnemy(GameState state)
+        private bool HasValidGridConfig()
+        {
+            return _settings.gridRows > 0 && _settings.gridColumns > 0;
+        }
+
+        private void AdvanceExistingEnemies(GameState state)
+        {
+            for (int i = 0; i < state.Enemies.Count; i++)
+            {
+                var enemy = state.Enemies[i];
+                if (!enemy.IsAlive)
+                {
+                    HandleEnemyDestroyed(state, enemy);
+                    continue;
+                }
+
+                enemy.AdvanceRow();
+                var worldPosition = _settings.GetCellWorldPosition(enemy.GridRow, enemy.GridColumn);
+                enemy.SetPosition(worldPosition);
+
+                if (TryResolveTriggerCollision(state, enemy))
+                {
+                    continue;
+                }
+            }
+
+            _hasStandbyRow = false;
+        }
+
+        private void SpawnStandbyRow(GameState state)
+        {
+            if (_settings.spawnOnlyFirstWave && _firstWaveSpawned)
+            {
+                return;
+            }
+
+            var availableColumns = SelectColumnsToSpawn();
+            if (availableColumns.Count == 0)
+            {
+                return;
+            }
+
+            foreach (var column in availableColumns)
+            {
+                SpawnEnemyAtCell(state, -1, column);
+            }
+
+            _hasStandbyRow = true;
+            _firstWaveSpawned = true;
+        }
+
+        private IReadOnlyList<int> SelectColumnsToSpawn()
+        {
+            _columnSelectionBuffer.Clear();
+            for (int column = 0; column < _settings.gridColumns; column++)
+            {
+                _columnSelectionBuffer.Add(column);
+            }
+
+            if (_columnSelectionBuffer.Count == 0)
+            {
+                return Array.Empty<int>();
+            }
+
+            Shuffle(_columnSelectionBuffer);
+            var ratio = _settings.waveColumnFillRatio;
+            if (ratio <= 0f)
+            {
+                ratio = 0.4f;
+            }
+
+            ratio = MathF.Min(1f, ratio);
+            var desiredCount = Math.Max(1, (int)MathF.Floor(_settings.gridColumns * ratio));
+            desiredCount = Math.Min(desiredCount, _columnSelectionBuffer.Count);
+
+            return _columnSelectionBuffer.GetRange(0, desiredCount);
+        }
+
+        private void SpawnEnemyAtCell(GameState state, int row, int column)
         {
             var definition = SelectEnemyDefinition();
             if (definition == null)
@@ -105,13 +195,64 @@ namespace Noname.Application.Services
                 return;
             }
 
-            var x = Lerp(_settings.enemySpawnMin.X, _settings.enemySpawnMax.X, (float)_random.NextDouble());
-            var y = Lerp(_settings.enemySpawnMin.Y, _settings.enemySpawnMax.Y, (float)_random.NextDouble());
-            var spawnPosition = new Float2(x, y);
+            var spawnPosition = _settings.GetCellWorldPosition(row, column);
             var id = state.GetNextEnemyId();
-            var enemy = definition.CreateEntity(id, spawnPosition);
+            var enemy = definition.CreateEntity(id, row, column, spawnPosition);
             state.AddEnemy(enemy);
             _spawned.Add(enemy);
+        }
+
+        private bool TryResolveTriggerCollision(GameState state, EnemyEntity enemy)
+        {
+            var playerY = state.Player.Position.Y;
+            if (enemy.Position.Y <= playerY)
+            {
+                ResolvePlayerCollision(state, enemy);
+                return true;
+            }
+
+            var fortressY = _settings.fortressPosition.Y;
+            if (enemy.Position.Y <= fortressY)
+            {
+                ResolveFortressCollision(state, enemy);
+                return true;
+            }
+
+            return false;
+        }
+
+        private void ResolveFortressCollision(GameState state, EnemyEntity enemy)
+        {
+            var dealt = state.Fortress.ApplyDamage(enemy.AttackDamage);
+            if (dealt > 0f)
+            {
+                _attacks.Add(new EnemyAttackEvent(enemy.Id, dealt, state.Fortress.CurrentHealth));
+            }
+
+            enemy.ApplyDamage(enemy.CurrentHealth);
+            enemy.DisableDrops();
+            HandleEnemyDestroyed(state, enemy, allowDrops: false);
+        }
+
+        private void ResolvePlayerCollision(GameState state, EnemyEntity enemy)
+        {
+            enemy.ApplyDamage(enemy.CurrentHealth);
+            enemy.DisableDrops();
+            HandleEnemyDestroyed(state, enemy, allowDrops: false);
+        }
+
+        private void Shuffle(List<int> list)
+        {
+            for (int i = list.Count - 1; i > 0; i--)
+            {
+                var swapIndex = _random.Next(i + 1);
+                if (swapIndex == i)
+                {
+                    continue;
+                }
+
+                (list[i], list[swapIndex]) = (list[swapIndex], list[i]);
+            }
         }
 
         private void HandlePlayerAutoAttack(GameState state)
@@ -123,62 +264,33 @@ namespace Noname.Application.Services
             }
 
             var rangeSq = player.AttackRange * player.AttackRange;
-            Float2 targetPosition;
-            Float2 direction;
+            EnemyEntity target = null;
 
-            if (state.HasFixedBombardment)
+            if (state.TryGetTargetCell(out var targetRow, out var targetColumn))
             {
-                targetPosition = state.FixedBombardmentPosition;
-                direction = targetPosition - player.Position;
-                var distanceSq = direction.SqrMagnitude;
-                if (distanceSq > rangeSq)
-                {
-                    return;
-                }
-
-                if (distanceSq <= 1e-6f)
-                {
-                    direction = Float2.Up;
-                }
+                target = FindEnemyInCell(state, targetRow, targetColumn);
             }
-            else
+
+            if (target == null)
             {
-                EnemyEntity closestEnemy = null;
-                var bestDistanceSq = float.MaxValue;
+                target = FindClosestEnemy(state, player.Position, rangeSq);
+            }
 
-                for (int i = 0; i < state.Enemies.Count; i++)
-                {
-                    var enemy = state.Enemies[i];
-                    if (!enemy.IsAlive)
-                    {
-                        continue;
-                    }
+            if (target == null)
+            {
+                return;
+            }
 
-                    var delta = enemy.Position - player.Position;
-                    var distanceSq = delta.SqrMagnitude;
-                    if (distanceSq > rangeSq)
-                    {
-                        continue;
-                    }
+            var direction = target.Position - player.Position;
+            var distanceSq = direction.SqrMagnitude;
+            if (distanceSq > rangeSq)
+            {
+                return;
+            }
 
-                    if (distanceSq < bestDistanceSq)
-                    {
-                        bestDistanceSq = distanceSq;
-                        closestEnemy = enemy;
-                    }
-                }
-
-                if (closestEnemy == null)
-                {
-                    return;
-                }
-
-                targetPosition = closestEnemy.Position;
-                direction = closestEnemy.Position - player.Position;
-                if (direction.SqrMagnitude <= 1e-6f)
-                {
-                    direction = Float2.Up;
-                }
+            if (distanceSq <= 1e-6f)
+            {
+                direction = Float2.Up;
             }
 
             var projectileSpeed = MathF.Max(0.1f, _settings.playerProjectileSpeed);
@@ -188,7 +300,7 @@ namespace Noname.Application.Services
                 velocity,
                 player.AttackDamage,
                 MathF.Max(0f, _settings.playerExplosionRadius),
-                targetPosition);
+                target.Position);
 
             _playerProjectileFired.Add(new PlayerProjectileFiredEvent(
                 projectile.Id,
@@ -198,6 +310,55 @@ namespace Noname.Application.Services
                 projectile.ExplosionRadius));
 
             player.StartAttack();
+        }
+
+        private static EnemyEntity FindEnemyInCell(GameState state, int row, int column)
+        {
+            for (int i = 0; i < state.Enemies.Count; i++)
+            {
+                var enemy = state.Enemies[i];
+                if (!enemy.IsAlive)
+                {
+                    continue;
+                }
+
+                if (enemy.GridRow == row && enemy.GridColumn == column)
+                {
+                    return enemy;
+                }
+            }
+
+            return null;
+        }
+
+        private static EnemyEntity FindClosestEnemy(GameState state, Float2 origin, float maxRangeSq)
+        {
+            EnemyEntity closest = null;
+            var bestDistanceSq = maxRangeSq;
+
+            for (int i = 0; i < state.Enemies.Count; i++)
+            {
+                var enemy = state.Enemies[i];
+                if (!enemy.IsAlive)
+                {
+                    continue;
+                }
+
+                var delta = enemy.Position - origin;
+                var distanceSq = delta.SqrMagnitude;
+                if (distanceSq > maxRangeSq)
+                {
+                    continue;
+                }
+
+                if (distanceSq < bestDistanceSq)
+                {
+                    bestDistanceSq = distanceSq;
+                    closest = enemy;
+                }
+            }
+
+            return closest;
         }
 
         private void UpdatePlayerProjectiles(GameState state, float deltaTime)
@@ -257,11 +418,13 @@ namespace Noname.Application.Services
 
         private void UpdateEnemies(GameState state, float deltaTime)
         {
-            var player = state.Player;
-            var fortress = state.Fortress;
+            if (!HasValidGridConfig())
+            {
+                return;
+            }
+
+            var fortressRow = Math.Max(0, _settings.gridRows - 1);
             var fortressPosition = _settings.fortressPosition;
-            var playerPosition = player.Position;
-            var halfExtents = _settings.fortressHalfExtents;
 
             for (int i = 0; i < state.Enemies.Count; i++)
             {
@@ -274,48 +437,21 @@ namespace Noname.Application.Services
 
                 enemy.UpdateCooldown(deltaTime);
 
-                if (enemy.Role == EnemyCombatRole.Ranged)
+                if (enemy.AttackRange <= 0f)
                 {
-                    var horizontalClampX = ClampAxis(playerPosition.X, fortressPosition.X, halfExtents.X);
-                    var desiredDistance = enemy.PreferredDistance > 0f ? enemy.PreferredDistance : enemy.AttackRange;
-                    if (desiredDistance <= 0f)
-                    {
-                        desiredDistance = 1.5f;
-                    }
-
-                    var desiredY = fortressPosition.Y + desiredDistance;
-                    var anchor = new Float2(horizontalClampX, desiredY);
-                    if (!enemy.IsInPreferredRange(anchor))
-                    {
-                        enemy.MoveTowards(anchor, deltaTime);
-                        continue;
-                    }
-
-                    if (enemy.TryAttack())
-                    {
-                        SpawnEnemyProjectile(state, enemy, fortressPosition);
-                    }
-
                     continue;
                 }
 
-                var contactThreshold = enemy.AttackRange > 0f ? enemy.AttackRange : 0.75f;
-                var nearestPoint = GetNearestPointOnFortress(enemy.Position);
-                var distanceToFortress = (enemy.Position - nearestPoint).Magnitude;
-                if (distanceToFortress <= contactThreshold)
+                var rowsFromFortress = fortressRow - enemy.GridRow;
+                if (rowsFromFortress < 0f)
                 {
-                    var dealt = fortress.ApplyDamage(enemy.AttackDamage);
-                    if (dealt > 0f)
-                    {
-                        _attacks.Add(new EnemyAttackEvent(enemy.Id, dealt, fortress.CurrentHealth));
-                    }
-
-                    enemy.ApplyDamage(enemy.CurrentHealth);
-                    HandleEnemyDestroyed(state, enemy);
                     continue;
                 }
 
-                enemy.MoveTowards(nearestPoint, deltaTime);
+                if (rowsFromFortress <= enemy.AttackRange && enemy.TryAttack())
+                {
+                    SpawnEnemyProjectile(state, enemy, fortressPosition);
+                }
             }
         }
 
@@ -448,9 +584,14 @@ namespace Noname.Application.Services
             return null;
         }
 
-        private void HandleEnemyDestroyed(GameState state, EnemyEntity enemy)
+        private void HandleEnemyDestroyed(GameState state, EnemyEntity enemy, bool allowDrops = true)
         {
             AddRemovedEnemy(enemy.Id);
+            if (!allowDrops || enemy.DropsDisabled)
+            {
+                return;
+            }
+
             var playerLuck = state.Player.Luck;
 
             var drops = enemy.DropDefinitions;
@@ -496,11 +637,6 @@ namespace Noname.Application.Services
             _removed.Add(enemyId);
         }
 
-        private static float Lerp(float a, float b, float t)
-        {
-            return a + (b - a) * t;
-        }
-
         private Float2 GetNearestPointOnFortress(Float2 point)
         {
             var center = _settings.fortressPosition;
@@ -518,18 +654,6 @@ namespace Noname.Application.Services
             var clampedX = MathF.Max(minX, MathF.Min(point.X, maxX));
             var clampedY = MathF.Max(minY, MathF.Min(point.Y, maxY));
             return new Float2(clampedX, clampedY);
-        }
-
-        private static float ClampAxis(float value, float center, float halfExtent)
-        {
-            if (halfExtent <= 0f)
-            {
-                return value;
-            }
-
-            var min = center - halfExtent;
-            var max = center + halfExtent;
-            return MathF.Max(min, MathF.Min(value, max));
         }
     }
 

@@ -1,3 +1,4 @@
+﻿using System;
 using Noname.Core.Entities;
 using Noname.Core.Enums;
 using Noname.Core.Primitives;
@@ -6,33 +7,24 @@ using UnityEngine;
 namespace Noname.Core.ValueObjects
 {
     /// <summary>
-    /// 적 전투 스탯과 드롭 구성을 정의하는 ScriptableObject 입니다.
+    /// 적 전투 스탯과 드롭 구성을 ScriptableObject 형태로 유지합니다.
     /// </summary>
     [CreateAssetMenu(menuName = "Defense/Enemy Definition", fileName = "EnemyDefinition")]
     public sealed class EnemyDefinition : ScriptableObject
     {
         [Header("Combat")]
-        /// <summary>근접/원거리 전투 역할.</summary>
-        public EnemyCombatRole role = EnemyCombatRole.Melee;
-
-        /// <summary>이동 속도.</summary>
-        public float moveSpeed = 2f;
-
         /// <summary>최대 체력.</summary>
         public float maxHealth = 50f;
 
         /// <summary>기본 공격력.</summary>
         public float attackDamage = 10f;
 
-        /// <summary>공격 사거리.</summary>
-        public float attackRange = 1.5f;
+        [Tooltip("성벽으로부터 몇 행 떨어진 지점까지 공격 가능한지(행 단위). 0이면 충돌 시에만 공격합니다.")]
+        /// <summary>사정거리(행 단위).</summary>
+        public float attackRange = 0f;
 
         /// <summary>공격 쿨다운.</summary>
         public float attackCooldown = 1f;
-
-        [Tooltip("원거리 적이 유지하고 싶은 거리 (0이면 attackRange 사용)")]
-        /// <summary>선호 거리.</summary>
-        public float preferredDistance;
 
         [Header("Drop Table")]
         /// <summary>사망 시 드롭되는 자원 목록.</summary>
@@ -47,19 +39,22 @@ namespace Noname.Core.ValueObjects
         /// <summary>
         /// 정의된 수치로 EnemyEntity를 생성합니다.
         /// </summary>
-        public EnemyEntity CreateEntity(int id, Float2 spawnPosition)
+        /// <param name="row">행 인덱스(0 = 최상단)</param>
+        /// <param name="column">열 인덱스</param>
+        public EnemyEntity CreateEntity(int id, int row, int column, Float2 spawnPosition)
         {
+            var effectiveDrops = drops ?? Array.Empty<EnemyDropDefinition>();
+
             return new EnemyEntity(
                 id,
+                row,
+                column,
                 spawnPosition,
-                moveSpeed,
                 maxHealth,
                 attackDamage,
                 attackRange,
                 attackCooldown,
-                role,
-                preferredDistance,
-                drops);
+                effectiveDrops);
         }
     }
 }

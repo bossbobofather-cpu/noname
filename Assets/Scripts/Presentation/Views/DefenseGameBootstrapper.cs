@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Noname.Application.Ports;
 using Noname.Application.Services;
@@ -27,8 +27,8 @@ namespace Noname.Presentation.Views
         [SerializeField] private Transform playerParent;
         [SerializeField] private FortressView fortressViewPrefab;
         [SerializeField] private Transform fortressParent;
-        [SerializeField] private EnemyView meleeEnemyViewPrefab;
-        [SerializeField] private EnemyView rangedEnemyViewPrefab;
+        [SerializeField] private EnemyView fallbackEnemyViewPrefab;
+        [SerializeField] private EnemyViewVariant[] enemyViewVariants;
         [SerializeField] private Transform enemyContainer;
         [SerializeField] private ProjectileView playerProjectilePrefab;
         [SerializeField] private ProjectileView enemyProjectilePrefab;
@@ -64,10 +64,16 @@ namespace Noname.Presentation.Views
             fortressPosition: new Float2(0f, -5f),
             fortressHalfExtents: new Float2(1.5f, 0.75f),
             fortressMaxHealth: 500f,
-            enemySpawnMin: new Float2(-6f, 6f),
-            enemySpawnMax: new Float2(6f, 7.5f),
+            gridRows: 8,
+            gridColumns: 6,
+            enemyRowAdvanceInterval: 1.25f,
+            spawnOriginX: -6f,
+            spawnColumnSpacing: 2.4f,
+            firstRowY: 7.5f,
+            rowSpacing: 0.4f,
+            waveColumnFillRatio: 0.4f,
+            spawnOnlyFirstWave: false,
             initialSpawnDelay: 1.5f,
-            spawnInterval: 2.5f,
             enemySpawnEntries: System.Array.Empty<EnemySpawnEntry>(),
             enemyProjectileSpeed: 8f);
 
@@ -89,6 +95,13 @@ namespace Noname.Presentation.Views
         {
             public ResourceDropType type;
             public GameObject prefab;
+        }
+
+        [Serializable]
+        private struct EnemyViewVariant
+        {
+            public EnemyView prefab;
+            public float weight;
         }
 
         private void Awake()
@@ -166,11 +179,7 @@ namespace Noname.Presentation.Views
 
             var fortressEntity = new FortressEntity(settings.fortressMaxHealth);
 
-            var gameState = new GameState(
-                playerEntity,
-                fortressEntity,
-                settings.enemySpawnMin,
-                settings.enemySpawnMax);
+            var gameState = new GameState(playerEntity, fortressEntity);
 
             _repository = new InMemoryGameStateRepository(gameState);
 
@@ -215,22 +224,13 @@ namespace Noname.Presentation.Views
             SubscribeGameViewModelEvents();
             _gameViewModel.Initialize(settings);
         }
-private void HandleEnemySpawned(EnemyEntity entity)
-        {
-            EnemyView prefab = null;
-            switch (entity.Role)
-            {
-                case EnemyCombatRole.Melee:
-                    prefab = meleeEnemyViewPrefab;
-                    break;
-                case EnemyCombatRole.Ranged:
-                    prefab = rangedEnemyViewPrefab != null ? rangedEnemyViewPrefab : meleeEnemyViewPrefab;
-                    break;
-            }
 
+        private void HandleEnemySpawned(EnemyEntity entity)
+        {
+            var prefab = ResolveEnemyViewPrefab();
             if (prefab == null)
             {
-                Debug.LogWarning($"Enemy prefab for role {entity.Role} is not assigned.");
+                Debug.LogWarning("Enemy view prefab is not assigned.");
                 return;
             }
 
@@ -240,6 +240,46 @@ private void HandleEnemySpawned(EnemyEntity entity)
             view.transform.position = new Vector3(entity.Position.X, entity.Position.Y, view.transform.position.z);
             view.Bind(_gameViewModel, entity);
             _enemyViews[entity.Id] = view;
+        }
+
+        private EnemyView ResolveEnemyViewPrefab()
+        {
+            float totalWeight = 0f;
+            if (enemyViewVariants != null && enemyViewVariants.Length > 0)
+            {
+                foreach (var option in enemyViewVariants)
+                {
+                    if (option.prefab == null)
+                    {
+                        continue;
+                    }
+
+                    var weight = option.weight > 0f ? option.weight : 1f;
+                    totalWeight += weight;
+                }
+
+                if (totalWeight > 0f)
+                {
+                    var roll = UnityEngine.Random.value * totalWeight;
+                    float cumulative = 0f;
+                    foreach (var option in enemyViewVariants)
+                    {
+                        if (option.prefab == null)
+                        {
+                            continue;
+                        }
+
+                        var weight = option.weight > 0f ? option.weight : 1f;
+                        cumulative += weight;
+                        if (roll <= cumulative)
+                        {
+                            return option.prefab;
+                        }
+                    }
+                }
+            }
+
+            return fallbackEnemyViewPrefab;
         }
 
         private PlayerView InstantiatePlayerView(DefenseGameSettings cfg)
@@ -368,7 +408,7 @@ private void HandleEnemySpawned(EnemyEntity entity)
             return null;
         }
 
-        private void DestroyResourceDropViews()
+        private void DestroyResourceDropViews(bool clearPending = true)
         {
             foreach (var pair in _resourceDropViews)
             {
@@ -379,7 +419,10 @@ private void HandleEnemySpawned(EnemyEntity entity)
             }
 
             _resourceDropViews.Clear();
-            _pendingDropEffects.Clear();
+            if (clearPending)
+            {
+                _pendingDropEffects.Clear();
+            }
         }
 
         private void HandleDropTravelCompleted(int dropId)
@@ -604,6 +647,7 @@ private void HandleEnemySpawned(EnemyEntity entity)
             Debug.Log("Fortress destroyed. Game Over.");
             DestroyEnemyViews();
             DestroyProjectileViews();
+            ForceCompleteResourceDropsOnGameOver();
         }
 
         private void HandleAbilityChoicesPresented(GameplayAbilityDefinition[] choices)
@@ -618,6 +662,24 @@ private void HandleEnemySpawned(EnemyEntity entity)
             uiFeedbackManager?.ShowAbilitySelectionClosed();
             fxManager?.PlayAbilitySelectionFx(false);
             soundManager?.PlayAbilitySelectionSound(false);
+        }
+
+        private void ForceCompleteResourceDropsOnGameOver()
+        {
+            if (_pendingDropEffects.Count > 0)
+            {
+                foreach (var evt in _pendingDropEffects.Values)
+                {
+                    if (evt.Type == ResourceDropType.Gold)
+                    {
+                        ApplyResourceDropEffect(evt);
+                    }
+                }
+
+                _pendingDropEffects.Clear();
+            }
+
+            DestroyResourceDropViews(clearPending: false);
         }
 
         private void HandlePlayerProjectileFired(PlayerProjectileFiredEvent evt)

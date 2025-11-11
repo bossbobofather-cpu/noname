@@ -1,26 +1,22 @@
-# Core 계층
+﻿# Core 계층
 
-Unity 엔진 구현과 분리된 순수 게임 규칙과 상태를 보관합니다.
+Unity 구현과 분리된 게임 규칙·도메인 모델을 정의합니다.
 
-- **Entities**
-  - `PlayerEntity` : 위치, 이동/공격 스탯, 경험치·레벨, 체력, 행운, 골드를 관리하며 게임 어빌리티가 적용되면 스탯을 갱신합니다.
-  - `FortressEntity` : 성벽의 최대/현재 체력을 추적합니다.
-  - `EnemyEntity` : 적의 이동 속도·체력·공격 속성, 전투 역할(근접/원거리), 선호 거리, 경험치 보상 값을 제공합니다.
-  - `ProjectileEntity` : 투사체의 위치·속도·폭발 반경·목표 지점을 추적합니다.
-  - `ResourceDropEntity` : 경험치/골드/HP/추가 증강 등 드랍 오브젝트와 자동 픽업까지의 지연 시간을 표현합니다.
-  - `GameState` : 플레이어·성벽·적·투사체·경험치 픽업 목록과 스폰 범위, 경과 시간, 포격 고정 지점을 보관하며 리셋을 담당합니다.
+## Entities
+- `PlayerEntity`: 위치, 이동/공격 스탯, 경험치·레벨·체력·럭·골드, 증강 적용 효과를 관리합니다.
+- `FortressEntity`: 성벽의 최대/현재 체력과 피해·회복 로직을 캡슐화합니다.
+- `EnemyEntity`: 격자 행/열 좌표, 체력/공격력/사거리/쿨다운, 드롭 테이블을 보관합니다.
+- `ProjectileEntity`: 투사체 위치·속도·폭발 반경·목표 좌표를 추적합니다.
+- `ResourceDropEntity`: 드롭 ID/종류/지연 시간을 기록해 수집 시점을 계산합니다.
+- `GameState`: 플레이어·성벽·적·투사체·드롭 컬렉션을 묶는 루트 상태이며, 플레이어가 조준 중인 격자 셀(row/column)도 함께 보관합니다.
 
-- **Primitives**
-  - `Float2` : Core 전역에서 사용하는 경량 2D 벡터 구조체입니다.
+## Value Objects & Helpers
+- `Float2`: Core 전용 경량 2D 벡터.
+- `DefenseGameSettings`: 플레이어/성벽 기본값과 격자 스폰 파라미터를 정의하며, `GetCellWorldPosition`/`TryGetCellIndices`로 행·열 ↔ 월드 좌표 변환을 제공합니다. 행 수와 무관하게 아래 방향으로 계속 진행하며, 트리거 위치(플레이어/성벽)와의 충돌 여부를 판단하는 기준값도 포함합니다.
+- `EnemyDefinition`, `EnemySpawnEntry`: ScriptableObject 기반 적 스펙/가중치 테이블.
+- `GameplayAbilityDefinition`, `GameplayEffectDefinition`: 증강(Modifier) 집합을 정의합니다.
 
-- **Enums**
-  - `EnemyCombatRole` : 근접/원거리 전투 유형을 구분합니다.
-  - `ProjectileFaction` : 투사체가 플레이어/적 중 어느 진영에 속하는지 표현합니다.
+## Enums
+- `ProjectileFaction`, `ResourceDropType` 등 게임 진행에 필요한 상수들을 모았습니다.
 
-- **ValueObjects**
-  - `DefenseGameSettings` : 플레이어 기본 스탯(체력/행운 포함)과 경험치 성장, 성벽 구성, 적 스폰 범위, 투사체 속도, 게임 어빌리티 풀, 행운 가중치를 통합합니다.
-  - `EnemyDefinition` : ScriptableObject 형태로 적 스탯과 경험치/골드/HP/증강 드랍 정보를 정의하며 `EnemyEntity`를 생성합니다.
-  - `EnemySpawnEntry` : 특정 적 정의와 스폰 확률(가중치)을 묶어 둡니다.
-  - `GameplayAbilityDefinition` / `GameplayEffectDefinition` : 게임 어빌리티 시스템을 구성하는 ScriptableObject로, 여러 효과(Modifier)의 집합을 표현합니다.
-
-Application, Infrastructure, Presentation 계층은 위 도메인 모델을 기반으로 상위 정책을 구현합니다.
+상위 계층(Application/Infrastructure/Presentation)은 이 모델을 직접 사용해 UseCase, Adapter, View를 구성합니다.

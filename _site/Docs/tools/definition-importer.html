@@ -87,13 +87,13 @@
         <article data-uid="">
 <h1 id="definition-importer-tool">Definition Importer Tool</h1>
 
-<p>Excel 시트에서 적/플레이어 정의를 읽어 JSON과 ScriptableObject로 변환하는 Unity Editor 창입니다.</p>
+<p>Excel 시트를 기반으로 적/플레이어 정의를 JSON 및 ScriptableObject로 변환하는 Unity Editor 전용 창입니다.</p>
 <h2 id="열기">열기</h2>
-<p>Unity 상단 메뉴의 <code>Tools &gt; Definition Importer</code>를 선택합니다.</p>
+<p>Unity 상단 메뉴에서 <code>Tools &gt; Definition Importer</code>를 선택합니다.</p>
 <h2 id="excel--json">Excel → JSON</h2>
 <ol>
 <li>Definition Type(Enemy/Player)을 고릅니다.</li>
-<li><code>[enemyInfo]</code>, <code>[playerInfo]</code> 섹션을 포함하는 <code>.xlsx</code> 파일을 선택합니다.</li>
+<li><code>[enemyInfo]</code>, <code>[playerInfo]</code> 섹션이 포함된 <code>.xlsx</code> 파일을 선택합니다.</li>
 <li>Output JSON 경로를 지정한 뒤 <code>Convert</code> 버튼을 누르면 JSON 파일이 생성됩니다.</li>
 </ol>
 <h2 id="json--scriptableobject">JSON → ScriptableObject</h2>
@@ -101,16 +101,34 @@
 <li>JSON Import Path에 변환된 파일을 지정합니다.</li>
 <li><code>Import JSON -&gt; ScriptableObjects</code> 버튼을 누르면
 <ul>
-<li><code>Assets/Resources/Enemies</code> 또는 <code>Assets/Resources/Players</code>에 코드(ID) 기반 SO가 생성/갱신됩니다.</li>
-<li>JSON에 없는 SO는 자동 삭제되고, 값이 변경된 필드는 경고 로그로 출력됩니다.</li>
+<li><code>Assets/Resources/Enemies</code> 또는 <code>Assets/Resources/Players</code> 아래에 코드(ID) 기반 SO가 생성/갱신됩니다.</li>
+<li>기존 SO와 값이 달라진 항목은 경고 로그로 알려줍니다.</li>
 </ul>
 </li>
 </ol>
+<h2 id="컬럼-가이드">컬럼 가이드</h2>
+<ul>
+<li><strong>EnemyInfo</strong>
+<ul>
+<li><code>enemyCode</code></li>
+<li><code>maxHealth</code></li>
+<li><code>attackDamage</code></li>
+<li><code>attackRange</code> : 성벽으로부터 몇 행 떨어진 곳까지 공격 가능한지(행 단위)</li>
+<li><code>attackCooldown</code></li>
+<li><code>dropTable</code></li>
+</ul>
+</li>
+<li><strong>PlayerInfo</strong>
+<ul>
+<li><code>playerCode</code>, <code>moveSpeed</code>, <code>attackDamage</code>, <code>attackRange</code>, <code>attackCooldown</code>, <code>maxHealth</code>, <code>luck</code></li>
+</ul>
+</li>
+</ul>
 <h2 id="주의-사항">주의 사항</h2>
 <ul>
-<li>Excel 셀 안에서 드롭 리스트는 <code>(type:Gold;amount:5;probability:1)</code> 형식으로 작성합니다.</li>
-<li>행 시작이 <code>;</code>인 경우 주석으로 간주되어 무시됩니다.</li>
-<li>DefinitionImporterWindow.cs에 XML 주석이 포함되어 있으므로 DocFX API 문서에서도 인터페이스를 확인할 수 있습니다.</li>
+<li>드롭 리스트는 <code>(type:Gold;amount:5;probability:1)</code> 형태로 작성합니다.</li>
+<li>행의 첫 문자가 <code>;</code>인 경우 주석으로 간주되어 무시됩니다.</li>
+<li>DefinitionImporterWindow.cs에 XML 주석이 포함되어 있으므로 DocFX API 문서에서도 동일 정보를 확인할 수 있습니다.</li>
 </ul>
 
 </article>
