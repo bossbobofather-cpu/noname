@@ -2,3 +2,5 @@
   href: docs/
 - name: API
   href: api/
+- name: Editor API
+  href: api-editor/

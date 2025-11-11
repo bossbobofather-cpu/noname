@@ -18,3 +18,5 @@
   items:
     - name: Definition Importer
       href: tools/definition-importer.md
+- name: Editor API Reference
+  href: ~/api-editor/index.html
