@@ -32,7 +32,7 @@
   "Docs/introduction.html": {
     "href": "Docs/introduction.html",
     "title": "Introduction | mysite",
-    "summary": "Introduction 증강 요소가 추가 된 웨이브 방어 디펜스 게임의 방향성을 가진 게임을 제작 중입니다. 화면 하단의 포탑(Player)이 성벽을 지키고, 상단에서 내려오는 적을 제거해 웨이브를 버티는 것이 목표입니다. 게임 루프 화면 하단의 포탑이 좌우로 이동하며 공격 각도를 조준합니다. 발사 이후 모든 포탄이 회수될 때까지는 이동이 제한되고, 몬스터 턴이 진행됩니다. 적은 성벽에 도달하거나 포탄에 맞으면 각각 피해/제거 처리되며, 경험치·골드·증강 드롭을 남깁니다. 경험치를 모아 레벨업하면 3종 증강 중 하나를 선택하여 포탑 능력을 강화합니다. 아키텍처 하이라이트 Clean Architecture: Core / Application / Infrastructure / Presentation 계층으로 분리해 도메인 모델을 보호했습니다. Definition Importer: Excel의 [enemyInfo], [playerInfo] 섹션을 JSON과 ScriptableObject로 변환하는 Editor 툴. 문서 탐색 가이드 빠른 요약과 테이블: Getting Started 계층별 세부 설명: Layers (Core/Application/Infrastructure/Presentation) API Reference: api/ 경로에서 클래스별 XML 주석 기반 설명 확인"
+    "summary": "Introduction Noname Defense Prototype은 증강 요소가 추가된 턴제 디펜스 게임 시제품입니다. 화면 하단의 포탑(Player)이 성벽을 지키고, 상단에서 내려오는 적을 제거해 웨이브를 버티는 것을 목표로 합니다. 게임 루프 포탑은 좌우로 이동하며 공격 각도를 조준합니다. 발사 이후 모든 포탄이 회수될 때까지 이동이 제한되고, 그 사이 몬스터 턴이 진행됩니다. 적은 성벽에 도달하거나 포탄에 맞으면 각각 피해/제거 처리되며, 경험치·골드·증강 드롭을 남깁니다. 경험치를 모아 레벨업하면 3종 증강 중 하나를 선택해 포탑 능력을 강화합니다. 아키텍처 하이라이트 Clean Architecture: Core / Application / Infrastructure / Presentation 계층으로 분리해 도메인 모델을 보호했습니다. Definition Importer: Excel의 [enemyInfo], [playerInfo] 섹션을 JSON과 ScriptableObject로 변환하는 Editor 툴. DocFX + GitHub Pages: XML 주석을 자동 문서화하고 Pages에 배포하여 최신 API를 유지합니다. 문서 탐색 가이드 빠른 요약: Getting Started 계층별 설명: Layers 툴 안내: Tools API Reference: api/ 경로에서 클래스별 XML 주석 기반 설명 확인"
   },
   "Docs/layers/application.html": {
     "href": "Docs/layers/application.html",
@@ -63,6 +63,11 @@
     "href": "Docs/tools/definition-importer.html",
     "title": "Definition Importer Tool | mysite",
     "summary": "Definition Importer Tool Excel 시트에서 적/플레이어 정의를 읽어 JSON과 ScriptableObject로 변환하는 Unity Editor 창입니다. 열기 Unity 상단 메뉴의 Tools > Definition Importer를 선택합니다. Excel → JSON Definition Type(Enemy/Player)을 고릅니다. [enemyInfo], [playerInfo] 섹션을 포함하는 .xlsx 파일을 선택합니다. Output JSON 경로를 지정한 뒤 Convert 버튼을 누르면 JSON 파일이 생성됩니다. JSON → ScriptableObject JSON Import Path에 변환된 파일을 지정합니다. Import JSON -> ScriptableObjects 버튼을 누르면 Assets/Resources/Enemies 또는 Assets/Resources/Players에 코드(ID) 기반 SO가 생성/갱신됩니다. JSON에 없는 SO는 자동 삭제되고, 값이 변경된 필드는 경고 로그로 출력됩니다. 주의 사항 Excel 셀 안에서 드롭 리스트는 (type:Gold;amount:5;probability:1) 형식으로 작성합니다. 행 시작이 ;인 경우 주석으로 간주되어 무시됩니다. DefinitionImporterWindow.cs에 XML 주석이 포함되어 있으므로 DocFX API 문서에서도 인터페이스를 확인할 수 있습니다."
+  },
+  "Docs/tools/index.html": {
+    "href": "Docs/tools/index.html",
+    "title": "Tools | mysite",
+    "summary": "Tools 프로젝트에 포함된 편의 툴 목록입니다. Definition Importer Excel의 [enemyInfo], [playerInfo] 섹션을 JSON/ScriptableObject로 변환하는 Unity Editor 창. 데이터 파이프라인과 ScriptableObject 자동 갱신 흐름을 제공합니다. 필요한 툴이 추가되면 이 페이지에 함께 정리할 예정입니다."
   },
   "README.html": {
     "href": "README.html",

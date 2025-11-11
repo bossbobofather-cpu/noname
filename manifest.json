@@ -155,6 +155,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Docs/tools/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Docs/tools/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "README.md",
       "output": {
         ".html": {
@@ -1110,6 +1120,16 @@
         },
         ".json": {
           "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/gamePlayDemo.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/gamePlayDemo.gif"
         }
       },
       "version": ""
