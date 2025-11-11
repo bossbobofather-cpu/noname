@@ -14,10 +14,9 @@ Noname Defense Prototype은 증강 요소가 추가된 턴제 디펜스 게임 �
 ## 아키텍처 하이라이트
 - **Clean Architecture**: Core / Application / Infrastructure / Presentation 계층으로 분리해 도메인 모델을 보호했습니다.
 - **Definition Importer**: Excel의 `[enemyInfo]`, `[playerInfo]` 섹션을 JSON과 ScriptableObject로 변환하는 Editor 툴.
-- **DocFX + GitHub Pages**: XML 주석을 자동 문서화하고 Pages에 배포하여 최신 API를 유지합니다.
 
 ## 문서 탐색 가이드
-- 빠른 요약: [Getting Started](getting-started.html)
-- 계층별 설명: [Layers](layers/index.html)
-- 툴 안내: [Tools](tools/index.html)
+- 빠른 요약: [Getting Started](getting-started.md)
+- 계층별 설명: [Layers](layers/index.md)
+- 툴 안내: [Tools](tools/index.md)
 - API Reference: `api/` 경로에서 클래스별 XML 주석 기반 설명 확인
