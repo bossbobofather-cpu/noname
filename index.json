@@ -74,6 +74,21 @@
     "title": "Document Link : https://www.notion.so/Augment-Defense-2926a7ce2b0480a5b672c7657a17833a | mysite",
     "summary": "Document Link : https://www.notion.so/Augment-Defense-2926a7ce2b0480a5b672c7657a17833a"
   },
+  "api-editor/Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.html": {
+    "href": "api-editor/Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.html",
+    "title": "Enum DefinitionImporterWindow.DefinitionKind | mysite",
+    "summary": "Enum DefinitionImporterWindow.DefinitionKind Namespace Noname.EditorTools Assembly DefinitionImporterDocs.dll 변환 대상 정의 종류를 나타냅니다. public enum DefinitionImporterWindow.DefinitionKind Fields Enemy = 0 Player = 1"
+  },
+  "api-editor/Noname.EditorTools.DefinitionImporterWindow.html": {
+    "href": "api-editor/Noname.EditorTools.DefinitionImporterWindow.html",
+    "title": "Class DefinitionImporterWindow | mysite",
+    "summary": "Class DefinitionImporterWindow Namespace Noname.EditorTools Assembly DefinitionImporterDocs.dll Definition Importer Editor 툴의 동작을 문서화하기 위한 DocFX 전용 스텁입니다. 실제 구현은 Unity Editor 전용 코드에 있으며, 여기서는 공개 API 시그니처만 설명합니다. public sealed class DefinitionImporterWindow Inheritance object DefinitionImporterWindow Inherited Members object.Equals(object) object.Equals(object, object) object.GetHashCode() object.GetType() object.ReferenceEquals(object, object) object.ToString() Methods ConvertXlsxToJson(DefinitionKind, string, string) [enemyInfo], [playerInfo] 섹션을 포함한 XLSX 데이터를 JSON으로 변환하는 절차를 제공합니다. public void ConvertXlsxToJson(DefinitionImporterWindow.DefinitionKind kind, string xlsxPath, string jsonPath) Parameters kind DefinitionImporterWindow.DefinitionKind xlsxPath string jsonPath string ImportJsonToScriptableObjects(DefinitionKind, string) JSON 정의를 읽어 ScriptableObject를 생성/갱신합니다. public void ImportJsonToScriptableObjects(DefinitionImporterWindow.DefinitionKind kind, string jsonPath) Parameters kind DefinitionImporterWindow.DefinitionKind jsonPath string"
+  },
+  "api-editor/Noname.EditorTools.html": {
+    "href": "api-editor/Noname.EditorTools.html",
+    "title": "Namespace Noname.EditorTools | mysite",
+    "summary": "Namespace Noname.EditorTools Classes DefinitionImporterWindow Definition Importer Editor 툴의 동작을 문서화하기 위한 DocFX 전용 스텁입니다. 실제 구현은 Unity Editor 전용 코드에 있으며, 여기서는 공개 API 시그니처만 설명합니다. Enums DefinitionImporterWindow.DefinitionKind 변환 대상 정의 종류를 나타냅니다."
+  },
   "api/Noname.Application.Ports.IGameInputReader.html": {
     "href": "api/Noname.Application.Ports.IGameInputReader.html",
     "title": "Interface IGameInputReader | mysite",

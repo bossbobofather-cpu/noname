@@ -175,6 +175,61 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api-editor/Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api-editor/Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Noname.EditorTools.DefinitionImporterWindow.DefinitionKind",
+      "Summary": "<p sourcefile=\"api-editor/Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.yml\" sourcestartlinenumber=\"1\">변환 대상 정의 종류를 나타냅니다.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-editor/Noname.EditorTools.DefinitionImporterWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api-editor/Noname.EditorTools.DefinitionImporterWindow.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Noname.EditorTools.DefinitionImporterWindow",
+      "Summary": "<p sourcefile=\"api-editor/Noname.EditorTools.DefinitionImporterWindow.yml\" sourcestartlinenumber=\"1\">Definition Importer Editor 툴의 동작을 문서화하기 위한 DocFX 전용 스텁입니다.\n실제 구현은 Unity Editor 전용 코드에 있으며, 여기서는 공개 API 시그니처만 설명합니다.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-editor/Noname.EditorTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api-editor/Noname.EditorTools.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Noname.EditorTools",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api-editor/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api-editor/toc.html"
+        },
+        ".json": {
+          "relative_path": "api-editor/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Noname.Application.Ports.IGameInputReader.yml",
       "output": {
         ".html": {
