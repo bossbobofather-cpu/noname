@@ -13,11 +13,11 @@ items:
   nameWithType: DefenseDebugPanel
   fullName: Noname.Presentation.Views.DefenseDebugPanel
   type: Class
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/DefenseDebugPanel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Views
+  summary: 개발용 치트 콘솔을 제공하고 입력을 차단하는 디버그 UI입니다.
+  example: []
   syntax:
     content: 'public sealed class DefenseDebugPanel : MonoBehaviour'
     content.vb: Public NotInheritable Class DefenseDebugPanel Inherits MonoBehaviour
@@ -34,8 +34,6 @@ items:
   nameWithType: DefenseDebugPanel.DefenseDebugPanel()
   fullName: Noname.Presentation.Views.DefenseDebugPanel.DefenseDebugPanel()
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/DefenseDebugPanel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Views

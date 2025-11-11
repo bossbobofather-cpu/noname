@@ -16,11 +16,11 @@ items:
   nameWithType: EnemyView
   fullName: Noname.Presentation.Views.EnemyView
   type: Class
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/EnemyView.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Views
+  summary: 적 하나의 시각 표현과 GameViewModel 이벤트를 연결합니다.
+  example: []
   syntax:
     content: 'public sealed class EnemyView : MonoBehaviour'
     content.vb: Public NotInheritable Class EnemyView Inherits MonoBehaviour
@@ -37,11 +37,11 @@ items:
   nameWithType: EnemyView.Bind(GameViewModel, EnemyEntity)
   fullName: Noname.Presentation.Views.EnemyView.Bind(Noname.Presentation.ViewModels.GameViewModel, Noname.Core.Entities.EnemyEntity)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/EnemyView.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Views
+  summary: 주어진 적 엔티티와 뷰모델 이벤트에 바인딩합니다.
+  example: []
   syntax:
     content: public void Bind(GameViewModel viewModel, EnemyEntity entity)
     parameters:
@@ -62,11 +62,11 @@ items:
   nameWithType: EnemyView.Unbind()
   fullName: Noname.Presentation.Views.EnemyView.Unbind()
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/EnemyView.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Views
+  summary: 모든 이벤트 구독을 해제합니다.
+  example: []
   syntax:
     content: public void Unbind()
     content.vb: Public Sub Unbind()
@@ -82,8 +82,6 @@ items:
   nameWithType: EnemyView.EnemyView()
   fullName: Noname.Presentation.Views.EnemyView.EnemyView()
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/EnemyView.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Views
@@ -105,11 +103,11 @@ items:
   nameWithType: EnemyView.EnemyId
   fullName: Noname.Presentation.Views.EnemyView.EnemyId
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/EnemyView.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Views
+  summary: 바인딩된 적 ID.
+  example: []
   syntax:
     content: public int EnemyId { get; }
     parameters: []

@@ -15,11 +15,11 @@ items:
   nameWithType: FortressView
   fullName: Noname.Presentation.Views.FortressView
   type: Class
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/FortressView.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Views
+  summary: 거점 체력/경험치 UI를 GameViewModel과 동기화합니다.
+  example: []
   syntax:
     content: 'public sealed class FortressView : MonoBehaviour'
     content.vb: Public NotInheritable Class FortressView Inherits MonoBehaviour
@@ -36,11 +36,11 @@ items:
   nameWithType: FortressView.Bind(GameViewModel)
   fullName: Noname.Presentation.Views.FortressView.Bind(Noname.Presentation.ViewModels.GameViewModel)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/FortressView.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Views
+  summary: GameViewModel 이벤트에 바인딩합니다.
+  example: []
   syntax:
     content: public void Bind(GameViewModel viewModel)
     parameters:
@@ -59,11 +59,11 @@ items:
   nameWithType: FortressView.Unbind()
   fullName: Noname.Presentation.Views.FortressView.Unbind()
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/FortressView.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Views
+  summary: 모든 구독을 해제합니다.
+  example: []
   syntax:
     content: public void Unbind()
     content.vb: Public Sub Unbind()
@@ -79,8 +79,6 @@ items:
   nameWithType: FortressView.FortressView()
   fullName: Noname.Presentation.Views.FortressView.FortressView()
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/FortressView.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Views

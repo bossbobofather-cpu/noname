@@ -18,11 +18,11 @@ items:
   nameWithType: PlayerProjectileFiredEvent
   fullName: Noname.Application.ValueObjects.PlayerProjectileFiredEvent
   type: Struct
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/PlayerProjectileFiredEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 플레이어가 투사체를 발사했음을 나타내는 이벤트입니다.
+  example: []
   syntax:
     content: public readonly struct PlayerProjectileFiredEvent
     content.vb: Public Structure PlayerProjectileFiredEvent
@@ -44,8 +44,6 @@ items:
   nameWithType: PlayerProjectileFiredEvent.PlayerProjectileFiredEvent(int, Float2, Float2, float, float)
   fullName: Noname.Application.ValueObjects.PlayerProjectileFiredEvent.PlayerProjectileFiredEvent(int, Noname.Core.Primitives.Float2, Noname.Core.Primitives.Float2, float, float)
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/PlayerProjectileFiredEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
@@ -78,11 +76,11 @@ items:
   nameWithType: PlayerProjectileFiredEvent.ProjectileId
   fullName: Noname.Application.ValueObjects.PlayerProjectileFiredEvent.ProjectileId
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/PlayerProjectileFiredEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 투사체 ID.
+  example: []
   syntax:
     content: public int ProjectileId { get; }
     parameters: []
@@ -101,11 +99,11 @@ items:
   nameWithType: PlayerProjectileFiredEvent.Origin
   fullName: Noname.Application.ValueObjects.PlayerProjectileFiredEvent.Origin
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/PlayerProjectileFiredEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 발사 위치.
+  example: []
   syntax:
     content: public Float2 Origin { get; }
     parameters: []
@@ -124,11 +122,11 @@ items:
   nameWithType: PlayerProjectileFiredEvent.Target
   fullName: Noname.Application.ValueObjects.PlayerProjectileFiredEvent.Target
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/PlayerProjectileFiredEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 목표 위치.
+  example: []
   syntax:
     content: public Float2 Target { get; }
     parameters: []
@@ -147,11 +145,11 @@ items:
   nameWithType: PlayerProjectileFiredEvent.Speed
   fullName: Noname.Application.ValueObjects.PlayerProjectileFiredEvent.Speed
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/PlayerProjectileFiredEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 초당 이동 속도.
+  example: []
   syntax:
     content: public float Speed { get; }
     parameters: []
@@ -170,11 +168,11 @@ items:
   nameWithType: PlayerProjectileFiredEvent.ExplosionRadius
   fullName: Noname.Application.ValueObjects.PlayerProjectileFiredEvent.ExplosionRadius
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/PlayerProjectileFiredEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 폭발 반경.
+  example: []
   syntax:
     content: public float ExplosionRadius { get; }
     parameters: []

@@ -37,11 +37,14 @@ items:
   nameWithType: Float2
   fullName: Noname.Core.Primitives.Float2
   type: Struct
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: >-
+    Unity 의존성이 없는 2차원 부동소수점 벡터 구조체입니다.
+
+    Core 계층에서 좌표·방향 정보를 다룰 때 사용합니다.
+  example: []
   syntax:
     content: 'public struct Float2 : IEquatable<Float2>'
     content.vb: Public Structure Float2 Implements IEquatable(Of Float2)
@@ -64,11 +67,11 @@ items:
   nameWithType: Float2.x
   fullName: Noname.Core.Primitives.Float2.x
   type: Field
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: X 성분.
+  example: []
   syntax:
     content: public float x
     return:
@@ -85,11 +88,11 @@ items:
   nameWithType: Float2.y
   fullName: Noname.Core.Primitives.Float2.y
   type: Field
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: Y 성분.
+  example: []
   syntax:
     content: public float y
     return:
@@ -106,18 +109,20 @@ items:
   nameWithType: Float2.Float2(float, float)
   fullName: Noname.Core.Primitives.Float2.Float2(float, float)
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: 새 좌표를 생성합니다.
+  example: []
   syntax:
     content: public Float2(float x, float y)
     parameters:
     - id: x
       type: System.Single
+      description: X 좌표.
     - id: y
       type: System.Single
+      description: Y 좌표.
     content.vb: Public Sub New(x As Single, y As Single)
   overload: Noname.Core.Primitives.Float2.#ctor*
   nameWithType.vb: Float2.New(Single, Single)
@@ -134,11 +139,11 @@ items:
   nameWithType: Float2.operator +(Float2, Float2)
   fullName: Noname.Core.Primitives.Float2.operator +(Noname.Core.Primitives.Float2, Noname.Core.Primitives.Float2)
   type: Operator
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: 두 벡터를 더합니다.
+  example: []
   syntax:
     content: public static Float2 operator +(Float2 left, Float2 right)
     parameters:
@@ -164,11 +169,11 @@ items:
   nameWithType: Float2.operator -(Float2, Float2)
   fullName: Noname.Core.Primitives.Float2.operator -(Noname.Core.Primitives.Float2, Noname.Core.Primitives.Float2)
   type: Operator
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: 두 벡터의 차를 구합니다.
+  example: []
   syntax:
     content: public static Float2 operator -(Float2 left, Float2 right)
     parameters:
@@ -194,11 +199,11 @@ items:
   nameWithType: Float2.operator -(Float2)
   fullName: Noname.Core.Primitives.Float2.operator -(Noname.Core.Primitives.Float2)
   type: Operator
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: 벡터의 부호를 반전합니다.
+  example: []
   syntax:
     content: public static Float2 operator -(Float2 value)
     parameters:
@@ -222,11 +227,11 @@ items:
   nameWithType: Float2.operator *(Float2, float)
   fullName: Noname.Core.Primitives.Float2.operator *(Noname.Core.Primitives.Float2, float)
   type: Operator
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: 벡터에 스칼라를 곱합니다.
+  example: []
   syntax:
     content: public static Float2 operator *(Float2 value, float scalar)
     parameters:
@@ -252,11 +257,11 @@ items:
   nameWithType: Float2.operator *(float, Float2)
   fullName: Noname.Core.Primitives.Float2.operator *(float, Noname.Core.Primitives.Float2)
   type: Operator
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: 스칼라에 벡터를 곱합니다.
+  example: []
   syntax:
     content: public static Float2 operator *(float scalar, Float2 value)
     parameters:
@@ -282,11 +287,11 @@ items:
   nameWithType: Float2.operator /(Float2, float)
   fullName: Noname.Core.Primitives.Float2.operator /(Noname.Core.Primitives.Float2, float)
   type: Operator
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: 벡터를 스칼라로 나눕니다.
+  example: []
   syntax:
     content: public static Float2 operator /(Float2 value, float scalar)
     parameters:
@@ -312,11 +317,11 @@ items:
   nameWithType: Float2.Dot(Float2, Float2)
   fullName: Noname.Core.Primitives.Float2.Dot(Noname.Core.Primitives.Float2, Noname.Core.Primitives.Float2)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: 두 벡터의 내적을 계산합니다.
+  example: []
   syntax:
     content: public static float Dot(Float2 left, Float2 right)
     parameters:
@@ -339,11 +344,11 @@ items:
   nameWithType: Float2.Reflect(Float2, Float2)
   fullName: Noname.Core.Primitives.Float2.Reflect(Noname.Core.Primitives.Float2, Noname.Core.Primitives.Float2)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: 주어진 법선을 기준으로 벡터를 반사합니다.
+  example: []
   syntax:
     content: public static Float2 Reflect(Float2 vector, Float2 normal)
     parameters:
@@ -366,11 +371,11 @@ items:
   nameWithType: Float2.WithX(float)
   fullName: Noname.Core.Primitives.Float2.WithX(float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: 새 X 값을 적용한 복사본을 반환합니다.
+  example: []
   syntax:
     content: public Float2 WithX(float newX)
     parameters:
@@ -394,11 +399,11 @@ items:
   nameWithType: Float2.WithY(float)
   fullName: Noname.Core.Primitives.Float2.WithY(float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: 새 Y 값을 적용한 복사본을 반환합니다.
+  example: []
   syntax:
     content: public Float2 WithY(float newY)
     parameters:
@@ -422,11 +427,11 @@ items:
   nameWithType: Float2.Deconstruct(out float, out float)
   fullName: Noname.Core.Primitives.Float2.Deconstruct(out float, out float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: 튜플 분해를 지원합니다.
+  example: []
   syntax:
     content: public void Deconstruct(out float dx, out float dy)
     parameters:
@@ -450,8 +455,6 @@ items:
   nameWithType: Float2.Equals(Float2)
   fullName: Noname.Core.Primitives.Float2.Equals(Noname.Core.Primitives.Float2)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
@@ -478,8 +481,6 @@ items:
   nameWithType: Float2.Equals(object)
   fullName: Noname.Core.Primitives.Float2.Equals(object)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
@@ -508,8 +509,6 @@ items:
   nameWithType: Float2.GetHashCode()
   fullName: Noname.Core.Primitives.Float2.GetHashCode()
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
@@ -532,8 +531,6 @@ items:
   nameWithType: Float2.ToString()
   fullName: Noname.Core.Primitives.Float2.ToString()
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
@@ -556,11 +553,11 @@ items:
   nameWithType: Float2.X
   fullName: Noname.Core.Primitives.Float2.X
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: X 좌표를 반환합니다.
+  example: []
   syntax:
     content: public float X { get; }
     parameters: []
@@ -579,11 +576,11 @@ items:
   nameWithType: Float2.Y
   fullName: Noname.Core.Primitives.Float2.Y
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: Y 좌표를 반환합니다.
+  example: []
   syntax:
     content: public float Y { get; }
     parameters: []
@@ -602,11 +599,11 @@ items:
   nameWithType: Float2.Zero
   fullName: Noname.Core.Primitives.Float2.Zero
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: (0,0)을 나타내는 상수입니다.
+  example: []
   syntax:
     content: public static Float2 Zero { get; }
     parameters: []
@@ -625,11 +622,11 @@ items:
   nameWithType: Float2.Up
   fullName: Noname.Core.Primitives.Float2.Up
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: 위쪽 단위 벡터입니다.
+  example: []
   syntax:
     content: public static Float2 Up { get; }
     parameters: []
@@ -648,11 +645,11 @@ items:
   nameWithType: Float2.SqrMagnitude
   fullName: Noname.Core.Primitives.Float2.SqrMagnitude
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: 벡터 크기의 제곱값입니다.
+  example: []
   syntax:
     content: public float SqrMagnitude { get; }
     parameters: []
@@ -671,11 +668,11 @@ items:
   nameWithType: Float2.Magnitude
   fullName: Noname.Core.Primitives.Float2.Magnitude
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: 벡터 크기입니다.
+  example: []
   syntax:
     content: public float Magnitude { get; }
     parameters: []
@@ -694,11 +691,11 @@ items:
   nameWithType: Float2.Normalized
   fullName: Noname.Core.Primitives.Float2.Normalized
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Primitives/Float2.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Primitives
+  summary: 정규화된 벡터를 반환합니다.
+  example: []
   syntax:
     content: public Float2 Normalized { get; }
     parameters: []

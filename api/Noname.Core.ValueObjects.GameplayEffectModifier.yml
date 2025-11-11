@@ -15,11 +15,11 @@ items:
   nameWithType: GameplayEffectModifier
   fullName: Noname.Core.ValueObjects.GameplayEffectModifier
   type: Struct
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/GameplayEffectModifier.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.ValueObjects
+  summary: 특정 스탯을 어떻게 변경할지에 대한 단일 규칙입니다.
+  example: []
   syntax:
     content: public struct GameplayEffectModifier
     content.vb: Public Structure GameplayEffectModifier
@@ -41,11 +41,11 @@ items:
   nameWithType: GameplayEffectModifier.attribute
   fullName: Noname.Core.ValueObjects.GameplayEffectModifier.attribute
   type: Field
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/GameplayEffectModifier.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.ValueObjects
+  summary: 대상 속성.
+  example: []
   syntax:
     content: public GameplayAttribute attribute
     return:
@@ -62,11 +62,11 @@ items:
   nameWithType: GameplayEffectModifier.operation
   fullName: Noname.Core.ValueObjects.GameplayEffectModifier.operation
   type: Field
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/GameplayEffectModifier.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.ValueObjects
+  summary: 덧셈/곱셈 등 적용 방식.
+  example: []
   syntax:
     content: public ModifierOperation operation
     return:
@@ -83,8 +83,6 @@ items:
   nameWithType: GameplayEffectModifier.value
   fullName: Noname.Core.ValueObjects.GameplayEffectModifier.value
   type: Field
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/GameplayEffectModifier.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.ValueObjects

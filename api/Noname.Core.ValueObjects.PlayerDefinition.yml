@@ -20,11 +20,11 @@ items:
   nameWithType: PlayerDefinition
   fullName: Noname.Core.ValueObjects.PlayerDefinition
   type: Class
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/PlayerDefinition.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.ValueObjects
+  summary: 플레이어 캐릭터의 기본 스탯을 정의하는 ScriptableObject 입니다.
+  example: []
   syntax:
     content: 'public sealed class PlayerDefinition : ScriptableObject'
     content.vb: Public NotInheritable Class PlayerDefinition Inherits ScriptableObject
@@ -41,8 +41,6 @@ items:
   nameWithType: PlayerDefinition.moveSpeed
   fullName: Noname.Core.ValueObjects.PlayerDefinition.moveSpeed
   type: Field
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/PlayerDefinition.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.ValueObjects
@@ -62,8 +60,6 @@ items:
   nameWithType: PlayerDefinition.attackDamage
   fullName: Noname.Core.ValueObjects.PlayerDefinition.attackDamage
   type: Field
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/PlayerDefinition.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.ValueObjects
@@ -83,8 +79,6 @@ items:
   nameWithType: PlayerDefinition.attackRange
   fullName: Noname.Core.ValueObjects.PlayerDefinition.attackRange
   type: Field
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/PlayerDefinition.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.ValueObjects
@@ -104,8 +98,6 @@ items:
   nameWithType: PlayerDefinition.attackCooldown
   fullName: Noname.Core.ValueObjects.PlayerDefinition.attackCooldown
   type: Field
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/PlayerDefinition.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.ValueObjects
@@ -125,8 +117,6 @@ items:
   nameWithType: PlayerDefinition.maxHealth
   fullName: Noname.Core.ValueObjects.PlayerDefinition.maxHealth
   type: Field
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/PlayerDefinition.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.ValueObjects
@@ -146,8 +136,6 @@ items:
   nameWithType: PlayerDefinition.luck
   fullName: Noname.Core.ValueObjects.PlayerDefinition.luck
   type: Field
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/PlayerDefinition.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.ValueObjects
@@ -167,11 +155,11 @@ items:
   nameWithType: PlayerDefinition.CreateEntity(Float2)
   fullName: Noname.Core.ValueObjects.PlayerDefinition.CreateEntity(Noname.Core.Primitives.Float2)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/PlayerDefinition.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.ValueObjects
+  summary: 스탯을 기반으로 PlayerEntity를 생성합니다.
+  example: []
   syntax:
     content: public PlayerEntity CreateEntity(Float2 spawnPosition)
     parameters:
@@ -192,8 +180,6 @@ items:
   nameWithType: PlayerDefinition.PlayerDefinition()
   fullName: Noname.Core.ValueObjects.PlayerDefinition.PlayerDefinition()
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/PlayerDefinition.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.ValueObjects

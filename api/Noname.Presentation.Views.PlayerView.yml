@@ -16,11 +16,11 @@ items:
   nameWithType: PlayerView
   fullName: Noname.Presentation.Views.PlayerView
   type: Class
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/PlayerView.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Views
+  summary: 플레이어 위치를 표시하고 드롭 픽업 앵커를 제공하는 뷰입니다.
+  example: []
   syntax:
     content: 'public sealed class PlayerView : MonoBehaviour'
     content.vb: Public NotInheritable Class PlayerView Inherits MonoBehaviour
@@ -37,11 +37,11 @@ items:
   nameWithType: PlayerView.Bind(GameViewModel)
   fullName: Noname.Presentation.Views.PlayerView.Bind(Noname.Presentation.ViewModels.GameViewModel)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/PlayerView.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Views
+  summary: 플레이어 위치 이벤트에 구독합니다.
+  example: []
   syntax:
     content: public void Bind(GameViewModel viewModel)
     parameters:
@@ -60,11 +60,11 @@ items:
   nameWithType: PlayerView.Unbind()
   fullName: Noname.Presentation.Views.PlayerView.Unbind()
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/PlayerView.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Views
+  summary: 모든 이벤트 구독을 해제합니다.
+  example: []
   syntax:
     content: public void Unbind()
     content.vb: Public Sub Unbind()
@@ -80,8 +80,6 @@ items:
   nameWithType: PlayerView.PlayerView()
   fullName: Noname.Presentation.Views.PlayerView.PlayerView()
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/PlayerView.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Views
@@ -103,11 +101,11 @@ items:
   nameWithType: PlayerView.PickupAnchor
   fullName: Noname.Presentation.Views.PlayerView.PickupAnchor
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Views/PlayerView.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Views
+  summary: 드롭이 도달해야 할 기준 위치.
+  example: []
   syntax:
     content: public Transform PickupAnchor { get; }
     parameters: []

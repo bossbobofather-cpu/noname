@@ -73,24 +73,24 @@
         <article data-uid="">
 <h1 id="definition-importer">Definition Importer</h1>
 
-<p><code>Tools ? Definition Importer</code> â���� Excel/JSON �����͸� ������� <code>EnemyDefinition</code>, <code>PlayerDefinition</code> ScriptableObject�� �����մϴ�.</p>
-<h2 id="--json">���� �� JSON</h2>
+<p><code>Tools &gt; Definition Importer</code> 메뉴에서 Excel/JSON 데이터를 불러와 <code>EnemyDefinition</code>, <code>PlayerDefinition</code> ScriptableObject를 생성/갱신합니다.</p>
+<h2 id="excel--json">Excel → JSON</h2>
 <ol>
-<li><code>[enemyInfo]</code>, <code>[playerInfo]</code> ������ ���Ե� <code>.xlsx</code> ������ �����մϴ�.</li>
-<li>Definition Type(Enemy/Player)�� �����ϰ� <code>Convert</code> ��ư�� ������ �ش� ������ JSON���� ����ȭ�˴ϴ�.</li>
+<li><code>[enemyInfo]</code>, <code>[playerInfo]</code> 섹션을 포함한 <code>.xlsx</code> 파일을 선택합니다.</li>
+<li>Definition Type(Enemy/Player)을 지정한 뒤 <code>Convert</code> 버튼을 누르면 해당 시트가 JSON으로 변환됩니다.</li>
 </ol>
-<h2 id="json--scriptableobject">JSON �� ScriptableObject</h2>
+<h2 id="json--scriptableobject">JSON → ScriptableObject</h2>
 <ol>
-<li>Definition Type�� ������ �� ������ JSON ������ �����մϴ�.</li>
-<li><code>Import JSON -&gt; ScriptableObjects</code> ��ư�� ������
+<li>Definition Type을 고르고 변환할 JSON 파일을 선택합니다.</li>
+<li><code>Import JSON -&gt; ScriptableObjects</code> 버튼을 누르면
 <ul>
-<li><code>Assets/Resources/Enemies</code> �Ǵ� <code>Assets/Resources/Players</code> ������ �ڵ�� ��� SO�� ����/���ŵ˴ϴ�.</li>
-<li>JSON�� �������� �ʴ� �ڵ��� ���� SO�� �ڵ����� �����˴ϴ�.</li>
-<li>������ �ڵ� SO�� ���� �ٲ�� ����� �ʵ尡 �ܼ� ����� ��µ˴ϴ�.</li>
+<li><code>Assets/Resources/Enemies</code> 또는 <code>Assets/Resources/Players</code> 폴더에 코드(ID) 기반 SO가 생성/갱신됩니다.</li>
+<li>JSON에 없는 SO는 자동 삭제됩니다.</li>
+<li>기존 SO와 값이 다르면 어떤 필드가 바뀌었는지 경고 로그가 출력됩니다.</li>
 </ul>
 </li>
 </ol>
-<p>�� ���� ���� ������ ���� ������ �����ص� ���� �� ���Ǹ� �ϰ� ������ �� �ֽ��ϴ�.</p>
+<p>Excel/JSON 구조가 바뀔 경우 DefinitionImporterWindow.cs를 함께 수정해 주세요.</p>
 
 </article>
 

@@ -14,11 +14,11 @@ items:
   nameWithType: InMemoryGameStateRepository
   fullName: Noname.Infrastructure.Repositories.InMemoryGameStateRepository
   type: Class
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Infrastructure/Repositories/InMemoryGameStateRepository.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Infrastructure.Repositories
+  summary: 단일 GameState 인스턴스를 보관하는 단순 저장소 구현입니다.
+  example: []
   syntax:
     content: 'public sealed class InMemoryGameStateRepository : IGameStateRepository'
     content.vb: Public NotInheritable Class InMemoryGameStateRepository Implements IGameStateRepository
@@ -44,8 +44,6 @@ items:
   nameWithType: InMemoryGameStateRepository.InMemoryGameStateRepository(GameState)
   fullName: Noname.Infrastructure.Repositories.InMemoryGameStateRepository.InMemoryGameStateRepository(Noname.Core.Entities.GameState)
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Infrastructure/Repositories/InMemoryGameStateRepository.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Infrastructure.Repositories
@@ -70,11 +68,10 @@ items:
   nameWithType: InMemoryGameStateRepository.State
   fullName: Noname.Infrastructure.Repositories.InMemoryGameStateRepository.State
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Infrastructure/Repositories/InMemoryGameStateRepository.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Infrastructure.Repositories
+  summary: 현재 게임 상태 루트 객체.
   example: []
   syntax:
     content: public GameState State { get; }

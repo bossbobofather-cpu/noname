@@ -14,11 +14,11 @@ items:
   nameWithType: StartGameUseCase
   fullName: Noname.Application.UseCases.StartGameUseCase
   type: Class
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/UseCases/StartGameUseCase.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.UseCases
+  summary: 게임 상태를 초기화하여 새 세션을 시작하는 유즈케이스입니다.
+  example: []
   syntax:
     content: public sealed class StartGameUseCase
     content.vb: Public NotInheritable Class StartGameUseCase
@@ -42,8 +42,6 @@ items:
   nameWithType: StartGameUseCase.StartGameUseCase(IGameStateRepository)
   fullName: Noname.Application.UseCases.StartGameUseCase.StartGameUseCase(Noname.Application.Ports.IGameStateRepository)
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/UseCases/StartGameUseCase.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.UseCases
@@ -68,11 +66,11 @@ items:
   nameWithType: StartGameUseCase.Execute()
   fullName: Noname.Application.UseCases.StartGameUseCase.Execute()
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/UseCases/StartGameUseCase.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.UseCases
+  summary: 현재 GameState를 초기화합니다.
+  example: []
   syntax:
     content: public void Execute()
     content.vb: Public Sub Execute()

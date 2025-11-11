@@ -16,11 +16,11 @@ items:
   nameWithType: PlayerLevelUpEvent
   fullName: Noname.Application.ValueObjects.PlayerLevelUpEvent
   type: Struct
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/PlayerLevelUpEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 플레이어가 레벨업했을 때 발생하는 이벤트입니다.
+  example: []
   syntax:
     content: public readonly struct PlayerLevelUpEvent
     content.vb: Public Structure PlayerLevelUpEvent
@@ -42,8 +42,6 @@ items:
   nameWithType: PlayerLevelUpEvent.PlayerLevelUpEvent(int, float, float)
   fullName: Noname.Application.ValueObjects.PlayerLevelUpEvent.PlayerLevelUpEvent(int, float, float)
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/PlayerLevelUpEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
@@ -72,11 +70,11 @@ items:
   nameWithType: PlayerLevelUpEvent.Level
   fullName: Noname.Application.ValueObjects.PlayerLevelUpEvent.Level
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/PlayerLevelUpEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 레벨업 후 현재 레벨.
+  example: []
   syntax:
     content: public int Level { get; }
     parameters: []
@@ -95,11 +93,11 @@ items:
   nameWithType: PlayerLevelUpEvent.CurrentExperience
   fullName: Noname.Application.ValueObjects.PlayerLevelUpEvent.CurrentExperience
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/PlayerLevelUpEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 누적 경험치.
+  example: []
   syntax:
     content: public float CurrentExperience { get; }
     parameters: []
@@ -118,11 +116,11 @@ items:
   nameWithType: PlayerLevelUpEvent.ExperienceForNextLevel
   fullName: Noname.Application.ValueObjects.PlayerLevelUpEvent.ExperienceForNextLevel
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/PlayerLevelUpEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 다음 레벨까지 필요한 경험치.
+  example: []
   syntax:
     content: public float ExperienceForNextLevel { get; }
     parameters: []

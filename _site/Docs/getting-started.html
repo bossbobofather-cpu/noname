@@ -87,6 +87,53 @@
         <article data-uid="">
 <h1 id="getting-started">Getting Started</h1>
 
+<p>이 문서는 프로젝트 구조를 빠르게 이해하기 위한 요약입니다.</p>
+<ul>
+<li><strong>내 프로젝트를 클린 아키텍처로 설계하려는 이유?</strong>
+<ul>
+<li>Unity나 Unreal 개발 경험이 있고 핵심 로직을 서로 다른 엔진에서도 재사용하고 싶었기 때문입니다.</li>
+<li>콘텐츠 개발자가 필요에 의해 핵심 로직을 직접 건드리는 경우가 있었고, 그로 인해 크리티컬한 사이드 이펙트가 발생하기도 했습니다. 명확한 계층 분리가 책임 구분에 도움이 됩니다.</li>
+<li>테스트가 용이합니다. 엔진 없이도 핵심 로직 단위 테스트가 가능하며, 무거운 엔진 실행/특정 상황 재현에 드는 시간을 줄일 수 있습니다.</li>
+</ul>
+</li>
+</ul>
+<h2 id="계층-개요">계층 개요</h2>
+<table>
+<thead>
+<tr>
+<th>계층</th>
+<th>핵심 책임</th>
+<th>주요 요소</th>
+<th>상호작용</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core</strong></td>
+<td>게임 규칙, 도메인 모델</td>
+<td><code>PlayerEntity</code>, <code>EnemyEntity</code>, <code>GameplayAbilityDefinition</code></td>
+<td>다른 계층에서 Core 타입을 직접 사용(불변 법칙)</td>
+</tr>
+<tr>
+<td><strong>Application</strong></td>
+<td>UseCase, 서비스, 포트</td>
+<td><code>StartGameUseCase</code>, <code>MovePlayerUseCase</code>, <code>DefenseSimulationService</code>, <code>IGameInputReader</code></td>
+<td>Core 엔티티를 조작하며, 외부 입력/출력을 포트로 추상화</td>
+</tr>
+<tr>
+<td><strong>Infrastructure</strong></td>
+<td>Adapter, 데이터 접근 및 입력</td>
+<td><code>DefenseInputAdapter</code>, <code>InMemoryGameStateRepository</code>, Definition Importer 툴</td>
+<td>Application 포트를 구현, Excel→JSON→SO 파이프라인 포함</td>
+</tr>
+<tr>
+<td><strong>Presentation</strong></td>
+<td>UI-ViewModel-View</td>
+<td><code>GameViewModel</code>, <code>DefenseGameBootstrapper</code>, <code>PlayerView</code>, UI/FX/Sound 매니저</td>
+<td>Application을 호출해 게임을 구동하고 사용자와 상호작용</td>
+</tr>
+</tbody>
+</table>
 
 </article>
 

@@ -41,11 +41,11 @@ items:
   nameWithType: PlayerEntity
   fullName: Noname.Core.Entities.PlayerEntity
   type: Class
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 플레이어 캐릭터의 위치, 전투 스탯, 성장 상태를 관리합니다.
+  example: []
   syntax:
     content: public sealed class PlayerEntity
     content.vb: Public NotInheritable Class PlayerEntity
@@ -69,11 +69,11 @@ items:
   nameWithType: PlayerEntity.PlayerEntity(Float2, float, float, float, float, float, float)
   fullName: Noname.Core.Entities.PlayerEntity.PlayerEntity(Noname.Core.Primitives.Float2, float, float, float, float, float, float)
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 플레이어를 기본 스탯과 스폰 위치로 초기화합니다.
+  example: []
   syntax:
     content: public PlayerEntity(Float2 spawnPosition, float moveSpeed, float attackDamage, float attackRange, float attackCooldown, float maxHealth, float luck)
     parameters:
@@ -107,11 +107,11 @@ items:
   nameWithType: PlayerEntity.SetHorizontalBounds(float, float)
   fullName: Noname.Core.Entities.PlayerEntity.SetHorizontalBounds(float, float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 좌우 이동 한계를 설정합니다.
+  example: []
   syntax:
     content: public void SetHorizontalBounds(float minX, float maxX)
     parameters:
@@ -135,11 +135,11 @@ items:
   nameWithType: PlayerEntity.Reset()
   fullName: Noname.Core.Entities.PlayerEntity.Reset()
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 위치/쿨다운/경험치/골드를 초기화합니다.
+  example: []
   syntax:
     content: public void Reset()
     content.vb: Public Sub Reset()
@@ -155,11 +155,11 @@ items:
   nameWithType: PlayerEntity.UpdateCooldown(float)
   fullName: Noname.Core.Entities.PlayerEntity.UpdateCooldown(float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 공격 쿨다운을 감소시킵니다.
+  example: []
   syntax:
     content: public void UpdateCooldown(float deltaTime)
     parameters:
@@ -181,11 +181,11 @@ items:
   nameWithType: PlayerEntity.Move(float, float)
   fullName: Noname.Core.Entities.PlayerEntity.Move(float, float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 수평 입력에 따라 이동합니다.
+  example: []
   syntax:
     content: public void Move(float horizontalInput, float deltaTime)
     parameters:
@@ -209,11 +209,11 @@ items:
   nameWithType: PlayerEntity.StartAttack()
   fullName: Noname.Core.Entities.PlayerEntity.StartAttack()
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 공격을 시작하고 쿨다운을 설정합니다.
+  example: []
   syntax:
     content: public void StartAttack()
     content.vb: Public Sub StartAttack()
@@ -229,11 +229,11 @@ items:
   nameWithType: PlayerEntity.GetAttackOrigin()
   fullName: Noname.Core.Entities.PlayerEntity.GetAttackOrigin()
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 공격이 발사되는 위치를 반환합니다.
+  example: []
   syntax:
     content: public Float2 GetAttackOrigin()
     return:
@@ -251,11 +251,11 @@ items:
   nameWithType: PlayerEntity.ConfigureExperienceProgression(float, float, int)
   fullName: Noname.Core.Entities.PlayerEntity.ConfigureExperienceProgression(float, float, int)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 레벨업 곡선을 초기화합니다.
+  example: []
   syntax:
     content: public void ConfigureExperienceProgression(float startingThreshold, float growthFactor, int startingLevel = 1)
     parameters:
@@ -281,11 +281,11 @@ items:
   nameWithType: PlayerEntity.AddExperience(float)
   fullName: Noname.Core.Entities.PlayerEntity.AddExperience(float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 경험치를 더하고, 레벨업 여부를 반환합니다.
+  example: []
   syntax:
     content: public bool AddExperience(float amount)
     parameters:
@@ -309,11 +309,11 @@ items:
   nameWithType: PlayerEntity.ApplyAbility(GameplayAbilityDefinition)
   fullName: Noname.Core.Entities.PlayerEntity.ApplyAbility(Noname.Core.ValueObjects.GameplayAbilityDefinition)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 게임 플레이 어빌리티를 적용합니다.
+  example: []
   syntax:
     content: public void ApplyAbility(GameplayAbilityDefinition ability)
     parameters:
@@ -332,11 +332,11 @@ items:
   nameWithType: PlayerEntity.ApplyModifier(GameplayAttribute, ModifierOperation, float)
   fullName: Noname.Core.Entities.PlayerEntity.ApplyModifier(Noname.Core.ValueObjects.GameplayAttribute, Noname.Core.ValueObjects.ModifierOperation, float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 개별 속성에 대한 수치 변화를 적용합니다.
+  example: []
   syntax:
     content: public void ApplyModifier(GameplayAttribute attribute, ModifierOperation operation, float value)
     parameters:
@@ -362,11 +362,11 @@ items:
   nameWithType: PlayerEntity.SetLuck(float)
   fullName: Noname.Core.Entities.PlayerEntity.SetLuck(float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 운 수치를 설정합니다.
+  example: []
   syntax:
     content: public void SetLuck(float luck)
     parameters:
@@ -388,11 +388,11 @@ items:
   nameWithType: PlayerEntity.AddGold(float)
   fullName: Noname.Core.Entities.PlayerEntity.AddGold(float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 골드를 추가합니다.
+  example: []
   syntax:
     content: public void AddGold(float amount)
     parameters:
@@ -414,11 +414,11 @@ items:
   nameWithType: PlayerEntity.Heal(float)
   fullName: Noname.Core.Entities.PlayerEntity.Heal(float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 체력을 회복시키고 회복량을 반환합니다.
+  example: []
   syntax:
     content: public float Heal(float amount)
     parameters:
@@ -442,11 +442,11 @@ items:
   nameWithType: PlayerEntity.ApplyDamage(float)
   fullName: Noname.Core.Entities.PlayerEntity.ApplyDamage(float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 피해를 적용하고 실제 감소량을 반환합니다.
+  example: []
   syntax:
     content: public float ApplyDamage(float amount)
     parameters:
@@ -470,11 +470,11 @@ items:
   nameWithType: PlayerEntity.SpawnPosition
   fullName: Noname.Core.Entities.PlayerEntity.SpawnPosition
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 스폰 위치입니다.
+  example: []
   syntax:
     content: public Float2 SpawnPosition { get; }
     parameters: []
@@ -493,11 +493,11 @@ items:
   nameWithType: PlayerEntity.Position
   fullName: Noname.Core.Entities.PlayerEntity.Position
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 현재 위치입니다.
+  example: []
   syntax:
     content: public Float2 Position { get; }
     parameters: []
@@ -516,11 +516,11 @@ items:
   nameWithType: PlayerEntity.MoveSpeed
   fullName: Noname.Core.Entities.PlayerEntity.MoveSpeed
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 이동 속도입니다.
+  example: []
   syntax:
     content: public float MoveSpeed { get; }
     parameters: []
@@ -539,11 +539,11 @@ items:
   nameWithType: PlayerEntity.AttackDamage
   fullName: Noname.Core.Entities.PlayerEntity.AttackDamage
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 기본 공격력입니다.
+  example: []
   syntax:
     content: public float AttackDamage { get; }
     parameters: []
@@ -562,11 +562,11 @@ items:
   nameWithType: PlayerEntity.AttackRange
   fullName: Noname.Core.Entities.PlayerEntity.AttackRange
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 공격 사거리입니다.
+  example: []
   syntax:
     content: public float AttackRange { get; }
     parameters: []
@@ -585,11 +585,11 @@ items:
   nameWithType: PlayerEntity.AttackCooldown
   fullName: Noname.Core.Entities.PlayerEntity.AttackCooldown
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 공격 쿨다운(초)입니다.
+  example: []
   syntax:
     content: public float AttackCooldown { get; }
     parameters: []
@@ -608,11 +608,11 @@ items:
   nameWithType: PlayerEntity.Level
   fullName: Noname.Core.Entities.PlayerEntity.Level
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 현재 레벨입니다.
+  example: []
   syntax:
     content: public int Level { get; }
     parameters: []
@@ -631,11 +631,11 @@ items:
   nameWithType: PlayerEntity.CurrentExperience
   fullName: Noname.Core.Entities.PlayerEntity.CurrentExperience
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 누적 경험치입니다.
+  example: []
   syntax:
     content: public float CurrentExperience { get; }
     parameters: []
@@ -654,11 +654,11 @@ items:
   nameWithType: PlayerEntity.ExperienceForNextLevel
   fullName: Noname.Core.Entities.PlayerEntity.ExperienceForNextLevel
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 다음 레벨업까지 필요한 경험치입니다.
+  example: []
   syntax:
     content: public float ExperienceForNextLevel { get; }
     parameters: []
@@ -677,11 +677,11 @@ items:
   nameWithType: PlayerEntity.CanAttack
   fullName: Noname.Core.Entities.PlayerEntity.CanAttack
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 즉시 공격 가능 여부입니다.
+  example: []
   syntax:
     content: public bool CanAttack { get; }
     parameters: []
@@ -700,11 +700,11 @@ items:
   nameWithType: PlayerEntity.MaxHealth
   fullName: Noname.Core.Entities.PlayerEntity.MaxHealth
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 최대 체력입니다.
+  example: []
   syntax:
     content: public float MaxHealth { get; }
     parameters: []
@@ -723,11 +723,11 @@ items:
   nameWithType: PlayerEntity.CurrentHealth
   fullName: Noname.Core.Entities.PlayerEntity.CurrentHealth
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 현재 체력입니다.
+  example: []
   syntax:
     content: public float CurrentHealth { get; }
     parameters: []
@@ -746,11 +746,11 @@ items:
   nameWithType: PlayerEntity.Luck
   fullName: Noname.Core.Entities.PlayerEntity.Luck
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 운(Luck) 수치입니다.
+  example: []
   syntax:
     content: public float Luck { get; }
     parameters: []
@@ -769,11 +769,11 @@ items:
   nameWithType: PlayerEntity.Gold
   fullName: Noname.Core.Entities.PlayerEntity.Gold
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/PlayerEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 보유 골드입니다.
+  example: []
   syntax:
     content: public float Gold { get; }
     parameters: []

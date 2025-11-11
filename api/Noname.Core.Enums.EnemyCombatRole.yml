@@ -14,11 +14,11 @@ items:
   nameWithType: EnemyCombatRole
   fullName: Noname.Core.Enums.EnemyCombatRole
   type: Enum
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Enums/EnemyCombatRole.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Enums
+  summary: 적 전투 스타일을 정의합니다.
+  example: []
   syntax:
     content: public enum EnemyCombatRole
     content.vb: Public Enum EnemyCombatRole
@@ -33,11 +33,11 @@ items:
   nameWithType: EnemyCombatRole.Melee
   fullName: Noname.Core.Enums.EnemyCombatRole.Melee
   type: Field
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Enums/EnemyCombatRole.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Enums
+  summary: 근접 형태로 접근해 공격합니다.
+  example: []
   syntax:
     content: Melee = 0
     return:
@@ -53,11 +53,11 @@ items:
   nameWithType: EnemyCombatRole.Ranged
   fullName: Noname.Core.Enums.EnemyCombatRole.Ranged
   type: Field
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Enums/EnemyCombatRole.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Enums
+  summary: 원거리에서 사거리를 유지합니다.
+  example: []
   syntax:
     content: Ranged = 1
     return:

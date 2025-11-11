@@ -15,11 +15,11 @@ items:
   nameWithType: GameplayEffectDefinition
   fullName: Noname.Core.ValueObjects.GameplayEffectDefinition
   type: Class
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/GameplayEffectDefinition.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.ValueObjects
+  summary: 하나 이상의 스탯 수정자를 묶은 Gameplay Effect 정의입니다.
+  example: []
   syntax:
     content: 'public sealed class GameplayEffectDefinition : ScriptableObject'
     content.vb: Public NotInheritable Class GameplayEffectDefinition Inherits ScriptableObject
@@ -36,11 +36,11 @@ items:
   nameWithType: GameplayEffectDefinition.Apply(PlayerEntity)
   fullName: Noname.Core.ValueObjects.GameplayEffectDefinition.Apply(Noname.Core.Entities.PlayerEntity)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/GameplayEffectDefinition.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.ValueObjects
+  summary: 보유 중인 모든 Modifier를 플레이어에게 적용합니다.
+  example: []
   syntax:
     content: public void Apply(PlayerEntity target)
     parameters:
@@ -59,8 +59,6 @@ items:
   nameWithType: GameplayEffectDefinition.GameplayEffectDefinition()
   fullName: Noname.Core.ValueObjects.GameplayEffectDefinition.GameplayEffectDefinition()
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/GameplayEffectDefinition.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.ValueObjects
@@ -82,11 +80,11 @@ items:
   nameWithType: GameplayEffectDefinition.Modifiers
   fullName: Noname.Core.ValueObjects.GameplayEffectDefinition.Modifiers
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/ValueObjects/GameplayEffectDefinition.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.ValueObjects
+  summary: 실행될 수정자 목록.
+  example: []
   syntax:
     content: public IReadOnlyList<GameplayEffectModifier> Modifiers { get; }
     parameters: []

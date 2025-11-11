@@ -14,11 +14,11 @@ items:
   nameWithType: MovePlayerUseCase
   fullName: Noname.Application.UseCases.MovePlayerUseCase
   type: Class
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/UseCases/MovePlayerUseCase.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.UseCases
+  summary: 플레이어 이동 및 쿨다운 갱신을 수행하는 유즈케이스입니다.
+  example: []
   syntax:
     content: public sealed class MovePlayerUseCase
     content.vb: Public NotInheritable Class MovePlayerUseCase
@@ -42,8 +42,6 @@ items:
   nameWithType: MovePlayerUseCase.MovePlayerUseCase(IGameStateRepository)
   fullName: Noname.Application.UseCases.MovePlayerUseCase.MovePlayerUseCase(Noname.Application.Ports.IGameStateRepository)
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/UseCases/MovePlayerUseCase.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.UseCases
@@ -68,11 +66,11 @@ items:
   nameWithType: MovePlayerUseCase.Execute(float, float)
   fullName: Noname.Application.UseCases.MovePlayerUseCase.Execute(float, float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/UseCases/MovePlayerUseCase.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.UseCases
+  summary: 주어진 입력 값으로 플레이어를 이동시킵니다.
+  example: []
   syntax:
     content: public void Execute(float movement, float deltaTime)
     parameters:

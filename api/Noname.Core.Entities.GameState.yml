@@ -39,11 +39,11 @@ items:
   nameWithType: GameState
   fullName: Noname.Core.Entities.GameState
   type: Class
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 플레이어/적/투사체/드롭 등 런타임 진행 상황을 보관하는 루트 상태입니다.
+  example: []
   syntax:
     content: public sealed class GameState
     content.vb: Public NotInheritable Class GameState
@@ -67,22 +67,26 @@ items:
   nameWithType: GameState.GameState(PlayerEntity, FortressEntity, Float2, Float2)
   fullName: Noname.Core.Entities.GameState.GameState(Noname.Core.Entities.PlayerEntity, Noname.Core.Entities.FortressEntity, Noname.Core.Primitives.Float2, Noname.Core.Primitives.Float2)
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 게임 상태를 구성하는 핵심 엔티티와 스폰 영역을 지정합니다.
+  example: []
   syntax:
     content: public GameState(PlayerEntity player, FortressEntity fortress, Float2 enemySpawnMin, Float2 enemySpawnMax)
     parameters:
     - id: player
       type: Noname.Core.Entities.PlayerEntity
+      description: 플레이어 엔티티.
     - id: fortress
       type: Noname.Core.Entities.FortressEntity
+      description: 거점 엔티티.
     - id: enemySpawnMin
       type: Noname.Core.Primitives.Float2
+      description: 적 스폰 영역 최소 좌표.
     - id: enemySpawnMax
       type: Noname.Core.Primitives.Float2
+      description: 적 스폰 영역 최대 좌표.
     content.vb: Public Sub New(player As PlayerEntity, fortress As FortressEntity, enemySpawnMin As Float2, enemySpawnMax As Float2)
   overload: Noname.Core.Entities.GameState.#ctor*
   nameWithType.vb: GameState.New(PlayerEntity, FortressEntity, Float2, Float2)
@@ -99,11 +103,11 @@ items:
   nameWithType: GameState.Reset()
   fullName: Noname.Core.Entities.GameState.Reset()
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 플레이어·거점·컬렉션을 모두 초기화합니다.
+  example: []
   syntax:
     content: public void Reset()
     content.vb: Public Sub Reset()
@@ -119,11 +123,11 @@ items:
   nameWithType: GameState.AdvanceTime(float)
   fullName: Noname.Core.Entities.GameState.AdvanceTime(float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 경과 시간을 누적합니다.
+  example: []
   syntax:
     content: public void AdvanceTime(float deltaTime)
     parameters:
@@ -145,11 +149,11 @@ items:
   nameWithType: GameState.GetNextEnemyId()
   fullName: Noname.Core.Entities.GameState.GetNextEnemyId()
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 적 ID 시퀀스를 증가시키고 값을 반환합니다.
+  example: []
   syntax:
     content: public int GetNextEnemyId()
     return:
@@ -167,11 +171,11 @@ items:
   nameWithType: GameState.AddEnemy(EnemyEntity)
   fullName: Noname.Core.Entities.GameState.AddEnemy(Noname.Core.Entities.EnemyEntity)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 적을 상태에 추가합니다.
+  example: []
   syntax:
     content: public void AddEnemy(EnemyEntity enemy)
     parameters:
@@ -190,11 +194,11 @@ items:
   nameWithType: GameState.RemoveDeadEnemies()
   fullName: Noname.Core.Entities.GameState.RemoveDeadEnemies()
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 사망한 적을 컬렉션에서 제거합니다.
+  example: []
   syntax:
     content: public void RemoveDeadEnemies()
     content.vb: Public Sub RemoveDeadEnemies()
@@ -210,11 +214,11 @@ items:
   nameWithType: GameState.ClearEnemies()
   fullName: Noname.Core.Entities.GameState.ClearEnemies()
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 적 목록을 모두 비웁니다.
+  example: []
   syntax:
     content: public void ClearEnemies()
     content.vb: Public Sub ClearEnemies()
@@ -230,11 +234,11 @@ items:
   nameWithType: GameState.AddPlayerProjectile(Float2, Float2, float, float, Float2)
   fullName: Noname.Core.Entities.GameState.AddPlayerProjectile(Noname.Core.Primitives.Float2, Noname.Core.Primitives.Float2, float, float, Noname.Core.Primitives.Float2)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 플레이어 발사체를 생성합니다.
+  example: []
   syntax:
     content: public ProjectileEntity AddPlayerProjectile(Float2 position, Float2 velocity, float damage, float explosionRadius, Float2 targetPosition)
     parameters:
@@ -266,11 +270,11 @@ items:
   nameWithType: GameState.AddEnemyProjectile(int, Float2, Float2, float, Float2)
   fullName: Noname.Core.Entities.GameState.AddEnemyProjectile(int, Noname.Core.Primitives.Float2, Noname.Core.Primitives.Float2, float, Noname.Core.Primitives.Float2)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 적 발사체를 생성합니다.
+  example: []
   syntax:
     content: public ProjectileEntity AddEnemyProjectile(int enemyId, Float2 position, Float2 velocity, float damage, Float2 targetPosition)
     parameters:
@@ -302,11 +306,11 @@ items:
   nameWithType: GameState.QueueResourceDrop(ResourceDropType, Float2, float, float)
   fullName: Noname.Core.Entities.GameState.QueueResourceDrop(Noname.Core.Enums.ResourceDropType, Noname.Core.Primitives.Float2, float, float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 지연 시간 이후 등장할 자원 드롭을 등록합니다.
+  example: []
   syntax:
     content: public ResourceDropEntity QueueResourceDrop(ResourceDropType type, Float2 position, float amount, float delay)
     parameters:
@@ -336,11 +340,11 @@ items:
   nameWithType: GameState.CollectReadyResourceDrops(float, List<ResourceDropEntity>)
   fullName: Noname.Core.Entities.GameState.CollectReadyResourceDrops(float, System.Collections.Generic.List<Noname.Core.Entities.ResourceDropEntity>)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 드롭 타이머를 갱신하고, 준비 완료된 드롭을 readyList로 반환합니다.
+  example: []
   syntax:
     content: public int CollectReadyResourceDrops(float deltaTime, List<ResourceDropEntity> readyList)
     parameters:
@@ -366,11 +370,11 @@ items:
   nameWithType: GameState.SetFixedBombardment(Float2)
   fullName: Noname.Core.Entities.GameState.SetFixedBombardment(Noname.Core.Primitives.Float2)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 폭격 지점을 설정합니다.
+  example: []
   syntax:
     content: public void SetFixedBombardment(Float2 position)
     parameters:
@@ -389,11 +393,11 @@ items:
   nameWithType: GameState.ClearFixedBombardment()
   fullName: Noname.Core.Entities.GameState.ClearFixedBombardment()
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 폭격 지점을 해제합니다.
+  example: []
   syntax:
     content: public void ClearFixedBombardment()
     content.vb: Public Sub ClearFixedBombardment()
@@ -409,11 +413,11 @@ items:
   nameWithType: GameState.RemovePlayerProjectileAt(int)
   fullName: Noname.Core.Entities.GameState.RemovePlayerProjectileAt(int)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 플레이어 발사체를 인덱스로 제거합니다.
+  example: []
   syntax:
     content: public void RemovePlayerProjectileAt(int index)
     parameters:
@@ -435,11 +439,11 @@ items:
   nameWithType: GameState.RemoveEnemyProjectileAt(int)
   fullName: Noname.Core.Entities.GameState.RemoveEnemyProjectileAt(int)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 적 발사체를 인덱스로 제거합니다.
+  example: []
   syntax:
     content: public void RemoveEnemyProjectileAt(int index)
     parameters:
@@ -461,11 +465,11 @@ items:
   nameWithType: GameState.Player
   fullName: Noname.Core.Entities.GameState.Player
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 플레이어 엔티티입니다.
+  example: []
   syntax:
     content: public PlayerEntity Player { get; }
     parameters: []
@@ -484,11 +488,11 @@ items:
   nameWithType: GameState.Fortress
   fullName: Noname.Core.Entities.GameState.Fortress
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 거점 엔티티입니다.
+  example: []
   syntax:
     content: public FortressEntity Fortress { get; }
     parameters: []
@@ -507,11 +511,11 @@ items:
   nameWithType: GameState.Enemies
   fullName: Noname.Core.Entities.GameState.Enemies
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 현재 존재하는 적 목록입니다.
+  example: []
   syntax:
     content: public IReadOnlyList<EnemyEntity> Enemies { get; }
     parameters: []
@@ -530,11 +534,11 @@ items:
   nameWithType: GameState.PlayerProjectiles
   fullName: Noname.Core.Entities.GameState.PlayerProjectiles
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 플레이어 발사체 목록입니다.
+  example: []
   syntax:
     content: public IReadOnlyList<ProjectileEntity> PlayerProjectiles { get; }
     parameters: []
@@ -553,11 +557,11 @@ items:
   nameWithType: GameState.EnemyProjectiles
   fullName: Noname.Core.Entities.GameState.EnemyProjectiles
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 적 발사체 목록입니다.
+  example: []
   syntax:
     content: public IReadOnlyList<ProjectileEntity> EnemyProjectiles { get; }
     parameters: []
@@ -576,11 +580,11 @@ items:
   nameWithType: GameState.ResourceDrops
   fullName: Noname.Core.Entities.GameState.ResourceDrops
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 대기 중인 자원 드롭 목록입니다.
+  example: []
   syntax:
     content: public IReadOnlyList<ResourceDropEntity> ResourceDrops { get; }
     parameters: []
@@ -599,11 +603,11 @@ items:
   nameWithType: GameState.EnemySpawnMin
   fullName: Noname.Core.Entities.GameState.EnemySpawnMin
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 적 스폰 영역 최소 좌표입니다.
+  example: []
   syntax:
     content: public Float2 EnemySpawnMin { get; }
     parameters: []
@@ -622,11 +626,11 @@ items:
   nameWithType: GameState.EnemySpawnMax
   fullName: Noname.Core.Entities.GameState.EnemySpawnMax
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 적 스폰 영역 최대 좌표입니다.
+  example: []
   syntax:
     content: public Float2 EnemySpawnMax { get; }
     parameters: []
@@ -645,11 +649,11 @@ items:
   nameWithType: GameState.ElapsedTime
   fullName: Noname.Core.Entities.GameState.ElapsedTime
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 게임이 시작된 이후 누적 시간입니다.
+  example: []
   syntax:
     content: public float ElapsedTime { get; }
     parameters: []
@@ -668,11 +672,11 @@ items:
   nameWithType: GameState.IsGameOver
   fullName: Noname.Core.Entities.GameState.IsGameOver
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 거점 파괴 여부입니다.
+  example: []
   syntax:
     content: public bool IsGameOver { get; }
     parameters: []
@@ -691,11 +695,11 @@ items:
   nameWithType: GameState.HasFixedBombardment
   fullName: Noname.Core.Entities.GameState.HasFixedBombardment
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 고정 폭격 지점 설정 여부입니다.
+  example: []
   syntax:
     content: public bool HasFixedBombardment { get; }
     parameters: []
@@ -714,11 +718,11 @@ items:
   nameWithType: GameState.FixedBombardmentPosition
   fullName: Noname.Core.Entities.GameState.FixedBombardmentPosition
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/GameState.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 고정 폭격 지점 좌표입니다.
+  example: []
   syntax:
     content: public Float2 FixedBombardmentPosition { get; }
     parameters: []

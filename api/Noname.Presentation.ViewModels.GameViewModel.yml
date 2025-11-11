@@ -37,11 +37,11 @@ items:
   nameWithType: GameViewModel
   fullName: Noname.Presentation.ViewModels.GameViewModel
   type: Class
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 입력, 시뮬레이션, 이벤트 브로커 역할을 통합하는 최상위 뷰모델입니다.
+  example: []
   syntax:
     content: public sealed class GameViewModel
     content.vb: Public NotInheritable Class GameViewModel
@@ -65,11 +65,11 @@ items:
   nameWithType: GameViewModel.GameViewModel(StartGameUseCase, MovePlayerUseCase, DefenseSimulationService, IGameInputReader, IGameStateRepository)
   fullName: Noname.Presentation.ViewModels.GameViewModel.GameViewModel(Noname.Application.UseCases.StartGameUseCase, Noname.Application.UseCases.MovePlayerUseCase, Noname.Application.Services.DefenseSimulationService, Noname.Application.Ports.IGameInputReader, Noname.Application.Ports.IGameStateRepository)
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 턴 진행에 필요한 유즈케이스와 서비스를 주입합니다.
+  example: []
   syntax:
     content: public GameViewModel(StartGameUseCase startGame, MovePlayerUseCase movePlayer, DefenseSimulationService simulationService, IGameInputReader inputReader, IGameStateRepository repository)
     parameters:
@@ -99,11 +99,11 @@ items:
   nameWithType: GameViewModel.Initialize(DefenseGameSettings)
   fullName: Noname.Presentation.ViewModels.GameViewModel.Initialize(Noname.Core.ValueObjects.DefenseGameSettings)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 설정 값을 주입하고 상태를 초기화합니다.
+  example: []
   syntax:
     content: public void Initialize(DefenseGameSettings settings)
     parameters:
@@ -122,11 +122,11 @@ items:
   nameWithType: GameViewModel.Tick(float)
   fullName: Noname.Presentation.ViewModels.GameViewModel.Tick(float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 입력 처리, 시뮬레이션 실행, 이벤트 브로드캐스트를 수행합니다.
+  example: []
   syntax:
     content: public void Tick(float deltaTime)
     parameters:
@@ -148,11 +148,11 @@ items:
   nameWithType: GameViewModel.SelectAbility(int)
   fullName: Noname.Presentation.ViewModels.GameViewModel.SelectAbility(int)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 표시 중인 어빌리티 목록에서 index에 해당하는 항목을 적용합니다.
+  example: []
   syntax:
     content: public void SelectAbility(int index)
     parameters:
@@ -174,11 +174,11 @@ items:
   nameWithType: GameViewModel.ForceAbilitySelection()
   fullName: Noname.Presentation.ViewModels.GameViewModel.ForceAbilitySelection()
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: (디버그) 조건과 상관없이 어빌리티 선택 단계를 강제로 엽니다.
+  example: []
   syntax:
     content: public bool ForceAbilitySelection()
     return:
@@ -196,11 +196,11 @@ items:
   nameWithType: GameViewModel.ApplyResourceDropEffect(ResourceDropCollectedEvent)
   fullName: Noname.Presentation.ViewModels.GameViewModel.ApplyResourceDropEffect(Noname.Application.ValueObjects.ResourceDropCollectedEvent)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 자원 드롭 효과를 적용하고 필요한 후속 로직을 수행합니다.
+  example: []
   syntax:
     content: public void ApplyResourceDropEffect(ResourceDropCollectedEvent evt)
     parameters:
@@ -219,11 +219,11 @@ items:
   nameWithType: GameViewModel.PlayerPositionChanged
   fullName: Noname.Presentation.ViewModels.GameViewModel.PlayerPositionChanged
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 플레이어 위치가 변경될 때 발생합니다.
+  example: []
   syntax:
     content: public event Action<Float2> PlayerPositionChanged
     return:
@@ -240,11 +240,11 @@ items:
   nameWithType: GameViewModel.FortressHealthChanged
   fullName: Noname.Presentation.ViewModels.GameViewModel.FortressHealthChanged
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 거점 현재/최대 체력이 변경될 때 발생합니다.
+  example: []
   syntax:
     content: public event Action<float, float> FortressHealthChanged
     return:
@@ -261,11 +261,11 @@ items:
   nameWithType: GameViewModel.EnemySpawned
   fullName: Noname.Presentation.ViewModels.GameViewModel.EnemySpawned
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 새 적이 스폰되면 호출됩니다.
+  example: []
   syntax:
     content: public event Action<EnemyEntity> EnemySpawned
     return:
@@ -282,11 +282,11 @@ items:
   nameWithType: GameViewModel.EnemyRemoved
   fullName: Noname.Presentation.ViewModels.GameViewModel.EnemyRemoved
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 적이 제거됐을 때 호출됩니다.
+  example: []
   syntax:
     content: public event Action<int> EnemyRemoved
     return:
@@ -303,11 +303,11 @@ items:
   nameWithType: GameViewModel.EnemyPositionChanged
   fullName: Noname.Presentation.ViewModels.GameViewModel.EnemyPositionChanged
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 적 위치가 갱신됐을 때 호출됩니다.
+  example: []
   syntax:
     content: public event Action<int, Float2> EnemyPositionChanged
     return:
@@ -324,11 +324,11 @@ items:
   nameWithType: GameViewModel.EnemyHealthChanged
   fullName: Noname.Presentation.ViewModels.GameViewModel.EnemyHealthChanged
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 적 체력이 변했을 때 호출됩니다.
+  example: []
   syntax:
     content: public event Action<int, float> EnemyHealthChanged
     return:
@@ -345,11 +345,11 @@ items:
   nameWithType: GameViewModel.FortressDamaged
   fullName: Noname.Presentation.ViewModels.GameViewModel.FortressDamaged
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 거점이 피해를 입을 때 피해량을 전달합니다.
+  example: []
   syntax:
     content: public event Action<float> FortressDamaged
     return:
@@ -366,11 +366,11 @@ items:
   nameWithType: GameViewModel.PlayerProjectileFired
   fullName: Noname.Presentation.ViewModels.GameViewModel.PlayerProjectileFired
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 플레이어 투사체 발사 이벤트.
+  example: []
   syntax:
     content: public event Action<PlayerProjectileFiredEvent> PlayerProjectileFired
     return:
@@ -387,11 +387,11 @@ items:
   nameWithType: GameViewModel.EnemyProjectileFired
   fullName: Noname.Presentation.ViewModels.GameViewModel.EnemyProjectileFired
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 적 투사체 발사 이벤트.
+  example: []
   syntax:
     content: public event Action<EnemyProjectileFiredEvent> EnemyProjectileFired
     return:
@@ -408,11 +408,11 @@ items:
   nameWithType: GameViewModel.ProjectileImpactOccurred
   fullName: Noname.Presentation.ViewModels.GameViewModel.ProjectileImpactOccurred
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 투사체 충돌 이벤트.
+  example: []
   syntax:
     content: public event Action<ProjectileImpactEvent> ProjectileImpactOccurred
     return:
@@ -429,11 +429,11 @@ items:
   nameWithType: GameViewModel.ResourceDropSpawned
   fullName: Noname.Presentation.ViewModels.GameViewModel.ResourceDropSpawned
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 새 자원 드롭이 생성됐을 때 호출됩니다.
+  example: []
   syntax:
     content: public event Action<ResourceDropSpawnedEvent> ResourceDropSpawned
     return:
@@ -450,11 +450,11 @@ items:
   nameWithType: GameViewModel.ResourceDropCollected
   fullName: Noname.Presentation.ViewModels.GameViewModel.ResourceDropCollected
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 자원 드롭이 수집됐을 때 호출됩니다.
+  example: []
   syntax:
     content: public event Action<ResourceDropCollectedEvent> ResourceDropCollected
     return:
@@ -471,11 +471,11 @@ items:
   nameWithType: GameViewModel.PlayerExperienceChanged
   fullName: Noname.Presentation.ViewModels.GameViewModel.PlayerExperienceChanged
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 플레이어 경험치/레벨 상태가 바뀌면 호출됩니다.
+  example: []
   syntax:
     content: public event Action<float, float, int> PlayerExperienceChanged
     return:
@@ -492,11 +492,11 @@ items:
   nameWithType: GameViewModel.AbilityChoicesPresented
   fullName: Noname.Presentation.ViewModels.GameViewModel.AbilityChoicesPresented
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 어빌리티 선택지가 준비됐음을 알립니다.
+  example: []
   syntax:
     content: public event Action<GameplayAbilityDefinition[]> AbilityChoicesPresented
     return:
@@ -513,11 +513,11 @@ items:
   nameWithType: GameViewModel.AbilitySelectionCleared
   fullName: Noname.Presentation.ViewModels.GameViewModel.AbilitySelectionCleared
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 어빌리티 선택 UI가 닫혔음을 알립니다.
+  example: []
   syntax:
     content: public event Action AbilitySelectionCleared
     return:
@@ -534,11 +534,11 @@ items:
   nameWithType: GameViewModel.GamePaused
   fullName: Noname.Presentation.ViewModels.GameViewModel.GamePaused
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 게임이 특정 이유로 일시 정지됐음을 알립니다.
+  example: []
   syntax:
     content: public event Action<GameViewPauseReason> GamePaused
     return:
@@ -555,11 +555,11 @@ items:
   nameWithType: GameViewModel.GameResumed
   fullName: Noname.Presentation.ViewModels.GameViewModel.GameResumed
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 일시 정지가 해제됐음을 알립니다.
+  example: []
   syntax:
     content: public event Action<GameViewPauseReason> GameResumed
     return:
@@ -576,11 +576,11 @@ items:
   nameWithType: GameViewModel.GameOver
   fullName: Noname.Presentation.ViewModels.GameViewModel.GameOver
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 거점 파괴 등으로 게임이 끝났을 때 호출됩니다.
+  example: []
   syntax:
     content: public event Action GameOver
     return:
@@ -597,11 +597,11 @@ items:
   nameWithType: GameViewModel.BombardmentPointChanged
   fullName: Noname.Presentation.ViewModels.GameViewModel.BombardmentPointChanged
   type: Event
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/ViewModels/GameViewModel.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.ViewModels
+  summary: 폭격 고정 지점이 설정/해제될 때 호출됩니다.
+  example: []
   syntax:
     content: public event Action<Float2?> BombardmentPointChanged
     return:

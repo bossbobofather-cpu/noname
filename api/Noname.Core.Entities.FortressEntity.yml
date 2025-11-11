@@ -19,11 +19,11 @@ items:
   nameWithType: FortressEntity
   fullName: Noname.Core.Entities.FortressEntity
   type: Class
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/FortressEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 플레이어가 지켜야 하는 거점(성벽)의 체력 상태를 관리합니다.
+  example: []
   syntax:
     content: public sealed class FortressEntity
     content.vb: Public NotInheritable Class FortressEntity
@@ -47,16 +47,17 @@ items:
   nameWithType: FortressEntity.FortressEntity(float)
   fullName: Noname.Core.Entities.FortressEntity.FortressEntity(float)
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/FortressEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 거점을 지정된 최대 체력으로 초기화합니다.
+  example: []
   syntax:
     content: public FortressEntity(float maxHealth)
     parameters:
     - id: maxHealth
       type: System.Single
+      description: 거점 최대 체력.
     content.vb: Public Sub New(maxHealth As Single)
   overload: Noname.Core.Entities.FortressEntity.#ctor*
   nameWithType.vb: FortressEntity.New(Single)
@@ -73,11 +74,11 @@ items:
   nameWithType: FortressEntity.Reset()
   fullName: Noname.Core.Entities.FortressEntity.Reset()
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/FortressEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 체력을 최대치로 되돌립니다.
+  example: []
   syntax:
     content: public void Reset()
     content.vb: Public Sub Reset()
@@ -93,11 +94,11 @@ items:
   nameWithType: FortressEntity.ApplyDamage(float)
   fullName: Noname.Core.Entities.FortressEntity.ApplyDamage(float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/FortressEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 피해를 적용하고 실제 감소한 양을 돌려줍니다.
+  example: []
   syntax:
     content: public float ApplyDamage(float amount)
     parameters:
@@ -121,11 +122,11 @@ items:
   nameWithType: FortressEntity.Heal(float)
   fullName: Noname.Core.Entities.FortressEntity.Heal(float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/FortressEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 회복량을 적용하고 실제 회복된 양을 돌려줍니다.
+  example: []
   syntax:
     content: public float Heal(float amount)
     parameters:
@@ -149,11 +150,11 @@ items:
   nameWithType: FortressEntity.MaxHealth
   fullName: Noname.Core.Entities.FortressEntity.MaxHealth
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/FortressEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 거점이 가질 수 있는 최대 체력입니다.
+  example: []
   syntax:
     content: public float MaxHealth { get; }
     parameters: []
@@ -172,11 +173,11 @@ items:
   nameWithType: FortressEntity.CurrentHealth
   fullName: Noname.Core.Entities.FortressEntity.CurrentHealth
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/FortressEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 현재 체력입니다.
+  example: []
   syntax:
     content: public float CurrentHealth { get; }
     parameters: []
@@ -195,11 +196,11 @@ items:
   nameWithType: FortressEntity.IsDestroyed
   fullName: Noname.Core.Entities.FortressEntity.IsDestroyed
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/FortressEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 체력이 0 이하인지 여부를 반환합니다.
+  example: []
   syntax:
     content: public bool IsDestroyed { get; }
     parameters: []

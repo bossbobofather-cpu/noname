@@ -18,11 +18,11 @@ items:
   nameWithType: EnemyProjectileFiredEvent
   fullName: Noname.Application.ValueObjects.EnemyProjectileFiredEvent
   type: Struct
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/EnemyProjectileFiredEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 적이 투사체를 발사했을 때 전달되는 이벤트입니다.
+  example: []
   syntax:
     content: public readonly struct EnemyProjectileFiredEvent
     content.vb: Public Structure EnemyProjectileFiredEvent
@@ -44,8 +44,6 @@ items:
   nameWithType: EnemyProjectileFiredEvent.EnemyProjectileFiredEvent(int, int, Float2, Float2, float)
   fullName: Noname.Application.ValueObjects.EnemyProjectileFiredEvent.EnemyProjectileFiredEvent(int, int, Noname.Core.Primitives.Float2, Noname.Core.Primitives.Float2, float)
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/EnemyProjectileFiredEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
@@ -78,11 +76,11 @@ items:
   nameWithType: EnemyProjectileFiredEvent.ProjectileId
   fullName: Noname.Application.ValueObjects.EnemyProjectileFiredEvent.ProjectileId
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/EnemyProjectileFiredEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 생성된 투사체 ID.
+  example: []
   syntax:
     content: public int ProjectileId { get; }
     parameters: []
@@ -101,11 +99,11 @@ items:
   nameWithType: EnemyProjectileFiredEvent.SourceEnemyId
   fullName: Noname.Application.ValueObjects.EnemyProjectileFiredEvent.SourceEnemyId
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/EnemyProjectileFiredEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 발사한 적 ID.
+  example: []
   syntax:
     content: public int SourceEnemyId { get; }
     parameters: []
@@ -124,11 +122,11 @@ items:
   nameWithType: EnemyProjectileFiredEvent.Origin
   fullName: Noname.Application.ValueObjects.EnemyProjectileFiredEvent.Origin
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/EnemyProjectileFiredEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 시작 위치.
+  example: []
   syntax:
     content: public Float2 Origin { get; }
     parameters: []
@@ -147,11 +145,11 @@ items:
   nameWithType: EnemyProjectileFiredEvent.Target
   fullName: Noname.Application.ValueObjects.EnemyProjectileFiredEvent.Target
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/EnemyProjectileFiredEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 목표 위치.
+  example: []
   syntax:
     content: public Float2 Target { get; }
     parameters: []
@@ -170,11 +168,11 @@ items:
   nameWithType: EnemyProjectileFiredEvent.Speed
   fullName: Noname.Application.ValueObjects.EnemyProjectileFiredEvent.Speed
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/EnemyProjectileFiredEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 발사 속도.
+  example: []
   syntax:
     content: public float Speed { get; }
     parameters: []

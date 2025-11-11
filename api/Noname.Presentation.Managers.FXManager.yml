@@ -16,11 +16,14 @@ items:
   nameWithType: FXManager
   fullName: Noname.Presentation.Managers.FXManager
   type: Class
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Managers/FXManager.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Managers
+  summary: >-
+    연출용 파티클/후광 효과를 한곳에서 관리합니다.
+
+    현재는 로그만 남기지만 실제 FX 시스템으로 교체하기 쉽도록 추상화돼 있습니다.
+  example: []
   syntax:
     content: 'public sealed class FXManager : MonoBehaviour'
     content.vb: Public NotInheritable Class FXManager Inherits MonoBehaviour
@@ -37,11 +40,11 @@ items:
   nameWithType: FXManager.PlayResourcePickupFx(Vector3, ResourceDropType)
   fullName: Noname.Presentation.Managers.FXManager.PlayResourcePickupFx(UnityEngine.Vector3, Noname.Core.Enums.ResourceDropType)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Managers/FXManager.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Managers
+  summary: 자원 드롭 수집 위치에 FX를 재생합니다.
+  example: []
   syntax:
     content: public void PlayResourcePickupFx(Vector3 worldPosition, ResourceDropType type)
     parameters:
@@ -62,11 +65,11 @@ items:
   nameWithType: FXManager.PlayProjectileImpactFx(Vector3, ProjectileFaction)
   fullName: Noname.Presentation.Managers.FXManager.PlayProjectileImpactFx(UnityEngine.Vector3, Noname.Core.Enums.ProjectileFaction)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Managers/FXManager.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Managers
+  summary: 투사체 충돌 위치에 FX를 재생합니다.
+  example: []
   syntax:
     content: public void PlayProjectileImpactFx(Vector3 worldPosition, ProjectileFaction faction)
     parameters:
@@ -87,11 +90,11 @@ items:
   nameWithType: FXManager.PlayAbilitySelectionFx(bool)
   fullName: Noname.Presentation.Managers.FXManager.PlayAbilitySelectionFx(bool)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Managers/FXManager.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Managers
+  summary: 어빌리티 선택 UI가 열리거나 닫힐 때 FX를 재생합니다.
+  example: []
   syntax:
     content: public void PlayAbilitySelectionFx(bool opening)
     parameters:
@@ -113,8 +116,6 @@ items:
   nameWithType: FXManager.FXManager()
   fullName: Noname.Presentation.Managers.FXManager.FXManager()
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Presentation/Managers/FXManager.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Presentation.Managers

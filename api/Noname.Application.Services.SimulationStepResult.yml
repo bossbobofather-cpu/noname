@@ -23,11 +23,11 @@ items:
   nameWithType: SimulationStepResult
   fullName: Noname.Application.Services.SimulationStepResult
   type: Struct
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.Services
+  summary: 한 번의 Tick 결과로 생성된 모든 이벤트와 상태 변화를 담습니다.
+  example: []
   syntax:
     content: public readonly struct SimulationStepResult
     content.vb: Public Structure SimulationStepResult
@@ -49,11 +49,11 @@ items:
   nameWithType: SimulationStepResult.SimulationStepResult(EnemyEntity[], int[], EnemyAttackEvent[], EnemyHitInfo[], PlayerProjectileFiredEvent[], EnemyProjectileFiredEvent[], ProjectileImpactEvent[], ResourceDropSpawnedEvent[], ResourceDropCollectedEvent[], PlayerLevelUpEvent[])
   fullName: Noname.Application.Services.SimulationStepResult.SimulationStepResult(Noname.Core.Entities.EnemyEntity[], int[], Noname.Application.Services.EnemyAttackEvent[], Noname.Application.ValueObjects.EnemyHitInfo[], Noname.Application.ValueObjects.PlayerProjectileFiredEvent[], Noname.Application.ValueObjects.EnemyProjectileFiredEvent[], Noname.Application.ValueObjects.ProjectileImpactEvent[], Noname.Application.ValueObjects.ResourceDropSpawnedEvent[], Noname.Application.ValueObjects.ResourceDropCollectedEvent[], Noname.Application.ValueObjects.PlayerLevelUpEvent[])
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.Services
+  summary: 시뮬레이션 결과를 초기화합니다.
+  example: []
   syntax:
     content: public SimulationStepResult(EnemyEntity[] spawnedEnemies, int[] removedEnemyIds, EnemyAttackEvent[] attackEvents, EnemyHitInfo[] playerHits, PlayerProjectileFiredEvent[] playerProjectiles, EnemyProjectileFiredEvent[] enemyProjectiles, ProjectileImpactEvent[] projectileImpacts, ResourceDropSpawnedEvent[] resourceDropsSpawned, ResourceDropCollectedEvent[] resourceDropsCollected, PlayerLevelUpEvent[] playerLevelUps)
     parameters:
@@ -93,8 +93,6 @@ items:
   nameWithType: SimulationStepResult.SpawnedEnemies
   fullName: Noname.Application.Services.SimulationStepResult.SpawnedEnemies
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.Services
@@ -116,11 +114,11 @@ items:
   nameWithType: SimulationStepResult.RemovedEnemyIds
   fullName: Noname.Application.Services.SimulationStepResult.RemovedEnemyIds
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.Services
+  summary: 제거된 적 ID.
+  example: []
   syntax:
     content: public int[] RemovedEnemyIds { get; }
     parameters: []
@@ -139,11 +137,11 @@ items:
   nameWithType: SimulationStepResult.EnemyAttacks
   fullName: Noname.Application.Services.SimulationStepResult.EnemyAttacks
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.Services
+  summary: 적 공격 이벤트.
+  example: []
   syntax:
     content: public EnemyAttackEvent[] EnemyAttacks { get; }
     parameters: []
@@ -162,11 +160,11 @@ items:
   nameWithType: SimulationStepResult.PlayerProjectileHits
   fullName: Noname.Application.Services.SimulationStepResult.PlayerProjectileHits
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.Services
+  summary: 플레이어 투사체가 적에게 준 피해.
+  example: []
   syntax:
     content: public EnemyHitInfo[] PlayerProjectileHits { get; }
     parameters: []
@@ -185,11 +183,11 @@ items:
   nameWithType: SimulationStepResult.PlayerProjectilesFired
   fullName: Noname.Application.Services.SimulationStepResult.PlayerProjectilesFired
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.Services
+  summary: 플레이어 발사체 생성 이벤트.
+  example: []
   syntax:
     content: public PlayerProjectileFiredEvent[] PlayerProjectilesFired { get; }
     parameters: []
@@ -208,11 +206,11 @@ items:
   nameWithType: SimulationStepResult.EnemyProjectilesFired
   fullName: Noname.Application.Services.SimulationStepResult.EnemyProjectilesFired
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.Services
+  summary: 적 발사체 생성 이벤트.
+  example: []
   syntax:
     content: public EnemyProjectileFiredEvent[] EnemyProjectilesFired { get; }
     parameters: []
@@ -231,11 +229,11 @@ items:
   nameWithType: SimulationStepResult.ProjectileImpacts
   fullName: Noname.Application.Services.SimulationStepResult.ProjectileImpacts
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.Services
+  summary: 발사체 충돌 이벤트.
+  example: []
   syntax:
     content: public ProjectileImpactEvent[] ProjectileImpacts { get; }
     parameters: []
@@ -254,11 +252,11 @@ items:
   nameWithType: SimulationStepResult.ResourceDropsSpawned
   fullName: Noname.Application.Services.SimulationStepResult.ResourceDropsSpawned
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.Services
+  summary: 새 드롭 스폰 이벤트.
+  example: []
   syntax:
     content: public ResourceDropSpawnedEvent[] ResourceDropsSpawned { get; }
     parameters: []
@@ -277,11 +275,11 @@ items:
   nameWithType: SimulationStepResult.ResourceDropsCollected
   fullName: Noname.Application.Services.SimulationStepResult.ResourceDropsCollected
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.Services
+  summary: 드롭 수집 이벤트.
+  example: []
   syntax:
     content: public ResourceDropCollectedEvent[] ResourceDropsCollected { get; }
     parameters: []
@@ -300,11 +298,11 @@ items:
   nameWithType: SimulationStepResult.PlayerLevelUps
   fullName: Noname.Application.Services.SimulationStepResult.PlayerLevelUps
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/Services/DefenseSimulationService.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.Services
+  summary: 플레이어 레벨업 이벤트.
+  example: []
   syntax:
     content: public PlayerLevelUpEvent[] PlayerLevelUps { get; }
     parameters: []

@@ -24,11 +24,11 @@ items:
   nameWithType: ProjectileEntity
   fullName: Noname.Core.Entities.ProjectileEntity
   type: Class
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ProjectileEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 투사체의 위치, 속도, 피해량 등을 표현하는 도메인 모델입니다.
+  example: []
   syntax:
     content: public sealed class ProjectileEntity
     content.vb: Public NotInheritable Class ProjectileEntity
@@ -52,8 +52,6 @@ items:
   nameWithType: ProjectileEntity.ProjectileEntity(int, int, ProjectileFaction, Float2, Float2, float, float, Float2)
   fullName: Noname.Core.Entities.ProjectileEntity.ProjectileEntity(int, int, Noname.Core.Enums.ProjectileFaction, Noname.Core.Primitives.Float2, Noname.Core.Primitives.Float2, float, float, Noname.Core.Primitives.Float2)
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ProjectileEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
@@ -92,11 +90,11 @@ items:
   nameWithType: ProjectileEntity.Advance(float)
   fullName: Noname.Core.Entities.ProjectileEntity.Advance(float)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ProjectileEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 델타 타임만큼 이동합니다.
+  example: []
   syntax:
     content: public void Advance(float deltaTime)
     parameters:
@@ -118,11 +116,11 @@ items:
   nameWithType: ProjectileEntity.HasReachedTarget()
   fullName: Noname.Core.Entities.ProjectileEntity.HasReachedTarget()
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ProjectileEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 목표 좌표를 지나쳤는지 여부를 반환합니다.
+  example: []
   syntax:
     content: public bool HasReachedTarget()
     return:
@@ -140,11 +138,11 @@ items:
   nameWithType: ProjectileEntity.SetVelocity(Float2)
   fullName: Noname.Core.Entities.ProjectileEntity.SetVelocity(Noname.Core.Primitives.Float2)
   type: Method
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ProjectileEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 속도를 갱신합니다.
+  example: []
   syntax:
     content: public void SetVelocity(Float2 velocity)
     parameters:
@@ -163,11 +161,11 @@ items:
   nameWithType: ProjectileEntity.Id
   fullName: Noname.Core.Entities.ProjectileEntity.Id
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ProjectileEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 투사체 고유 ID입니다.
+  example: []
   syntax:
     content: public int Id { get; }
     parameters: []
@@ -186,11 +184,11 @@ items:
   nameWithType: ProjectileEntity.SourceId
   fullName: Noname.Core.Entities.ProjectileEntity.SourceId
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ProjectileEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 발사체를 생성한 주체(플레이어 혹은 적)의 ID입니다.
+  example: []
   syntax:
     content: public int SourceId { get; }
     parameters: []
@@ -209,11 +207,11 @@ items:
   nameWithType: ProjectileEntity.Faction
   fullName: Noname.Core.Entities.ProjectileEntity.Faction
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ProjectileEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 플레이어/적 진영 정보입니다.
+  example: []
   syntax:
     content: public ProjectileFaction Faction { get; }
     parameters: []
@@ -232,11 +230,11 @@ items:
   nameWithType: ProjectileEntity.Position
   fullName: Noname.Core.Entities.ProjectileEntity.Position
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ProjectileEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 현재 위치입니다.
+  example: []
   syntax:
     content: public Float2 Position { get; }
     parameters: []
@@ -255,11 +253,11 @@ items:
   nameWithType: ProjectileEntity.Velocity
   fullName: Noname.Core.Entities.ProjectileEntity.Velocity
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ProjectileEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 현재 속도입니다.
+  example: []
   syntax:
     content: public Float2 Velocity { get; }
     parameters: []
@@ -278,11 +276,11 @@ items:
   nameWithType: ProjectileEntity.Damage
   fullName: Noname.Core.Entities.ProjectileEntity.Damage
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ProjectileEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 기본 피해량입니다.
+  example: []
   syntax:
     content: public float Damage { get; }
     parameters: []
@@ -301,11 +299,11 @@ items:
   nameWithType: ProjectileEntity.ExplosionRadius
   fullName: Noname.Core.Entities.ProjectileEntity.ExplosionRadius
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ProjectileEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 폭발 반경(0이면 직접 명중형)입니다.
+  example: []
   syntax:
     content: public float ExplosionRadius { get; }
     parameters: []
@@ -324,11 +322,11 @@ items:
   nameWithType: ProjectileEntity.TargetPosition
   fullName: Noname.Core.Entities.ProjectileEntity.TargetPosition
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Core/Entities/ProjectileEntity.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Core.Entities
+  summary: 추적 중인 목표 좌표입니다.
+  example: []
   syntax:
     content: public Float2 TargetPosition { get; }
     parameters: []

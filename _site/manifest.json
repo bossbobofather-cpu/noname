@@ -81,6 +81,56 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "Docs/layers/application.md",
+      "output": {
+        ".html": {
+          "relative_path": "Docs/layers/application.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Docs/layers/core.md",
+      "output": {
+        ".html": {
+          "relative_path": "Docs/layers/core.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Docs/layers/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Docs/layers/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Docs/layers/infrastructure.md",
+      "output": {
+        ".html": {
+          "relative_path": "Docs/layers/infrastructure.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Docs/layers/presentation.md",
+      "output": {
+        ".html": {
+          "relative_path": "Docs/layers/presentation.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "Toc",
       "source_relative_path": "Docs/toc.yml",
       "output": {
@@ -89,6 +139,26 @@
         },
         ".json": {
           "relative_path": "Docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Docs/tools/definition-importer.md",
+      "output": {
+        ".html": {
+          "relative_path": "Docs/tools/definition-importer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Docs/tools/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Docs/tools/index.html"
         }
       },
       "version": ""
@@ -10805,6 +10875,61 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api-editor/Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api-editor/Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Noname.EditorTools.DefinitionImporterWindow.DefinitionKind",
+      "Summary": "<p sourcefile=\"api-editor/Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.yml\" sourcestartlinenumber=\"1\">변환 대상 정의 종류를 나타냅니다.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-editor/Noname.EditorTools.DefinitionImporterWindow.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api-editor/Noname.EditorTools.DefinitionImporterWindow.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Noname.EditorTools.DefinitionImporterWindow",
+      "Summary": "<p sourcefile=\"api-editor/Noname.EditorTools.DefinitionImporterWindow.yml\" sourcestartlinenumber=\"1\">Definition Importer Editor 툴의 동작을 문서화하기 위한 DocFX 전용 스텁입니다.\n실제 구현은 Unity Editor 전용 코드에 있으며, 여기서는 공개 API 시그니처만 설명합니다.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-editor/Noname.EditorTools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api-editor/Noname.EditorTools.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Noname.EditorTools",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api-editor/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api-editor/toc.html"
+        },
+        ".json": {
+          "relative_path": "api-editor/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Noname.Application.Ports.IGameInputReader.yml",
       "output": {
         ".html": {
@@ -10815,7 +10940,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Application.Ports.IGameInputReader",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Application.Ports.IGameInputReader.yml\" sourcestartlinenumber=\"1\">게임 내 이동/폭격 등 입력을 추상화하는 포트입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -10829,7 +10954,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Application.Ports.IGameStateRepository",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Application.Ports.IGameStateRepository.yml\" sourcestartlinenumber=\"1\">게임 상태 저장소를 나타내는 포트입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -10857,7 +10982,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Application.Services.DefenseSimulationService",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Application.Services.DefenseSimulationService.yml\" sourcestartlinenumber=\"1\">적 스폰, 투사체, 드롭 등 디펜스 게임 진행을 계산하는 핵심 시뮬레이션 서비스입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -10871,7 +10996,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Application.Services.EnemyAttackEvent",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Application.Services.EnemyAttackEvent.yml\" sourcestartlinenumber=\"1\">특정 적이 거점을 공격했을 때 발생하는 이벤트입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -10885,7 +11010,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Application.Services.SimulationStepResult",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Application.Services.SimulationStepResult.yml\" sourcestartlinenumber=\"1\">한 번의 Tick 결과로 생성된 모든 이벤트와 상태 변화를 담습니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -10913,7 +11038,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Application.UseCases.MovePlayerUseCase",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Application.UseCases.MovePlayerUseCase.yml\" sourcestartlinenumber=\"1\">플레이어 이동 및 쿨다운 갱신을 수행하는 유즈케이스입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -10927,7 +11052,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Application.UseCases.StartGameUseCase",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Application.UseCases.StartGameUseCase.yml\" sourcestartlinenumber=\"1\">게임 상태를 초기화하여 새 세션을 시작하는 유즈케이스입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -10955,7 +11080,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Application.ValueObjects.EnemyHitInfo",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Application.ValueObjects.EnemyHitInfo.yml\" sourcestartlinenumber=\"1\">플레이어 투사체가 적에게 준 피해 정보를 나타냅니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -10969,7 +11094,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Application.ValueObjects.EnemyProjectileFiredEvent",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Application.ValueObjects.EnemyProjectileFiredEvent.yml\" sourcestartlinenumber=\"1\">적이 투사체를 발사했을 때 전달되는 이벤트입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -10983,7 +11108,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Application.ValueObjects.PlayerLevelUpEvent",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Application.ValueObjects.PlayerLevelUpEvent.yml\" sourcestartlinenumber=\"1\">플레이어가 레벨업했을 때 발생하는 이벤트입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -10997,7 +11122,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Application.ValueObjects.PlayerProjectileFiredEvent",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Application.ValueObjects.PlayerProjectileFiredEvent.yml\" sourcestartlinenumber=\"1\">플레이어가 투사체를 발사했음을 나타내는 이벤트입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11011,7 +11136,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Application.ValueObjects.ProjectileImpactEvent",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Application.ValueObjects.ProjectileImpactEvent.yml\" sourcestartlinenumber=\"1\">투사체가 목표 지점에 도달하거나 충돌했음을 나타냅니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11025,7 +11150,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Application.ValueObjects.ResourceDropCollectedEvent",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Application.ValueObjects.ResourceDropCollectedEvent.yml\" sourcestartlinenumber=\"1\">대기 중이던 드롭이 수집됐을 때 발생하는 이벤트입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11039,7 +11164,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Application.ValueObjects.ResourceDropSpawnedEvent",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Application.ValueObjects.ResourceDropSpawnedEvent.yml\" sourcestartlinenumber=\"1\">새 자원 드롭이 필드에 생성됐을 때 전달되는 이벤트입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11067,7 +11192,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.Entities.EnemyEntity",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.Entities.EnemyEntity.yml\" sourcestartlinenumber=\"1\">단일 적 개체의 전투 스탯과 상태를 표현하는 도메인 모델입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11081,7 +11206,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.Entities.FortressEntity",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.Entities.FortressEntity.yml\" sourcestartlinenumber=\"1\">플레이어가 지켜야 하는 거점(성벽)의 체력 상태를 관리합니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11095,7 +11220,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.Entities.GameState",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.Entities.GameState.yml\" sourcestartlinenumber=\"1\">플레이어/적/투사체/드롭 등 런타임 진행 상황을 보관하는 루트 상태입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11109,7 +11234,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.Entities.PlayerEntity",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.Entities.PlayerEntity.yml\" sourcestartlinenumber=\"1\">플레이어 캐릭터의 위치, 전투 스탯, 성장 상태를 관리합니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11123,7 +11248,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.Entities.ProjectileEntity",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.Entities.ProjectileEntity.yml\" sourcestartlinenumber=\"1\">투사체의 위치, 속도, 피해량 등을 표현하는 도메인 모델입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11137,7 +11262,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.Entities.ResourceDropEntity",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.Entities.ResourceDropEntity.yml\" sourcestartlinenumber=\"1\">드롭 타입, 수량, 스폰 지연 시간을 보관하는 자원 드롭 모델입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11165,7 +11290,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.Enums.EnemyCombatRole",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.Enums.EnemyCombatRole.yml\" sourcestartlinenumber=\"1\">적 전투 스타일을 정의합니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11179,7 +11304,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.Enums.MonsterRole",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.Enums.MonsterRole.yml\" sourcestartlinenumber=\"1\">던전 몬스터의 특수 역할을 정의합니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11193,7 +11318,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.Enums.ProjectileFaction",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.Enums.ProjectileFaction.yml\" sourcestartlinenumber=\"1\">투사체가 속한 진영을 나타냅니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11207,7 +11332,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.Enums.ResourceDropType",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.Enums.ResourceDropType.yml\" sourcestartlinenumber=\"1\">드롭 아이템의 종류를 정의합니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11235,7 +11360,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.Primitives.Float2",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.Primitives.Float2.yml\" sourcestartlinenumber=\"1\">Unity 의존성이 없는 2차원 부동소수점 벡터 구조체입니다.\nCore 계층에서 좌표·방향 정보를 다룰 때 사용합니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11263,7 +11388,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.ValueObjects.DefenseGameSettings",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.ValueObjects.DefenseGameSettings.yml\" sourcestartlinenumber=\"1\">디펜스 게임 모드에 필요한 각종 밸런스 수치를 묶은 구조체입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11277,7 +11402,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.ValueObjects.EnemyDefinition",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.ValueObjects.EnemyDefinition.yml\" sourcestartlinenumber=\"1\">적 전투 스탯과 드롭 구성을 정의하는 ScriptableObject 입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11291,7 +11416,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.ValueObjects.EnemyDropDefinition",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.ValueObjects.EnemyDropDefinition.yml\" sourcestartlinenumber=\"1\">적이 드롭할 자원 종류와 확률 정보를 표현합니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11305,7 +11430,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.ValueObjects.EnemySpawnEntry",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.ValueObjects.EnemySpawnEntry.yml\" sourcestartlinenumber=\"1\">적 스폰 후보와 가중치를 나타냅니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11319,7 +11444,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.ValueObjects.GameplayAbilityDefinition",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.ValueObjects.GameplayAbilityDefinition.yml\" sourcestartlinenumber=\"1\">플레이어에게 적용할 수 있는 능력(패시브)의 정의입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11333,7 +11458,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.ValueObjects.GameplayAttribute",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.ValueObjects.GameplayAttribute.yml\" sourcestartlinenumber=\"1\">플레이어가 변경 가능한 주요 스탯입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11347,7 +11472,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.ValueObjects.GameplayEffectDefinition",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.ValueObjects.GameplayEffectDefinition.yml\" sourcestartlinenumber=\"1\">하나 이상의 스탯 수정자를 묶은 Gameplay Effect 정의입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11361,7 +11486,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.ValueObjects.GameplayEffectModifier",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.ValueObjects.GameplayEffectModifier.yml\" sourcestartlinenumber=\"1\">특정 스탯을 어떻게 변경할지에 대한 단일 규칙입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11375,7 +11500,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.ValueObjects.ModifierOperation",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.ValueObjects.ModifierOperation.yml\" sourcestartlinenumber=\"1\">스탯을 변경하는 방식입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11389,7 +11514,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Core.ValueObjects.PlayerDefinition",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Core.ValueObjects.PlayerDefinition.yml\" sourcestartlinenumber=\"1\">플레이어 캐릭터의 기본 스탯을 정의하는 ScriptableObject 입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11417,7 +11542,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Infrastructure.Input.DefenseInputAdapter",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Infrastructure.Input.DefenseInputAdapter.yml\" sourcestartlinenumber=\"1\">Reads player input through the Unity Input System.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11431,7 +11556,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Infrastructure.Input.InputBlocker",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Infrastructure.Input.InputBlocker.yml\" sourcestartlinenumber=\"1\">전역적으로 입력 허용 여부를 제어하는 헬퍼입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11459,7 +11584,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Infrastructure.Repositories.InMemoryGameStateRepository",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Infrastructure.Repositories.InMemoryGameStateRepository.yml\" sourcestartlinenumber=\"1\">단일 GameState 인스턴스를 보관하는 단순 저장소 구현입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11487,7 +11612,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Infrastructure.Unity.Float2UnityExtensions",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Infrastructure.Unity.Float2UnityExtensions.yml\" sourcestartlinenumber=\"1\">Float2와 Unity의 Vector 타입 간 변환 확장 메서드를 제공합니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11515,7 +11640,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Presentation.Managers.FXManager",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Presentation.Managers.FXManager.yml\" sourcestartlinenumber=\"1\">연출용 파티클/후광 효과를 한곳에서 관리합니다.\n현재는 로그만 남기지만 실제 FX 시스템으로 교체하기 쉽도록 추상화돼 있습니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11529,7 +11654,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Presentation.Managers.SoundManager",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Presentation.Managers.SoundManager.yml\" sourcestartlinenumber=\"1\">게임 내 사운드 큐를 한곳에서 트리거하는 매니저입니다.\n현재는 로그만 출력하지만 실제 오디오 시스템으로 쉽게 교체할 수 있습니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11543,7 +11668,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Presentation.Managers.UIFeedbackManager",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Presentation.Managers.UIFeedbackManager.yml\" sourcestartlinenumber=\"1\">UI 토스트나 텍스트 피드백을 표시하는 간단한 매니저입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11571,7 +11696,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Presentation.ViewModels.GameViewModel",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Presentation.ViewModels.GameViewModel.yml\" sourcestartlinenumber=\"1\">입력, 시뮬레이션, 이벤트 브로커 역할을 통합하는 최상위 뷰모델입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11585,7 +11710,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Presentation.ViewModels.GameViewPauseReason",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Presentation.ViewModels.GameViewPauseReason.yml\" sourcestartlinenumber=\"1\">GameViewModel이 일시 정지 상태에 들어가는 이유.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11613,7 +11738,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Presentation.Views.AugmentSelectionOptionView",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Presentation.Views.AugmentSelectionOptionView.yml\" sourcestartlinenumber=\"1\">단일 어빌리티 선택 버튼을 표현하는 뷰입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11627,7 +11752,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Presentation.Views.AugmentSelectionView",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Presentation.Views.AugmentSelectionView.yml\" sourcestartlinenumber=\"1\">어빌리티 선택 UI 전체를 관리하는 뷰입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11641,7 +11766,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Presentation.Views.DefenseDebugPanel",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Presentation.Views.DefenseDebugPanel.yml\" sourcestartlinenumber=\"1\">개발용 치트 콘솔을 제공하고 입력을 차단하는 디버그 UI입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11655,7 +11780,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Presentation.Views.DefenseGameBootstrapper",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Presentation.Views.DefenseGameBootstrapper.yml\" sourcestartlinenumber=\"1\">Scene 내 의존성을 구성하고 GameViewModel을 초기화/갱신하는 엔트리 포인트입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11669,7 +11794,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Presentation.Views.EnemyView",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Presentation.Views.EnemyView.yml\" sourcestartlinenumber=\"1\">적 하나의 시각 표현과 GameViewModel 이벤트를 연결합니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11683,7 +11808,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Presentation.Views.FortressView",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Presentation.Views.FortressView.yml\" sourcestartlinenumber=\"1\">거점 체력/경험치 UI를 GameViewModel과 동기화합니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11697,7 +11822,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Presentation.Views.PlayerView",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Presentation.Views.PlayerView.yml\" sourcestartlinenumber=\"1\">플레이어 위치를 표시하고 드롭 픽업 앵커를 제공하는 뷰입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11711,7 +11836,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Presentation.Views.ProjectileView",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Presentation.Views.ProjectileView.yml\" sourcestartlinenumber=\"1\">투사체 이동과 충돌 연출을 담당하는 뷰입니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11725,7 +11850,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Noname.Presentation.Views.ResourceDropView",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Noname.Presentation.Views.ResourceDropView.yml\" sourcestartlinenumber=\"1\">자원 드롭의 시각적 상태(대기, 플레이어에게 이동)를 표현합니다.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11750,6 +11875,16 @@
         },
         ".json": {
           "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/gamePlayDemo.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/gamePlayDemo.gif"
         }
       },
       "version": ""

@@ -16,11 +16,11 @@ items:
   nameWithType: EnemyHitInfo
   fullName: Noname.Application.ValueObjects.EnemyHitInfo
   type: Struct
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/EnemyHitInfo.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 플레이어 투사체가 적에게 준 피해 정보를 나타냅니다.
+  example: []
   syntax:
     content: public readonly struct EnemyHitInfo
     content.vb: Public Structure EnemyHitInfo
@@ -42,8 +42,6 @@ items:
   nameWithType: EnemyHitInfo.EnemyHitInfo(int, float, float)
   fullName: Noname.Application.ValueObjects.EnemyHitInfo.EnemyHitInfo(int, float, float)
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/EnemyHitInfo.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
@@ -72,11 +70,11 @@ items:
   nameWithType: EnemyHitInfo.EnemyId
   fullName: Noname.Application.ValueObjects.EnemyHitInfo.EnemyId
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/EnemyHitInfo.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 피해를 받은 적 ID.
+  example: []
   syntax:
     content: public int EnemyId { get; }
     parameters: []
@@ -95,11 +93,11 @@ items:
   nameWithType: EnemyHitInfo.DamageDealt
   fullName: Noname.Application.ValueObjects.EnemyHitInfo.DamageDealt
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/EnemyHitInfo.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 이번 타격으로 준 피해량.
+  example: []
   syntax:
     content: public float DamageDealt { get; }
     parameters: []
@@ -118,11 +116,11 @@ items:
   nameWithType: EnemyHitInfo.RemainingHealth
   fullName: Noname.Application.ValueObjects.EnemyHitInfo.RemainingHealth
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/EnemyHitInfo.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 타격 후 남은 체력.
+  example: []
   syntax:
     content: public float RemainingHealth { get; }
     parameters: []

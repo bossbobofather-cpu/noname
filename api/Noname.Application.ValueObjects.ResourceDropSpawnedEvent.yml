@@ -18,11 +18,11 @@ items:
   nameWithType: ResourceDropSpawnedEvent
   fullName: Noname.Application.ValueObjects.ResourceDropSpawnedEvent
   type: Struct
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/ResourceDropSpawnedEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 새 자원 드롭이 필드에 생성됐을 때 전달되는 이벤트입니다.
+  example: []
   syntax:
     content: public readonly struct ResourceDropSpawnedEvent
     content.vb: Public Structure ResourceDropSpawnedEvent
@@ -44,8 +44,6 @@ items:
   nameWithType: ResourceDropSpawnedEvent.ResourceDropSpawnedEvent(int, ResourceDropType, Float2, float, float)
   fullName: Noname.Application.ValueObjects.ResourceDropSpawnedEvent.ResourceDropSpawnedEvent(int, Noname.Core.Enums.ResourceDropType, Noname.Core.Primitives.Float2, float, float)
   type: Constructor
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/ResourceDropSpawnedEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
@@ -78,11 +76,11 @@ items:
   nameWithType: ResourceDropSpawnedEvent.DropId
   fullName: Noname.Application.ValueObjects.ResourceDropSpawnedEvent.DropId
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/ResourceDropSpawnedEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 드롭 ID.
+  example: []
   syntax:
     content: public int DropId { get; }
     parameters: []
@@ -101,11 +99,11 @@ items:
   nameWithType: ResourceDropSpawnedEvent.Type
   fullName: Noname.Application.ValueObjects.ResourceDropSpawnedEvent.Type
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/ResourceDropSpawnedEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 드롭 종류.
+  example: []
   syntax:
     content: public ResourceDropType Type { get; }
     parameters: []
@@ -124,11 +122,11 @@ items:
   nameWithType: ResourceDropSpawnedEvent.Position
   fullName: Noname.Application.ValueObjects.ResourceDropSpawnedEvent.Position
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/ResourceDropSpawnedEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 스폰 위치.
+  example: []
   syntax:
     content: public Float2 Position { get; }
     parameters: []
@@ -147,11 +145,11 @@ items:
   nameWithType: ResourceDropSpawnedEvent.Amount
   fullName: Noname.Application.ValueObjects.ResourceDropSpawnedEvent.Amount
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/ResourceDropSpawnedEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 드롭 양.
+  example: []
   syntax:
     content: public float Amount { get; }
     parameters: []
@@ -170,11 +168,11 @@ items:
   nameWithType: ResourceDropSpawnedEvent.PickupDelay
   fullName: Noname.Application.ValueObjects.ResourceDropSpawnedEvent.PickupDelay
   type: Property
-  source:
-    href: https://github.com/bossbobofather-cpu/noname/blob/4489ea46657b89df514aebf392ea8e65961a45f2/Assets/Scripts/Application/ValueObjects/ResourceDropSpawnedEvent.cs
   assemblies:
   - Assembly-CSharp
   namespace: Noname.Application.ValueObjects
+  summary: 자동 수집까지 남은 지연.
+  example: []
   syntax:
     content: public float PickupDelay { get; }
     parameters: []
