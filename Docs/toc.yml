@@ -14,6 +14,7 @@
     - name: Presentation
       href: layers/presentation.md
 - name: Tools
+  href: tools/index.md
   items:
     - name: Definition Importer
       href: tools/definition-importer.md
