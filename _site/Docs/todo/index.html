@@ -87,63 +87,24 @@
         <article data-uid="">
 <h1 id="todo-list">TODO List</h1>
 
-<p>새로운 격자 기반 플레이 구조를 적용한 뒤 추가로 챙겨야 할 작업들을 정리했습니다. 진행 상황에 따라 체크 상태를 업데이트해 주세요.</p>
-<h2 id="gameplay--balancing">Gameplay &amp; Balancing</h2>
+<h2 id="변덕으로-인해-추가--제거--변경이-있을-수-있습니다">변덕으로 인해 추가 / 제거 / 변경이 있을 수 있습니다.</h2>
 <ul>
-<li>[ ] 웨이브 데이터 자산화: 스테이지별 열/행 점유율과 이동 속도 곡선을 ScriptableObject/테이블로 분리</li>
-<li>[ ] Enemy View 프리팹 가중치 튜닝: 실제 드랍률/사거리 변화에 맞춰 시각 피드백 재검토</li>
-<li>[ ] 셀 타게팅 튜토리얼 추가: 조준 셀을 고정/해제하는 UX 가이드와 입력 장치별 안내</li>
+<li>[ ] 웨이브 데이터 관리 : 스테이지별 몬스터 스폰 점유율과 이동 속도를 SO / 테이블로 분리 및 관리</li>
+<li>[ ] Definition Importer 개선 : 웨이브 Excel -&gt; Json -&gt; SO 대응</li>
+<li>[ ] GameAbilityEffect 추가 / GameAbility 추가 (증강과 증강의 효과들 추가)</li>
+<li>[ ] DefenseGameBootstrapper에서 Projectile 내용을 분리하여 별도의 Definition을 부여하여 관리</li>
+<li>[ ] 픽업 드랍 아이템 풀링</li>
+<li>[ ] 로비 씬 구현</li>
+<li>[ ] 인벤토리 및 장비 시스템 구현</li>
+<li>[ ] 픽업 드랍 아이템에 장비 추가</li>
+<li>[ ] UI 매니저 구현</li>
+<li>[ ] FX 매니저 구현</li>
+<li>[ ] Sound 매니저 구현</li>
+<li>[ ] Player Helper 개념의 Hero 도입</li>
+<li>[ ] Hero 스킬 시스템 구현</li>
+<li>[ ] 전투에 장비 및 Hero 버프 시스템 구현</li>
+<li>[ ] Boss 구현</li>
 </ul>
-<h2 id="systems--infrastructure">Systems &amp; Infrastructure</h2>
-<ul>
-<li>[ ] DocFX 정적 사이트 자동 배포: GitHub Actions 또는 CI 스크립트로 <code>_site</code> 생성/배포 파이프라인 구성</li>
-<li>[ ] Definition Importer 개선: Excel 증강/웨이브 시트 추가, 검증 에러를 UIElements ValidationSummary로 출력</li>
-<li>[ ] 리소스 드롭 풀링: 게임 오버 후 즉시 제거하는 경로와 객체 풀을 통합해 GC 부담 최소화</li>
-</ul>
-<h2 id="documentation">Documentation</h2>
-<ul>
-<li>[ ] Layers 문서에 테스트/QA 전략 섹션 추가 (Play Mode vs. Edit Mode)</li>
-<li>[ ] Tools 문서에 GIF/이미지 자산 관리 지침 명시 (경로: <code>images/</code>)</li>
-<li>[ ] TODO 페이지 최신화 자동화: 릴리스마다 완료/신규 항목 검토</li>
-</ul>
-<h2 id="tracking">Tracking</h2>
-<table>
-<thead>
-<tr>
-<th>우선순위</th>
-<th>항목</th>
-<th>담당</th>
-<th>상태</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>High</td>
-<td>웨이브 데이터 자산화</td>
-<td>TBD</td>
-<td>진행 예정</td>
-</tr>
-<tr>
-<td>Medium</td>
-<td>DocFX 배포 자동화</td>
-<td>TBD</td>
-<td>진행 예정</td>
-</tr>
-<tr>
-<td>Medium</td>
-<td>Definition Importer 검증 UX</td>
-<td>TBD</td>
-<td>진행 예정</td>
-</tr>
-<tr>
-<td>Low</td>
-<td>문서 QA 섹션 확장</td>
-<td>TBD</td>
-<td>대기</td>
-</tr>
-</tbody>
-</table>
-<p>필요 시 이 페이지를 반복적으로 갱신해 진행 상황을 공유해 주세요.</p>
 
 </article>
 

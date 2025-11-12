@@ -5,7 +5,7 @@ using Noname.Core.ValueObjects;
 namespace Noname.Core.Entities
 {
     /// <summary>
-    /// Represents a single enemy's combat stats and grid state.
+    /// 단일 적의 전투 상태를 관리하고 그리드 상태를 나타냅니다.
     /// </summary>
     public sealed class EnemyEntity
     {
