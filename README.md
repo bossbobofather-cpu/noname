@@ -36,28 +36,18 @@
 ---
 
 ## 🔁 Gameplay Flow
-[Unity Update()]
-     │
-     ▼
-[DefenseGameBootstrapper.Update]
-     │ calls Tick()
-     ▼
-[GameViewModel.Tick]
-     │
-     ├─ ReadMovement() / ProcessTargetCellInput()
-     ├─ MovePlayerUseCase.Execute()
-     ├─ SimulationService.Tick()
-     │     ├─ 격자 스폰/전진
-     │     ├─ 플레이어/적 투사체
-     │     └─ 드롭/레벨업 이벤트
-     │
-     └─ Broadcast events
-             │
-             ├─ EnemySpawned → Bootstrapper.HandleEnemySpawned → Instantiate EnemyView
-             ├─ ResourceDropSpawned → Spawn ResourceDropView
-             ├─ PlayerProjectileFired → Launch ProjectileView
-             ├─ FortressDamaged → Update UI/FX/Sound
-             └─ GameOver → Destroy Views, 정리
+
+Unity Update()
+└─ DefenseGameBootstrapper.Update()
+└─ GameViewModel.Tick(deltaTime)
+├─ Read Input (DefenseInputAdapter)
+├─ MovePlayerUseCase.Execute()
+├─ DefenseSimulationService.Tick()
+│ ├─ 격자 스폰/전진
+│ ├─ 플레이어/적 투사체
+│ └─ 드롭/레벨업 이벤트
+└─ Broadcast events (EnemySpawned, ResourceDropSpawned, ...)
+└─ Views/FX respond (Instantiate prefabs, play VFX/SFX)
              
 ---
 
@@ -73,6 +63,7 @@
 ---
 
 ✅ TODO Snapshot
+
  Docs/todo/index.md를 확인하세요.
 
 ---
@@ -80,6 +71,3 @@
 📁 Repository
 GitHub: bossbobofather-cpu/noname
 필요한 정보나 코드 하이라이트 스크린샷이 더 필요하면 언제든 말씀 주세요!
-
-
-# Document Link : [https://bossbobofather-cpu.github.io/noname/index.html]
