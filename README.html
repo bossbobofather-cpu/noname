@@ -144,28 +144,17 @@
 </table>
 <hr>
 <h2 id="-gameplay-flow">🔁 Gameplay Flow</h2>
-<p>[Unity Update()]
-│
-▼
-[DefenseGameBootstrapper.Update]
-│ calls Tick()
-▼
-[GameViewModel.Tick]
-│
-├─ ReadMovement() / ProcessTargetCellInput()
+<p>Unity Update()
+└─ DefenseGameBootstrapper.Update()
+└─ GameViewModel.Tick(deltaTime)
+├─ Read Input (DefenseInputAdapter)
 ├─ MovePlayerUseCase.Execute()
-├─ SimulationService.Tick()
-│     ├─ 격자 스폰/전진
-│     ├─ 플레이어/적 투사체
-│     └─ 드롭/레벨업 이벤트
-│
-└─ Broadcast events
-│
-├─ EnemySpawned → Bootstrapper.HandleEnemySpawned → Instantiate EnemyView
-├─ ResourceDropSpawned → Spawn ResourceDropView
-├─ PlayerProjectileFired → Launch ProjectileView
-├─ FortressDamaged → Update UI/FX/Sound
-└─ GameOver → Destroy Views, 정리</p>
+├─ DefenseSimulationService.Tick()
+│ ├─ 격자 스폰/전진
+│ ├─ 플레이어/적 투사체
+│ └─ 드롭/레벨업 이벤트
+└─ Broadcast events (EnemySpawned, ResourceDropSpawned, ...)
+└─ Views/FX respond (Instantiate prefabs, play VFX/SFX)</p>
 <hr>
 <h2 id="-documentation">📚 Documentation</h2>
 <ul>
@@ -177,13 +166,12 @@
 <li><a href="https://bossbobofather-cpu.github.io/noname/api/index.html">API Reference</a></li>
 </ul>
 <hr>
-<p>✅ TODO Snapshot
-Docs/todo/index.md를 확인하세요.</p>
+<p>✅ TODO Snapshot</p>
+<p>Docs/todo/index.md를 확인하세요.</p>
 <hr>
 <p>📁 Repository
 GitHub: bossbobofather-cpu/noname
 필요한 정보나 코드 하이라이트 스크린샷이 더 필요하면 언제든 말씀 주세요!</p>
-<h1 id="document-link--httpsbossbobofather-cpugithubiononameindexhtml">Document Link : [https://bossbobofather-cpu.github.io/noname/index.html]</h1>
 
 </article>
 
