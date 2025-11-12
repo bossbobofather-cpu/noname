@@ -38,16 +38,16 @@
 ## 🔁 Gameplay Flow
 
 Unity Update()
-└─ DefenseGameBootstrapper.Update()
-└─ GameViewModel.Tick(deltaTime)
-├─ Read Input (DefenseInputAdapter)
-├─ MovePlayerUseCase.Execute()
-├─ DefenseSimulationService.Tick()
-│ ├─ 격자 스폰/전진
-│ ├─ 플레이어/적 투사체
-│ └─ 드롭/레벨업 이벤트
-└─ Broadcast events (EnemySpawned, ResourceDropSpawned, ...)
-└─ Views/FX respond (Instantiate prefabs, play VFX/SFX)
+  └─ DefenseGameBootstrapper.Update()
+       └─ GameViewModel.Tick(deltaTime)
+            ├─ Read Input (DefenseInputAdapter)
+            ├─ MovePlayerUseCase.Execute()
+            ├─ DefenseSimulationService.Tick()
+            │    ├─ 격자 스폰/전진
+            │    ├─ 플레이어/적 투사체
+            │    └─ 드롭·레벨업 이벤트
+            └─ Broadcast events (EnemySpawned, ResourceDropSpawned, …)
+                 └─ Views/FX respond (Instantiate prefabs, play VFX/SFX)
              
 ---
 
