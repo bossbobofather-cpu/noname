@@ -144,34 +144,42 @@
 </table>
 <hr>
 <h2 id="-gameplay-flow">🔁 Gameplay Flow</h2>
-<p>Unity Update()
-└─ DefenseGameBootstrapper.Update()
-└─ GameViewModel.Tick(deltaTime)
-├─ Read Input (DefenseInputAdapter)
-├─ MovePlayerUseCase.Execute()
-├─ DefenseSimulationService.Tick()
-│    ├─ 격자 스폰/전진
-│    ├─ 플레이어/적 투사체
-│    └─ 드롭·레벨업 이벤트
-└─ Broadcast events (EnemySpawned, ResourceDropSpawned, …)
-└─ Views/FX respond (Instantiate prefabs, play VFX/SFX)</p>
-<hr>
-<h2 id="-documentation">📚 Documentation</h2>
-<ul>
-<li><a href="https://bossbobofather-cpu.github.io/noname/index.html">Landing / Docs Home</a></li>
-<li><a href="https://bossbobofather-cpu.github.io/noname/Docs/getting-started.html">Getting Started</a></li>
-<li><a href="https://bossbobofather-cpu.github.io/noname/Docs/layers/index.html">Layers Overview</a></li>
-<li><a href="https://bossbobofather-cpu.github.io/noname/Docs/tools/index.html">Tools (Definition Importer)</a></li>
-<li><a href="https://bossbobofather-cpu.github.io/noname/Docs/todo/index.html">TODO List</a></li>
-<li><a href="https://bossbobofather-cpu.github.io/noname/api/index.html">API Reference</a></li>
-</ul>
-<hr>
-<p>✅ TODO Snapshot</p>
-<p>Docs/todo/index.md를 확인하세요.</p>
-<hr>
-<p>📁 Repository
+<pre><code class="lang-markdown">```mermaid
+flowchart TD
+    U[Unity Update] --&gt; B[DefenseGameBootstrapper.Update]
+    B --&gt; V[GameViewModel.Tick]
+    V --&gt;|Input| I[Read movement/target (DefenseInputAdapter)]
+    V --&gt;|UseCase| M[MovePlayerUseCase.Execute]
+    V --&gt;|Simulation| S[DefenseSimulationService.Tick]
+    S --&gt; G[격자 스폰/전진]
+    S --&gt; P[플레이어/적 투사체]
+    S --&gt; D[드롭·레벨업 이벤트]
+    V --&gt;|Broadcast| E[EnemySpawned / ResourceDropSpawned ...]
+    E --&gt; F[Views/FX respond]
+             
+---
+
+## 📚 Documentation
+
+- [Landing / Docs Home](https://bossbobofather-cpu.github.io/noname/index.html)
+- [Getting Started](https://bossbobofather-cpu.github.io/noname/Docs/getting-started.html)
+- [Layers Overview](https://bossbobofather-cpu.github.io/noname/Docs/layers/index.html)
+- [Tools (Definition Importer)](https://bossbobofather-cpu.github.io/noname/Docs/tools/index.html)
+- [TODO List](https://bossbobofather-cpu.github.io/noname/Docs/todo/index.html)
+- [API Reference](https://bossbobofather-cpu.github.io/noname/api/index.html)
+
+---
+
+✅ TODO Snapshot
+
+ Docs/todo/index.md를 확인하세요.
+
+---
+
+📁 Repository
 GitHub: bossbobofather-cpu/noname
-필요한 정보나 코드 하이라이트 스크린샷이 더 필요하면 언제든 말씀 주세요!</p>
+필요한 정보나 코드 하이라이트 스크린샷이 더 필요하면 언제든 말씀 주세요!
+</code></pre>
 
 </article>
 
