@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 namespace Noname.Infrastructure.Input
 {
     /// <summary>
-    /// Reads player input through the Unity Input System.
+    /// Unity 입력 시스템을 통해 플레이어 입력을 읽습니다.
     /// </summary>
     public sealed class DefenseInputAdapter : MonoBehaviour, IGameInputReader
     {
