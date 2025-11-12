@@ -37,19 +37,19 @@
 
 ## 🔁 Gameplay Flow
 
-```markdown
-```mermaid
-flowchart TD
-    U[Unity Update] --> B[DefenseGameBootstrapper.Update]
-    B --> V[GameViewModel.Tick]
-    V -->|Input| I[Read movement/target (DefenseInputAdapter)]
-    V -->|UseCase| M[MovePlayerUseCase.Execute]
-    V -->|Simulation| S[DefenseSimulationService.Tick]
-    S --> G[격자 스폰/전진]
-    S --> P[플레이어/적 투사체]
-    S --> D[드롭·레벨업 이벤트]
-    V -->|Broadcast| E[EnemySpawned / ResourceDropSpawned ...]
-    E --> F[Views/FX respond]
+```text
+Unity Update()
+  └─ DefenseGameBootstrapper.Update()
+       └─ GameViewModel.Tick(deltaTime)
+            ├─ Read Input (DefenseInputAdapter)
+            ├─ MovePlayerUseCase.Execute()
+            ├─ DefenseSimulationService.Tick()
+            │    ├─ 격자 스폰/전진
+            │    ├─ 플레이어/적 투사체
+            │    └─ 드롭·레벨업 이벤트
+            └─ Broadcast events (EnemySpawned, ResourceDropSpawned, …)
+                 └─ Views/FX respond (Instantiate prefabs, play VFX/SFX)
+```
              
 ---
 
