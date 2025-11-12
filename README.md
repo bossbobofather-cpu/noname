@@ -3,6 +3,7 @@
 핀볼·벽돌깨기에서 영감을 얻은 격자 기반 방어 게임 프로토타입입니다. Clean Architecture를 적용해 **Core 도메인 로직 → Application UseCase/Service → Infrastructure Adapter → Presentation(ViewModel & View)**로 계층을 나누고, DocFX로 개발 문서를 자동화했습니다.
 
 ![Gameplay](images/gamePlayDemo.gif)
+![Gameplay](images/gamePlayDemo2.gif)
 
 ---
 

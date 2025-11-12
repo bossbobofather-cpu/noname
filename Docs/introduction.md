@@ -3,6 +3,7 @@
 Noname Defense Prototype는 웨이브 방어 게임을 목표로 한 프로토타입입니다. 화면 하단의 플레이어가 포탑처럼 포탄을 발사하고, 상단 격자에는 몬스터가 배치되어 성벽을 향해 전진합니다.
 
 ![Gameplay Demo](../images/gamePlayDemo.gif)
+![Gameplay Demo](../images/gamePlayDemo2.gif)
 
 ## 주요 특징
 - 플레이어는 좌우로 움직이며 마우스/터치 포인터로 격자 셀을 지정해 공을 발사합니다. 셀이 비면 자동으로 사거리 내 가장 가까운 적을 다시 조준합니다.

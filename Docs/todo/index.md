@@ -5,7 +5,7 @@
 - [ ] Definition Importer 개선 : 웨이브 Excel -> Json -> SO 대응
 - [ ] GameAbilityEffect 추가 / GameAbility 추가 (증강과 증강의 효과들 추가)
 - [ ] DefenseGameBootstrapper에서 Projectile 내용을 분리하여 별도의 Definition을 부여하여 관리
-- [ ] 픽업 드랍 아이템 풀링
+- [ ] 오브젝트 풀링 구현(EnemyView, ProjectileView, ResourceDropView)
 - [ ] 로비 씬 구현
 - [ ] 인벤토리 및 장비 시스템 구현
 - [ ] 픽업 드랍 아이템에 장비 추가
