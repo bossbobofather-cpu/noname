@@ -11,6 +11,7 @@ using Noname.Core.ValueObjects;
 using Noname.Infrastructure.Input;
 using Noname.Infrastructure.Repositories;
 using Noname.Presentation.Managers;
+using Noname.Presentation.Utilities;
 using Noname.Presentation.ViewModels;
 using UnityEngine;
 
@@ -80,9 +81,13 @@ namespace Noname.Presentation.Views
         private GameViewModel _gameViewModel;
         private InMemoryGameStateRepository _repository;
         private readonly Dictionary<int, EnemyView> _enemyViews = new Dictionary<int, EnemyView>();
+        private readonly ComponentPoolRegistry<EnemyView> _enemyViewPoolRegistry = new ComponentPoolRegistry<EnemyView>();
         private readonly Dictionary<int, ProjectileView> _playerProjectileViews = new Dictionary<int, ProjectileView>();
         private readonly Dictionary<int, ProjectileView> _enemyProjectileViews = new Dictionary<int, ProjectileView>();
-        private readonly Dictionary<int, GameObject> _resourceDropViews = new Dictionary<int, GameObject>();
+        private readonly Dictionary<int, ResourceDropView> _resourceDropViews = new Dictionary<int, ResourceDropView>();
+        private readonly ComponentPoolRegistry<ProjectileView> _playerProjectilePoolRegistry = new ComponentPoolRegistry<ProjectileView>();
+        private readonly ComponentPoolRegistry<ProjectileView> _enemyProjectilePoolRegistry = new ComponentPoolRegistry<ProjectileView>();
+        private readonly ComponentPoolRegistry<ResourceDropView> _resourceDropPoolRegistry = new ComponentPoolRegistry<ResourceDropView>();
         private readonly Dictionary<int, ResourceDropCollectedEvent> _pendingDropEffects = new Dictionary<int, ResourceDropCollectedEvent>();
         private PlayerView _playerViewInstance;
         private FortressView _fortressViewInstance;
@@ -123,6 +128,7 @@ namespace Noname.Presentation.Views
             DestroyProjectileViews();
             DestroyAugmentSelectionView();
             DestroyResourceDropViews();
+            ClearPools();
             _gameViewModel = null;
         }
 
@@ -134,6 +140,7 @@ namespace Noname.Presentation.Views
             DestroyPlayerView();
             DestroyFortressView();
             DestroyResourceDropViews();
+            ClearPools();
 
             ApplyMovementBoundsFromColliders();
 
@@ -228,15 +235,13 @@ namespace Noname.Presentation.Views
         private void HandleEnemySpawned(EnemyEntity entity)
         {
             var prefab = ResolveEnemyViewPrefab();
-            if (prefab == null)
+            var view = GetEnemyViewInstance(prefab);
+            if (view == null)
             {
                 Debug.LogWarning("Enemy view prefab is not assigned.");
                 return;
             }
 
-            var container = enemyContainer != null ? enemyContainer : transform;
-            var view = Instantiate(prefab, container);
-            view.gameObject.SetActive(true);
             view.transform.position = new Vector3(entity.Position.X, entity.Position.Y, view.transform.position.z);
             view.Bind(_gameViewModel, entity);
             _enemyViews[entity.Id] = view;
@@ -341,23 +346,16 @@ namespace Noname.Presentation.Views
 
         private void HandleResourceDropSpawned(ResourceDropSpawnedEvent evt)
         {
-            var prefab = GetResourceDropPrefab(evt.Type);
-            if (prefab == null)
+            var view = GetResourceDropView(evt.Type);
+            if (view == null)
             {
                 return;
             }
 
-            var parent = resourceDropParent != null ? resourceDropParent : transform;
-            var instance = Instantiate(prefab, parent);
+            var instance = view.gameObject;
             instance.transform.position = new Vector3(evt.Position.X, evt.Position.Y, instance.transform.position.z) + GetDropScatterOffset();
-
-            var view = instance.GetComponent<ResourceDropView>();
-            if (view != null)
-            {
-                view.Initialize(evt.DropId, evt.Type);
-            }
-
-            _resourceDropViews[evt.DropId] = instance;
+            view.Initialize(evt.DropId, evt.Type);
+            _resourceDropViews[evt.DropId] = view;
         }
 
         private void HandleResourceDropCollected(ResourceDropCollectedEvent evt)
@@ -374,18 +372,17 @@ namespace Noname.Presentation.Views
                 return;
             }
 
-            var dropView = view.GetComponent<ResourceDropView>();
             var pickupAnchor = _playerViewInstance != null ? _playerViewInstance.PickupAnchor : null;
             var pickupOrigin = view.transform.position;
             PlayResourcePickupFeedback(evt, pickupOrigin);
-            if (dropView != null && pickupAnchor != null)
+            if (pickupAnchor != null)
             {
-                dropView.BeginPickupTravel(pickupAnchor, HandleDropTravelCompleted);
+                view.BeginPickupTravel(pickupAnchor, HandleDropTravelCompleted);
             }
             else
             {
-                Destroy(view);
                 _resourceDropViews.Remove(evt.DropId);
+                ReleaseResourceDropView(view);
                 ApplyResourceDropEffect(evt);
             }
         }
@@ -414,7 +411,7 @@ namespace Noname.Presentation.Views
             {
                 if (pair.Value != null)
                 {
-                    Destroy(pair.Value);
+                    ReleaseResourceDropView(pair.Value);
                 }
             }
 
@@ -429,7 +426,7 @@ namespace Noname.Presentation.Views
         {
             if (_resourceDropViews.TryGetValue(dropId, out var view) && view != null)
             {
-                Destroy(view);
+                ReleaseResourceDropView(view);
             }
 
             _resourceDropViews.Remove(dropId);
@@ -556,8 +553,7 @@ namespace Noname.Presentation.Views
             {
                 if (pair.Value != null)
                 {
-                    pair.Value.Unbind();
-                    Destroy(pair.Value.gameObject);
+                    ReleaseEnemyView(pair.Value);
                 }
             }
 
@@ -570,7 +566,7 @@ namespace Noname.Presentation.Views
             {
                 if (pair.Value != null)
                 {
-                    Destroy(pair.Value.gameObject);
+                    ReleasePlayerProjectileView(pair.Value);
                 }
             }
 
@@ -580,7 +576,7 @@ namespace Noname.Presentation.Views
             {
                 if (pair.Value != null)
                 {
-                    Destroy(pair.Value.gameObject);
+                    ReleaseEnemyProjectileView(pair.Value);
                 }
             }
 
@@ -631,8 +627,7 @@ namespace Noname.Presentation.Views
         {
             if (_enemyViews.TryGetValue(enemyId, out var view))
             {
-                view.Unbind();
-                Destroy(view.gameObject);
+                ReleaseEnemyView(view);
                 _enemyViews.Remove(enemyId);
             }
         }
@@ -664,6 +659,109 @@ namespace Noname.Presentation.Views
             soundManager?.PlayAbilitySelectionSound(false);
         }
 
+        private EnemyView GetEnemyViewInstance(EnemyView prefab)
+        {
+            var reference = prefab != null ? prefab : fallbackEnemyViewPrefab;
+            if (reference == null)
+            {
+                return null;
+            }
+
+            var parent = enemyContainer != null ? enemyContainer : transform;
+            return _enemyViewPoolRegistry.GetInstance(reference, parent, reference.gameObject.name);
+        }
+
+        private void ReleaseEnemyView(EnemyView view)
+        {
+            if (view == null)
+            {
+                return;
+            }
+
+            view.Unbind();
+            _enemyViewPoolRegistry.ReleaseInstance(view);
+        }
+
+        private ProjectileView GetPlayerProjectileView()
+        {
+            if (playerProjectilePrefab == null)
+            {
+                return null;
+            }
+
+            var parent = projectileParent != null ? projectileParent : transform;
+            return _playerProjectilePoolRegistry.GetInstance(playerProjectilePrefab, parent, playerProjectilePrefab.gameObject.name);
+        }
+
+        private void ReleasePlayerProjectileView(ProjectileView view)
+        {
+            if (view == null)
+            {
+                return;
+            }
+
+            _playerProjectilePoolRegistry.ReleaseInstance(view);
+        }
+
+        private ProjectileView GetEnemyProjectileView()
+        {
+            if (enemyProjectilePrefab == null)
+            {
+                return null;
+            }
+
+            var parent = projectileParent != null ? projectileParent : transform;
+            return _enemyProjectilePoolRegistry.GetInstance(enemyProjectilePrefab, parent, enemyProjectilePrefab.gameObject.name);
+        }
+
+        private void ReleaseEnemyProjectileView(ProjectileView view)
+        {
+            if (view == null)
+            {
+                return;
+            }
+
+            _enemyProjectilePoolRegistry.ReleaseInstance(view);
+        }
+
+        private ResourceDropView GetResourceDropView(ResourceDropType type)
+        {
+            var prefab = GetResourceDropPrefab(type);
+            if (prefab == null)
+            {
+                return null;
+            }
+
+            var prefabView = prefab.GetComponent<ResourceDropView>();
+            if (prefabView == null)
+            {
+                Debug.LogWarning($"Resource drop prefab for {type} does not contain ResourceDropView.");
+                return null;
+            }
+
+            var parent = resourceDropParent != null ? resourceDropParent : transform;
+            return _resourceDropPoolRegistry.GetInstance(prefabView, parent, type.ToString());
+        }
+
+        private void ReleaseResourceDropView(ResourceDropView view)
+        {
+            if (view == null)
+            {
+                return;
+            }
+
+            view.ResetIdleState();
+            _resourceDropPoolRegistry.ReleaseInstance(view);
+        }
+
+        private void ClearPools()
+        {
+            _enemyViewPoolRegistry.Clear();
+            _playerProjectilePoolRegistry.Clear();
+            _enemyProjectilePoolRegistry.Clear();
+            _resourceDropPoolRegistry.Clear();
+        }
+
         private void ForceCompleteResourceDropsOnGameOver()
         {
             if (_pendingDropEffects.Count > 0)
@@ -684,13 +782,12 @@ namespace Noname.Presentation.Views
 
         private void HandlePlayerProjectileFired(PlayerProjectileFiredEvent evt)
         {
-            if (playerProjectilePrefab == null)
+            var instance = GetPlayerProjectileView();
+            if (instance == null)
             {
                 return;
             }
 
-            var parent = projectileParent != null ? projectileParent : transform;
-            var instance = Instantiate(playerProjectilePrefab, parent);
             instance.Launch(
                 new Vector3(evt.Origin.X, evt.Origin.Y, instance.transform.position.z),
                 new Vector3(evt.Target.X, evt.Target.Y, instance.transform.position.z),
@@ -700,13 +797,12 @@ namespace Noname.Presentation.Views
 
         private void HandleEnemyProjectileFired(EnemyProjectileFiredEvent evt)
         {
-            if (enemyProjectilePrefab == null)
+            var instance = GetEnemyProjectileView();
+            if (instance == null)
             {
                 return;
             }
 
-            var parent = projectileParent != null ? projectileParent : transform;
-            var instance = Instantiate(enemyProjectilePrefab, parent);
             instance.Launch(
                 new Vector3(evt.Origin.X, evt.Origin.Y, instance.transform.position.z),
                 new Vector3(evt.Target.X, evt.Target.Y, instance.transform.position.z),
@@ -724,6 +820,7 @@ namespace Noname.Presentation.Views
                         playerProjectile.SnapTo(new Vector3(evt.Position.X, evt.Position.Y, playerProjectile.transform.position.z));
                         playerProjectile.Complete(evt.ExplosionRadius);
                         _playerProjectileViews.Remove(evt.ProjectileId);
+                        ReleasePlayerProjectileView(playerProjectile);
                     }
                     else
                     {
@@ -736,6 +833,7 @@ namespace Noname.Presentation.Views
                         enemyProjectile.SnapTo(new Vector3(evt.Position.X, evt.Position.Y, enemyProjectile.transform.position.z));
                         enemyProjectile.Complete(evt.ExplosionRadius);
                         _enemyProjectileViews.Remove(evt.ProjectileId);
+                        ReleaseEnemyProjectileView(enemyProjectile);
                     }
                     else
                     {

@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35035b4415554147bea9320ea6dc801, type: 3}
   m_Name: 10002
   m_EditorClassIdentifier: Assembly-CSharp::Noname.Core.ValueObjects.EnemyDefinition
-  maxHealth: 50
-  attackDamage: 5
-  attackRange: 1.5
-  attackCooldown: 1
+  maxHealthRaw: 500000
+  attackDamageRaw: 50000
+  attackRangeRaw: 15000
+  attackCooldownRaw: 10000
   drops:
   - type: 3
-    amount: 1
-    probability: 0
+    amountRaw: 1
+    probabilityRaw: 10000
     guaranteed: 0

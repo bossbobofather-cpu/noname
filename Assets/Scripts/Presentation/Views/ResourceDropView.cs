@@ -20,6 +20,7 @@ namespace Noname.Presentation.Views
 
         private int _dropId;
         private bool _isTravelling;
+        private ResourceDropType _dropType;
         private Vector3 _idleOrigin;
         private float _idleTimer;
         private Transform _travelTarget;
@@ -34,8 +35,12 @@ namespace Noname.Presentation.Views
         public void Initialize(int dropId, ResourceDropType type)
         {
             _dropId = dropId;
+            _dropType = type;
             _idleOrigin = transform.position;
+            ResetIdleState();
         }
+
+        public ResourceDropType DropType => _dropType;
 
         private void Update()
         {
@@ -101,5 +106,13 @@ namespace Noname.Presentation.Views
             _onTravelCompleted?.Invoke(_dropId);
         }
 
+        public void ResetIdleState()
+        {
+            _isTravelling = false;
+            _travelTarget = null;
+            _onTravelCompleted = null;
+            _idleTimer = 0f;
+            transform.position = _idleOrigin;
+        }
     }
 }

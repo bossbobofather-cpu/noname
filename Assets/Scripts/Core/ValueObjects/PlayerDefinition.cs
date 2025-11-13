@@ -5,49 +5,67 @@ using UnityEngine;
 namespace Noname.Core.ValueObjects
 {
     /// <summary>
-    /// 플레이어 캐릭터의 기본 스탯을 정의하는 ScriptableObject 입니다.
+    /// 플레이어 캐릭터의 기본 능력치를 정의하는 ScriptableObject 입니다.
     /// </summary>
     [CreateAssetMenu(menuName = "Defense/Player Definition", fileName = "PlayerDefinition")]
     public sealed class PlayerDefinition : ScriptableObject
     {
-        [Header("Combat Stats")]
-        [Min(0f)]
+        [Header("Combat Stats (만분율)")]
+        [Tooltip("이동 속도 (만분율). 예: 8.0 -> 80000")]
+        [Min(0)]
+        public int moveSpeedRaw = 8 * FixedPointScaling.Denominator;
+
+        [Tooltip("기본 공격력 (만분율). 예: 25 -> 250000")]
+        [Min(0)]
+        public int attackDamageRaw = 25 * FixedPointScaling.Denominator;
+
+        [Tooltip("공격 사거리 (만분율). 예: 2.5 -> 25000")]
+        [Min(0)]
+        public int attackRangeRaw = (int)(2.5f * FixedPointScaling.Denominator);
+
+        [Tooltip("공격 쿨다운 (만분율). 예: 0.75 -> 7500")]
+        [Min(0)]
+        public int attackCooldownRaw = (int)(0.75f * FixedPointScaling.Denominator);
+
+        [Tooltip("최대 체력 (만분율). 예: 100 -> 1000000")]
+        [Min(0)]
+        public int maxHealthRaw = 100 * FixedPointScaling.Denominator;
+
+        [Tooltip("기본 Luck 수치 (만분율). 예: 1 -> 10000")]
+        [Min(0)]
+        public int luckRaw = 0;
+
         /// <summary>이동 속도.</summary>
-        public float moveSpeed = 8f;
+        public float MoveSpeed => FixedPointScaling.ToFloat(moveSpeedRaw);
 
-        [Min(0f)]
         /// <summary>기본 공격력.</summary>
-        public float attackDamage = 25f;
+        public float AttackDamage => FixedPointScaling.ToFloat(attackDamageRaw);
 
-        [Min(0f)]
         /// <summary>공격 사거리.</summary>
-        public float attackRange = 2.5f;
+        public float AttackRange => FixedPointScaling.ToFloat(attackRangeRaw);
 
-        [Min(0.01f)]
         /// <summary>공격 쿨다운.</summary>
-        public float attackCooldown = 0.75f;
+        public float AttackCooldown => FixedPointScaling.ToFloat(attackCooldownRaw);
 
-        [Min(1f)]
         /// <summary>최대 체력.</summary>
-        public float maxHealth = 100f;
+        public float MaxHealth => FixedPointScaling.ToFloat(maxHealthRaw);
 
-        [Min(0f)]
-        /// <summary>운(Luck) 수치.</summary>
-        public float luck = 0f;
+        /// <summary>기본 Luck 수치.</summary>
+        public float Luck => FixedPointScaling.ToFloat(luckRaw);
 
         /// <summary>
-        /// 스탯을 기반으로 PlayerEntity를 생성합니다.
+        /// 능력치 기반으로 PlayerEntity를 생성합니다.
         /// </summary>
         public PlayerEntity CreateEntity(Float2 spawnPosition)
         {
             return new PlayerEntity(
                 spawnPosition,
-                moveSpeed,
-                attackDamage,
-                attackRange,
-                attackCooldown,
-                maxHealth,
-                luck);
+                MoveSpeed,
+                AttackDamage,
+                AttackRange,
+                AttackCooldown,
+                MaxHealth,
+                Luck);
         }
     }
 }

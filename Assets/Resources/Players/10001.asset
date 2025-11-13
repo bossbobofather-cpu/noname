@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a41896ef673f63c4f8f1a224242e98fc, type: 3}
   m_Name: 10001
   m_EditorClassIdentifier: Assembly-CSharp::Noname.Core.ValueObjects.PlayerDefinition
-  moveSpeed: 8
-  attackDamage: 10
-  attackRange: 5
-  attackCooldown: 0.3
-  maxHealth: 100
-  luck: 10
+  moveSpeedRaw: 80000
+  attackDamageRaw: 250000
+  attackRangeRaw: 50000
+  attackCooldownRaw: 3000
+  maxHealthRaw: 1000000
+  luckRaw: 100000

@@ -1,4 +1,5 @@
 using Noname.Core.Enums;
+using UnityEngine;
 
 namespace Noname.Core.ValueObjects
 {
@@ -11,15 +12,22 @@ namespace Noname.Core.ValueObjects
         /// <summary>드롭 종류.</summary>
         public ResourceDropType type;
 
-        /// <summary>드롭 수량.</summary>
-        public float amount;
+        [Tooltip("드롭 수량 (만분율). 예: 10 -> 100000")]
+        [Min(0)]
+        public int amountRaw;
 
-        [UnityEngine.Range(0f, 1f)]
-        /// <summary>드롭 확률(0~1).</summary>
-        public float probability;
+        [Tooltip("드롭 확률 (만분율). 예: 50% -> 5000")]
+        [Min(0)]
+        public int probabilityRaw;
 
-        [UnityEngine.Tooltip("확률을 무시하고 항상 지급할지 여부")]
+        [Tooltip("확률을 무시하고 항상 지급할지 여부")]
         /// <summary>항상 지급 여부.</summary>
         public bool guaranteed;
+
+        /// <summary>실제 드롭 수량.</summary>
+        public float Amount => FixedPointScaling.ToFloat(amountRaw);
+
+        /// <summary>실제 드롭 확률(0~1).</summary>
+        public float Probability => Mathf.Clamp01(FixedPointScaling.ToFloat(probabilityRaw));
     }
 }

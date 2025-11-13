@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de1891c796414804eb005e3052a50876, type: 3}
+  m_Name: stage_1
+  m_EditorClassIdentifier: Assembly-CSharp::Noname.Core.ValueObjects.StageDefinition
+  stageCode: stage_1
+  waveColumns: 1
+  spawnCountPerRow: 3
+  difficultyScaleRaw: 10000
+  monsterWeights:
+  - enemy: {fileID: 11400000, guid: b1fe5f326c1a11a4d9b0737d06507970, type: 2}
+    weight: 1
+  - enemy: {fileID: 11400000, guid: 1a3bc252df960624dabec52713a7a2ec, type: 2}
+    weight: 1

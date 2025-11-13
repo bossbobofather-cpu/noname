@@ -1,0 +1,20 @@
+{
+    "entries": [
+        {
+            "stageCode": "stage_2",
+            "waveColumns": 1,
+            "spawnCountPerRow": 3,
+            "difficultyScaleRaw": 10000,
+            "monsterWeights": [
+                {
+                    "enemyCode": "10001",
+                    "weight": 1.0
+                },
+                {
+                    "enemyCode": "10002",
+                    "weight": 1.0
+                }
+            ]
+        }
+    ]
+}

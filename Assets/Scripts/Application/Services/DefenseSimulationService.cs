@@ -603,13 +603,13 @@ namespace Noname.Application.Services
             for (int i = 0; i < drops.Length; i++)
             {
                 var drop = drops[i];
-                var chance = drop.guaranteed ? 1f : drop.probability;
+                var chance = drop.guaranteed ? 1f : drop.Probability;
                 if (!drop.guaranteed && !RollChance(chance, playerLuck))
                 {
                     continue;
                 }
 
-                SpawnResourceDrop(state, drop.type, enemy.Position, drop.amount);
+                SpawnResourceDrop(state, drop.type, enemy.Position, drop.Amount);
             }
         }
 
@@ -622,6 +622,11 @@ namespace Noname.Application.Services
 
         private bool RollChance(float baseChance, float luck)
         {
+            if (baseChance <= 0f)
+            {
+                return false;
+            }
+
             var chance = baseChance + luck * _settings.luckBonusPerPoint;
             chance = MathF.Max(0f, MathF.Min(1f, chance));
             return _random.NextDouble() <= chance;

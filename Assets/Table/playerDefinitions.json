@@ -2,21 +2,21 @@
     "entries": [
         {
             "playerCode": "10001",
-            "moveSpeed": 8.0,
-            "attackDamage": 25.0,
-            "attackRange": 5.0,
-            "attackCooldown": 0.30000001192092898,
-            "maxHealth": 100.0,
-            "luck": 10.0
+            "moveSpeedRaw": 80000,
+            "attackDamageRaw": 250000,
+            "attackRangeRaw": 50000,
+            "attackCooldownRaw": 3000,
+            "maxHealthRaw": 1000000,
+            "luckRaw": 100000
         },
         {
             "playerCode": "10002",
-            "moveSpeed": 5.0,
-            "attackDamage": 10.0,
-            "attackRange": 10.0,
-            "attackCooldown": 0.5,
-            "maxHealth": 100.0,
-            "luck": 100.0
+            "moveSpeedRaw": 50000,
+            "attackDamageRaw": 100000,
+            "attackRangeRaw": 100000,
+            "attackCooldownRaw": 5000,
+            "maxHealthRaw": 1000000,
+            "luckRaw": 1000000
         }
     ]
 }
