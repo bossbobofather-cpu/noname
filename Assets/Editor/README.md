@@ -1,16 +1,27 @@
-# Definition Importer
+﻿# Definition Import Workflow (Editor)
 
-`Tools > Definition Importer` 메뉴에서 Excel/JSON 데이터를 불러와 `EnemyDefinition`, `PlayerDefinition` ScriptableObject를 생성/갱신합니다.
+DefinitionImportUtility 기반 배치 명령만 사용합니다. 기존 Definition Importer 창은 더 이상 제공되지 않습니다.
 
-## Excel → JSON
-1. `[enemyInfo]`, `[playerInfo]` 섹션을 포함한 `.xlsx` 파일을 선택합니다.
-2. Definition Type(Enemy/Player)을 지정한 뒤 `Convert` 버튼을 누르면 해당 시트가 JSON으로 변환됩니다.
+## XLSX 요구사항
 
-## JSON → ScriptableObject
-1. Definition Type을 고르고 변환할 JSON 파일을 선택합니다.
-2. `Import JSON -> ScriptableObjects` 버튼을 누르면
-   - `Assets/Resources/Enemies` 또는 `Assets/Resources/Players` 폴더에 코드(ID) 기반 SO가 생성/갱신됩니다.
-   - JSON에 없는 SO는 자동 삭제됩니다.
-   - 기존 SO와 값이 다르면 어떤 필드가 바뀌었는지 경고 로그가 출력됩니다.
+- Enemy/Player 엑셀에는 [enemyInfo], [playerInfo] 섹션이 필수입니다.
+- Stage 엑셀에는 [stageInfo]와 waveColumns, spawnCountPerRow, difficultyScale, monsterWeights/monsterWeightTable 중 하나 이상의 헤더가 필요합니다.
+- Stage 몬스터 엔트리는 (EnemyCode:10001;weight:1) 형식을 따릅니다.
+- 모든 실수형 스탯/드랍 값은 만분율 정수(값 × 10,000)로 입력합니다.
 
-Excel/JSON 구조가 바뀔 경우 DefinitionImporterWindow.cs를 함께 수정해 주세요.
+## 배치 메뉴
+
+**Tools → Definition Importer** 메뉴에서 아래 항목을 실행하세요.
+
+1. **Run Enemy Definitions** – Assets/Table/enemyDefinitions.xlsx → enemyDefinitions.json → Assets/Resources/Enemies/*.asset
+2. **Run Player Definitions** – Assets/Table/playerDefinitions.xlsx → playerDefinitions.json → Assets/Resources/Players/*.asset
+3. **Run Stage Definitions** – Assets/Table/Stage/*.xlsx → 동일한 이름의 JSON + Assets/Resources/Stages/*.asset
+4. **Run All Definitions** – 위 세 단계를 순차 실행
+
+각 단계가 완료되면 Console 로그에서 결과를 확인할 수 있습니다.
+
+## 문제 해결 팁
+
+- 배치를 실행하기 전에 관련 XLSX 파일을 모두 닫아 파일 잠금을 방지하세요.
+- 몬스터 가중치가 비어 있으면 헤더 이름과 (EnemyCode:코드;weight:값) 문자열이 올바른지 확인하세요.
+- XLSX를 수정한 뒤에는 반드시 해당 배치를 다시 실행해야 JSON과 ScriptableObject가 갱신됩니다.
