@@ -3295,6 +3295,68 @@ references:
   commentId: N:Noname.EditorTools
   fullName: Noname.EditorTools
   nameWithType: Noname.EditorTools
+- uid: Noname.EditorTools.DefinitionImportUtility
+  name: DefinitionImportUtility
+  href: api-editor/Noname.EditorTools.DefinitionImportUtility.html
+  commentId: T:Noname.EditorTools.DefinitionImportUtility
+  fullName: Noname.EditorTools.DefinitionImportUtility
+  nameWithType: DefinitionImportUtility
+- uid: Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson(Noname.EditorTools.DefinitionImportUtility.DefinitionKind,System.String,System.String)
+  name: ConvertXlsxToJson(DefinitionKind, string, string)
+  href: api-editor/Noname.EditorTools.DefinitionImportUtility.html#Noname_EditorTools_DefinitionImportUtility_ConvertXlsxToJson_Noname_EditorTools_DefinitionImportUtility_DefinitionKind_System_String_System_String_
+  commentId: M:Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson(Noname.EditorTools.DefinitionImportUtility.DefinitionKind,System.String,System.String)
+  name.vb: ConvertXlsxToJson(DefinitionKind, String, String)
+  fullName: Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson(Noname.EditorTools.DefinitionImportUtility.DefinitionKind, string, string)
+  fullName.vb: Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson(Noname.EditorTools.DefinitionImportUtility.DefinitionKind, String, String)
+  nameWithType: DefinitionImportUtility.ConvertXlsxToJson(DefinitionImportUtility.DefinitionKind, string, string)
+  nameWithType.vb: DefinitionImportUtility.ConvertXlsxToJson(DefinitionImportUtility.DefinitionKind, String, String)
+- uid: Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson*
+  name: ConvertXlsxToJson
+  href: api-editor/Noname.EditorTools.DefinitionImportUtility.html#Noname_EditorTools_DefinitionImportUtility_ConvertXlsxToJson_
+  commentId: Overload:Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson
+  isSpec: "True"
+  fullName: Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson
+  nameWithType: DefinitionImportUtility.ConvertXlsxToJson
+- uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  name: DefinitionImportUtility.DefinitionKind
+  href: api-editor/Noname.EditorTools.DefinitionImportUtility.DefinitionKind.html
+  commentId: T:Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  fullName: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  nameWithType: DefinitionImportUtility.DefinitionKind
+- uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Enemy
+  name: Enemy
+  href: api-editor/Noname.EditorTools.DefinitionImportUtility.DefinitionKind.html#Noname_EditorTools_DefinitionImportUtility_DefinitionKind_Enemy
+  commentId: F:Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Enemy
+  fullName: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Enemy
+  nameWithType: DefinitionImportUtility.DefinitionKind.Enemy
+- uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Player
+  name: Player
+  href: api-editor/Noname.EditorTools.DefinitionImportUtility.DefinitionKind.html#Noname_EditorTools_DefinitionImportUtility_DefinitionKind_Player
+  commentId: F:Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Player
+  fullName: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Player
+  nameWithType: DefinitionImportUtility.DefinitionKind.Player
+- uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Stage
+  name: Stage
+  href: api-editor/Noname.EditorTools.DefinitionImportUtility.DefinitionKind.html#Noname_EditorTools_DefinitionImportUtility_DefinitionKind_Stage
+  commentId: F:Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Stage
+  fullName: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Stage
+  nameWithType: DefinitionImportUtility.DefinitionKind.Stage
+- uid: Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImportUtility.DefinitionKind,System.String)
+  name: ImportJsonToScriptableObjects(DefinitionKind, string)
+  href: api-editor/Noname.EditorTools.DefinitionImportUtility.html#Noname_EditorTools_DefinitionImportUtility_ImportJsonToScriptableObjects_Noname_EditorTools_DefinitionImportUtility_DefinitionKind_System_String_
+  commentId: M:Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImportUtility.DefinitionKind,System.String)
+  name.vb: ImportJsonToScriptableObjects(DefinitionKind, String)
+  fullName: Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImportUtility.DefinitionKind, string)
+  fullName.vb: Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImportUtility.DefinitionKind, String)
+  nameWithType: DefinitionImportUtility.ImportJsonToScriptableObjects(DefinitionImportUtility.DefinitionKind, string)
+  nameWithType.vb: DefinitionImportUtility.ImportJsonToScriptableObjects(DefinitionImportUtility.DefinitionKind, String)
+- uid: Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects*
+  name: ImportJsonToScriptableObjects
+  href: api-editor/Noname.EditorTools.DefinitionImportUtility.html#Noname_EditorTools_DefinitionImportUtility_ImportJsonToScriptableObjects_
+  commentId: Overload:Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects
+  isSpec: "True"
+  fullName: Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects
+  nameWithType: DefinitionImportUtility.ImportJsonToScriptableObjects
 - uid: Noname.EditorTools.DefinitionImporterWindow
   name: DefinitionImporterWindow
   href: api-editor/Noname.EditorTools.DefinitionImporterWindow.html

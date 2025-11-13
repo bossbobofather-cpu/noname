@@ -195,6 +195,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api-editor/Noname.EditorTools.DefinitionImportUtility.DefinitionKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api-editor/Noname.EditorTools.DefinitionImportUtility.DefinitionKind.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Noname.EditorTools.DefinitionImportUtility.DefinitionKind",
+      "Summary": "<p sourcefile=\"api-editor/Noname.EditorTools.DefinitionImportUtility.DefinitionKind.yml\" sourcestartlinenumber=\"1\">XLSX/JSON/ScriptableObject 변환 대상 유형입니다.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-editor/Noname.EditorTools.DefinitionImportUtility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api-editor/Noname.EditorTools.DefinitionImportUtility.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Noname.EditorTools.DefinitionImportUtility",
+      "Summary": "<p sourcefile=\"api-editor/Noname.EditorTools.DefinitionImportUtility.yml\" sourcestartlinenumber=\"1\">Definition Importer 배치 워크플로(DefinitionImportUtility)를 설명하기 위한 DocFX 전용 스텁입니다.\n실제 구현은 Unity Editor 환경에서만 동작하므로, 공개 API 서명과 문서화를 위해서만 존재합니다.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api-editor/Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.yml",
       "output": {
         ".html": {
