@@ -22,6 +22,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Assets/Resources/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "Assets/Resources/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Assets/Scripts/Application/README.md",
       "output": {
         ".html": {
@@ -179,6 +189,16 @@
       "output": {
         ".html": {
           "relative_path": "Docs/tools/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Docs/work/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Docs/work/index.html"
         }
       },
       "version": ""
