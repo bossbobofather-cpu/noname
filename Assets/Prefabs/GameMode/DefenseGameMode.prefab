@@ -60,34 +60,111 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Noname.Presentation.Views.DefenseGameBootstrapper
   inputAdapter: {fileID: 8642240288784154807}
-  playerViewPrefab: {fileID: 9156576574499509118, guid: 28be4632e1388124f9dfe49ab52a66d5, type: 3}
+  playerViewPrefab:
+    m_AssetGUID: 28be4632e1388124f9dfe49ab52a66d5
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
   playerParent: {fileID: 0}
-  fortressViewPrefab: {fileID: 5797901734077132143, guid: f41dcb7074a773044a353db3b7300d94, type: 3}
+  fortressViewPrefab:
+    m_AssetGUID: f41dcb7074a773044a353db3b7300d94
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
   fortressParent: {fileID: 0}
-  meleeEnemyViewPrefab: {fileID: 8722522840604913263, guid: 4927001b0280d3c498bb91bc80802bb2, type: 3}
-  rangedEnemyViewPrefab: {fileID: 2452914863523587261, guid: 68c42045b7e88b742b6019466c69d8f1, type: 3}
+  fallbackEnemyViewPrefab:
+    m_AssetGUID: 4927001b0280d3c498bb91bc80802bb2
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
+  enemyViewVariants:
+  - prefab:
+      m_AssetGUID: 4927001b0280d3c498bb91bc80802bb2
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+    weight: 0
+  - prefab:
+      m_AssetGUID: 68c42045b7e88b742b6019466c69d8f1
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 1
+    weight: 0
   enemyContainer: {fileID: 0}
-  playerProjectilePrefab: {fileID: -1227093640386715278, guid: 447908faf583fc1468942e56511a2757, type: 3}
-  enemyProjectilePrefab: {fileID: -2281446704895773421, guid: 0e2aa4492874adf4a9d914238da382e3, type: 3}
+  playerProjectilePrefab:
+    m_AssetGUID: 447908faf583fc1468942e56511a2757
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 1
+  enemyProjectilePrefab:
+    m_AssetGUID: 0e2aa4492874adf4a9d914238da382e3
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
   projectileParent: {fileID: 0}
-  augmentSelectionViewPrefab: {fileID: 906844372190199174, guid: b7fc0046998da2743a2a4f73ff558a1e, type: 3}
+  augmentSelectionViewPrefab:
+    m_AssetGUID: b7fc0046998da2743a2a4f73ff558a1e
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_SubObjectGUID: 
+    m_EditorAssetChanged: 0
   augmentSelectionParent: {fileID: 0}
+  resourceDropParent: {fileID: 0}
+  resourceDropPrefabs:
+  - type: 1
+    prefab:
+      m_AssetGUID: 087258e038a05d146b4c436e5136bd8c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - type: 0
+    prefab:
+      m_AssetGUID: 0e0bafa8d5331454c9a022e4e93cc36c
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - type: 2
+    prefab:
+      m_AssetGUID: 4edb925f7bd17064daadcd92e89d9ea9
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 0
+  - type: 3
+    prefab:
+      m_AssetGUID: 5bcda6779b7e4bc4bbe7aea75c2b41aa
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_SubObjectGUID: 
+      m_EditorAssetChanged: 1
+  dropScatterRange: {x: 0.75, y: 0.35}
+  leftBoundaryCollider: {fileID: 0}
+  rightBoundaryCollider: {fileID: 0}
   settings:
     playerSpawnPosition:
       x: 0
       y: -3
-    playerMoveSpeed: 8
-    playerAttackDamage: 25
-    playerAttackRange: 5
-    playerAttackCooldown: 0.75
-    movementMinX: -6
-    movementMaxX: 6
+    playerDefinitions:
+    - {fileID: 11400000, guid: fc5c979712458dc4d9a1afb903faf824, type: 2}
+    defaultPlayerIndex: 0
+    movementMinX: -2.5
+    movementMaxX: 5
     playerProjectileSpeed: 15
     playerExplosionRadius: 1.5
     baseExperienceToLevel: 100
     experienceGrowthFactor: 1.25
     experiencePickupDelay: 1
-    augmentChoicesPerLevel: 3
+    luckBonusPerPoint: 0.02
+    abilityChoicesPerLevel: 3
     abilityPool:
     - {fileID: 11400000, guid: 4ca8fe354a745b748993b1cfec6107a4, type: 2}
     - {fileID: 11400000, guid: 1177777689c16e047a0e706f778a93bd, type: 2}
@@ -99,33 +176,21 @@ MonoBehaviour:
       x: 1.5
       y: 0.75
     fortressMaxHealth: 500
-    gridRows: 8
-    gridColumns: 6
+    gridRows: 15
+    gridColumns: 11
     enemyRowAdvanceInterval: 1.25
-    waveColumnFillRatio: 0.4
-    enemySpawnMin:
-      x: -4.5
-      y: 6
-    enemySpawnMax:
-      x: 4.5
-      y: 6
+    spawnOriginX: -2.5
+    spawnColumnSpacing: 0.5
+    firstRowY: 5
+    rowSpacing: 0.4
+    waveColumnFillRatio: 0.3
+    spawnOnlyFirstWave: 0
     initialSpawnDelay: 1.5
-    spawnInterval: 2.5
-    enemyArchetypes:
-    - role: 0
-      moveSpeed: 1
-      maxHealth: 1
-      attackDamage: 5
-      attackRange: 0.3
-      attackCooldown: 1
-      preferredDistance: 0
-      experienceReward: 5
-    - role: 1
-      moveSpeed: 1
-      maxHealth: 1
-      attackDamage: 5
-      attackRange: 1
-      attackCooldown: 1
-      preferredDistance: 3
-      experienceReward: 5
+    enemySpawnEntries:
+    - definition: {fileID: 11400000, guid: b1fe5f326c1a11a4d9b0737d06507970, type: 2}
+      weight: 0
+    - definition: {fileID: 11400000, guid: 1a3bc252df960624dabec52713a7a2ec, type: 2}
+      weight: 0
+    - definition: {fileID: 11400000, guid: 0ef4be2bc7c98d347b4277812e2436e1, type: 2}
+      weight: 0
     enemyProjectileSpeed: 8

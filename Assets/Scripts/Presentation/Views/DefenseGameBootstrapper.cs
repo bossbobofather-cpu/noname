@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Noname.Application.Runtime;
 using Noname.Application.Ports;
 using Noname.Application.Services;
 using Noname.Application.UseCases;
@@ -14,6 +15,8 @@ using Noname.Presentation.Managers;
 using Noname.Presentation.Utilities;
 using Noname.Presentation.ViewModels;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.AddressableAssets;
 
 namespace Noname.Presentation.Views
 {
@@ -24,17 +27,17 @@ namespace Noname.Presentation.Views
     {
         [Header("References")]
         [SerializeField] private DefenseInputAdapter inputAdapter;
-        [SerializeField] private PlayerView playerViewPrefab;
+        [SerializeField] private AssetReferenceGameObject playerViewPrefab;
         [SerializeField] private Transform playerParent;
-        [SerializeField] private FortressView fortressViewPrefab;
+        [SerializeField] private AssetReferenceGameObject fortressViewPrefab;
         [SerializeField] private Transform fortressParent;
-        [SerializeField] private EnemyView fallbackEnemyViewPrefab;
+        [SerializeField] private AssetReferenceGameObject fallbackEnemyViewPrefab;
         [SerializeField] private EnemyViewVariant[] enemyViewVariants;
         [SerializeField] private Transform enemyContainer;
-        [SerializeField] private ProjectileView playerProjectilePrefab;
-        [SerializeField] private ProjectileView enemyProjectilePrefab;
+        [SerializeField] private AssetReferenceGameObject playerProjectilePrefab;
+        [SerializeField] private AssetReferenceGameObject enemyProjectilePrefab;
         [SerializeField] private Transform projectileParent;
-        [SerializeField] private AugmentSelectionView augmentSelectionViewPrefab;
+        [SerializeField] private AssetReferenceGameObject augmentSelectionViewPrefab;
         [SerializeField] private Transform augmentSelectionParent;
         [SerializeField] private Transform resourceDropParent;
         [SerializeField] private ResourceDropPrefabEntry[] resourceDropPrefabs;
@@ -42,10 +45,6 @@ namespace Noname.Presentation.Views
         [Header("Player Movement Bounds")]
         [SerializeField] private Collider2D leftBoundaryCollider;
         [SerializeField] private Collider2D rightBoundaryCollider;
-        [Header("Feedback Managers")]
-        [SerializeField] private UIFeedbackManager uiFeedbackManager;
-        [SerializeField] private FXManager fxManager;
-        [SerializeField] private SoundManager soundManager;
 
         [Header("Settings")]
         [SerializeField] private DefenseGameSettings settings = new DefenseGameSettings(
@@ -92,6 +91,15 @@ namespace Noname.Presentation.Views
         private PlayerView _playerViewInstance;
         private FortressView _fortressViewInstance;
         private AugmentSelectionView _augmentSelectionInstance;
+        private PlayerView _playerViewPrefabAsset;
+        private FortressView _fortressViewPrefabAsset;
+        private EnemyView _fallbackEnemyViewPrefabAsset;
+        private ProjectileView _playerProjectilePrefabAsset;
+        private ProjectileView _enemyProjectilePrefabAsset;
+        private AugmentSelectionView _augmentSelectionViewPrefabAsset;
+        private readonly List<EnemyViewVariantRuntime> _enemyViewVariantsRuntime = new List<EnemyViewVariantRuntime>();
+        private readonly Dictionary<ResourceDropType, GameObject> _resourceDropPrefabLookup = new Dictionary<ResourceDropType, GameObject>();
+        private readonly HashSet<AssetReference> _loadedAssetReferences = new HashSet<AssetReference>();
 
         /// <summary>현재 활성화된 GameViewModel 인스턴스.</summary>
         public GameViewModel ViewModel => _gameViewModel;
@@ -99,24 +107,169 @@ namespace Noname.Presentation.Views
         private struct ResourceDropPrefabEntry
         {
             public ResourceDropType type;
-            public GameObject prefab;
+            public AssetReferenceGameObject prefab;
         }
 
         [Serializable]
         private struct EnemyViewVariant
         {
-            public EnemyView prefab;
+            public AssetReferenceGameObject prefab;
             public float weight;
+        }
+
+        private sealed class EnemyViewVariantRuntime
+        {
+            public EnemyView Prefab;
+            public float Weight;
+        }
+
+        private bool LoadAddressablePrefabs()
+        {
+            bool success = true;
+            _playerViewPrefabAsset = LoadComponentPrefab<PlayerView>(playerViewPrefab, nameof(playerViewPrefab), ref success);
+            _fortressViewPrefabAsset = LoadComponentPrefab<FortressView>(fortressViewPrefab, nameof(fortressViewPrefab), ref success);
+            _fallbackEnemyViewPrefabAsset = LoadComponentPrefab<EnemyView>(fallbackEnemyViewPrefab, nameof(fallbackEnemyViewPrefab), ref success);
+            _playerProjectilePrefabAsset = LoadComponentPrefab<ProjectileView>(playerProjectilePrefab, nameof(playerProjectilePrefab), ref success);
+            _enemyProjectilePrefabAsset = LoadComponentPrefab<ProjectileView>(enemyProjectilePrefab, nameof(enemyProjectilePrefab), ref success);
+            _augmentSelectionViewPrefabAsset = LoadComponentPrefab<AugmentSelectionView>(augmentSelectionViewPrefab, nameof(augmentSelectionViewPrefab), ref success);
+
+            LoadEnemyVariantPrefabs(ref success);
+            LoadResourceDropPrefabs(ref success);
+
+            if (!success)
+            {
+                ReleaseAddressablePrefabs();
+            }
+
+            return success;
+        }
+
+        private void ReleaseAddressablePrefabs()
+        {
+            foreach (var reference in _loadedAssetReferences)
+            {
+                AddressableAssetLoader.ReleaseAsset(reference);
+            }
+
+            _loadedAssetReferences.Clear();
+        }
+
+        private GameObject LoadGameObjectPrefab(AssetReferenceGameObject reference, string label, ref bool success)
+        {
+            if (reference == null || !reference.RuntimeKeyIsValid())
+            {
+                Debug.LogError($"{label} Addressable 레퍼런스가 비어 있습니다.");
+                success = false;
+                return null;
+            }
+
+            var prefab = AddressableAssetLoader.LoadAssetSync<GameObject>(reference);
+            if (prefab == null)
+            {
+                Debug.LogError($"{label} Addressable 로드에 실패했습니다.");
+                success = false;
+                return null;
+            }
+
+            RegisterLoadedReference(reference);
+            return prefab;
+        }
+
+        private TComponent LoadComponentPrefab<TComponent>(AssetReferenceGameObject reference, string label, ref bool success) where TComponent : Component
+        {
+            var prefab = LoadGameObjectPrefab(reference, label, ref success);
+            if (prefab == null)
+            {
+                return null;
+            }
+
+            if (!prefab.TryGetComponent(out TComponent component))
+            {
+                Debug.LogError($"{label} 프리팹에 {typeof(TComponent).Name} 컴포넌트가 없습니다.");
+                success = false;
+                return null;
+            }
+
+            return component;
+        }
+
+        private void RegisterLoadedReference(AssetReference reference)
+        {
+            if (reference != null && reference.RuntimeKeyIsValid())
+            {
+                _loadedAssetReferences.Add(reference);
+            }
+        }
+
+        private void LoadEnemyVariantPrefabs(ref bool success)
+        {
+            _enemyViewVariantsRuntime.Clear();
+            if (enemyViewVariants == null || enemyViewVariants.Length == 0)
+            {
+                return;
+            }
+
+            foreach (var variant in enemyViewVariants)
+            {
+                var prefab = LoadComponentPrefab<EnemyView>(variant.prefab, "EnemyViewVariant", ref success);
+                if (prefab == null)
+                {
+                    continue;
+                }
+
+                var weight = variant.weight > 0f ? variant.weight : 1f;
+                _enemyViewVariantsRuntime.Add(new EnemyViewVariantRuntime
+                {
+                    Prefab = prefab,
+                    Weight = weight
+                });
+            }
+        }
+
+        private void LoadResourceDropPrefabs(ref bool success)
+        {
+            _resourceDropPrefabLookup.Clear();
+            if (resourceDropPrefabs == null || resourceDropPrefabs.Length == 0)
+            {
+                return;
+            }
+
+            foreach (var entry in resourceDropPrefabs)
+            {
+                var prefab = LoadGameObjectPrefab(entry.prefab, $"ResourceDrop:{entry.type}", ref success);
+                if (prefab != null)
+                {
+                    _resourceDropPrefabLookup[entry.type] = prefab;
+                }
+            }
         }
 
         private void Awake()
         {
+            if (!LoadAddressablePrefabs())
+            {
+                enabled = false;
+                return;
+            }
+
             ComposeGame();
         }
 
         private void Update()
         {
             _gameViewModel?.Tick(Time.deltaTime);
+
+#if ENABLE_INPUT_SYSTEM && !ENABLE_LEGACY_INPUT_MANAGER
+            if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+            {
+                CoreRuntime.GameSceneManager?.LoadLobbyScene();
+            }
+#else
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                CoreRuntime.GameSceneManager?.LoadLobbyScene();
+            }
+#endif
         }
 
         private void OnDestroy()
@@ -129,6 +282,7 @@ namespace Noname.Presentation.Views
             DestroyAugmentSelectionView();
             DestroyResourceDropViews();
             ClearPools();
+            ReleaseAddressablePrefabs();
             _gameViewModel = null;
         }
 
@@ -249,54 +403,47 @@ namespace Noname.Presentation.Views
 
         private EnemyView ResolveEnemyViewPrefab()
         {
-            float totalWeight = 0f;
-            if (enemyViewVariants != null && enemyViewVariants.Length > 0)
+            if (_enemyViewVariantsRuntime.Count == 0)
             {
-                foreach (var option in enemyViewVariants)
+                return _fallbackEnemyViewPrefabAsset;
+            }
+
+            float totalWeight = 0f;
+            for (int i = 0; i < _enemyViewVariantsRuntime.Count; i++)
+            {
+                totalWeight += Mathf.Max(_enemyViewVariantsRuntime[i].Weight, 0.0001f);
+            }
+
+            if (totalWeight <= 0f)
+            {
+                return _fallbackEnemyViewPrefabAsset;
+            }
+
+            var roll = UnityEngine.Random.value * totalWeight;
+            float cumulative = 0f;
+            for (int i = 0; i < _enemyViewVariantsRuntime.Count; i++)
+            {
+                var variant = _enemyViewVariantsRuntime[i];
+                cumulative += Mathf.Max(variant.Weight, 0.0001f);
+                if (roll <= cumulative)
                 {
-                    if (option.prefab == null)
-                    {
-                        continue;
-                    }
-
-                    var weight = option.weight > 0f ? option.weight : 1f;
-                    totalWeight += weight;
-                }
-
-                if (totalWeight > 0f)
-                {
-                    var roll = UnityEngine.Random.value * totalWeight;
-                    float cumulative = 0f;
-                    foreach (var option in enemyViewVariants)
-                    {
-                        if (option.prefab == null)
-                        {
-                            continue;
-                        }
-
-                        var weight = option.weight > 0f ? option.weight : 1f;
-                        cumulative += weight;
-                        if (roll <= cumulative)
-                        {
-                            return option.prefab;
-                        }
-                    }
+                    return variant.Prefab != null ? variant.Prefab : _fallbackEnemyViewPrefabAsset;
                 }
             }
 
-            return fallbackEnemyViewPrefab;
+            return _fallbackEnemyViewPrefabAsset;
         }
 
         private PlayerView InstantiatePlayerView(DefenseGameSettings cfg)
         {
-            if (playerViewPrefab == null)
+            if (_playerViewPrefabAsset == null)
             {
                 Debug.LogError("PlayerView prefab is not assigned.");
                 return null;
             }
 
             var parent = playerParent != null ? playerParent : transform;
-            var instance = Instantiate(playerViewPrefab, parent);
+            var instance = Instantiate(_playerViewPrefabAsset, parent);
             var t = instance.transform;
             t.position = new Vector3(cfg.playerSpawnPosition.X, cfg.playerSpawnPosition.Y, t.position.z);
             instance.gameObject.SetActive(true);
@@ -305,14 +452,14 @@ namespace Noname.Presentation.Views
 
         private Float2 InstantiateFortressView(DefenseGameSettings cfg)
         {
-            if (fortressViewPrefab == null)
+            if (_fortressViewPrefabAsset == null)
             {
                 Debug.LogError("FortressView prefab is not assigned.");
                 return Float2.Zero;
             }
 
             var parent = fortressParent != null ? fortressParent : transform;
-            _fortressViewInstance = Instantiate(fortressViewPrefab, parent);
+            _fortressViewInstance = Instantiate(_fortressViewPrefabAsset, parent);
             var t = _fortressViewInstance.transform;
             t.position = new Vector3(cfg.fortressPosition.X, cfg.fortressPosition.Y, t.position.z);
             _fortressViewInstance.gameObject.SetActive(true);
@@ -322,13 +469,13 @@ namespace Noname.Presentation.Views
         private void InstantiateAugmentSelectionView()
         {
             DestroyAugmentSelectionView();
-            if (augmentSelectionViewPrefab == null || _gameViewModel == null)
+            if (_augmentSelectionViewPrefabAsset == null || _gameViewModel == null)
             {
                 return;
             }
 
             var parent = augmentSelectionParent != null ? augmentSelectionParent : transform;
-            _augmentSelectionInstance = Instantiate(augmentSelectionViewPrefab, parent);
+            _augmentSelectionInstance = Instantiate(_augmentSelectionViewPrefabAsset, parent);
             _augmentSelectionInstance.Bind(_gameViewModel);
         }
 
@@ -389,20 +536,8 @@ namespace Noname.Presentation.Views
 
         private GameObject GetResourceDropPrefab(ResourceDropType type)
         {
-            if (resourceDropPrefabs == null)
-            {
-                return null;
-            }
-
-            for (int i = 0; i < resourceDropPrefabs.Length; i++)
-            {
-                if (resourceDropPrefabs[i].type == type)
-                {
-                    return resourceDropPrefabs[i].prefab;
-                }
-            }
-
-            return null;
+            _resourceDropPrefabLookup.TryGetValue(type, out var prefab);
+            return prefab;
         }
 
         private void DestroyResourceDropViews(bool clearPending = true)
@@ -448,15 +583,18 @@ namespace Noname.Presentation.Views
             switch (evt.Type)
             {
                 case ResourceDropType.Gold:
-                    uiFeedbackManager?.ShowGoldGain(evt.Amount, worldPosition);
+                    CoreRuntime.UIManager?.ShowUI("GoldGain", worldPosition);
                     break;
                 case ResourceDropType.Experience:
-                    uiFeedbackManager?.ShowExperienceGain(evt.Amount, worldPosition);
+                    CoreRuntime.UIManager?.ShowUI("ExperienceGain", worldPosition);
+                    break;
+                default:
+                    CoreRuntime.UIManager?.ShowUI($"Resource:{evt.Type}", worldPosition);
                     break;
             }
 
-            fxManager?.PlayResourcePickupFx(worldPosition, evt.Type);
-            soundManager?.PlayResourcePickupSound(evt.Type);
+            CoreRuntime.FXManager?.PlayFx($"ResourceDrop:{evt.Type}", worldPosition);
+            CoreRuntime.SoundManager?.PlaySound($"ResourceDrop:{evt.Type}", worldPosition);
         }
 
         private Vector3 GetDropScatterOffset()
@@ -647,21 +785,21 @@ namespace Noname.Presentation.Views
 
         private void HandleAbilityChoicesPresented(GameplayAbilityDefinition[] choices)
         {
-            uiFeedbackManager?.ShowAbilitySelectionOpened();
-            fxManager?.PlayAbilitySelectionFx(true);
-            soundManager?.PlayAbilitySelectionSound(true);
+            CoreRuntime.UIManager?.OpenUI("AbilitySelection");
+            CoreRuntime.FXManager?.PlayFx("AbilitySelectionOpen");
+            CoreRuntime.SoundManager?.PlaySound("AbilitySelectionOpen");
         }
 
         private void HandleAbilitySelectionCleared()
         {
-            uiFeedbackManager?.ShowAbilitySelectionClosed();
-            fxManager?.PlayAbilitySelectionFx(false);
-            soundManager?.PlayAbilitySelectionSound(false);
+            CoreRuntime.UIManager?.CloseUI("AbilitySelection");
+            CoreRuntime.FXManager?.PlayFx("AbilitySelectionClose");
+            CoreRuntime.SoundManager?.PlaySound("AbilitySelectionClose");
         }
 
         private EnemyView GetEnemyViewInstance(EnemyView prefab)
         {
-            var reference = prefab != null ? prefab : fallbackEnemyViewPrefab;
+            var reference = prefab != null ? prefab : _fallbackEnemyViewPrefabAsset;
             if (reference == null)
             {
                 return null;
@@ -684,13 +822,13 @@ namespace Noname.Presentation.Views
 
         private ProjectileView GetPlayerProjectileView()
         {
-            if (playerProjectilePrefab == null)
+            if (_playerProjectilePrefabAsset == null)
             {
                 return null;
             }
 
             var parent = projectileParent != null ? projectileParent : transform;
-            return _playerProjectilePoolRegistry.GetInstance(playerProjectilePrefab, parent, playerProjectilePrefab.gameObject.name);
+            return _playerProjectilePoolRegistry.GetInstance(_playerProjectilePrefabAsset, parent, _playerProjectilePrefabAsset.gameObject.name);
         }
 
         private void ReleasePlayerProjectileView(ProjectileView view)
@@ -705,13 +843,13 @@ namespace Noname.Presentation.Views
 
         private ProjectileView GetEnemyProjectileView()
         {
-            if (enemyProjectilePrefab == null)
+            if (_enemyProjectilePrefabAsset == null)
             {
                 return null;
             }
 
             var parent = projectileParent != null ? projectileParent : transform;
-            return _enemyProjectilePoolRegistry.GetInstance(enemyProjectilePrefab, parent, enemyProjectilePrefab.gameObject.name);
+            return _enemyProjectilePoolRegistry.GetInstance(_enemyProjectilePrefabAsset, parent, _enemyProjectilePrefabAsset.gameObject.name);
         }
 
         private void ReleaseEnemyProjectileView(ProjectileView view)
@@ -824,7 +962,7 @@ namespace Noname.Presentation.Views
                     }
                     else
                     {
-                        SpawnImpactOnly(playerProjectilePrefab, evt);
+                        SpawnImpactOnly(_playerProjectilePrefabAsset, evt);
                     }
                     break;
                 case ProjectileFaction.Enemy:
@@ -837,7 +975,7 @@ namespace Noname.Presentation.Views
                     }
                     else
                     {
-                        SpawnImpactOnly(enemyProjectilePrefab, evt);
+                        SpawnImpactOnly(_enemyProjectilePrefabAsset, evt);
                     }
                     break;
             }
@@ -857,6 +995,7 @@ namespace Noname.Presentation.Views
         }
     }
 }
+
 
 
 

@@ -1,36 +1,42 @@
-using Noname.Core.Enums;
 using UnityEngine;
 
 namespace Noname.Presentation.Managers
 {
     /// <summary>
-    /// 연출용 파티클/후광 효과를 한곳에서 관리합니다.
-    /// 현재는 로그만 남기지만 실제 FX 시스템으로 교체하기 쉽도록 추상화돼 있습니다.
+    /// 2D FX 연출을 중앙에서 트리거하는 매니저. 현재는 로그만 남긴다.
     /// </summary>
     public sealed class FXManager : MonoBehaviour
     {
-        /// <summary>
-        /// 자원 드롭 수집 위치에 FX를 재생합니다.
-        /// </summary>
-        public void PlayResourcePickupFx(Vector3 worldPosition, ResourceDropType type)
+        public void PlayFx(string fxName)
         {
-            Debug.Log($"[FX] Resource pickup FX ({type}) at {worldPosition}");
+            LogFx(fxName, "no position", "no parent");
         }
 
-        /// <summary>
-        /// 투사체 충돌 위치에 FX를 재생합니다.
-        /// </summary>
-        public void PlayProjectileImpactFx(Vector3 worldPosition, ProjectileFaction faction)
+        public void PlayFx(string fxName, Vector2 worldPosition)
         {
-            Debug.Log($"[FX] Projectile impact FX ({faction}) at {worldPosition}");
+            PlayFx(fxName, new Vector3(worldPosition.x, worldPosition.y, 0f));
         }
 
-        /// <summary>
-        /// 어빌리티 선택 UI가 열리거나 닫힐 때 FX를 재생합니다.
-        /// </summary>
-        public void PlayAbilitySelectionFx(bool opening)
+        public void PlayFx(string fxName, Vector3 worldPosition)
         {
-            Debug.Log($"[FX] Ability selection {(opening ? "open" : "close")} FX");
+            LogFx(fxName, $"world:{worldPosition}", "no parent");
+        }
+
+        public void PlayFx(string fxName, Transform parent)
+        {
+            var parentName = parent != null ? parent.name : "<null>";
+            LogFx(fxName, "inherit parent position", parentName);
+        }
+
+        public void PlayFx(string fxName, Vector3 worldPosition, Transform parent)
+        {
+            var parentName = parent != null ? parent.name : "<null>";
+            LogFx(fxName, $"world:{worldPosition}", parentName);
+        }
+
+        private static void LogFx(string fxName, string position, string parent)
+        {
+            Debug.Log($"[FX] Play '{fxName}' ({position}) parent:{parent}");
         }
     }
 }
