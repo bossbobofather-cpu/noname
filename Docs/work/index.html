@@ -88,31 +88,87 @@
 <h1 id="work-list">Work List</h1>
 
 <blockquote>
-<p>하루 단위로 “무엇을 했고 / 왜 했고 / 애로사항은 무엇이었는지”를 기록하는 페이지입니다. 최신 기록을 최상단에 추가하세요.</p>
+<p>하루 단위로 “무엇을 했고 / 왜 했고 / 애로사항은 무엇이었는지, 어떻게 해결 했는지”를 간단히 기록하는 페이지입니다.</p>
 </blockquote>
 <h2 id="작성-규칙">작성 규칙</h2>
 <ul>
-<li><strong>최신순(최근 날짜가 위)</strong> 으로 섹션을 추가합니다.</li>
-<li>각 항목은 <code>작업 내용</code>, <code>이유</code>, <code>애로사항·해결</code> 최소 세 줄로 구성합니다.</li>
-<li>애로사항이 없다면 <code>애로사항: 없음</code>이라고 명시합니다.</li>
-<li>필요 시 하단에 참고 링크 또는 스크린샷을 첨부해도 됩니다.</li>
+<li><strong>최신순(최근 날짜가 위)</strong> 으로 항목을 추가합니다. 새로운 날의 기록은 항상 문서 상단에 삽입됩니다.</li>
 </ul>
 <h2 id="work-entries">Work Entries</h2>
-<h3 id="2025-11-15">2025-11-15</h3>
+<h3 id="2025-01-01">2025-01-01</h3>
+<h4 id="내용">내용</h4>
 <ul>
-<li><strong>작업 내용:</strong> Addressables 그룹 구성 및 CoreRuntime/DefenseGameBootstrapper Addressables 전환</li>
-<li><strong>이유:</strong> 씬 독립 실행, 패치 배포 대비, Resources 제거</li>
-<li><strong>애로사항·해결:</strong> 허브 프리팹이 GameObject 타입으로만 등록되어 InvalidKeyException 발생 → GameObject 로드 후 <code>GetComponent&lt;CoreRuntimeHub&gt;()</code>로 해결</li>
+<li>작업 내용</li>
 </ul>
-<h3 id="2025-11-14">2025-11-14</h3>
+<h4 id="이유">이유</h4>
 <ul>
-<li><strong>작업 내용:</strong> Resource.Load 기반 Definition/Prefab 로드를 Addressables 로 이관</li>
-<li><strong>이유:</strong> 런타임 리소스 관리 일원화, 빌드 사이즈/패치 효율 개선</li>
-<li><strong>애로사항·해결:</strong> 일부 Prefab이 Sprite/Material을 잃어버려 보이지 않는 문제 → Prefab 참조 재확인, 새 머티리얼 생성 후 SpriteRenderer에 재할당</li>
+<li>작업 이유</li>
+</ul>
+<h4 id="애로사항-및-해결-방안">애로사항 및 해결 방안</h4>
+<ul>
+<li>애로사항 및 해결 방안</li>
 </ul>
 <blockquote>
-<p>새 기록을 추가할 때는 위 형식을 복사해 사용하세요.</p>
+<p>위는 예시 입니다.</p>
 </blockquote>
+<h3 id="2025-11-15">2025-11-15</h3>
+<h3 id="2025-11-14">2025-11-14</h3>
+<h4 id="작업-내용">작업 내용</h4>
+<ul>
+<li>CoreRuntime 클래스 설계 및 CoreRuntime Prefab 제작</li>
+<li>RuntimeInitialization.cs 제작 및 Initialize 함수를[RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)] 어트리뷰트를 부여했다.</li>
+</ul>
+<h4 id="이유-1">이유</h4>
+<ul>
+<li>씬 단위 테스트가 용이하도록 하고 싶었고, 게임 코어 모듈에 포함 될 만 한 GameSceneManager, UIManager,FXManager, SoundManager등의 레퍼런스를 물고 있는 CoreRuntime Prefab을 [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)] 부여 된 함수를 통해 Instantiate하도록 하여 어떤 씬을 실행하던지 관련 기능들을 문제 없이 접근하여 사용 할 수 있게끔 했다.</li>
+</ul>
+<h4 id="애로사항-및-해결-방안-1">애로사항 및 해결 방안</h4>
+<ul>
+<li>싱글턴 패턴을 사용하지 않은 이유는 싱글턴 패턴을 안쓰고 싶었다. 명확하게 매니저 등 공용 모듈 객체들의 인스턴스 생성 지점을 정하고 싶었다.
+또한 씬 초기화(Awake) 보다 이전 시점에 호출 됨을 이용해서 게임 전반적인 영향을 주는 코드를 넣을 지점으로 쓰기 좋을 거 같았다.</li>
+</ul>
+<p>--</p>
+<h4 id="내용-1">내용</h4>
+<ul>
+<li>Resource.Load 방식 제거 및 Addressable로의 전환</li>
+</ul>
+<h4 id="이유-2">이유</h4>
+<ul>
+<li>장기적 관점에서 원격 패치까지 고려하고 있어서</li>
+</ul>
+<h4 id="애로사항-및-해결-방안-2">애로사항 및 해결 방안</h4>
+<ul>
+<li>없음</li>
+</ul>
+<p>--</p>
+<h4 id="내용-2">내용</h4>
+<ul>
+<li>기존 Definition Importer 툴을 개선하여 메뉴버튼 클릭으로 xlxs -&gt; json -&gt; so 가 진행되고 의도 된 경로에 작성 되도록 수정했다.</li>
+<li>stage Definition을 추가 하였다.</li>
+</ul>
+<h4 id="이유-3">이유</h4>
+<ul>
+<li>게임 Stage 별 웨이브 관리를 위해 데이타를 추가했고 해당 데이타는 적 웨이브의 Column 수, 난이도, 행 당 스폰 되는 몬스터의 수, 스폰 되는 몬스터의 종류와 가중치를 입력 할 수 있다.</li>
+<li>컨버팅하는 과정이 수고스러워서 잡을 압축하기 위해서 각 데이타별 컨버팅 버튼들과 전체 데이타 컨버팅 버튼으로 분리했다.</li>
+</ul>
+<h4 id="애로사항-및-해결-방안-3">애로사항 및 해결 방안</h4>
+<ul>
+<li>아직 해당 Stage 데이타를 기반하여 BattleScene 이 구성되진 않고 이후 로비 씬 작업 이후 Stage 진입 시점 작업을 진행하며 대응 할 예정</li>
+</ul>
+<p>--</p>
+<h4 id="작업-내용-1">작업 내용</h4>
+<ul>
+<li>CommponentPool.cs 및 ComponentPoolRegistry.cs 작성</li>
+</ul>
+<h4 id="이유-4">이유</h4>
+<ul>
+<li>생성 된 오브젝트들의 재활용을 위해 만들었다.</li>
+<li>프리팹 name을 key로 풀을 만들어서 사용한다.</li>
+</ul>
+<h4 id="애로사항-및-해결-방안-4">애로사항 및 해결 방안</h4>
+<ul>
+<li>없음</li>
+</ul>
 
 </article>
 
