@@ -1,19 +1,17 @@
 # TODO List
-## 변덕으로 인해 추가 / 제거 / 변경이 있을 수 있습니다.
+DocFX 문서에서 공유하는 주요 TODO 목록입니다. 새로운 항목은 자유롭게 추가하고, 완료된 작업은 체크해 주세요.
 
-- [ ] 웨이브 데이터 관리 : 스테이지별 몬스터 스폰 점유율과 이동 속도를 SO / 테이블로 분리 및 관리
-- [ ] Definition Importer 개선 : 웨이브 Excel -> Json -> SO 대응
-- [ ] GameAbilityEffect 추가 / GameAbility 추가 (증강과 증강의 효과들 추가)
-- [ ] DefenseGameBootstrapper에서 Projectile 내용을 분리하여 별도의 Definition을 부여하여 관리
-- [ ] 오브젝트 풀링 구현(EnemyView, ProjectileView, ResourceDropView)
-- [ ] 로비 씬 구현
-- [ ] 인벤토리 및 장비 시스템 구현
-- [ ] 픽업 드랍 아이템에 장비 추가
-- [ ] UI 매니저 구현
-- [ ] FX 매니저 구현
-- [ ] Sound 매니저 구현
-- [ ] Player Helper 개념의 Hero 도입
-- [ ] Hero 스킬 시스템 구현
-- [ ] 전투에 장비 및 Hero 버프 시스템 구현
-- [ ] Boss 구현
+## 진행 중 / 예정
+- [ ] Stage Definition: `monsterWeights`/`monsterWeightTable` 데이터 구조 다듬기
+- [ ] GameAbilityEffect & GameAbility: 신규 증강 효과 설계
+- [ ] DefenseGameBootstrapper: Projectile Definition 분리 및 Addressables 정리
+- [ ] 로비 UI 확장 (장비/영웅/특성 패널 실제 기능 연결)
+- [ ] 인벤토리 & 장비 시스템 구현
+- [ ] Player Helper / Hero 버프 시스템
+- [ ] Boss 웨이브 설계 및 구현
 
+## 완료
+- [x] Definition Importer 개선 (Excel → JSON → ScriptableObject 자동화)
+- [x] Enemy/Projectile/ResourceDrop View Prefab 및 컴포넌트 풀 구축
+- [x] CoreRuntime Addressables Prefab 및 런타임 허브 구성
+- [x] Addressables 기반 리소스 로딩으로 전환, Resources 정리
