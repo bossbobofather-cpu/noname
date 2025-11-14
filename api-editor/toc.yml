@@ -4,10 +4,10 @@ items:
   name: Noname.EditorTools
   type: Namespace
   items:
-  - uid: Noname.EditorTools.DefinitionImporterWindow
-    name: DefinitionImporterWindow
+  - uid: Noname.EditorTools.DefinitionImportUtility
+    name: DefinitionImportUtility
     type: Class
-  - uid: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
-    name: DefinitionImporterWindow.DefinitionKind
+  - uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+    name: DefinitionImportUtility.DefinitionKind
     type: Enum
 memberLayout: SamePage

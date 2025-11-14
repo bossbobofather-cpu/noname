@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Change Addressable load URLs | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Change Addressable load URLs | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/TransformInternalId.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="addressables-api-transform-internal-id">
+<h1 id="change-addressable-load-urls">Change Addressable load URLs</h1>
+
+<p>You can modify the URLs that Addressables uses to load assets at runtime in the following ways:</p>
+<ul>
+<li><a href="#static-profile-variables">Use static properties in a profile variable</a></li>
+<li><a href="#id-transform-method">Implement an ID transform method</a></li>
+<li><a href="#webrequest-override">Implement a WebRequestOverride method</a></li>
+</ul>
+<h2 id="static-profile-variables">Static profile variables</h2>
+<p>When you define the <a href="addressables-profiles-window.html#default-variables">RemoteLoadPath Profile variable</a> you can use a static property to specify all or part of the URL that your application loads remote content from, including catalogs, catalog hash files, and AssetBundles. For information about specifying a property name in a profile variable refer to <a href="ProfileVariables.html#profile-variable-syntax">Profile variable syntax</a>.</p>
+<p>The value of the static property must be set before Addressables initializes. Changing the value after initialization has no effect.</p>
+<h2 id="id-transform-method">ID transform method</h2>
+<p>You can assign a method to the <a href="xref:UnityEngine.AddressableAssets.Addressables.ResourceManager"><code>Addressables.ResourceManager</code></a> object's <a href="xref:UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation.InternalId"><code>InternalIdTransformFunc</code></a> property to individually change the URLs that Addressables loads assets from. You must assign the method before the relevant operation starts, otherwise Unity uses the default URL.</p>
+<p>Using <code>TransformInternalId</code> is useful for remote hosting. Given a single <code>IResourceLocation</code>, you can transform the ID to point towards a server specified at runtime. This is useful if the server IP address changes or if you use different URLs to give different variants of application assets.</p>
+<p><code>ResourceManager</code> calls the <code>TransformInternalId</code> method when it looks up an asset, passing the <a href="xref:UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation"><code>IResourceLocation</code></a> instance for the asset to your method. You can change the <a href="xref:UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation.InternalId"><code>InternalId</code></a> property of the <code>IResourceLocation</code> and return the modified object to the <code>ResourceManager</code>.</p>
+<p>The following example illustrates how you can append a query string to all URLs for AssetBundles:</p>
+<pre><code class="lang-cs" name="sample">
+using UnityEngine.ResourceManagement.ResourceLocations;
+using UnityEngine.ResourceManagement.ResourceProviders;
+using UnityEngine.AddressableAssets;
+
+static class IDTransformer
+{
+    //Implement a method to transform the internal ids of locations
+    static string MyCustomTransform(IResourceLocation location)
+    {
+        if (location.ResourceType == typeof(IAssetBundleResource)
+            &amp;&amp; location.InternalId.StartsWith(&quot;http&quot;, System.StringComparison.Ordinal))
+            return location.InternalId + &quot;?customQueryTag=customQueryValue&quot;;
+
+        return location.InternalId;
+    }
+
+    //Override the Addressables transform method with your custom method.
+    //This can be set to null to revert to default behavior.
+    [RuntimeInitializeOnLoadMethod]
+    static void SetInternalIdTransform()
+    {
+        Addressables.InternalIdTransformFunc = MyCustomTransform;
+    }
+}
+
+</code></pre><h2 id="webrequest-override">WebRequest override</h2>
+<p>You can assign a method to the <code>Addressable</code> object's <a href="xref:UnityEngine.AddressableAssets.Addressables.WebRequestOverride"><code>WebRequestOverride</code></a> property to individually change the <a href="xref:UnityEngine.Networking.UnityWebRequest"><code>UnityWebRequest</code></a> used to download files, such as an AssetBundle or catalog <code>.json</code> file. You must assign the method before the relevant operation starts, otherwise Unity uses the default <code>UnityWebRequest</code>.</p>
+<p>The <code>ResourceManager</code> calls <code>WebRequestOverride</code> before <a href="xref:UnityEngine.Networking.UnityWebRequest.SendWebRequest"><code>UnityWebRequest.SendWebRequest</code></a> is called and passes the <code>UnityWebRequest</code> for the download to your method.</p>
+<p>The following example shows how you can append a query string to all URLs for AssetBundles and catalogs:</p>
+<pre><code class="lang-cs" name="sample">
+using UnityEngine;
+using UnityEngine.Networking;
+using UnityEngine.AddressableAssets;
+
+internal class WebRequestOverride : MonoBehaviour
+{
+    //Register to override WebRequests Addressables creates to download
+    private void Start()
+    {
+        Addressables.WebRequestOverride = EditWebRequestURL;
+    }
+
+    //Override the url of the WebRequest, the request passed to the method is what would be used as standard by Addressables.
+    private void EditWebRequestURL(UnityWebRequest request)
+    {
+        if (request.url.EndsWith(&quot;.bundle&quot;, StringComparison.OrdinalIgnoreCase))
+            request.url = request.url + &quot;?customQueryTag=customQueryValue&quot;;
+        else if (request.url.EndsWith(&quot;.json&quot;, StringComparison.OrdinalIgnoreCase) || request.url.EndsWith(&quot;.hash&quot;, StringComparison.OrdinalIgnoreCase))
+            request.url = request.url + &quot;?customQueryTag=customQueryValue&quot;;
+    }
+}
+
+</code></pre><h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="remote-content-enable.html">Enable remote content</a></li>
+<li><a href="remote-content-profiles.html">Define remote content profiles</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/TransformInternalId.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

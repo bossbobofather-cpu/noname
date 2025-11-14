@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Upgrade Guide | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Upgrade Guide | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/UpgradeGuide.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="upgrade-guide">Upgrade Guide</h1>
+
+<p>To build your AssetBundles with the SBP package, use the <code>CompatibilityBuildPipeline.BuildAssetBundles</code> method wherever you used the <a href="https://docs.unity3d.com/ScriptReference/BuildPipeline.BuildAssetBundles.html">BuildPipeline.BuildAssetBundle</a> method.</p>
+<p><strong>Note:</strong> Not all of the features that were supported previously are supported in SBP.</p>
+<p>The following tables list the features of the <code>CompatibilityBuildPipeline.BuildAssetBundles</code> method in comparison to the <code>BuildPipeline.BuildAssetBundle</code> method.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Feature</th>
+<th style="text-align: left;">Support</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">AssetBundles</td>
+<td style="text-align: left;">Supported</td>
+<td style="text-align: left;">SBP builds AssetBundles built nearly identically to the previous build pipeline. You load them in a similar manner to how you currently load AssetBundles.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Incremental Building</td>
+<td style="text-align: left;">Supported</td>
+<td style="text-align: left;">SBP implements this feature using the new <code>BuildCache</code> class.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Asset loading path</td>
+<td style="text-align: left;">Behavior changed</td>
+<td style="text-align: left;">AssetBundles built with BuildPipeline today support loading an Asset by full path: <em>Assets/ExampleFolder/Asset.prefab</em>, file name: <em>Asset</em>, or file name with extension: <em>Asset.prefab</em>. However AssetBundles built with SBP by default only support loading an Asset by full path: <em>Assets/ExampleFolder/Asset.prefab</em>. This is to avoid loading collision that can occur if two Assets in the same AssetBundle have the different full paths, but the same file name. To change this behavior, the loading path can be set using <code>IBundleBuildContent.Addresses</code> with the <code>ContentPipeline.BuildAssetBundles</code> API or use the <a href="https://docs.unity3d.com/ScriptReference/AssetBundleBuild-addressableNames.html">AssetBundleBuild.addressableNames</a> field. See <a href="UsageExamples.html">Usage Examples</a>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">AssetBundle Manifest</td>
+<td style="text-align: left;">Behavior changed</td>
+<td style="text-align: left;">SBP does not write an AssetBundle storing the AssetBundleManifest object. SBP implements replacement functionality with the class <code>CompatibilityAssetBundleManifest</code>. This has an identical API to the existing <a href="https://docs.unity3d.com/ScriptReference/AssetBundleManifest.html">AssetBundleManifest</a> class, plus the addition of a method to get the CRC value for a bundle.</td>
+</tr>
+<tr>
+<td style="text-align: left;">AssetBundle .manifest files</td>
+<td style="text-align: left;">Behaviour changed</td>
+<td style="text-align: left;">Builds performed with BuildPipeline.BuildAssetBundles output YAML-format files with the .manifest file extension that describe the content of each AssetBundle.  SBP does not write .manifest files for individual AssetBundles. When CompatibilityBuildPipeline is used, SBP will serialize the CompatibilityAssetBundleManifest object to a .manifest with filename matching the build folder name. This file has similar, but not identical, content to the top level .manifest file that is generated by BuildPipeline.BuildAssetBundles.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Code Stripping</td>
+<td style="text-align: left;">Behaviour changed</td>
+<td style="text-align: left;">SBP does not generate the .manifest file content that can be used in conjunction with <a href="https://docs.unity3d.com/ScriptReference/BuildPlayerOptions-assetBundleManifestPath.html">BuildPlayerOptions.assetBundleManifestPath</a> to prevent Player builds from stripping out types that are only used in AssetBundles.  Instead SBP supports generating an link.xml to achieve the same result.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Build Report</td>
+<td style="text-align: left;">Not supported</td>
+<td style="text-align: left;">SBP does not generate a <a href="https://docs.unity3d.com/ScriptReference/Build.Reporting.BuildReport.html">BuildReport</a> file.</td>
+</tr>
+<tr>
+<td style="text-align: left;">AssetBundle Variants</td>
+<td style="text-align: left;">Not supported</td>
+<td style="text-align: left;">There is currently no replacement functionality for AssetBundle Variants.</td>
+</tr>
+<tr>
+<td style="text-align: left;">Build Callbacks</td>
+<td style="text-align: left;">Supported</td>
+<td style="text-align: left;">SBP supports invoking the <a href="https://docs.unity3d.com/ScriptReference/Build.IProcessSceneWithReport.html">IProcessSceneWithReport</a> and IPreprocessShaders build callbacks.</td>
+</tr>
+</tbody>
+</table>
+<p>BuildAssetBundleOptions Enum:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;">Support</th>
+<th style="text-align: left;">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">UncompressedAssetBundle</td>
+<td style="text-align: left;">Supported</td>
+<td style="text-align: left;">Identical to using <code>BuildCompression.DefaultUncompressed</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ChunkBasedCompression</td>
+<td style="text-align: left;">Supported</td>
+<td style="text-align: left;">Identical to using <code>BuildCompression.DefaultLZ4</code>. <strong>Note:</strong> This has always been LZ4HC in the Editor, and LZ4 if it was recompressed at Runtime.</td>
+</tr>
+<tr>
+<td style="text-align: left;">DisableWriteTypeTree</td>
+<td style="text-align: left;">Supported</td>
+<td style="text-align: left;">Identical to using <code>ContentBuildFlags.DisableWriteTypeTree</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">DeterministicAssetBundle</td>
+<td style="text-align: left;">Supported</td>
+<td style="text-align: left;">This is enabled by default, and it can’t be disabled. SBP builds deterministically.</td>
+</tr>
+<tr>
+<td style="text-align: left;">ForceRebuildAssetBundle</td>
+<td style="text-align: left;">Supported</td>
+<td style="text-align: left;">Identical to using <code>IBuildParameters.UseCache = false;</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">AppendHashToAssetBundleName</td>
+<td style="text-align: left;">Supported</td>
+<td style="text-align: left;">Identical to using <code>IBundleBuildParameters.AppendHash = true;</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">DisableLoadAssetByFileName</td>
+<td style="text-align: left;">Always enabled</td>
+<td style="text-align: left;">This is enabled by default, and can’t be disabled. SBP is strict about the rule: &quot;what you pass in is exactly what you get out&quot;. If you pass in <em>My/Example1/Example2/Asset.asset</em> as the file name to use to load the Asset, you must use that identifier exactly, including the correct upper and lower case, and all punctuation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">DisableLoadAssetByFileNameWithExtension</td>
+<td style="text-align: left;">Always enabled</td>
+<td style="text-align: left;">See above details on DisableLoadAssetByFileName.</td>
+</tr>
+<tr>
+<td style="text-align: left;">IgnoreTypeTreeChanges</td>
+<td style="text-align: left;">Not supported</td>
+<td style="text-align: left;">The incremental build system used this value to prevent rebuilding AssetBundles when an Asset's serialization layout changed, but the data for the Asset itself did not change. SBP currently rebuilds if there are any changes.</td>
+</tr>
+<tr>
+<td style="text-align: left;">StrictMode</td>
+<td style="text-align: left;">Not supported</td>
+<td style="text-align: left;">The SBP is stricter about properly building AssetBundles and knowing when builds fail.</td>
+</tr>
+<tr>
+<td style="text-align: left;">DryRunBuild</td>
+<td style="text-align: left;">Not supported</td>
+<td style="text-align: left;">SBP works fundamentally differently. It is faster to do a full build to determine if anything has changed.</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/UpgradeGuide.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

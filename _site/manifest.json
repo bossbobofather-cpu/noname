@@ -22,6 +22,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Assets/Resources/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "Assets/Resources/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Assets/Scripts/Application/README.md",
       "output": {
         ".html": {
@@ -179,6 +189,16 @@
       "output": {
         ".html": {
           "relative_path": "Docs/tools/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Docs/work/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Docs/work/index.html"
         }
       },
       "version": ""
@@ -1309,6 +1329,1096 @@
       "output": {
         ".html": {
           "relative_path": "Library/PackageCache/com.unity.2d.tilemap@ba4a6b72f451/Third Party Notices.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressableAssetSettings.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressableAssetSettings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressableAssetsAsyncOperationHandle.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressableAssetsAsyncOperationHandle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressableAssetsDevelopmentCycle.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressableAssetsDevelopmentCycle.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressableAssetsGettingStarted.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressableAssetsGettingStarted.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressableAssetsMigrationGuide.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressableAssetsMigrationGuide.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressableAssetsOverview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressableAssetsOverview.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressableAssetsProfiles.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressableAssetsProfiles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressablesAndSpriteAtlases.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressablesAndSpriteAtlases.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressablesCCD.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressablesCCD.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AssetDependencies.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AssetDependencies.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AssetReferences.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AssetReferences.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/BuildArtifacts.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/BuildArtifacts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/BuildLayoutReport.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/BuildLayoutReport.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/BuildProfileLog.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/BuildProfileLog.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/BuildingShaders.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/BuildingShaders.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/Builds.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/Builds.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ContentPackingAndLoadingSchema.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ContentPackingAndLoadingSchema.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ContentUpdateWorkflow.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ContentUpdateWorkflow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ContinuousIntegration.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ContinuousIntegration.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/GetRuntimeAddress.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/GetRuntimeAddress.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/GroupSchemas.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/GroupSchemas.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/GroupTemplates.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/GroupTemplates.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/Groups.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/Groups.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/GroupsWindow.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/GroupsWindow.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/InitializeAsync.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/InitializeAsync.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/Labels.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/Labels.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/LoadContentCatalogAsync.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/LoadContentCatalogAsync.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/LoadingAddressableAssets.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/LoadingAddressableAssets.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/LoadingAssetBundles.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/LoadingAssetBundles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/LoadingAssetReferences.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/LoadingAssetReferences.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/LoadingScenes.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/LoadingScenes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/MemoryManagement.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/MemoryManagement.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ModificationEvents.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ModificationEvents.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/MultiProject.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/MultiProject.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/PackingGroupsAsBundles.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/PackingGroupsAsBundles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ProfileVariables.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ProfileVariables.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ProfilerModule.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ProfilerModule.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/RemoteContentDistribution.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/RemoteContentDistribution.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/SamplesOverview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/SamplesOverview.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/SynchronousAddressables.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/SynchronousAddressables.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/TableOfContents.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/TableOfContents.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/TransformInternalId.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/TransformInternalId.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/UnloadingAddressableAssets.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/UnloadingAddressableAssets.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/addressables-preferences.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/addressables-preferences.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/addressables-profiles-window.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/addressables-profiles-window.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/addressables-report-window.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/addressables-report-window.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/analyze-addressable-layouts.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/analyze-addressable-layouts.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/analyze-addressables-window-reference.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/analyze-addressables-window-reference.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/analyze-addressables-window.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/analyze-addressables-window.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/analyze-custom-rules.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/analyze-custom-rules.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/api_index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/api_index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/asset-reference-create.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/asset-reference-create.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/asset-reference-intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/asset-reference-intro.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-artifacts-included.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-artifacts-included.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-asset-types.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-asset-types.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-content-catalogs.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-content-catalogs.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-intro.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-output.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-output.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-player-builds.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-player-builds.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-reports.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-reports.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-scripting-builds.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-scripting-builds.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-scripting-custom.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-scripting-custom.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-scripting-recompiling.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-scripting-recompiling.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-scripting-start-build.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-scripting-start-build.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-shared-assetbundles.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-shared-assetbundles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/builds-full-build.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/builds-full-build.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/builds-update-build.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/builds-update-build.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ccd-configure.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ccd-configure.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ccd-publish.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ccd-publish.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/content-update-build-settings.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/content-update-build-settings.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/content-update-builds-check.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/content-update-builds-check.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/content-update-builds-overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/content-update-builds-overview.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/content-update-examples.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/content-update-examples.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/convert-assetbundles.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/convert-assetbundles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/convert-existing-projects.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/convert-existing-projects.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/convert-prefabs.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/convert-prefabs.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/convert-resources-system.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/convert-resources-system.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/convert-scene-data.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/convert-scene-data.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/groups-create.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/groups-create.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/groups-intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/groups-intro.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/installation-guide.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/installation-guide.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-addressable-assets.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-addressable-assets.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-assets-location.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-assets-location.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-assets.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-assets.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-custom-wait-operation.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-custom-wait-operation.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-manage-asynchronous-loads.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-manage-asynchronous-loads.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-monitor-wait-operations.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-monitor-wait-operations.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-profiler-module.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-profiler-module.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-wait-asynchronous-async-await.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-wait-asynchronous-async-await.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-wait-asynchronous-coroutines.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-wait-asynchronous-coroutines.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-wait-asynchronous-events.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-wait-asynchronous-events.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/memory-assetbundles.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/memory-assetbundles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/memory-assets.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/memory-assets.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/optimization-tools.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/optimization-tools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/optimize-loads.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/optimize-loads.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/organize-addressable-assets.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/organize-addressable-assets.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/profiles-build-load-paths.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/profiles-build-load-paths.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/profiles-create.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/profiles-create.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/profiles-default-paths.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/profiles-default-paths.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/profiles-introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/profiles-introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/remote-content-assetbundle-cache.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/remote-content-assetbundle-cache.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/remote-content-enable.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/remote-content-enable.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/remote-content-intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/remote-content-intro.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/remote-content-predownload.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/remote-content-predownload.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/remote-content-profiles.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/remote-content-profiles.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/readme.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.addressables@38fa2290d5f2/readme.html"
         }
       },
       "version": ""
@@ -3265,6 +4375,96 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.profiling.core@aac7b93912bc/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.profiling.core@aac7b93912bc/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.profiling.core@aac7b93912bc/Documentation~/TableOfContents.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.profiling.core@aac7b93912bc/Documentation~/TableOfContents.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.profiling.core@aac7b93912bc/Documentation~/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.profiling.core@aac7b93912bc/Documentation~/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.profiling.core@aac7b93912bc/Documentation~/profilercounter-guide.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.profiling.core@aac7b93912bc/Documentation~/profilercounter-guide.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.profiling.core@aac7b93912bc/Documentation~/profilermarker-guide.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.profiling.core@aac7b93912bc/Documentation~/profilermarker-guide.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.profiling.core@aac7b93912bc/Documentation~/upgrade-guide.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.profiling.core@aac7b93912bc/Documentation~/upgrade-guide.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.profiling.core@aac7b93912bc/Documentation~/whats-new.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.profiling.core@aac7b93912bc/Documentation~/whats-new.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.profiling.core@aac7b93912bc/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.profiling.core@aac7b93912bc/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.profiling.core@aac7b93912bc/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.profiling.core@aac7b93912bc/README.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Library/PackageCache/com.unity.render-pipelines.core@5e056b397fc0/CHANGELOG.md",
       "output": {
         ".html": {
@@ -3849,6 +5049,116 @@
       "output": {
         ".html": {
           "relative_path": "Library/PackageCache/com.unity.rendering.light-transport@2c9279f90d7c/THIRD PARTY NOTICES.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/CHANGELOG.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/CHANGELOG.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/BuildLogger.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/BuildLogger.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/CacheServerClient.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/CacheServerClient.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/GettingStarted.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/GettingStarted.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/TableofContents.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/TableofContents.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/Terminology.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/Terminology.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/UpgradeGuide.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/UpgradeGuide.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/UsageExamples.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/UsageExamples.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/LICENSE.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/LICENSE.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/README.md",
+      "output": {
+        ".html": {
+          "relative_path": "Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/README.html"
         }
       },
       "version": ""
@@ -10895,6 +12205,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api-editor/Noname.EditorTools.DefinitionImportUtility.DefinitionKind.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api-editor/Noname.EditorTools.DefinitionImportUtility.DefinitionKind.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Noname.EditorTools.DefinitionImportUtility.DefinitionKind",
+      "Summary": "<p sourcefile=\"api-editor/Noname.EditorTools.DefinitionImportUtility.DefinitionKind.yml\" sourcestartlinenumber=\"1\">XLSX/JSON/ScriptableObject 변환 대상 유형입니다.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api-editor/Noname.EditorTools.DefinitionImportUtility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api-editor/Noname.EditorTools.DefinitionImportUtility.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Noname.EditorTools.DefinitionImportUtility",
+      "Summary": "<p sourcefile=\"api-editor/Noname.EditorTools.DefinitionImportUtility.yml\" sourcestartlinenumber=\"1\">Definition Importer 배치 워크플로(DefinitionImportUtility)를 설명하기 위한 DocFX 전용 스텁입니다.\n실제 구현은 Unity Editor 환경에서만 동작하므로, 공개 API 서명과 문서화를 위해서만 존재합니다.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api-editor/Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.yml",
       "output": {
         ".html": {
@@ -11905,6 +13243,16 @@
       "output": {
         "resource": {
           "relative_path": "images/gamePlayDemo.gif"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/gamePlayDemo2.gif",
+      "output": {
+        "resource": {
+          "relative_path": "images/gamePlayDemo2.gif"
         }
       },
       "version": ""

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Introduction to Addressable asset groups | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Introduction to Addressable asset groups | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/groups-intro.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="introduction-to-addressable-asset-groups">Introduction to Addressable asset groups</h1>
+
+<p>Understand how to use groups to organize Addressables, control build paths, load paths, and AssetBundle packaging strategies.</p>
+<p>A group is the main organizational unit of the Addressables system. Create and manage your groups and the assets they contain with the <a href="GroupsWindow.html">Addressables Groups window</a>.</p>
+<p>To control how Unity handles assets during a content build, organize Addressables into groups and assign different settings to each group as required.</p>
+<p><img src="images/addressables-groups-window.png" alt="The Addressables Groups window showing the toolbar and list of groups and assets."><br><br><em>The Addressables Groups window showing the toolbar and list of groups and assets.</em></p>
+<p>When you begin a content build, the build scripts create AssetBundles that contain the assets in a group. The build determines the number of AssetBundles to create and where to create them from both the <a href="GroupSchemas.html">settings of the group</a> and the <a href="AddressableAssetSettings.html">Addressables system settings</a>. For more information, refer to <a href="Builds.html">Builds</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Addressable Groups only exist in the Unity Editor. The Addressables runtime code doesn't use a group concept. However, you can <a href="Labels.html">assign a label</a> to the assets in a group if you want to find and load all the assets that were part of that group. For more information, refer to <a href="LoadingAddressableAssets.html">Loading Addressable assets</a>.</p>
+</div>
+<p>Unity saves the groups you create in the <code>AssetGroups</code> subfolder of <code>AddressableAssetsData</code>. When you select a group in this folder, you can use the Inspector to define the following:</p>
+<ul>
+<li><strong>Build paths</strong>: Where to save your content after a content build.</li>
+<li><strong>Load paths</strong>: Where your application looks for built content at runtime.</li>
+<li><strong>Bundle mode</strong>: How to package the content in the group into a bundle. You can choose the following options:
+<ul>
+<li>One bundle containing all group assets</li>
+<li>A bundle for each entry in the group (useful if you mark entire folders as Addressable and want their contents built together)</li>
+<li>A bundle for each unique combination of labels assigned to group assets</li>
+</ul>
+</li>
+<li><strong>Content update restriction</strong>: Restrict groups when creating content update builds. For more information, refer to <a href="ContentUpdateWorkflow.html">Content update builds</a>.</li>
+</ul>
+<p>For full details of each setting, refer to <a href="ContentPackingAndLoadingSchema.html">Content packing settings reference</a>.</p>
+<p>You can also use profile variables to automatically set these paths. For more information, refer to <a href="AddressableAssetsProfiles.html">Profiles</a>.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="groups-create.html">Add assets to groups</a></li>
+<li><a href="GroupSchemas.html">Define group settings</a></li>
+<li><a href="Labels.html">Labelling assets</a></li>
+<li><a href="GroupsWindow.html">Addressables Groups window reference</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/groups-intro.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

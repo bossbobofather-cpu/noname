@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Addressables Groups window reference | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Addressables Groups window reference | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/GroupsWindow.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="addressables-groups-window">
+<h1 id="addressables-groups-window-reference">Addressables Groups window reference</h1>
+
+<p>Reference for the Addressables Groups window interface.</p>
+<p>Use the Addressables Groups window <a href="groups-create.html">to manage groups</a> and Addressable assets. To open the window, go to <strong>Window</strong> &gt; <strong>Asset Management</strong> &gt; <strong>Addressables</strong> &gt; <strong>Groups</strong>.</p>
+<p>The Groups window also serves as a central location for starting content builds and accessing the tools and settings of the Addressables system.</p>
+<p><img src="images/addressables-groups-window.png" alt="The Addressables Groups window showing the toolbar and list of groups and assets."><br><br><em>The Addressables Groups window showing the toolbar and list of groups and assets.</em></p>
+<h2 id="group-list">Group list</h2>
+<p>The group list displays the Addressable groups in your project. Expand a group in the list to display the assets that it contains. You can also expand composite assets, such as sprite sheets, to display the objects they contain.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Column</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Notifications</strong></td>
+<td>Any notifications about a group or asset flagged during the build.</td>
+</tr>
+<tr>
+<td><strong>Group Name \ Addressable Name</strong></td>
+<td>The name of the item. For groups, this is an arbitrary name that you can assign. For assets, this is the Addressable address. To edit the name or address, use the context menu.</td>
+</tr>
+<tr>
+<td><strong>Icon</strong></td>
+<td>The Unity asset icon based on asset type.</td>
+</tr>
+<tr>
+<td><strong>Path</strong></td>
+<td>The path to the source asset in your project.</td>
+</tr>
+<tr>
+<td><strong>Labels</strong></td>
+<td>Displays any labels assigned to the asset. Click on a label entry to change the assigned labels or to manage label definitions.</td>
+</tr>
+</tbody>
+</table>
+<p>To sort the assets displayed in the group list, select one of the column headers. This sorts the assets within each group, but doesn't reorder the groups. To change the order that the groups are displayed, drag them into the desired position.</p>
+<h2 id="groups-window-toolbar">Groups window toolbar</h2>
+<p>The toolbar at the top of the window contains the following settings:</p>
+<h3 id="new">New</h3>
+<p>Choose a template to create a new group, or blank for no schema. For information about creating your own templates, refer to <a class="xref" href="GroupTemplates.html">Group templates</a>.</p>
+<h3 id="profile">Profile</h3>
+<p>Set the active <a href="profiles-introduction.html">profile</a> to select the paths used for building and loading Addressables. Choose an existing profile or select <strong>Manage Profiles</strong> to open the <a class="xref" href="AddressableAssetsProfiles.html">Profiles window</a>.</p>
+<h3 id="tools">Tools</h3>
+<p>Open the various Addressables tools available.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Addressables tool</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inspect System Settings</strong></td>
+<td>Open the <a class="xref" href="AddressableAssetSettings.html">Addressables Settings</a> Inspector.</td>
+</tr>
+<tr>
+<td><strong>Check for Content Update Restrictions</strong></td>
+<td>Run a pre-update content check. For more information, refer to <a class="xref" href="ContentUpdateWorkflow.html">Update Restrictions</a>.</td>
+</tr>
+<tr>
+<td><strong>Window</strong></td>
+<td>Open other Addressables system windows:<ul><li><a class="xref" href="AddressableAssetsProfiles.html">Profiles</a></li><li><a class="xref" href="Labels.html">Labels</a></li><li><a href="addressables-report-window.html">Addressables Report</a></li></ul></td>
+</tr>
+<tr>
+<td><strong>Groups View</strong></td>
+<td>Set Group window display options:<ul><li><strong>Show Sprite and Subobject Addresses</strong>: Displays sprite and sub objects in the <strong>Group</strong> list. Disable to display only the parent object.</li><li><strong>Group Hierarchy with Dashes</strong>: Enable to display groups that contain dashes <code>-</code> in their names as if the dashes represented a group hierarchy. Enabling this option affects the group display only. For more information, refer to <a href="PackingGroupsAsBundles.html#group-optimization-for-large-projects">Group optimization for large projects</a>.</li></ul></td>
+</tr>
+</tbody>
+</table>
+<h3 id="play-mode-script">Play Mode Script</h3>
+<p>Set the active Play Mode Script. The active Play Mode Script determines how Addressables are loaded in the Editor Play mode.</p>
+<p>The active Play Mode Script determines how the Addressable system accesses Addressable assets when you run your game in Play mode. When you select a Play Mode Script, it remains the active script until you choose a different one. The Play Mode Script has no effect on asset loading when you build and run your application outside the Unity Editor.</p>
+<p>Choose from the following:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Play Mode Script</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Use Asset Database</strong></td>
+<td>Loads assets directly from the Editor Asset Database, which is also used for all non-Addressable assets. You don't have to build Addressable content when using this option.</td>
+</tr>
+<tr>
+<td><strong>Use Existing Build</strong></td>
+<td>Loads assets from bundles created by an earlier content build. You must run a full build using a Build Script such as <a class="xref" href="Builds.html">Default Build Script</a> before using this option. Remote content must be hosted at the <strong>RemoteLoadPath</strong> of the profile used to build the content.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="build">Build</h3>
+<p>Select a content build command:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Build command</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>New Build</strong></td>
+<td>Choose a build script to run a full content build.</td>
+</tr>
+<tr>
+<td><strong>Update a Previous Build</strong></td>
+<td>Run a differential update based on an earlier build.</td>
+</tr>
+<tr>
+<td><strong>Clear Build Cache</strong></td>
+<td>Choose a command to clean existing build artifacts. For more information, refer to <a class="xref" href="Builds.html">Builds</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="search-bar">Search bar</h2>
+<p>Use the search bar to locate an Addressable asset in the Groups window. Type all or part of its address, path, or a label into the search bar.</p>
+<p><img src="images/addressables-groups-find.png" alt="Filtering the group list by the string &quot;NP&quot; to find all assets labeled NPC."><br><em>Filtering the group list by the string &quot;NP&quot; to find all assets labeled NPC</em></p>
+<p>To locate the asset in your project, select it in the Groups window. Unity then selects the asset in the Project window and displays the asset's details in the Inspector window.</p>
+<p>To view the groups of the assets found, enable <strong>Hierarchical Search</strong>. Disable this option to only display groups if they match the search string. To enable or disable <strong>Hierarchical Search</strong>, select the magnifying glass icon in the search box.</p>
+<h2 id="context-menus">Context menus</h2>
+<p>You can right-click on the window, a group, or an asset to display additional commands.</p>
+<h3 id="window-context-menu">Window context menu</h3>
+<p>Right-click on an empty area of the window to access the following:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Command</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Create New Group</strong></td>
+<td>Create a new group from an existing template.</td>
+</tr>
+<tr>
+<td><strong>Clear Content Update Warnings</strong></td>
+<td>Clears any warnings related to content updates.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="group-context-menu">Group context menu</h3>
+<p>To open the group context menu and access group-related commands, right-click on a group name.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Command</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Remove Group(s)</strong></td>
+<td style="text-align: left;">Removes the Group and deletes its associated ScriptableObject asset. Unity reverts any assets in the group into non-Addressable assets. Not available for the default group.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Simplify Addressable Names</strong></td>
+<td style="text-align: left;">Shortens the name of assets in the group by removing path-like components and extensions.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Set as Default</strong></td>
+<td style="text-align: left;">Sets the group as the default group. When you mark an asset as Addressable without explicitly assigning a group, Unity adds the asset to the default group.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Inspect Group Settings</strong></td>
+<td style="text-align: left;">Selects the group asset in the Unity Project window and in the Inspector window so that you can view the settings.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Rename</strong></td>
+<td style="text-align: left;">Enables you to edit the name of the group.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Create New Group</strong></td>
+<td style="text-align: left;">Creates a new group based on a group template.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Clear Content Update Warnings</strong></td>
+<td style="text-align: left;">Clears any warnings related to content updates.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="asset-context-menu">Asset context menu</h3>
+<p>To open the Addressable asset context menu and access asset-related commands, right-click on an asset.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Command</strong></th>
+<th style="text-align: left;"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Move Addressables to Group</strong></td>
+<td style="text-align: left;">Move the selected assets to a different, existing group.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Move Addressables to New Group with settings from</strong></td>
+<td style="text-align: left;">Create a new group based on the settings of an existing group, and move the selected assets to it.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Remove Addressables</strong></td>
+<td style="text-align: left;">Remove the selected assets from the group and make the assets non-Addressable.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Simplify Addressable Names</strong></td>
+<td style="text-align: left;">Shortens the names of the selected assets by removing path-like components and extensions.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Copy Address to Clipboard</strong></td>
+<td style="text-align: left;">Copies the asset's assigned address string to your system Clipboard.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Change Address</strong></td>
+<td style="text-align: left;">Edit the asset's name.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Create New Group</strong></td>
+<td style="text-align: left;">Create a new group based on a group template. This doesn't move the selected assets.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Clear Content Update Warnings</strong></td>
+<td style="text-align: left;">Clears any warnings related to content updates.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="ContentPackingAndLoadingSchema.html">Content packing settings reference</a></li>
+<li><a href="AddressableAssetSettings.html">Addressables Asset Settings reference</a></li>
+<li><a href="addressables-preferences.html">Addressables Preferences reference</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/GroupsWindow.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

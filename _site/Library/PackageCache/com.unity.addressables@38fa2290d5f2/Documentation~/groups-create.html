@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Add assets to groups | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Add assets to groups | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/groups-create.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="add-assets-to-groups">Add assets to groups</h1>
+
+<p>Create groups, add and remove assets from groups, and manage group organization using the Addressables Groups window.</p>
+<p>To manage groups and Addressables assets, open the Addressables Groups window by going to <strong>Window</strong> &gt;<strong>Asset Management</strong> &gt; <strong>Addressables</strong> &gt; <strong>Groups</strong>. Refer to <a class="xref" href="GroupsWindow.html">Addressables Groups window</a> for details about the features of this window.</p>
+<p><img src="images/addressables-groups-window.png" alt="The Addressables Groups window showing the toolbar and list of groups and assets."><br><br><em>The Addressables Groups window showing the toolbar and list of groups and assets.</em></p>
+<h2 id="create-a-group">Create a group</h2>
+<p>To create a group:</p>
+<ol>
+<li>Open the Addressables Groups window: <strong>Window</strong> &gt; <strong>Asset Management</strong> &gt; <strong>Addressables</strong> &gt; <strong>Groups</strong></li>
+<li>Select <strong>New</strong> &gt; <strong>Packed Asset</strong>, or right-click in the window and select <strong>Create New Group</strong> to create a new group. You can alternatively select a custom <a class="xref" href="GroupTemplates.html">group template</a>, if any are available.</li>
+<li>Right click the new group and select <strong>Rename</strong> to rename the group.</li>
+<li>Open the context menu again and select <strong>Inspect Group Settings</strong>. Alternatively, you can select the group from the <code>AssetGroups</code> folder in the project.</li>
+<li>In the Inspector, adjust the <a href="ContentPackingAndLoadingSchema.html">group settings</a> as desired.</li>
+</ol>
+<p>For groups that contain assets that you plan to distribute with your main application, you can use the default settings.</p>
+<h3 id="groups-for-remote-distribution">Groups for remote distribution</h3>
+<p>For groups containing assets that you plan to distribute remotely, you must change the build and load paths to use the remote versions of the <a class="xref" href="AddressableAssetsProfiles.html">profile</a> path variables. To build AssetBundles for remote distribution, you must also enable the <strong>Build Remote Catalog</strong> option in the <a class="xref" href="AddressableAssetSettings.html">Addressable System Settings</a>.</p>
+<h2 id="add-assets-to-a-group">Add assets to a group</h2>
+<p>To add an asset to a group, perform one of the following steps:</p>
+<ul>
+<li>Open the Groups window (<strong>Window</strong> &gt; <strong>Asset Management</strong> &gt; <strong>Addressables</strong> &gt; <strong>Groups</strong>) and drag the assets from the Project window into the desired group.</li>
+<li>Drag the assets from one group into another.</li>
+<li>Select an asset, or a folder, and in its Inspector window, enable the <strong>Addressables</strong> option. This adds the asset, or the contents of the folder to the default group. You can then use the object picker to select a different group.</li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you add assets in a Resources folder to a group, the Addressables system first moves the assets to a non-Resource location. You can move the assets elsewhere, but you can't store Addressable assets in a Resources folder in your project.</p>
+</div>
+<h2 id="remove-assets-from-a-group">Remove assets from a group</h2>
+<p>Select one or more assets in the Groups window and right-click to open the context menu, then select <strong>Remove Addressables</strong>. You can also select the assets and press the Delete key to remove the assets from the group.</p>
+<h2 id="add-or-remove-labels">Add or remove labels</h2>
+<p>Select one or more assets in the Groups window, then select the label field for one of the selected assets.</p>
+<p>To assign labels, enable or disable the checkboxes for the desired labels.</p>
+<p>To add, remove or rename your labels, select the <strong>+</strong> button, then select <strong>Manage Labels</strong>. To only add a new label, select the <strong>+</strong> button and then select <strong>New Label</strong>. For more information on how to use labels, refer to <a href="Labels.html">Labelling assets</a>.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="Labels.html">Labelling assets</a></li>
+<li><a href="PackingGroupsAsBundles.html">Define how groups are packed into AssetBundles</a></li>
+<li><a href="GroupsWindow.html">Addressables Groups window reference</a></li>
+<li><a href="ContentPackingAndLoadingSchema.html">Content packing settings reference</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/groups-create.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -3301,6 +3301,68 @@ references:
   commentId: N:Noname.EditorTools
   fullName: Noname.EditorTools
   nameWithType: Noname.EditorTools
+- uid: Noname.EditorTools.DefinitionImportUtility
+  name: DefinitionImportUtility
+  href: api-editor/Noname.EditorTools.DefinitionImportUtility.html
+  commentId: T:Noname.EditorTools.DefinitionImportUtility
+  fullName: Noname.EditorTools.DefinitionImportUtility
+  nameWithType: DefinitionImportUtility
+- uid: Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson(Noname.EditorTools.DefinitionImportUtility.DefinitionKind,System.String,System.String)
+  name: ConvertXlsxToJson(DefinitionKind, string, string)
+  href: api-editor/Noname.EditorTools.DefinitionImportUtility.html#Noname_EditorTools_DefinitionImportUtility_ConvertXlsxToJson_Noname_EditorTools_DefinitionImportUtility_DefinitionKind_System_String_System_String_
+  commentId: M:Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson(Noname.EditorTools.DefinitionImportUtility.DefinitionKind,System.String,System.String)
+  name.vb: ConvertXlsxToJson(DefinitionKind, String, String)
+  fullName: Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson(Noname.EditorTools.DefinitionImportUtility.DefinitionKind, string, string)
+  fullName.vb: Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson(Noname.EditorTools.DefinitionImportUtility.DefinitionKind, String, String)
+  nameWithType: DefinitionImportUtility.ConvertXlsxToJson(DefinitionImportUtility.DefinitionKind, string, string)
+  nameWithType.vb: DefinitionImportUtility.ConvertXlsxToJson(DefinitionImportUtility.DefinitionKind, String, String)
+- uid: Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson*
+  name: ConvertXlsxToJson
+  href: api-editor/Noname.EditorTools.DefinitionImportUtility.html#Noname_EditorTools_DefinitionImportUtility_ConvertXlsxToJson_
+  commentId: Overload:Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson
+  isSpec: "True"
+  fullName: Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson
+  nameWithType: DefinitionImportUtility.ConvertXlsxToJson
+- uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  name: DefinitionImportUtility.DefinitionKind
+  href: api-editor/Noname.EditorTools.DefinitionImportUtility.DefinitionKind.html
+  commentId: T:Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  fullName: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  nameWithType: DefinitionImportUtility.DefinitionKind
+- uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Enemy
+  name: Enemy
+  href: api-editor/Noname.EditorTools.DefinitionImportUtility.DefinitionKind.html#Noname_EditorTools_DefinitionImportUtility_DefinitionKind_Enemy
+  commentId: F:Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Enemy
+  fullName: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Enemy
+  nameWithType: DefinitionImportUtility.DefinitionKind.Enemy
+- uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Player
+  name: Player
+  href: api-editor/Noname.EditorTools.DefinitionImportUtility.DefinitionKind.html#Noname_EditorTools_DefinitionImportUtility_DefinitionKind_Player
+  commentId: F:Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Player
+  fullName: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Player
+  nameWithType: DefinitionImportUtility.DefinitionKind.Player
+- uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Stage
+  name: Stage
+  href: api-editor/Noname.EditorTools.DefinitionImportUtility.DefinitionKind.html#Noname_EditorTools_DefinitionImportUtility_DefinitionKind_Stage
+  commentId: F:Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Stage
+  fullName: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Stage
+  nameWithType: DefinitionImportUtility.DefinitionKind.Stage
+- uid: Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImportUtility.DefinitionKind,System.String)
+  name: ImportJsonToScriptableObjects(DefinitionKind, string)
+  href: api-editor/Noname.EditorTools.DefinitionImportUtility.html#Noname_EditorTools_DefinitionImportUtility_ImportJsonToScriptableObjects_Noname_EditorTools_DefinitionImportUtility_DefinitionKind_System_String_
+  commentId: M:Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImportUtility.DefinitionKind,System.String)
+  name.vb: ImportJsonToScriptableObjects(DefinitionKind, String)
+  fullName: Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImportUtility.DefinitionKind, string)
+  fullName.vb: Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImportUtility.DefinitionKind, String)
+  nameWithType: DefinitionImportUtility.ImportJsonToScriptableObjects(DefinitionImportUtility.DefinitionKind, string)
+  nameWithType.vb: DefinitionImportUtility.ImportJsonToScriptableObjects(DefinitionImportUtility.DefinitionKind, String)
+- uid: Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects*
+  name: ImportJsonToScriptableObjects
+  href: api-editor/Noname.EditorTools.DefinitionImportUtility.html#Noname_EditorTools_DefinitionImportUtility_ImportJsonToScriptableObjects_
+  commentId: Overload:Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects
+  isSpec: "True"
+  fullName: Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects
+  nameWithType: DefinitionImportUtility.ImportJsonToScriptableObjects
 - uid: Noname.EditorTools.DefinitionImporterWindow
   name: DefinitionImporterWindow
   href: api-editor/Noname.EditorTools.DefinitionImporterWindow.html
@@ -4386,6 +4448,141 @@ references:
   commentId: Overload:Noname.Presentation.Views.ResourceDropView.Initialize
   fullName: Noname.Presentation.Views.ResourceDropView.Initialize
   nameWithType: ResourceDropView.Initialize
+- uid: addressables-analyze-tool
+  name: Addressables Analyze window
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/analyze-addressables-window.html
+- uid: addressables-and-sprite-atlases
+  name: Build sprite atlases
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/AddressablesAndSpriteAtlases.html
+- uid: addressables-api-build-player-content
+  name: Build Addressable assets from scripts
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/build-scripting-builds.html
+- uid: addressables-api-download-dependencies-async
+  name: Pre-download remote content
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/remote-content-predownload.html
+- uid: addressables-api-initialize-async
+  name: Addressables initialization process
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/InitializeAsync.html
+- uid: addressables-api-load-asset-async
+  name: Load Addressable assets
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/LoadingAddressableAssets.html
+- uid: addressables-api-load-content-catalog-async
+  name: Manage content catalogs
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/LoadContentCatalogAsync.html
+- uid: addressables-api-transform-internal-id
+  name: Change Addressable load URLs
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/TransformInternalId.html
+- uid: addressables-asset-dependencies
+  name: Addressable asset dependencies
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/AssetDependencies.html
+- uid: addressables-asset-references
+  name: Load assets by asset references
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/AssetReferences.html
+- uid: addressables-asset-settings
+  name: Addressable Asset Settings reference
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/AddressableAssetSettings.html
+- uid: addressables-assets-development-cycle
+  name: Create and organize Addressable assets
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/AddressableAssetsDevelopmentCycle.html
+- uid: addressables-async-operation-handling
+  name: Wait for asynchronous loads to complete
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/AddressableAssetsAsyncOperationHandle.html
+- uid: addressables-build-artifacts
+  name: Build artifacts
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/BuildArtifacts.html
+- uid: addressables-build-layout-report
+  name: Create a build report
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/BuildLayoutReport.html
+- uid: addressables-build-profile-log
+  name: Build profile logs
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/BuildProfileLog.html
+- uid: addressables-building-content
+  name: Create a content-only build
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/builds-full-build.html
+- uid: addressables-builds
+  name: Build Addressable assets
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/Builds.html
+- uid: addressables-ccd
+  name: Use Addressables with Cloud Content Delivery
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/AddressablesCCD.html
+- uid: addressables-ci
+  name: Build with continuous integration
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/ContinuousIntegration.html
+- uid: addressables-content-packing-and-loading-schema
+  name: Group Inspector settings reference
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/ContentPackingAndLoadingSchema.html
+- uid: addressables-content-update-builds
+  name: Update builds
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/ContentUpdateWorkflow.html
+- uid: addressables-get-address
+  name: Get addresses at runtime
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/GetRuntimeAddress.html
+- uid: addressables-getting-started
+  name: Addressables package set up
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/AddressableAssetsGettingStarted.html
+- uid: addressables-group-schemas
+  name: Define group settings
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/GroupSchemas.html
+- uid: addressables-groups-window
+  name: Addressables Groups window reference
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/GroupsWindow.html
+- uid: addressables-home
+  name: Addressables package
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/index.html
+- uid: addressables-labels
+  name: Label assets
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/Labels.html
+- uid: addressables-loading-asset-reference
+  name: Load asset references
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/LoadingAssetReferences.html
+- uid: addressables-loading-bundles
+  name: Load AssetBundles
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/LoadingAssetBundles.html
+- uid: addressables-loading-scenes
+  name: Load scenes
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/LoadingScenes.html
+- uid: addressables-memory-management
+  name: Managing Addressable asset memory
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/memory-assets.html
+- uid: addressables-migration
+  name: Introduction to converting existing projects to Addressables
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/AddressableAssetsMigrationGuide.html
+- uid: addressables-modification-events
+  name: Modification events
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/ModificationEvents.html
+- uid: addressables-multiple-projects
+  name: Load content from multiple projects
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/MultiProject.html
+- uid: addressables-overview
+  name: Addressables introduction
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/AddressableAssetsOverview.html
+- uid: addressables-packing-groups
+  name: Define how to pack groups into AssetBundles
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/PackingGroupsAsBundles.html
+- uid: addressables-profile-variables
+  name: Add variables to a profile
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/ProfileVariables.html
+- uid: addressables-profiler-module
+  name: Addressables Profiler module reference
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/ProfilerModule.html
+- uid: addressables-profiles
+  name: Define how to build Addressables
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/AddressableAssetsProfiles.html
+- uid: addressables-remote-content-distribution
+  name: Distribute and update remote content
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/RemoteContentDistribution.html
+- uid: addressables-report-overview
+  name: Addressables Report window reference
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/addressables-report-window.html
+- uid: addressables-script-ref
+  name: Addressables Script Reference
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/api_index.html
+- uid: addressables-shaders
+  name: Build shaders
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/BuildingShaders.html
+- uid: addressables-unloading
+  name: Unload Addressable assets
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/UnloadingAddressableAssets.html
 - uid: basic-concepts
   name: Basic Concepts
   href: Library/PackageCache/com.unity.inputsystem%40be6c4fd0abf5/Documentation~/Concepts.html
@@ -4401,6 +4598,9 @@ references:
 - uid: com.unity.ugui.api_index
   name: Scripting API reference for Unity UI and TextMesh Pro
   href: Library/PackageCache/com.unity.ugui%40754dbde2be27/Documentation~/api_index.html
+- uid: group-templates
+  name: Create a group template
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/GroupTemplates.html
 - uid: input-system-action-assets
   name: Input Action Assets
   href: Library/PackageCache/com.unity.inputsystem%40be6c4fd0abf5/Documentation~/ActionAssets.html
@@ -4533,12 +4733,18 @@ references:
 - uid: project-wide-actions
   name: Project-Wide Actions
   href: Library/PackageCache/com.unity.inputsystem%40be6c4fd0abf5/Documentation~/ProjectWideActions.html
+- uid: samples-overview
+  name: Addressables samples
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/SamplesOverview.html
 - uid: shadergraph-api-index
   name: Shader Graph scripting API
   href: Library/PackageCache/com.unity.shadergraph%40287dd3fa176c/Documentation~/api_index.html
 - uid: srp-core-api-index
   name: Scriptable Render Pipeline Core scripting API
   href: Library/PackageCache/com.unity.render-pipelines.core%405e056b397fc0/Documentation~/api_index.html
+- uid: synchronous-addressables
+  name: synchronous-addressables
+  href: Library/PackageCache/com.unity.addressables%4038fa2290d5f2/Documentation~/SynchronousAddressables.html
 - uid: timing-latency
   name: Timing and Latency
   href: Library/PackageCache/com.unity.inputsystem%40be6c4fd0abf5/Documentation~/timing-and-latency.html

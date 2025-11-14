@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Build sprite atlases | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Build sprite atlases | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressablesAndSpriteAtlases.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="addressables-and-sprite-atlases">
+<h1 id="build-sprite-atlases">Build sprite atlases</h1>
+
+<p>Some <code>SpriteAtlas</code> options can change how Unity loads sprites. This is important to consider if you want to use the <strong>Use Asset Database</strong> <a class="xref" href="GroupsWindow.html">Play Mode Script</a>.</p>
+<p>The following examples explain how Addressables handles a <code>SpriteAtlas</code> differently than other assets:</p>
+<h2 id="addressable-sprites">Addressable sprites</h2>
+<h3 id="sprites-in-separate-groups">Sprites in separate groups</h3>
+<p>You have three Addressable textures in three separate groups, where each texture builds to around 500 KB. Because they exist in separate groups, Unity builds them into three separate AssetBundles. Each AssetBundle uses around 500 KB and only contains the sprite texture and associated metadata, with no dependencies.</p>
+<h3 id="sprites-in-a-non-addressable-spriteatlas">Sprites in a non-Addressable SpriteAtlas</h3>
+<p>The three textures in the previous example are put into a non-Addressable <code>SpriteAtlas</code>. In this case, Unity still generates three AssetBundles, but they're not the same size. One of the AssetBundles contains the atlas texture and uses about 1500 KB. The other two AssetBundles only contain sprite metadata and list the atlas AssetBundle as a dependency.</p>
+<p>Although you can't control which AssetBundle contains the texture, the process is deterministic, so the same AssetBundle contains the texture through different rebuilds. This is the main difference from the standard duplication of dependencies. The sprites are dependent on the SpriteAtlas texture to load, and yet that texture is not built into all three AssetBundles, but is instead built only into one.</p>
+<h3 id="sprites-in-a-spriteatlas-assetbundle">Sprites in a SpriteAtlas AssetBundle</h3>
+<p>This time, the <code>SpriteAtlas</code> from the previous example is marked as Addressable in its own AssetBundle. Unity now creates four AssetBundles. The three AssetBundles with the sprites are each only a few KB and have a dependency on the fourth AssetBundle, which contains the <code>SpriteAtlas</code> and is about 1500KB. If you are using 2019.4 or older, the texture itself might end up elsewhere. The three sprite AssetBundles still depend on the <code>SpriteAtlas</code> AssetBundle. However, the <code>SpriteAtlas</code> AssetBundle can only contain metadata, and the texture can be in one of the other sprite AssetBundles.</p>
+<h2 id="addressable-prefabs-with-sprite-dependencies">Addressable prefabs with sprite dependencies</h2>
+<h3 id="sprite-prefabs">Sprite prefabs</h3>
+<p>You have three Addressable sprite prefabs and each prefab has a dependency on its own sprite (about 500KB). Building the three prefabs separately results in three AssetBundles of about 500KB each.</p>
+<h3 id="sprite-prefabs-in-a-non-addressable-spriteatlas">Sprite prefabs in a non-Addressable SpriteAtlas</h3>
+<p>The three textures from the previous example are added to a <code>SpriteAtlas</code>, and that atlas is not marked as Addressable. In this scenario, the <code>SpriteAtlas</code> texture is duplicated. All three AssetBundles are approximately 1500KB. This is expected based on the general rules about duplication of dependencies, but goes against the behavior seen in the previous section.</p>
+<h3 id="sprite-prefabs-in-a-spriteatlas-assetbundle">Sprite prefabs in a SpriteAtlas AssetBundle</h3>
+<p>The <code>SpriteAtlas</code> from the previous example is now also marked as Addressable. If you've explicitly included these assets then the <code>SpriteAtlas</code> texture is included only in the AssetBundle containing the <code>SpriteAtlas</code>. The AssetBundles with prefabs reference this fourth AssetBundle as a dependency. This will lead to three AssetBundles of about 500KB and one of approximately 1500KB.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="BuildingShaders.html">Build shaders</a></li>
+<li><a href="AddressableAssetSettings.html#build-and-play-mode-scripts">Build and Play Mode Scripts reference</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressablesAndSpriteAtlases.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

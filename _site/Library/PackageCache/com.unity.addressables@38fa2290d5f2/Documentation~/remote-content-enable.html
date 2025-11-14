@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Enable remote distribution | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Enable remote distribution | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/remote-content-enable.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="enable-remote-distribution">Enable remote distribution</h1>
+
+<p>To enable remote distribution of your application's content, you must enable the remote catalog and set up the <a href="groups-intro.html">groups</a> containing the assets you want to host remotely.</p>
+<h2 id="enable-the-remote-catalog">Enable the remote catalog</h2>
+<p>Enable the following settings in the <a href="AddressableAssetSettings.html"><strong>Addressable Asset Settings</strong></a> Inspector (menu: <strong>Window &gt; Asset Management &gt; Addressables &gt; Settings</strong>):</p>
+<ul>
+<li><strong>Build Remote Catalog</strong>: Enabled</li>
+<li><strong>Build &amp; Load Paths</strong>: Set to remote</li>
+</ul>
+<p>Unity builds the catalog and its accompanying hash file to the folder specified in the <strong>Build Path</strong> setting. You must upload these files so that they can be accessed at the URL specified by the <strong>Load Path</strong> setting. Unless you have a specific reason not to, use the <strong>Remote</strong> location so that Unity builds and loads the catalog from the same paths as the remote AssetBundles.</p>
+<h2 id="set-up-a-remote-group">Set up a remote group</h2>
+<p>To set up a group so that the assets in it can be hosted remotely, set the <a href="AddressableAssetSettings.html">Build &amp; Load Paths</a> to the <strong>Remote</strong> location.</p>
+<p>If you plan to publish content updates between publishing full rebuilds of your application, set the <a href="ContentPackingAndLoadingSchema.html#content-update-restriction"><strong>Content Update Restriction</strong></a> value according to how often you expect to update content in a group:</p>
+<ul>
+<li>Enable <strong>Prevent Updates</strong> for groups that produce larger AssetBundles, especially if you're not going to change most of the assets in the group. If you do change assets in a group with this setting, the Addressables tools move the changed assets to a new group for the update. Only the new AssetBundles are downloaded by installed applications.</li>
+<li>Disable <strong>Prevent Updates</strong> for groups containing assets that you expect to change frequently. If you change assets in a group with this setting, the AssetBundles containing those assets are rebuilt as a whole and are downloaded again by installed applications. To reduce the amount of data that needs to be downloaded after an update, try to keep the AssetBundles produced by groups with this setting as small as possible.</li>
+</ul>
+<p>Refer to <a href="content-update-builds-overview.html">Content update builds</a> for more information about updating remote content.</p>
+<p>The <strong>Advanced Options</strong> section contains some options that affect remote hosting and downloads but aren't necessary to enable remote hosting. Refer to <a href="ContentPackingAndLoadingSchema.html#advanced-options">Advanced Options</a> for more information.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="remote-content-profiles.html">Define remote content profiles</a></li>
+<li><a href="AddressableAssetSettings.html">Addressables Assets Settings reference</a></li>
+<li><a href="ContentPackingAndLoadingSchema.html">Group Inspector settings reference</a></li>
+<li><a href="content-update-builds-overview.html">Content update builds</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/remote-content-enable.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

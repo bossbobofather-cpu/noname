@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>Document Link : [https://bossbobofather-cpu.github.io/noname/index.html] | mysite </title>
+      <title>Noname Defense Prototype (Unity) | mysite </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="Document Link : [https://bossbobofather-cpu.github.io/noname/index.html] | mysite ">
+      <meta name="title" content="Noname Defense Prototype (Unity) | mysite ">
       
       
       <link rel="icon" href="favicon.ico">
@@ -71,8 +71,109 @@
         </div>
 
         <article data-uid="">
-<h1 id="document-link--httpsbossbobofather-cpugithubiononameindexhtml">Document Link : [https://bossbobofather-cpu.github.io/noname/index.html]</h1>
+<h1 id="noname-defense-prototype-unity">Noname Defense Prototype (Unity)</h1>
 
+<p>Unity 기반 탑다운 디펜스 프로토타입입니다. Clean Architecture 구조(Core / Application / Infrastructure / Presentation)를 따르며, DocFX 문서와 Definition Importer 툴을 함께 제공합니다.</p>
+<p><img src="images/gamePlayDemo.gif" alt="Gameplay">
+<img src="images/gamePlayDemo2.gif" alt="Gameplay"></p>
+<hr>
+<h2 id="핵심-특징">핵심 특징</h2>
+<ul>
+<li><strong>데이터 주도 진행</strong>: <code>DefenseGameSettings</code>와 다양한 Definition(ScriptableObject)을 통해 플레이어/적/스테이지 정보를 관리합니다. <code>DefenseSimulationService</code>가 모든 전투 로직을 책임집니다.</li>
+<li><strong>증강/어빌리티 시스템</strong>: <code>GameplayAbilityDefinition</code>으로 여러 능력 조합을 만들 수 있으며, 런타임에서 어빌리티 선택 UI를 통해 적용합니다.</li>
+<li><strong>레이어 분리</strong>: Core는 순수 로직, Application은 Use Case, Infrastructure는 입력/저장소, Presentation은 ViewModel과 Unity View로 명확히 나뉩니다.</li>
+</ul>
+<hr>
+<h2 id="레이어-개요">레이어 개요</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Folder</th>
+<th>Responsibility</th>
+<th>Representative Code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Core</strong></td>
+<td><code>Assets/Scripts/Core</code></td>
+<td>순수 로직 &amp; ScriptableObject (<code>PlayerEntity</code>, <code>EnemyDefinition</code> 등)</td>
+<td><a href="Assets/Scripts/Core/ValueObjects/EnemyDefinition.cs">EnemyDefinition</a></td>
+</tr>
+<tr>
+<td><strong>Application</strong></td>
+<td><code>Assets/Scripts/Application</code></td>
+<td>Use case, 서비스, DTO</td>
+<td><a href="Assets/Scripts/Application/Services/DefenseSimulationService.cs">DefenseSimulationService</a></td>
+</tr>
+<tr>
+<td><strong>Infrastructure</strong></td>
+<td><code>Assets/Scripts/Infrastructure</code></td>
+<td>입력/저장소/어댑터</td>
+<td><a href="Assets/Scripts/Infrastructure/Input/DefenseInputAdapter.cs">DefenseInputAdapter</a></td>
+</tr>
+<tr>
+<td><strong>Presentation</strong></td>
+<td><code>Assets/Scripts/Presentation</code></td>
+<td>ViewModel, Unity View, FX/SFX</td>
+<td><a href="Assets/Scripts/Presentation/ViewModels/GameViewModel.cs">GameViewModel</a></td>
+</tr>
+<tr>
+<td><strong>Docs</strong></td>
+<td><code>Docs/</code>, <code>_site/</code></td>
+<td>DocFX 문서/가이드/TODO/Work Log</td>
+<td><a href="Docs/todo/index.html">Docs/todo/index.md</a>, <a href="Docs/work/index.html">Docs/work/index.md</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="런타임-흐름">런타임 흐름</h2>
+<pre><code>Unity Update()
+  -&gt; DefenseGameBootstrapper.Update()
+       -&gt; GameViewModel.Tick(deltaTime)
+            -&gt; 입력 처리 (DefenseInputAdapter)
+            -&gt; MovePlayerUseCase.Execute()
+            -&gt; DefenseSimulationService.Tick()
+                 -&gt; 전투 상태 갱신
+                 -&gt; 리소스/드랍/어빌리티 이벤트 발생
+            -&gt; 이벤트를 바탕으로 View/FX/SFX 호출
+</code></pre>
+<hr>
+<h2 id="빠른-링크">빠른 링크</h2>
+<ul>
+<li><a href="https://bossbobofather-cpu.github.io/noname/index.html">Landing / Docs Home</a></li>
+<li><a href="https://bossbobofather-cpu.github.io/noname/Docs/getting-started.html">Getting Started</a></li>
+<li><a href="https://bossbobofather-cpu.github.io/noname/Docs/layers/index.html">Layers Overview</a></li>
+<li><a href="https://bossbobofather-cpu.github.io/noname/Docs/tools/index.html">Tools (Definition Importer)</a></li>
+<li><a href="https://bossbobofather-cpu.github.io/noname/Docs/todo/index.html">TODO List</a></li>
+<li><a href="https://bossbobofather-cpu.github.io/noname/Docs/work/index.html">Work List</a></li>
+<li><a href="https://bossbobofather-cpu.github.io/noname/api/index.html">API Reference</a></li>
+</ul>
+<hr>
+<h2 id="definition-import-workflow">Definition Import Workflow</h2>
+<ol>
+<li><strong>Run Enemy Definitions</strong><br>
+<code>enemyDefinitions.xlsx</code> → <code>enemyDefinitions.json</code> → <code>Assets/AddressableAssetsData/...</code> (ScriptableObject)</li>
+<li><strong>Run Player Definitions</strong><br>
+<code>playerDefinitions.xlsx</code> → <code>playerDefinitions.json</code> → ScriptableObject</li>
+<li><strong>Run Stage Definitions</strong><br>
+<code>Assets/Table/Stage/*.xlsx</code> → JSON → Stage ScriptableObject</li>
+<li><strong>Run All Definitions</strong><br>
+위 세 단계를 한 번에 실행</li>
+</ol>
+<blockquote>
+<p>Excel 수치 입력 시 정수/퍼밀 단위(예: 8.25 → 82500) 규칙을 지키고, <code>FixedPointScaling</code>으로 소수 처리합니다. Stage의 <code>monsterWeights</code>는 <code>(EnemyCode:10001;weight:1)</code>과 같은 포맷을 사용합니다.</p>
+</blockquote>
+<hr>
+<h2 id="todo--work-log">TODO &amp; Work Log</h2>
+<ul>
+<li>TODO 상세: <code>Docs/todo/index.md</code></li>
+<li>일일 작업 로그(Work List): <code>Docs/work/index.md</code></li>
+</ul>
+<hr>
+<h2 id="repository">Repository</h2>
+<p>GitHub: <a href="https://github.com/bossbobofather-cpu/noname">bossbobofather-cpu/noname</a></p>
 
 </article>
 

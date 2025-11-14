@@ -1,0 +1,425 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.EditorTools.DefinitionImportUtility
+  commentId: T:Noname.EditorTools.DefinitionImportUtility
+  id: DefinitionImportUtility
+  parent: Noname.EditorTools
+  children:
+  - Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson(Noname.EditorTools.DefinitionImportUtility.DefinitionKind,System.String,System.String)
+  - Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImportUtility.DefinitionKind,System.String)
+  langs:
+  - csharp
+  - vb
+  name: DefinitionImportUtility
+  nameWithType: DefinitionImportUtility
+  fullName: Noname.EditorTools.DefinitionImportUtility
+  type: Class
+  source:
+    remote:
+      path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+      branch: main
+      repo: https://github.com/bossbobofather-cpu/noname.git
+    id: DefinitionImportUtility
+    path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+    startLine: 8
+  assemblies:
+  - DefinitionImporterDocs
+  namespace: Noname.EditorTools
+  summary: >-
+    Definition Importer 배치 워크플로(DefinitionImportUtility)를 설명하기 위한 DocFX 전용 스텁입니다.
+
+    실제 구현은 Unity Editor 환경에서만 동작하므로, 공개 API 서명과 문서화를 위해서만 존재합니다.
+  example: []
+  syntax:
+    content: public static class DefinitionImportUtility
+    content.vb: Public Module DefinitionImportUtility
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+- uid: Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson(Noname.EditorTools.DefinitionImportUtility.DefinitionKind,System.String,System.String)
+  commentId: M:Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson(Noname.EditorTools.DefinitionImportUtility.DefinitionKind,System.String,System.String)
+  id: ConvertXlsxToJson(Noname.EditorTools.DefinitionImportUtility.DefinitionKind,System.String,System.String)
+  parent: Noname.EditorTools.DefinitionImportUtility
+  langs:
+  - csharp
+  - vb
+  name: ConvertXlsxToJson(DefinitionKind, string, string)
+  nameWithType: DefinitionImportUtility.ConvertXlsxToJson(DefinitionImportUtility.DefinitionKind, string, string)
+  fullName: Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson(Noname.EditorTools.DefinitionImportUtility.DefinitionKind, string, string)
+  type: Method
+  source:
+    remote:
+      path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+      branch: main
+      repo: https://github.com/bossbobofather-cpu/noname.git
+    id: ConvertXlsxToJson
+    path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+    startLine: 23
+  assemblies:
+  - DefinitionImporterDocs
+  namespace: Noname.EditorTools
+  summary: 지정한 XLSX를 Definition JSON으로 변환합니다. Stage 파일은 파일명으로 stageCode를 유추합니다.
+  example: []
+  syntax:
+    content: public static void ConvertXlsxToJson(DefinitionImportUtility.DefinitionKind kind, string xlsxPath, string jsonPath)
+    parameters:
+    - id: kind
+      type: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+    - id: xlsxPath
+      type: System.String
+    - id: jsonPath
+      type: System.String
+    content.vb: Public Shared Sub ConvertXlsxToJson(kind As DefinitionImportUtility.DefinitionKind, xlsxPath As String, jsonPath As String)
+  overload: Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson*
+  nameWithType.vb: DefinitionImportUtility.ConvertXlsxToJson(DefinitionImportUtility.DefinitionKind, String, String)
+  fullName.vb: Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson(Noname.EditorTools.DefinitionImportUtility.DefinitionKind, String, String)
+  name.vb: ConvertXlsxToJson(DefinitionKind, String, String)
+- uid: Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImportUtility.DefinitionKind,System.String)
+  commentId: M:Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImportUtility.DefinitionKind,System.String)
+  id: ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImportUtility.DefinitionKind,System.String)
+  parent: Noname.EditorTools.DefinitionImportUtility
+  langs:
+  - csharp
+  - vb
+  name: ImportJsonToScriptableObjects(DefinitionKind, string)
+  nameWithType: DefinitionImportUtility.ImportJsonToScriptableObjects(DefinitionImportUtility.DefinitionKind, string)
+  fullName: Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImportUtility.DefinitionKind, string)
+  type: Method
+  source:
+    remote:
+      path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+      branch: main
+      repo: https://github.com/bossbobofather-cpu/noname.git
+    id: ImportJsonToScriptableObjects
+    path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+    startLine: 31
+  assemblies:
+  - DefinitionImporterDocs
+  namespace: Noname.EditorTools
+  summary: JSON을 읽어 Enemies/Players/Stages ScriptableObject를 생성·갱신합니다.
+  example: []
+  syntax:
+    content: public static void ImportJsonToScriptableObjects(DefinitionImportUtility.DefinitionKind kind, string jsonPath)
+    parameters:
+    - id: kind
+      type: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+    - id: jsonPath
+      type: System.String
+    content.vb: Public Shared Sub ImportJsonToScriptableObjects(kind As DefinitionImportUtility.DefinitionKind, jsonPath As String)
+  overload: Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects*
+  nameWithType.vb: DefinitionImportUtility.ImportJsonToScriptableObjects(DefinitionImportUtility.DefinitionKind, String)
+  fullName.vb: Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImportUtility.DefinitionKind, String)
+  name.vb: ImportJsonToScriptableObjects(DefinitionKind, String)
+references:
+- uid: Noname.EditorTools
+  commentId: N:Noname.EditorTools
+  href: Noname.html
+  name: Noname.EditorTools
+  nameWithType: Noname.EditorTools
+  fullName: Noname.EditorTools
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    href: Noname.html
+  - name: .
+  - uid: Noname.EditorTools
+    name: EditorTools
+    href: Noname.EditorTools.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    href: Noname.html
+  - name: .
+  - uid: Noname.EditorTools
+    name: EditorTools
+    href: Noname.EditorTools.html
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  name: GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
+  - name: (
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  name: MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  name: ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
+  - name: (
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson*
+  commentId: Overload:Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson
+  href: Noname.EditorTools.DefinitionImportUtility.html#Noname_EditorTools_DefinitionImportUtility_ConvertXlsxToJson_Noname_EditorTools_DefinitionImportUtility_DefinitionKind_System_String_System_String_
+  name: ConvertXlsxToJson
+  nameWithType: DefinitionImportUtility.ConvertXlsxToJson
+  fullName: Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson
+- uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  commentId: T:Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  parent: Noname.EditorTools
+  href: Noname.EditorTools.DefinitionImportUtility.html
+  name: DefinitionImportUtility.DefinitionKind
+  nameWithType: DefinitionImportUtility.DefinitionKind
+  fullName: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  spec.csharp:
+  - uid: Noname.EditorTools.DefinitionImportUtility
+    name: DefinitionImportUtility
+    href: Noname.EditorTools.DefinitionImportUtility.html
+  - name: .
+  - uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+    name: DefinitionKind
+    href: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.html
+  spec.vb:
+  - uid: Noname.EditorTools.DefinitionImportUtility
+    name: DefinitionImportUtility
+    href: Noname.EditorTools.DefinitionImportUtility.html
+  - name: .
+  - uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+    name: DefinitionKind
+    href: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.html
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects*
+  commentId: Overload:Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects
+  href: Noname.EditorTools.DefinitionImportUtility.html#Noname_EditorTools_DefinitionImportUtility_ImportJsonToScriptableObjects_Noname_EditorTools_DefinitionImportUtility_DefinitionKind_System_String_
+  name: ImportJsonToScriptableObjects
+  nameWithType: DefinitionImportUtility.ImportJsonToScriptableObjects
+  fullName: Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects

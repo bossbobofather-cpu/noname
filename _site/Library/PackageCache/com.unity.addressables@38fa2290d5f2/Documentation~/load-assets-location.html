@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Load assets by location | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Load assets by location | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-assets-location.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="load-assets-by-location">Load assets by location</h1>
+
+<p>When you load an Addressable asset by address, label, or AssetReference, the Addressables system first looks up the resource locations for the assets and uses the <a href="xref:UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation"><code>IResourceLocation</code></a> instances to download the required AssetBundles and any dependencies. To perform the asset load operation, get the <code>IResourceLocation</code> objects with <a href="xref:UnityEngine.AddressableAssets.Addressables.LoadResourceLocationsAsync*"><code>LoadResourceLocationsAsync</code></a> and then use those objects as keys to load or instantiate the assets.</p>
+<p><code>IResourceLocation</code> objects contain the information needed to load one or more assets.</p>
+<p>The <code>LoadResourceLocationsAsync</code> method never fails. If it can't resolve the specified keys to the locations of any assets, it returns an empty list. You can restrict the types of asset locations returned by the method by specifying a specific type in the <code>type</code> parameter.</p>
+<p>The following example loads locations for all assets labeled with <code>knight</code> or <code>villager</code>:</p>
+<pre><code class="lang-cs" name="sample">
+AsyncOperationHandle&lt;IList&lt;IResourceLocation&gt;&gt; handle
+    = Addressables.LoadResourceLocationsAsync(
+        new List&lt;string&gt; {&quot;knight&quot;, &quot;villager&quot;},
+        Addressables.MergeMode.Union);
+
+yield return handle;
+
+//...
+
+handle.Release();
+
+</code></pre><h2 id="load-locations-of-sub-objects">Load locations of sub objects</h2>
+<p>Unity generates locations for <code>SubObjects</code> at runtime to reduce the size of the content catalogs and improve runtime performance. When you call <a href="xref:UnityEngine.AddressableAssets.Addressables.LoadResourceLocationsAsync*"><code>LoadResourceLocationsAsync</code></a> with the key of an asset with sub objects and don't specify a type, then the method generates <code>IResourceLocation</code> instances for all the sub objects and the main object. If you don't specify which sub object to use for an AssetReference that points to an asset with sub objects, then the system generates <code>IResourceLocation</code> instances for every sub object.</p>
+<p>For example, if you load the locations for an FBX asset, with the address, <code>myFBXObject</code>, you might get locations for three assets: a GameObject, a mesh, and a material. If you specify the type in the address, <code>myFBXObject[Mesh]</code>, you only get the mesh object. You can also specify the type using the <code>type</code> parameter of the <code>LoadResourceLocationsAsync</code> method.</p>
+<h2 id="match-loaded-assets-to-their-keys">Match loaded assets to their keys</h2>
+<p>The order that Unity loads individual assets isn't necessarily the same as the order of the keys in the list you pass to the loading method.</p>
+<p>If you need to associate an asset in a combined operation with the key used to load it, you can perform the operation in the following steps:</p>
+<ol>
+<li>Load the <a href="xref:UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation"><code>IResourceLocation</code></a> instances with the list of asset keys.</li>
+<li>Load the individual assets using their <code>IResourceLocation</code> instances as keys.</li>
+</ol>
+<p>The <code>IResourceLocation</code> object contains the key information so you can, for example, keep a dictionary to correlate the key to an asset. When you call a loading method, such as <a href="xref:UnityEngine.AddressableAssets.Addressables.LoadAssetsAsync*"><code>LoadAssetsAsync</code></a>, the operation first looks up the <a href="xref:UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation"><code>IResourceLocation</code></a> instances that correspond to a key and then uses that to load the asset. When you load an asset using an <code>IResourceLocation</code>, the operation skips the first step, so performing the operation in two steps doesn't add significant additional work.</p>
+<p>The following example loads the assets for a list of keys and inserts them into a dictionary by their address (<a href="xref:UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation.PrimaryKey"><code>PrimaryKey</code></a>). The example first loads the resource locations for the specified keys. When that operation is complete, it loads the asset for each location, using the <code>Completed</code> event to insert the individual operation handles into the dictionary. You can use the operation handles to instantiate the assets, and release the assets when they're no longer needed.</p>
+<pre><code class="lang-cs" name="sample">
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.Events;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceLocations;
+
+internal class LoadWithLocation : MonoBehaviour
+{
+    public Dictionary&lt;string, AsyncOperationHandle&lt;GameObject&gt;&gt; operationDictionary;
+    public List&lt;string&gt; keys;
+    public UnityEvent Ready;
+
+    IEnumerator LoadAndAssociateResultWithKey(IList&lt;string&gt; keys)
+    {
+        if (operationDictionary == null)
+            operationDictionary = new Dictionary&lt;string, AsyncOperationHandle&lt;GameObject&gt;&gt;();
+
+        AsyncOperationHandle&lt;IList&lt;IResourceLocation&gt;&gt; locations
+            = Addressables.LoadResourceLocationsAsync(keys,
+                Addressables.MergeMode.Union, typeof(GameObject));
+
+        yield return locations;
+
+        var loadOps = new List&lt;AsyncOperationHandle&gt;(locations.Result.Count);
+
+        foreach (IResourceLocation location in locations.Result)
+        {
+            AsyncOperationHandle&lt;GameObject&gt; handle =
+                Addressables.LoadAssetAsync&lt;GameObject&gt;(location);
+            handle.Completed += obj =&gt; operationDictionary.Add(location.PrimaryKey, obj);
+            loadOps.Add(handle);
+        }
+
+        yield return Addressables.ResourceManager.CreateGenericGroupOperation(loadOps, true);
+
+        Ready.Invoke();
+    }
+
+    void Start()
+    {
+        Ready.AddListener(OnAssetsReady);
+        StartCoroutine(LoadAndAssociateResultWithKey(keys));
+    }
+
+    private void OnAssetsReady()
+    {
+        float x = 0, z = 0;
+        foreach (var item in operationDictionary)
+        {
+            Debug.Log($&quot;{item.Key} = {item.Value.Result.name}&quot;);
+            Instantiate(item.Value.Result,
+                new Vector3(x++ * 2.0f, 0, z * 2.0f),
+                Quaternion.identity, transform);
+            if (x &gt; 9)
+            {
+                x = 0;
+                z++;
+            }
+        }
+    }
+
+    private void OnDestroy()
+    {
+        foreach (var item in operationDictionary)
+        {
+            item.Value.Release();
+        }
+    }
+}
+
+</code></pre>
+<p>The loading method creates a group operation with <a href="xref:UnityEngine.ResourceManagement.ResourceManager.CreateGenericGroupOperation*"><code>ResourceManager.CreateGenericGroupOperation</code></a>. This allows the method to continue after all the loading operations have finished. In this case, the method dispatches a <code>Ready</code> event to notify other scripts that the loaded data can be used.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="xref:UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation"><code>IResourceLocation</code> API reference</a></li>
+<li><a href="load-assets.html">Load assets</a></li>
+<li><a href="LoadingScenes.html">Load scenes</a></li>
+<li><a href="LoadingAssetBundles.html">Load AssetBundles</a></li>
+<li><a href="MultiProject.html">Load assets from multiple projects</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-assets-location.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

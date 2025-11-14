@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Create a custom wait operation | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Create a custom wait operation | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-custom-wait-operation.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="create-a-custom-wait-operation">Create a custom wait operation</h1>
+
+<p>To create a custom operation, extend the <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase%601"><code>AsyncOperationBase</code></a> class and override its virtual methods.</p>
+<p>You can pass the derived operation to the <a href="xref:UnityEngine.ResourceManagement.ResourceManager.StartOperation*"><code>ResourceManager.StartOperation</code></a> method to start the operation and receive an <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle"><code>AsyncOperationHandle</code></a> struct. The <a href="xref:UnityEngine.ResourceManagement.ResourceManager"><code>ResourceManager</code></a> registers operations started this way.</p>
+<h2 id="execute-a-custom-operation">Execute a custom operation</h2>
+<p>The <a href="xref:UnityEngine.ResourceManagement.ResourceManager"><code>ResourceManager</code></a> invokes the <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase%601.Execute*"><code>AsyncOperationBase.Execute</code></a> method for the custom operation once the optional dependent operation completes.</p>
+<h2 id="completion-handling">Completion handling</h2>
+<p>When the custom operation completes, call <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase%601.Complete*"><code>AsyncOperationBase.Complete</code></a> on the custom operation object. You can call this in the <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase%601.Execute*"><code>Execute</code></a> method or defer it to outside the call. <code>AsyncOperationBase.Complete</code> notifies the <code>ResourceManager</code> that the operation has finished. <code>The ResourceManager</code> invokes the associated <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle.Completed"><code>AsyncOperationHandle.Completed</code></a> events for the relevant instances of the custom operation.</p>
+<h2 id="terminate-the-custom-operation">Terminate the custom operation</h2>
+<p><code>ResourceManager</code> invokes the <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase%601.Destroy*"><code>AsyncOperationBase.Destroy</code></a> method for your custom operation when the operation <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase%601.DecrementReferenceCount*"><code>AsyncOperationBase.ReferenceCount</code></a> reaches zero. <code>AsyncOperationBase.ReferenceCount</code> is decreased when the <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle"><code>AsyncOperationHandle</code></a> that references it is released using <a href="xref:UnityEngine.AddressableAssets.Addressables.Release*"><code>Addressables.Release</code></a> or when <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase%601.DecrementReferenceCount*"><code>AsyncOperationBase.DecrementReferenceCount</code></a> is called by a custom operation internally. <code>AsyncOperationBase.Destroy</code> is where you should release any memory or resources associated with your custom operation.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase%601"><code>AsyncOperationBase</code> API reference</a></li>
+<li><a href="load-monitor-wait-operations.html">Monitor wait operations</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-custom-wait-operation.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

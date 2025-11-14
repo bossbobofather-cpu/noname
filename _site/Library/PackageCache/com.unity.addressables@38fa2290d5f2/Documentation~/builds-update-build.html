@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Create an update build | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Create an update build | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/builds-update-build.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="create-an-update-build">Create an update build</h1>
+
+<p>When you distribute content remotely, you can perform a differential update of the previous build to minimize the amount of data your users must download.</p>
+<p>Once you have configured remote Addressables groups and have a previous build which contains remote content, you can perform a content update build. To create an update build:</p>
+<ol>
+<li>Open the <a href="GroupsWindow.html">Addressables Groups window</a> (menu: <strong>Windows &gt; Asset Management &gt; Addressables &gt; Groups</strong>).</li>
+<li>In the <strong>Profile</strong> menu, select the desired <a href="profiles-create.html">profile</a>.</li>
+<li>In the <strong>Build</strong> menu, select <strong>Update a Previous Build</strong>.</li>
+<li>By default, the Addressables system automatically uses the <code>addressables_content_state.bin</code> file in the <code>Assets/AddressableAssetsData/TargetPlatform</code> folder to create an update build.</li>
+</ol>
+<p>To update existing clients, copy the updated remote content to your hosting service. An update build includes all local and remote content, and any Player builds you create after a content update build contain a complete set of Addressable assets.</p>
+<p>Updating a previous build doesn't change the <code>addressables_content_state.bin</code> file. Use the same version of the file for future update builds, until you publish another full build created from the <strong>New Build</strong> menu.</p>
+<h2 id="changes-to-scripts-that-require-rebuilding-addressables">Changes to scripts that require rebuilding Addressables</h2>
+<p>Unity references classes in Addressables content using a MonoScript object. This object defines a class using the Assembly name, <a href="https://docs.unity3d.com/Manual/Namespaces.html">Namespace</a>, and either the class name or the referenced class.</p>
+<p>When loading content at runtime, Unity uses the MonoScript to load and create an instance of the runtime class from the player assemblies.</p>
+<p>Changes to MonoScripts need to be consistent between the Player and the built Addressables content. You must rebuild both the Player content and Addressables content to load the classes correctly.</p>
+<p>The following actions can result in changes to the MonoScript data:</p>
+<ul>
+<li>Moving the script file to a location that comes under another <a href="https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html">assembly definition file</a></li>
+<li>Changing the name of the assembly definition file containing the class</li>
+<li>Adding or changing the class namespace</li>
+<li>Changing the class name</li>
+</ul>
+<p>You can enable the <strong>MonoScript Bundle Naming Prefix</strong> option in the <a href="AddressableAssetSettings.html#build">Addressables settings</a> to build an AssetBundle that contains only MonoScript objects, separate to your serialized data.</p>
+<p>If there are no changes to the serialized class data, then you only need to update the MonoScript AssetBundle.</p>
+<h2 id="check-for-content-update-restrictions">Check for content update restrictions</h2>
+<p>You can use <strong>Check for Content Update Restrictions</strong> command to prepare groups for a content update build. The tool examines the <code>addressables_content_state.bin</code> file and group settings. To run the command:</p>
+<ol>
+<li>Open the <strong>Addressables Groups</strong> window in the Unity Editor (<strong>Window</strong> &gt; <strong>Asset Management</strong> &gt; <strong>Addressables</strong> &gt; <strong>Groups</strong>).</li>
+<li>In the <strong>Tools</strong> menu, select <strong>Check for Content Update Restrictions</strong>.</li>
+<li>If a group has the <a href="ContentPackingAndLoadingSchema.html#content-update-restriction"><strong>Prevent Updates</strong></a> setting enabled in the previous build, the tool gives you the option to move any changed assets to a new remote group. You can change the names of any new remote groups the tool created, but moving assets to different groups can have unintended consequences.</li>
+</ol>
+<p>When you create the update build, the new catalog maps the changed assets to their new remote AssetBundles, while still mapping the unchanged assets to their original AssetBundles. Checking for content update restrictions doesn't check groups with <strong>Prevent Updates</strong> disabled.</p>
+<p>Unity uses the hash returned by <a href="xref:UnityEditor.AssetDatabase.GetAssetDependencyHash(System.String)"><code>AssetDatabase.GetAssetDependencyHash</code></a> to determine if an asset has changed. This Editor API has limitations and might not accurately reflect AssetBundle changes that are calculated at build time. For example it computes the hash of the content of <code>.cs</code> files. This means that performing whitespace changes in a <code>.cs</code> file results in a different hash, but the AssetBundle containing the file is unchanged. For more information, refer to <a href="#changes-to-scripts-that-require-rebuilding-addressables">Changes to scripts that require rebuilding Addressables</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Before you run <strong>Check for Content Update Restrictions</strong>, make a branch with your version control system. The tool rearranges asset groups in a way suited for updating content. Branching ensures that next time you ship a full player build, you can return to your preferred content arrangement.</p>
+</div>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="GroupsWindow.html">Addressables Groups window</a></li>
+<li><a href="content-update-builds-check.html">Create a script to check for content updates</a></li>
+<li><a href="content-update-examples.html">Content update dependencies</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/builds-update-build.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

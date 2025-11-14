@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Usage Examples | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Usage Examples | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/UsageExamples.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="usage-examples">Usage Examples</h1>
+
+<h2 id="basic-example">Basic Example</h2>
+<p>This example assumes that your are already familiar with the basic usage of <code>BuildPipeline.BuildAssetBundles</code> and want to switch to using Scriptable Build Pipeline with as little effort as possible.</p>
+<p>The following code example shows how AssetBundles are currently built:</p>
+<pre><code class="lang-csharp">using System.IO;
+using UnityEditor;
+
+public static class BuildAssetBundlesExample
+{
+    public static bool BuildAssetBundles(string outputPath, bool forceRebuild, bool useChunkBasedCompression, BuildTarget buildTarget)
+    {
+        var options = BuildAssetBundleOptions.None;
+        if (useChunkBasedCompression)
+            options |= BuildAssetBundleOptions.ChunkBasedCompression;
+
+        if (forceRebuild)
+            options |= BuildAssetBundleOptions.ForceRebuildAssetBundle;
+
+        Directory.CreateDirectory(outputPath);
+        var manifest = BuildPipeline.BuildAssetBundles(outputPath, options, buildTarget);
+        return manifest != null;
+    }
+}
+</code></pre>
+<p>To update the previous code example to use SBP instead, add a new <code>using UnityEditor.Build.Pipeline</code> and replace the call to <code>BuildPipeline.BuildAssetBundles</code> with <code>CompatibilityBuildPipeline.BuildAssetBundles</code> as shown below:</p>
+<pre><code class="lang-csharp">using System.IO;
+using UnityEditor;
+// Added new using
+using UnityEditor.Build.Pipeline;
+
+public static class BuildAssetBundlesExample
+{
+    public static bool BuildAssetBundles(string outputPath, bool forceRebuild, bool useChunkBasedCompression, BuildTarget buildTarget)
+    {
+        var options = BuildAssetBundleOptions.None;
+        if (useChunkBasedCompression)
+            options |= BuildAssetBundleOptions.ChunkBasedCompression;
+
+        if (forceRebuild)
+            options |= BuildAssetBundleOptions.ForceRebuildAssetBundle;
+
+        Directory.CreateDirectory(outputPath);
+        // Replaced BuildPipeline.BuildAssetBundles with CompatibilityBuildPipeline.BuildAssetBundles here
+        var manifest = CompatibilityBuildPipeline.BuildAssetBundles(outputPath, options, buildTarget);
+        return manifest != null;
+    }
+}
+</code></pre>
+<p><strong>Notes:</strong> Some changes in the SBP building and loading process do not match the BuildPipeline behavior. For more information on these changes, see <a href="UpgradeGuide.html">Upgrade Guide</a>.</p>
+<h2 id="per-bundle-compression-example">Per-Bundle Compression Example</h2>
+<p>The following example shows how to build your AssetBundles using different compression levels for each AssetBundle.This is useful if you are planning on shipping part of your bundles as Lz4 or Uncompressed with Player and want to download the remainder as Lzma later.</p>
+<p>The simplest implementation is to create a custom build parameters class that inherits from <code>BundleBuildParameters</code> and override the <code>GetCompressionForIdentifier</code> method. Then construct and pass this into the <code>ContentPipeline.BuildAssetBundles</code> method.</p>
+<pre><code class="lang-csharp">using UnityEditor;
+using UnityEditor.Build.Content;
+using UnityEditor.Build.Pipeline;
+using UnityEditor.Build.Pipeline.Interfaces;
+
+public static class BuildAssetBundlesExample
+{
+    // New parameters class inheriting from BundleBuildParameters
+    class CustomBuildParameters : BundleBuildParameters
+    {
+        public Dictionary&lt;string, BuildCompression&gt; PerBundleCompression { get; set; }
+
+        public CustomBuildParameters(BuildTarget target, BuildTargetGroup group, string outputFolder) : base(target, group, outputFolder)
+        {
+            PerBundleCompression = new Dictionary&lt;string, BuildCompression&gt;();
+        }
+
+        // Override the GetCompressionForIdentifier method with new logic
+        public override BuildCompression GetCompressionForIdentifier(string identifier)
+        {
+            BuildCompression value;
+            if (PerBundleCompression.TryGetValue(identifier, out value))
+                return value;
+            return BundleCompression;
+        }
+    }
+
+    public static bool BuildAssetBundles(string outputPath, bool useChunkBasedCompression, BuildTarget buildTarget, BuildTargetGroup buildGroup)
+    {
+        var buildContent = new BundleBuildContent(ContentBuildInterface.GenerateAssetBundleBuilds());
+        // Construct the new parameters class
+        var buildParams = new CustomBuildParameters(buildTarget, buildGroup, outputPath);
+        // Populate the bundle specific compression data
+        buildParams.PerBundleCompression.Add(&quot;Bundle1&quot;, BuildCompression.DefaultUncompressed);
+        buildParams.PerBundleCompression.Add(&quot;Bundle2&quot;, BuildCompression.DefaultLZMA);
+
+        if (m_Settings.compressionType == CompressionType.None)
+            buildParams.BundleCompression = BuildCompression.DefaultUncompressed;
+        else if (m_Settings.compressionType == CompressionType.Lzma)
+            buildParams.BundleCompression = BuildCompression.DefaultLZMA;
+        else if (m_Settings.compressionType == CompressionType.Lz4 || m_Settings.compressionType == CompressionType.Lz4HC)
+            buildParams.BundleCompression = BuildCompression.DefaultLZ4;
+
+        IBundleBuildResults results;
+        ReturnCode exitCode = ContentPipeline.BuildAssetBundles(buildParams, buildContent, out results);
+        return exitCode == ReturnCode.Success;
+    }
+}
+</code></pre>
+<h2 id="load-by-file-name-example">Load By File Name Example</h2>
+<p>The following example shows how to use the <code>CompatibilityBuildPipeline</code> methods to load by a filename instead of the full path.</p>
+<p>The example uses the <code>ContentBuildInterface.GenerateAssetBundleBuilds()</code> method to get the set of bundles and assets to build, then modifies <code>addressableNames</code> field to set the loading path of the filename instead of the full path.</p>
+<pre><code class="lang-csharp">using System.Linq;
+using UnityEditor;
+using UnityEditor.Build.Content;
+using UnityEditor.Build.Pipeline;
+
+public static class BuildAssetBundlesExample
+{
+    public static bool BuildAssetBundles(string outputPath, bool forceRebuild, bool useChunkBasedCompression, BuildTarget buildTarget)
+    {
+        var options = BuildAssetBundleOptions.None;
+        if (useChunkBasedCompression)
+            options |= BuildAssetBundleOptions.ChunkBasedCompression;
+
+        if (forceRebuild)
+            options |= BuildAssetBundleOptions.ForceRebuildAssetBundle;
+
+        // Get the set of bundle to build
+        var bundles = ContentBuildInterface.GenerateAssetBundleBuilds();
+        // Update the addressableNames to load by the file name without extension
+        for (var i = 0; i &lt; bundles.Length; i++)
+            bundles[i].addressableNames = bundles[i].assetNames.Select(Path.GetFileNameWithoutExtension).ToArray();
+
+        var manifest = CompatibilityBuildPipeline.BuildAssetBundles(m_Settings.outputPath, bundles, options, m_Settings.buildTarget);
+        return manifest != null;
+    }
+}
+</code></pre>
+<h2 id="building-archives-that-contain-contentfiles">Building Archives that Contain ContentFiles</h2>
+<p>The following example shows how to build Archive files that contain ContentFiles by using the <code>DefaultBuildTasks.ContentFileCompatible</code> as the tasks for building</p>
+<p>Using <code>ContentFileIdentifiers</code> is required, otherwise the resulting AssetBundles will not be able to load.</p>
+<p>Requires Unity 2022.2 or later.</p>
+<pre><code class="lang-csharp">using UnityEditor;
+using UnityEditor.Build.Content;
+using UnityEditor.Build.Pipeline;
+using UnityEditor.Build.Pipeline.Tasks;
+using UnityEditor.Build.Pipeline.Utilities;
+
+public class BuildAssetBundlesExample
+{
+    public static bool BuildAssetBundles(string outputPath, bool useChunkBasedCompression, BuildTarget buildTarget, BuildTargetGroup buildGroup)
+    {
+        var buildContent = new BundleBuildContent(ContentBuildInterface.GenerateAssetBundleBuilds());
+        var buildParams = new BundleBuildParameters(buildTarget, buildGroup, outputPath);
+        if (useChunkBasedCompression)
+            buildParams.BundleCompression = UnityEngine.BuildCompression.LZ4;
+
+        var tasks = DefaultBuildTasks.ContentFileCompatible();
+        var buildLayout = new ClusterOutput();
+        var exitCode = ContentPipeline.BuildAssetBundles(buildParams, buildContent, out _, tasks, new ContentFileIdentifiers(), buildLayout);
+        return exitCode == ReturnCode.Success;
+    }
+}
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/UsageExamples.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

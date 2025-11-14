@@ -1,9 +1,10 @@
 {
   "Noname.EditorTools": "Noname.EditorTools.yml",
-  "Noname.EditorTools.DefinitionImporterWindow": "Noname.EditorTools.DefinitionImporterWindow.yml",
-  "Noname.EditorTools.DefinitionImporterWindow.ConvertXlsxToJson(Noname.EditorTools.DefinitionImporterWindow.DefinitionKind,System.String,System.String)": "Noname.EditorTools.DefinitionImporterWindow.yml",
-  "Noname.EditorTools.DefinitionImporterWindow.DefinitionKind": "Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.yml",
-  "Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.Enemy": "Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.yml",
-  "Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.Player": "Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.yml",
-  "Noname.EditorTools.DefinitionImporterWindow.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImporterWindow.DefinitionKind,System.String)": "Noname.EditorTools.DefinitionImporterWindow.yml"
+  "Noname.EditorTools.DefinitionImportUtility": "Noname.EditorTools.DefinitionImportUtility.yml",
+  "Noname.EditorTools.DefinitionImportUtility.ConvertXlsxToJson(Noname.EditorTools.DefinitionImportUtility.DefinitionKind,System.String,System.String)": "Noname.EditorTools.DefinitionImportUtility.yml",
+  "Noname.EditorTools.DefinitionImportUtility.DefinitionKind": "Noname.EditorTools.DefinitionImportUtility.DefinitionKind.yml",
+  "Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Enemy": "Noname.EditorTools.DefinitionImportUtility.DefinitionKind.yml",
+  "Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Player": "Noname.EditorTools.DefinitionImportUtility.DefinitionKind.yml",
+  "Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Stage": "Noname.EditorTools.DefinitionImportUtility.DefinitionKind.yml",
+  "Noname.EditorTools.DefinitionImportUtility.ImportJsonToScriptableObjects(Noname.EditorTools.DefinitionImportUtility.DefinitionKind,System.String)": "Noname.EditorTools.DefinitionImportUtility.yml"
 }

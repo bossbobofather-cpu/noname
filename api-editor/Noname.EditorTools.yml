@@ -4,8 +4,8 @@ items:
   commentId: N:Noname.EditorTools
   id: Noname.EditorTools
   children:
-  - Noname.EditorTools.DefinitionImporterWindow
-  - Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  - Noname.EditorTools.DefinitionImportUtility
+  - Noname.EditorTools.DefinitionImportUtility.DefinitionKind
   langs:
   - csharp
   - vb
@@ -16,35 +16,35 @@ items:
   assemblies:
   - DefinitionImporterDocs
 references:
-- uid: Noname.EditorTools.DefinitionImporterWindow
-  commentId: T:Noname.EditorTools.DefinitionImporterWindow
-  href: Noname.EditorTools.DefinitionImporterWindow.html
-  name: DefinitionImporterWindow
-  nameWithType: DefinitionImporterWindow
-  fullName: Noname.EditorTools.DefinitionImporterWindow
-- uid: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
-  commentId: T:Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+- uid: Noname.EditorTools.DefinitionImportUtility
+  commentId: T:Noname.EditorTools.DefinitionImportUtility
+  href: Noname.EditorTools.DefinitionImportUtility.html
+  name: DefinitionImportUtility
+  nameWithType: DefinitionImportUtility
+  fullName: Noname.EditorTools.DefinitionImportUtility
+- uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  commentId: T:Noname.EditorTools.DefinitionImportUtility.DefinitionKind
   parent: Noname.EditorTools
-  href: Noname.EditorTools.DefinitionImporterWindow.html
-  name: DefinitionImporterWindow.DefinitionKind
-  nameWithType: DefinitionImporterWindow.DefinitionKind
-  fullName: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  href: Noname.EditorTools.DefinitionImportUtility.html
+  name: DefinitionImportUtility.DefinitionKind
+  nameWithType: DefinitionImportUtility.DefinitionKind
+  fullName: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
   spec.csharp:
-  - uid: Noname.EditorTools.DefinitionImporterWindow
-    name: DefinitionImporterWindow
-    href: Noname.EditorTools.DefinitionImporterWindow.html
+  - uid: Noname.EditorTools.DefinitionImportUtility
+    name: DefinitionImportUtility
+    href: Noname.EditorTools.DefinitionImportUtility.html
   - name: .
-  - uid: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  - uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
     name: DefinitionKind
-    href: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.html
+    href: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.html
   spec.vb:
-  - uid: Noname.EditorTools.DefinitionImporterWindow
-    name: DefinitionImporterWindow
-    href: Noname.EditorTools.DefinitionImporterWindow.html
+  - uid: Noname.EditorTools.DefinitionImportUtility
+    name: DefinitionImportUtility
+    href: Noname.EditorTools.DefinitionImportUtility.html
   - name: .
-  - uid: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind
+  - uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
     name: DefinitionKind
-    href: Noname.EditorTools.DefinitionImporterWindow.DefinitionKind.html
+    href: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.html
 - uid: Noname.EditorTools
   commentId: N:Noname.EditorTools
   href: Noname.html

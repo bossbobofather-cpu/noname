@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Addressables Profiles window reference | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Addressables Profiles window reference | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/addressables-profiles-window.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="addressables-profiles-window-reference">Addressables Profiles window reference</h1>
+
+<p>To manage the profiles in your project, use the <strong>Addressables Profiles window</strong> (menu: <strong>Window &gt; Asset Management &gt; Addressables &gt; Profiles</strong>).</p>
+<p><img src="images/addressables-profiles-window.png" alt="The Addressables Profiles window displaying the default profile."><br><em>The <strong>Addressables Profiles</strong> window displaying the default profile.</em></p>
+<p>Right-click a profile name to set it as the active profile, rename the profile, or delete it.</p>
+<h2 id="create">Create</h2>
+<p>Use the <strong>Create</strong> menu to create new profiles or variables.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Option</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Profile</strong></td>
+<td>Create a new profile, based on the selected profile. For more information, refer to <a href="profiles-create.html">Create a profile</a>.</td>
+</tr>
+<tr>
+<td><strong>Variable</strong></td>
+<td>Add a single variable to all profiles. For more information, refer to <a href="ProfileVariables.html">Add variables to a profile</a>.</td>
+</tr>
+<tr>
+<td><strong>Build and Load Path Variables</strong></td>
+<td>Add a build and load path pair to all profiles. For more information, refer to <a href="ProfileVariables.html">Add variables to a profile</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="default-variables">Default variables</h2>
+<p>The following default profile variables are available:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Variable</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Local</strong></td>
+<td>Set the variables for local content. Choose from:<ul><li><strong>Built-In</strong></li><li><strong>Cloud Content Delivery</strong></li><li><strong>Custom</strong></li></ul></td>
+</tr>
+<tr>
+<td><strong>Local.BuildPath</strong></td>
+<td>Can only edit if you select <strong>Custom</strong> as the variable. Define where to build the files containing assets you want to install locally with your application. By default, this path is inside the <code>Library</code> folder.</td>
+</tr>
+<tr>
+<td><strong>Local.LoadPath</strong></td>
+<td>Can only edit if you select <strong>Custom</strong> as the variable. Define where to load assets installed locally with your application. By default, this path is in the <code>StreamingAssets</code> folder. Addressables automatically includes local content built to the default location in <code>StreamingAssets</code> when you build a Player, but not from other locations.</td>
+</tr>
+<tr>
+<td><strong>Remote</strong></td>
+<td>Set the variables for remote content. Choose from:<ul><li><strong>Built-In</strong></li><li><strong>Cloud Content Delivery</strong></li><li><strong>Custom</strong></li></ul></td>
+</tr>
+<tr>
+<td><strong>Remote.BuildPath</strong></td>
+<td>Can only edit if you select <strong>Custom</strong> as the variable. Define where to build the files containing assets you plan to distribute remotely.</td>
+</tr>
+<tr>
+<td><strong>Remote.LoadPath</strong></td>
+<td>Can only edit if you select <strong>Custom</strong> as the variable. Define the URL from which to download remote content and catalogs.</td>
+</tr>
+<tr>
+<td><strong>BuildTarget</strong></td>
+<td>Set the name of the build target, such as Android or StandaloneWindows64.</td>
+</tr>
+</tbody>
+</table>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Usually, you shouldn't need to change the local build or load paths from their default values. If you do, you must manually copy the local build artifacts from your custom build location to the project's <a href="xref:SpecialFolders">StreamingAssets</a> folder before making a Player build. Changing these paths also precludes building your Addressables as part of the Player build.</p>
+</div>
+<p>Refer to <a href="Builds.html">Builds</a> for more information about how Addressables uses profiles during content builds.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="profiles-create.html">Create a profile</a></li>
+<li><a href="ProfileVariables.html">Add variables to a profile</a></li>
+<li><a href="profiles-build-load-paths.html">Set a build and load path</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/addressables-profiles-window.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

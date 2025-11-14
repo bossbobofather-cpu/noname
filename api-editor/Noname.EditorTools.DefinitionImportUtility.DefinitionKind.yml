@@ -1,0 +1,157 @@
+### YamlMime:ManagedReference
+items:
+- uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  commentId: T:Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  id: DefinitionImportUtility.DefinitionKind
+  parent: Noname.EditorTools
+  children:
+  - Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Enemy
+  - Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Player
+  - Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Stage
+  langs:
+  - csharp
+  - vb
+  name: DefinitionImportUtility.DefinitionKind
+  nameWithType: DefinitionImportUtility.DefinitionKind
+  fullName: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  type: Enum
+  source:
+    remote:
+      path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+      branch: main
+      repo: https://github.com/bossbobofather-cpu/noname.git
+    id: DefinitionKind
+    path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+    startLine: 13
+  assemblies:
+  - DefinitionImporterDocs
+  namespace: Noname.EditorTools
+  summary: XLSX/JSON/ScriptableObject 변환 대상 유형입니다.
+  example: []
+  syntax:
+    content: public enum DefinitionImportUtility.DefinitionKind
+    content.vb: Public Enum DefinitionImportUtility.DefinitionKind
+- uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Enemy
+  commentId: F:Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Enemy
+  id: Enemy
+  parent: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  langs:
+  - csharp
+  - vb
+  name: Enemy
+  nameWithType: DefinitionImportUtility.DefinitionKind.Enemy
+  fullName: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Enemy
+  type: Field
+  source:
+    remote:
+      path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+      branch: main
+      repo: https://github.com/bossbobofather-cpu/noname.git
+    id: Enemy
+    path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+    startLine: 15
+  assemblies:
+  - DefinitionImporterDocs
+  namespace: Noname.EditorTools
+  syntax:
+    content: Enemy = 0
+    return:
+      type: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+- uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Player
+  commentId: F:Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Player
+  id: Player
+  parent: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  langs:
+  - csharp
+  - vb
+  name: Player
+  nameWithType: DefinitionImportUtility.DefinitionKind.Player
+  fullName: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Player
+  type: Field
+  source:
+    remote:
+      path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+      branch: main
+      repo: https://github.com/bossbobofather-cpu/noname.git
+    id: Player
+    path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+    startLine: 16
+  assemblies:
+  - DefinitionImporterDocs
+  namespace: Noname.EditorTools
+  syntax:
+    content: Player = 1
+    return:
+      type: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+- uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Stage
+  commentId: F:Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Stage
+  id: Stage
+  parent: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  langs:
+  - csharp
+  - vb
+  name: Stage
+  nameWithType: DefinitionImportUtility.DefinitionKind.Stage
+  fullName: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.Stage
+  type: Field
+  source:
+    remote:
+      path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+      branch: main
+      repo: https://github.com/bossbobofather-cpu/noname.git
+    id: Stage
+    path: DocfxArtifacts/DefinitionImporterDocs/DefinitionImporterWindowDoc.cs
+    startLine: 17
+  assemblies:
+  - DefinitionImporterDocs
+  namespace: Noname.EditorTools
+  syntax:
+    content: Stage = 2
+    return:
+      type: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+references:
+- uid: Noname.EditorTools
+  commentId: N:Noname.EditorTools
+  href: Noname.html
+  name: Noname.EditorTools
+  nameWithType: Noname.EditorTools
+  fullName: Noname.EditorTools
+  spec.csharp:
+  - uid: Noname
+    name: Noname
+    href: Noname.html
+  - name: .
+  - uid: Noname.EditorTools
+    name: EditorTools
+    href: Noname.EditorTools.html
+  spec.vb:
+  - uid: Noname
+    name: Noname
+    href: Noname.html
+  - name: .
+  - uid: Noname.EditorTools
+    name: EditorTools
+    href: Noname.EditorTools.html
+- uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  commentId: T:Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  parent: Noname.EditorTools
+  href: Noname.EditorTools.DefinitionImportUtility.html
+  name: DefinitionImportUtility.DefinitionKind
+  nameWithType: DefinitionImportUtility.DefinitionKind
+  fullName: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+  spec.csharp:
+  - uid: Noname.EditorTools.DefinitionImportUtility
+    name: DefinitionImportUtility
+    href: Noname.EditorTools.DefinitionImportUtility.html
+  - name: .
+  - uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+    name: DefinitionKind
+    href: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.html
+  spec.vb:
+  - uid: Noname.EditorTools.DefinitionImportUtility
+    name: DefinitionImportUtility
+    href: Noname.EditorTools.DefinitionImportUtility.html
+  - name: .
+  - uid: Noname.EditorTools.DefinitionImportUtility.DefinitionKind
+    name: DefinitionKind
+    href: Noname.EditorTools.DefinitionImportUtility.DefinitionKind.html

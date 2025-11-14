@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Pre-download remote content | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Pre-download remote content | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/remote-content-predownload.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="addressables-api-download-dependencies-async">
+<h1 id="pre-download-remote-content">Pre-download remote content</h1>
+
+<p>When you distribute content remotely, you can improve performance by downloading dependencies in advance of when your application needs them. For example, you can download essential content on start up when your application is launched for the first time to make sure that users don't have to wait for content in the middle of gameplay.</p>
+<h2 id="create-a-pre-download-script">Create a pre-download script</h2>
+<p>Use the <a href="xref:UnityEngine.AddressableAssets.Addressables.DownloadDependenciesAsync*"><code>Addressables.DownloadDependenciesAsync</code></a>  method to pre-download content so that it's cached on disk and faster to access when the application needs it. This method downloads an Addressable entity and any dependencies as a background task.</p>
+<pre><code class="lang-cs" name="sample">
+string key = &quot;assetKey&quot;;
+
+// Check the download size
+AsyncOperationHandle&lt;long&gt; getDownloadSize = Addressables.GetDownloadSizeAsync(key);
+yield return getDownloadSize;
+
+//If the download size is greater than 0, download all the dependencies.
+if (getDownloadSize.Result &gt; 0)
+{
+    AsyncOperationHandle downloadDependencies = Addressables.DownloadDependenciesAsync(key);
+    yield return downloadDependencies;
+    if(downloadDependencies.Status == AsyncOperationStatus.Failed)
+        Debug.LogError(&quot;Failed to download dependencies for &quot; + key);
+
+    // we need to release the download handle so the assets can be loaded
+    downloadDependencies.Release();
+}
+
+</code></pre>
+<p>Calling the <code>Addressables.DownloadDependenciesAsync</code> method loads the dependencies for the address or label that you pass in. Typically, this is the AssetBundle.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you have a set of assets that you want to pre-download, you can assign the <a href="Labels.html">same label</a>, such as <code>preload</code>, to the assets and use that label as the key when calling <a href="xref:UnityEngine.AddressableAssets.Addressables.DownloadDependenciesAsync*"><code>Addressables.DownloadDependenciesAsync</code></a>. Addressables downloads all the AssetBundles containing an asset with that label if not already available, along with any AssetBundles containing the assets' dependencies.</p>
+</div>
+<h2 id="monitor-download-progress">Monitor download progress</h2>
+<p>An <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle"><code>AsyncOperationHandle</code></a> instance provides the following ways to get progress updates:</p>
+<ul>
+<li><a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle.PercentComplete"><code>AsyncOperationHandle.PercentComplete</code></a>: Reports the percentage of sub operations that have finished. For example, if an operation uses six sub operations to perform its task, the <code>PercentComplete</code> indicates the entire operation is 50% complete when three of those operations have finished (it doesn't matter how much data each operation loads).</li>
+<li><a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle.GetDownloadStatus"><code>AsyncOperationHandle.GetDownloadStatus</code></a>: Returns a <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.DownloadStatus"><code>DownloadStatus</code></a> struct that reports the percentage of total download size. For example, if an operation has six sub operations, but the first operation represented 50% of the total download size, then <code>GetDownloadStatus</code> indicates the operation is 50% complete when the first operation finishes.</li>
+</ul>
+<p>The following example illustrates how you can use <code>GetDownloadStatus</code> to check the status and dispatch progress events during the download:</p>
+<pre><code class="lang-cs" name="sample">
+using System.Collections;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.Events;
+using UnityEngine.ResourceManagement.AsyncOperations;
+
+internal class PreloadWithProgress : MonoBehaviour
+{
+    public string preloadLabel = &quot;preload&quot;;
+    public UnityEvent&lt;float&gt; ProgressEvent;
+    public UnityEvent&lt;bool&gt; CompletionEvent;
+    private AsyncOperationHandle downloadHandle;
+
+    IEnumerator Start()
+    {
+        downloadHandle = Addressables.DownloadDependenciesAsync(preloadLabel, false);
+        float progress = 0;
+
+        while (downloadHandle.Status == AsyncOperationStatus.None)
+        {
+            float percentageComplete = downloadHandle.GetDownloadStatus().Percent;
+            if (percentageComplete &gt; progress * 1.1) // Report at most every 10% or so
+            {
+                progress = percentageComplete; // More accurate %
+                ProgressEvent.Invoke(progress);
+            }
+
+            yield return null;
+        }
+
+        CompletionEvent.Invoke(downloadHandle.Status == AsyncOperationStatus.Succeeded);
+        downloadHandle.Release(); //Release the operation handle
+    }
+}
+
+</code></pre>
+<p>To discover how much data you need to download to load one or more assets, you can call <a href="xref:UnityEngine.AddressableAssets.Addressables.GetDownloadSizeAsync*"><code>Addressables.GetDownloadSizeAsync</code></a>:</p>
+<pre><code class="lang-cs" name="sample">
+AsyncOperationHandle&lt;long&gt; getDownloadSize =
+    Addressables.GetDownloadSizeAsync(key);
+
+</code></pre>
+<p>The <code>Result</code> of the completed operation is the number of bytes that must be downloaded. If Addressables has already cached all the required AssetBundles, then <code>Result</code> is zero.</p>
+<p>Always release the download operation handle after you have read the <code>Result</code> object. If you don't need to access the results of the download operation, you can automatically release the handle by setting the <code>autoReleaseHandle</code> parameter to true, as shown in the following example:</p>
+<pre><code class="lang-cs" name="sample">
+using System.Collections;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+
+internal class Preload : MonoBehaviour
+{
+    public IEnumerator Start()
+    {
+        yield return Addressables.DownloadDependenciesAsync(&quot;preload&quot;, true);
+    }
+}
+
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>On the WebGL platform, this API always returns the size of the AssetBundle, even if the AssetBundle has been cached. Cached AssetBundles aren't stored on the local file system, but persisted as part of the IndexedDB of the browser.  <a href="https://docs.unity3d.com/Manual/webgl-caching.html">WebGL Caching</a></p>
+</div>
+<h2 id="clear-the-dependency-cache">Clear the dependency cache</h2>
+<p>If you want to clear any AssetBundles cached by Addressables, call <a href="xref:UnityEngine.AddressableAssets.Addressables.ClearDependencyCacheAsync*"><code>Addressables.ClearDependencyCacheAsync</code></a>. This method clears the cached AssetBundles containing the assets identified by a key along with any AssetBundles containing those assets' dependencies.</p>
+<p><code>ClearDependencyCacheAsync</code> only clears AssetBundles related to the specified key. If you updated the content catalog so the key no longer exists or it no longer depends on the same AssetBundles, then these AssetBundles remain in the cache until they expire based on <a href="xref:UnityEngine.Cache">cache settings</a>.</p>
+<p>To clear all AssetBundles, you can use the methods in the <a href="xref:UnityEngine.Caching"><code>UnityEngine.Caching</code></a> class.</p>
+<h2 id="ask-users-for-download-consent">Ask users for download consent</h2>
+<p>If you want to ask the user for consent before download, use <a href="xref:UnityEngine.AddressableAssets.Addressables.GetDownloadSizeAsync*"><code>Addressables.GetDownloadSizeAsync</code></a> to return how much space is needed to download the content from a given address or label. Note that this takes into account any previously downloaded AssetBundles that are still in Unity's AssetBundle cache.</p>
+<h2 id="when-to-download-on-demand">When to download on demand</h2>
+<p>While it can be advantageous to download assets for your application in advance, there are instances where you might choose not to do so. For example:</p>
+<ul>
+<li>If your application has a large amount of online content, and you expect users to only ever interact with some of it.</li>
+<li>Your application must be connected online to function. If all your application's content is in small AssetBundles, you might choose to download content as needed.</li>
+</ul>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="xref:UnityEngine.AddressableAssets.Addressables.DownloadDependenciesAsync*"><code>Addressables.DownloadDependenciesAsync</code> API reference</a></li>
+<li><a href="remote-content-enable.html">Enable remote content</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/remote-content-predownload.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

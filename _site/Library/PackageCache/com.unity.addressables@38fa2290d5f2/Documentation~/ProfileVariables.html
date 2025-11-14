@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Add variables to a profile | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Add variables to a profile | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ProfileVariables.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="addressables-profile-variables">
+<h1 id="add-variables-to-a-profile">Add variables to a profile</h1>
+
+<p>Profile variables are generic key/value combinations that you can use to change Addressables configurations for different development situations.</p>
+<p>You can add the following kinds of variables to a profile:</p>
+<ul>
+<li><strong>Variable</strong>: A basic variable, which defines a single value</li>
+<li><strong>Build and Load Path Variable</strong>: A path pair, which defines a set of two path values. One value is for the build path and one is for the load path.</li>
+</ul>
+<p>You can use basic variables as components of path values (for example, <strong>BuildTarget</strong>) and you can use them in your own build scripts. Use path pair variables to set the <strong>Build &amp; Local Paths</strong> setting of your <a href="groups-intro.html">groups</a> and remote catalog.</p>
+<h2 id="create-a-new-profile-variable">Create a new profile variable</h2>
+<p>To create a new profile variable:</p>
+<ol>
+<li>Open the <a href="addressables-profiles-window.html">Addressables Profiles window</a>(<strong>Window</strong> &gt; <strong>Asset Management</strong> &gt; <strong>Addressables</strong> &gt; <strong>Profiles</strong>).</li>
+<li>Select the <strong>Create</strong> menu, and select either <strong>Variable</strong> or <strong>Build and Load Path Variable</strong>.</li>
+<li>Assign the new variable a name and value, then select <strong>Save</strong>.</li>
+</ol>
+<p>Unity then adds the new variable to all profiles. Right-click on the variable name to rename or delete the variable. For information on the default paths, refer to <a href="profiles-default-paths.html">Default variable paths</a>.</p>
+<p><img src="images/profiles-custom-variables.png" alt="The Addressables Profiles window displaying a custom build and load path variable (My Build and Load), and a single variable (My Variable)."><br><em>The <strong>Addressables Profiles</strong> displaying a custom build and load path variable (My Build and Load), and a single variable (My Variable).</em></p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can convert two regular variables for the build and load paths into a path pair by renaming them in the Profile window. Set one to <code>VariableName.BuildPath</code> and the other to <code>VariableName.LoadPath</code>.</p>
+</div>
+<h2 id="profile-variable-syntax">Profile variable syntax</h2>
+<p>All profile variables are of type <code>string</code>. You can assign them a fixed path or value. You can also use the following syntax designations to derive all or part of a variable's value from static properties or other variables:</p>
+<ul>
+<li><strong>Brackets</strong> <code>[ ]</code>:  Addressables evaluates entries surrounded by brackets at build time. The entries can be other profile variables such as <code>BuildTarget</code>, or code variables such as <code>UnityEditor.EditorUserBuildSettings.activeBuildTarget</code>. During a build, as Addressables processes groups, it evaluates the strings inside brackets and writes the result into the catalog.</li>
+<li><strong>Braces</strong> <code>{ }</code>: Addressables evaluates entries surrounded by braces at runtime. You can use code variables of runtime classes, such as <code>{UnityEngine.AddressableAssets.Addressables.RuntimePath}</code>.</li>
+</ul>
+<p>You can use static fields and properties inside either the brackets or braces. The names must be fully qualified and the types must be valid in context. For example, classes in the <code>UnityEditor</code> namespace can't be used at runtime.</p>
+<p>The code variables used in the default Profile variable settings include:</p>
+<ul>
+<li><code>[UnityEditor.EditorUserBuildSettings.activeBuildTarget]</code></li>
+<li><code>[UnityEngine.AddressableAssets.Addressables.BuildPath]</code></li>
+<li><code>[UnityEngine.AddressableAssets.Addressables.RuntimePath]</code></li>
+</ul>
+<p>For example, a load path of <code>{MyNamespace.MyClass.MyURL}/content/[BuildTarget]</code> is set on a group that creates an AssetBundle called <code>trees.bundle</code>. During the build, the catalog registers the load path for that bundle as <code>{MyNamespace.MyClass.MyURL}/content/Android/trees.bundle</code>, evaluates <code>[BuildTarget]</code> as <code>Android</code>, and adds the AssetBundle name to the path. At runtime as the Addressables system processes the catalog it evaluates <code>{MyNamespace.MyClass.MyURL}</code> to produce the final load path, <code>http://example.com/content/Android/trees.bundle</code>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Referencing a runtime variable in a Profile string doesn't prevent Unity from stripping that variable from your application's runtime libraries during the build optimization phase if nothing else in your code references the same variable.</p>
+</div>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="profiles-create.html">Create a profile</a></li>
+<li><a href="profiles-build-load-paths.html">Set a build and load path</a></li>
+<li><a href="addressables-profiles-window.html">Addressables Profiles window reference</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ProfileVariables.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

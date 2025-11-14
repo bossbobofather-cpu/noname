@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Content update examples | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Content update examples | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/content-update-examples.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="content-update-examples">Content update examples</h1>
+
+<p>The following examples illustrate how Addressables handles content during an update build.</p>
+<h2 id="content-marked-as-prevent-updates">Content marked as Prevent Updates</h2>
+<p>In this example, consider a shipped application built with the following Addressables groups:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Local_Static</strong></th>
+<th style="text-align: left;"><strong>Remote_Static</strong></th>
+<th style="text-align: left;"><strong>Remote_NonStatic</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">AssetA</td>
+<td style="text-align: left;">AssetL</td>
+<td style="text-align: left;">AssetX</td>
+</tr>
+<tr>
+<td style="text-align: left;">AssetB</td>
+<td style="text-align: left;">AssetM</td>
+<td style="text-align: left;">AssetY</td>
+</tr>
+<tr>
+<td style="text-align: left;">AssetC</td>
+<td style="text-align: left;">AssetN</td>
+<td style="text-align: left;">AssetZ</td>
+</tr>
+</tbody>
+</table>
+<p><code>Local_Static</code> and <code>Remote_Static</code> have the <a href="ContentPackingAndLoadingSchema.html#content-update-restriction"><strong>Prevent Updates</strong></a> property in their group settings enabled.</p>
+<p>Existing players have <code>Local_Static</code> on their devices, and might have both of the remote AssetBundles cached locally.</p>
+<p>If you modify one asset from each group (AssetA, AssetL, and AssetX), then run <a href="builds-update-build.html#check-for-content-update-restrictions"><strong>Check for Content Update Restrictions</strong></a>, the results in your local Addressable settings are as follows:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Local_Static</strong></th>
+<th style="text-align: left;"><strong>Remote_Static</strong></th>
+<th style="text-align: left;"><strong>Remote_NonStatic</strong></th>
+<th style="text-align: left;"><strong>content_update_group (non-static)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">AssetX</td>
+<td style="text-align: left;">AssetA</td>
+</tr>
+<tr>
+<td style="text-align: left;">AssetB</td>
+<td style="text-align: left;">AssetM</td>
+<td style="text-align: left;">AssetY</td>
+<td style="text-align: left;">AssetL</td>
+</tr>
+<tr>
+<td style="text-align: left;">AssetC</td>
+<td style="text-align: left;">AssetN</td>
+<td style="text-align: left;">AssetZ</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>Because <code>Local_Static</code> and <code>Remote_Static</code> have the <strong>Prevent Updates</strong> property enabled, Unity moves the modified assets to a new group. The system builds the previous layout, but discards the build results for any new groups.</p>
+<p>The example has the following implications:</p>
+<ul>
+<li>Any changed local assets remain unused on the user's device forever.</li>
+<li>If the user already cached a non-static AssetBundle, they need to redownload the AssetBundle, including the unchanged assets (in this instance, for example, AssetY and AssetZ). If the user hasn't cached the AssetBundle, they only need to download the new <code>Remote_NonStatic</code> AssetBundle.</li>
+<li>If the user has already cached the <code>Remote_Static</code> AssetBundle, they only need to download the updated asset (in this instance, AssetL via <code>content_update_group</code>). This is ideal in this case. If the user hasn't cached the AssetBundle, they must download both the new AssetL via <code>content_update_group</code> and the now-defunct AssetL via the untouched <code>Remote_Static</code> AssetBundle. Regardless of the initial cache state, at some point the user have the defunct AssetL on their device, cached indefinitely despite never being accessed.</li>
+</ul>
+<p>As such, you end up with the following from a user's perspective:</p>
+<ul>
+<li>The <code>Local_Static</code> AssetBundle is already on the user's device, which you can't change. The old version of AssetA is no longer referenced and remains on the user's device as unused data.</li>
+<li>The <code>Remote_Static</code> AssetBundle is unchanged. If it isn't already cached on the user's device, it downloads when AssetM or AssetN is requested. Like AssetA, this old version of AssetL is no longer referenced.</li>
+<li>The <code>Remote_NonStatic</code> AssetBundle is outdated and replaced with a new <code>Remote_NonStatic</code> AssetBundle with a different hash file. The modified version of AssetX is updated with the new AssetBundle.
+You can optionally delete the old <code>Remote_NonStatic</code> AssetBundle from the server, and it isn't downloaded from this point forward. If cached, it remains on the user's device indefinitely unless you remove it. For more information, refer to <a class="xref" href="RemoteContentDistribution.html">AssetBundle caching</a>.</li>
+</ul>
+<h2 id="content-update-dependencies">Content update dependencies</h2>
+<p>If you change an asset's dependencies, Unity rebuilds it as part of a content update build.</p>
+<p>As an example, consider the <code>Local_Static</code> group from the previous example. The assets in this group have a dependency chain that looks like this:</p>
+<ul>
+<li>AssetA depends on Dependency1, which depends on Dependency2,</li>
+<li>AssetB depends on Dependency2,</li>
+<li>AssetC depends on Dependency3</li>
+</ul>
+<p>All three dependencies are a mix of Addressable and non-Addressable assets. If you modify any of the assets in this group, when a dependency is changed the entire dependency tree needs to be rebuilt. Additionally, because <code>Local_Static</code> has the <strong>Prevent Updates</strong> property enabled, Unity moves any modified assets to a new group.</p>
+<p>For example, If only Dependency1 is changed and then you run <a href="builds-update-build.html#check-for-content-update-restrictions"><strong>Check for Content Update Restrictions</strong></a>, the resulting project structure looks like the following:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Local_Static</strong></th>
+<th style="text-align: left;"><strong>content_update_group</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">AssetA</td>
+</tr>
+<tr>
+<td style="text-align: left;">AssetB</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">AssetC</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>If only Dependency2 is changed:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Local_Static</strong></th>
+<th style="text-align: left;"><strong>content_update_group</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">AssetA</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">AssetB</td>
+</tr>
+<tr>
+<td style="text-align: left;">AssetC</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>If only Dependency3 is changed:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Local_Static</strong></th>
+<th style="text-align: left;"><strong>content_update_group</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">AssetA</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">AssetB</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">AssetC</td>
+</tr>
+</tbody>
+</table>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="content-update-build-settings.html">Content update build settings</a></li>
+<li><a href="content-update-builds-check.html">Create a script to check for content updates</a></li>
+<li><a href="ContentPackingAndLoadingSchema.html#content-update-restriction">Group Inspector settings reference</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/content-update-examples.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

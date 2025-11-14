@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Introduction to creating and organizing Addressable assets | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Introduction to creating and organizing Addressable assets | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/organize-addressable-assets.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="introduction-to-creating-and-organizing-addressable-assets">Introduction to creating and organizing Addressable assets</h1>
+
+<p>Understand how to make assets Addressable and organize them using groups, profiles, and the Addressable Asset Settings window.</p>
+<p>To create and organize Addressable assets, you must do the following:</p>
+<ul>
+<li><a href="#assign-an-asset-as-addressable">Assign an asset as addressable</a>.</li>
+<li><a href="#manage-addressable-groups">Organize Addressable assets with groups</a>, which determine where Unity loads assets from and builds them to, and how the content is compressed.</li>
+</ul>
+<p>Once you make an asset Addressable, the Addressables system adds it to a default group, unless you place it in a specific group. When you make a <a class="xref" href="Builds.html">content build</a>, Unity packs assets in a group into <a href="xref:AssetBundlesIntro">AssetBundles</a> according to the group's settings. You can load these assets using the <a class="xref" href="LoadingAddressableAssets.html">Addressables API</a>.</p>
+<p>You can optionally use <a href="AddressableAssetsProfiles.html">profiles</a> to create variables for the build process, and use <a href="Labels.html">labels</a> to determine how to group Addressable assets together.</p>
+<p>To customize Addressable settings on a project level, use the <a href="AddressableAssetSettings.html">Addressable Asset Settings window</a>.</p>
+<h2 id="assign-an-asset-as-addressable">Assign an asset as Addressable</h2>
+<p>You can make an asset Addressable in the following ways:</p>
+<ul>
+<li>Enable the <strong>Addressable</strong> checkbox in the Inspector window for either the asset itself or for its parent folder.</li>
+<li>Drag the asset into a group in the <a href="GroupsWindow.html">Addressables Groups</a> window.</li>
+<li>Drag or assign the asset to an <a href="AssetReferences.html">AssetReference</a> field in the Inspector window.</li>
+</ul>
+<p><img src="images/addressable-inspector-checkbox.png" alt=""><br><em>A Banana prefab asset with the Addressable option enabled. It's assigned to the default group.</em></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you make an asset in a <a href="xref:um-loading-resources-at-runtime">Resources folder</a> Addressable, Unity moves the asset out of the Resources folder. You can move the asset to a different folder in your Project, but you can't store Addressable assets in a Resources folder.</p>
+</div>
+<h2 id="manage-addressable-groups">Manage Addressable groups</h2>
+<p>To manage Addressable assets, use the <a href="groups-intro.html">Addressables Groups</a> window. Use this window to create Addressables groups, move assets between groups, and assign addresses and labels to assets.</p>
+<p><img src="images/addressables-groups-window.png" alt="The Addressables Groups window showing the toolbar and list of groups and assets."><br><br><em>The Addressables Groups window showing the toolbar and list of groups and assets.</em></p>
+<p>When you first install and set up the Addressables package, it creates a default group for Addressable assets. The Addressables system assigns any assets you mark as Addressable to this group by default. You can create more groups to further organize the assets in your project and define when and how Unity builds and loads them.</p>
+<p>For more information, refer to <a href="groups-intro.html">Organize assets into groups</a>.</p>
+<h2 id="referencing-addressable-assets">Referencing Addressable assets</h2>
+<p>To organize assets in the Unity Editor, you can use <a href="xref:UnityEngine.AddressableAssets.AssetReference"><code>AssetReference</code></a>, which is a type that can reference an Addressable asset. You can include <code>AssetReference</code> fields in <code>MonoBehaviour</code> and <code>ScriptableObject</code> classes and then in the Unity Editor assign assets to these fields in the Inspector.</p>
+<p>For more information, refer to <a href="AssetReferences.html">Referencing Addressable assets in code</a>.</p>
+<h2 id="strategies-for-organizing-assets">Strategies for organizing assets</h2>
+<p>Typical strategies for organizing assets include:</p>
+<ul>
+<li><strong>Concurrent usage</strong>: Group assets that you load at the same time together, such as all the assets for a given level. This strategy is often the most effective in the long term and can help reduce peak memory use in a project.</li>
+<li><strong>Logical entity</strong>: Group assets belonging to the same logical entity together. For example, UI layout assets, textures, sound effects, character models, and animations.</li>
+<li><strong>Type</strong>: Group assets of the same type together. For example, music files, or textures.</li>
+</ul>
+<p>Depending on the needs of your project, one of these strategies might make more sense than the others. For example, in a game with many levels, organizing according to concurrent usage might be the most efficient both from a project management and from a runtime memory performance standpoint.</p>
+<p>You can also use different strategies for different types of assets. For example, in a level-based game you can group all UI assets for menu screens together, and group level data separately. You might also pack a group that has the assets for a level into bundles that contain a particular asset type.</p>
+<p>For more information on organizing assets, refer to <a href="xref:um-asset-bundles-preparing">Organizing assets into AssetBundles</a>. While this documentation focuses on AssetBundle organization, the approaches can be also applied to Addressables.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="groups-intro.html">Addressable asset groups</a></li>
+<li><a href="AssetReferences.html">Referencing Addressable assets in code</a></li>
+<li><a href="Builds.html">Building Addressable assets</a></li>
+<li><a href="GroupsWindow.html">Addressables Groups window reference</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/organize-addressable-assets.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

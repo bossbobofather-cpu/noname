@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Managing Addressable asset memory | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Managing Addressable asset memory | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/memory-assets.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="addressables-memory-management">
+<h1 id="managing-addressable-asset-memory">Managing Addressable asset memory</h1>
+
+<p>The Addressables system keeps a reference count of every item it loads to manage the memory it uses to load assets and AssetBundles.</p>
+<p>When Unity loads an Addressable asset, the system increments the reference count. When Unity releases the asset, the system decrements the reference count. When the reference count of an Addressable returns to zero, it can be unloaded. When you explicitly load an Addressable asset, you must also release the asset when you're finished using it.</p>
+<h2 id="memory-leaks">Memory leaks</h2>
+<p>To avoid memory leaks, where assets remain in memory after they're no longer needed, mirror every call to a load method with a call to a release method. You can release an asset with a reference to the asset instance itself or with the result handle that the original load operation returns.</p>
+<p>However, Unity doesn't unload released assets from memory immediately, because the memory that an asset uses isn't freed until the AssetBundle it belongs to is also unloaded.</p>
+<p>AssetBundles have their own reference count, and the system treats them like Addressables with the assets they contain as dependencies. When you load an asset from an AssetBundle, the AssetBundle's reference count increases and when you release the asset, the AssetBundle reference count decreases. When an AssetBundle's reference count returns to zero, that means none of the assets contained in the AssetBundle are in use. Unity then unloads the AssetBundle and all the assets contained in it from memory.</p>
+<p>Use the <a href="ProfilerModule.html">Addressables Profiler module</a> to monitor your loaded content. The module displays when assets and their dependencies are loaded and unloaded.</p>
+<h2 id="memory-clearance">Memory clearance</h2>
+<p>If an asset is no longer referenced, indicated by the <strong>Released</strong> status in the <a href="ProfilerModule.html">Addressables Profiler module</a>), this means that Unity might not have unloaded the asset from memory. A common scenario involves multiple assets in an AssetBundle. For example:</p>
+<ul>
+<li>You have three assets (<code>tree</code>, <code>tank</code>, and <code>cow</code>) in an AssetBundle (<code>stuff</code>).</li>
+<li>When <code>tree</code> loads, the Profiler displays a single ref-count for <code>tree</code>, and one for <code>stuff</code>.</li>
+<li>Later, when <code>tank</code> loads, the Profiler displays a single ref-count for both <code>tree</code> and <code>tank</code>, and two ref-counts for the <code>stuff</code> AssetBundle.</li>
+<li>If you release <code>tree</code>, its ref-count becomes zero, and the blue bar goes away.</li>
+</ul>
+<p>In this example, the <code>tree</code> asset isn't unloaded at this point. You can load an AssetBundle, or its partial contents, but you can't unload part of an AssetBundle. No asset in <code>stuff</code> unloads until the AssetBundle is unloaded.</p>
+<h2 id="avoid-asset-churn">Avoid asset churn</h2>
+<p>Asset churn happens if you release an object that's the last item in an AssetBundle, and then immediately reload either that asset or another asset in the AssetBundle. Asset churn can affect the performance of your application negatively if you unload and reload assets in succession. You should keep assets for as long as possible before unloading them.</p>
+<p>For example, if you have two materials, <code>boat</code> and <code>plane</code> that share a texture, <code>cammo</code>, which is in its own AssetBundle. Level 1 uses <code>boat</code> and level 2 uses <code>plane</code>. As you exit level 1 Unity releases <code>boat</code>, and immediately loads <code>plane</code>. When Unity releases <code>boat</code>, Addressables unloads texture <code>cammo</code>. Then, when Unity load <code>plane</code>, Addressables immediately reloads <code>cammo</code>.</p>
+<p>You can use the <a href="ProfilerModule.html">Addressables Profiler module</a> to help detect asset churn by monitoring asset loading and unloading.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="ProfilerModule.html">Addressables Profiler module reference</a></li>
+<li><a href="xref:um-performance-memory">Memory in Unity</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/memory-assets.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

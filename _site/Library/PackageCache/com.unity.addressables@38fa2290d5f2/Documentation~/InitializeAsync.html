@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Addressables initialization process | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Addressables initialization process | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/InitializeAsync.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="addressables-api-initialize-async">
+<h1 id="addressables-initialization-process">Addressables initialization process</h1>
+
+<p>The Addressables system initializes itself at runtime the first time you load an Addressable asset or make another call to an Addressable API. Call <a href="xref:UnityEngine.AddressableAssets.Addressables.InitializeAsync*"><code>Addressables.InitializeAsync</code></a> to initialize Addressables earlier. This method does nothing if initialization has already happened.</p>
+<h2 id="initialization-tasks">Initialization tasks</h2>
+<p>The initialization operation performs the following tasks:</p>
+<ul>
+<li>Sets up the <a href="xref:UnityEngine.ResourceManagement.ResourceManager"><code>ResourceManager</code></a> and the <a href="xref:UnityEngine.AddressableAssets.ResourceLocators"><code>ResourceLocators</code></a>.</li>
+<li>Loads configuration data that Addressables creates from <a href="xref:um-streaming-assets">StreamingAssets</a>.</li>
+<li>Executes any <a href="AddressableAssetSettings.html#initialization-objects">initialization object</a> operations.</li>
+<li>Loads the content catalog. By default, Addressables first checks for updates to the content catalog and downloads a new catalog if available.</li>
+</ul>
+<p>The following Addressables settings can change initialization behavior:</p>
+<ul>
+<li><a href="AddressableAssetSettings.html#catalog">Only update catalogs manually</a>: Addressables doesn't automatically check for an updated catalog. Refer to <a href="LoadContentCatalogAsync.html#update-catalogs">Update catalogs</a> for information about manually updating catalogs.</li>
+<li><a href="AddressableAssetSettings.html#catalog">Build Remote Catalog</a>: Addressables doesn't try to load remote content without a remote catalog.</li>
+<li><a href="AddressableAssetSettings.html#downloads">Custom certificate handler</a>: Identify a custom certificate handler if you need one to access a remote asset hosting service.</li>
+<li><a href="AddressableAssetSettings.html#initialization-objects">Initialization object list</a>: Add the <a href="xref:UnityEngine.ResourceManagement.Util.IObjectInitializationDataProvider"><code>IObjectInitializationDataProvider</code></a> ScriptableObject to your application that Addressables invokes during the initialization operation.</li>
+</ul>
+<p>Set the following runtime properties before the initialization operation starts:</p>
+<ul>
+<li><a href="TransformInternalId.html">Custom URL transform function</a>.</li>
+<li><a href="xref:UnityEngine.ResourceManagement.ResourceManager.ExceptionHandler">ResourceManager exception handler</a>.</li>
+<li>Static properties used for any custom runtime placeholders in <a href="ProfileVariables.html">Profile variables</a>.</li>
+</ul>
+<h2 id="initialization-objects">Initialization objects</h2>
+<p>You can attach objects to the Addressable Assets settings and pass them to the initialization process at runtime. For example, you can create a <a href="xref:UnityEditor.AddressableAssets.Settings.CacheInitializationSettings"><code>CacheInitializationSettings</code></a> object to initialize Unity's <a href="xref:UnityEngine.Cache"><code>Cache</code></a> settings at runtime.</p>
+<p>To create your own types of initialization object, create a ScriptableObject that implements the <a href="xref:UnityEngine.ResourceManagement.Util.IObjectInitializationDataProvider"><code>IObjectInitializationDataProvider</code></a> interface. Use this object to create the <a href="xref:UnityEngine.ResourceManagement.Util.ObjectInitializationData"><code>ObjectInitializationData</code></a> asset that Addressables includes with your the runtime data.</p>
+<h3 id="cache-initialization-objects">Cache initialization objects</h3>
+<p>Use a <a href="xref:UnityEditor.AddressableAssets.Settings.CacheInitializationSettings"><code>CacheInitializationSettings</code></a> object to initialize Unity's <a href="xref:UnityEngine.Cache"><code>Cache</code></a> settings at runtime.</p>
+<p><img src="images/cache-initialization-settings.png" alt="The Inspector window displays the configurable properties of a Cache Initialization Settings asset."></p>
+<p>To specify the cache initialization settings that the Addressables system uses:</p>
+<ol>
+<li>Create a Cache Initialization Settings asset (menu: <strong>Assets &gt; Create &gt; Addressables &gt; Initialization &gt; Cache Initialization Settings</strong>).</li>
+<li>Select the new asset file in the Project panel to view the settings in the Inspector and adjust the settings as desired.</li>
+<li>Open the Addressables Settings Inspector (menu: <strong>Window &gt; Asset Management &gt; Addressables &gt; Settings</strong>).</li>
+<li>In the <strong>Initialization Objects</strong> section of the Inspector, click the <strong>+</strong> button to add a new object to the list.</li>
+<li>Select the CacheInitializationSettings asset in the File dialog and click <strong>Open</strong>.</li>
+</ol>
+<p>The cache settings object is added to the list. When Addressables initializes at runtime, it applies these settings to the default Unity <code>Cache</code>. The settings apply to all AssetBundles in the default cache, not just those downloaded by the Addressables system. For more information about the Unity cache system, refer to <a href="xref:UnityEngine.Caching">Caching</a>.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Android applications built with Unity 2020.1 or earlier, or running on Android 9 or earlier can only play videos from uncompressed AssetBundles. To disable recompression of the cache, use a <code>CacheInitializationSettings</code> object by disabling the <strong>Compress Bundles</strong> option.</p>
+</div>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="AddressableAssetSettings.html">Addressables Asset Settings reference</a></li>
+<li><a href="xref:UnityEngine.AddressableAssets.Addressables.InitializeAsync*"><code>Addressables.InitializeAsync</code> API reference</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/InitializeAsync.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

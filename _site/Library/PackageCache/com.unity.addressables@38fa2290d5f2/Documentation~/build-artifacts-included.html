@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Player artifacts | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Player artifacts | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-artifacts-included.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="player-artifacts">Player artifacts</h1>
+
+<p>During a player build, the Addressables system copies the following files from the <code>Library/com.unity.addressables/aa/&lt;AddressablesPlatform&gt;</code> folder to the <a href="xref:um-streaming-assets">StreamingAssets</a> folder:</p>
+<table>
+<thead>
+<tr>
+<th><strong>File</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Local AssetBundles</td>
+<td><code>.bundle</code> files according to <a href="GroupSchemas.html">group</a>, <a href="profiles-create.html">profile</a>, and platform settings. By default, these files are located in the <a href="xref:UnityEditor.EditorUserBuildSettings.activeBuildTarget"><code>BuildTarget</code></a> subfolder. To change the build location of the AssetBundle files produced by a group, modify the <a href="AddressableAssetSettings.html#catalog">Build &amp; Load Paths</a> setting.</td>
+</tr>
+<tr>
+<td><code>settings.json</code></td>
+<td>Contains Addressables configuration data used at runtime.</td>
+</tr>
+<tr>
+<td><code>catalog.json</code></td>
+<td>The content catalog used to locate and load assets at runtime if no newer remote catalog is available. For more information about catalogs, refer to <a href="build-content-catalogs.html">Content catalogs</a>.</td>
+</tr>
+<tr>
+<td><code>AddressablesLink/link.xml</code></td>
+<td>Prevents the Unity linker from stripping types used by your assets. For more information about code stripping, refer to <a href="xref:um-managed-code-stripping">Managed Code Stripping</a>. In Unity versions 2021.2 and later, this file temporarily copies the <a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetSettings.ConfigFolder"><code>AddressableAssetSettings.ConfigFolder</code></a>, or the <code>Assets/Addressables_Temp</code> folder if no settings file exists.</td>
+</tr>
+</tbody>
+</table>
+<p>For a full list of platform names, refer to <a href="xref:UnityEngine.AddressableAssets.AddressablesPlatform"><code>AddressablesPlatform</code></a>.</p>
+<h2 id="artifacts-not-included-in-the-player">Artifacts not included in the player</h2>
+<p>The following artifacts aren't included in a built player.</p>
+<h3 id="remote-content">Remote content</h3>
+<p>Upload files used for remote content to a hosting server. By default these files are located in the <code>ServerData</code> folder.</p>
+<table>
+<thead>
+<tr>
+<th><strong>File</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Remote AssetBundles</td>
+<td><code>.bundle</code> files according to <a href="GroupSchemas.html">group</a>, <a href="profiles-create.html">profile</a>, and platform settings. By default, these files are located in the <a href="xref:UnityEditor.EditorUserBuildSettings.activeBuildTarget"><code>BuildTarget</code></a> subfolder. To change the build location of the AssetBundle files produced by a group, modify the <a href="AddressableAssetSettings.html#catalog">Build &amp; Load Paths</a> setting.</td>
+</tr>
+<tr>
+<td><code>catalog_{timestamp or player version}.json</code></td>
+<td>A remote catalog which when downloaded overrides the local catalog. This file is only created if the <strong>Build Remote Catalogs</strong> option in <a href="AddressableAssetSettings.html#catalog">Catalog settings</a> is enabled. By default the file name includes the timestamp of the build. To use a version number instead, specify the value of the <strong>Player Version Override</strong> in <a href="AddressableAssetSettings.html#catalog">Catalog settings</a>. For more information about catalogs, refer to <a href="build-content-catalogs.html">Content catalogs</a>.</td>
+</tr>
+<tr>
+<td><code>catalog_{timestamp or player version}.hash</code></td>
+<td>A file used to check whether the remote catalog has changed since the last time a client app downloaded it. Similar to the remote catalog file, this file is only created if the <strong>Build Remote Catalogs</strong> option in <a href="AddressableAssetSettings.html#catalog">Catalog settings</a> is enabled. To change the build location of this file modify the <strong>Build &amp; Load Paths</strong> in Catalog settings. By default, the file name includes the timestamp of the build. To use a version number instead, specify the value of the <strong>Player Version Override</strong> in <a href="AddressableAssetSettings.html#catalog">Catalog settings</a>. For more information about catalogs, refer to <a href="build-content-catalogs.html">Content catalogs</a>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="content-state-file">Content state file</h3>
+<p>The <code>addressables_content_state.bin</code> file is used to make a <a class="xref" href="ContentUpdateWorkflow.html">content update build</a>. If you support dynamic content updates, you must save this file after each full content build that you release. Otherwise, you can ignore this file.</p>
+<p>By default this file is located in <code>Assets/AddressableAssetsData/&lt;AddressablesPlatform&gt;</code>. Refer to <a href="xref:UnityEngine.AddressableAssets.AddressablesPlatform"><code>AddressablesPlatform</code></a> for all platform names. To change the build location of the file specify the value of the <strong>Content State Build Path</strong> in <a href="AddressableAssetSettings.html#catalog">Catalog settings</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Check this file into version control and create a new branch each time a player build is released.</p>
+</div>
+<h3 id="diagnostic-data">Diagnostic data</h3>
+<p>Additional files can be created to collect data about the content build.</p>
+<p>The files are:</p>
+<ul>
+<li><code>Library/com.unity.addressables/AddressablesBuildTEP.json</code>: build performance data. Refer to <a href="BuildProfileLog.html">Build profiling</a> for more information.</li>
+<li><code>Library/com.unity.addressables/buildlayoutreport</code>: information about AssetBundles produced by the build. Refer to <a href="BuildLayoutReport.html">Build layout report</a> for more information.</li>
+</ul>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="AddressableAssetSettings.html">Addressable Asset Settings reference</a></li>
+<li><a href="build-content-catalogs.html">Content catalogs</a></li>
+<li><a href="build-shared-assetbundles.html">Shared AssetBundles</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/build-artifacts-included.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

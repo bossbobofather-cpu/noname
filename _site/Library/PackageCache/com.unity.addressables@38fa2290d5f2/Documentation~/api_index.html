@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Addressables Script Reference | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Addressables Script Reference | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/api_index.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="addressables-script-ref">
+<h1 id="addressables-script-reference">Addressables Script Reference</h1>
+
+<p>This section of the documentation contains details of the scripting API that Unity provides for the Addressables package.</p>
+<p>The scripting reference is organized according to the classes available to scripts, which are described along with their methods, properties, and any other information relevant to their use.</p>
+<p>API are grouped by namespaces they belong to, and can be selected from the sidebar to the left. You can use the Filter control above the sidebar to filter the table of contents so that it only shows entries containing the string you enter. You can also use the Search control at the top of the window to perform a full-text search of the Addressables documentation.</p>
+<h2 id="commonly-used-classes">Commonly used classes</h2>
+<p>The following lists include the most commonly used classes you will encounter when using the Addressables API:</p>
+<p>In runtime code:</p>
+<ul>
+<li><a href="xref:UnityEngine.AddressableAssets.Addressables">Addressables</a>: contains the main API for interacting with the Addressables system at runtime, from initialization, to loading assets, to releasing them.</li>
+<li><a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle">AsyncOperationHandle</a>: a handle for Addressables operations. Provides access to the assets loaded, operation progress, and other results.</li>
+<li><a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase%601">AsyncOperationBase</a>: a base class for implementing your own operations.</li>
+<li><a href="xref:UnityEngine.AddressableAssets.AssetReference">AssetReference</a>: a type you can use in MonoBehaviours to easily reference Addressable assets via an Inspector window.</li>
+<li><a href="xref:UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation">IResourceLocation</a>: an interface to objects that contain information needed to load an asset.</li>
+<li><a href="xref:UnityEngine.ResourceManagement.ResourceManager">ResourceManager</a>: manages Addressable resources and operations.</li>
+<li><a href="xref:UnityEditor.AddressableAssets.Settings.CacheInitializationSettings">CacheInitializationSettings</a>: a specialized object for initializing your cache settings.</li>
+<li><a href="xref:UnityEngine.ResourceManagement.ResourceManager.InternalIdTransformFunc">InternalIdTransformFunc</a>: A function you can implement to dynamically transform asset URLs.</li>
+</ul>
+<p>In Unity Editor code:</p>
+<ul>
+<li><a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetSettings">AddressableAssetSettings</a>: defines the Addressable settings.</li>
+<li><a href="xref:UnityEditor.AddressableAssets.AddressableAssetSettingsDefaultObject">AddressableAssetSettingsDefaultObject</a>: provides access to the asset containing your Addressables settings.</li>
+<li><a href="xref:UnityEditor.AddressableAssets.Build.AnalyzeRules.AnalyzeRule">AnalyzeRule</a>: a base class for adding rules to the Analyze tool.</li>
+<li><a href="xref:UnityEditor.AddressableAssets.Build.IDataBuilder">IDataBuilder</a>: an interface for creating your own build implementations.</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/api_index.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

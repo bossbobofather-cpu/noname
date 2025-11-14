@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Default path values | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Default path values | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/profiles-default-paths.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="default-path-values">Default path values</h1>
+
+<p>The default values for <a href="ProfileVariables.html">the build and load paths</a> are:</p>
+<ul>
+<li>Local build path: <code>[UnityEditor.EditorUserBuildSettings.activeBuildTarget]</code></li>
+<li>Local load path: <code>[UnityEngine.AddressableAssets.Addressables.BuildPath]/[BuildTarget]</code></li>
+<li>Remote build path: <code>ServerData/[BuildTarget]</code></li>
+<li>Remote load path: <undefined></undefined></li>
+</ul>
+<p>Usually, you shouldn't need to change the local path values. The Unity build system expects the AssetBundles and other files to exist in the default location. If you change the local paths, you must copy the files from the build path to the load path before making a Player build. The load path must always be in the Unity <code>StreamingAssets</code> folder.</p>
+<p>If you distribute content remotely, you must change the remote load path to reflect the URL which you host the remote content. You can set the remote build path to any convenient location and the build system doesn't rely on the default value.</p>
+<h2 id="default-local-paths">Default local paths</h2>
+<p>The local build path defaults to the path provided by <code>Addressables.BuildPath</code>, which is in the Library folder of your Unity project. Addressables appends a folder to the local build path based on your current platform build target setting. When you build for multiple platforms, the build places the artifacts for each platform in a different subfolder.</p>
+<p>Likewise, the local load path defaults to that provided by <code>Addressables.RuntimePath</code>, which resolves to the StreamingAssets folder. Again Addressables adds the platform build target to the path.</p>
+<p>When you build your local bundles to the default build path, then the build code temporarily copies the artifacts from the build path to the StreamingAssets folder when you build your player, and removes them after the build.</p>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>If you build to, or load from custom local paths, then you must copy your build artifacts to the correct place in your project before making a player build and to make sure your application can access those artifacts at runtime.</p>
+</div>
+<h2 id="default-remote-paths">Default remote paths</h2>
+<p>Addressables sets the default remote build path to an arbitrarily chosen folder name, <code>ServerData</code>, which is created under your Project folder. The build adds the current platform target to the path as a subfolder to separate the unique artifacts for different platforms.</p>
+<p>The default remote load path is <code>http://localhost/</code> appended with the current profile BuildTarget variable. You must change this path to the base URL at which you plan to load your Addressable assets.</p>
+<p>Use different <a href="profiles-introduction.html">profiles</a> to set up the remote load path as appropriate for the type of development, testing, or publishing you're doing. For example, you can create a profile that loads assets from a localhost server for general development builds, a profile that loads assets from a staging environment for QA builds, and one that loads assets from your Content Delivery Network (CDN) for release builds.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>When running your game in the Editor, you can use the <strong>Use Asset Database</strong> Play Mode Script to bypass loading assets through the remote or local load paths. This can be convenient, especially when you don't have a localhost server set up. However, it can hide group configuration and asset assignment mistakes.</p>
+</div>
+<h2 id="windows-file-path-limit">Windows file path limit</h2>
+<p>Windows has a file path limit of 260 characters. If the build path of your content ends up creating a path that meets or exceeds the limit on Windows, the build fails.</p>
+<p>You might run into a file path limit issue if your project is located in a directory that is close to the character limit. The Scriptable Build Pipeline creates AssetBundles in a temporary directory during the build. This temporary path is a sub-directory of your project and can end up generating a <code>string</code> that goes over the Windows limit.</p>
+<p>If the Addressables content build fails with a <code>Could not find a part of the path</code> error, and you're on Windows, this might be the cause.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="profiles-create.html">Create a profile</a></li>
+<li><a href="ProfileVariables.html">Add variables to a profile</a></li>
+<li><a href="builds-full-build.html">Build Addressable assets</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/profiles-default-paths.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

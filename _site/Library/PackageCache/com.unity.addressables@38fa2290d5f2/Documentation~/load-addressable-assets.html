@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Introduction to loading Addressable assets | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Introduction to loading Addressable assets | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-addressable-assets.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="introduction-to-loading-addressable-assets">Introduction to loading Addressable assets</h1>
+
+<p>The <a href="xref:UnityEngine.AddressableAssets.Addressables"><code>Addressables</code></a> class provides methods to load Addressable assets. You can load assets one at a time or in batches. To identify the assets to load, you pass either a single key or a list of keys to the loading method. A key can be one of the following objects:</p>
+<ul>
+<li><strong>Address</strong>: A string containing the address you assigned to the asset</li>
+<li><strong>Label</strong>: A string containing a label assigned to one or more assets</li>
+<li><strong>AssetReference object</strong>: An instance of <a href="xref:UnityEngine.AddressableAssets.AssetReference"><code>AssetReference</code></a></li>
+<li><a href="xref:UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation"><code>IResourceLocation</code></a> instance: An intermediate object that contains information to load an asset and its dependencies.</li>
+</ul>
+<h2 id="how-addressables-loads-assets">How Addressables loads assets</h2>
+<p>When you call one of the asset loading methods, the Addressables system begins an asynchronous operation that carries out the following tasks:</p>
+<ol>
+<li>Looks up the resource locations for the specified keys, except <code>IResourceLocation</code> keys.</li>
+<li>Gathers the list of dependencies.</li>
+<li>Downloads any remote AssetBundles that are required.</li>
+<li>Loads the AssetBundles into memory.</li>
+<li>Sets the <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle.Result"><code>Result</code></a> object of the operation to the loaded objects.</li>
+<li>Updates the <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle.Status"><code>Status</code></a> of the operation and calls any <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle.Completed"><code>Completed</code></a> event listeners.</li>
+</ol>
+<p>If the load operation succeeds, the <code>Status</code> is set to <code>Succeeded</code> and the loaded object or objects can be accessed from the <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle.Result"><code>Result</code></a> object.</p>
+<p>If an error occurs, the exception is copied to the <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle.OperationException"><code>OperationException</code></a> member of the operation object and the <code>Status</code> is set to <code>Failed</code>. By default, the exception isn't thrown as part of the operation. However, you can assign a handler function to the <a href="xref:UnityEngine.ResourceManagement.ResourceManager.ExceptionHandler"><code>ResourceManager.ExceptionHandler</code></a> property to handle any exceptions. You can also enable the <a class="xref" href="AddressableAssetSettings.html">Log Runtime Exceptions</a> option in the Addressable system settings to record errors to the <a href="xref:um-console">Unity Console</a>.</p>
+<p>When you call loading methods that load multiple Addressable assets, you can specify whether to abort the operation if any single load operation fails, or to load any assets it can. In both cases, the operation status is set to failed. Set the <code>releaseDependenciesOnFailure</code> parameter to <code>true</code> in the call to the loading method to abort the entire operation on any failure.</p>
+<h2 id="asynchronous-loading">Asynchronous loading</h2>
+<p>The Addressables API is asynchronous and returns an <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle"><code>AsyncOperationHandle</code></a> to manage operation progress and completion.</p>
+<p>Addressables is designed to be content location agnostic. The content might need to be downloaded first or use other methods that can take a long time. To force synchronous execution, refer to <a href="SynchronousAddressables.html">Synchronous loading</a> for more information.</p>
+<p>When loading an asset for the first time, the handle is complete after a minimum of one frame. If the content has already loaded, execution times might differ between the various asynchronous loading options. You can wait until the load has completed as follows:</p>
+<ul>
+<li><a href="xref:UnityEngine.Coroutine">Coroutine</a>: Always delayed at a minimum of one frame before execution continues.</li>
+<li><a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle.Completed"><code>Completed</code> callback</a>: A minimum of one frame if the content hasn't already loaded, otherwise the callback is invoked in the same frame.</li>
+<li>Awaiting <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle.Task"><code>AsyncOperationHandle.Task</code></a>: A minimum of one frame if the content hasn't already loaded, otherwise the execution continues in the same frame.</li>
+</ul>
+<pre><code class="lang-cs" name="sample">
+using System.Collections;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+
+internal class AsynchronousLoading : MonoBehaviour
+{
+    private string address = &quot;tree&quot;;
+    private AsyncOperationHandle loadHandle;
+
+    // always minimum of 1 frame
+    IEnumerator LoadAssetCoroutine()
+    {
+        loadHandle = Addressables.LoadAssetAsync&lt;GameObject&gt;(address);
+        yield return loadHandle;
+    }
+
+    // minimum of 1 frame for new asset loads
+    // callback called in current frame for already loaded assets
+    void LoadAssetCallback()
+    {
+        loadHandle = Addressables.LoadAssetAsync&lt;GameObject&gt;(address);
+        loadHandle.Completed += h =&gt;
+        {
+            // Loaded here
+        };
+    }
+
+    // minimum of 1 frame for new asset loads
+    // await completes in current frame for already loaded assets
+    async void LoadAssetWait()
+    {
+        loadHandle = Addressables.LoadAssetAsync&lt;GameObject&gt;(address);
+        await loadHandle.Task;
+    }
+
+    private void OnDestroy()
+    {
+        loadHandle.Release();
+    }
+}
+
+</code></pre><h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="AddressableAssetsAsyncOperationHandle.html">Asynchronous operation handles</a></li>
+<li><a href="load-assets.html">Load assets</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-addressable-assets.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
