@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Introduction to distributing remote content | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Introduction to distributing remote content | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/remote-content-intro.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="introduction-to-distributing-remote-content">Introduction to distributing remote content</h1>
+
+<p>Distributing content remotely can reduce the initial download size and install time of your application. You can also update remotely distributed assets without republishing your application.</p>
+<p>When you assign a remote URL as the <a href="profiles-build-load-paths.html">load path of a group</a>, the Addressables system loads assets in the group from that URL. When you enable the <a href="AddressableAssetSettings.html#catalog">Build Remote Catalog</a> option, Addressables looks up the addresses of any remote assets in the remote catalog, allowing you to make changes to Addressable assets without forcing users to update and reinstall the entire application.</p>
+<p>After <a href="remote-content-enable.html">enabling remote distribution</a>, you can build your content in two ways:</p>
+<ul>
+<li>A <a href="builds-full-build.html">content-only build</a>: Builds all content AssetBundles and catalogs. Always perform a full build before rebuilding your Player when preparing to publish or update your application.</li>
+<li>A <a href="builds-update-build.html">content update build</a>: Builds all content AssetBundles and catalogs, but sets up the remote catalog so that installed applications only need to download the changed AssetBundles. Run the <a href="builds-update-build.html">Check for Content Update Restrictions</a> tool to identify changes and prepare your groups before building an update.</li>
+</ul>
+<p>After building a full build or an update, you must upload your remote catalog, catalog hash file, and remote AssetBundles to your hosting service.</p>
+<p>Refer to <a href="remote-content-profiles.html">Remote content profiles</a> for tips on setting up Addressables Profiles to help you develop, test, and publish remote content.</p>
+<h2 id="custom-url-evaluation">Custom URL evaluation</h2>
+<p>There are several scenarios where you might need to customize the path or URL of an asset (an AssetBundle generally) at runtime. The most common example is creating signed URLs. Another is dynamic host determination. For more information, refer to <a href="TransformInternalId.html">Change Addressable load URLs</a> for more information.</p>
+<hr>
+<h1 id="remote-content-distribution">Remote content distribution</h1>
+<p>You can use Addressables to support remote distribution of content through a Content Delivery Network (CDN) or other hosting service. Unity provides the <a href="AddressablesCCD.html">Unity Cloud Content Delivery (CCD) service</a> for this purpose, but you can use any CDN or host you prefer.</p>
+<p>Before building content for remote distribution, you must:</p>
+<ul>
+<li>Enable the <strong>Build Remote Catalog</strong> option in your AddressableAssetSettings (access using menu: <strong>Windows &gt; Asset Management &gt; Addressables &gt; Settings</strong>).</li>
+<li>Configure the <strong>RemoteLoadPath</strong> in the <a class="xref" href="AddressableAssetsProfiles.html">Profile</a> you use to publish content to reflect the remote URL at which you plan to access the content.</li>
+<li>For each Addressables group containing assets you want to deliver remotely, set the <strong>Build Path</strong> to <strong>RemoteBuildPath</strong> and the <strong>Load Path</strong> to <strong>RemoteLoadPath</strong>.</li>
+<li>Set desired <strong>Platform Target</strong> on the Unity <strong>Build Settings</strong> window.</li>
+</ul>
+<p>After you make a content build (using the Addressables <strong>Groups</strong> window) and a player build (using the <strong>Build Settings</strong> window), you must upload the files created in the folder designated by your profile's <strong>RemoteBuildPath</strong> to your hosting service. The files to upload include:</p>
+<ul>
+<li>AssetBundles (name.bundle)</li>
+<li>Catalog (catalog_timestamp.json)</li>
+<li>Hash (catalog_timestamp.hash)</li>
+</ul>
+<p>Refer to <a href="RemoteContentDistribution.html">Distributing remote content</a> for more information.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="remote-content-enable.html">Enable remote content</a></li>
+<li><a href="remote-content-profiles.html">Define remote content profiles</a></li>
+<li><a href="remote-content-assetbundle-cache.html">Remote content AssetBundle caching</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/remote-content-intro.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Get addresses at runtime | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Get addresses at runtime | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/GetRuntimeAddress.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="addressables-get-address">
+<h1 id="get-addresses-at-runtime">Get addresses at runtime</h1>
+
+<p>By default, Addressables uses the address you assign to an asset as the <a href="xref:UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation.PrimaryKey"><code>PrimaryKey</code></a> value of its <a href="xref:UnityEngine.ResourceManagement.ResourceLocations.IResourceLocation"><code>IResourceLocation</code></a> instance.</p>
+<p>If you disable the <a href="ContentPackingAndLoadingSchema.html#advanced-options">Include Addresses in Catalog</a> option of the Addressables group to which the asset belongs, the <code>PrimaryKey</code> can be a GUID, label, or an empty string. If you want to get the address of an asset that you load with an <code>AssetReference</code> or label, you can load the asset's locations, as described in <a class="xref" href="LoadingAddressableAssets.html">Load assets by location</a> documentation. You can then use the <code>IResourceLocation</code> instance to both access the <code>PrimaryKey</code> value and to load the asset.</p>
+<p>The following example gets the address of the asset assigned to an <a href="xref:UnityEngine.AddressableAssets.AssetReference"><code>AssetReference</code></a> object named <code>MyRef1</code>:</p>
+<pre><code class="lang-cs" name="sample">
+var opHandle = Addressables.LoadResourceLocationsAsync(MyRef1);
+yield return opHandle;
+
+if (opHandle.Status == AsyncOperationStatus.Succeeded &amp;&amp;
+    opHandle.Result != null &amp;&amp;
+    opHandle.Result.Count &gt; 0)
+{
+    Debug.Log(&quot;address is: &quot; + opHandle.Result[0].PrimaryKey);
+}
+
+</code></pre>
+<p><a href="Labels.html">Labels</a> often refer to multiple assets. The following example illustrates how to load multiple prefab assets and use their primary key value to add them to a dictionary:</p>
+<pre><code class="lang-cs" name="sample">
+Dictionary&lt;string, GameObject&gt; _preloadedObjects
+    = new Dictionary&lt;string, GameObject&gt;();
+
+private IEnumerator PreloadHazards()
+{
+    //find all the locations with label &quot;SpaceHazards&quot;
+    var loadResourceLocationsHandle
+        = Addressables.LoadResourceLocationsAsync(&quot;SpaceHazards&quot;, typeof(GameObject));
+
+    if (!loadResourceLocationsHandle.IsDone)
+        yield return loadResourceLocationsHandle;
+
+    //start each location loading
+    List&lt;AsyncOperationHandle&gt; opList = new List&lt;AsyncOperationHandle&gt;();
+
+    foreach (IResourceLocation location in loadResourceLocationsHandle.Result)
+    {
+        AsyncOperationHandle&lt;GameObject&gt; loadAssetHandle
+            = Addressables.LoadAssetAsync&lt;GameObject&gt;(location);
+        loadAssetHandle.Completed +=
+            obj =&gt; { _preloadedObjects.Add(location.PrimaryKey, obj.Result); };
+        opList.Add(loadAssetHandle);
+    }
+
+    //create a GroupOperation to wait on all the above loads at once.
+    var groupOp = Addressables.ResourceManager.CreateGenericGroupOperation(opList);
+
+    if (!groupOp.IsDone)
+        yield return groupOp;
+
+    loadResourceLocationsHandle.Release();
+
+    //take a gander at our results.
+    foreach (var item in _preloadedObjects)
+    {
+        Debug.Log(item.Key + &quot; - &quot; + item.Value.name);
+    }
+}
+
+</code></pre><h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="build-content-catalogs.html">Content catalogs</a></li>
+<li><a href="load-assets-location.html">Load assets by location</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/GetRuntimeAddress.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Addressable Asset Settings reference | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Addressable Asset Settings reference | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressableAssetSettings.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="addressables-asset-settings">
+<h1 id="addressable-asset-settings-reference">Addressable Asset Settings reference</h1>
+
+<p>Reference for project-level Addressables settings, including profiles, catalogs, downloads, build options, and system configuration.</p>
+<p>To manage how Addressable assets work in your project, use the <strong>Addressable Asset Settings</strong> Inspector. To open this Inspector, go to <strong>Window</strong> &gt; <strong>Asset Management</strong> &gt; <strong>Addressables</strong> &gt; <strong>Settings</strong>.</p>
+<p>The Addressables system stores the settings asset in the <code>AddressableSettingsData</code> folder in the project's <code>Assets</code> folder. If this folder doesn't exist yet, you must initialize the Addressables system from the <a class="xref" href="GroupsWindow.html">Groups window</a> (menu: <strong>Window</strong> &gt; <strong>Asset Management</strong> &gt; <strong>Addressables</strong> &gt; <strong>Groups</strong>).</p>
+<p><img src="images/addressable-assets-settings.png" alt="The Addressable Asset Settings Inspector displays the full collapsed list of its different sections."><br><em>The Addressable Asset Settings Inspector</em></p>
+<p>The Inspector contains the following sections:</p>
+<ul>
+<li><a href="#profile">Profile</a></li>
+<li><a href="#diagnostics">Diagnostics</a></li>
+<li><a href="#catalog">Catalog</a></li>
+<li><a href="#update-a-previous-build">Update a Previous Build</a></li>
+<li><a href="#downloads">Downloads</a></li>
+<li><a href="#build">Build</a></li>
+<li><a href="#build-and-play-mode-scripts">Build and Play Mode Scripts</a></li>
+<li><a href="#asset-group-templates">Asset Group Templates</a></li>
+<li><a href="#initialization-objects">Initialization Objects</a></li>
+<li><a href="#cloud-content-delivery">Cloud Content Delivery</a></li>
+</ul>
+<p>To open the <a class="xref" href="GroupsWindow.html">Groups window</a>, select <strong>Manage Groups</strong>.</p>
+<h2 id="profile">Profile</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Profile In Use</strong></td>
+<td>Choose the active profile, which determines the value of the variables that the Addressables build scripts use. For more information, refer to the <a class="xref" href="AddressableAssetsProfiles.html">Profiles</a> documentation.</td>
+</tr>
+<tr>
+<td><strong>Manage Profiles</strong></td>
+<td>Opens the <a class="xref" href="AddressableAssetsProfiles.html">Profiles</a> window</td>
+</tr>
+</tbody>
+</table>
+<h2 id="diagnostics">Diagnostics</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Log Runtime Exceptions</strong></td>
+<td>Enable this property to log runtime exceptions for asset loading operations and record the error to the <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle.OperationException"><code>AsyncOperationHandle.OperationException</code></a> property.</td>
+</tr>
+</tbody>
+</table>
+<p>By default, Addressable Assets only logs warnings and errors. To enable detailed logging, open the <strong>Player</strong> settings window (menu: <strong>Edit</strong> &gt; <strong>Project Settings</strong> &gt; <strong>Player</strong>), go to <strong>Other Settings</strong> &gt; <strong>Configuration</strong> section, and add <code>ADDRESSABLES_LOG_ALL</code> to the <strong>Scripting Define Symbols</strong> field.</p>
+<h2 id="catalog">Catalog</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Player Version Override</strong></td>
+<td>Overrides the timestamp used to create the remote catalog name. If set, the remote catalog is named, <code>Catalog_&lt;Player Version Override&gt;.json</code>. If left blank, then Unity uses the timestamp.<br><br>If you use a unique remote catalog name for every new build, you can host multiple versions of your content at the same base URL. If you use the same override string for every build, then all players load the new catalog. Player update builds also always use the same remote catalog name as the build they're updating. For more information, refer to <a class="xref" href="ContentUpdateWorkflow.html">Content update builds</a>.</td>
+</tr>
+<tr>
+<td><strong>Compress Local Catalog</strong></td>
+<td>Builds the catalog in a compressed AssetBundle file. This property reduces the storage size of the catalog, but increases the time to build and to load the catalog.</td>
+</tr>
+<tr>
+<td><strong>Build Remote Catalog</strong></td>
+<td>Creates a copy of the content catalog for storage on a remote server. When you enable this property the following options are available:<ul><li> <strong>Build &amp; Load Paths</strong>: Set where to build and load the remote catalog. Choose a Profile path pair from the list or select <code>&lt;custom&gt;</code> if you want to set the build and load paths separately.</li><li> <strong>Build Path</strong>: Only displayed if you set <strong>Build &amp; Load Paths</strong> to <code>&lt;custom&gt;</code>. Set where to build the remote catalog. Typically, you should use the <strong>RemoteBuildPath</strong> Profile variable.</li><li> <strong>Load Path</strong>: Only displayed if you set <strong>Build &amp; Load Paths</strong> to <code>&lt;custom&gt;</code>. Set the URL at which to access the remote catalog. Typically, you should use the <strong>RemoteLoadPath</strong> Profile variable.</li></ul></td>
+</tr>
+<tr>
+<td><strong>Enable Json Catalog</strong></td>
+<td>Use JSON catalogs instead of binary catalogs. JSON catalogs are more human readable, but slower to load and larger in size.</td>
+</tr>
+<tr>
+<td><strong>Only update catalogs manually</strong></td>
+<td>Disables the automatic check for an updated remote catalog when the Addressables system initializes at runtime. You can manually <a class="xref" href="LoadContentCatalogAsync.html">check for an updated catalog</a>.</td>
+</tr>
+<tr>
+<td><strong>Internal Asset Naming Mode</strong></td>
+<td>Determines the identification of assets in AssetBundles and is used to load the asset from the bundle. This value is used as the <code>internalId</code> of the asset location. Changing this setting affects a bundles CRC and Hash value. <br><br><strong>Warning</strong>: Don't modify this setting for <a class="xref" href="ContentUpdateWorkflow.html">Content update builds</a> because the data stored in the <a class="xref" href="BuildArtifacts.html">content state file</a> becomes invalid.<br><br>The different modes are:<ul><li> <strong>Full Path</strong>: The path of the asset in your project. Recommended during development because you can identify assets being loaded by their ID if needed.</li><li> <strong>Filename</strong>: The asset's file name. This can also be used to identify an asset. <strong>Note</strong>: You can't have multiple assets with the same name.</li><li><strong>GUID</strong>: A deterministic value for the asset.</li><li> <strong>Dynamic</strong>: The shortest ID that can be constructed based on the assets in the group. Recommended for release because it can reduce the amount of data in the AssetBundle and catalog, and lower runtime memory overhead.</li></ul></td>
+</tr>
+<tr>
+<td><strong>Internal Bundle Id Mode</strong></td>
+<td>Determines how an AssetBundle is identified internally. This affects how an AssetBundle locates dependencies that are contained in other bundles. Changing this value affects the CRC and Hash of this bundle and all other bundles that reference it.<br><br><strong>Warning</strong>: Don't modify this setting for <a class="xref" href="ContentUpdateWorkflow.html">Content update builds</a> because the data stored in the <a class="xref" href="BuildArtifacts.html">content state file</a> becomes invalid.<br><br>The different modes are:<ul><li> <strong>Group Guid</strong>: A unique identifier for the group. This mode is recommended because it doesn't change.</li><li> <strong>Group Guid Project Id Hash</strong>: Uses a combination of the Group GUID and the Cloud Project ID, if Cloud Services are enabled. This changes if the Project is bound to a different Cloud Project ID. This mode is recommended when sharing assets between multiple projects because the ID constructed is deterministic and unique between projects.</li><li> <strong>Group Guid Project Id Entries Hash</strong>: Uses a combination of the Group GUID, Cloud Project ID (if Cloud Services are enabled), and asset entries in the Group. Using this mode can cause bundle cache version issues. Adding or removing entries results in a different hash.</li></ul></td>
+</tr>
+<tr>
+<td><strong>Asset Load Mode</strong></td>
+<td>Set whether to load assets individually as you request them (the default) or always load all assets in the group together. Choose from:<ul><li><strong>Requested Asset and Dependencies</strong>: Only loads what's required for the assets requested with <a href="xref:UnityEngine.AddressableAssets.Addressables.LoadAssetAsync*"><code>LoadAssetAsync</code></a> or <a href="xref:UnityEngine.AddressableAssets.Addressables.LoadAssetsAsync*"><code>LoadAssetsAsync</code></a>. Objects are loaded based in the order that they appear in a bundle file, which can result in reading the same file multiple times. Enabling the <strong>Contiguous Bundles</strong> option in <a class="xref" href="AddressableAssetSettings.html">Addressables Build settings</a> can help reduce the number of extra file reads.</li><li><strong>All Packed Assets and Dependencies</strong>: Loads all assets in the group together. This setting is useful if you have large counts of serialized data such as prefabs or ScriptableObjects with direct references to other serialized data.</li></ul></td>
+</tr>
+<tr>
+<td><strong>Asset Provider</strong></td>
+<td>Defines which Provider class Addressables uses to load assets from the AssetBundles generated from this group. Set this option to <strong>Assets from Bundles Provider</strong> unless you have a custom Provider implementation to provide assets from an AssetBundle.</td>
+</tr>
+<tr>
+<td><strong>Asset Bundle Provider</strong></td>
+<td>Defines which Provider class Addressables uses to load AssetBundles generated from this group. Set this option to <strong>AssetBundle Provider</strong> unless you have a custom Provider implementation to provide AssetBundles.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="update-a-previous-build">Update a Previous Build</h2>
+<p>To use the properties in the <strong>Update a Previous Build</strong> section, you must enable the <strong>Build Remote Catalog</strong> property in the <a href="#catalog">Catalog</a> section.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Check for Update Issues</strong></td>
+<td>Choose whether to perform a content update restriction as part of the update, and how to handle the result. For more information, refer to <a href="content-update-build-settings.html">Content update build settings</a>.</td>
+</tr>
+<tr>
+<td><strong>Content State Build Path</strong></td>
+<td>Set where to build the content state file that the default build script builds.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="downloads">Downloads</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Custom certificate handler</strong></td>
+<td>Set the class to use for custom certificate handling. The list has all classes in the project that extend <a href="xref:UnityEngine.Networking.CertificateHandler"><code>UnityEngine.Networking.CertificateHandler</code></a>.</td>
+</tr>
+<tr>
+<td><strong>Max Concurrent Web Requests</strong></td>
+<td>Set the maximum amount of concurrent web requests. The system queues any requests beyond this limit. To reach the best download speeds, set this value between 2 and 4.</td>
+</tr>
+<tr>
+<td><strong>Catalog Download Timeout</strong></td>
+<td>Set how many seconds to wait for a catalog file to download. If you set this to 0 there will be no timeout.</td>
+</tr>
+<tr>
+<td><strong>Use UnityWebRequest for Local Asset Bundles</strong></td>
+<td>Load local AssetBundle archives from this group using <a href="xref:UnityEngine.Networking.UnityWebRequest.GetAssetBundle(System.String,System.UInt32)"><code>UnityWebRequestAssetBundle.GetAssetBundle</code></a> instead of <a href="xref:UnityEngine.AssetBundle.LoadFromFileAsync(System.String,System.UInt32,System.UInt64)"><code>AssetBundle.LoadFromFileAsync</code></a>.</td>
+</tr>
+<tr>
+<td><strong>Bundle Request Timeout</strong></td>
+<td>The timeout interval for downloading remote bundles.</td>
+</tr>
+<tr>
+<td><strong>Bundle Retry Count</strong></td>
+<td>The number of times to retry failed downloads.</td>
+</tr>
+<tr>
+<td><strong>Bundle Http Redirect Limit</strong></td>
+<td>The number of redirects allowed when downloading bundles.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="build">Build</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Build Addressables on Player Build</strong></td>
+<td>Select how Unity builds Addressables content as part of the Player build. <br><br>The <strong>Build Addressables content on Player Build</strong> and <strong>Do not Build Addressables content on Player Build</strong> properties override the global Preference for the current project and affect all contributors who build the project. Otherwise, the global Preferences value applies to all Unity projects. Refer to <a href="builds-full-build.html">Build Addressable assets</a> for more information. Choose from the following:<ul><li><strong>Use global Settings (stored in preferences)</strong>: Use the value specified in the <a href="addressables-preferences.html">Unity Editor Preferences</a> under <strong>Addressables</strong>. </li><li><strong>Build Addressables content on Player Build</strong>: Always build Addressables content when building the Player.</li><li> <strong>Do not Build Addressables content on Player Build</strong>: Never build Addressables content when building the Player. If you modify Addressables content, you must rebuild it manually before building the Player.</li></ul></td>
+</tr>
+<tr>
+<td><strong>Ignore Invalid/Unsupported Files in Build</strong></td>
+<td>Exclude invalid or unsupported files from the build script rather than aborting the build.</td>
+</tr>
+<tr>
+<td><strong>Unique Bundle IDs</strong></td>
+<td>Creates a unique name for an AssetBundle in every build. For more information, refer to <a href="content-update-build-settings.html#unique-bundle-ids-setting">Unique Bundle IDs</a>.</td>
+</tr>
+<tr>
+<td><strong>Contiguous Bundles</strong></td>
+<td>Produces an efficient AssetBundle layout. If you have bundles produced by Addressables 1.12.1 or earlier, disable this property to minimize AssetBundle changes.</td>
+</tr>
+<tr>
+<td><strong>Non-Recursive Dependency Calculation</strong></td>
+<td>Improves build times and reduces runtime memory overhead when assets have circular dependencies. <br><br>For example, A prefab assigned to Bundle A references a material assigned to Bundle B. If this property is disabled, Unity needs to calculate the material's dependencies twice, once for each bundle. If this option is enabled, Unity only needs to calculate the material's dependencies once, for Bundle B.<br><br> In an example where many scenes reference the same material, if this property is disabled, Unity opens each scene to calculate shader usage, which is a costly operation. If this property is enabled, Unity only loads the material and doesn't need to open any scenes for dependency calculation.<br><br>This option is enabled by default when using Unity version 2021.2 or later. Disabling this option invalidates previously built bundles because the rebuilt bundles have a different build layout. Therefore, leave this property enabled unless you've shipped a build. <br><br>Some circular dependencies might fail to load when the option is enabled because the referenced asset is always assigned to the same bundle location, even when more content is added to the build. This issue often occurs for Monoscripts. Building the MonoScript bundle can help resolve these load failures.</td>
+</tr>
+<tr>
+<td><strong>Strip Unity Version From AssetBundles</strong></td>
+<td>Removes the Unity version from the AssetBundle header.</td>
+</tr>
+<tr>
+<td><strong>Disable Visible Sub Asset Representations</strong></td>
+<td>Improves build times if you don't use sub objects directly (such as sprites, or sub meshes).</td>
+</tr>
+<tr>
+<td><strong>Shared Bundle Settings</strong></td>
+<td>Define which group settings to use for for shared AssetBundles (Monoscript and UnityBuiltInAssets). By default this is the default group.</td>
+</tr>
+<tr>
+<td><strong>Shared Bundle Settings Group</strong></td>
+<td>Define which group settings to use for shared AssetBundles (Monoscript and UnityBuiltInAssets).</td>
+</tr>
+<tr>
+<td><strong>Built In Bundle Naming Prefix</strong></td>
+<td>Choose how to name the AssetBundle produced for Unity built in resources.</td>
+</tr>
+<tr>
+<td><strong>MonoScript Bundle Naming Prefix</strong></td>
+<td>Choose how to name the AssetBundle that contains all MonoScripts. The bundle ensures that Unity loads all Monoscripts before any MonoBehaviours can reference them. It also decreases the number of duplicated or complex Monoscript dependencies and so, reduces runtime memory overhead.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="build-and-play-mode-scripts">Build and Play Mode Scripts</h2>
+<p>Configures the <a href="xref:UnityEditor.AddressableAssets.Build.IDataBuilder"><code>IDataBuilder</code></a> scripts available in the project. If you create a custom Build or Play mode script, you must add it to this list before you can use it.</p>
+<p>The Addressables packages has some default build scripts that handle the default build processes and offer different ways to access data in Play mode. You can find these scripts in the <code>AddressableAssetData/DataBuilders</code> folder.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Build and Play mode scripts are <code>ScriptableObject</code> assets. To create a ScriptableObject asset for a Build or Play mode script, follow the instructions in the <a href="xref:um-class-scriptable-object">ScriptableObject manual page</a>.</p>
+</div>
+<p>To add a custom script, select the <strong>+</strong> button and choose the ScriptableObject asset which represents the desired script from the file panel.</p>
+<p>For more information about custom scripts, refer to <a href="build-scripting-custom.html">Create a custom build script</a>.</p>
+<h2 id="asset-group-templates">Asset Group Templates</h2>
+<p>Defines the list of templates that you can use to create new groups. When you create a new template, you must add it to this list before you can use it.</p>
+<p>The Addressables package has one template that includes the schemas that the default build scripts uses. You can find the template in the <code>AddressableAssetData/AssetGroupTemplates</code> folder.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Group templates are ScriptableObject assets. To create a ScriptableObject asset for a group template, follow the instructions in the <a href="xref:um-class-scriptable-object">ScriptableObject manual page</a>.</p>
+</div>
+<p>To add a custom template, select the <strong>+</strong> button and choose the ScriptableObject asset which represents the desired template from the file panel.</p>
+<p>For information on creating custom templates, refer to <a class="xref" href="GroupTemplates.html">Group templates</a>.</p>
+<h2 id="initialization-objects">Initialization objects</h2>
+<p>Configures the initialization objects for the project. Initialization objects are ScriptableObject classes that implement the <a href="xref:UnityEngine.ResourceManagement.Util.IObjectInitializationDataProvider"><code>IObjectInitializationDataProvider</code></a> interface. You can create these objects to pass data to the Addressables initialization process at runtime.</p>
+<p>To create a ScriptableObject asset for an initialization object, follow the instructions in the <a href="xref:um-class-scriptable-object">ScriptableObject manual page</a>.</p>
+<p>To add an initialization object, select the <strong>+</strong> button and choose the ScriptableObject asset which represents the desired object from the file panel.</p>
+<p>For more information, refer to <a class="xref" href="InitializeAsync.html">Customizing initialization</a>.</p>
+<h2 id="cloud-content-delivery">Cloud Content Delivery</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Property</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Enable CCD Features</strong></td>
+<td>Enable this property to enable <a href="AddressablesCCD.html">CCD features</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="GroupsWindow.html">Addressables Groups window reference</a></li>
+<li><a href="ContentPackingAndLoadingSchema.html">Group Inspector settings reference</a></li>
+<li><a href="addressables-preferences.html">Addressables Preferences reference</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressableAssetSettings.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

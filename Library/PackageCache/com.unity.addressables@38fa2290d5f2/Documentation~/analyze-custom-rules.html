@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Create custom rules for Addressables Analyze | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Create custom rules for Addressables Analyze | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/analyze-custom-rules.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="create-custom-rules-for-addressables-analyze">Create custom rules for Addressables Analyze</h1>
+
+<p>You can create custom rules for the <a href="analyze-addressables-window-reference.html"><strong>Addressables Analyze</strong> window</a> with the <a href="xref:UnityEditor.AddressableAssets.Build.AnalyzeRules.AnalyzeRule"><code>AnalyzeRule</code></a> class.</p>
+<h2 id="create-a-custom-rule">Create a custom rule</h2>
+<p>To create a custom rule, create a new child class of the <a href="xref:UnityEditor.AddressableAssets.Build.AnalyzeRules.AnalyzeRule"><code>AnalyzeRule</code></a> class, and override the following properties:</p>
+<ul>
+<li><a href="xref:UnityEditor.AddressableAssets.Build.AnalyzeRules.AnalyzeRule.CanFix"><code>CanFix</code></a>: Set whether the rule is fixable or not.</li>
+<li><a href="xref:UnityEditor.AddressableAssets.Build.AnalyzeRules.AnalyzeRule.ruleName"><code>ruleName</code></a>: Set the display name of the rule, which is displayed in the <strong>Addressables Analyze</strong> window.</li>
+</ul>
+<p>You'll also need to override the following methods:</p>
+<h3 id="refreshanalysis">RefreshAnalysis</h3>
+<p><a href="xref:UnityEditor.AddressableAssets.Build.AnalyzeRules.AnalyzeRule.RefreshAnalysis*"><code>RefreshAnalysis</code></a> is the analyze operation. In this method, perform any calculations and cache any data you might need for a potential fix. The return value is a <code>List&lt;AnalyzeResult&gt;</code> list. Create a new <a href="xref:UnityEditor.AddressableAssets.Build.AnalyzeRules.AnalyzeRule.AnalyzeResult"><code>AnalyzeResult</code></a> for each entry in your analysis, containing the data as a string for the first parameter and a <a href="xref:UnityEditor.AddressableAssets.Build.AnalyzeRules.AnalyzeRule.AnalyzeResult.severity">message type</a> for the second (to optionally designate the message type as a warning or error). Return the list of objects you create.</p>
+<p>If you need to make child elements in the <code>TreeView</code> for a particular <code>AnalyzeResult</code> object, you can delineate the parent item and any children with <a href="xref:UnityEditor.AddressableAssets.Build.AnalyzeRules.AnalyzeRule.kDelimiter"><code>kDelimiter</code></a>. Include the delimiter between the parent and child items.</p>
+<h3 id="fixissues">FixIssues</h3>
+<p><a href="xref:UnityEditor.AddressableAssets.Build.AnalyzeRules.AnalyzeRule.FixIssues*"><code>FixIssues</code></a> is the fix operation. If there's an appropriate action to take in response to the analyze step, execute it here.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>If you set <code>CanFix</code> to <code>false</code>, you don't have to override the <code>FixIssues</code> method.</p>
+</div>
+<h3 id="clearanalysis">ClearAnalysis</h3>
+<p><a href="xref:UnityEditor.AddressableAssets.Build.AnalyzeRules.AnalyzeRule.ClearAnalysis"><code>ClearAnalysis</code></a> is the clear operation. Any data you cached in the analyze step can be cleaned or removed in this method. The <code>TreeView</code> will update to reflect the lack of data.</p>
+<h2 id="adding-custom-rules-to-the-addressables-analyze-window">Adding custom rules to the Addressables Analyze window</h2>
+<p>A custom rule must register itself with the GUI class using <a href="xref:UnityEditor.AddressableAssets.Build.AnalyzeSystem.RegisterNewRule*"><code>AnalyzeSystem.RegisterNewRule&lt;TRule&gt;</code></a>, to display in the <strong>Addressables Analyze</strong> window. For example:</p>
+<pre><code class="lang-cs" name="sample">
+using UnityEditor;
+using UnityEditor.AddressableAssets.Build;
+using UnityEditor.AddressableAssets.Build.AnalyzeRules;
+
+class MyRule : AnalyzeRule
+{
+    // Rule code...
+}
+
+// Register rule
+[InitializeOnLoad]
+class RegisterMyRule
+{
+    static RegisterMyRule()
+    {
+        AnalyzeSystem.RegisterNewRule&lt;MyRule&gt;();
+    }
+}
+
+</code></pre><h2 id="analyzerule-classes">AnalyzeRule classes</h2>
+<p>To make it faster to setup custom rules, Addressables includes the following classes, which inherit from <code>AnalyzeRule</code>:</p>
+<ul>
+<li><a href="xref:UnityEditor.AddressableAssets.Build.AnalyzeRules.BundleRuleBase"><code>BundleRuleBase</code></a> is a base class for handling <code>AnalyzeRule</code> tasks. It includes some basic methods to retrieve information about AssetBundle and resource dependencies.</li>
+<li><strong>Check bundle duplicates</strong> base classes help check for AssetBundle dependency duplicates. Override the <code>FixIssues</code> method  implementation to perform a custom action:
+<ul>
+<li><a href="xref:UnityEditor.AddressableAssets.Build.AnalyzeRules.CheckBundleDupeDependencies"><code>CheckBundleDupeDependencies</code></a> inherits from <code>BundleRuleBase</code> and includes further methods for <code>AnalyzeRule</code> to check AssetBundle dependencies for duplicates and a method to attempt to resolve these duplicates.</li>
+<li><a href="xref:UnityEditor.AddressableAssets.Build.AnalyzeRules.CheckResourcesDupeDependencies"><code>CheckResourcesDupeDependencies</code></a> is the same, but resource dependencies specific.</li>
+<li><a href="xref:UnityEditor.AddressableAssets.Build.AnalyzeRules.CheckSceneDupeDependencies"><code>CheckSceneDupeDependencies</code></a> is the same, but for scene dependencies specific.</li>
+</ul>
+</li>
+</ul>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="xref:UnityEditor.AddressableAssets.Build.AnalyzeRules.AnalyzeRule"><code>AnalyzeRule</code> API reference</a></li>
+<li><a href="analyze-addressables-window.html">Analyze window</a></li>
+<li><a href="analyze-addressables-window-reference.html">Analyze window reference</a></li>
+<li><a href="analyze-addressable-layouts.html">Analyze Addressable layouts</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/analyze-custom-rules.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

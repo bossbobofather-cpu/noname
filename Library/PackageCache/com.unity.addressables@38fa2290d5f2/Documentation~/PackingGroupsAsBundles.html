@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Define how to pack groups into AssetBundles | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Define how to pack groups into AssetBundles | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/PackingGroupsAsBundles.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="addressables-packing-groups">
+<h1 id="define-how-to-pack-groups-into-assetbundles">Define how to pack groups into AssetBundles</h1>
+
+<p>Choose optimal packing strategies for AssetBundles, including options to pack together, separately, or by labels, with considerations for project scale.</p>
+<p>You have a few options when choosing how the assets in a group are packed into AssetBundles:</p>
+<ul>
+<li>You can pack all Addressables assigned to a group together in a single bundle. This corresponds to the <strong>Pack Together</strong> bundle mode.</li>
+<li>You can pack each Addressable assigned to a group separately in its own bundle. This corresponds to the <strong>Pack Separately</strong> bundle mode.</li>
+<li>You can pack all Addressables sharing the same set of labels into their own bundles. This corresponds to the <strong>Pack Together By Label</strong> bundle mode.</li>
+</ul>
+<p>For more information on bundle modes, refer to <a class="xref" href="ContentPackingAndLoadingSchema.html">Advanced Group Settings</a>.</p>
+<p>Scene assets are always packed separately from other Addressable assets in the group. Therefore, a group containing a mix of scene and non-scene assets always produces at least two bundles when built: one for scenes and one for everything else.</p>
+<p>Unity treats assets in folders marked as Addressable, and compound assets like sprite sheets differently if you pack each Addressable separately:</p>
+<ul>
+<li>Unity packs all the assets in a folder marked as Addressable together in the same folder (except for assets in the folder that are individually marked as Addressable themselves).</li>
+<li>Sprites in an Addressable Sprite Atlas are included in the same bundle.</li>
+</ul>
+<p>For more information, refer to <a class="xref" href="ContentPackingAndLoadingSchema.html">Content Packing &amp; Loading settings</a>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Keeping many assets in the same group increases the chance of version control conflicts when many people work on the same project.</p>
+</div>
+<h2 id="assetbundle-packing-strategy">AssetBundle packing strategy</h2>
+<p>The choice whether to pack your content into a few large bundles or into many smaller bundles both have disadvantages as follows:</p>
+<h3 id="disadvantages-of-lots-of-small-assetbundles">Disadvantages of lots of small AssetBundles</h3>
+<ul>
+<li>Each bundle has <a class="xref" href="memory-assets.html">memory overhead</a>. Hundreds of bundles loaded in memory at once, can use a noticeable amount of memory.</li>
+<li>There are concurrency limits for downloading bundles. If you have thousands of bundles you need all at once, they can't all be downloaded at the same time. Some are downloaded, and as they finish, more will trigger. In practice this is a fairly minor concern, so minor that you'll often be gated by the total size of your download, rather than how many bundles it's broken into.</li>
+<li>Bundle information can bloat the catalog. To be able to download or load catalogs, Unity stores string-based information about your bundles. Thousands of bundles of data can increase the size of the catalog.</li>
+<li>Greater likelihood of duplicated assets. For example, if you have two materials marked as Addressable and each depend on the same texture. If they're in the same bundle, then the texture is pulled in once, and referenced by both. If they're in separate bundles, and the texture isn't Addressable, then it's duplicated. You then either need to mark the texture as Addressable, accept the duplication, or put the materials in the same bundle. For more information, refer to <a class="xref" href="AssetDependencies.html">Asset and AssetBundle dependencies</a>.</li>
+</ul>
+<h3 id="disadvantages-of-several-large-assetbundles">Disadvantages of several large AssetBundles</h3>
+<ul>
+<li><code>UnityWebRequest</code>, which Unity uses to download assets doesn't resume failed downloads. If a large AssetBundle is downloading and your user loses connection, the download is started over once they regain connection.</li>
+<li>Items can be loaded individually from AssetBundles, but can't be unloaded individually. For example, if you have 10 materials in a bundle, load all 10, then tell Addressables to release 9 of them, all 10 will likely be in memory. For more information, refer to <a class="xref" href="memory-assets.html">Memory management</a>.</li>
+</ul>
+<h2 id="group-optimization-for-large-projects">Group optimization for large projects</h2>
+<p>As your project grows larger, be aware of the following aspects of your assets and bundles:</p>
+<ul>
+<li><strong>Total bundle size</strong>: Historically Unity hasn't supported files larger than 4 GB. Later versions of Unity support larger files, but there can still be issues. Aim to keep the content of a given AssetBundle under this limit for best compatibility across all platforms.</li>
+<li><strong>Bundle layout at scale</strong>: The memory and performance trade-offs between the number of AssetBundles produced by your content build and the size of those bundles can change as your project grows larger.</li>
+<li><strong>Bundle dependencies</strong>: When an Addressable asset is loaded, all its AssetBundle dependencies are loaded. Be aware of any references between assets when creating Addressable groups. For more information, refer to <a class="xref" href="AssetDependencies.html">Asset and AssetBundle dependencies</a>.</li>
+<li><strong>Subassets affecting UI performance</strong>: If you have a lot of assets, and those assets have many subassets, disable subasset display. This option only affects how the data is displayed in the Groups window, and doesn't affect what you can and can't load at runtime. To disable this option, go to <strong>Window</strong> &gt; <strong>Asset Management</strong> &gt; <strong>Addressables</strong> &gt; <strong>Groups</strong>. In the <strong>Tools</strong> dropdown menu, select <strong>Groups View</strong> &gt; <strong>Show Sprite and Subobject Addresses</strong>. Disabling this will make the UI more responsive.</li>
+<li><strong>Group hierarchy display</strong>: Another UI-only option to help with scale is <a href="GroupsWindow.html#tools"><strong>Group Hierarchy with Dashes</strong></a>. This is available within the Inspector of the top level settings. With this enabled, groups that contain dashes <code>-</code> in their names display as if the dashes represented folder hierarchy. This doesn't affect the actual group name, or the way things are built. For example, two groups called <code>characters-animals-cats</code> and <code>characters-animals-dogs</code> display inside a subfolder folder of <code>characters</code> called <code>animals</code>. Inside that folder are two groups, called <code>characters-animals-cats</code> and <code>characters-animals-dogs</code>. This doesn't affect UI responsiveness, but makes it easier to browse a large collection of groups.</li>
+</ul>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="AssetDependencies.html">Addressable asset dependencies</a></li>
+<li><a href="memory-assets.html">Managing asset memory</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/PackingGroupsAsBundles.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

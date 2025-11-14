@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Content update build settings reference | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Content update build settings reference | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/content-update-build-settings.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="content-update-build-settings-reference">Content update build settings reference</h1>
+
+<p>There are several settings that affect how Unity performs content update builds.</p>
+<p>To publish content updates, your application must already use a remote catalog and host its remote content on an accessible server. Refer to <a href="RemoteContentDistribution.html">Distribute remote content</a> for information about setting up content hosting and distribution.</p>
+<h2 id="update-a-previous-build-setting">Update a Previous Build setting</h2>
+<p>The <a href="AddressableAssetSettings.html#update-a-previous-build">Addressable Asset Settings</a> contains a section for updating a previous build.</p>
+<p><img src="images/update-a-previous-build.png" alt="The Update a Previous Build section of the Addressable Asset Settings Inspector window."><em>The Update a Previous Build section of the Addressable Asset Settings Inspector window.</em></p>
+<p>The <strong>Content State Build Path</strong> can be a remote location, if you want to have a shared previous state file on a server. The system handles remote locations for the previous state file differently:</p>
+<ul>
+<li>New content builds place the previous state file to the <code>ContentUpdateScript.PreviousContentStateFileCachePath</code>, which is <code>Library/com.unity.addressables/AddressablesBinFileDownload/</code> by default.</li>
+<li>Update a Previous Build downloads the remote previous state file to <code>ContentUpdateScript.PreviousContentStateFileCachePath</code> and then reads the file like normal. If the file doesn't exist at the remote location, but one is already in the cache path, the system loads the local file.</li>
+</ul>
+<h2 id="group-update-restriction-settings">Group Update Restriction settings</h2>
+<p>For each group in your project, the <a href="ContentPackingAndLoadingSchema.html#content-update-restriction"><strong>Update Restriction</strong></a> schema determines how Unity handles a group and its assets in a content update as follows. When you enable <strong>Prevent Updates</strong>, Unity treats assets in that group as static content that you expect to update infrequently, if at all. All local content should use this setting.</p>
+<p>Choose the setting based on the content type in a group and how frequently you expect to update that content between full player builds of your application.</p>
+<p>You can change content in a group no matter which setting you choose. The difference is how the <a href="builds-update-build.html#check-for-content-update-restrictions"><strong>Check for Content Update Restrictions</strong></a> and <a href="builds-update-build.html"><strong>Update Previous Build</strong></a> tools treat the assets in the group and how the installed applications access the updated content.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>Don't change the <strong>Update Restriction</strong> setting of a group unless you're performing a full build. If you change your group settings before a content update, Addressables can't generate the correct changes needed for the update build.</p>
+</div>
+<h3 id="enable-prevent-updates">Enable Prevent Updates</h3>
+<p>When you enable <strong>Prevent Updates</strong>, the <strong>Check for Content Update Restrictions</strong> tool moves any changed assets to a new group, which is set to build and load from your remote paths. This is the same check that can be automatically integrated when updating a previous build. The content update sets up the remote catalog so that the changed assets are accessed from the new AssetBundles, but the unchanged assets are still accessed from the original AssetBundles.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Although the update build produces versions of the original AssetBundles without the changed assets, installed applications don't download these AssetBundles unless the locally cached version is deleted.</p>
+</div>
+<p>Organize content that you don't expect to update often in groups set to groups with <strong>Prevent Updates.</strong> enabled. You can safely set up these groups to produce fewer, larger AssetBundles because your users usually don't need to download these AssetBundles more than once.</p>
+<p>Set any groups that you intend to load from the local load path, or any groups that produce large, remote AssetBundles to <strong>Prevent Updates</strong>. This means that your users only need to download the changed assets if you end up changing assets in these groups.</p>
+<h3 id="disable-prevent-updates">Disable Prevent Updates</h3>
+<p>When a group doesn't have <strong>Prevent Updates</strong>, then a content update rebuilds the entire AssetBundle if any assets inside the group have changed. The <strong>Update a Previous Build</strong> script sets the catalog up so that installed applications load all assets in the group from the new bundles.</p>
+<p>Organize content you expect to change often into groups with <strong>Prevent Updates</strong> disabled. Because all the assets in these groups are republished when any single asset changes, you should set up these groups to produce smaller AssetBundles containing fewer assets.</p>
+<h2 id="unique-bundle-ids-setting">Unique Bundle IDs setting</h2>
+<p>If you want to update content on the fly rather than at application startup, enable the <a href="AddressableAssetSettings.html"><strong>Unique Bundle IDs</strong></a> setting. Enabling this option can make it easier to load updated AssetBundles in the middle of an application session, but typically makes builds slower and updates larger.</p>
+<p>Enabling the <strong>Unique Bundle IDs</strong> option allows you to load a changed version of an AssetBundle while the original AssetBndle is still in memory. Building AssetBundles with unique internal IDs makes it easier to update content at runtime without running into AssetBundle ID conflicts.</p>
+<p>However, when enabled, any AssetBundles containing assets that reference a changed asset must also be rebuilt. More AssetBundles must be updated for a content update and all builds are slower.</p>
+<p>You typically only need to enable <strong>Unique Bundle IDs</strong> when you update content catalogs after the Addressable system has already initialized and your application starts loading assets.</p>
+<p>You can avoid AssetBundle loading conflicts and the need to enable unique IDs using one of the following methods:</p>
+<ul>
+<li>Update the content catalog as part of Addressables initialization. By default, Addressables checks for a new catalog at initialization as long as you don't enable the <a href="AddressableAssetSettings.html">Only update catalogs manually</a> option. Choosing this method means updating your application content in mid-session.</li>
+<li>Unload all remote AssetBundles before updating the content catalog. Unloading all remote AssetBundles and assets avoids AssetBundle name conflicts, but might interrupt your user's session while they wait for the new content to load.</li>
+</ul>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="RemoteContentDistribution.html">Distribute remote content</a></li>
+<li><a href="AddressableAssetSettings.html">Addressables Asset Settings reference</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/content-update-build-settings.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

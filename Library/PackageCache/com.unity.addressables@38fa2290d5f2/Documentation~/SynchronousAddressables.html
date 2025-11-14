@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title> | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content=" | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/SynchronousAddressables.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="synchronous-addressables">
+
+<h2 id="synchronous-loading">Synchronous loading</h2>
+<p>You can wait for an operation to finish without yielding, waiting for an event, or using <code>async await</code> by calling an operation's <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle.WaitForCompletion*"><code>WaitForCompletion</code></a> method. This method blocks the current program execution thread while it waits for the operation to finish before continuing in the current scope.</p>
+<p>Avoid calling <code>WaitForCompletion</code> on operations that can take a significant amount of time, such as those that must download data. Calling <code>WaitForCompletion</code> can cause frame hitches and interrupt UI responsiveness.</p>
+<p>The following example loads a prefab asset by address, waits for the operation to complete, and then instantiates the prefab:</p>
+<pre><code class="lang-cs" name="sample">
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+
+internal class LoadSynchronously : MonoBehaviour
+{
+    public string address;
+    AsyncOperationHandle&lt;GameObject&gt; opHandle;
+
+    void Start()
+    {
+        opHandle = Addressables.LoadAssetAsync&lt;GameObject&gt;(address);
+        opHandle.WaitForCompletion(); // Returns when operation is complete
+
+        if (opHandle.Status == AsyncOperationStatus.Succeeded)
+        {
+            Instantiate(opHandle.Result, transform);
+        }
+        else
+        {
+            opHandle.Release();
+        }
+    }
+
+    void OnDestroy()
+    {
+        opHandle.Release();
+    }
+}
+
+</code></pre>
+<p>The result of <code>WaitForCompletion</code> is the <code>Result</code> of the asynchronous operation it's called on. If the operation fails, this returns <code>default(TObject)</code>.</p>
+<p>You can get a <code>default(TObject)</code> for a result when the operation doesn't fail. Asynchronous operations that auto release their <code>AsyncOperationHandle</code> instances on completion are such cases. <code>Addressables.InitializeAsync</code> and any API with a <code>autoReleaseHandle</code> parameter set to true return <code>default(TObject)</code> even if the operations succeeded.</p>
+<h2 id="performance-considerations">Performance considerations</h2>
+<p>Calling <code>WaitForCompletion</code> might have performance implications on your runtime when compared to <code>Resources.Load</code> or <code>Instantiate</code> calls directly. If the AssetBundle is local or has been downloaded before and cached, these performance hits are small.</p>
+<p>All active asset load operations are completed when <code>WaitForCompletion</code> is called on any asset load operation, because of how Unity handles asynchronous operations. To avoid unexpected stalls, use <code>WaitForCompletion</code> when you known the current operation count, and the you want all active operations to complete synchronously.</p>
+<p>Don't call <code>WaitForCompletion</code> on an operation that's going to fetch and download a remote <code>AssetBundle</code>.</p>
+<h2 id="deadlocks-caused-by-scene-limitations">Deadlocks caused by scene limitations</h2>
+<p>Unity can't complete scene loading synchronously. Calling <code>WaitForCompletion</code> on an operation returned from <a href="xref:UnityEngine.AddressableAssets.Addressables.LoadSceneAsync*"><code>Addressables.LoadSceneAsync</code></a> doesn't completely load the scene, even if <code>activateOnLoad </code>is set to <code>true</code>. It waits for dependencies and assets to complete but the scene activation must be done asynchronously.</p>
+<p>This can be done using the <code>sceneHandle</code>, or by the <a href="xref:UnityEngine.AsyncOperation"><code>AsyncOperation</code></a> from <code>ActivateAsync</code> on the <code>SceneInstance</code>:</p>
+<pre><code class="lang-c#">IEnumerator LoadScene(string myScene)
+{
+    var sceneHandle = Addressables.LoadSceneAsync(myScene, LoadSceneMode.Additive);
+    SceneInstance sceneInstance = sceneHandle.WaitForCompletion();
+    yield return sceneInstance.ActivateAsync();
+
+    //Do work... the scene is now complete and integrated
+}
+</code></pre>
+<p>Unity can't unload a scene synchronously. Calling <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle.WaitForCompletion"><code>WaitForCompletion</code></a> on a scene unload doesn't unload the scene or any assets, and a warning is logged to the Console.</p>
+<p>Because of limitations with scene integration on the main thread through the <code>SceneManager</code> API, you can lock the Unity Editor or Player when calling <code>WaitForCompletion</code> to load scenes. This issue happens when loading two scenes in succession, with the second scene load request having <code>WaitForCompletion</code> called from its <code>AsyncOperationHandle</code>.</p>
+<p>Scene loading takes extra frames to fully integrate on the main thread, and <code>WaitForCompletion</code> locks the main thread, so you might have a situation where <code>SceneManager</code> informs Unity that the first scene is fully loaded, even though it hasn't finished all operations. At this point, the scene is fully loaded, but the <code>SceneManager</code> attempts to call <code>UnloadUnusedAssets</code>, on the main thread, if the scene was loaded in <code>Single</code> mode. Then, the second scene load request locks the main thread with <code>WaitForCompletion</code>, but can't begin loading because <code>SceneManager</code> requires the <code>UnloadUnusedAssets</code> to complete before the next scene can begin loading.</p>
+<p>To avoid this deadlock, either load successive scenes asynchronously, or add a delay between scene load requests.</p>
+<p>Another issue is calling <code>WaitForCompletion</code> on an asynchronous operation during <code>Awake</code> when a scene isn't fully loaded. This can block the main thread and prevent other asynchronous operations (such as unloading an AssetBundle) in progress from completing. To avoid this deadlock, call <code>WaitForCompletion</code> during <code>Start</code> instead.</p>
+<p>Note that Addressables has a callback registered to <a href="xref:UnityEngine.SceneManagement.SceneManager.sceneUnloaded(UnityEngine.Events.UnityAction%601%3CUnityEngine.SceneManagement.Scene%3E)"><code>SceneManager.sceneUnloaded</code></a> that releases any unloaded Addressable scenes. This can trigger scene AssetBundle unloading if no other scenes from the AssetBundle are loaded.</p>
+<h2 id="custom-operations">Custom operations</h2>
+<p>Addressables supports custom <code>AsyncOperation</code> instances which support unique implementations of <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationBase%601.InvokeWaitForCompletion"><code>InvokeWaitForCompletion</code></a>. This method can be overridden to implement custom synchronous operations.</p>
+<p>Custom operations work with <code>ChainOperation</code> and <code>GroupsOperation</code> instances. If you want to complete chained operations synchronously, make your custom operations implement <code>InvokeWaitForCompletion</code> and create a <code>ChainOperation</code> using your custom operations. Similarly, <code>GroupOperations</code> are well suited to make a collection of <code>AsyncOperations</code>, including custom operations, complete together.</p>
+<p>Both <a href="xref:UnityEngine.ResourceManagement.ResourceManager.CreateChainOperation*"><code>ChainOperation</code></a> and <a href="xref:UnityEngine.ResourceManagement.ResourceManager.CreateGroupOperation*"><code>GroupOperation</code></a> have their own implementations of <code>InvokeWaitForCompletion</code> that relies on the <code>InvokeWaitForCompletion</code> implementations of the operations they depend on.</p>
+<h2 id="webgl-support">WebGL support</h2>
+<p>WebGL doesn't support <code>WaitForCompletion</code>. On WebGL, a web request loads all files. On other platforms, a web request gets started on a background thread and the main thread spins in a tight loop while waiting for the web request to finish. This is how Addressables does it for <code>WaitForCompletion</code> when a web request is used.</p>
+<p>Because WebGL is single-threaded, the tight loop blocks the web request and the operation is never allowed to finish. If a web request finishes the same frame it was created, then <code>WaitForCompletion</code> wouldn't have any issue. However, this isn't guaranteed.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle.WaitForCompletion*"><code>WaitForCompletion</code> API reference</a></li>
+<li><a href="AddressableAssetsAsyncOperationHandle.html">Wait for asynchronous loads to complete</a></li>
+<li><a href="load-monitor-wait-operations.html">Monitor wait operations</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/SynchronousAddressables.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

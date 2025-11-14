@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Load AssetBundles | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Load AssetBundles | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/LoadingAssetBundles.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="addressables-loading-bundles">
+<h1 id="load-assetbundles">Load AssetBundles</h1>
+
+<p>The Addressables system packs assets into AssetBundles and loads these AssetBundles as you load individual assets. You can control how AssetBundles load with the <a href="xref:UnityEditor.AddressableAssets.Settings.GroupSchemas.BundledAssetGroupSchema"><code>BundledAssetGroupSchema</code></a> class. You can set these options through the scripting API or under the <a href="ContentPackingAndLoadingSchema.html#advanced-options">Advanced Options</a> in the Inspector of the Addressables Asset Group Inspector.</p>
+<h2 id="unitywebrequestforlocalbundles">UnityWebRequestForLocalBundles</h2>
+<p>Addressables can load AssetBundles from the following engine APIs:</p>
+<ul>
+<li><a href="xref:UnityEngine.Networking.UnityWebRequest.GetAssetBundle(System.String,System.UInt32)"><code>UnityWebRequestAssetBundle.GetAssetBundle</code></a></li>
+<li><a href="xref:UnityEngine.AssetBundle.LoadFromFileAsync(System.String,System.UInt32,System.UInt64)"><code>AssetBundle.LoadFromFileAsync</code></a>.</li>
+</ul>
+<p>The default behavior is to use <code>AssetBundle.LoadFromFileAsync</code> when the AssetBundle is in local storage and use <code>UnityWebRequestAssetBundle</code> when the AssetBundle path is a URL.</p>
+<p>You can override this behavior to use <code>UnityWebRequestAssetBundle</code> for local AssetBundles by setting <a href="xref:UnityEditor.AddressableAssets.Settings.GroupSchemas.BundledAssetGroupSchema.UseUnityWebRequestForLocalBundles"><code>UseUnityWebRequestForLocalBundles</code></a> to true, or enabling the <a href="AddressableAssetSettings.html#downloads"><strong>Use UnityWebRequest for Local Asset Bundles</strong></a> property.</p>
+<p>A few of these situations include:</p>
+<ul>
+<li>You're shipping local AssetBundles that use LZMA compression because you want your shipped game package to be as small as possible. In this case, you can use <code>UnityWebRequestAssetBundle</code> to recompress those AssetBundles LZ4 into the local disk cache.</li>
+<li>You're shipping an Android game and the APK contains AssetBundles that are compressed with the default APK compression.</li>
+<li>You want the entire local AssetBundle to be loaded into memory to avoid disk seeks. If you use <code>UnityWebRequestAssetBundle</code> and have caching disabled, the entire AssetBundle file is loaded into the memory cache. This increases runtime memory usage, but might improve loading performance because it prevents disk seeking after the initial AssetBundle load.</li>
+</ul>
+<p>The first two situations result in the AssetBundle existing on the player device twice (original and cached representations). This means the initial loads (decompressing and copying to cache) are slower than subsequent loads (loading from cache)</p>
+<h2 id="handle-download-errors">Handle download errors</h2>
+<p>When a download fails, the <code>RemoteProviderException</code> contains errors that can be used to determine how to handle the failure.
+The <code>RemoteProviderException</code> is either the <code>AsyncOperationHandle.OperationException</code> or an inner exception. For example:</p>
+<pre><code class="lang-cs" name="sample">
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.Exceptions;
+
+internal class HandleDownloadError : MonoBehaviour
+{
+    private AsyncOperationHandle m_Handle;
+
+    void LoadAsset()
+    {
+        m_Handle = Addressables.LoadAssetAsync&lt;GameObject&gt;(&quot;addressKey&quot;);
+        m_Handle.Completed += handle =&gt;
+        {
+            string dlError = GetDownloadError(m_Handle);
+            if (!string.IsNullOrEmpty(dlError))
+            {
+                // handle what error
+            }
+        };
+    }
+
+    string GetDownloadError(AsyncOperationHandle fromHandle)
+    {
+        if (fromHandle.Status != AsyncOperationStatus.Failed)
+            return null;
+
+        RemoteProviderException remoteException;
+        System.Exception e = fromHandle.OperationException;
+        while (e != null)
+        {
+            remoteException = e as RemoteProviderException;
+            if (remoteException != null)
+                return remoteException.WebRequestResult.Error;
+            e = e.InnerException;
+        }
+
+        return null;
+    }
+}
+
+</code></pre>
+<p>Possible error strings:</p>
+<ul>
+<li>Request aborted</li>
+<li>Unable to write data</li>
+<li>Malformed URL</li>
+<li>Out of memory</li>
+<li>No Internet Connection</li>
+<li>Encountered invalid redirect (missing Location header?)</li>
+<li>Cannot modify request at this time</li>
+<li>Unsupported Protocol</li>
+<li>Destination host has an erroneous SSL certificate</li>
+<li>Unable to load SSL Cipher for verification</li>
+<li>SSL CA certificate error</li>
+<li>Unrecognized content-encoding</li>
+<li>Request already transmitted</li>
+<li>Invalid HTTP Method</li>
+<li>Header name contains invalid characters</li>
+<li>Header value contains invalid characters</li>
+<li>Cannot override system-specified headers</li>
+<li>Backend Initialization Error</li>
+<li>Cannot resolve proxy</li>
+<li>Cannot resolve destination host</li>
+<li>Cannot connect to destination host</li>
+<li>Access denied</li>
+<li>Generic/unknown HTTP error</li>
+<li>Unable to read data</li>
+<li>Request timeout</li>
+<li>Error during HTTP POST transmission</li>
+<li>Unable to complete SSL connection</li>
+<li>Redirect limit exceeded</li>
+<li>Received no data in response</li>
+<li>Destination host does not support SSL</li>
+<li>Failed to transmit data</li>
+<li>Failed to receive data</li>
+<li>Login failed</li>
+<li>SSL shutdown failed</li>
+<li>Redirect limit is invalid</li>
+<li>Not implemented</li>
+<li>Data Processing Error, see Download Handler error</li>
+<li>Unknown Error</li>
+</ul>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="PackingGroupsAsBundles.html">Define how groups are packed into AssetBundles</a></li>
+<li><a href="memory-assetbundles.html">Addressable AssetBundle memory considerations</a></li>
+<li><a href="load-assets.html">Load assets</a></li>
+<li><a href="load-assets-location.html">Load assets by location</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/LoadingAssetBundles.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

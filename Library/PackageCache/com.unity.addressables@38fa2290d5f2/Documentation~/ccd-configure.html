@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Configure Cloud Content Delivery | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Configure Cloud Content Delivery | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ccd-configure.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="configure-cloud-content-delivery">Configure Cloud Content Delivery</h1>
+
+<p>You can use Addressables with <a href="https://docs.unity.com/ccd/UnityCCD.html">Unity Cloud Content Delivery</a> (CCD) to distribute Addressables content.</p>
+<p>To set up Addressable assets to work with CCD you must configure a profile to include the CCD URL.</p>
+<h2 id="configure-a-profile-with-a-cloud-content-delivery-url">Configure a profile with a Cloud Content Delivery URL</h2>
+<p>Use the <code>BuildPath</code> and <code>LoadPath</code> variables in a <a href="profiles-create.html">profile</a> to specify where to create build artifacts and where to load assets at runtime. Configure the remote paths to work with CCD and leave the local paths with their default values, unless you have a specific reason to change them.</p>
+<p>If necessary, create a new profile for publishing builds to CCD in the <a href="addressables-profiles-window.html">Profiles window</a>. Configure the remote path variables in this profile to access the content at the correct URL.</p>
+<p>You can set the remote <code>BuildPath</code> to a convenient value. If you have multiple profiles, use a unique build path for each of them so that the build artifacts don't get mixed together, especially if you're hosting them from a different remote URL.</p>
+<p>Set the remote <code>LoadPath</code> to one of the following paths:</p>
+<ul>
+<li>If you publish content using a badge:
+<pre><code>  https://[ProjectID].client-api.unity3dusercontent.com/client_api/v1/environments/[EnvironmentName]/buckets/[BucketID]/release_by_badge/[BadgeName]/entry_by_path/content/?path=
+
+</code></pre>
+</li>
+<li>If you publish using a release:
+<pre><code>  https://[ProjectID].client-api.unity3dusercontent.com/client_api/v1/environments/[EnvironmentName]/buckets/[BucketID]/releases/[ReleaseID]/entry_by_path/content/?path=
+
+</code></pre>
+</li>
+</ul>
+<p>Where <code>[ProjectID]</code> is the CCD project's ID string, <code>[EnvironmentName]</code> is the name of the Environment of the project, <code>[BucketID]</code> is the Bucket ID string for a CCD bucket within the project, <code>[BadgeName]</code> is the name of the specific CCD badge, and <code>[ReleaseID]</code> is the ID of a specific release within a bucket.</p>
+<p>For information about how to create and edit profiles, refer to <a href="profiles-introduction.html">Organize build information into profiles</a>.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>You must perform a full rebuild of the Addressables content in your project when you change the remote load path.</p>
+</div>
+<h2 id="use-the-cloud-content-delivery-bundle-location-option">Use the Cloud Content Delivery Bundle Location option</h2>
+<p>If your project uses the CCD service, you can set the profile's remote path pair to publish content to a designated bucket and badge.</p>
+<p>This feature requires the <a href="https://services.docs.unity.com/content-delivery-client/index.html">Content Delivery Management API package</a>.</p>
+<p>To set up a profile variable to use the CCD AssetBundle location:</p>
+<ol>
+<li>Open the Profile window (menu: <strong>Window &gt; Asset Management &gt; Addressables &gt; Profiles</strong>).</li>
+<li>Select the profile to change.</li>
+<li>Change the <strong>Remote</strong> variable to use the <strong>Cloud Content Delivery</strong> <strong>Bundle Location</strong>.</li>
+<li>Choose <code>Automatic (set using CcdManager)</code> or <code>Specify the Environment, Bucket, and Badge</code> option. The <code>CcdManager</code> is a static class that is used to notify Addressables which Environment, Bucket, and Badge to load from at runtime.</li>
+<li>Choose the Bucket to use. If no buckets are present, a window opens where you can create a new one.</li>
+<li>Choose the Badge.</li>
+</ol>
+<p>Make this the active profile when building content for delivery with CCD.</p>
+<h2 id="configure-groups-with-ccd-url">Configure groups with CCD URL</h2>
+<p>Configure groups to use <strong>Remote</strong> as their <strong>Build &amp; Load Path</strong> in the Inspector window.</p>
+<p>Refer to <a href="groups-intro.html">Organize assets into groups</a> for information about how to modify groups.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="ccd-publish.html">Publish content with Cloud Content Delivery</a></li>
+<li><a href="https://services.docs.unity.com/content-delivery-client/index.html">Content Delivery Management API package</a></li>
+<li><a href="https://docs.unity.com/ugs/manual/ccd/manual/UnityCCD">CCD documentation</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ccd-configure.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

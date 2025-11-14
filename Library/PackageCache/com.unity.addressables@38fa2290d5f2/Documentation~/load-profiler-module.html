@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Use the Addressables Profiler module | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Use the Addressables Profiler module | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-profiler-module.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="use-the-addressables-profiler-module">Use the Addressables Profiler module</h1>
+
+<p>You can use the Addressables <a href="xref:um-profiler">Profiler</a> module to inspect what content Addressables loaded. To open the Profiler, go to <strong>Window</strong> &gt; <strong>Analysis</strong> &gt; <strong>Profiler</strong>.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li><a href="BuildLayoutReport.html">Build Reports</a> must be enabled and the runtime being profiled requires a build report. To enable build reports, go to the Editor preferences, select <a href="addressables-preferences.html">Addressables preferences</a>, then enable <strong>Debug Build Layout</strong>.</li>
+<li>Collecting information about the running content requires build time data collection information for the debug build layout. These files are stored in the folder <code>&lt;Project Directory&gt;/Library/com.unity.addressables/buildReports</code>. Each build you make creates a new build report file in this directory. When running the Profiler, any incoming Profiler data from the Profiler target is synced and looks for the build report file for that runtime in the <code>buildReports</code> folder. If the build report doesn't exist, such as if the project was built using a different machine, then the Profiler doesn't display the information for that data. Select <strong>Find in file system</strong> to open a file select window, which can you can use to locate a build report file on disk elsewhere.</li>
+<li>The Profiler module doesn't support the Play Mode Scripts <strong>Use Asset Database (Fastest)</strong>. The content must be built and using <strong>Use Existing Build</strong> based Play Mode Scripts.</li>
+</ul>
+<h2 id="open-the-profiler-module">Open the Profiler module</h2>
+<p>To open the Addressables Profiler module:</p>
+<ol>
+<li>Open the Profiler window (<strong>Window</strong> &gt; <strong>Analysis</strong> &gt; <strong>Profiler</strong>).</li>
+<li>In the top left of the Profiler window select the dropdown button labeled <strong>Profiler Modules</strong>.</li>
+<li>Enable the <strong>Addressable Assets</strong> module.</li>
+</ol>
+<h2 id="view-the-module">View the module</h2>
+<p>Use the module view can to track how many AssetBundles, assets, scenes, and catalogs are loaded at the frame in time.</p>
+<p>The following screenshot displays three assets and one scene, from one catalog, and six AssetBundles:</p>
+<p><img src="images/profiler-module.png" alt="The Profiler module window displaying the three assets, one Scene, one catalog, and six AssetBundles loaded in the current frame."></p>
+<p>When you select a frame, the detail pane fills with information for that frame and displays a tree view for the loaded content.</p>
+<p><img src="images/profiler-details-pane.png" alt="The Profiler details pane with a Prefab asset selected in the Tree view and its details visible in the Details Inspector."></p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="xref:um-profiler-profiling-applications">Connecting the Profiler to a data source</a></li>
+<li><a href="xref:um-profiler-window">Profiler window reference</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-profiler-module.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

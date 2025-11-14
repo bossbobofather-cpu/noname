@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Organize build information into profiles | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Organize build information into profiles | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/profiles-introduction.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="organize-build-information-into-profiles">Organize build information into profiles</h1>
+
+<p>A profile contains a set of variables that the Addressables build scripts uses. These variables define information such as where to save build artifacts and where to load data at runtime. You can add custom profile variables to use in your own build scripts.</p>
+<p>To manage the profiles in your project, use the <a href="addressables-profiles-window.html">Addressables Profiles window</a> (menu: <strong>Window &gt; Asset Management &gt; Addressables &gt; Profiles</strong>).</p>
+<p>You can set up different profiles for the different phases or tasks in your development process. For example, you might create a profile to use while developing your project, another to use for testing, and one to use for final publishing or release. It's best practice to set up profiles in advance and swap between them, rather than editing the values individually when you move to a different phase or perform a different task.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Using multiple profiles is helpful when you distribute content for your application remotely. If you distribute all content as part of your application install, then the single, default profile might be the only profile you need.</p>
+</div>
+<h2 id="profile-examples">Profile examples</h2>
+<p>Consider the following example, which demonstrates the local development phase of your content:</p>
+<p><img src="images/profiles-example-local.png" alt="Content with local and remote bundles stored locally for development."><br></p>
+<p>While in development, you have both your local and remote bundles using local paths:</p>
+<p><img src="images/profiles-example-local-paths.png" alt="The Addressable Profiles window displays paths set for local development."><br><em>The Addressable Profiles window displays paths set for local development.</em></p>
+<p>In this example, the local and remote paths are both local, which makes it unnecessary to set up a remote server just for local development.</p>
+<p>Once the content is ready for production, you can move the remote bundles to a server:</p>
+<p><img src="images/profiles-example-remote.png" alt="Content with the remote bundles moved to a server for production."><br><em>Content with the remote bundles moved to a server for production.</em></p>
+<p>In this case, if you use profiles, you can change the remote load path for <code>Production</code> to that server. Without having to change any asset groups, you can change all remote bundles to remote.</p>
+<p><img src="images/profiles-example-remote-paths.png" alt="The Addressable Profiles window displays paths set for hosting remote content."><br><em>The Addressable Profiles window displays paths set for hosting remote content.</em></p>
+<p>The Addressables system only copies data from <a href="xref:UnityEngine.AddressableAssets.Addressables.BuildPath"><code>Addressables.BuildPath</code></a> to the StreamingAssets folder during a Player build. It doesn't handle arbitrary paths specified through the <code>Local.BuildPath</code> or <code>Local.LoadPath</code> variables. If you build data to a different location or load data from a different location than the default, you must copy the data manually.</p>
+<p>Similarly, you must manually upload remote AssetBundles and associated catalog and hash files to your server so that they can be accessed at the URL defined by <code>Remote.LoadPath</code>.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="profiles-create.html">Create a profile</a></li>
+<li><a href="ProfileVariables.html">Add variables to a profile</a></li>
+<li><a href="profiles-build-load-paths.html">Set a build and load path</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/profiles-introduction.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

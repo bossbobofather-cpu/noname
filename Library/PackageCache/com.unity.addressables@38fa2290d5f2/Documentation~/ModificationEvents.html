@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Modification events | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Modification events | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ModificationEvents.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="addressables-modification-events">
+<h1 id="modification-events">Modification events</h1>
+
+<p>You can use modification events to signal to parts of the Addressables system when certain data is manipulated, such as when an <a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetGroup"><code>AddressableAssetGroup</code></a> or an <a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetEntry"><code>AddressableAssetEntry</code></a> is added or removed.</p>
+<p>Modification events are triggered as part of <code>SetDirty</code> calls inside of Addressables. <code>SetDirty</code> is used to indicate when an asset needs to be re-serialized by the <code>AssetDatabase</code>. As part of <code>SetDirty</code>, two modification event callbacks can trigger:</p>
+<ul>
+<li><code>public static event Action&lt;AddressableAssetSettings, ModificationEvent, object&gt; OnModificationGlobal</code></li>
+<li><code>public Action&lt;AddressableAssetSettings, ModificationEvent, object&gt; OnModification { get; set; }</code></li>
+</ul>
+<p>These callbacks are found on <a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetSettings"><code>AddressableAssetSettings</code></a> through a static, or instance, accessors respectively.</p>
+<h2 id="modification-event-example">Modification event example</h2>
+<pre><code class="lang-c#">AddressableAssetSettings.OnModificationGlobal += (settings, modificationEvent, data) =&gt;
+        {
+            if(modificationEvent == AddressableAssetSettings.ModificationEvent.EntryAdded)
+            {
+                //Do work
+            }
+        };
+
+        AddressableAssetSettingsDefaultObject.Settings.OnModification += (settings, modificationEvent, data) =&gt;
+        {
+            if (modificationEvent == AddressableAssetSettings.ModificationEvent.EntryAdded)
+            {
+                //Do work
+            }
+        };
+</code></pre>
+<p>Modification events pass in a generic <code>object</code> for the data associated with the event. The following table outlines a list of the modification events and the data types that are passed with them.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Modification event</strong></th>
+<th><strong>Data passed</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GroupAdded</td>
+<td><a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetGroup"><code>AddressableAssetGroup</code></a>, or list of groups that were added.</td>
+</tr>
+<tr>
+<td>GroupRemoved</td>
+<td><a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetGroup"><code>AddressableAssetGroup</code></a>, or list of groups that were removed.</td>
+</tr>
+<tr>
+<td>GroupRenamed</td>
+<td><a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetGroup"><code>AddressableAssetGroup</code></a>, or list of groups that were renamed.</td>
+</tr>
+<tr>
+<td>GroupSchemaAdded</td>
+<td><a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetGroup"><code>AddressableAssetGroup</code></a>, or list of groups that had schemas added to them.</td>
+</tr>
+<tr>
+<td>GroupSchemaRemoved</td>
+<td><a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetGroup"><code>AddressableAssetGroup</code></a>, or list of groups that had schemas removed from them.</td>
+</tr>
+<tr>
+<td>GroupSchemaModified</td>
+<td><a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetGroupSchema"><code>AddressableAssetGroupSchema</code></a> that was modified.</td>
+</tr>
+<tr>
+<td>GroupTemplateAdded</td>
+<td><code>ScriptableObject</code>, typically one that implements <a href="xref:UnityEditor.AddressableAssets.Settings.IGroupTemplate"><code>IGroupTemplate</code></a>, that was the added Group Template object.</td>
+</tr>
+<tr>
+<td>GroupTemplateRemoved</td>
+<td><code>ScriptableObject</code>, typically one that implements <a href="xref:UnityEditor.AddressableAssets.Settings.IGroupTemplate"><code>IGroupTemplate</code></a>, that was the removed Group Template object.</td>
+</tr>
+<tr>
+<td>GroupTemplateSchemaAdded</td>
+<td><a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetGroupTemplate"><code>AddressableAssetGroupTemplate</code></a> that had a schema added.</td>
+</tr>
+<tr>
+<td>GroupTemplateSchemaRemoved</td>
+<td><a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetGroupTemplate"><code>AddressableAssetGroupTemplate</code></a> that had a schema removed.</td>
+</tr>
+<tr>
+<td>EntryCreated</td>
+<td><a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetEntry"><code>AddressableAssetEntry</code></a> that was created.</td>
+</tr>
+<tr>
+<td>EntryAdded</td>
+<td><a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetEntry"><code>AddressableAssetEntry</code></a>, or list of entries that were added.</td>
+</tr>
+<tr>
+<td>EntryMoved</td>
+<td><a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetEntry"><code>AddressableAssetEntry</code></a>, or list of entries that were moved from one group to another.</td>
+</tr>
+<tr>
+<td>EntryRemoved</td>
+<td><a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetEntry"><code>AddressableAssetEntry</code></a>, or list of entries that were removed.</td>
+</tr>
+<tr>
+<td>LabelAdded</td>
+<td><code>string</code> label that was added.</td>
+</tr>
+<tr>
+<td>LabelRemoved</td>
+<td><code>string</code> label that was removed.</td>
+</tr>
+<tr>
+<td>ProfileAdded</td>
+<td><code>BuildProfile</code> that was added.</td>
+</tr>
+<tr>
+<td>ProfileRemoved</td>
+<td><code>string</code> of the profile ID that was removed.</td>
+</tr>
+<tr>
+<td>ProfileModified</td>
+<td><code>BuildProfile</code> that was modified, or <code>null</code> if a batch of <code>BuildProfile</code> objects were modified.</td>
+</tr>
+<tr>
+<td>ActiveProfileSet</td>
+<td>The data passed with this event if the <code>string</code> of the profile ID that is set as the active profile.</td>
+</tr>
+<tr>
+<td>EntryModified</td>
+<td><a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetEntry"><code>AddressableAssetEntry</code></a>, or list of entries that were modified.</td>
+</tr>
+<tr>
+<td>BuildSettingsChanged</td>
+<td><a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetBuildSettings"><code>AddressableAssetBuildSettings</code></a> object that was modified.</td>
+</tr>
+<tr>
+<td>ActiveBuildScriptChanged</td>
+<td><a href="xref:UnityEditor.AddressableAssets.Build.IDataBuilder"><code>IDataBuilder</code></a> build script that was set as the active builder.</td>
+</tr>
+<tr>
+<td>DataBuilderAdded</td>
+<td><code>ScriptableObject</code>, typically one that implements <a href="xref:UnityEditor.AddressableAssets.Build.IDataBuilder"><code>IDataBuilder</code></a>, that was added to the list of DataBuilders.</td>
+</tr>
+<tr>
+<td>DataBuilderRemoved</td>
+<td><code>ScriptableObject</code>, typically one that implements <a href="xref:UnityEditor.AddressableAssets.Build.IDataBuilder"><code>IDataBuilder</code></a>, that was removed from the list of DataBuilders.</td>
+</tr>
+<tr>
+<td>InitializationObjectAdded</td>
+<td><code>ScriptableObject</code>, typically one that implements <a href="xref:UnityEngine.ResourceManagement.Util.IObjectInitializationDataProvider"><code>IObjectInitializationDataProvider</code></a>, that was added to the list of InitializationObjects.</td>
+</tr>
+<tr>
+<td>InitializationObjectRemoved</td>
+<td><code>ScriptableObject</code>, typically one that implements <a href="xref:UnityEngine.ResourceManagement.Util.IObjectInitializationDataProvider"><code>IObjectInitializationDataProvider</code></a>, that was removed from the list of InitializationObjects.</td>
+</tr>
+<tr>
+<td>ActivePlayModeScriptChanged</td>
+<td><a href="xref:UnityEditor.AddressableAssets.Build.IDataBuilder"><code>IDataBuilder</code></a> that was set as the new active Play mode data builder.</td>
+</tr>
+<tr>
+<td>BatchModification</td>
+<td><code>null</code>.  This event is primarily used to indicate several modification events happening at the same time and the <a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetSettings"><code>AddressableAssetSettings</code></a> object needed to be marked dirty.</td>
+</tr>
+<tr>
+<td>GroupMoved</td>
+<td>Full list of <a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetGroup"><code>AddressableAssetGroups</code></a>.</td>
+</tr>
+<tr>
+<td>CertificateHandlerChanged</td>
+<td>New <code>System.Type</code> of the certificate handler to be used.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetGroup"><code>AddressableAssetGroup</code> API reference</a></li>
+<li><a href="xref:UnityEditor.AddressableAssets.Settings.AddressableAssetEntry"><code>AddressableAssetEntry</code> API reference</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/ModificationEvents.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

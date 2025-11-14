@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Load scenes | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Load scenes | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/LoadingScenes.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="addressables-loading-scenes">
+<h1 id="load-scenes">Load scenes</h1>
+
+<p>Use the <a href="xref:UnityEngine.AddressableAssets.Addressables.LoadSceneAsync*"><code>Addressables.LoadSceneAsync</code></a> method to load an Addressable scene asset by address or other addressable key object.</p>
+<p><code>Addressables.LoadSceneAsync</code> uses the <code>UnityEngine</code> <a href="xref:UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(System.String,UnityEngine.SceneManagement.LoadSceneMode)"><code>SceneManager.LoadSceneAsync</code></a> method internally. APIs that affect the behavior of <code>SceneManager.LoadSceneAsync</code> also affect <code>Addressables.LoadSceneAsync</code> in the same way, such as <a href="xref:UnityEngine.Application.backgroundLoadingPriority"><code>Application.backgroundLoadingPriority</code></a>.</p>
+<p>The remaining parameters of the <code>Addressables.LoadSceneAsync</code> method correspond to those used with the <code>SceneManager.LoadSceneAsync</code> method:</p>
+<ul>
+<li><code>loadMode</code>: Whether to add the loaded scene into the current scene, or to unload and replace the current scene.</li>
+<li><code>loadSceneParameters</code>: Includes <code>loadMode</code> and <code>localPhysicsMode</code>. This is used when loading the scene to specify whether to create a 2D or 3D physics scene.</li>
+<li><code>activateOnLoad</code>: Whether to activate the scene as soon as it finishes loading or to wait until you call the <code>SceneInstance</code> object's <a href="xref:UnityEngine.ResourceManagement.ResourceProviders.SceneInstance.ActivateAsync*"><code>ActivateAsync</code></a> method. Corresponds to the <a href="xref:UnityEngine.AsyncOperation.allowSceneActivation"><code>AsyncOperation.allowSceneActivation</code></a> option. Defaults to true.</li>
+<li><code>priority</code>: The priority of the <code>AsyncOperation</code> used to load the scene. Corresponds to the <a href="xref:UnityEngine.AsyncOperation.priority"><code>AsyncOperation.priority</code></a> option. Defaults to 100.</li>
+</ul>
+<div class="WARNING">
+<h5>Warning</h5>
+<p>Setting the <code>activateOnLoad</code> parameter to false blocks the <code>AsyncOperation</code> queue, including the loading of any other Addressable assets, until you activate the scene. To activate the scene, call the <a href="xref:UnityEngine.ResourceManagement.ResourceProviders.SceneInstance.ActivateAsync*"><code>ActivateAsync</code></a> method of the <a href="xref:UnityEngine.ResourceManagement.ResourceProviders.SceneInstance"><code>SceneInstance</code></a> returned by <a href="xref:UnityEngine.SceneManagement.SceneManager.LoadSceneAsync(System.String,UnityEngine.SceneManagement.LoadSceneMode)"><code>LoadSceneAsync</code></a>. Refer to <a href="xref:UnityEngine.AsyncOperation.allowSceneActivation"><code>AsyncOperation.allowSceneActivation</code></a> for additional information.</p>
+</div>
+<p>The following example loads a scene additively. The component that loads the scene stores the operation handle and uses it to unload and release the scene when the parent GameObject is destroyed.</p>
+<pre><code class="lang-cs" name="sample">
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceProviders;
+using UnityEngine.SceneManagement;
+
+internal class LoadSceneByAddress : MonoBehaviour
+{
+    public string key; // address string
+    private AsyncOperationHandle&lt;SceneInstance&gt; loadHandle;
+
+    void Start()
+    {
+        loadHandle = Addressables.LoadSceneAsync(key, LoadSceneMode.Additive);
+    }
+
+    void OnDestroy()
+    {
+        Addressables.UnloadSceneAsync(loadHandle);
+    }
+}
+
+</code></pre>
+<p>If you load a scene with <a href="xref:UnityEngine.SceneManagement.LoadSceneMode.Single"><code>LoadSceneMode.Single</code></a>, the Unity runtime unloads the current scene and calls <a href="xref:UnityEngine.Resources.UnloadUnusedAssets"><code>Resources.UnloadUnusedAssets</code></a>. Refer to <a class="xref" href="UnloadingAddressableAssets.html">Releasing Addressable assets</a> for more information.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>In the Editor, you can always load scenes in the current project, even when they're packaged in a remote bundle that's not available and you set the Play Mode Script to <strong>Use Existing Build</strong>. The Editor loads the scene using the Asset Database.</p>
+</div>
+<h2 id="use-addressables-in-a-scene">Use Addressables in a scene</h2>
+<p>If a scene is Addressable, you can use Addressable assets in the scene just like any other assets. You can place prefabs and other assets in the scene, and assign assets to component properties. If you use an asset that isn't Addressable, that asset becomes an implicit dependency of the scene and the build system packs it in the same AssetBundle as the scene when you make a content build. Addressable assets are packed into their own AssetBundles according to the group they're in.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Implicit dependencies used in more than one place can be duplicated in multiple AssetBundles and in the built-in scene data. Use the <a class="xref" href="BuildLayoutReport.html">Build Layout Report</a> to identify and resolve unwanted asset duplication resulting from your project content organization.</p>
+</div>
+<p>If a scene isn't Addressable, then any Addressable assets you add directly to the scene hierarchy become implicit dependencies and Unity includes copies of those assets in the built-in scene data even if they also exist in an Addressable group. The same is true for any assets, such as materials assigned to a component on a GameObject in the scene.</p>
+<p>In custom component classes, you can use <a href="xref:UnityEngine.AddressableAssets.AssetReference"><code>AssetReference</code></a> fields to allow the assignment of Addressable assets in non-Addressable scenes. Otherwise, you can use <a class="xref" href="AddressableAssetsOverview.html">addresses</a> and <a href="Labels.html">labels</a> to load assets at runtime from a script. You must load an <code>AssetReference</code> in code regardless of if the scene is Addressable.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="xref:UnityEngine.AddressableAssets.Addressables.LoadSceneAsync*"><code>Addressables.LoadSceneAsync</code> API reference</a></li>
+<li><a href="optimization-tools.html">Optimization tools</a></li>
+<li><a href="load-assets.html">Load assets</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/LoadingScenes.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

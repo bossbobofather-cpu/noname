@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Load assets | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Load assets | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-assets.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="load-assets">Load assets</h1>
+
+<p>You load and use an Addressable asset in the following ways:</p>
+<ul>
+<li><a href="#use-assetreferences">Load an asset by an AssetReference that references the asset</a></li>
+<li><a href="#load-a-single-asset">Load a single asset</a></li>
+<li><a href="#load-multiple-assets">Load multiple assets</a></li>
+</ul>
+<p>Loading Addressable assets uses asynchronous operations. Refer to <a class="xref" href="AddressableAssetsAsyncOperationHandle.html">Operations</a> for information about the different ways to approach asynchronous programming in Unity scripts.</p>
+<h2 id="use-assetreferences">Use AssetReferences</h2>
+<p>To use an <code>AssetReference</code>, add an <code>AssetReference</code> field to a <code>MonoBehaviour</code> or <code>ScriptableObject</code>. After you create an object of that type, you can assign an asset to the field in your object's Inspector window.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you assign a non-Addressable asset to an AssetReference field, Unity automatically makes that asset Addressable and adds it to your default Addressables group. AssetReferences also let you use Addressable assets in a Scene that isn't itself Addressable.</p>
+</div>
+<p>Unity doesn't load or release the referenced asset automatically. You must load and release the asset using the <code>Addressables</code> API:</p>
+<pre><code class="lang-cs" name="sample">
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+
+internal class LoadWithReference : MonoBehaviour
+{
+    // Assign in Editor
+    public AssetReference reference;
+
+    // Start the load operation on start
+    void Start()
+    {
+        AsyncOperationHandle handle = reference.LoadAssetAsync&lt;GameObject&gt;();
+        handle.Completed += Handle_Completed;
+    }
+
+    // Instantiate the loaded prefab on complete
+    private void Handle_Completed(AsyncOperationHandle obj)
+    {
+        if (obj.Status == AsyncOperationStatus.Succeeded)
+        {
+            Instantiate(reference.Asset, transform);
+        }
+        else
+        {
+            Debug.LogError($&quot;AssetReference {reference.RuntimeKey} failed to load.&quot;);
+        }
+    }
+
+    // Release asset when parent object is destroyed
+    private void OnDestroy()
+    {
+        reference.ReleaseAsset();
+    }
+}
+
+</code></pre>
+<p>Refer to <a class="xref" href="LoadingAssetReferences.html">Loading an AssetReference</a> for additional information about loading AssetReferences.</p>
+<h2 id="load-a-single-asset">Load a single asset</h2>
+<p>Use the <a href="xref:UnityEngine.AddressableAssets.Addressables.LoadAssetsAsync*"><code>LoadAssetAsync</code></a> method to load a single Addressable asset, typically with an address as the key:</p>
+<pre><code class="lang-cs" name="sample">
+using System.Collections;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+
+internal class LoadAddress : MonoBehaviour
+{
+    public string key;
+    AsyncOperationHandle&lt;GameObject&gt; opHandle;
+
+    public IEnumerator Start()
+    {
+        opHandle = Addressables.LoadAssetAsync&lt;GameObject&gt;(key);
+        yield return opHandle;
+
+        if (opHandle.Status == AsyncOperationStatus.Succeeded)
+        {
+            GameObject obj = opHandle.Result;
+            Instantiate(obj, transform);
+        }
+    }
+
+    void OnDestroy()
+    {
+        opHandle.Release();
+    }
+}
+
+</code></pre>
+<p>You can use a <a href="Labels.html">label</a> or other key type when you call <code>LoadAssetAsync</code>, not just an address. However, if the key resolves to more than one asset, only the first asset found is loaded. For example, if you call this method with a label applied to several assets, Addressables returns whichever one of those assets it finds first.</p>
+<h2 id="load-multiple-assets">Load multiple assets</h2>
+<p>Use the <a href="xref:UnityEngine.AddressableAssets.Addressables.LoadAssetsAsync*"><code>LoadAssetsAsync</code></a> method to load more than one Addressable asset in a single operation. When using this method, you can specify a single key, such as a <a href="Labels.html">label</a>, or a list of keys.</p>
+<p>When you specify multiple keys, you can specify a <a href="xref:UnityEngine.AddressableAssets.Addressables.MergeMode">merge mode</a> to set how the assets that match each key are combined:</p>
+<ul>
+<li><code>Union</code>: Include assets that match any key</li>
+<li><code>Intersection</code>: Include assets that match every key</li>
+<li><code>UseFirst</code>: Include assets only from the first key that resolves to a valid location</li>
+</ul>
+<pre><code class="lang-cs" name="sample">
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+
+internal class LoadMultiple : MonoBehaviour
+{
+    // Label strings to load
+    public List&lt;string&gt; keys = new List&lt;string&gt;() {&quot;characters&quot;, &quot;animals&quot;};
+
+    // Operation handle used to load and release assets
+    AsyncOperationHandle&lt;IList&lt;GameObject&gt;&gt; loadHandle;
+
+    // Load Addressables by Label
+    public IEnumerator Start()
+    {
+        float x = 0, z = 0;
+        loadHandle = Addressables.LoadAssetsAsync&lt;GameObject&gt;(
+            keys,
+            addressable =&gt;
+            {
+                //Gets called for every loaded asset
+                Instantiate&lt;GameObject&gt;(addressable,
+                    new Vector3(x++ * 2.0f, 0, z * 2.0f),
+                    Quaternion.identity,
+                    transform);
+
+                if (x &gt; 9)
+                {
+                    x = 0;
+                    z++;
+                }
+            }, Addressables.MergeMode.Union, // How to combine multiple labels
+            false); // Whether to fail and release if any asset fails to load
+
+        yield return loadHandle;
+    }
+
+    private void OnDestroy()
+    {
+        loadHandle.Release();
+        // Release all the loaded assets associated with loadHandle
+        // Note that if you do not make loaded addressables a child of this object,
+        // then you will need to devise another way of releasing the handle when
+        // all the individual addressables are destroyed.
+    }
+}
+
+</code></pre>
+<p>To specify how to handle loading errors, use the <code>releaseDependenciesOnFailure</code> parameter. If <code>true</code>, then the operation fails if it encounters an error loading any single asset. The operation and any assets that loaded are released.</p>
+<p>If <code>false</code>, then the operation loads any objects that it can and doesn't release the operation. If it fails, the operation still completes with a status of <code>Failed</code>. Also, the list of assets returned has null values where the failed assets otherwise appear.</p>
+<p>Set <code>releaseDependenciesOnFailure</code> to true when loading a group of assets that must be loaded as a set to be used. For example, if you load the assets for a game level, you might fail the operation as a whole rather than load only some of the required assets.</p>
+<h3 id="load-by-label">Load by label</h3>
+<p>You can load sets of assets that have the same label in one operation:</p>
+<pre><code class="lang-cs" name="sample">
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+
+internal class LoadWithLabels : MonoBehaviour
+{
+    // Label strings to load
+    public List&lt;string&gt; keys = new List&lt;string&gt;() {&quot;characters&quot;, &quot;animals&quot;};
+
+    // Operation handle used to load and release assets
+    AsyncOperationHandle&lt;IList&lt;GameObject&gt;&gt; loadHandle;
+
+    // Load Addressables by Label
+    void Start()
+    {
+        float x = 0, z = 0;
+        loadHandle = Addressables.LoadAssetsAsync&lt;GameObject&gt;(
+            keys, // Either a single key or a List of keys
+            addressable =&gt;
+            {
+                //Gets called for every loaded asset
+                if (addressable != null)
+                {
+                    Instantiate&lt;GameObject&gt;(addressable,
+                        new Vector3(x++ * 2.0f, 0, z * 2.0f),
+                        Quaternion.identity,
+                        transform);
+                    if (x &gt; 9)
+                    {
+                        x = 0;
+                        z++;
+                    }
+                }
+            }, Addressables.MergeMode.Union, // How to combine multiple labels
+            false); // Whether to fail if any asset fails to load
+        loadHandle.Completed += LoadHandle_Completed;
+    }
+
+    private void LoadHandle_Completed(AsyncOperationHandle&lt;IList&lt;GameObject&gt;&gt; operation)
+    {
+        if (operation.Status != AsyncOperationStatus.Succeeded)
+            Debug.LogWarning(&quot;Some assets did not load.&quot;);
+    }
+
+    private void OnDestroy()
+    {
+        // Release all the loaded assets associated with loadHandle
+        loadHandle.Release();
+    }
+}
+
+</code></pre><h2 id="safely-edit-loaded-assets">Safely edit loaded assets</h2>
+<p>You can safely edit loaded assets in the following situations:</p>
+<ul>
+<li>The asset is loaded from an AssetBundle.</li>
+<li>The application is running in a Player, not in the Editor.</li>
+<li>When you enable the <strong>Use Existing Build (requires built groups)</strong> option in <a href="GroupsWindow.html#play-mode-script">Play Mode Scripts</a>.</li>
+</ul>
+<p>In these cases, the assets exist as a copy in active memory. Changes made to these copied assets don't affect the saved AssetBundle on disk and any changes don't persist between sessions.</p>
+<p>For other situations, including when you enable the <strong>Use Asset Database (fastest)</strong> property in the Play mode settings, Unity loads the assets directly from the project files. This means that Unity saves any modifications to the asset during runtime to the project asset file and that those changes persist between different sessions.</p>
+<p>If you want to make runtime changes to an asset, create a new instance of the GameObject you want to change and use the copy for any runtime changes. This removes the risk that you might  change the original asset file. The following code example demonstrates creating a new copy of a loaded asset:</p>
+<pre><code class="lang-c#">var op = Addressables.LoadAssetAsync&lt;GameObject&gt;(&quot;myKey&quot;);
+yield return op;
+if (op.Result != null)
+{
+    GameObject inst = UnityEngine.Object.Instantiate(op.Result);
+    // can now use and safely make edits to inst, without the source Project Asset being changed.
+}
+</code></pre>
+<p>If you use this example method to use a copy of an asset, be aware of the following:</p>
+<ul>
+<li>You must use either the original asset or the <code>AsyncOperationHandle</code> when you release the asset, not the current instance of the asset.</li>
+<li>When you instantiate an asset that has references to other assets in this way, Unity doesn't create new instances of the referenced assets. The references for the newly instantiated copy target the original project asset.</li>
+<li>Unity invokes <code>MonoBehaviour</code> methods like <code>Start()</code>, <code>OnEnable()</code>, and <code>OnDisable()</code> on the new instance.</li>
+</ul>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="load-assets-location.html">Load assets by location</a></li>
+<li><a href="LoadingScenes.html">Load scenes</a></li>
+<li><a href="LoadingAssetBundles.html">Load AssetBundles</a></li>
+<li><a href="MultiProject.html">Load assets from multiple projects</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-assets.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

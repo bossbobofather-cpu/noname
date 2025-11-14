@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Introduction to update builds | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Introduction to update builds | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/content-update-builds-overview.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="introduction-to-update-builds">Introduction to update builds</h1>
+
+<p>When you distribute content remotely, you can make content changes without needing to rebuild and republish your entire application. When the Addressables system initializes at runtime, it checks for an updated content catalog and downloads it. When Addressables loads assets it then downloads any AssetBundles with newer versions.</p>
+<p>If you rebuild all the content in your project with a new <a href="build-content-catalogs.html">content catalog</a>, installed Players must download all the remote AssetBundles again, whether the assets in them have changed or not. If your application contains a large amount of content, then downloading everything again can take a significant amount of time. To make this process more efficient, the Addressables package provides tools that you can run to identify changed assets and to produce a content update build.</p>
+<h2 id="content-update-build-workflow">Content update build workflow</h2>
+<p>The following diagram illustrates how you can use the Addressables tools to produce smaller content updates that only require a Player build to download new or changed content:</p>
+<p><img src="images/addressables-update-builds.png" alt="The workflow of developing, building, and releasing an application. Illustrates how content-only updates can be published to the Content Delivery Network for consumption by Player installs without needing to rebuild the Player."><br><em>The workflow for reducing the size of content updates.</em></p>
+<p>When you release your full application, you first <a href="builds-full-build.html">build the Addressables content</a> and then make a Player build. The Player build contains local AssetBundles and you upload remote AssetBundles to a Content Delivery Network (CDN) or other hosting service.</p>
+<p>The default build script that produces the Addressables content build always creates the <code>addressables_content_state.bin</code> file, which is required to publish content-only updates. You must save this file for each published full application release on every platform.</p>
+<p>Between full application releases which require your users to download and install a new Player build, you can make changes to Addressable assets in the project. However, you should only modify assets, not code, because AssetBundles contain only asset data and can't include code changes. You can change both local and remote assets.</p>
+<h2 id="content-update-tools">Content update tools</h2>
+<p>The Addressables package includes tools that you can use to reduce the size of updates to the content you distribute remotely.</p>
+<p>The content update tools include:</p>
+<ul>
+<li><a href="builds-update-build.html">Check for Content Update Restrictions tool</a>: Prepares the Addressables groups for a content update build based on group settings.</li>
+<li><a href="GroupsWindow.html#build">Update a Previous Build</a>: A build script that performs the content update build from the Addressables Groups window.</li>
+</ul>
+<p>You must save the <code>addressables_content_state.bin</code> file produced by the default build script for each build that you intend to update in the future. Unity updates this file every time you run the build script. Make sure that you save the version produced for the content build that you publish. Refer to <a href="content-update-build-settings.html">Content update build settings reference</a> for relevant Addressable settings that handle the use of the previous content state file.</p>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>On platforms that have their own patching systems or that don't support remote content distribution, don't use content update builds. Every build of your application must be a new content build. In this case you can discard or ignore the <code>addressables_content_state.bin</code> file that's generated after each build for the platform.</p>
+</div>
+<p>When you want publish a content update, run the <strong>Check Content Update Restrictions</strong> tool manually, or make sure the check is run as part of the update build process. This check examines the <code>addressables_content_state.bin</code> file and moves changed assets to a new remote group, according to the settings of the group they're in.</p>
+<h2 id="build-updated-content">Build updated content</h2>
+<p>To build the updated AssetBundles, run the <strong>Update a Previous Build</strong> script. This tool also uses the <code>addressables_content_state.bin</code> file. It rebuilds all the content, but produces a modified catalog that accesses unchanged content from their original AssetBundles and changed content from the new AssetBundles.</p>
+<p>You can make additional content updates following the same process. Always use the <code>addressables_content_state.bin</code> file from your original release.</p>
+<p>For more information, refer to <a href="builds-update-build.html">Create an update build</a>.</p>
+<p>The final step is to upload the updated content to your CDN. You can upload all the new AssetBundles produced or just those with changed names. Bundles that haven't changed use the same names as the originals and will overwrite them.</p>
+<h3 id="output-of-an-update-build">Output of an update build</h3>
+<p>The build generates a content catalog, a hash file, and AssetBundles.</p>
+<p>The generated content catalog has the same name as the catalog in the original application build, overwriting the old catalog and hash file. The application loads the hash file at runtime to decide if a new catalog is available. Unity loads unmodified assets from existing AssetBundles that were shipped with the application or that the application has already downloaded.</p>
+<p>Unity uses the content version string and location information from the <a href="build-artifacts-included.html"><code>addressables_content_state.bin</code></a> file to create the AssetBundles. Unity uses the same file name as those in the build for AssetBundles that don't contain updated content. If an AssetBundle contains updated content, Unity generates a new AssetBundle that contains the updated content, with a new file name so that it can exist with the original on your content hosting service. You only need to copy AssetBundles with new file to the location that hosts your content, though you can safely upload them all.</p>
+<p>Unity also builds AssetBundles for content that can't change, such as any local AssetBundles, but you don't need to upload them to the content hosting location, because no Addressables asset entries reference them.</p>
+<p>Don't change the build scripts between building a new Player and making content updates, such as Player code or Addressables. This might cause unpredictable behavior in your application.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="content-update-examples.html">Content update dependencies</a></li>
+<li><a href="builds-update-build.html">Create an update build</a></li>
+<li><a href="content-update-builds-check.html">Create a script to check for content updates</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/content-update-builds-overview.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

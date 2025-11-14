@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>About the Cache Server Client | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="About the Cache Server Client | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/CacheServerClient.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="about-the-cache-server-client">About the Cache Server Client</h1>
+
+<p>Use the Cache Server Client to upload and download files to any Unity Cache Server. The Cache Server Client is used to communicate with a Unity Cache Server to store and retrieve incremental artifacts of the SBP build process, so that contents of the SBP build cache can be reused by multiple machines that are using the same project.</p>
+<p><em>Warning:</em> The <a href="https://docs.unity3d.com/Manual/CacheServer.html">Unity Cache Server</a> has some performance limitations when dealing with a high volume of small cache entries. That can occur when performing large builds. The Cache Server is no longer under active development, as the Asset Import Pipeline now uses the <a href="https://docs.unity3d.com/Manual/UnityAccelerator.html">Unity Accelerator</a>. The Scriptable Build Pipeline retains the support to cache build artifacts through the Cache Server, as documented here, but this is not a recommended configuration.</p>
+<p>The Unity Accelerator can speed up the Asset Import process when the same project is opened on different machines. But it does not support sharing artifacts stored in the local SBP build cache.</p>
+<h1 id="installation">Installation</h1>
+<p>To install this package, follow the instructions in the <a href="https://docs.unity3d.com/Packages/com.unity.package-manager-ui@latest/index.html">Package Manager documentation</a>.</p>
+<h1 id="usage">Usage</h1>
+<h2 id="api-examples">API Examples</h2>
+<p>This following example shows how to share build artifacts between team members or multiple machines to achieve faster build times.</p>
+<p>Requirements:</p>
+<ol>
+<li>A Cache Server instance dedicated to build artifacts. In addition you may run an Accelerator to speed up Asset Imports.</li>
+<li>High Reliability mode turned off on the Build Cache Server instance. The build cache uses dynamic dependencies which is incompatible with high reliability mode.</li>
+<li>The build code must use the <code>ContentPipeline.BuildAssetBundles</code> method.</li>
+<li><code>BundleBuildParameters.UseCache</code> is set to true.</li>
+<li><code>BundleBuildParameters.CacheServerHost</code> and <code>BundleBuildParameters.CacheServerPort</code> are set to the cache server instance host or IP address and port respectively.</li>
+</ol>
+<p>Example code:</p>
+<pre><code class="lang-csharp">public static class BuildAssetBundlesExample
+{
+    public static bool BuildAssetBundles(string outputPath, bool useChunkBasedCompression, BuildTarget buildTarget, BuildTargetGroup buildGroup)
+    {
+        var buildContent = new BundleBuildContent(ContentBuildInterface.GenerateAssetBundleBuilds());
+        var buildParams = new BundleBuildParameters(buildTarget, buildGroup, outputPath);
+        // Set build parameters for connecting to the Cache Server
+        buildParams.UseCache = true;
+        buildParams.CacheServerHost = &quot;buildcache.unitygames.com&quot;;
+        buildParams.CacheServerPort = 8126;
+
+        if (useChunkBasedCompression)
+            buildParams.BundleCompression = BuildCompression.DefaultLZ4;
+
+        IBundleBuildResults results;
+        ReturnCode exitCode = ContentPipeline.BuildAssetBundles(buildParams, buildContent, out results);
+        return exitCode == ReturnCode.Success;
+    }
+}
+</code></pre>
+<h3 id="upload-a-file">Upload a file</h3>
+<pre><code class="lang-csharp">const string guidStr = &quot;f7950ee725f9d47c7b90b02224b4534f&quot;;
+const string  hashStr = &quot;5082668810f105d565e2da3f8bf394ee&quot;;
+var fileId = FileId.From(guidStr, hashStr);
+
+var client = new Client(&quot;localhost&quot;, 8126);
+client.Connect();
+
+using(var stream = new FileStream())
+{
+    client.BeginTransaction(fileId);
+    client.Upload(FileType.Asset, stream);
+    client.EndTransaction();
+}
+
+client.Close();
+</code></pre>
+<h3 id="download-a-file">Download a file</h3>
+<pre><code class="lang-csharp">const string guidStr = &quot;f7950ee725f9d47c7b90b02224b4534f&quot;;
+const string  hashStr = &quot;5082668810f105d565e2da3f8bf394ee&quot;;
+var fileId = FileId.From(guidStr, hashStr);
+var filePath = &quot;/target/filename&quot;;
+
+var client = new Client(&quot;localhost&quot;, 8126);
+client.Connect();
+
+// FileDownloadItem implements IDownloadItem
+var downloadItem = new FileDownloadItem(fileId, FileType.Asset, filePath);
+client.QueueDownload(downloadItem);
+
+client.DownloadFinished += (object sender, DownloadFinishedEventArgs args) =&gt;
+{
+    DownloadResult result = args.Result;
+    long size = args.Size;
+    long queueLength = args.DownloadQueueLength;
+};
+
+client.ResetDownloadFinishedEventHandler(); // cleanup
+client.Close();
+</code></pre>
+<h2 id="advanced">Advanced</h2>
+<h3 id="idownloaditem">IDownloadItem</h3>
+<p>Implement <code>IDownloadItem</code> to download vai WriteStream to a custom location.</p>
+<h2 id="utilities">Utilities</h2>
+<h3 id="upload-all-assets">Upload All Assets</h3>
+<p>Quickly seed a local or remote cache server with the current project's imported assets.</p>
+<ol>
+<li>From the Unity Editor toolbar, select <code>Assets -&gt; Cache Server -&gt; Upload All Assets</code></li>
+<li>Input the destination Cache Server. The currently configured global Unity Editor setting will be used by default.</li>
+<li>Press Upload - for large projects, a progress dialog will display during the upload.</li>
+</ol>
+<p>Or frome the Command Line:</p>
+<p><code>Unity -projectPath [projectPath] -ExecuteMethod Unity.CacheServer.CacheServerUploader.UploadAllFilesToCacheServer -batchmode -quit</code></p>
+<h1 id="technical-details">Technical details</h1>
+<h2 id="requirements">Requirements</h2>
+<p>This version of the Cache Server Client is compatible with the following versions of the Unity Editor:</p>
+<ul>
+<li>2017.1 and later (recommended)</li>
+<li>5.6 and earlier may work but are untested</li>
+</ul>
+<p>This Cache Server Client is compatible with the following versions of the Unity Cache Server:</p>
+<ul>
+<li><a href="https://github.com/Unity-Technologies/unity-cache-server">v5.x</a> and later (recommended)</li>
+<li>Other Cache Server versions shipped with Unity 5.x and later</li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.scriptablebuildpipeline@ca3e2d96aa2f/Documentation~/CacheServerClient.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

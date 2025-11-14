@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Addressables introduction | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Addressables introduction | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressableAssetsOverview.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="addressables-overview">
+<h1 id="addressables-introduction">Addressables introduction</h1>
+
+<p>The Addressables package provides a user interface for organizing assets in your project. You can organize assets into <a href="groups-intro.html">groups</a>, which define how Unity packages assets into AssetBundles and loads them.</p>
+<p>By default, Addressables uses <a href="xref:um-asset-bundles-intro">AssetBundles</a> to package your assets. You can also implement your own <a href="xref:UnityEngine.ResourceManagement.ResourceProviders.IResourceProvider"><code>IResourceProvider</code></a> class to support other ways to access assets.</p>
+<h2 id="addressables-groups-and-labels">Addressables groups and labels</h2>
+<p>Use Addressables <a href="groups-intro.html">groups</a> to organize your content. All Addressable assets belong to a group. If you don't explicitly assign an asset to a group, Unity adds it to the default group.</p>
+<p>You can set the <a href="ContentPackingAndLoadingSchema.html">group settings</a> to specify how the Addressables build system packages the assets in a group into bundles. For example, you can choose whether to pack all the assets in a group together in a single AssetBundle file.</p>
+<p>Use <a href="Labels.html">labels</a> to tag content that you want to treat together in some way. For example, if you had labels defined for <code>red</code>, <code>hat</code>, and <code>feather</code>, you can load all red hats with feathers in a single operation, whether they're part of the same AssetBundle or not. You can also use labels to decide how assets in a group are packed into AssetBundles.</p>
+<p>Add an asset to a group and move assets between groups using the <a class="xref" href="GroupsWindow.html">Addressables Groups</a> window. You can also assign labels to your assets in the Groups window.</p>
+<h3 id="group-schemas">Group schemas</h3>
+<p>The schemas assigned to a group define the settings used to build the assets in a group. Different schemas can define different groups of settings. For example, one standard schema defines the settings for how to pack and compress your assets into AssetBundles (among other options). You also can define your own schemas to use with custom build scripts.</p>
+<p>For more information, refer to <a href="GroupSchemas.html">Define group settings</a>.</p>
+<h2 id="asset-addresses">Asset addresses</h2>
+<p>In the Addressables system, assets are assigned addresses that can be used to load the assets at runtime. For example, an asset at <code>Assets/Boss1/Materials/MainMaterial.material</code> could be assigned an address like <code>boss1_material_main</code>. The Addressables resource manager looks up the address in the content catalog to find out where the asset is stored. Assets can be built-in to your application, cached locally, or hosted remotely. The resource manager loads the asset and any dependencies, downloading the content first, if necessary.</p>
+<p><img src="images/addressables-overview-addresses.png" alt="An overview of the Addressables system retrieving assets from different locations. The locally-installed application includes both non-addressable assets and local addressable assets. It communicates with both a device cache and a remote host, which each have their own addressable assets that the application can retrieve."><br><em>An overview of the Addressables system retrieving assets from different locations.</em></p>
+<p>Because an address isn't tied to the physical location of the asset, you have several options to manage and optimize your assets, both in the Unity Editor and at runtime. <a href="#content-catalogs">Catalogs</a> map addresses to physical locations.</p>
+<p>Although it's best practice to assign unique addresses to your assets, an asset address doesn't have to be unique. You can assign the same address string to more than one asset when useful. For example, if you have variants of an asset, you can assign the same address to all the variants and use labels to distinguish between the variants:</p>
+<ul>
+<li>Asset 1: address: <code>&quot;plate_armor_rusty&quot;</code>, label: <code>&quot;hd&quot;</code></li>
+<li>Asset 2: address: <code>&quot;plate_armor_rusty&quot;</code>, label: <code>&quot;sd&quot;</code></li>
+</ul>
+<p>The <code>Addressables</code> API methods that only load a single asset, such as <a href="xref:UnityEngine.AddressableAssets.Addressables.LoadAssetAsync*"><code>LoadAssetAsync</code></a>, load the first instance found if you call them with an address assigned to multiple assets. Other methods, like <a href="xref:UnityEngine.AddressableAssets.Addressables.LoadAssetsAsync*"><code>LoadAssetsAsync</code></a>, load multiple assets in one operation and load all the assets with the specified address.</p>
+<div class="TIP">
+<h5>Tip</h5>
+<p>You can use the <a href="xref:UnityEngine.AddressableAssets.Addressables.MergeMode"><code>MergeMode</code></a> parameter of <code>LoadAssetsAsync</code> to load the intersection of two keys.</p>
+<p>In the earlier example, you can specify the address, <code>&quot;plate_armor_rusty&quot;</code>, and the label, <code>&quot;hd&quot;</code>, as keys and intersection as the merge mode to load Asset 1. You can then change the label value to <code>&quot;sd&quot;</code> to load Asset 2.</p>
+</div>
+<p>For more information on how to assign addresses to assets, refer to <a class="xref" href="AddressableAssetsGettingStarted.html">Making an asset Addressable</a>. For information on how to load assets by keys, including addresses, refer to <a class="xref" href="LoadingAddressableAssets.html">Loading assets</a>.</p>
+<h2 id="asset-loading-and-unloading">Asset loading and unloading</h2>
+<p>To load an Addressable asset, you can use its address or other key such as a label or <code>AssetReference</code>. For more information, refer to <a class="xref" href="LoadingAddressableAssets.html">Loading Addressable Assets</a>. You only need to load the main asset and Addressables loads any dependent assets automatically.</p>
+<p>When your application no longer needs access to an Addressable asset at runtime, you must release it so that Addressables can free the associated memory. The Addressables system keeps a reference count of loaded assets, and doesn't unload an asset until the reference count returns to zero. As such, you don't need to keep track of whether an asset or its dependencies are still in use. You only need to make sure that any time you explicitly load an asset, you release it when your application no longer needs that instance. Refer to <a class="xref" href="UnloadingAddressableAssets.html">Releasing Addressable assets</a> for more information.</p>
+<h3 id="control-loading-with-asset-references">Control loading with asset references</h3>
+<p>An <a href="xref:UnityEngine.AddressableAssets.AssetReference"><code>AssetReference</code></a> is a type that you can set to any kind of Addressable asset. Unity doesn't automatically load the asset assigned to the reference, so you have more control over when to load and unload it.</p>
+<p>Use fields of type <code>AssetReference</code> in a <code>MonoBehaviour</code> or <code>ScriptableObject</code> to reference an Addressable asset. You can drag and drop in the Editor Inspector to assign an Asset to an <code>AssetReference</code> field.</p>
+<p>Addressables also provide specialized types, such as <code>AssetReferenceGameObject</code> and <code>AssetReferenceTexture</code>. You can use these specialized subclasses to prevent the possibility of assigning the wrong asset type to an <code>AssetReference</code> field. You can also use the <code>AssetReferenceUILabelRestriction</code> attribute to limit assignment to assets with specific labels.</p>
+<p>For more information, refer to <a class="xref" href="AssetReferences.html">Using AssetReferences</a>.</p>
+<h2 id="dependency-and-resource-management">Dependency and resource management</h2>
+<p>One asset in Unity can depend on another. A scene might reference one or more prefabs, or a prefab might use one or more materials. One or more prefabs can use the same material, and those prefabs can exist in different AssetBundles. When you load an Addressable asset, the system automatically finds and loads any dependent assets that it references. When the system unloads an asset, it also unloads its dependencies, unless a different asset is still using them.</p>
+<p>As you load and release assets, the Addressables system keeps a reference count for each item. When an asset is no longer referenced, Addressables unloads it. If the asset was in a bundle that no longer has any assets that are in use, Addressables also unloads the bundle.</p>
+<p>Refer to <a class="xref" href="memory-assets.html">Memory management</a> for more information.</p>
+<h2 id="content-builds">Content builds</h2>
+<p>The Addressables system separates the building of Addressable content from the build of your player. A content build produces the content catalog, catalog hash, and the AssetBundles containing your assets. You can build Addressable assets in a separate, <a href="builds-full-build.html">content-only build</a>, or build them at the <a href="build-player-builds.html">same time as the Player</a>.</p>
+<p>Because asset formats are platform-specific, you must make a content build for each platform before building a player.</p>
+<p>Refer to <a class="xref" href="Builds.html">Building Addressable content</a> for more information.</p>
+<h2 id="content-catalogs">Content catalogs</h2>
+<p>The Addressables system produces a content catalog file that maps the addresses of assets to their physical locations. It can also create a hash file containing the hash of the catalog. If you're hosting Addressable assets remotely, the system uses this hash file to decide if the content catalog has changed and needs to download it. Refer to <a class="xref" href="BuildArtifacts.html">Content catalogs</a> for more information.</p>
+<p>The Profile selected when you perform a content build determines how the addresses in the content catalog map to resource loading paths. Refer to <a class="xref" href="AddressableAssetsProfiles.html">Profiles</a> for more information.</p>
+<p>For information about hosting content remotely, refer to <a class="xref" href="RemoteContentDistribution.html">Distributing content remotely</a>.</p>
+<h2 id="addressables-tools">Addressables tools</h2>
+<p>The Addressables system provides the following tools and windows to help you manage your Addressable assets:</p>
+<ul>
+<li><a class="xref" href="GroupsWindow.html">Addressable Groups window</a>: The main interface for managing assets, group settings, and making builds.</li>
+<li><a class="xref" href="AddressableAssetsProfiles.html">Profiles window</a>: Helps set up paths used by your builds.</li>
+<li><a class="xref" href="BuildLayoutReport.html">Build layout report</a>: Describes the AssetBundles produced by a content build.</li>
+<li><a class="xref" href="analyze-addressables-window.html">Analyze tool</a>: the Analyze tool runs analysis rules that check whether your Addressables content conforms to the set of rules you have defined. The Addressables system provides some basic rules, such as checking for duplicate assets; you can add your own rules using the [AnalyzeRule] class.</li>
+</ul>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="xref:um-asset-bundles-intro">AssetBundles introduction</a></li>
+<li><a href="AddressableAssetsDevelopmentCycle.html">Organize Addressable assets</a></li>
+<li><a href="AssetReferences.html">Referencing Addressable assets in code</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/AddressableAssetsOverview.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

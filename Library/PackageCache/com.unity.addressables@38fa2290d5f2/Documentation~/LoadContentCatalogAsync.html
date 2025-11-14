@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Manage content catalogs | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Manage content catalogs | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/LoadContentCatalogAsync.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="addressables-api-load-content-catalog-async">
+<h1 id="manage-content-catalogs">Manage content catalogs</h1>
+
+<p>By default, the Addressables system manages the <a href="build-content-catalogs.html">catalog</a> automatically at runtime. If you built your application with a remote catalog, the Addressables system automatically checks for a new catalog, and downloads the new version and loads it into memory.</p>
+<p>You can load additional catalogs at runtime. For example, you can load a catalog produced by a separate, compatible project to load Addressable assets built by that project. Refer to <a href="MultiProject.html">Loading content from multiple projects</a> for more information.</p>
+<p>If you want to change the default catalog update behavior of the Addressables system, you can disable the automatic check and check for updates manually. Refer to <a href="#update-catalogs">Updating catalogs</a> for more information.</p>
+<h2 id="load-additional-catalogs">Load additional catalogs</h2>
+<p>Use <a href="xref:UnityEngine.AddressableAssets.Addressables.LoadContentCatalogAsync*"><code>Addressables.LoadContentCatalogAsync</code></a> to load additional content catalogs, either from a hosting service or from the local file system. You need to supply the location of the catalog you want to load. After the operation to load the catalog is complete, you can call any Addressables loading functions using the keys in the new catalog.</p>
+<p>If you give the catalog hash file at the same URL as the catalog, Unity caches the secondary catalog. When the client application loads the catalog, it only downloads a new version of the catalog if the hash changes.</p>
+<p>The hash file needs to be in the same location and have the same name as the catalog. The only difference to the path should be the extension.</p>
+<p><code>LoadContentCatalogAsync</code> comes with a parameter <code>autoReleaseHandle</code>. In order for the system to download a new remote catalog, any prior calls to <code>LoadContentCatalogAsync</code> that point to the catalog you want to load need to be released. Otherwise, the system picks up the content catalog load operation from the operation cache. If the cached operation is picked up, the new remote catalog isn't downloaded. If set to true, the parameter <code>autoReleaseHandle</code> makes sure that the operation doesn't stay in the operation cache after completing.</p>
+<p>Once you load a catalog, you can't unload it. However, you can update a loaded catalog. You must release the operation handle for the operation that loaded the catalog before updating a catalog. Refer to <a href="#update-catalogs">Updating catalogs</a> for more information.</p>
+<p>In general, there's no reason to hold on to the operation handle after loading a catalog. You can release it automatically by setting the <code>autoReleaseHandle</code> parameter to true when loading a catalog, as shown in the following example:</p>
+<pre><code class="lang-cs" name="sample">
+public IEnumerator Start()
+{
+    //Load a catalog and automatically release the operation handle.
+    AsyncOperationHandle&lt;IResourceLocator&gt; handle
+        = Addressables.LoadContentCatalogAsync(&quot;path_to_secondary_catalog&quot;, true);
+    yield return handle;
+
+    //...
+}
+
+</code></pre>
+<div class="TIP">
+<h5>Tip</h5>
+<p>Use the <a href="AddressableAssetSettings.html#catalog">Catalog Download Timeout</a> property in Addressables settings to specify a timeout for downloading catalogs.</p>
+</div>
+<h2 id="update-catalogs">Update catalogs</h2>
+<p>If the catalog hash file is available, Unity checks the hash when loading a catalog to check if the version at the provided URL is more recent than the cached version of the catalog. You can disable the default catalog check with the <a href="AddressableAssetSettings.html#catalog"><strong>Only update catalogs manually</strong> setting</a>, and call the <a href="xref:UnityEngine.AddressableAssets.Addressables.UpdateCatalogs*"><code>Addressables.UpdateCatalogs</code></a> method when you want to update the catalog. If you loaded a catalog manually with <a href="xref:UnityEngine.AddressableAssets.Addressables.LoadContentCatalogAsync*"><code>LoadContentCatalogAsync</code></a>, you must release the operation handle before you can update the catalog.</p>
+<p>When you call the <code>UpdateCatalog</code> method, Unity blocks all other Addressable requests until the operation is complete. You can release the operation handle that <code>UpdateCatalog</code> returns immediately after the operation finishes, or set the <code>autoRelease</code> parameter to <code>true</code>.</p>
+<p>If you call <code>UpdateCatalog</code> without providing a list of catalogs, Unity checks all the loaded catalogs for updates.</p>
+<pre><code class="lang-cs" name="sample">
+IEnumerator UpdateCatalogs()
+{
+    AsyncOperationHandle&lt;List&lt;IResourceLocator&gt;&gt; updateHandle
+        = Addressables.UpdateCatalogs();
+
+    yield return updateHandle;
+    updateHandle.Release();
+}
+
+</code></pre>
+<p>You can also call <a href="xref:UnityEngine.AddressableAssets.Addressables.CheckForCatalogUpdates*"><code>Addressables.CheckForCatalogUpdates</code></a> directly to get the list of catalogs that have updates and then perform the update:</p>
+<pre><code class="lang-cs" name="sample">
+IEnumerator CheckCatalogs()
+{
+    List&lt;string&gt; catalogsToUpdate = new List&lt;string&gt;();
+    AsyncOperationHandle&lt;List&lt;string&gt;&gt; checkForUpdateHandle
+        = Addressables.CheckForCatalogUpdates();
+    checkForUpdateHandle.Completed += op =&gt; { catalogsToUpdate.AddRange(op.Result); };
+
+    yield return checkForUpdateHandle;
+
+    if (catalogsToUpdate.Count &gt; 0)
+    {
+        AsyncOperationHandle&lt;List&lt;IResourceLocator&gt;&gt; updateHandle
+            = Addressables.UpdateCatalogs(catalogsToUpdate);
+        yield return updateHandle;
+        updateHandle.Release();
+    }
+
+    checkForUpdateHandle.Release();
+}
+
+</code></pre>
+<div class="IMPORTANT">
+<h5>Important</h5>
+<p>If you update a catalog when you have already loaded content from the related AssetBundles, there might be conflicts between the loaded AssetBundles and the updated versions. Enable the <a href="AddressableAssetSettings.html#build">Unique Bundle IDs</a> option in Addressable settings to prevent AssetBundle ID collisions at runtime. Enabling this option also means that more AssetBundles must be rebuilt when you perform a content update. Refer to <a href="content-update-builds-overview.html">Content update builds</a> for more information. You can also unload any content and AssetBundles that must be updated, which can be a slow operation.</p>
+</div>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="build-content-catalogs.html">Content catalogs</a></li>
+<li><a href="xref:UnityEngine.AddressableAssets.Addressables.LoadContentCatalogAsync*"><code>Addressables.LoadContentCatalogAsync</code> API reference</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/LoadContentCatalogAsync.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

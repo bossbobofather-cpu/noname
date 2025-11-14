@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Wait for asynchronous loads with async and await | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Wait for asynchronous loads with async and await | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-wait-asynchronous-async-await.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="wait-for-asynchronous-loads-with-async-and-await">Wait for asynchronous loads with async and await</h1>
+
+<p><a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle"><code>AsyncOperationHandle</code></a> provides a <a href="xref:UnityEngine.ResourceManagement.AsyncOperations.AsyncOperationHandle.Task"><code>Task</code></a> object that you can use with the C# <code>async</code> and <code>await</code> keywords to sequence code that calls asynchronous methods and handles the results.</p>
+<p>The following example loads Addressable assets using a list of keys. The differences between this task-based approach and the <a href="load-wait-asynchronous-coroutines.html">coroutine</a> or <a href="load-wait-asynchronous-events.html">event-based approaches</a> are in the signature of the calling method. This method must include the <code>async</code> and <code>await</code> keywords with the operation handle's <code>Task</code> property. The calling method, <code>Start</code> in this case, suspends operation while the task finishes. Execution then resumes and the example instantiates all the loaded prefabs in a grid pattern.</p>
+<pre><code class="lang-cs" name="sample">
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
+
+internal class LoadWithTask : MonoBehaviour
+{
+    // Label or address strings to load
+    public List&lt;string&gt; keys = new List&lt;string&gt;() {&quot;characters&quot;, &quot;animals&quot;};
+
+    // Operation handle used to load and release assets
+    AsyncOperationHandle&lt;IList&lt;GameObject&gt;&gt; loadHandle;
+
+    public async void Start()
+    {
+        loadHandle = Addressables.LoadAssetsAsync&lt;GameObject&gt;(
+            keys, // Either a single key or a List of keys
+            addressable =&gt;
+            {
+                // Called for every loaded asset
+                Debug.Log(addressable.name);
+            }, Addressables.MergeMode.Union, // How to combine multiple labels
+            false); // Whether to fail if any asset fails to load
+
+        // Wait for the operation to finish in the background
+        await loadHandle.Task;
+
+        // Instantiate the results
+        float x = 0, z = 0;
+        foreach (var addressable in loadHandle.Result)
+        {
+            if (addressable != null)
+            {
+                Instantiate&lt;GameObject&gt;(addressable,
+                    new Vector3(x++ * 2.0f, 0, z * 2.0f),
+                    Quaternion.identity,
+                    transform); // make child of this object
+
+                if (x &gt; 9)
+                {
+                    x = 0;
+                    z++;
+                }
+            }
+        }
+    }
+
+    private void OnDestroy()
+    {
+        loadHandle.Release();
+        // Release all the loaded assets associated with loadHandle
+        // Note that if you do not make loaded addressables a child of this object,
+        // then you will need to devise another way of releasing the handle when
+        // all the individual addressables are destroyed.
+    }
+}
+
+</code></pre>
+<p>When you use <code>Task</code>-based operation handling, you can use the C# <code>Task</code> class methods such as <a href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.whenall"><code>WhenAll</code></a> to control which operations you run in parallel and which you want to run in sequence. The following example illustrates how to wait for more than one operation to finish before moving onto the next task:</p>
+<pre><code class="lang-cs" name="sample">
+// Load the Prefabs
+var prefabOpHandle = Addressables.LoadAssetsAsync&lt;GameObject&gt;(
+    keys, null, Addressables.MergeMode.Union, false);
+
+// Load a Scene additively
+var sceneOpHandle
+    = Addressables.LoadSceneAsync(nextScene,
+        UnityEngine.SceneManagement.LoadSceneMode.Additive);
+
+await System.Threading.Tasks.Task.WhenAll(prefabOpHandle.Task, sceneOpHandle.Task);
+
+</code></pre><h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/">Asynchronous programming scenarios</a></li>
+<li><a href="AddressableAssetsAsyncOperationHandle.html">Wait for asynchronous loads to complete</a></li>
+<li><a href="load-wait-asynchronous-coroutines.html">Wait for asynchronous loads with coroutines</a></li>
+<li><a href="load-wait-asynchronous-events.html">Wait for asynchronous loads with events</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/load-wait-asynchronous-async-await.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

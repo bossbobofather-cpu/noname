@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Create a build report | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Create a build report | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/BuildLayoutReport.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="addressables-build-layout-report">
+<h1 id="create-a-build-report">Create a build report</h1>
+
+<p>The build layout report provides detailed information and statistics about your Addressables builds, including:</p>
+<ul>
+<li>Description of AssetBundles</li>
+<li>Sizes of each Asset and AssetBundle</li>
+<li>Explanation of non-Addressable assets implicitly included in AssetBundles as dependencies. Refer to <a href="AssetDependencies.html">Asset and AssetBundle dependencies</a> for more information.</li>
+<li><a href="xref:um-asset-bundles-dependencies">AssetBundle dependencies</a></li>
+</ul>
+<p>When enabled, the Addressables build script creates the report whenever you build Addressables content. You can enable the report in the Addressables section of the <a href="addressables-preferences.html">Preferences window</a>. You can find the report in your project folder at <code>Library/com.unity.addressables/buildlayout.json</code>. Producing the report increases build time.</p>
+<h2 id="create-a-build-report-1">Create a build report</h2>
+<p>To create a build report:</p>
+<ol>
+<li>Open the Unity Preferences window (menu: <strong>Edit &gt; Preferences</strong>, macOS: <strong>Unity &gt; Settings</strong>).</li>
+<li>Select <strong>Addressables</strong> from the list of preference types.</li>
+<li>Enable the <strong>Debug Build Layout</strong> option.</li>
+<li><a href="builds-full-build.html">Perform a build</a> of Addressables content. If you enable the <strong>Open Addressables Report</strong> setting, then the <a href="addressables-report-window.html">Addressables Report window</a> automatically opens with the report after the build completes.</li>
+</ol>
+<p>The report file is in the<code>Library/com.unity.addressables/</code> folder of your Unity project, named <code>buildlayout.json</code>.</p>
+<h2 id="additional-resources">Additional resources</h2>
+<ul>
+<li><a href="addressables-report-window.html">Addressables Report window reference</a></li>
+</ul>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.addressables@38fa2290d5f2/Documentation~/BuildLayoutReport.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

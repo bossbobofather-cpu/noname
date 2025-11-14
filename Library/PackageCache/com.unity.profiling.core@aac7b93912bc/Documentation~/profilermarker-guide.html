@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>ProfilerMarker API guide | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="ProfilerMarker API guide | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.profiling.core@aac7b93912bc/Documentation~/profilermarker-guide.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="profilermarker-api-guide">ProfilerMarker API guide</h1>
+
+<p>Use ProfilerMarker to mark up resource-intensive script code blocks and make them visible in the Unity Profiler.</p>
+<p>This can be useful because by default, the built-in Unity Profiler does not profile all method calls. Also, if you enable <strong>Deep Profiling</strong>, it causes a large overhead that significantly slows down your application execution and skews the results.</p>
+<p>To use the <a href="https://docs.unity3d.com/ScriptReference/Unity.Profiling.ProfilerMarker.html">ProfilerMarker API</a>, start your code with <code>ProfilerMarker.Begin()</code> and end it with <code>ProfilerMarker.End()</code> like the following:</p>
+<pre><code class="lang-C#">using UnityEngine;
+using Unity.Profiling;
+
+public class ProfilerMarkerExample
+{
+    static readonly ProfilerMarker k_MyCodeMarker = new ProfilerMarker(&quot;My Code&quot;);
+
+    void Update() {
+        k_MyCodeMarker.Begin();
+        Debug.Log(&quot;This code is being profiled&quot;);
+        k_MyCodeMarker.End();
+    }
+}
+</code></pre>
+<p>Unity then records and reports that code block's execution time to the Profiler, and displays it in the <a href="https://docs.unity3d.com/Manual/ProfilerCPU.html">CPU Profiler module</a> without the need to use Deep Profiling. It displays it as a new entry in the <strong>Hierarchy View</strong> of the CPU Profiler module, as follows:</p>
+<p><img src="images/profilerwindow.png" alt="Profiler sample in Profiler Window."><br><em>Profiler sample in Profiler Window.</em></p>
+<p>You can also capture this information with the <a href="https://docs.unity3d.com/ScriptReference/Profiling.Recorder.html">Recorder profiling API</a>. During development in the Editor and in Development Players, you can use it to get a performance overview of the different parts of your code and to identify performance issues.</p>
+<p>You can add as many Profiler samples as you like: these calls have zero overhead when Unity deploys them in a non-development build. <code>Begin</code> and <code>End</code> methods are marked with ConditionalAttribute. Unity conditionally compiles them away, and as such, they have zero execution overhead in non-developmenet (Release) builds. The marker field will be present in release build though, taking up memory for it's IntPtr, i.e. 8 Byte.</p>
+<p><code>ProfilerMarker</code> represents a named Profiler handle and is the most efficient way of profiling your code. You can use it in any C# code of your application.</p>
+<h2 id="how-to-add-instrumentation-to-c-code">How to add instrumentation to C# code</h2>
+<p>You can also use <code>ProfilerMarker.Auto()</code> in your code to ensure that <code>ProfilerMarker.End()</code> is automatically called at the end of the code block. The following calls are equivalent:</p>
+<pre><code class="lang-C#">using Unity.Profiling;
+
+public class MySystemClass
+{
+    static readonly ProfilerMarker k_UpdatePerfMarker = new ProfilerMarker(&quot;MySystem.Update&quot;);
+
+    public void Update()
+    {
+        k_UpdatePerfMarker.Begin();
+        // ...
+        k_UpdatePerfMarker.End();
+
+        using (k_UpdatePerfMarker.Auto())
+        {
+            // ...
+        }
+    }
+}
+</code></pre>
+<p><code>ProfilerMarker.Auto()</code> can not be compiled out in non-development (Release) builds but just returns null and thus adding minimal overhead.</p>
+<h2 id="how-to-add-integer-or-floating-point-parameters-to-instrumentation-sample">How to add integer or floating point parameters to instrumentation sample</h2>
+<p>Sometimes you might want to provide additional context to your code samples, to identify specific conditions on why the code might have been running for a long time. For example, if your system is carrying out simulations of a number of objects, you can pass the number of objects with a Profiler sample. If you then see an abnormal number along with a long sample duration, that might mean you have to use another thread for simulation or split the CPU work across multiple frames (timeslicing) or even do a game design adjustments to prevent frame drops.</p>
+<pre><code class="lang-C#">using Unity.Profiling;
+
+public class MySystemClass
+{
+  static readonly ProfilerMarker&lt;int&gt; k_PreparePerfMarker = new ProfilerMarker&lt;int&gt;(&quot;MySystem.Prepare&quot;, &quot;Objects Count&quot;);
+  static readonly ProfilerMarker&lt;float&gt; k_SimulatePerfMarker = new ProfilerMarker&lt;float&gt;(ProfilerCategory.Scripts, &quot;MySystem.Simulate&quot;, &quot;Objects Density&quot;);
+
+  public void Update(int objectsCount)
+  {
+    k_PreparePerfMarker.Begin(objectsCount);
+    // ...
+    k_PreparePerfMarker.End();
+
+    using (k_SimulatePerfMarker.Auto(objectsCount * 1.0f))
+    {
+      // ...
+    }
+  }
+}
+</code></pre>
+<p><strong>Note:</strong> The ProfilerMarker supports up to three numeric parameters: <a href="../api/Unity.Profiling.ProfilerMarker-1.html">ProfilerMarker&lt;TP1&gt;</a>, <a href="../api/Unity.Profiling.ProfilerMarker-2.html">ProfilerMarker&lt;TP1, TP2&gt;</a> and <a href="../api/Unity.Profiling.ProfilerMarker-3.html">ProfilerMarker&lt;TP1, TP2, TP3&gt;</a>.</p>
+<h2 id="how-to-add-string-parameter-to-instrumentation-sample">How to add string parameter to instrumentation sample</h2>
+<p>Similarly, when you load level or data files you might want to see the name of the level or file which took longer than expected to process. Use <a href="../api/Unity.Profiling.ProfilerMarkerExtension.html">ProfilerMarkerExtension</a> methods to pass a string parameter along with a Profiler sample:</p>
+<pre><code class="lang-C#">using Unity.Profiling;
+
+public class MySystemClass
+{
+  static readonly ProfilerMarker k_PreparePerfMarker = new ProfilerMarker(&quot;MySystem.Prepare&quot;);
+
+  public void Prepare(string path)
+  {
+    k_PreparePerfMarker.Begin(path);
+    // ...
+    k_PreparePerfMarker.End();
+  }
+}
+</code></pre>
+<h2 id="where-to-see-the-sample-parameters-in-profiler-window">Where to see the sample parameters in Profiler Window</h2>
+<p>The samples that <code>ProfilerMarker.Begin()/End()</code> or <code>ProfilerMarker.Auto</code> generates are visible in <strong>Timeline View</strong> and <strong>Hierarchy View</strong> of the CPU module in the Profiler Window.</p>
+<p><img src="images/timelineview_metadata.png" alt="Profiler sample with metadata in Timeline View."><br><em>Profiler sample with metadata in Timeline View.</em></p>
+<p><img src="images/hierarchyview_metadata.png" alt="Profiler sample with metadata in Hierarchy View."><br><em>Profiler sample with metadata in Hierarchy View.</em></p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.profiling.core@aac7b93912bc/Documentation~/profilermarker-guide.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Profiler counters API guide | mysite </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Profiler counters API guide | mysite ">
+      
+      
+      <link rel="icon" href="../../../../favicon.ico">
+      <link rel="stylesheet" href="../../../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../../../public/main.css">
+      <meta name="docfx:navrel" content="../../../../toc.html">
+      <meta name="docfx:tocrel" content="../../../../toc.html">
+      
+      <meta name="docfx:rel" content="../../../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.profiling.core@aac7b93912bc/Documentation~/profilercounter-guide.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../../../index.html">
+            <img id="logo" class="svg" src="../../../../logo.svg" alt="mysite">
+            mysite
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+<h1 id="profiler-counters-api-guide">Profiler counters API guide</h1>
+
+<p>You can use the <code>ProfilerCounter</code> or <code>ProfilerCounterValue</code> API to track the integral metrics of your application and make them visible in the Unity Profiler or in other code. This is particularly useful if you want to track performance changes in your application, and it speeds up the investigation of performance issues because you can use the information from your Profiler counters in conjunction with Unity built-in counters and instrumentation data.</p>
+<p>If you are an Asset Store package developer, you can add Profiler counters to your code to help other developers to understand important performance characteristics of your system, and they can use this information for optimization or budgeting tooling.</p>
+<p>The following diagram displays a high level overview of the Profiler counters data flow:
+<img src="images/profilercounter_flow.png" alt="Profiler counters flow."><br><em>Profiler counters flow.</em></p>
+<p>The <a href="https://docs.unity3d.com/ScriptReference/Unity.Profiling.ProfilerRecorder.html">ProfilerRecorder</a> API retrieves Profiler counter data in your application code, and the <a href="https://docs.unity3d.com/ScriptReference/Profiling.RawFrameDataView.html">RawFrameDataView</a> or <a href="https://docs.unity3d.com/ScriptReference/Profiling.HierarchyFrameDataView.html">HierarchyFrameDataView</a> APIs retrieves Profiler counter data in the Editor code. Additionally, you can visualize this counter data in the Profiler Window by <a href="#viewing-counters">configuring a custom Profiler Module in the Module Editor</a>.</p>
+<p><code>ProfilerCounter</code> and <code>ProfilerCounterValue</code> support the following types:</p>
+<ul>
+<li>int</li>
+<li>long</li>
+<li>float</li>
+<li>double</li>
+</ul>
+<h2 id="how-to-pass-counter-values-to-the-profiler">How to pass counter values to the Profiler</h2>
+<p>The Profiler counters API supports push and pull operations. You can push the value of the counter to the Profiler, or the Profiler can pull the value at the end of the frame.</p>
+<p>If your data changes infrequently - for example once per frame, use the <code>ProfilerCounter</code> API to push the counter data to the Profiler. If your data changes multiple times per frame, use the <code>ProfilerCounterValue</code> API. This makes the Profiler automatically pick up the last value at the end of the frame. The following example shows you how to use these APIs to set up and pass counter values to the Profiler</p>
+<h3 id="1-define-counters">1. Define counters</h3>
+<p>To pass counter values to the Profiler, you must first define which counters you want to send. The following example uses <code>ProfilerCounter</code> for the enemies count because the value changes infrequently. Additionally, the example uses <code>ProfilerCounterValue</code> for bullet count because a player or enemies might fire many bullets per frame.</p>
+<pre><code class="lang-C#">using Unity.Profiling;
+
+class GameStats
+{
+    public static readonly ProfilerCategory MyProfilerCategory = ProfilerCategory.Scripts;
+
+    public static readonly ProfilerCounter&lt;int&gt; EnemyCount =
+        new ProfilerCounter&lt;int&gt;(MyProfilerCategory, &quot;Enemy Count&quot;, ProfilerMarkerDataUnit.Count);
+
+    public static ProfilerCounterValue&lt;int&gt; BulletCount =
+        new ProfilerCounterValue&lt;int&gt;(MyProfilerCategory, &quot;Bullet Count&quot;,
+            ProfilerMarkerDataUnit.Count, ProfilerCounterOptions.FlushOnEndOfFrame);
+}
+</code></pre>
+<h3 id="2-update-the-value">2. Update the value</h3>
+<p>The next example assumes that the <code>GameManager</code> class handles high level logic and knows about enemies. To update the value of the counter, in the <code>Update</code> or <code>LateUpdate</code> method (depending on when the logic is performed with spawning or destroying enemies), you can use <code>Sample</code> method to push the enemies count value to the Profiler.</p>
+<pre><code class="lang-c#">using UnityEngine;
+using Unity.Profiling;
+
+class GameManager : MonoBehaviour
+{
+    Enemy[] m_Enemies;
+
+    void Update()
+    {
+        GameStats.EnemyCount.Sample(m_Enemies.Length);
+    }
+}
+</code></pre>
+<p>To pass the bullet count to the Profiler, this example assumes that there is a Shell script that manages the bullet lifecycle. It then increases the <code>GameStats.BulletCount</code> value in <code>Awake</code> and decreases it in <code>OnDestroy</code> to give accurate information about the current bullet flow in the game.</p>
+<pre><code class="lang-c#">using UnityEngine;
+using Unity.Profiling;
+
+public class Shell : MonoBehaviour
+{
+    void Awake()
+    {
+        GameStats.BulletCount.Value += 1;
+    }
+    void OnDestroy()
+    {
+        GameStats.BulletCount.Value -= 1;
+    }
+}
+</code></pre>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Both <code>ProfilerCounter</code> and <code>ProfilerCounterValue</code> are compiled out in non-development builds.</p>
+</div>
+<p><a name="viewing-counters"> </a></p>
+<h2 id="viewing-the-counters-in-the-profiler-window">Viewing the counters in the Profiler Window</h2>
+<p>You can view the data that <code>ProfilerCounter</code> or <code>ProfilerCounterValue</code> generates in the Profiler Window in a custom Profiler Module. This might help to visually recognise relationships with other system metrics and identify performance issues quickly. You can use the Module Editor to select built-in or newly added counters for the visualization. To open the Profiler Module Editor, open the Profiler Window (<strong>Window &gt; Analysis &gt; Profiler</strong>) and then select the Profiler Module dropdown in the top left of the window. Click the gear icon, and the Profiler Module Editor opens in a new window.</p>
+<p><img src="images/profilermoduleeditor.png" alt="Profiler Module Editor"><br><em>Profiler Module Editor window.</em></p>
+<p>You can then view the data in the Profiler Window alongside with other counters.</p>
+<p><img src="images/mystatsmodule.png" alt="Module with custom counters in Profiler Window."><br><em>Module with custom counters in the Profiler Window.</em></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Counters declared as <code>static</code> are dynamically initialized in the C# code when a type is initialized and might not be available until they are actually initialized and used. This applies to both Edit and Play Modes.
+If you don't see your counters appearing in the Module Editor, record some data with the profiler first until some frames passed that should have send values through these counters.</p>
+</div>
+<h2 id="getting-counter-values-in-players">Getting counter values in Players</h2>
+<p>Profiler counters give you an insight into important game or engine system metrics. If you have a continuous integration setup or want to visualize key performance metrics in your application during a test play through you can use the <a href="https://docs.unity3d.com/ScriptReference/Unity.Profiling.ProfilerRecorder.html">ProfilerRecorder</a> API to get custom Profiler counter values as well as Unity built-in counters.</p>
+<p>For example, the following script displays the frame time, Mono/IL2CPP heap size, and total memory that the application uses.</p>
+<pre><code class="lang-c#">using System.Collections.Generic;
+using System.Text;
+using Unity.Profiling;
+using UnityEngine;
+
+public class StatsScript : MonoBehaviour
+{
+    string statsText;
+    ProfilerRecorder systemMemoryRecorder;
+    ProfilerRecorder gcMemoryRecorder;
+    ProfilerRecorder mainThreadTimeRecorder;
+
+    double GetRecorderFrameAverage(ProfilerRecorder recorder)
+    {
+        var samplesCount = recorder.Capacity;
+        if (samplesCount == 0)
+            return 0;
+        
+        double r = 0;
+        unsafe
+        {
+            var samples = stackalloc ProfilerRecorderSample[samplesCount];
+            recorder.CopyTo(samples, samplesCount);
+            for (var i = 0; i &lt; samplesCount; ++i)
+                r += samples[i].Value;
+            r /= samplesCount;
+        }
+
+        return r;
+    }
+
+    void OnEnable()
+    {
+        systemMemoryRecorder = ProfilerRecorder.StartNew(ProfilerCategory.Memory, &quot;System Used Memory&quot;);
+        gcMemoryRecorder = ProfilerRecorder.StartNew(ProfilerCategory.Memory, &quot;GC Reserved Memory&quot;);
+        mainThreadTimeRecorder = ProfilerRecorder.StartNew(ProfilerCategory.Internal, &quot;Main Thread&quot;, 15);
+    }
+
+    void OnDisable()
+    {
+        systemMemoryRecorder.Dispose();
+        gcMemoryRecorder.Dispose();
+        mainThreadTimeRecorder.Dispose();
+    }
+
+    void Update()
+    {
+        var sb = new StringBuilder(500);
+        sb.AppendLine($&quot;Frame Time: {GetRecorderFrameAverage(mainThreadTimeRecorder) * (1e-6f):F1} ms&quot;);
+        sb.AppendLine($&quot;GC Memory: {gcMemoryRecorder.LastValue / (1024 * 1024)} MB&quot;);
+        sb.AppendLine($&quot;System Memory: {systemMemoryRecorder.LastValue / (1024 * 1024)} MB&quot;);
+        statsText = sb.ToString();
+    }
+
+    void OnGUI()
+    {
+        GUI.TextArea(new Rect(10, 30, 250, 50), statsText);
+    }
+}
+</code></pre>
+<p>Don't forget to use <code>ProfilerRecorder.Dispose()</code> to free unmanaged resources associated with the <code>ProfilerRecorder</code>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Not all Profiler counters are available in the Release Players. Use <a href="https://docs.unity3d.com/ScriptReference/Unity.Profiling.ProfilerRecorder.Valid.html">ProfilerRecorder.Valid</a> to determine if the data is available and that the Profiler can record it. Alternatively, you can use <a href="https://docs.unity3d.com/ScriptReference/Unity.Profiling.LowLevel.Unsafe.ProfilerRecorderHandle.GetAvailable.html">ProfilerRecorderHandle.GetAvailable</a> to enumerate all available Profiler stats.</p>
+</div>
+<h2 id="getting-counter-values-from-profiler-frame-data-in-the-editor">Getting counter values from Profiler Frame data in the Editor</h2>
+<p>To get Profiler counter values when processing Profiler frame data in the Editor, use the <a href="https://docs.unity3d.com/ScriptReference/Profiling.FrameDataView.html">FrameDataView</a> API.</p>
+<p>You can use the <a href="https://docs.unity3d.com/ScriptReference/Profiling.FrameDataView.GetCounterValueAsInt.html">FrameDataView.GetCounterValueAsInt</a>, <a href="https://docs.unity3d.com/ScriptReference/Profiling.FrameDataView.GetCounterValueAsLong.html">FrameDataView.GetCounterValueAsLong</a>, <a href="https://docs.unity3d.com/ScriptReference/Profiling.FrameDataView.GetCounterValueAsFloat.html">FrameDataView.GetCounterValueAsFloat</a> and <a href="https://docs.unity3d.com/ScriptReference/Profiling.FrameDataView.GetCounterValueAsDouble.html">FrameDataView.GetCounterValueAsDouble</a> to get a frame value of the specific counter, like so:</p>
+<pre><code class="lang-c#">using UnityEditor.Profiling;
+
+class Example
+{
+    static int ExtractMyCounterValue(FrameDataView frameData, string counterName)
+    {
+        var counterMarkerId = frameData.GetMarkerId(counterName);
+        return frameData.GetCounterValueAsInt(counterMarkerId);
+    }
+}
+</code></pre>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/bossbobofather-cpu/noname/blob/main/Library/PackageCache/com.unity.profiling.core@aac7b93912bc/Documentation~/profilercounter-guide.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
