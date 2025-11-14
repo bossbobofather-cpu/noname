@@ -45,6 +45,8 @@ namespace Noname.Presentation.Views
         [Header("Player Movement Bounds")]
         [SerializeField] private Collider2D leftBoundaryCollider;
         [SerializeField] private Collider2D rightBoundaryCollider;
+        [Header("Scene Settings")]
+        [SerializeField] private string exitSceneName = "LobbyScene";
 
         [Header("Settings")]
         [SerializeField] private DefenseGameSettings settings = new DefenseGameSettings(
@@ -262,12 +264,12 @@ namespace Noname.Presentation.Views
 #if ENABLE_INPUT_SYSTEM && !ENABLE_LEGACY_INPUT_MANAGER
             if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
             {
-                CoreRuntime.GameSceneManager?.LoadLobbyScene();
+                TryExitToScene();
             }
 #else
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                CoreRuntime.GameSceneManager?.LoadLobbyScene();
+                TryExitToScene();
             }
 #endif
         }
@@ -795,6 +797,14 @@ namespace Noname.Presentation.Views
             CoreRuntime.UIManager?.CloseUI("AbilitySelection");
             CoreRuntime.FXManager?.PlayFx("AbilitySelectionClose");
             CoreRuntime.SoundManager?.PlaySound("AbilitySelectionClose");
+        }
+
+        private void TryExitToScene()
+        {
+            if (!string.IsNullOrWhiteSpace(exitSceneName))
+            {
+                CoreRuntime.GameSceneManager?.LoadScene(exitSceneName);
+            }
         }
 
         private EnemyView GetEnemyViewInstance(EnemyView prefab)
